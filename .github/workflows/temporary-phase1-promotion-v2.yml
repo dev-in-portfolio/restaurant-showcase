@@ -50,6 +50,27 @@ jobs:
           STAGING_ROOT=staging SHOWCASE_ROOT=showcase THUNDERDOME_ROOT=thunderdome OUT_DIR=out \
             node controller/.github/scripts/phase1-promote.js 2>&1 | tee out/static.log
 
+      - name: Repair Bart's Mart load-event guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('showcase/restaurants/barts-mart')
+          old = "if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');"
+          new = "if (typeof event !== 'undefined' && event && event.target && event.target.classList) event.target.classList.add('active');"
+          changed = 0
+          for file in root.glob('*.html'):
+              text = file.read_text(encoding='utf-8')
+              updated = text.replace(old, new)
+              if updated != text:
+                  file.write_text(updated, encoding='utf-8')
+                  changed += 1
+          if changed == 0:
+              raise SystemExit('Bart load-event guard was not found for repair.')
+          print(f'Repaired Bart load-event guard in {changed} file(s).')
+          PY
+
       - name: Install browser QA runtime
         shell: bash
         run: |
