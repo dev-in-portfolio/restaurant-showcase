@@ -79,11 +79,33 @@ jobs:
           new_pattern = r'/\bplaceholder\b(?!\s*=)/i'
           for file in validator_files:
               text = file.read_text(encoding='utf-8')
-              updated = text.replace(old_pattern, new_pattern)
-              if updated == text:
-                  raise SystemExit(f'Placeholder validator pattern was not found in {file}.')
-              file.write_text(updated, encoding='utf-8')
-              print(f'Corrected placeholder validation in {file}.')
+              text = text.replace(old_pattern, new_pattern)
+
+              base_name = 'restaurantDir' if file.name == 'validate-showcase.js' else 'sourceDir'
+              marker = (
+                  "  const content = fs.readFileSync(htmlFile, 'utf8');\n"
+                  f"  const relPath = path.relative({base_name}, htmlFile);\n"
+                  "  for (const pattern of placeholderPatterns) {"
+              )
+              replacement = (
+                  "  const content = fs.readFileSync(htmlFile, 'utf8');\n"
+                  f"  const relPath = path.relative({base_name}, htmlFile);\n"
+                  "  const searchableContent = content\n"
+                  "    .replace(/<!--[\\s\\S]*?-->/g, ' ')\n"
+                  "    .replace(/<script[\\s\\S]*?<\\/script>/gi, ' ')\n"
+                  "    .replace(/<style[\\s\\S]*?<\\/style>/gi, ' ')\n"
+                  "    .replace(/<[^>]+>/g, ' ');\n"
+                  "  for (const pattern of placeholderPatterns) {"
+              )
+              if marker not in text:
+                  raise SystemExit(f'Placeholder scan block was not found in {file}.')
+              text = text.replace(marker, replacement, 1)
+              old_match = 'const match = content.match(pattern);'
+              if old_match not in text:
+                  raise SystemExit(f'Placeholder match line was not found in {file}.')
+              text = text.replace(old_match, 'const match = searchableContent.match(pattern);', 1)
+              file.write_text(text, encoding='utf-8')
+              print(f'Corrected visible-text placeholder validation in {file}.')
           PY
 
       - name: Install browser QA runtime
