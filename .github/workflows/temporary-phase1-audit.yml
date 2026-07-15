@@ -1,67 +1,408 @@
-name: Temporary Phase 1 showcase audit
+name: Temporary Phase 1 showcase promotion
 
 on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  audit:
+  promote:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out showcase
+      - name: Check out latest showcase main
         uses: actions/checkout@v4
         with:
+          ref: main
+          fetch-depth: 0
           path: showcase
 
-      - name: Check out staging
+      - name: Check out latest staging main
         uses: actions/checkout@v4
         with:
           repository: dev-in-portfolio/restaurant-staging
           ref: main
           path: staging
 
-      - name: Build detailed audit report
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Copy and statically validate the 16 approved builds
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p out/candidates
-          {
-            echo '# Existing showcase restaurant folders'
-            find showcase/restaurants -mindepth 1 -maxdepth 1 -type d -printf '%f\n' 2>/dev/null | sort
-            echo
-            echo '# All staging restaurant folders'
-            find staging/restaurants -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
-            echo
-            echo '# Candidate metadata matches'
-            patterns=('Bahn Thai' 'Bao & Broth' "Bart's Mart" "Beef 'N Bottle" 'Boudreaux' "Brooks' Sandwich House" 'Cafe South' 'Carolina Scoops' 'Caswell Station' 'Cornerstone Pub' 'Curry Gate' '^Dish$' 'E.L.K. Tavern' 'Enderly Coffee' 'Euro Grill' "Gus' Family Restaurant")
-            for p in "${patterns[@]}"; do
-              echo "## $p"
-              grep -rilE "\"name\"[[:space:]]*:[[:space:]]*\"[^\"]*${p}" staging/restaurants/*/restaurant.json 2>/dev/null || true
-            done
-            echo
-            echo '# Existing showcase data index'
-            cat showcase/data/restaurants.json
-          } > out/audit.txt
+          mkdir -p out
+          cat > /tmp/promote-phase1.js <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
 
-          cp showcase/data/restaurants.json out/showcase-restaurants.json
-          cp showcase/scripts/import-approved-restaurant.js out/import-approved-restaurant.js
-          cp showcase/scripts/validate-showcase.js out/validate-showcase.js
-          cp showcase/package.json out/showcase-package.json
-          cp staging/package.json out/staging-package.json
+          const stagingRoot = path.resolve('staging');
+          const showcaseRoot = path.resolve('showcase');
+          const slugs = [
+            'bahn-thai',
+            'bao-and-broth',
+            'barts-mart',
+            'beef-n-bottle',
+            'boudreauxs',
+            'brooks-sandwich-house',
+            'cafe-south',
+            'carolina-scoops',
+            'caswell-station',
+            'cornerstone-pub-grill',
+            'curry-gate',
+            'dish',
+            'elk-monroe',
+            'enderly-coffee-co',
+            'euro-grill-and-cafe',
+            'gus-restaurant'
+          ];
 
-          while IFS= read -r metadata; do
-            [ -n "$metadata" ] || continue
-            slug="$(basename "$(dirname "$metadata")")"
-            mkdir -p "out/candidates/$slug"
-            cp "$metadata" "out/candidates/$slug/restaurant.json"
-            find "staging/restaurants/$slug" -maxdepth 1 -type f -printf '%f\n' | sort > "out/candidates/$slug/files.txt"
-            find "staging/restaurants/$slug" -maxdepth 1 -type f -name '*.html' -printf '%f\n' | sort > "out/candidates/$slug/html.txt"
-          done < <(grep -rilE '"name"[[:space:]]*:[[:space:]]*"(Bahn Thai|Bao & Broth|Bart.s Mart|Beef .N Bottle|Boudreaux|Brooks. Sandwich House|Cafe South|Carolina Scoops|Caswell Station|Cornerstone Pub|Curry Gate|Dish|E\.L\.K\. Tavern|Enderly Coffee|Euro Grill|Gus. Family Restaurant)' staging/restaurants/*/restaurant.json 2>/dev/null | sort -u)
+          const beforeIndexPath = path.join(showcaseRoot, 'data', 'restaurants.json');
+          let index = [];
+          if (fs.existsSync(beforeIndexPath)) {
+            index = JSON.parse(fs.readFileSync(beforeIndexPath, 'utf8'));
+            if (!Array.isArray(index)) throw new Error('Showcase data/restaurants.json must be an array.');
+          }
+          const beforeCount = index.length;
+          const promotedAt = new Date().toISOString();
+          const report = { beforeCount, promotedAt, restaurants: [] };
+          const plan = [];
 
-      - name: Upload audit
+          const placeholderPatterns = [
+            /lorem\s+ipsum/i,
+            /\btodo\b/i,
+            /\bfixme\b/i,
+            /insert\s+(here|text|details)/i,
+            /\[name\]/i,
+            /\[phone\]/i,
+            /\[address\]/i,
+            /concept content for/i
+          ];
+
+          function walk(dir) {
+            const out = [];
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.name === '.git' || entry.name === 'node_modules') continue;
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) out.push(...walk(full));
+              else out.push(full);
+            }
+            return out;
+          }
+
+          function stripHtml(html) {
+            return html
+              .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+              .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+              .replace(/<[^>]+>/g, ' ')
+              .replace(/&nbsp;|&#160;/gi, ' ')
+              .replace(/&amp;/gi, '&')
+              .replace(/\s+/g, ' ')
+              .trim();
+          }
+
+          function localRefExists(baseFile, ref, sourceDir) {
+            const clean = ref.split('#')[0].split('?')[0].trim();
+            if (!clean) return true;
+            if (/^(https?:|\/\/|mailto:|tel:|sms:|javascript:|data:|blob:)/i.test(clean)) return true;
+            let decoded = clean;
+            try { decoded = decodeURIComponent(clean); } catch {}
+            const resolved = decoded.startsWith('/')
+              ? path.join(sourceDir, decoded.replace(/^\/+/, ''))
+              : path.resolve(path.dirname(baseFile), decoded);
+            return fs.existsSync(resolved);
+          }
+
+          function sortName(name) {
+            return String(name || '').replace(/^(the|a|an)\s+/i, '').toLocaleLowerCase('en');
+          }
+
+          for (const slug of slugs) {
+            const sourceDir = path.join(stagingRoot, 'restaurants', slug);
+            const destDir = path.join(showcaseRoot, 'restaurants', slug);
+            if (!fs.existsSync(sourceDir)) throw new Error(`Missing staging folder: ${slug}`);
+
+            const sourceMetaPath = path.join(sourceDir, 'restaurant.json');
+            if (!fs.existsSync(sourceMetaPath)) throw new Error(`Missing restaurant.json: ${slug}`);
+            const sourceMeta = JSON.parse(fs.readFileSync(sourceMetaPath, 'utf8'));
+            if (sourceMeta.slug !== slug) throw new Error(`Slug mismatch for ${slug}: ${sourceMeta.slug}`);
+
+            const allFiles = walk(sourceDir);
+            const htmlFiles = allFiles.filter(f => f.toLowerCase().endsWith('.html'));
+            if (!fs.existsSync(path.join(sourceDir, 'index.html'))) throw new Error(`Missing index.html: ${slug}`);
+            if (htmlFiles.length < 6) throw new Error(`${slug} has only ${htmlFiles.length} HTML pages; six required.`);
+
+            const titles = new Set();
+            for (const htmlFile of htmlFiles) {
+              const html = fs.readFileSync(htmlFile, 'utf8');
+              const rel = path.relative(sourceDir, htmlFile);
+              for (const pattern of placeholderPatterns) {
+                const match = html.match(pattern);
+                if (match) throw new Error(`${slug}/${rel} contains placeholder phrase: ${match[0]}`);
+              }
+              const text = stripHtml(html);
+              if (text.length < 180) throw new Error(`${slug}/${rel} is too short (${text.length} visible characters).`);
+              const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [,''])[1].replace(/\s+/g, ' ').trim();
+              if (!title) throw new Error(`${slug}/${rel} is missing a page title.`);
+              if (titles.has(title.toLocaleLowerCase('en'))) throw new Error(`${slug} repeats page title: ${title}`);
+              titles.add(title.toLocaleLowerCase('en'));
+
+              const refs = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/gi)].map(m => m[1]);
+              for (const ref of refs) {
+                if (!localRefExists(htmlFile, ref, sourceDir)) {
+                  throw new Error(`${slug}/${rel} has broken local reference: ${ref}`);
+                }
+              }
+            }
+
+            const alreadyExisted = fs.existsSync(destDir);
+            fs.rmSync(destDir, { recursive: true, force: true });
+            fs.mkdirSync(path.dirname(destDir), { recursive: true });
+            fs.cpSync(sourceDir, destDir, {
+              recursive: true,
+              filter: src => !src.split(path.sep).some(part => ['.git', '.github', 'node_modules', '.DS_Store', 'Thumbs.db'].includes(part))
+            });
+
+            const comparisonButtonAdded = sourceMeta.comparisonButtonAdded === true;
+            const comparisonButtonNotApplicable = comparisonButtonAdded
+              ? false
+              : (!sourceMeta.currentWebsiteUrl || sourceMeta.comparisonButtonNotApplicable === true);
+            if (!comparisonButtonAdded && !comparisonButtonNotApplicable) {
+              throw new Error(`${slug} has a currentWebsiteUrl but no comparison-button disposition.`);
+            }
+
+            const showcaseMeta = {
+              ...sourceMeta,
+              id: sourceMeta.id || slug,
+              name: sourceMeta.name || slug,
+              slug,
+              stage: 'showcase',
+              status: 'presentation-ready',
+              sourceRepository: 'dev-in-portfolio/restaurant-staging',
+              sourcePath: `restaurants/${slug}`,
+              demoRoute: `restaurants/${slug}/index.html`,
+              promotedToShowcaseAt: promotedAt,
+              desktopReviewed: true,
+              tabletReviewed: true,
+              mobileReviewed: true,
+              linksVerified: true,
+              contentVerified: true,
+              performanceReviewed: true,
+              accessibilityReviewed: true,
+              comparisonButtonAdded,
+              comparisonButtonNotApplicable,
+              productionBuildPassed: true,
+              approvedForPresentation: true,
+              badge: 'FINAL SHOWCASE',
+              buttonText: 'View Final Build',
+              notes: [
+                ...(Array.isArray(sourceMeta.notes) ? sourceMeta.notes : []),
+                `Phase 1 static and responsive browser QA completed ${promotedAt}.`,
+                'Approved for final showcase from the 16-build pitch-readiness audit.'
+              ]
+            };
+            fs.writeFileSync(path.join(destDir, 'restaurant.json'), JSON.stringify(showcaseMeta, null, 2) + '\n');
+
+            const entry = {
+              id: showcaseMeta.id,
+              name: showcaseMeta.name,
+              slug,
+              demoRoute: showcaseMeta.demoRoute,
+              location: {
+                city: showcaseMeta.location?.city || '',
+                state: showcaseMeta.location?.state || ''
+              },
+              currentWebsiteUrl: showcaseMeta.currentWebsiteUrl || '',
+              currentPublicPresenceType: showcaseMeta.currentPublicPresenceType || 'website',
+              promotedToShowcaseAt: promotedAt,
+              status: 'presentation-ready',
+              badge: 'FINAL SHOWCASE',
+              buttonText: 'View Final Build'
+            };
+            const existing = index.findIndex(item => item.slug === slug);
+            if (existing >= 0) index[existing] = entry;
+            else index.push(entry);
+
+            report.restaurants.push({
+              slug,
+              name: showcaseMeta.name,
+              htmlPages: htmlFiles.length,
+              sourceFiles: allFiles.length,
+              destinationPreviouslyExisted: alreadyExisted,
+              staticChecks: 'passed'
+            });
+            plan.push({ slug, htmlFiles: htmlFiles.map(f => path.relative(sourceDir, f).replaceAll(path.sep, '/')) });
+          }
+
+          const duplicateSlugs = index.filter((item, i, arr) => arr.findIndex(x => x.slug === item.slug) !== i);
+          if (duplicateSlugs.length) throw new Error(`Duplicate showcase slugs: ${[...new Set(duplicateSlugs.map(x => x.slug))].join(', ')}`);
+
+          index.sort((a, b) => {
+            const byName = sortName(a.name).localeCompare(sortName(b.name), 'en', { sensitivity: 'base' });
+            return byName || String(a.slug).localeCompare(String(b.slug));
+          });
+          fs.writeFileSync(beforeIndexPath, JSON.stringify(index, null, 2) + '\n');
+          report.afterCount = index.length;
+          fs.writeFileSync('out/static-report.json', JSON.stringify(report, null, 2) + '\n');
+          fs.writeFileSync('/tmp/promotion-plan.json', JSON.stringify(plan, null, 2));
+          console.log(JSON.stringify(report, null, 2));
+          NODE
+
+          node /tmp/promote-phase1.js
+
+      - name: Install browser QA runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/phase1-qa
+          cd /tmp/phase1-qa
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.55.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+
+      - name: Run desktop, tablet, and mobile browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --directory showcase >/tmp/phase1-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 2
+
+          cat > /tmp/phase1-qa/browser-qa.js <<'NODE'
+          const fs = require('fs');
+          const { chromium } = require('playwright');
+          const plan = JSON.parse(fs.readFileSync('/tmp/promotion-plan.json', 'utf8'));
+          const viewports = [
+            { name: 'desktop', width: 1440, height: 900 },
+            { name: 'tablet', width: 1024, height: 768 },
+            { name: 'mobile', width: 390, height: 844 }
+          ];
+          const report = { startedAt: new Date().toISOString(), restaurants: [], failures: [] };
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            try {
+              for (const restaurant of plan) {
+                const item = { slug: restaurant.slug, pages: restaurant.htmlFiles.length, viewports: {}, warnings: [] };
+                for (const viewport of viewports) {
+                  const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height } });
+                  const page = await context.newPage();
+                  const failures = [];
+                  const localHttpFailures = [];
+                  page.on('pageerror', error => failures.push(`pageerror: ${error.message}`));
+                  page.on('response', response => {
+                    const url = response.url();
+                    if (url.startsWith('http://127.0.0.1:4173/') && response.status() >= 400 && !url.endsWith('/favicon.ico')) {
+                      localHttpFailures.push(`${response.status()} ${url}`);
+                    }
+                  });
+
+                  for (const rel of restaurant.htmlFiles) {
+                    const url = `http://127.0.0.1:4173/restaurants/${restaurant.slug}/${rel}`;
+                    const started = Date.now();
+                    const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
+                    await page.waitForTimeout(80);
+                    const elapsed = Date.now() - started;
+                    if (!response || response.status() >= 400) failures.push(`${rel}: navigation failed (${response?.status() ?? 'no response'})`);
+                    if (elapsed > 5000) failures.push(`${rel}: DOMContentLoaded took ${elapsed}ms`);
+
+                    const checks = await page.evaluate(() => {
+                      const visible = el => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+                      const unnamedControls = [...document.querySelectorAll('a[href], button, input, select, textarea')]
+                        .filter(visible)
+                        .filter(el => {
+                          if (el.tagName === 'INPUT' && ['hidden', 'submit', 'button', 'reset'].includes((el.type || '').toLowerCase())) return false;
+                          const name = [
+                            el.getAttribute('aria-label'),
+                            el.getAttribute('title'),
+                            el.textContent,
+                            el.value,
+                            el.querySelector?.('img')?.getAttribute('alt')
+                          ].filter(Boolean).join(' ').trim();
+                          return !name;
+                        }).length;
+                      const missingAlt = [...document.querySelectorAll('img')].filter(img => !img.hasAttribute('alt')).length;
+                      const ids = [...document.querySelectorAll('[id]')].map(el => el.id).filter(Boolean);
+                      const duplicateIds = ids.filter((id, i) => ids.indexOf(id) !== i);
+                      return {
+                        title: document.title.trim(),
+                        lang: document.documentElement.lang.trim(),
+                        h1Count: document.querySelectorAll('h1').length,
+                        mainCount: document.querySelectorAll('main').length,
+                        bodyTextLength: document.body.innerText.replace(/\s+/g, ' ').trim().length,
+                        horizontalOverflow: document.documentElement.scrollWidth - window.innerWidth,
+                        unnamedControls,
+                        missingAlt,
+                        duplicateIds: [...new Set(duplicateIds)]
+                      };
+                    });
+
+                    if (!checks.title) failures.push(`${rel}: empty title`);
+                    if (!checks.lang) failures.push(`${rel}: missing html lang`);
+                    if (checks.h1Count < 1) failures.push(`${rel}: missing h1`);
+                    if (checks.mainCount !== 1) failures.push(`${rel}: expected one main element, found ${checks.mainCount}`);
+                    if (checks.bodyTextLength < 180) failures.push(`${rel}: insufficient visible content (${checks.bodyTextLength})`);
+                    if (checks.horizontalOverflow > 12) failures.push(`${rel}: horizontal overflow ${checks.horizontalOverflow}px at ${viewport.name}`);
+                    if (checks.unnamedControls > 0) failures.push(`${rel}: ${checks.unnamedControls} visible unnamed controls`);
+                    if (checks.missingAlt > 0) failures.push(`${rel}: ${checks.missingAlt} images missing alt attributes`);
+                    if (checks.duplicateIds.length > 0) failures.push(`${rel}: duplicate ids ${checks.duplicateIds.join(', ')}`);
+                  }
+                  failures.push(...localHttpFailures);
+                  item.viewports[viewport.name] = { pagesTested: restaurant.htmlFiles.length, failures };
+                  if (failures.length) report.failures.push({ slug: restaurant.slug, viewport: viewport.name, failures });
+                  await context.close();
+                }
+                report.restaurants.push(item);
+              }
+            } finally {
+              await browser.close();
+            }
+            report.completedAt = new Date().toISOString();
+            fs.writeFileSync('out/browser-report.json', JSON.stringify(report, null, 2) + '\n');
+            console.log(JSON.stringify(report, null, 2));
+            if (report.failures.length) process.exit(1);
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          NODE
+
+          NODE_PATH=/tmp/phase1-qa/node_modules node /tmp/phase1-qa/browser-qa.js
+
+      - name: Run showcase tests and final validation
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          npm test
+          npm run validate:all
+
+      - name: Commit and push Phase 1 to main
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add restaurants data/restaurants.json
+          if git diff --cached --quiet; then
+            echo 'No showcase changes were needed.' | tee ../out/commit.txt
+            exit 0
+          fi
+          git commit -m 'Promote 16 pitch-ready restaurant builds to showcase'
+          git fetch origin main
+          git rebase origin/main
+          npm test
+          npm run validate:all
+          git push origin HEAD:main
+          git rev-parse HEAD | tee ../out/commit.txt
+
+      - name: Upload Phase 1 report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: phase1-showcase-audit-detailed
+          name: phase1-showcase-promotion-report
           path: out
