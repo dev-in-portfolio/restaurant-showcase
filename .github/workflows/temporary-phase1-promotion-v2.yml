@@ -1,0 +1,107 @@
+name: Temporary Phase 1 promotion v2
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controller branch
+        uses: actions/checkout@v4
+        with:
+          path: controller
+
+      - name: Check out latest showcase main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-showcase
+          ref: main
+          fetch-depth: 0
+          path: showcase
+
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-staging
+          ref: main
+          path: staging
+
+      - name: Check out shared source files
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurants
+          ref: main
+          path: thunderdome
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Promote and statically validate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          STAGING_ROOT=staging SHOWCASE_ROOT=showcase THUNDERDOME_ROOT=thunderdome OUT_DIR=out \
+            node controller/.github/scripts/phase1-promote.js 2>&1 | tee out/static.log
+
+      - name: Install browser QA runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/phase1-qa
+          cd /tmp/phase1-qa
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.55.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+
+      - name: Run desktop, tablet, and mobile browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --directory showcase >/tmp/phase1-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 2
+          NODE_PATH=/tmp/phase1-qa/node_modules OUT_DIR=out SHOWCASE_BASE_URL=http://127.0.0.1:4173 \
+            node controller/.github/scripts/phase1-browser-qa.js 2>&1 | tee out/browser.log
+
+      - name: Run repository tests and final validation
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          npm test
+          npm run validate:all
+
+      - name: Commit and push to showcase main
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add restaurants data/restaurants.json
+          if git diff --cached --quiet; then
+            echo 'No showcase changes were needed.' | tee ../out/commit.txt
+            exit 0
+          fi
+          git commit -m 'Promote 16 pitch-ready restaurant builds to showcase'
+          git fetch origin main
+          git rebase origin/main
+          npm test
+          npm run validate:all
+          git push origin HEAD:main
+          git rev-parse HEAD | tee ../out/commit.txt
+
+      - name: Upload Phase 1 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase1-showcase-promotion-v2-report
+          path: out
