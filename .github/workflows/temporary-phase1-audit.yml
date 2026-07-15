@@ -1,0 +1,79 @@
+name: Temporary Phase 1 showcase audit
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out showcase
+        uses: actions/checkout@v4
+        with:
+          path: showcase
+
+      - name: Check out staging
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-staging
+          ref: main
+          path: staging
+
+      - name: Build audit report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          {
+            echo '# Showcase root files'
+            find showcase -maxdepth 2 -type f | sed 's#^showcase/##' | sort
+            echo
+            echo '# Staging root directories'
+            find staging -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+            echo
+            echo '# Candidate folder matches'
+            names=(
+              'bahn-thai'
+              'bao-and-broth' 'bao-broth'
+              'barts-mart'
+              'beef-n-bottle'
+              'boudreauxs' 'boudreauxs-kitchen-tavern'
+              'brooks-sandwich-house' 'brooks'
+              'cafe-south'
+              'carolina-scoops'
+              'caswell-station'
+              'cornerstone-pub-grill' 'cornerstone-pub-and-grill'
+              'curry-gate'
+              'dish'
+              'elk-monroe' 'elk-tavern'
+              'enderly-coffee-co' 'enderly-coffee'
+              'euro-grill-and-cafe' 'euro-grill-cafe'
+              'gus-restaurant' 'gus-family-restaurant'
+            )
+            for n in "${names[@]}"; do
+              if [ -d "staging/$n" ]; then
+                printf '%s\t%s html\n' "$n" "$(find "staging/$n" -maxdepth 1 -type f -name '*.html' | wc -l)"
+                find "staging/$n" -maxdepth 2 -type f | sed "s#^staging/$n/##" | sort | sed 's/^/  /'
+              fi
+            done
+            echo
+            echo '# Index-like files in showcase'
+            find showcase -maxdepth 2 -type f \( -iname 'index.html' -o -iname '*index*.js' -o -iname '*data*.js' -o -iname '*.json' \) -print
+            echo
+            echo '# Index-like files in staging'
+            find staging -maxdepth 2 -type f \( -iname 'index.html' -o -iname '*index*.js' -o -iname '*data*.js' -o -iname '*.json' \) -print | head -100
+          } > out/audit.txt
+
+          cp showcase/index.html out/showcase-index.html 2>/dev/null || true
+          cp showcase/README.md out/showcase-README.md 2>/dev/null || true
+          cp staging/index.html out/staging-index.html 2>/dev/null || true
+          cp staging/README.md out/staging-README.md 2>/dev/null || true
+
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase1-showcase-audit
+          path: out
