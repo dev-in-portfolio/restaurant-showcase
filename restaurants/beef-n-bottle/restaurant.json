@@ -1,0 +1,39 @@
+{
+  "id": "beef-n-bottle",
+  "name": "Beef 'N Bottle",
+  "slug": "beef-n-bottle",
+  "location": {
+    "city": "Charlotte",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "showcase",
+  "status": "presentation-ready",
+  "sourceRepository": "dev-in-portfolio/restaurant-staging",
+  "sourcePath": "restaurants/beef-n-bottle",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/beef-n-bottle/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T20:01:21.883Z",
+  "promotedToShowcaseAt": "2026-07-15T22:45:10.291Z",
+  "desktopReviewed": true,
+  "tabletReviewed": true,
+  "mobileReviewed": true,
+  "linksVerified": true,
+  "contentVerified": true,
+  "performanceReviewed": true,
+  "accessibilityReviewed": true,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": true,
+  "productionBuildPassed": true,
+  "approvedForPresentation": true,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source.",
+    "Static and responsive browser QA completed 2026-07-15T22:45:10.291Z.",
+    "Approved for final showcase from the 16-build pitch-readiness audit.",
+    "Final-copy route, interaction, responsive, and accessibility repairs applied where required; staging source left unchanged."
+  ],
+  "badge": "FINAL SHOWCASE",
+  "buttonText": "View Final Build"
+}

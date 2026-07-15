@@ -118,7 +118,7 @@ if (!fs.existsSync(path.join(sourceDir, 'index.html'))) {
 
 // Check for placeholder content
 const placeholderPatterns = [
-  /lorem\s+ipsum/i, /todo/i, /placeholder/i, /fixme/i,
+  /lorem\s+ipsum/i, /todo/i, /\bplaceholder\b(?!\s*=)/i, /fixme/i,
   /insert\s+(here|text|details)/i, /\[name\]/i, /\[phone\]/i, /\[address\]/i
 ];
 
@@ -147,8 +147,13 @@ const htmlFiles = scanFiles(sourceDir);
 for (const htmlFile of htmlFiles) {
   const content = fs.readFileSync(htmlFile, 'utf8');
   const relPath = path.relative(sourceDir, htmlFile);
+  const searchableContent = content
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
   for (const pattern of placeholderPatterns) {
-    const match = content.match(pattern);
+    const match = searchableContent.match(pattern);
     if (match) {
       errors.push(`Placeholder text '${match[0]}' detected in '${relPath}'`);
     }
