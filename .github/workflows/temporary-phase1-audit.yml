@@ -22,58 +22,46 @@ jobs:
           ref: main
           path: staging
 
-      - name: Build audit report
+      - name: Build detailed audit report
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p out
+          mkdir -p out/candidates
           {
-            echo '# Showcase root files'
-            find showcase -maxdepth 2 -type f | sed 's#^showcase/##' | sort
+            echo '# Existing showcase restaurant folders'
+            find showcase/restaurants -mindepth 1 -maxdepth 1 -type d -printf '%f\n' 2>/dev/null | sort
             echo
-            echo '# Staging root directories'
-            find staging -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
+            echo '# All staging restaurant folders'
+            find staging/restaurants -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort
             echo
-            echo '# Candidate folder matches'
-            names=(
-              'bahn-thai'
-              'bao-and-broth' 'bao-broth'
-              'barts-mart'
-              'beef-n-bottle'
-              'boudreauxs' 'boudreauxs-kitchen-tavern'
-              'brooks-sandwich-house' 'brooks'
-              'cafe-south'
-              'carolina-scoops'
-              'caswell-station'
-              'cornerstone-pub-grill' 'cornerstone-pub-and-grill'
-              'curry-gate'
-              'dish'
-              'elk-monroe' 'elk-tavern'
-              'enderly-coffee-co' 'enderly-coffee'
-              'euro-grill-and-cafe' 'euro-grill-cafe'
-              'gus-restaurant' 'gus-family-restaurant'
-            )
-            for n in "${names[@]}"; do
-              if [ -d "staging/$n" ]; then
-                printf '%s\t%s html\n' "$n" "$(find "staging/$n" -maxdepth 1 -type f -name '*.html' | wc -l)"
-                find "staging/$n" -maxdepth 2 -type f | sed "s#^staging/$n/##" | sort | sed 's/^/  /'
-              fi
+            echo '# Candidate metadata matches'
+            patterns=('Bahn Thai' 'Bao & Broth' "Bart's Mart" "Beef 'N Bottle" 'Boudreaux' "Brooks' Sandwich House" 'Cafe South' 'Carolina Scoops' 'Caswell Station' 'Cornerstone Pub' 'Curry Gate' '^Dish$' 'E.L.K. Tavern' 'Enderly Coffee' 'Euro Grill' "Gus' Family Restaurant")
+            for p in "${patterns[@]}"; do
+              echo "## $p"
+              grep -rilE "\"name\"[[:space:]]*:[[:space:]]*\"[^\"]*${p}" staging/restaurants/*/restaurant.json 2>/dev/null || true
             done
             echo
-            echo '# Index-like files in showcase'
-            find showcase -maxdepth 2 -type f \( -iname 'index.html' -o -iname '*index*.js' -o -iname '*data*.js' -o -iname '*.json' \) -print
-            echo
-            echo '# Index-like files in staging'
-            find staging -maxdepth 2 -type f \( -iname 'index.html' -o -iname '*index*.js' -o -iname '*data*.js' -o -iname '*.json' \) -print | head -100
+            echo '# Existing showcase data index'
+            cat showcase/data/restaurants.json
           } > out/audit.txt
 
-          cp showcase/index.html out/showcase-index.html 2>/dev/null || true
-          cp showcase/README.md out/showcase-README.md 2>/dev/null || true
-          cp staging/index.html out/staging-index.html 2>/dev/null || true
-          cp staging/README.md out/staging-README.md 2>/dev/null || true
+          cp showcase/data/restaurants.json out/showcase-restaurants.json
+          cp showcase/scripts/import-approved-restaurant.js out/import-approved-restaurant.js
+          cp showcase/scripts/validate-showcase.js out/validate-showcase.js
+          cp showcase/package.json out/showcase-package.json
+          cp staging/package.json out/staging-package.json
+
+          while IFS= read -r metadata; do
+            [ -n "$metadata" ] || continue
+            slug="$(basename "$(dirname "$metadata")")"
+            mkdir -p "out/candidates/$slug"
+            cp "$metadata" "out/candidates/$slug/restaurant.json"
+            find "staging/restaurants/$slug" -maxdepth 1 -type f -printf '%f\n' | sort > "out/candidates/$slug/files.txt"
+            find "staging/restaurants/$slug" -maxdepth 1 -type f -name '*.html' -printf '%f\n' | sort > "out/candidates/$slug/html.txt"
+          done < <(grep -rilE '"name"[[:space:]]*:[[:space:]]*"(Bahn Thai|Bao & Broth|Bart.s Mart|Beef .N Bottle|Boudreaux|Brooks. Sandwich House|Cafe South|Carolina Scoops|Caswell Station|Cornerstone Pub|Curry Gate|Dish|E\.L\.K\. Tavern|Enderly Coffee|Euro Grill|Gus. Family Restaurant)' staging/restaurants/*/restaurant.json 2>/dev/null | sort -u)
 
       - name: Upload audit
         uses: actions/upload-artifact@v4
         with:
-          name: phase1-showcase-audit
+          name: phase1-showcase-audit-detailed
           path: out
