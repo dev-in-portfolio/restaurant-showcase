@@ -42,9 +42,15 @@ async function inspectPage(page, url, label, viewportName) {
     const controls = [...document.querySelectorAll('a[href], button, input, select, textarea')].filter(visible);
     const unnamedControls = controls.filter(element => {
       if (element.tagName === 'INPUT' && ['hidden', 'submit', 'button', 'reset'].includes((element.type || '').toLowerCase())) return false;
+      const associatedLabels = [...(element.labels || [])].map(item => item.textContent).join(' ');
+      const wrappedLabel = element.closest('label')?.textContent || '';
       const name = [
         element.getAttribute('aria-label'),
+        element.getAttribute('aria-labelledby') && document.getElementById(element.getAttribute('aria-labelledby'))?.textContent,
         element.getAttribute('title'),
+        associatedLabels,
+        wrappedLabel,
+        element.getAttribute('placeholder'),
         element.textContent,
         element.value,
         element.querySelector?.('img')?.getAttribute('alt')
