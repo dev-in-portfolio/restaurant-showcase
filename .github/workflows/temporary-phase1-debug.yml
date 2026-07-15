@@ -36,7 +36,7 @@ jobs:
           ref: main
           path: thunderdome
 
-      - name: Build final copies and capture validator output
+      - name: Build final copies and capture post-fix validator output
         shell: bash
         run: |
           set -euo pipefail
@@ -46,12 +46,18 @@ jobs:
 
           python3 - <<'PY'
           from pathlib import Path
+
           root = Path('showcase/restaurants/barts-mart')
           old = "if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');"
           new = "if (typeof event !== 'undefined' && event && event.target && event.target.classList) event.target.classList.add('active');"
           for file in root.glob('*.html'):
               text = file.read_text(encoding='utf-8')
               file.write_text(text.replace(old, new), encoding='utf-8')
+
+          for file in [Path('showcase/scripts/validate-showcase.js'), Path('showcase/scripts/import-approved-restaurant.js')]:
+              text = file.read_text(encoding='utf-8')
+              text = text.replace('/placeholder/i', r'/\bplaceholder\b(?!\s*=)/i')
+              file.write_text(text, encoding='utf-8')
           PY
 
           set +e
