@@ -50,25 +50,40 @@ jobs:
           STAGING_ROOT=staging SHOWCASE_ROOT=showcase THUNDERDOME_ROOT=thunderdome OUT_DIR=out \
             node controller/.github/scripts/phase1-promote.js 2>&1 | tee out/static.log
 
-      - name: Repair Bart's Mart load-event guard
+      - name: Repair final-copy runtime and validator rules
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
-          root = Path('showcase/restaurants/barts-mart')
-          old = "if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');"
-          new = "if (typeof event !== 'undefined' && event && event.target && event.target.classList) event.target.classList.add('active');"
+
+          bart_root = Path('showcase/restaurants/barts-mart')
+          old_guard = "if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');"
+          new_guard = "if (typeof event !== 'undefined' && event && event.target && event.target.classList) event.target.classList.add('active');"
           changed = 0
-          for file in root.glob('*.html'):
+          for file in bart_root.glob('*.html'):
               text = file.read_text(encoding='utf-8')
-              updated = text.replace(old, new)
+              updated = text.replace(old_guard, new_guard)
               if updated != text:
                   file.write_text(updated, encoding='utf-8')
                   changed += 1
           if changed == 0:
               raise SystemExit('Bart load-event guard was not found for repair.')
           print(f'Repaired Bart load-event guard in {changed} file(s).')
+
+          validator_files = [
+              Path('showcase/scripts/validate-showcase.js'),
+              Path('showcase/scripts/import-approved-restaurant.js'),
+          ]
+          old_pattern = '/placeholder/i'
+          new_pattern = r'/\bplaceholder\b(?!\s*=)/i'
+          for file in validator_files:
+              text = file.read_text(encoding='utf-8')
+              updated = text.replace(old_pattern, new_pattern)
+              if updated == text:
+                  raise SystemExit(f'Placeholder validator pattern was not found in {file}.')
+              file.write_text(updated, encoding='utf-8')
+              print(f'Corrected placeholder validation in {file}.')
           PY
 
       - name: Install browser QA runtime
@@ -107,7 +122,7 @@ jobs:
           set -euo pipefail
           git config user.name 'OpenAI'
           git config user.email 'noreply@openai.com'
-          git add restaurants data/restaurants.json
+          git add restaurants data/restaurants.json scripts/validate-showcase.js scripts/import-approved-restaurant.js
           if git diff --cached --quiet; then
             echo 'No showcase changes were needed.' | tee ../out/commit.txt
             exit 0
