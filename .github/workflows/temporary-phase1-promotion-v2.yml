@@ -81,21 +81,23 @@ jobs:
               text = file.read_text(encoding='utf-8')
               text = text.replace(old_pattern, new_pattern)
 
-              base_name = 'restaurantDir' if file.name == 'validate-showcase.js' else 'sourceDir'
+              is_validator = file.name == 'validate-showcase.js'
+              base_name = 'restaurantDir' if is_validator else 'sourceDir'
+              indent = '    ' if is_validator else '  '
               marker = (
-                  "  const content = fs.readFileSync(htmlFile, 'utf8');\n"
-                  f"  const relPath = path.relative({base_name}, htmlFile);\n"
-                  "  for (const pattern of placeholderPatterns) {"
+                  f"{indent}const content = fs.readFileSync(htmlFile, 'utf8');\n"
+                  f"{indent}const relPath = path.relative({base_name}, htmlFile);\n"
+                  f"{indent}for (const pattern of placeholderPatterns) {{"
               )
               replacement = (
-                  "  const content = fs.readFileSync(htmlFile, 'utf8');\n"
-                  f"  const relPath = path.relative({base_name}, htmlFile);\n"
-                  "  const searchableContent = content\n"
-                  "    .replace(/<!--[\\s\\S]*?-->/g, ' ')\n"
-                  "    .replace(/<script[\\s\\S]*?<\\/script>/gi, ' ')\n"
-                  "    .replace(/<style[\\s\\S]*?<\\/style>/gi, ' ')\n"
-                  "    .replace(/<[^>]+>/g, ' ');\n"
-                  "  for (const pattern of placeholderPatterns) {"
+                  f"{indent}const content = fs.readFileSync(htmlFile, 'utf8');\n"
+                  f"{indent}const relPath = path.relative({base_name}, htmlFile);\n"
+                  f"{indent}const searchableContent = content\n"
+                  f"{indent}  .replace(/<!--[\\s\\S]*?-->/g, ' ')\n"
+                  f"{indent}  .replace(/<script[\\s\\S]*?<\\/script>/gi, ' ')\n"
+                  f"{indent}  .replace(/<style[\\s\\S]*?<\\/style>/gi, ' ')\n"
+                  f"{indent}  .replace(/<[^>]+>/g, ' ');\n"
+                  f"{indent}for (const pattern of placeholderPatterns) {{"
               )
               if marker not in text:
                   raise SystemExit(f'Placeholder scan block was not found in {file}.')
