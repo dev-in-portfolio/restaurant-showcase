@@ -1,0 +1,15 @@
+{
+  "name": "restaurant-showcase",
+  "version": "1.0.0",
+  "description": "Polished, presentation-ready restaurant website demonstrations",
+  "type": "commonjs",
+  "scripts": {
+    "promote:showcase": "node scripts/import-approved-restaurant.js",
+    "validate": "node scripts/validate-showcase.js",
+    "validate:all": "node scripts/validate-showcase.js --all",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED"
+}

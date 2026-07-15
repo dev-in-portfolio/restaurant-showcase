@@ -1,0 +1,32 @@
+{
+  "id": "restaurant-slug",
+  "name": "Restaurant Name",
+  "slug": "restaurant-slug",
+  "location": {
+    "city": "",
+    "state": "",
+    "address": ""
+  },
+  "stage": "showcase",
+  "status": "presentation-ready",
+  "sourceRepository": "dev-in-portfolio/restaurant-staging",
+  "sourcePath": "restaurants/restaurant-slug",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/restaurant-slug/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": null,
+  "promotedToShowcaseAt": null,
+  "desktopReviewed": true,
+  "tabletReviewed": true,
+  "mobileReviewed": true,
+  "linksVerified": true,
+  "contentVerified": true,
+  "performanceReviewed": true,
+  "accessibilityReviewed": true,
+  "comparisonButtonAdded": true,
+  "comparisonButtonNotApplicable": false,
+  "productionBuildPassed": true,
+  "approvedForPresentation": true,
+  "notes": []
+}
