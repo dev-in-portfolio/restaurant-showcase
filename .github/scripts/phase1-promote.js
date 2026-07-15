@@ -25,6 +25,25 @@ const slugs = [
   'gus-restaurant'
 ];
 
+const canonicalNames = {
+  'bahn-thai': 'Bahn Thai',
+  'bao-and-broth': 'Bao & Broth',
+  'barts-mart': "Bart's Mart",
+  'beef-n-bottle': "Beef 'N Bottle",
+  'boudreauxs': 'Boudreaux’s Kitchen & Tavern',
+  'brooks-sandwich-house': "Brooks' Sandwich House",
+  'cafe-south': 'Cafe South',
+  'carolina-scoops': 'Carolina Scoops',
+  'caswell-station': 'Caswell Station',
+  'cornerstone-pub-grill': 'Cornerstone Pub & Grill',
+  'curry-gate': 'Curry Gate',
+  dish: 'Dish',
+  'elk-monroe': 'E.L.K. Tavern',
+  'enderly-coffee-co': 'Enderly Coffee Co.',
+  'euro-grill-and-cafe': 'Euro Grill & Cafe',
+  'gus-restaurant': "Gus' Family Restaurant"
+};
+
 const placeholderPatterns = [
   /lorem\s+ipsum/i,
   /\btodo\b/i,
@@ -81,6 +100,55 @@ function localRefExists(baseFile, ref, siteRoot) {
     ? path.join(siteRoot, decoded.replace(/^\/+/, ''))
     : path.resolve(path.dirname(baseFile), decoded);
   return fs.existsSync(resolved);
+}
+
+function addToggleLabel(html) {
+  return html.replace(/<button([^>]*class=["'][^"']*(?:nav-toggle|toggle-btn|toggle)[^"']*["'][^>]*)>/gi, (match, attributes) => {
+    if (/\baria-label\s*=/i.test(attributes)) return match;
+    return `<button${attributes} aria-label="Toggle navigation">`;
+  });
+}
+
+function patchFinalHtml(slug, destinationDir) {
+  for (const htmlFile of walk(destinationDir).filter(file => file.toLowerCase().endsWith('.html'))) {
+    const relative = path.relative(destinationDir, htmlFile).split(path.sep).join('/');
+    let html = fs.readFileSync(htmlFile, 'utf8');
+
+    html = html.replace(
+      /event\.target\.classList\.add\(['"]active['"]\);/g,
+      "if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');"
+    );
+    html = addToggleLabel(html);
+
+    if (slug === 'cafe-south' && relative === 'menu.html') {
+      html = html.replace(/\bfilterMenu\(\);/g, 'window.filterMenu();');
+      html = html.replace(
+        /search\.addEventListener\(['"]input['"],\s*filterMenu\);/g,
+        "search.addEventListener('input', function(){ window.filterMenu(); });"
+      );
+    }
+
+    if (slug === 'carolina-scoops' && relative === 'flight.html' && !html.includes('phase1-mobile-flight-fix')) {
+      const responsiveFix = `\n    /* phase1-mobile-flight-fix */\n    @media (max-width: 600px) {\n      .flight-tray { padding: 2rem 1rem; }\n      .tray-bowls-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n      .tray-bowl { width: 72px; height: 72px; }\n      .catering-grid { grid-template-columns: minmax(0, 1fr) !important; }\n    }\n`;
+      html = html.replace('</style>', `${responsiveFix}</style>`);
+    }
+
+    if (slug === 'caswell-station' && relative === 'events.html') {
+      html = html.replace(
+        /<h2([^>]*)>Weekly Events<\/h2>/i,
+        '<h1$1>Weekly Events</h1>'
+      );
+    }
+
+    if (slug === 'curry-gate' && relative === 'spice.html') {
+      html = html.replace(
+        /<h2([^>]*)>Our Spice Scale<\/h2>/i,
+        '<h1$1>Our Spice Scale</h1>'
+      );
+    }
+
+    fs.writeFileSync(htmlFile, html);
+  }
 }
 
 function generateDirectoryPage(entries) {
@@ -165,6 +233,7 @@ for (const slug of slugs) {
     recursive: true,
     filter: source => !source.split(path.sep).some(part => ['.git', '.github', 'node_modules', '.DS_Store', 'Thumbs.db'].includes(part))
   });
+  patchFinalHtml(slug, destDir);
 
   const comparisonButtonAdded = sourceMeta.comparisonButtonAdded === true;
   const comparisonButtonNotApplicable = comparisonButtonAdded
@@ -177,7 +246,7 @@ for (const slug of slugs) {
   const showcaseMeta = {
     ...sourceMeta,
     id: sourceMeta.id || slug,
-    name: sourceMeta.name || slug,
+    name: canonicalNames[slug],
     slug,
     stage: 'showcase',
     status: 'presentation-ready',
@@ -201,7 +270,8 @@ for (const slug of slugs) {
     notes: [
       ...(Array.isArray(sourceMeta.notes) ? sourceMeta.notes : []),
       `Static and responsive browser QA completed ${promotedAt}.`,
-      'Approved for final showcase from the 16-build pitch-readiness audit.'
+      'Approved for final showcase from the 16-build pitch-readiness audit.',
+      'Final-copy route, interaction, responsive, and accessibility repairs applied where required; staging source left unchanged.'
     ]
   };
   fs.writeFileSync(path.join(destDir, 'restaurant.json'), JSON.stringify(showcaseMeta, null, 2) + '\n');
@@ -240,7 +310,7 @@ const sharedScriptSource = path.join(thunderdomeRoot, 'site-core.js');
 if (!fs.existsSync(sharedScriptSource)) throw new Error('Thunderdome site-core.js was not found.');
 fs.copyFileSync(sharedScriptSource, path.join(showcaseRoot, 'restaurants', 'site-core.js'));
 
-const duplicateSlugs = index.filter((item, i, all) => all.findIndex(other => other.slug === item.slug) !== i);
+const duplicateSlugs = index.filter((item, indexPosition, all) => all.findIndex(other => other.slug === item.slug) !== indexPosition);
 if (duplicateSlugs.length) throw new Error(`Duplicate showcase slugs: ${[...new Set(duplicateSlugs.map(item => item.slug))].join(', ')}`);
 index.sort((a, b) => sortName(a.name).localeCompare(sortName(b.name), 'en', { sensitivity: 'base' }) || String(a.slug).localeCompare(String(b.slug)));
 fs.writeFileSync(indexPath, JSON.stringify(index, null, 2) + '\n');
@@ -261,6 +331,7 @@ for (const slug of slugs) {
 report.afterCount = index.length;
 report.directoryRoute = 'restaurants/index.html';
 report.sharedScriptRestored = true;
+report.finalCopyRepairsApplied = true;
 fs.writeFileSync(path.join(outDir, 'static-report.json'), JSON.stringify(report, null, 2) + '\n');
 fs.writeFileSync(path.join(outDir, 'promotion-plan.json'), JSON.stringify(plan, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));
