@@ -1,0 +1,60 @@
+name: Temporary Phase 5 validator debug
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/phase5-validator-debug.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controller branch
+        uses: actions/checkout@v4
+        with:
+          path: controller
+
+      - name: Check out latest showcase main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-showcase
+          ref: main
+          path: showcase
+
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-staging
+          ref: main
+          path: staging
+
+      - name: Reproduce Phase 5 working tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          awk '
+            /python3 - <<'"'"'PY'"'"'/ {capture=1; next}
+            capture && /^          PY$/ {exit}
+            capture {sub(/^          /, ""); print}
+          ' controller/.github/workflows/phase5-promote-41.yml > /tmp/phase5-promote.py
+          python3 /tmp/phase5-promote.py
+
+      - name: Capture showcase validator output
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -o pipefail
+          npm test --if-present 2>&1 | tee ../out/tests.log
+          npm run validate:all 2>&1 | tee ../out/validation.log
+
+      - name: Upload debug logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase5-validator-debug
+          path: out
+          if-no-files-found: error
