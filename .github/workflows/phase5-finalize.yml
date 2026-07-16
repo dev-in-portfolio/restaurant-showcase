@@ -1,0 +1,167 @@
+name: Temporary Phase 5 finalizer
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/phase5-finalize.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controller branch
+        uses: actions/checkout@v4
+        with:
+          path: controller
+
+      - name: Check out latest showcase main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-showcase
+          ref: main
+          fetch-depth: 0
+          path: showcase
+
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-staging
+          ref: main
+          fetch-depth: 0
+          path: staging
+
+      - name: Reproduce the 41-build promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          awk '
+            /python3 - <<'"'"'PY'"'"'/ {capture=1; next}
+            capture && /^          PY$/ {exit}
+            capture {sub(/^          /, ""); print}
+          ' controller/.github/workflows/phase5-promote-41.yml > /tmp/phase5-promote.py
+          python3 /tmp/phase5-promote.py
+
+      - name: Apply three targeted final-copy browser fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          root = Path('showcase/restaurants')
+
+          amina = root / 'amina' / 'visit.html'
+          text = amina.read_text(encoding='utf-8')
+          replacement = '''<div class="map-embed" role="group" aria-label="Amina location preview">
+            <div style="min-height:260px;display:grid;place-items:center;text-align:center;padding:2rem;border:1px solid rgba(127,127,127,.3);border-radius:12px;">
+              <div>
+                <h2 style="margin:0 0 .75rem;">Location Preview</h2>
+                <p style="margin:0 0 1rem;">225 East 6th Street, Suite C<br>Charlotte, NC 28202</p>
+                <a href="https://maps.google.com/?q=225+East+6th+Street+Suite+C+Charlotte+NC+28202" target="_blank" rel="noopener" class="btn btn-outline">Open in Google Maps</a>
+              </div>
+            </div>
+          </div>'''
+          updated, count = re.subn(r'<div class="map-embed">\s*<iframe[\s\S]*?</iframe>\s*</div>', replacement, text, count=1)
+          if count != 1:
+              raise SystemExit(f'Amina map replacement count was {count}')
+          amina.write_text(updated, encoding='utf-8')
+
+          styles = {
+              root / 'curry-gate' / 'spice.html': '''
+<style data-phase5-mobile-fix>
+@media (max-width: 600px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  .interactive-panel { padding: 28px 16px !important; }
+  .catering-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; }
+  .catering-grid > * { min-width: 0; max-width: 100%; }
+  .spice-mat { padding: 2rem 1rem; }
+  select { min-width: 0; max-width: 100%; }
+}
+</style>
+''',
+              root / 'gus-restaurant' / 'greek.html': '''
+<style data-phase5-mobile-fix>
+@media (max-width: 600px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  main.container { width: 100%; max-width: 100%; min-width: 0; padding-left: 1rem; padding-right: 1rem; }
+  .interactive-panel { padding: 28px 16px !important; max-width: 100%; min-width: 0; }
+  .greek-grid { grid-template-columns: minmax(0, 1fr); min-width: 0; max-width: 100%; gap: 20px; }
+  .greek-grid > * { min-width: 0; max-width: 100%; }
+  .greek-mat { padding: 2rem 1rem; }
+  select { min-width: 0; max-width: 100%; }
+}
+</style>
+''',
+          }
+          for path, style in styles.items():
+              text = path.read_text(encoding='utf-8')
+              if 'data-phase5-mobile-fix' not in text:
+                  text = text.replace('</head>', style + '</head>', 1)
+              path.write_text(text, encoding='utf-8')
+
+          print('Applied final-copy fixes to Amina, Curry Gate, and Gus.')
+          PY
+
+      - name: Run all showcase tests and static validation
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          npm test --if-present
+          npm run validate:all
+
+      - name: Install Chromium QA runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/phase5-qa
+          cd /tmp/phase5-qa
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.55.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+
+      - name: Run complete 57-build browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          awk '
+            /NODE_PATH=\/tmp\/phase5-qa\/node_modules node - <<'"'"'JS'"'"'/ {capture=1; next}
+            capture && /^          JS$/ {exit}
+            capture {sub(/^          /, ""); print}
+          ' controller/.github/workflows/phase5-promote-41.yml > /tmp/phase5-browser.js
+          python3 -m http.server 4173 --directory showcase >/tmp/phase5-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 2
+          NODE_PATH=/tmp/phase5-qa/node_modules node /tmp/phase5-browser.js
+
+      - name: Commit and push the validated final showcase
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          npm test --if-present
+          npm run validate:all
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add data/restaurants.json restaurants
+          git commit -m 'Promote 41 validated restaurant builds to showcase'
+          git fetch origin main
+          git rebase origin/main
+          npm test --if-present
+          npm run validate:all
+          git push origin HEAD:main
+          git rev-parse HEAD | tee ../out/phase5-final-sha.txt
+
+      - name: Upload final Phase 5 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase5-final-report
+          path: out
+          if-no-files-found: warn
