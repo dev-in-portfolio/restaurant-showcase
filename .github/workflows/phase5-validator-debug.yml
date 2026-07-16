@@ -58,3 +58,5 @@ jobs:
           name: phase5-validator-debug
           path: out
           if-no-files-found: error
+
+# Rerun after staging map-label cleanup c8863e2af30174129d94665fb7a979807e9032b8.
