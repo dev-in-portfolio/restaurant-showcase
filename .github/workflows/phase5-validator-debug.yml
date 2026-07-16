@@ -59,4 +59,4 @@ jobs:
           path: out
           if-no-files-found: error
 
-# Rerun after staging map-label cleanup c8863e2af30174129d94665fb7a979807e9032b8.
+# Trigger registered base finalizer at showcase main commit 420304e74de07585c6541f5916a803f8ccd55033.
