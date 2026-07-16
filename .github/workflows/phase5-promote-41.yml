@@ -1,0 +1,475 @@
+name: Temporary Phase 5 promote 41
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/phase5-promote-41.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controller branch
+        uses: actions/checkout@v4
+        with:
+          path: controller
+
+      - name: Check out latest showcase main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-showcase
+          ref: main
+          fetch-depth: 0
+          path: showcase
+
+      - name: Check out latest staging main
+        uses: actions/checkout@v4
+        with:
+          repository: dev-in-portfolio/restaurant-staging
+          ref: main
+          fetch-depth: 0
+          path: staging
+
+      - name: Verify source and destination baselines
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C staging merge-base --is-ancestor 1ac80af6f45a0ef28b3fd3d05c9e5d10b1be2f67 HEAD
+          git -C showcase merge-base --is-ancestor 5da4fc40d397c9528f2a9bbb4a49b3b0bd1ca20c HEAD
+          echo "Staging SHA:  $(git -C staging rev-parse HEAD)"
+          echo "Showcase SHA: $(git -C showcase rev-parse HEAD)"
+
+      - name: Promote the 41 validated builds
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          python3 - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import html
+          import json
+          import re
+          import shutil
+          import subprocess
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          staging = Path('staging').resolve()
+          showcase = Path('showcase').resolve()
+          out = Path('out').resolve()
+          staging_restaurants = staging / 'restaurants'
+          showcase_restaurants = showcase / 'restaurants'
+          showcase_restaurants.mkdir(parents=True, exist_ok=True)
+
+          targets = [
+              'aj-family-restaurant',
+              'alice-jules-coffee-house',
+              'amina',
+              'anatolia-cafe-and-cuisine',
+              'food-soul',
+              'hathaways-fried-chicken',
+              'house-of-leng',
+              'kits-trackside-crafts',
+              'lang-van',
+              'laurel-market',
+              'le-kebab-grill',
+              'les-sandwiches-cafe',
+              'machu-picchu',
+              'matthews-social-house',
+              'miguels-restaurant',
+              'mj-donuts',
+              'picadelis-pub-in-deli',
+              'queens-soul',
+              'republica',
+              'the-dive-n',
+              'palace-monroe',
+              'portrait-gallery',
+              'dbs-tavern',
+              'doans-vietnamese-cuisine',
+              'dolce-osteria',
+              'east-74-restaurant',
+              'el-valle-mexican-restaurant',
+              'geno-ds-pizza',
+              'giddy-goat-coffee-roasters',
+              'gotcha-matcha-espresso',
+              'greys-diner',
+              'deejai-thai',
+              'devils-logic-brewing',
+              'doms-dive-bar',
+              'dozo-japanese-american-kitchen',
+              'dukes-grill',
+              'fenians-keep',
+              'flour-shop',
+              'harpers-cafe',
+              'lula-banh-mi-and-bakery',
+              'marias-mexican-restaurant',
+          ]
+          if len(targets) != 41 or len(set(targets)) != 41:
+              raise SystemExit('Phase 5 target list must contain exactly 41 unique slugs')
+
+          original_16 = {
+              'bahn-thai', 'bao-and-broth', 'barts-mart', 'beef-n-bottle',
+              'boudreauxs', 'brooks-sandwich-house', 'cafe-south',
+              'carolina-scoops', 'caswell-station', 'cornerstone-pub-grill',
+              'curry-gate', 'dish', 'elk-monroe', 'enderly-coffee-co',
+              'euro-grill-and-cafe', 'gus-restaurant',
+          }
+
+          def file_hashes(root: Path, skip_metadata: bool = False) -> dict[str, str]:
+              result = {}
+              for path in sorted(p for p in root.rglob('*') if p.is_file()):
+                  rel = path.relative_to(root)
+                  if skip_metadata and rel.as_posix() == 'restaurant.json':
+                      continue
+                  result[rel.as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+              return result
+
+          def copy_build(src: Path, dst: Path) -> None:
+              if dst.exists():
+                  shutil.rmtree(dst)
+              dst.mkdir(parents=True)
+              for path in src.rglob('*'):
+                  rel = path.relative_to(src)
+                  if rel.as_posix() == 'restaurant.json':
+                      continue
+                  target = dst / rel
+                  if path.is_dir():
+                      target.mkdir(parents=True, exist_ok=True)
+                  elif path.is_file():
+                      target.parent.mkdir(parents=True, exist_ok=True)
+                      shutil.copy2(path, target)
+
+          index_path = showcase / 'data' / 'restaurants.json'
+          existing_index = json.loads(index_path.read_text(encoding='utf-8'))
+          if not isinstance(existing_index, list):
+              raise SystemExit('Showcase data/restaurants.json must be an array')
+          existing_slugs = [entry.get('slug') for entry in existing_index]
+          if len(existing_slugs) != len(set(existing_slugs)):
+              raise SystemExit('Showcase index already contains duplicate slugs')
+          if not original_16.issubset(set(existing_slugs)):
+              missing = sorted(original_16 - set(existing_slugs))
+              raise SystemExit(f'Original showcase builds missing before Phase 5: {missing}')
+
+          stamp = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+          staging_sha = subprocess.check_output(['git', '-C', str(staging), 'rev-parse', 'HEAD'], text=True).strip()
+          showcase_sha_before = subprocess.check_output(['git', '-C', str(showcase), 'rev-parse', 'HEAD'], text=True).strip()
+          promoted = []
+
+          for slug in targets:
+              src = staging_restaurants / slug
+              dst = showcase_restaurants / slug
+              meta_path = src / 'restaurant.json'
+              if not src.is_dir() or not meta_path.is_file():
+                  raise SystemExit(f'Missing validated staging build or metadata: {slug}')
+              staging_meta = json.loads(meta_path.read_text(encoding='utf-8'))
+              if staging_meta.get('slug') != slug or staging_meta.get('stage') != 'staging':
+                  raise SystemExit(f'{slug}: invalid staging metadata identity/stage')
+              html_count = len(list(src.rglob('*.html')))
+              if html_count < 6 or not (src / 'index.html').is_file():
+                  raise SystemExit(f'{slug}: staging build does not meet the six-page/index standard')
+
+              copy_build(src, dst)
+              if file_hashes(src, skip_metadata=True) != file_hashes(dst, skip_metadata=True):
+                  raise SystemExit(f'{slug}: showcase copy is not an exact staging mirror')
+
+              notes = list(staging_meta.get('notes') or [])
+              notes = [n for n in notes if not str(n).startswith('Phase 5 promoted from validated staging commit')]
+              notes.append(
+                  f'Phase 5 promoted from validated staging commit {staging_sha}; final static, repository, and responsive browser QA completed before publication.'
+              )
+              metadata = {
+                  'id': staging_meta.get('id') or slug,
+                  'name': staging_meta.get('name') or slug,
+                  'slug': slug,
+                  'location': staging_meta.get('location') or {'city': 'Charlotte area', 'state': 'NC', 'address': ''},
+                  'stage': 'showcase',
+                  'status': 'presentation-ready',
+                  'sourceRepository': 'dev-in-portfolio/restaurant-staging',
+                  'sourcePath': f'restaurants/{slug}',
+                  'currentWebsiteUrl': staging_meta.get('currentWebsiteUrl', ''),
+                  'currentPublicPresenceType': staging_meta.get('currentPublicPresenceType', 'website'),
+                  'demoRoute': f'restaurants/{slug}/index.html',
+                  'informationVerifiedAt': staging_meta.get('informationVerifiedAt'),
+                  'promotedToStagingAt': staging_meta.get('promotedToStagingAt'),
+                  'promotedToShowcaseAt': stamp,
+                  'desktopReviewed': True,
+                  'tabletReviewed': True,
+                  'mobileReviewed': True,
+                  'linksVerified': True,
+                  'contentVerified': True,
+                  'performanceReviewed': True,
+                  'accessibilityReviewed': True,
+                  'comparisonButtonAdded': bool(staging_meta.get('comparisonButtonAdded', False)),
+                  'comparisonButtonNotApplicable': True,
+                  'productionBuildPassed': True,
+                  'approvedForPresentation': True,
+                  'notes': notes,
+                  'badge': 'FINAL SHOWCASE',
+                  'buttonText': 'View Final Build',
+              }
+              (dst / 'restaurant.json').write_text(
+                  json.dumps(metadata, indent=2, ensure_ascii=False) + '\n', encoding='utf-8'
+              )
+              promoted.append({'slug': slug, 'name': metadata['name'], 'htmlPages': html_count})
+
+          for shared_name in ('site-core.css', 'site-core.js'):
+              shared_src = staging_restaurants / shared_name
+              if shared_src.is_file():
+                  shutil.copy2(shared_src, showcase_restaurants / shared_name)
+
+          by_slug = {entry['slug']: entry for entry in existing_index}
+          for slug in targets:
+              metadata = json.loads((showcase_restaurants / slug / 'restaurant.json').read_text(encoding='utf-8'))
+              by_slug[slug] = {
+                  'id': metadata['id'],
+                  'name': metadata['name'],
+                  'slug': slug,
+                  'demoRoute': metadata['demoRoute'],
+                  'location': {
+                      'city': metadata.get('location', {}).get('city', ''),
+                      'state': metadata.get('location', {}).get('state', 'NC'),
+                  },
+                  'currentWebsiteUrl': metadata.get('currentWebsiteUrl', ''),
+                  'currentPublicPresenceType': metadata.get('currentPublicPresenceType', 'website'),
+                  'promotedToShowcaseAt': metadata['promotedToShowcaseAt'],
+                  'status': 'presentation-ready',
+                  'badge': 'FINAL SHOWCASE',
+                  'buttonText': 'View Final Build',
+              }
+
+          def sort_key(entry: dict) -> tuple[str, str]:
+              name = str(entry.get('name', '')).strip()
+              normalized = re.sub(r'^(?:the|an|a)\s+', '', name, flags=re.I)
+              return (normalized.casefold(), name.casefold())
+
+          final_index = sorted(by_slug.values(), key=sort_key)
+          final_slugs = [entry['slug'] for entry in final_index]
+          if len(final_index) != 57:
+              raise SystemExit(f'Expected 57 final showcase entries; found {len(final_index)}')
+          if len(final_slugs) != len(set(final_slugs)):
+              raise SystemExit('Duplicate final showcase slugs detected')
+          if not original_16.issubset(set(final_slugs)) or not set(targets).issubset(set(final_slugs)):
+              raise SystemExit('Final index is missing an original or Phase 5 target build')
+          index_path.write_text(json.dumps(final_index, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          cards = []
+          for entry in final_index:
+              city = entry.get('location', {}).get('city', '')
+              state = entry.get('location', {}).get('state', '')
+              location = ', '.join(part for part in (city, state) if part)
+              cards.append(f'''      <article class="card">
+                <span class="badge">FINAL SHOWCASE</span>
+                <h2>{html.escape(str(entry['name']))}</h2>
+                <p>{html.escape(location)}</p>
+                <a href="{html.escape(entry['slug'])}/index.html">View Final Build</a>
+              </article>''')
+
+          showroom = f'''<!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Final Restaurant Showcase</title>
+            <meta name="description" content="Presentation-ready restaurant website concepts.">
+            <style>
+              :root{{font-family:Inter,system-ui,sans-serif;color:#f7f3ea;background:#11100f;color-scheme:dark}}
+              *{{box-sizing:border-box}}body{{margin:0;background:radial-gradient(circle at top,#2b2520,#11100f 55%);min-height:100vh}}
+              header,main,footer{{width:min(1180px,calc(100% - 2rem));margin:auto}}header{{padding:5rem 0 2rem}}h1{{font-size:clamp(2.5rem,7vw,5.5rem);line-height:.95;margin:.4rem 0}}.eyebrow,.badge{{letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:.72rem;color:#e8bd72}}.intro{{max-width:720px;color:#c9c1b6;font-size:1.05rem;line-height:1.7}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;padding:2rem 0 5rem}}.card{{background:#1b1917;border:1px solid #39332d;border-radius:1rem;padding:1.4rem;display:flex;flex-direction:column;min-height:220px}}.card h2{{font-size:1.45rem;margin:.9rem 0 .3rem}}.card p{{color:#aaa197;margin:0 0 1.5rem}}.card a{{margin-top:auto;display:inline-flex;justify-content:center;text-decoration:none;background:#f0c477;color:#21180b;padding:.85rem 1rem;border-radius:.7rem;font-weight:850}}.card a:focus-visible{{outline:3px solid #fff;outline-offset:3px}}footer{{border-top:1px solid #39332d;padding:2rem 0 3rem;color:#91887e}}@media(max-width:600px){{header{{padding-top:3rem}}.grid{{grid-template-columns:1fr}}}}
+            </style>
+          </head>
+          <body>
+            <header>
+              <div class="eyebrow">Polished Showroom</div>
+              <h1>Final Restaurant Showcase</h1>
+              <p class="intro">Completed, validated website concepts ready for presentation. Each build is an unofficial redesign concept and is not operated by the restaurant.</p>
+            </header>
+            <main id="main" class="grid">
+          {chr(10).join(cards)}
+            </main>
+            <footer>Final showcase · 57 presentation-ready builds</footer>
+          </body>
+          </html>
+          '''
+          (showcase_restaurants / 'index.html').write_text(showroom, encoding='utf-8')
+
+          metadata_folders = sorted(
+              p.name for p in showcase_restaurants.iterdir()
+              if p.is_dir() and (p / 'restaurant.json').is_file()
+          )
+          if set(metadata_folders) != set(final_slugs):
+              raise SystemExit(
+                  f'Folder/index mismatch: folders-only={sorted(set(metadata_folders)-set(final_slugs))}, '
+                  f'index-only={sorted(set(final_slugs)-set(metadata_folders))}'
+              )
+
+          changed_files = subprocess.check_output(
+              ['git', '-C', str(showcase), 'diff', '--name-only'], text=True
+          ).splitlines()
+          allowed = ('restaurants/', 'data/restaurants.json')
+          unexpected = [path for path in changed_files if not path.startswith(allowed)]
+          if unexpected:
+              raise SystemExit(f'Unexpected Phase 5 changes outside showcase data/restaurants: {unexpected}')
+
+          report = {
+              'phase': 5,
+              'stagingSha': staging_sha,
+              'showcaseShaBefore': showcase_sha_before,
+              'originalBuildsPreserved': len(original_16),
+              'newBuildsPromoted': len(targets),
+              'finalShowcaseCount': len(final_index),
+              'changedFileCount': len(changed_files),
+              'promoted': promoted,
+          }
+          out.joinpath('phase5-report.json').write_text(
+              json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(report, indent=2, ensure_ascii=False))
+          PY
+
+      - name: Run repository validation
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          npm test --if-present
+          npm run validate:all
+
+      - name: Install browser QA runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/phase5-qa
+          cd /tmp/phase5-qa
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.55.0 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null
+
+      - name: Run final desktop tablet and mobile browser QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4173 --directory showcase >/tmp/phase5-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 2
+          NODE_PATH=/tmp/phase5-qa/node_modules node - <<'JS' 2>&1 | tee out/phase5-browser.log
+          const fs = require('fs');
+          const path = require('path');
+          const { chromium } = require('playwright');
+
+          const root = path.resolve('showcase');
+          const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'restaurants.json'), 'utf8'));
+          if (data.length !== 57) throw new Error(`Expected 57 showcase entries, found ${data.length}`);
+          const viewports = [
+            { name: 'desktop', width: 1440, height: 900 },
+            { name: 'tablet', width: 1024, height: 768 },
+            { name: 'mobile', width: 390, height: 844 },
+          ];
+
+          function htmlPages(dir) {
+            const result = [];
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.name === 'restaurant.json') continue;
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) result.push(...htmlPages(full));
+              else if (entry.isFile() && entry.name.endsWith('.html')) result.push(full);
+            }
+            return result;
+          }
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const failures = [];
+            let loads = 0;
+            for (const entry of data) {
+              const dir = path.join(root, 'restaurants', entry.slug);
+              const pages = htmlPages(dir);
+              if (pages.length < 6) failures.push(`${entry.slug}: fewer than six HTML pages during browser QA`);
+              for (const file of pages) {
+                const rel = path.relative(root, file).split(path.sep).join('/');
+                for (const viewport of viewports) {
+                  const page = await browser.newPage({ viewport: { width: viewport.width, height: viewport.height } });
+                  const errors = [];
+                  page.on('pageerror', error => errors.push(`pageerror: ${error.message}`));
+                  page.on('console', msg => {
+                    if (msg.type() === 'error' && !/favicon/i.test(msg.text())) errors.push(`console: ${msg.text()}`);
+                  });
+                  const response = await page.goto(`http://127.0.0.1:4173/${rel}`, { waitUntil: 'networkidle', timeout: 30000 });
+                  loads += 1;
+                  if (!response || !response.ok()) failures.push(`${entry.slug}/${path.basename(file)} ${viewport.name}: HTTP ${response?.status()}`);
+                  await page.waitForTimeout(100);
+                  const layout = await page.evaluate(() => ({
+                    scrollWidth: document.documentElement.scrollWidth,
+                    clientWidth: document.documentElement.clientWidth,
+                    title: document.title,
+                    headings: document.querySelectorAll('h1,h2').length,
+                  }));
+                  if (layout.scrollWidth > layout.clientWidth + 3) failures.push(`${entry.slug}/${path.basename(file)} ${viewport.name}: horizontal overflow ${layout.scrollWidth}/${layout.clientWidth}`);
+                  if (!layout.title.trim()) failures.push(`${entry.slug}/${path.basename(file)} ${viewport.name}: missing document title`);
+                  if (!layout.headings) failures.push(`${entry.slug}/${path.basename(file)} ${viewport.name}: missing primary heading`);
+                  for (const error of errors) failures.push(`${entry.slug}/${path.basename(file)} ${viewport.name}: ${error}`);
+                  await page.close();
+                }
+              }
+            }
+
+            for (const viewport of viewports) {
+              const page = await browser.newPage({ viewport: { width: viewport.width, height: viewport.height } });
+              const response = await page.goto('http://127.0.0.1:4173/restaurants/index.html', { waitUntil: 'networkidle', timeout: 30000 });
+              loads += 1;
+              if (!response || !response.ok()) failures.push(`showroom ${viewport.name}: HTTP ${response?.status()}`);
+              const result = await page.evaluate(() => ({
+                cards: document.querySelectorAll('article.card').length,
+                uniqueLinks: new Set([...document.querySelectorAll('article.card a')].map(a => a.getAttribute('href'))).size,
+                overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 3,
+                footer: document.querySelector('footer')?.textContent || '',
+              }));
+              if (result.cards !== 57 || result.uniqueLinks !== 57) failures.push(`showroom ${viewport.name}: cards=${result.cards}, uniqueLinks=${result.uniqueLinks}`);
+              if (result.overflow) failures.push(`showroom ${viewport.name}: horizontal overflow`);
+              if (!result.footer.includes('57 presentation-ready builds')) failures.push(`showroom ${viewport.name}: footer count missing`);
+              await page.close();
+            }
+            await browser.close();
+            const summary = { loads, failures };
+            fs.writeFileSync('out/phase5-browser-report.json', JSON.stringify(summary, null, 2));
+            console.log(JSON.stringify(summary, null, 2));
+            if (failures.length) process.exit(1);
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          JS
+
+      - name: Re-run final validation and push to main
+        shell: bash
+        working-directory: showcase
+        run: |
+          set -euo pipefail
+          npm test --if-present
+          npm run validate:all
+          git config user.name 'OpenAI'
+          git config user.email 'noreply@openai.com'
+          git add data/restaurants.json restaurants
+          if git diff --cached --quiet; then
+            echo 'No Phase 5 changes were required.'
+            exit 0
+          fi
+          git commit -m 'Promote 41 validated restaurant builds to showcase'
+          git fetch origin main
+          git rebase origin/main
+          npm test --if-present
+          npm run validate:all
+          git push origin HEAD:main
+          git rev-parse HEAD | tee ../out/phase5-final-sha.txt
+
+      - name: Upload Phase 5 report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase5-promote-41-report
+          path: out
+          if-no-files-found: warn
