@@ -3,364 +3,919 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Final Restaurant Showcase</title>
-  <meta name="description" content="Presentation-ready restaurant website concepts.">
+  <title>Final Restaurant Showcase | Showcase Portal</title>
+  <meta name="description" content="Presentation-ready restaurant website showcase portal. Search, filter, and compare 57 premium redesigned websites.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{font-family:Inter,system-ui,sans-serif;color:#f7f3ea;background:#11100f;color-scheme:dark}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#2b2520,#11100f 55%);min-height:100vh}
-    header,main,footer{width:min(1180px,calc(100% - 2rem));margin:auto}header{padding:5rem 0 2rem}h1{font-size:clamp(2.5rem,7vw,5.5rem);line-height:.95;margin:.4rem 0}.eyebrow,.badge{letter-spacing:.14em;text-transform:uppercase;font-weight:800;font-size:.72rem;color:#e8bd72}.intro{max-width:720px;color:#c9c1b6;font-size:1.05rem;line-height:1.7}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;padding:2rem 0 5rem}.card{background:#1b1917;border:1px solid #39332d;border-radius:1rem;padding:1.4rem;display:flex;flex-direction:column;min-height:220px}.card h2{font-size:1.45rem;margin:.9rem 0 .3rem}.card p{color:#aaa197;margin:0 0 1.5rem}.card a{margin-top:auto;display:inline-flex;justify-content:center;text-decoration:none;background:#f0c477;color:#21180b;padding:.85rem 1rem;border-radius:.7rem;font-weight:850}.card a:focus-visible{outline:3px solid #fff;outline-offset:3px}footer{border-top:1px solid #39332d;padding:2rem 0 3rem;color:#91887e}@media(max-width:600px){header{padding-top:3rem}.grid{grid-template-columns:1fr}}
+    :root {
+      --bg: #0d0c0b;
+      --panel-bg: rgba(22, 21, 20, 0.7);
+      --panel-border: rgba(232, 189, 114, 0.12);
+      --panel-border-hover: rgba(232, 189, 114, 0.4);
+      --text: #f7f3ea;
+      --text-muted: #aba296;
+      --accent: #e8bd72;
+      --accent-hover: #f3d39e;
+      --accent-glow: rgba(232, 189, 114, 0.25);
+      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 1rem;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      background-image: radial-gradient(circle at top, #241f1a 0%, #0d0c0b 60%);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 8rem; /* Avoid comparison drawer overlap */
+    }
+
+    /* Container */
+    .container {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    /* Header Section */
+    header {
+      padding: 5rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+      text-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 30%, #ffdca3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* Metrics Bar */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .metric-card {
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition);
+    }
+
+    .metric-card:hover {
+      border-color: var(--panel-border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(232, 189, 114, 0.05);
+    }
+
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+      text-shadow: 0 0 10px rgba(232, 189, 114, 0.15);
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Controls Panel */
+    .controls {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--panel-border);
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: var(--text-muted);
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus + .search-icon {
+      fill: var(--accent);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .filter-title {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .filter-tag:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-tag.active {
+      background: var(--accent);
+      color: #11100f;
+      border-color: var(--accent);
+      font-weight: 600;
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: var(--panel-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+      box-shadow: var(--glass-shadow);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--panel-border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.55), 0 0 20px rgba(232, 189, 114, 0.08);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .card-emoji-box {
+      width: 2.8rem;
+      height: 2.8rem;
+      background: rgba(232, 189, 114, 0.08);
+      border: 1px solid rgba(232, 189, 114, 0.15);
+      border-radius: 0.75rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      transition: var(--transition);
+    }
+
+    .card:hover .card-emoji-box {
+      background: var(--accent);
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .compare-checkbox-label {
+      position: relative;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    .compare-checkbox {
+      appearance: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 2px solid var(--panel-border);
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .compare-checkbox:checked {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .compare-checkbox:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #11100f;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .compare-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-left: 0.4rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .compare-checkbox-label:hover .compare-text {
+      color: var(--text);
+    }
+
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: #ffffff;
+      transition: var(--transition);
+    }
+
+    .card:hover h2 {
+      color: var(--accent);
+    }
+
+    .card-location {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .card-action {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      background: rgba(232, 189, 114, 0.08);
+      border: 1px solid rgba(232, 189, 114, 0.15);
+      color: var(--accent);
+      padding: 0.8rem 1rem;
+      border-radius: 0.6rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .card-action:hover {
+      background: var(--accent);
+      color: #11100f;
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+
+    .card-action svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: currentColor;
+      transition: var(--transition);
+    }
+
+    .card-action:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Comparison Drawer */
+    .compare-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 17, 16, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-top: 1px solid var(--accent);
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+      z-index: 99999;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 1.5rem 0 2rem;
+    }
+
+    .compare-drawer.open {
+      transform: translateY(0);
+    }
+
+    .compare-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .compare-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .compare-count-badge {
+      background: var(--accent);
+      color: #11100f;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+    }
+
+    .compare-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .compare-close-btn:hover {
+      color: #ffffff;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .compare-col {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .compare-col-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.75rem;
+    }
+
+    .compare-col-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .compare-remove-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .compare-remove-btn:hover {
+      color: #ff5555;
+    }
+
+    .compare-feature {
+      margin-bottom: 0.85rem;
+      font-size: 0.85rem;
+    }
+
+    .compare-feature-label {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.15rem;
+    }
+
+    .compare-feature-value {
+      color: var(--text);
+    }
+
+    .compare-btn-row {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .compare-col-link {
+      flex: 1;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .compare-col-link-demo {
+      background: var(--accent);
+      color: #11100f;
+    }
+
+    .compare-col-link-demo:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+
+    .compare-col-link-current {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .compare-col-link-current:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--panel-bg);
+      border: 1px dashed var(--panel-border);
+      border-radius: var(--radius);
+      color: var(--text-muted);
+    }
+
+    .no-results h3 {
+      font-family: var(--font-display);
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 3rem 0;
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 5rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding-top: 3.5rem;
+      }
+      .metrics {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 2.5rem;
+      }
+      .search-row {
+        flex-direction: column;
+      }
+      .compare-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-height: 250px;
+        overflow-y: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="eyebrow">Polished Showroom</div>
     <h1>Final Restaurant Showcase</h1>
-    <p class="intro">Completed, validated website concepts ready for presentation. Each build is an unofficial redesign concept and is not operated by the restaurant.</p>
+    <p class="intro">A collection of presentation-ready restaurant website demonstrations. View the highly optimized, 5-page custom redesigns, run audits, or compare layouts.</p>
+    
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-value" id="count-approved">57</div>
+        <div class="metric-label">Approved Builds</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value" id="count-neighborhoods">15</div>
+        <div class="metric-label">Neighborhoods</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">QA Validated</div>
+      </div>
+    </div>
   </header>
-  <main id="main" class="grid">
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>AJ Family Restaurant</h2>
-      <p>Charlotte area, NC</p>
-      <a href="aj-family-restaurant/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Alice Jules Coffee House</h2>
-      <p>Charlotte area, NC</p>
-      <a href="alice-jules-coffee-house/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Amina</h2>
-      <p>Charlotte area, NC</p>
-      <a href="amina/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Anatolia Cafe &amp; Cuisine</h2>
-      <p>Charlotte area, NC</p>
-      <a href="anatolia-cafe-and-cuisine/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Bahn Thai</h2>
-      <p>Ballantyne, NC</p>
-      <a href="bahn-thai/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Bao &amp; Broth</h2>
-      <p>Optimist Hall, NC</p>
-      <a href="bao-and-broth/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Bart&#x27;s Mart</h2>
-      <p>Eastway, NC</p>
-      <a href="barts-mart/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Beef &#x27;N Bottle</h2>
-      <p>Charlotte, NC</p>
-      <a href="beef-n-bottle/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Boudreaux’s Kitchen &amp; Tavern</h2>
-      <p>NoDa, NC</p>
-      <a href="boudreauxs/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Brooks&#x27; Sandwich House</h2>
-      <p>NoDa, NC</p>
-      <a href="brooks-sandwich-house/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Cafe South</h2>
-      <p>South Charlotte, NC</p>
-      <a href="cafe-south/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Carolina Scoops</h2>
-      <p>South Charlotte, NC</p>
-      <a href="carolina-scoops/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Caswell Station</h2>
-      <p>Elizabeth, NC</p>
-      <a href="caswell-station/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Cornerstone Pub &amp; Grill</h2>
-      <p>Matthews, NC</p>
-      <a href="cornerstone-pub-grill/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Curry Gate</h2>
-      <p>Charlotte Area, NC</p>
-      <a href="curry-gate/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>DB&#x27;s Tavern</h2>
-      <p>Ballantyne, NC</p>
-      <a href="dbs-tavern/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Deejai Thai</h2>
-      <p>Myers Park, NC</p>
-      <a href="deejai-thai/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Devil&#x27;s Logic Brewing</h2>
-      <p>Midtown / Elizabeth, NC</p>
-      <a href="devils-logic-brewing/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Dish</h2>
-      <p>Plaza Midwood, NC</p>
-      <a href="dish/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>The Dive N</h2>
-      <p>Charlotte area, NC</p>
-      <a href="the-dive-n/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Doan&#x27;s Vietnamese Cuisine</h2>
-      <p>South Charlotte, NC</p>
-      <a href="doans-vietnamese-cuisine/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Dolce Osteria</h2>
-      <p>Dilworth, NC</p>
-      <a href="dolce-osteria/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Dom&#x27;s Dive Bar</h2>
-      <p>Sedgefield, NC</p>
-      <a href="doms-dive-bar/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Duke&#x27;s Grill</h2>
-      <p>Monroe, NC</p>
-      <a href="dukes-grill/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>DŌZO Japanese-American Kitchen</h2>
-      <p>Dilworth &amp; Wesley Heights, NC</p>
-      <a href="dozo-japanese-american-kitchen/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>E.L.K. Tavern</h2>
-      <p>Monroe, NC</p>
-      <a href="elk-monroe/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>East 74 Restaurant</h2>
-      <p>Matthews, NC</p>
-      <a href="east-74-restaurant/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>El Valle Mexican Restaurant</h2>
-      <p>South Charlotte &amp; Matthews, NC</p>
-      <a href="el-valle-mexican-restaurant/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Enderly Coffee Co.</h2>
-      <p>West Charlotte, NC</p>
-      <a href="enderly-coffee-co/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Euro Grill &amp; Cafe</h2>
-      <p>Plaza Midwood, NC</p>
-      <a href="euro-grill-and-cafe/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Fenian&#x27;s Keep</h2>
-      <p>Charlotte area, NC</p>
-      <a href="fenians-keep/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Flour Shop</h2>
-      <p>Charlotte area, NC</p>
-      <a href="flour-shop/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Food For Your Soul CLT</h2>
-      <p>Charlotte area, NC</p>
-      <a href="food-soul/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Geno D&#x27;s Pizza</h2>
-      <p>Uptown, NC</p>
-      <a href="geno-ds-pizza/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Giddy Goat Coffee Roasters</h2>
-      <p>Plaza Midwood, NC</p>
-      <a href="giddy-goat-coffee-roasters/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Gotcha Matcha &amp; Espresso</h2>
-      <p>Uptown, NC</p>
-      <a href="gotcha-matcha-espresso/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Grey&#x27;s Diner</h2>
-      <p>Plaza Midwood, NC</p>
-      <a href="greys-diner/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Gus&#x27; Family Restaurant</h2>
-      <p>Monroe, NC</p>
-      <a href="gus-restaurant/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Harper&#x27;s Cafe</h2>
-      <p>Charlotte area, NC</p>
-      <a href="harpers-cafe/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Hathaway&#x27;s Fried Chicken</h2>
-      <p>Charlotte area, NC</p>
-      <a href="hathaways-fried-chicken/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>House of Leng</h2>
-      <p>Charlotte area, NC</p>
-      <a href="house-of-leng/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Kit&#x27;s Trackside Crafts</h2>
-      <p>Charlotte area, NC</p>
-      <a href="kits-trackside-crafts/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Lang Van</h2>
-      <p>Charlotte area, NC</p>
-      <a href="lang-van/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Laurel Market</h2>
-      <p>Charlotte area, NC</p>
-      <a href="laurel-market/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Le Kebab Grill</h2>
-      <p>Charlotte area, NC</p>
-      <a href="le-kebab-grill/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Le&#x27;s Sandwiches &amp; Café</h2>
-      <p>Charlotte area, NC</p>
-      <a href="les-sandwiches-cafe/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Lula Bánh Mì + Bakery</h2>
-      <p>Charlotte area, NC</p>
-      <a href="lula-banh-mi-and-bakery/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Machu Picchu Peruvian Cuisine</h2>
-      <p>Charlotte area, NC</p>
-      <a href="machu-picchu/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Maria&#x27;s Mexican Restaurant</h2>
-      <p>Charlotte area, NC</p>
-      <a href="marias-mexican-restaurant/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Matthews Social House</h2>
-      <p>Charlotte area, NC</p>
-      <a href="matthews-social-house/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Miguel&#x27;s Restaurant</h2>
-      <p>Charlotte area, NC</p>
-      <a href="miguels-restaurant/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>MJ Donuts</h2>
-      <p>Charlotte area, NC</p>
-      <a href="mj-donuts/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>The Palace Restaurant</h2>
-      <p>Charlotte area, NC</p>
-      <a href="palace-monroe/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Picadeli&#x27;s Pub-In-Deli</h2>
-      <p>Charlotte area, NC</p>
-      <a href="picadelis-pub-in-deli/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>The Portrait Gallery</h2>
-      <p>Charlotte area, NC</p>
-      <a href="portrait-gallery/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>Queen&#x27;s Soul Food</h2>
-      <p>Charlotte area, NC</p>
-      <a href="queens-soul/index.html">View Final Build</a>
-    </article>
-      <article class="card">
-      <span class="badge">FINAL SHOWCASE</span>
-      <h2>República Restaurant &amp; Lounge</h2>
-      <p>Charlotte area, NC</p>
-      <a href="republica/index.html">View Final Build</a>
-    </article>
+
+  <main class="container">
+    <div class="controls">
+      <div class="search-row">
+        <div class="search-input-wrapper">
+          <input type="text" id="search-bar" class="search-input" placeholder="Search by name, neighborhood, cuisine, or description...">
+          <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Filter by Neighborhood</div>
+        <div class="filter-tags" id="neighborhood-filters">
+          <span class="filter-tag active" data-filter="all">All Neighborhoods</span>
+          <!-- Dynamic Neighborhood Tags -->
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" id="restaurant-grid">
+      <!-- Dynamic Restaurant Cards -->
+    </div>
   </main>
-  <footer>Final showcase · 57 presentation-ready builds</footer>
+
+  <!-- Comparison Drawer -->
+  <div class="compare-drawer" id="comparison-drawer">
+    <div class="container">
+      <div class="compare-header">
+        <div class="compare-title">
+          <span>Compare Selected Sites</span>
+          <span class="compare-count-badge" id="compare-badge">0</span>
+        </div>
+        <button class="compare-close-btn" id="compare-close-btn">&times;</button>
+      </div>
+      <div class="compare-grid" id="compare-grid">
+        <!-- Dynamic Comparison Columns -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Final Showcase · Unofficial Redesign Redux Concept Suite</p>
+    </div>
+  </footer>
+
+  <script>
+    let restaurants = [];
+    let selectedForComparison = [];
+
+    const grid = document.getElementById('restaurant-grid');
+    const searchBar = document.getElementById('search-bar');
+    const neighborhoodContainer = document.getElementById('neighborhood-filters');
+    const drawer = document.getElementById('comparison-drawer');
+    const compareGrid = document.getElementById('compare-grid');
+    const compareBadge = document.getElementById('compare-badge');
+    const compareCloseBtn = document.getElementById('compare-close-btn');
+
+    let activeFilter = 'all';
+
+    // Fetch dynamic metadata from the enriched JSON
+    fetch('../data/restaurants-enriched.json')
+      .then(response => response.json())
+      .then(data => {
+        restaurants = data;
+        
+        // Sort deterministically by name
+        restaurants.sort((a, b) => a.name.localeCompare(b.name));
+
+        // Update dashboard counters
+        document.getElementById('count-approved').textContent = restaurants.length;
+        
+        const neighborhoods = [...new Set(restaurants.map(r => r.neighborhood))].filter(Boolean).sort();
+        document.getElementById('count-neighborhoods').textContent = neighborhoods.length;
+
+        // Build Neighborhood filter buttons
+        neighborhoods.forEach(n => {
+          const btn = document.createElement('span');
+          btn.className = 'filter-tag';
+          btn.textContent = n;
+          btn.dataset.filter = n;
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('#neighborhood-filters .filter-tag').forEach(tag => tag.classList.remove('active'));
+            btn.classList.add('active');
+            activeFilter = n;
+            renderGrid();
+          });
+          neighborhoodContainer.appendChild(btn);
+        });
+
+        // Set up the all neighborhoods button
+        document.querySelector('[data-filter="all"]').addEventListener('click', (e) => {
+          document.querySelectorAll('#neighborhood-filters .filter-tag').forEach(tag => tag.classList.remove('active'));
+          e.target.classList.add('active');
+          activeFilter = 'all';
+          renderGrid();
+        });
+
+        renderGrid();
+      })
+      .catch(err => {
+        console.error('Failed to load enriched restaurant data:', err);
+        grid.innerHTML = '<div class="no-results"><h3>Error</h3><p>Could not load the restaurant showroom. Please verify the local server.</p></div>';
+      });
+
+    // Render Grid Cards
+    function renderGrid() {
+      const query = searchBar.value.toLowerCase().trim();
+      
+      const filtered = restaurants.filter(r => {
+        // Neighborhood filter
+        if (activeFilter !== 'all' && r.neighborhood !== activeFilter) {
+          return false;
+        }
+
+        // Search text filter
+        if (query) {
+          const nameMatch = r.name.toLowerCase().includes(query);
+          const neighborhoodMatch = r.neighborhood.toLowerCase().includes(query);
+          const tagsMatch = r.tags.some(t => t.toLowerCase().includes(query));
+          const descMatch = r.description.toLowerCase().includes(query);
+          return nameMatch || neighborhoodMatch || tagsMatch || descMatch;
+        }
+
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results">
+            <h3>No results found</h3>
+            <p>Try refining your search terms or selecting a different neighborhood.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(r => {
+        const isChecked = selectedForComparison.includes(r.id) ? 'checked' : '';
+        const tagsHtml = r.tags.map(t => `<span class="card-tag">${t}</span>`).join('');
+        
+        return `
+          <article class="card">
+            <div class="card-top">
+              <div class="card-emoji-box">${r.emoji}</div>
+              <label class="compare-checkbox-label" title="Select to compare">
+                <input type="checkbox" class="compare-checkbox" data-id="${r.id}" ${isChecked}>
+                <span class="compare-text">Compare</span>
+              </label>
+            </div>
+            <h2>${r.name}</h2>
+            <div class="card-location">${r.neighborhood}, ${r.state}</div>
+            <p class="card-description">${r.description}</p>
+            <div class="card-tags">${tagsHtml}</div>
+            <a href="${r.slug}/index.html" class="card-action">
+              <span>View Final Build</span>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </a>
+          </article>
+        `;
+      }).join('');
+
+      // Wire checkboxes
+      document.querySelectorAll('.compare-checkbox').forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          const id = e.target.dataset.id;
+          if (e.target.checked) {
+            if (selectedForComparison.length >= 3) {
+              e.target.checked = false;
+              alert('You can select a maximum of 3 websites for comparison.');
+              return;
+            }
+            if (!selectedForComparison.includes(id)) {
+              selectedForComparison.push(id);
+            }
+          } else {
+            selectedForComparison = selectedForComparison.filter(item => item !== id);
+          }
+          updateComparisonDrawer();
+        });
+      });
+    }
+
+    // Search bar event
+    searchBar.addEventListener('input', renderGrid);
+
+    // Update Comparison Drawer
+    function updateComparisonDrawer() {
+      const count = selectedForComparison.length;
+      compareBadge.textContent = count;
+
+      if (count > 0) {
+        drawer.classList.add('open');
+        
+        // Build columns
+        compareGrid.innerHTML = selectedForComparison.map(id => {
+          const r = restaurants.find(item => item.id === id);
+          if (!r) return '';
+          
+          const currentSiteBtn = r.currentWebsiteUrl 
+            ? `<a href="${r.currentWebsiteUrl}" target="_blank" rel="noopener noreferrer" class="compare-col-link compare-col-link-current">Current Site</a>` 
+            : `<span class="compare-col-link compare-col-link-current" style="opacity: 0.5; cursor: not-allowed;">No Current Site</span>`;
+          
+          return `
+            <div class="compare-col">
+              <div class="compare-col-header">
+                <span class="compare-col-title">${r.name}</span>
+                <button class="compare-remove-btn" data-id="${r.id}">Remove</button>
+              </div>
+              <div class="compare-feature">
+                <div class="compare-feature-label">Neighborhood</div>
+                <div class="compare-feature-value">${r.neighborhood}</div>
+              </div>
+              <div class="compare-feature">
+                <div class="compare-feature-label">Cuisine & Tags</div>
+                <div class="compare-feature-value">${r.tags.join(', ') || 'Redesign concepts'}</div>
+              </div>
+              <div class="compare-feature">
+                <div class="compare-feature-label">City</div>
+                <div class="compare-feature-value">${r.city}</div>
+              </div>
+              <div class="compare-btn-row">
+                <a href="${r.slug}/index.html" class="compare-col-link compare-col-link-demo">View Demo</a>
+                ${currentSiteBtn}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Wire remove buttons
+        document.querySelectorAll('.compare-remove-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = e.target.dataset.id;
+            selectedForComparison = selectedForComparison.filter(item => item !== id);
+            // Uncheck in grid
+            const checkbox = document.querySelector(`.compare-checkbox[data-id="${id}"]`);
+            if (checkbox) checkbox.checked = false;
+            updateComparisonDrawer();
+          });
+        });
+      } else {
+        drawer.classList.remove('open');
+      }
+    }
+
+    // Close comparison drawer
+    compareCloseBtn.addEventListener('click', () => {
+      selectedForComparison = [];
+      document.querySelectorAll('.compare-checkbox').forEach(cb => cb.checked = false);
+      updateComparisonDrawer();
+    });
+  </script>
 </body>
 </html>

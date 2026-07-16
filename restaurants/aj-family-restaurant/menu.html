@@ -1,2 +1,220 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for AJ Family Restaurant"><title>Menu | AJ Family Restaurant</title><link rel="stylesheet" href="site.css"></head><body data-v="3"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">AJ Family Restaurant</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="about.html">Our Story</a><a href="groups.html">Groups &amp; Family Meals</a><a href="contact.html">Visit</a></div>  <a href="comfort-plate.html">Comfort Plate</a>
-</nav><main id="main"><header class="head"><div class="tag">Family Dining • Breakfast • Comfort Food</div><h1>Menu</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Breakfast</button><button data-f="g1">Lunch</button><button data-f="g2">Dinner</button><button data-f="g3">Daily board</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Breakfast</h3><p>Eggs, griddle and morning comfort.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Lunch</h3><p>Sandwiches, plates and quick decisions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Dinner</h3><p>Comfort entrées and family-table choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Daily board</h3><p>Owner-managed specials and closures.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/aj-family-restaurant/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore AJ Family Restaurant's mobile-friendly menu of Southern comfort food classics in Monroe, NC.">
+  <title>Menu | AJ Family Restaurant</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="gingham-bar"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div>
+  
+  <nav aria-label="Main navigation">
+    <a href="index.html">
+      <span style="font-size:1.6rem;">🍳</span> AJ Family Restaurant
+    </a>
+    <button class="toggle" aria-expanded="false" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="about.html">Our Story</a>
+      <a href="groups.html">Groups &amp; Family Meals</a>
+      <a href="contact.html">Visit</a>
+      <a href="comfort-plate.html" class="nav-comfort-plate-btn">Comfort Plate</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="head">
+      <div class="tag">Family Dining • Breakfast • Comfort Food</div>
+      <h1>Our Menu</h1>
+      <p>A dedicated, mobile-readable menu of Southern comfort food classics. Made from scratch daily and served with traditional hospitality.</p>
+    </header>
+
+    <section>
+      <div class="filter">
+        <button class="on" data-f="all">All Specialties</button>
+        <button data-f="g0">Breakfast</button>
+        <button data-f="g1">Lunch</button>
+        <button data-f="g2">Dinner</button>
+        <button data-f="g3">Daily Board</button>
+      </div>
+
+      <div class="grid g2">
+        <!-- Breakfast Category -->
+        <article class="card menu-card" data-g="g0">
+          <div class="menu-category-header">
+            <div class="tag">Morning Favorites</div>
+            <h3>Breakfast</h3>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <span class="chef-badge">Chef's Special</span>
+              <div class="menu-item-top">
+                <span class="menu-item-name">Grandma's Flapjack Stack</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$10.50</span>
+              </div>
+              <p class="menu-item-desc">Three fluffy buttermilk pancakes served with whipped butter and warm maple syrup.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Southern Skillet Breakfast</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$12.00</span>
+              </div>
+              <p class="menu-item-desc">Two fresh farm eggs, home fries, country sausage, and split buttermilk biscuits smothered in gravy.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Country Ham &amp; Eggs</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$11.00</span>
+              </div>
+              <p class="menu-item-desc">Griddled bone-in country ham served with two eggs cooked to order, creamy grits, and toast.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lunch Category -->
+        <article class="card menu-card" data-g="g1">
+          <div class="menu-category-header">
+            <div class="tag">Sandwiches &amp; Plates</div>
+            <h3>Lunch</h3>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <span class="chef-badge">Popular</span>
+              <div class="menu-item-top">
+                <span class="menu-item-name">Southern Fried Chicken Sandwich</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$11.50</span>
+              </div>
+              <p class="menu-item-desc">Crispy fried chicken breast, house sweet-pickles, and herb mayo on a buttered brioche bun, served with crinkle-cut fries.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Classic Pimento Cheese BLT</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$9.50</span>
+              </div>
+              <p class="menu-item-desc">Sharp cheddar house-made pimento cheese, hickory bacon, leaf lettuce, and local tomatoes on toasted sourdough.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Garden Tomato &amp; Squash Soup</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$7.00</span>
+              </div>
+              <p class="menu-item-desc">Rich, creamy soup made from roasted heirloom tomatoes and yellow summer squash, served with honey cornbread.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dinner Category -->
+        <article class="card menu-card" data-g="g2">
+          <div class="menu-category-header">
+            <div class="tag">Comfort Entrées</div>
+            <h3>Dinner</h3>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <span class="chef-badge">Signature</span>
+              <div class="menu-item-top">
+                <span class="menu-item-name">Buttermilk Fried Chicken Plate</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$15.00</span>
+              </div>
+              <p class="menu-item-desc">Three pieces of crispy buttermilk fried chicken, served with garlic mashed potatoes, brown gravy, and green beans.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Slow-Braised Pot Roast</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$17.50</span>
+              </div>
+              <p class="menu-item-desc">Tender roast beef braised with glazed carrots, pearl onions, and celery, served over a celeriac mash.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Pan-Seared Rainbow Trout</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$16.00</span>
+              </div>
+              <p class="menu-item-desc">Fresh Carolina trout fillet pan-seared in lemon-herb butter, served with steamed seasonal vegetables.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Daily Board Category -->
+        <article class="card menu-card" data-g="g3">
+          <div class="menu-category-header">
+            <div class="tag">Desserts &amp; Sides</div>
+            <h3>Daily Board</h3>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Homemade Peach Cobbler</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$6.50</span>
+              </div>
+              <p class="menu-item-desc">Warm local peach cobbler with a buttery lattice crust, served with vanilla bean ice cream.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Sweet Potato Casserole</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$5.00</span>
+              </div>
+              <p class="menu-item-desc">Whipped sweet potatoes with spices, topped with a caramelized pecan and brown sugar crumble.</p>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-top">
+                <span class="menu-item-name">Traditional Banana Pudding</span>
+                <span class="menu-item-leader"></span>
+                <span class="menu-item-price">$5.50</span>
+              </div>
+              <p class="menu-item-desc">Rich vanilla custard layered with fresh banana slices, vanilla wafers, and fresh whipped cream.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="grid g3">
+        <article class="card">
+          <h3>Readable HTML Menu</h3>
+          <p>No PDF downloads required. Easily readable on desktop, tablet, and mobile screens.</p>
+        </article>
+        <article class="card">
+          <h3>Fresh Ingredients</h3>
+          <p>We source local produce and dairy to bring genuine Monroe flavor to every dish.</p>
+        </article>
+        <article class="card">
+          <h3>Family Portions</h3>
+          <p>Generous portions designed to satisfy everyone, with easy family meal planning options.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation. Redesign suite built for the Showcase.</p>
+  </footer>
+
+  <div class="toast" role="status"></div>
+  <script src="site.js"></script>
+</body>
+</html>

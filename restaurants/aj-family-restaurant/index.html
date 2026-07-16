@@ -1,2 +1,145 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for AJ Family Restaurant"><title>Home | AJ Family Restaurant</title><link rel="stylesheet" href="site.css"></head><body data-v="3"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">AJ Family Restaurant</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html" aria-current="page">Home</a><a href="menu.html">Menu</a><a href="about.html">Our Story</a><a href="groups.html">Groups &amp; Family Meals</a><a href="contact.html">Visit</a></div>  <a href="comfort-plate.html">Comfort Plate</a>
-</nav><main id="main"><header class="hero"><div><div class="tag">Monroe • Family Dining • Breakfast • Comfort Food</div><h1>Organize the family-dining decision by time of day.</h1><p>A five-page sales demo that separates discovery, menu decisions, story, conversion and practical visit information instead of forcing everything into one landing page.</p><a class="btn" href="menu.html">Explore Menu</a></div><div class="art" aria-label="Original concept illustration"><svg viewBox="0 0 520 520" aria-hidden="true"><circle cx="260" cy="260" r="190" fill="none" stroke="#223a5e" stroke-width="32"/><circle cx="260" cy="260" r="115" fill="#c84a3b"/><path d="M70 85v350M450 85v350" stroke="#e1b04a" stroke-width="20"/></svg></div></header><section class="alt"><div class="tag">Complete information architecture</div><h2>Five real pages. Five distinct jobs.</h2><div class="grid g4"><article class="card"><h3>Menu</h3><p>Dedicated HTML menu and a working filter.</p></article><article class="card"><h3>Our Story</h3><p>Verified context without invented history.</p></article><article class="card"><h3>Groups &amp; Family Meals</h3><p>Group-table planner for qualified requests.</p></article><article class="card"><h3>Visit</h3><p>Practical details and safe demo contact flow.</p></article></div></section><section><div class="story"><div class="mark">AJ Family Restaurant</div><div><div class="tag">Redesign purpose</div><h2>Make the strongest customer path obvious.</h2><p>The final production version connects verified menus, owner-approved assets and real ordering or reservation providers. This sales demo remains clearly non-operational.</p><a class="btn" href="groups.html">Open Groups &amp; Family Meals</a></div></div></section></main><footer>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/aj-family-restaurant/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AJ Family Restaurant redesign concept in Monroe, NC. Experience traditional Southern comfort cuisine, family dinners, and breakfast.">
+  <title>Home | AJ Family Restaurant</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="gingham-bar"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div>
+  
+  <nav aria-label="Main navigation">
+    <a href="index.html">
+      <span style="font-size:1.6rem;">🍳</span> AJ Family Restaurant
+    </a>
+    <button class="toggle" aria-expanded="false" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+    <div class="links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">Our Story</a>
+      <a href="groups.html">Groups &amp; Family Meals</a>
+      <a href="contact.html">Visit</a>
+      <a href="comfort-plate.html" class="nav-comfort-plate-btn">Comfort Plate</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero">
+      <div>
+        <div class="hero-brand-monogram">AJ</div>
+        <div class="tag">Monroe • Est. 2008 • Griddle, Skillet &amp; Comfort</div>
+        <h1>The Art of <em>Southern</em> Hospitality.</h1>
+        <p>Welcome to our table. At AJ Family Restaurant, we believe in fresh griddled flapjacks, hot sausage gravy, and passing the butter. Pull up a chair and make yourself at home.</p>
+        <a class="btn" href="menu.html">
+          <span>Explore The Menu</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="art-photo" aria-label="Cozy family dinner table at AJ Family Restaurant">
+        <img src="hero_table.png" alt="Mouth-watering fried chicken, pancakes, biscuits, and coffee on a rustic wooden table" class="hero-img">
+        <div class="floating-badge">Coffee is always brewing • breakfast served all day</div>
+      </div>
+    </header>
+
+    <section class="alt">
+      <div class="tag">The Experience Mosaic</div>
+      <h2>Select Your Journey</h2>
+      
+      <div class="grid g2">
+        <!-- Card 1: Menu Teaser -->
+        <article class="card">
+          <div class="tag">Fresh From the Griddle &amp; Skillet</div>
+          <h3>Southern Kitchen Specialties</h3>
+          <p style="margin-bottom:1.5rem;">Explore a hand-crafted HTML menu of scratch-made Southern favorites. No PDF downloads required, fully mobile readable.</p>
+          <div style="border-top:1px dashed var(--border-rich); padding-top:1rem; margin-bottom:1.5rem;">
+            <div class="menu-item-top" style="margin-bottom:0.4rem;">
+              <span style="font-weight:700; color:var(--primary);">Grandma's Flapjack Stack</span>
+              <span style="color:var(--accent); font-weight:700;">$10.50</span>
+            </div>
+            <div class="menu-item-top">
+              <span style="font-weight:700; color:var(--primary);">Buttermilk Fried Chicken Plate</span>
+              <span style="color:var(--accent); font-weight:700;">$15.00</span>
+            </div>
+          </div>
+          <a class="btn" href="menu.html" style="padding:0.6rem 1.25rem; font-size:0.8rem;">Open Full Menu</a>
+        </article>
+
+        <!-- Card 2: Hours and Dashboard -->
+        <article class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="tag">Current Operational Status</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin:0.5rem 0 0.8rem;">
+              <h3 style="margin:0;">Visit &amp; Open Hours</h3>
+              <div class="live-status-indicator closed">
+                <span class="indicator-dot"></span> Checking Status...
+              </div>
+            </div>
+            <p>We are ready to welcome your family. Find our complete list of daily dining hours, Monroe parking access details, and direction guides.</p>
+          </div>
+          <div style="border-top:1px dashed var(--border-rich); padding-top:1rem; margin-top:1rem;">
+            <a class="btn" href="contact.html" style="padding:0.6rem 1.25rem; font-size:0.8rem; background:transparent; border:1px solid var(--primary); color:var(--primary); box-shadow:none;">View Hours &amp; Directions</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Planner Section -->
+    <section class="preview-interactive-panel">
+      <div>
+        <div class="tag">Coordinated Tables &amp; Buyouts</div>
+        <h2>Gather the Family Table</h2>
+        <p style="color:var(--ink-muted); margin-bottom:2rem;">Planning a birthday feast, weekend gathering, or family milestone event? Adjust the count slider to preview table allocations and seating requirements before coordinating with AJ Family Restaurant.</p>
+        <a class="btn" href="groups.html">
+          <span>Go to Group Planner</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="interactive-widget-box">
+        <div class="tag" style="justify-content:center;">Miniature Guest Calculator</div>
+        
+        <label style="display:flex; flex-direction:column; gap:0.5rem;">
+          <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; text-align:center;">Estimated Attendance</span>
+          <input id="home-range" type="range" min="2" max="150" value="20" step="2">
+        </label>
+        
+        <div class="big" id="home-count">20</div>
+        
+        <div class="card" style="padding:1.25rem; text-align:center; box-shadow:none; border-color:var(--border-rich);">
+          <h4 id="home-plan" style="margin:0 0 0.5rem; font-family:'Fraunces',serif; font-size:1.15rem; color:var(--primary);">Semi-Private Dining Feast</h4>
+          <p id="home-copy" style="font-size:0.85rem; margin:0; line-height:1.5;">Gather 20 guests with curated Southern family platters in a dedicated section.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" style="text-align:center; padding: 7rem 6vw;">
+      <div class="hero-brand-monogram" style="margin: 0 auto 1.5rem;">AJ</div>
+      <p style="font-family:'Fraunces', serif; font-size:clamp(1.5rem, 3.5vw, 2.5rem); line-height:1.3; font-style:italic; max-width:850px; margin:0 auto; color:var(--primary);">
+        "The best memories are created around the family table, passing plates of comfort food, sharing stories, and staying a little longer."
+      </p>
+      <a class="btn" href="comfort-plate.html" style="margin-top:2.5rem;">
+        <span>Build a Comfort Plate</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Concept only — not affiliated with or operated by AJ Family Restaurant. Current operational details require owner confirmation. Redesign suite built for the Showcase.</p>
+  </footer>
+
+  <div class="toast" role="status"></div>
+  <script src="site.js"></script>
+</body>
+</html>
