@@ -1,0 +1,38 @@
+{
+  "id": "republica",
+  "name": "República Restaurant & Lounge",
+  "slug": "republica",
+  "location": {
+    "city": "Charlotte area",
+    "state": "NC",
+    "address": ""
+  },
+  "stage": "showcase",
+  "status": "presentation-ready",
+  "sourceRepository": "dev-in-portfolio/restaurant-staging",
+  "sourcePath": "restaurants/republica",
+  "currentWebsiteUrl": "",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/republica/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-07-15T20:26:47.950Z",
+  "promotedToShowcaseAt": "2026-07-16T01:27:22.886680Z",
+  "desktopReviewed": true,
+  "tabletReviewed": true,
+  "mobileReviewed": true,
+  "linksVerified": true,
+  "contentVerified": true,
+  "performanceReviewed": true,
+  "accessibilityReviewed": true,
+  "comparisonButtonAdded": false,
+  "comparisonButtonNotApplicable": true,
+  "productionBuildPassed": true,
+  "approvedForPresentation": true,
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source.",
+    "Phase 4 synchronized from repaired source commit 2bd7924130a4dd86bc61217a5ff6119283f72306 after successful static and desktop/tablet/mobile browser QA. Root-relative self-links were adapted only for the /restaurants/ staging route.",
+    "Phase 5 promoted from validated staging commit 737fb1187df4a45744e18ce0b5a095d9a2d0762f; final static, repository, and responsive browser QA completed before publication."
+  ],
+  "badge": "FINAL SHOWCASE",
+  "buttonText": "View Final Build"
+}
