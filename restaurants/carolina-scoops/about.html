@@ -1,1 +1,83 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Carolina Scoops"><title>Our Story | Carolina Scoops</title><link rel="stylesheet" href="site.css"></head><body data-v="0"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Carolina Scoops</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html">Flavors</a><a href="flight.html">Flavor Flights</a><a href="about.html" aria-current="page">Our Story</a><a href="parties.html">Parties</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Pineville identity</div><h1>Our Story</h1><p>Build a flavor flight before the first scoop melts.</p></header><section><div class="story"><div class="mark">Carolina Scoops</div><div class="timeline"><article><div class="tag">Verified starting point</div><h3>Cuisine, service model and place</h3><p>Ice Cream • Flavor Flights • Celebrations in Pineville define the current concept.</p></article><article><div class="tag">Owner confirmation required</div><h3>Founding, ownership and milestones</h3><p>No family story, award, sourcing claim or founding date is invented.</p></article><article><div class="tag">Production asset plan</div><h3>Approved photography and identity</h3><p>Concept illustration is replaced with owner-approved brand and restaurant assets before production launch.</p></article></div></div></section><section class="alt"><div class="grid g2"><article class="card"><h3>Local distinction</h3><p>The story page explains what makes the restaurant memorable rather than using generic hospitality language.</p></article><article class="card"><h3>Honest status</h3><p>This is a full sales demo, not a production-ready or premium-QA-approved website.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Carolina Scoops. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/carolina-scoops/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The story of Carolina Scoops - family-owned small-batch ice cream parlor in Pineville / South Charlotte. Sourcing local dairy ingredients.">
+  <title>Our Story | Carolina Scoops</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <span>🍨</span> Carolina Scoops
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Flavors</a>
+      <a href="flight.html">Flavor Flights</a>
+      <a href="about.html" aria-current="page">Our Story</a>
+      <a href="parties.html">Parties</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="hero">
+    <div class="wrap">
+      <h1>Our Sweet Story</h1>
+      <p style="margin-inline: auto;">Handcrafting premium ice cream and celebrating sweet moments in Pineville since opening our parlor doors.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" style="margin-top: 40px; margin-bottom: 5.5rem;">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto;">
+      
+      <div class="premium-card">
+        <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.5rem;">Velvety Cream Foundations</h3>
+        <p style="color: var(--color-text-muted); line-height: 1.8; text-align: justify;">
+          At Carolina Scoops, we believe that premium ice cream begins at the source. That is why we partner with local Carolina dairy farmers who raise grass-fed cattle. Our cream base is delivered fresh to our kitchen, pasteurized gently, and mixed with premium raw organic cane sugar. We never use high-fructose corn syrup, artificial stabilizers, or pre-made liquid flavor mixes.
+        </p>
+      </div>
+
+      <div class="premium-card">
+        <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.5rem;">Handmade Small-Batch Process</h3>
+        <p style="color: var(--color-text-muted); line-height: 1.8; text-align: justify;">
+          Every single tray of ice cream on our menu board is churned in our Pineville kitchen using small-batch Italian batch freezers. Churning in small volumes limits the amount of air whipped into the cream, producing a dense, velvety consistency that melts slowly and delivers maximum flavor intensity on every spoon.
+        </p>
+      </div>
+
+      <div class="premium-card">
+        <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.5rem;">A Gathering Place for Celebrations</h3>
+        <p style="color: var(--color-text-muted); line-height: 1.8; text-align: justify;">
+          Ice cream has always been a symbol of celebration. From school assemblies and youth sports leagues to birthday parties and weddings, our goal is to bring neighbors together. Our outdoor patio space is designed to be a welcoming neighborhood retreat where you can slow down and enjoy a custom flavor flight paddle with family.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Carolina Scoops. South Charlotte, NC. Unofficial concept presentation.</p>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
+</body>
+</html>

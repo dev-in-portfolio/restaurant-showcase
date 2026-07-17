@@ -1,1 +1,205 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Carolina Scoops"><title>Parties | Carolina Scoops</title><link rel="stylesheet" href="site.css"></head><body data-v="0"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Carolina Scoops</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html">Flavors</a><a href="flight.html">Flavor Flights</a><a href="about.html">Our Story</a><a href="parties.html" aria-current="page">Parties</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Restaurant-specific conversion</div><h1>Party pack planner</h1><p>Turn a vague question into a qualified plan without pretending to place an order, make a reservation or contact the restaurant.</p></header><section><div class="tool"><div><div class="tag">Interactive planning demo</div><h2>Parties</h2><p>Adjust the group size and capture practical requirements before the real owner-approved handoff.</p><div class="panel"><label>Estimated guests<input id="range" type="range" min="2" max="150" value="20" step="2"></label><div class="big" id="count">20</div><label><input type="checkbox"> Dietary notes</label><label><input type="checkbox"> Timing or pickup plan</label><label><input type="checkbox"> Accessibility or seating needs</label></div></div><article class="card"><div class="tag">Planning summary</div><h3 id="plan">Focused group request</h3><p id="copy">Collect the date, preferred experience and special requirements before a real handoff.</p><p><strong>No information leaves this page.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>1. Choose the need</h3><p>Party pack planner</p></article><article class="card"><h3>2. Qualify details</h3><p>Guests, timing, preferences and constraints.</p></article><article class="card"><h3>3. Connect reality</h3><p>Production uses the restaurant’s approved channel.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Carolina Scoops. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/carolina-scoops/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Host your event with Carolina Scoops. Use our interactive party pack calculator to estimate custom scoop packages.">
+  <title>Parties &amp; Catering | Carolina Scoops</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .slider-container {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    .party-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 10px;
+      outline: none;
+      background: var(--color-border);
+      accent-color: var(--color-pink);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <span>🍨</span> Carolina Scoops
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Flavors</a>
+      <a href="flight.html">Flavor Flights</a>
+      <a href="about.html">Our Story</a>
+      <a href="parties.html" aria-current="page">Parties</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="hero">
+    <div class="wrap">
+      <h1>Party Packs &amp; Celebrations</h1>
+      <p style="margin-inline: auto;">Bring the artisanal scoops experience to your birthday, office celebration, or block party with our custom packs.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" style="margin-top: 40px;">
+    
+    <!-- Calculator Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-pink-hover); margin-bottom: 8px;">Party Pack Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Drag the slider to input your expected guests. We will calculate estimated scoop quantities, topping supplies, and cost packages.</p>
+      
+      <div class="slider-container">
+        <label for="range" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-pink-hover); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="count" style="font-size: 2.2rem; color: var(--color-text-light);">20</span> people</label>
+        <input type="range" class="party-slider" id="range" min="10" max="150" value="20" step="5">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;" aria-hidden="true">🍨</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: var(--color-text-light);">Total Scoops</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-pink);" id="scoops-total">40 Scoops</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">2 scoops per guest</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;" aria-hidden="true">🍦</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: var(--color-text-light);">Waffle Cones</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-pink);" id="cones-total">20 Cones</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Fresh golden-baked waffle cones</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;" aria-hidden="true">🍓</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: var(--color-text-light);">Toppings Jars</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-pink);" id="toppings-total">2 Jars</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Gourmet sprinkles &amp; fudge</p>
+        </div>
+      </div>
+
+      <div class="premium-card" style="text-align: center; background: radial-gradient(circle, rgba(219,39,119,0.05) 0%, rgba(255,251,251,0.8) 100%); border-color:var(--color-pink);">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.05em;">Estimated Package Price</span>
+        <h4 style="font-size: 3.2rem; color: var(--color-text-light); margin: 0.5rem 0;" id="feast-cost">$130.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 40 scoops of ice cream, 20 waffle cones, and 2 jars of dry toppings.</p>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="form-wrapper" style="margin-bottom: 5rem;">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Reserve Party Package</h2>
+        
+        <form id="party-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. All catering packages require 48 hours notice and deposit.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Event Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="20" readonly style="background: rgba(0,0,0,0.03); border-color: rgba(184, 60, 104, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Special Requirements (e.g., dairy-free sorbet needs, nut allergy constraints, etc.)</label>
+              <textarea id="notes" placeholder="Describe any custom flavor requests or special venue rules..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Party Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">🎉</div>
+          <h3 class="success-title">Party Request Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have logged your party package request. Our events coordinator will call you shortly to arrange details and options.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Carolina Scoops. South Charlotte, NC. Unofficial concept presentation.</p>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+
+    function calculateParty(guests) {
+      document.getElementById('count').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      // Estimator math
+      const scoops = guests * 2;
+      const cones = guests;
+      const toppingJars = Math.max(1, Math.ceil(guests / 10));
+      const cost = (scoops * 2.25) + (cones * 0.75) + (toppingJars * 10.00);
+
+      document.getElementById('scoops-total').innerText = `${scoops} Scoops`;
+      document.getElementById('cones-total').innerText = `${cones} Cones`;
+      document.getElementById('toppings-total').innerText = `${toppingJars} ${toppingJars === 1 ? 'Jar' : 'Jars'}`;
+      document.getElementById('feast-cost').innerText = `$${cost.toFixed(2)}`;
+      document.getElementById('feast-summary').innerText = `Includes ${scoops} scoops of ice cream, ${cones} waffle cones, and ${toppingJars} ${toppingJars === 1 ? 'jar' : 'jars'} of dry toppings.`;
+    }
+
+    const slider = document.getElementById('range');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        calculateParty(parseInt(e.target.value));
+      });
+    }
+
+    // Form submission
+    const form = document.getElementById('party-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your party request has been logged. Our events team will call you at <strong>${phone}</strong> shortly to review timing details and deposit setups.`;
+      });
+    }
+
+    window.addEventListener('load', () => {
+      if (slider) calculateParty(parseInt(slider.value));
+    });
+  </script>
+</body>
+</html>

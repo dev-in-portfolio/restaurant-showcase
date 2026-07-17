@@ -1,1 +1,182 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Carolina Scoops"><title>Flavors | Carolina Scoops</title><link rel="stylesheet" href="site.css"></head><body data-v="0"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Carolina Scoops</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Flavors</a><a href="flight.html">Flavor Flights</a><a href="about.html">Our Story</a><a href="parties.html">Parties</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Ice Cream • Flavor Flights • Celebrations</div><h1>Flavors</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Bright &amp; fruity</button><button data-f="g1">Rich &amp; layered</button><button data-f="g2">Classics</button><button data-f="g3">Flights</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Bright &amp; fruity</h3><p>Seasonal fruit, sorbet and citrus directions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Rich &amp; layered</h3><p>Chocolate, caramel and candy-forward choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Classics</h3><p>Vanilla, cookies, mint and familiar favorites.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Flights</h3><p>Several smaller scoops for comparison.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Carolina Scoops. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/carolina-scoops/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore our menu of handcrafted ice cream flavors, custom flavor flights, and milkshakes at Carolina Scoops.">
+  <title>Flavors Board | Carolina Scoops</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .filter-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      background: var(--color-card-bg);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+    }
+    .filter-btn:hover {
+      border-color: var(--color-pink);
+      color: var(--color-pink-hover);
+    }
+    .filter-btn.active {
+      background-color: var(--color-pink);
+      color: #fff;
+      border-color: var(--color-pink);
+    }
+    .menu-section {
+      margin-bottom: 3.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <span>🍨</span> Carolina Scoops
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Flavors</a>
+      <a href="flight.html">Flavor Flights</a>
+      <a href="about.html">Our Story</a>
+      <a href="parties.html">Parties</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="hero">
+    <div class="wrap">
+      <h1>Our Handcrafted Flavors</h1>
+      <p style="margin-inline: auto;">Freshly churned in small batches with local dairy cream. Select a category below to explore our parlor flavors board.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" style="margin-top: 40px;">
+    <!-- Interactive Filter Group -->
+    <div class="filter-group" id="menu-filters">
+      <button class="filter-btn active" data-filter="all">All Flavors</button>
+      <button class="filter-btn" data-filter="fruity">Bright &amp; Fruity</button>
+      <button class="filter-btn" data-filter="rich">Rich &amp; Layered</button>
+      <button class="filter-btn" data-filter="classics">Classics</button>
+    </div>
+
+    <!-- Menu Display Grid -->
+    <div class="menu-preview" id="menu-board-grid">
+      <!-- Bright & Fruity -->
+      <div class="menu-item" data-category="fruity">
+        <h4>Strawberry Fields <span class="price">$4.50</span></h4>
+        <p>Churned with organic local strawberries and dynamic vanilla bean notes.</p>
+      </div>
+
+      <div class="menu-item" data-category="fruity">
+        <h4>Summer Peach Sorbet <span class="price">$4.50</span></h4>
+        <p>Dairy-free. Made with fresh sweet peaches puréed with a splash of citrus.</p>
+      </div>
+
+      <div class="menu-item" data-category="fruity">
+        <h4>Lemon Sorbet <span class="price">$4.50</span></h4>
+        <p>Light, sweet, and refreshingly tart Meyer lemon zest sorbet.</p>
+      </div>
+
+      <!-- Rich & Layered -->
+      <div class="menu-item" data-category="rich">
+        <h4>Salted Caramel Bourbon <span class="price">$5.00</span></h4>
+        <p>Rich sweet cream blended with house-cooked caramel and a touch of bourbon whiskey.</p>
+      </div>
+
+      <div class="menu-item" data-category="rich">
+        <h4>Deep Chocolate Fudge <span class="price">$4.50</span></h4>
+        <p>Dark Dutch cocoa whipped into heavy cream with fudge ribbons.</p>
+      </div>
+
+      <div class="menu-item" data-category="rich">
+        <h4>Toffee Crunch <span class="price">$5.00</span></h4>
+        <p>Vanilla ice cream loaded with caramelized English butter toffee chunks.</p>
+      </div>
+
+      <!-- Classics -->
+      <div class="menu-item" data-category="classics">
+        <h4>Madagascar Vanilla <span class="price">$4.00</span></h4>
+        <p>The definitive classic. Brewed with real Madagascar vanilla orchid beans.</p>
+      </div>
+
+      <div class="menu-item" data-category="classics">
+        <h4>Mint Chocolate Chunk <span class="price">$4.50</span></h4>
+        <p>Natural double-distilled peppermint oil mixed with seared dark chocolate chunks.</p>
+      </div>
+
+      <div class="menu-item" data-category="classics">
+        <h4>Cookies &amp; Cream <span class="price">$4.50</span></h4>
+        <p>Sweet cream ice cream loaded with crushed dark chocolate sandwich cookies.</p>
+      </div>
+    </div>
+
+    <!-- Flight CTA Block -->
+    <section class="premium-card" style="text-align: center; margin-top: 5rem; margin-bottom: 5rem;">
+      <h3 style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.8rem;">Design Your Own Flight</h3>
+      <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Can't select just one flavor? Mix and match four miniature scoops on a custom flight paddle with gourmet toppings.</p>
+      <a href="flight.html" class="btn">Build a Flight Board</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Carolina Scoops. South Charlotte, NC. Unofficial concept presentation.</p>
+  </footer>
+
+  <script>
+    (function(){
+      // Toggle menu
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navToggle.classList.toggle('open');
+          navLinks.classList.toggle('open', isOpen);
+        });
+      }
+
+      // Filter board logic
+      const filters = document.getElementById('menu-filters');
+      const items = document.querySelectorAll('#menu-board-grid .menu-item');
+
+      if (filters) {
+        filters.addEventListener('click', function(e) {
+          const btn = e.target.closest('.filter-btn');
+          if (!btn) return;
+
+          filters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const cat = btn.dataset.filter;
+          items.forEach(item => {
+            if (cat === 'all' || item.dataset.category === cat) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
