@@ -1,104 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact · Dom's Dive Bar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--neon:#ff3b6f;--dark:#0d0a0a;--warm:#e8d5c4;--muted:#887766;--charcoal:#1a1a1a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--warm);font-family:'DM Sans',sans-serif}
-h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,59,111,.15)}
-.nav a{color:var(--warm);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
-.nav a:hover{opacity:1;color:var(--neon)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--neon)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#0d0a0a,#1a0a0f);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--neon)}
-.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
-.section h2{font-size:1.5rem;color:var(--neon);margin:0 0 1rem;border-left:3px solid var(--neon);padding-left:.75rem}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
-.contact-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,59,111,.08);border-radius:8px;padding:1.5rem}
-.contact-card .icon{font-size:1.3rem;margin-bottom:.5rem;display:block}
-.contact-card h3{font-size:1rem;color:var(--neon);margin:0 0 .35rem}
-.contact-card p{font-size:.85rem;opacity:.6;margin:0;line-height:1.5}
-.demo-form{max-width:500px;margin:2rem auto 0}
-.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.6}
-.demo-form input,.demo-form textarea,.demo-form select{width:100%;padding:.7rem;border:1px solid rgba(255,59,111,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--warm);font-size:.9rem;font-family:'DM Sans',sans-serif}
-.demo-form textarea{min-height:100px;resize:vertical}
-.demo-form button{background:var(--neon);color:var(--dark);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
-.demo-form button:hover{background:#ff2a5f}
-footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(255,59,111,.08)}
-footer a{color:var(--neon);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/doms-dive-bar/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Dom's Dive Bar</title>
+  <meta name="description" content="Find location, phone number, hours, and send a message to Dom's Dive Bar in Sedgefield Charlotte.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Dom's Dive</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="specials.html">Specials</a>
-    <a href="games.html">Games &amp; Leagues</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Contact</h1>
-  <p>Come hang out — we're on South Boulevard</p>
-</header>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<section class="section">
-  <h2>Find Us</h2>
-  <div class="contact-grid">
-    <div class="contact-card"><span class="icon" aria-hidden="true">📍</span><h3>Location</h3><p>3609 South Blvd Suite C<br>Charlotte, NC 28209<br>Sedgefield / South End</p></div>
-    <div class="contact-card"><span class="icon" aria-hidden="true">📞</span><h3>Phone</h3><p>(704) 900-5068</p></div>
-    <div class="contact-card"><span class="icon" aria-hidden="true">🕐</span><h3>Hours</h3><p>Mon–Tue: 3pm–12am<br>Wed–Thu: 3pm–1am<br>Fri: 3pm–2am<br>Sat: 11am–2am<br>Sun: 11am–12am</p></div>
-    <div class="contact-card"><span class="icon" aria-hidden="true">🎱</span><h3>Free Pool &amp; Darts</h3><p>Always free to play — just walk in and grab a cue</p></div>
-  </div>
-  <h2>Drop Us a Line</h2>
-  <form class="demo-form" data-demo-form>
-    <label for="name">Name</label>
-    <input type="text" id="name" required>
-    <label for="email">Email</label>
-    <input type="email" id="email" required>
-    <label for="subject">Subject</label>
-    <select id="subject"><option>General Inquiry</option><option>Private Party</option><option>Booking</option><option>Feedback</option></select>
-    <label for="message">Message</label>
-    <textarea id="message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍔</span> Dom's Dive Bar
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="specials.html">Specials</a>
+      <a href="games.html">Games &amp; Leagues</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
 
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Stop By</span>
+        <h1>Contact Us</h1>
+        <p>Come hang out &mdash; we are located on South Boulevard in Sedgefield Charlotte.</p>
+      </div>
+    </header>
 
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-domsdivebarcontacthtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-domsdivebarcontacthtml" style="margin:.1rem 0 1rem;">Send the details that help the team respond</h2>
-  <p>The most useful message to Dom&#x27;s Dive Bar is short, specific, and easy to act on. Lead with the reason for reaching out, include the date or general timing when it matters, and explain the size of the group or order. Clear details reduce back-and-forth while still giving the restaurant room to confirm what is currently available.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>State the reason for the message in the first sentence.</li><li>Include timing, group size, and the best way to respond.</li><li>For urgent or same-day needs, use the restaurant’s confirmed direct contact method.</li></ul>
-  <p>This page is organized around planning a visit, asking about events, and confirming current bar information. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-<footer>
-  <p>Dom's Dive Bar · 3609 South Blvd Suite C · Charlotte, NC 28209 · (704) 900-5068</p>
-  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
+    <section class="wrap">
+      <div class="contact-grid">
+        
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">📍</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Location</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            3609 South Blvd Suite C<br>
+            Charlotte, NC 28209
+          </p>
+        </div>
+
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">📞</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Phone</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Direct: <a href="tel:+17049005068" style="color: var(--color-text-light); font-weight: 700;">(704) 900-5068</a>
+          </p>
+        </div>
+
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🕐</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Weekly Hours</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.6;">
+            Mon-Tue: 3:00 PM - 12:00 AM<br>
+            Wed-Thu: 3:00 PM - 1:00 AM<br>
+            Fri-Sat: 11:00 AM - 2:00 AM<br>
+            Sunday: 11:00 AM - 12:00 AM
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Contact Message Form -->
+      <div class="form-wrapper" style="margin-bottom: 5rem;">
+        <form class="demo-form" id="contact-form">
+          <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 2rem;">Send Us a Message</h3>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cname">Your Name</label>
+              <input id="cname" type="text" required placeholder="Jane Smith">
+            </div>
+
+            <div class="form-group">
+              <label for="cemail">Email Address</label>
+              <input id="cemail" type="email" required placeholder="jane@example.com">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="csubject">Subject</label>
+              <select id="csubject">
+                <option>General Inquiry</option>
+                <option>Private Party / Events</option>
+                <option>League Bookings</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="cmessage">Message Details</label>
+              <textarea id="cmessage" rows="5" required placeholder="Type your message details here..." style="min-height: 120px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">✔</div>
+          <h3 class="success-title">Message Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. Your message has been submitted successfully. Our team will review and reply shortly.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dom's Dive Bar</h3>
+        <p>Neighborhood sports pub and arcade lounge in Charlotte, NC. Cheap drinks, weekly pool leagues, and reliable comfort bites.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          3609 South Blvd Suite C<br>
+          Charlotte, NC 28209<br>
+          Phone: (704) 900-5068
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="games.html">Games &amp; Leagues</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dom's Dive Bar. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // Contact Form submit
+    const form = document.getElementById('contact-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('cname').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your message has been sent successfully. We will get back to you shortly.`;
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,218 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Games & Leagues · Dom's Dive Bar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--neon:#ff3b6f;--dark:#0d0a0a;--warm:#e8d5c4;--muted:#887766;--charcoal:#1a1a1a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--warm);font-family:'DM Sans',sans-serif}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,59,111,.15)}
-.nav a{color:var(--warm);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
-.nav a:hover{opacity:1;color:var(--neon)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--neon)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.hero{min-height:40vh;background:linear-gradient(135deg,#0d0a0a,#1a0a0f 50%,#0d0a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative}
-.hero h1{font-size:2.5rem;margin:0;color:var(--neon)}
-.hero .tagline{font-size:1.1rem;opacity:.5;font-style:italic;margin:.5rem 0 1.5rem}
-.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
-.section h2{font-size:1.5rem;color:var(--neon);margin:0 0 .25rem;border-left:3px solid var(--neon);padding-left:.75rem}
-.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/doms-dive-bar/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games &amp; Leagues | Dom's Dive Bar</title>
+  <meta name="description" content="Pool tournaments, steel-tip darts, team trivia nights, and league registrations at Dom's Dive Bar.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive games planner */
+    .games-mat {
+      background: radial-gradient(circle, var(--color-bg) 0%, #050404 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: var(--color-text-light);
+    }
 
-/* Interactive Tournament Customizer Styling */
-.games-mat {
-  background: radial-gradient(circle, #2d0b15 0%, #0d0306 100%);
-  border: 1.5px solid var(--neon);
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-}
-.games-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .games-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 59, 111, 0.2);
-  color: var(--warm);
-  padding: 10px;
-  border-radius: 4px;
-  width: 100%;
-}
-select:focus {
-  outline: none;
-  border-color: var(--neon);
-}
-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--neon);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(255,59,111,.08)}
-footer a{color:var(--neon);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
-</style>
+    .games-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Dom's Dive</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="specials.html">Specials</a>
-    <a href="games.html" style="color: var(--neon);">Games &amp; Leagues</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<header class="hero">
-  <div>
-    <h1>Games &amp; Weekly Leagues</h1>
-    <p class="tagline">Free pool, steel-tip dart lanes, retro console arcade, and weekly tournaments</p>
-  </div>
-</header>
-<main id="main">
-
-
-<section class="section">
-  <h2>Leagues &amp; Tournament Planner</h2>
-  <p class="subtitle">Draft your group's weekly night out. Select your tournament activity, group size, and drink package in real-time.</p>
-  
-  <div class="games-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(255,59,111,0.05);">
-    
-    <!-- Left: Visual Platter -->
-    <div class="games-mat">
-      <span style="font-size: 0.78rem; font-weight: 600; color: var(--neon); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="games-tag-display">WEEKLY BAR LEAGUE</span>
-      <h3 style="font-size: 2.2rem; color: var(--warm); margin: 0 0 0.8rem 0;" id="games-title-display">8-Ball Pool Tournament</h3>
-      <p style="font-size: 1.5rem; font-weight: 700; color: var(--neon); margin: 0 0 1.2rem 0;" id="games-price-display">$15.00</p>
-      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="games-desc-display">8-Ball Pool Tournament on Wednesday night for a group of 3-4 players, including a Pitcher of cheap draft beer.</p>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍔</span> Dom's Dive Bar
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="specials.html">Specials</a>
+      <a href="games.html" class="active">Games &amp; Leagues</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
+  </nav>
 
-    <!-- Right: Controls -->
-    <div>
-      <div style="margin-bottom: 1.5rem;">
-        <label>1. Select Activity</label>
-        <select id="games-activity" onchange="updateGames()">
-          <option value="pool" selected>8-Ball Pool Tournament (Wednesdays)</option>
-          <option value="darts">Steel-Tip Darts Tournament (Tuesdays)</option>
-          <option value="trivia">Team Trivia Night (Thursdays)</option>
-        </select>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Charlotte Leagues</span>
+        <h1>Games &amp; Leagues</h1>
+        <p>Steel-tip darts, free slate pool tables, team trivia, and arcade classics.</p>
       </div>
+    </header>
 
-      <div style="margin-bottom: 1.5rem;">
-        <label>2. Select Group Size</label>
-        <select id="games-group" onchange="updateGames()">
-          <option value="single">Single Player (1-2)</option>
-          <option value="team" selected>Small Team (3-4)</option>
-          <option value="large">Full Squad (5-8)</option>
-        </select>
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-neon); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Leagues &amp; Tournament Planner</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your tournament activity, team size, and beverage package below to design your night out.</p>
+
+        <div class="form-grid" style="grid-template-columns: 1.2fr 0.8fr; align-items: start; gap: 3rem;">
+          
+          <!-- Left Side: Pool Table SVG -->
+          <div>
+            <div class="games-canvas">
+              <svg viewBox="0 0 200 160" width="100%" max-width="320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Pool Table Frame (Walnut Wood) -->
+                <rect x="25" y="25" width="150" height="90" rx="8" fill="#582f0e" stroke="#331800" stroke-width="3" />
+                
+                <!-- Table felt liquid color layer (swapped dynamically) -->
+                <rect id="svg-felt" x="32" y="32" width="136" height="76" rx="4" fill="#15803d" />
+
+                <!-- Corner and Side Pockets -->
+                <circle cx="34" cy="34" r="5" fill="#000000" />
+                <circle cx="100" cy="32" r="5.5" fill="#000000" />
+                <circle cx="166" cy="34" r="5" fill="#000000" />
+                <circle cx="34" cy="106" r="5" fill="#000000" />
+                <circle cx="100" cy="108" r="5.5" fill="#000000" />
+                <circle cx="166" cy="106" r="5" fill="#000000" />
+
+                <!-- Cue Stick -->
+                <line x1="45" y1="95" x2="115" y2="55" stroke="#dda15e" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="45" y1="95" x2="48" y2="93" stroke="#f43f5e" stroke-width="2.8" stroke-linecap="round" /> <!-- Cue tip -->
+
+                <!-- Pool Balls (Racked or Scattered based on Team Size) -->
+                <!-- Single Player (Cue Ball + 8 Ball) -->
+                <g id="svg-balls-single">
+                  <circle cx="120" cy="52" r="3.2" fill="#faf8f5" stroke="#000" stroke-width="0.3" /> <!-- Cue -->
+                  <circle cx="128" cy="48" r="3.2" fill="#1e293b" stroke="#000" stroke-width="0.3" /> <!-- 8-ball -->
+                </g>
+                <!-- Small Team (3-4 balls) -->
+                <g id="svg-balls-team" class="hidden">
+                  <circle cx="120" cy="52" r="3.2" fill="#faf8f5" stroke="#000" stroke-width="0.3" />
+                  <circle cx="128" cy="48" r="3.2" fill="#1e293b" stroke="#000" stroke-width="0.3" />
+                  <circle cx="105" cy="75" r="3.2" fill="#ef4444" stroke="#000" stroke-width="0.3" />
+                  <circle cx="140" cy="62" r="3.2" fill="#facc15" stroke="#000" stroke-width="0.3" />
+                </g>
+                <!-- Full Squad (Triangular Rack) -->
+                <g id="svg-balls-large" class="hidden">
+                  <circle cx="70" cy="70" r="3.2" fill="#faf8f5" stroke="#000" stroke-width="0.3" /> <!-- Cue -->
+                  <!-- Racked -->
+                  <polygon points="122,66 122,74 135,82 135,58" fill="none" stroke="#e8d5c4" stroke-width="0.8" opacity="0.4" />
+                  <circle cx="124" cy="70" r="3" fill="#e11d48" />
+                  <circle cx="129" cy="67" r="3" fill="#3b82f6" />
+                  <circle cx="129" cy="73" r="3" fill="#d97706" />
+                  <circle cx="134" cy="64" r="3" fill="#1e293b" />
+                  <circle cx="134" cy="70" r="3" fill="#15803d" />
+                  <circle cx="134" cy="76" r="3" fill="#faf8f5" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="games-mat">
+              <span id="games-tag-display" style="font-size: 0.78rem; font-weight: 700; color: var(--color-neon); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;">WEEKLY BAR LEAGUE</span>
+              <h4 id="games-title-display" style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);">8-Ball Pool Tournament</h4>
+              <p id="games-price-display" style="font-size: 1.25rem; font-weight: 800; color: var(--color-neon); margin-bottom: 1.2rem;">$15.00</p>
+              <p id="games-desc-display" style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;">8-Ball Pool Tournament on Wednesday night for a group of 3-4 players, including a Pitcher of cheap draft beer.</p>
+            </div>
+          </div>
+
+          <!-- Right Side: Controls Selects -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div>
+              <label for="games-activity">1. Select Activity</label>
+              <select id="games-activity">
+                <option value="pool" selected>8-Ball Pool Tournament (Wednesdays)</option>
+                <option value="darts">Steel-Tip Darts Tournament (Tuesdays)</option>
+                <option value="trivia">Team Trivia Night (Thursdays)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="games-group">2. Select Group Size</label>
+              <select id="games-group">
+                <option value="single">Single Player (1-2)</option>
+                <option value="team" selected>Small Team (3-4)</option>
+                <option value="large">Full Squad (5-8)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="games-drink">3. Select Drink Package</label>
+              <select id="games-drink">
+                <option value="pitcher" selected>Pints &amp; Pitchers (+$15.00)</option>
+                <option value="bucket">Cheap Can Buckets (+$12.00)</option>
+                <option value="soda">Soda / Alcohol-Free (+$5.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <div>
-        <label>3. Select Drink Package</label>
-        <select id="games-drink" onchange="updateGames()">
-          <option value="pitcher" selected>Pints &amp; Pitchers (+$15.00)</option>
-          <option value="bucket">Cheap Can Buckets (+$12.00)</option>
-          <option value="soda">Soda / Alcohol-Free (+$5.00)</option>
-        </select>
+    <!-- Info Detail Cards -->
+    <section class="alt" style="border-top: 1px solid var(--color-border);">
+      <div class="wrap">
+        <h2 style="font-family: var(--font-heading); text-align: center; font-size: 2rem; margin-bottom: 2.5rem;">Taproom Games Detail</h2>
+        <div class="featured-grid">
+          
+          <div class="feature-card">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-neon); margin-bottom: 0.5rem;">Free Pool Tables</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">Two slate-bed 8-foot pool tables in our back lounge. Completely free to play every day of the week &mdash; no quarters required.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-neon); margin-bottom: 0.5rem;">Steel-Tip Darts</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">Three traditional cork dartboards with digital scoring assistance. Boards are free to play &mdash; grab darts from the bar.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dom's Dive Bar</h3>
+        <p>Neighborhood sports pub and arcade lounge in Charlotte, NC. Cheap drinks, weekly pool leagues, and reliable comfort bites.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          3609 South Blvd Suite C<br>
+          Charlotte, NC 28209<br>
+          Phone: (704) 900-5068
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="games.html">Games &amp; Leagues</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-
-  </div>
-</section>
-
-<section class="section" style="border-top:1px solid rgba(255,59,111,.06)">
-  <h2>Taproom Games Detail</h2>
-  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
-    <div class="feature-card">
-      <h3>Free Pool Tables</h3>
-      <p>Two slate-bed 8-foot pool tables located in the back lounge. Free to play every single day of the week, no quarters required.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dom's Dive Bar. All rights reserved. Unofficial concept presentation.</p>
     </div>
-    <div class="feature-card">
-      <h3>Steel-Tip Darts</h3>
-      <p>Three traditional cork dartboards with electronic scoring assistance. Free darts available at the bar with ID deposit.</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
 
-</main>
-<footer>
-  <p>Dom's Dive Bar · 3609 South Blvd Suite C · Charlotte, NC 28209 · (704) 900-5068</p>
-  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="games.html">Games &amp; Leagues</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
+    const activityData = {
+      pool: { tag: "WEEKLY POOL LEAGUE", name: "8-Ball Pool Tournament", day: "Wednesday night", felt: "#15803d", desc: "Single-elimination pool tournament starting at 8 PM" },
+      darts: { tag: "WEEKLY DARTS LEAGUE", name: "Steel-Tip Darts Tournament", day: "Tuesday night", felt: "#991b1b", desc: "Cricket-style dart tournament starting at 7:30 PM" },
+      trivia: { tag: "TEAM TRIVIA NIGHT", name: "General Knowledge Trivia", day: "Thursday night", felt: "#1e3a8a", desc: "Bar trivia hosted by local quizmaster starting at 8 PM" }
+    };
 
-<script>
-  const activityData = {
-    pool: { tag: "WEEKLY POOL LEAGUE", name: "8-Ball Pool Tournament", day: "Wednesday night", desc: "Single-elimination pool tournament starting at 8 PM" },
-    darts: { tag: "WEEKLY DARTS LEAGUE", name: "Steel-Tip Darts Tournament", day: "Tuesday night", desc: "Cricket-style dart tournament starting at 7:30 PM" },
-    trivia: { tag: "TEAM TRIVIA NIGHT", name: "General Knowledge Trivia", day: "Thursday night", desc: "Bar trivia hosted by local quizmaster starting at 8 PM" }
-  };
+    const groupData = {
+      single: { name: "single player / couple" },
+      team: { name: "small team of 3-4 players" },
+      large: { name: "full squad of 5-8 players" }
+    };
 
-  const groupData = {
-    single: { name: "single player / couple", note: "individual register" },
-    team: { name: "small team of 3-4 players", note: "group registration" },
-    large: { name: "full squad of 5-8 players", note: "advanced group register" }
-  };
+    const drinkData = {
+      pitcher: { name: "Pitcher of Cheap Beer", price: 15.00, label: "a Pitcher of domestic beer" },
+      bucket: { name: "Cheap Can Bucket", price: 12.00, label: "a 5-can bucket of PBR or Busch Light" },
+      soda: { name: "Soda / Mocktail", price: 5.00, label: "unlimited fountain sodas" }
+    };
 
-  const drinkData = {
-    pitcher: { name: "Pitcher of Cheap Beer", price: 15.00, label: "a Pitcher of domestic beer" },
-    bucket: { name: "Cheap Can Bucket", price: 12.00, label: "a 5-can bucket of PBR or Busch Light" },
-    soda: { name: "Soda / Mocktail", price: 5.00, label: "unlimited fountain sodas" }
-  };
+    function updateGames() {
+      const actKey = document.getElementById('games-activity').value;
+      const grpKey = document.getElementById('games-group').value;
+      const drkKey = document.getElementById('games-drink').value;
 
-  function updateGames() {
-    const actKey = document.getElementById('games-activity').value;
-    const grpKey = document.getElementById('games-group').value;
-    const drkKey = document.getElementById('games-drink').value;
+      const act = activityData[actKey];
+      const grp = groupData[grpKey];
+      const drk = drinkData[drkKey];
 
-    const act = activityData[actKey];
-    const grp = groupData[grpKey];
-    const drk = drinkData[drkKey];
+      const totalPrice = drk.price;
 
-    const totalPrice = drk.price;
+      document.getElementById('games-tag-display').innerText = act.tag;
+      document.getElementById('games-title-display').innerText = act.name;
+      document.getElementById('games-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
-    document.getElementById('games-tag-display').innerText = act.tag;
-    document.getElementById('games-title-display').innerText = act.name;
-    document.getElementById('games-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+      let desc = `${act.name} on ${act.day} for a ${grp.name}, including ${drk.label}. ${act.desc}.`;
+      document.getElementById('games-desc-display').innerText = desc;
 
-    let desc = `${act.name} on ${act.day} for a ${grp.name}, including ${drk.label}. ${act.desc}.`;
-    document.getElementById('games-desc-display').innerText = desc;
-  }
+      // Update SVG felt color
+      const felt = document.getElementById('svg-felt');
+      if (felt) {
+        felt.setAttribute('fill', act.felt);
+      }
 
-  // Initial trigger
-  window.addEventListener('load', () => {
-    updateGames();
-  });
-</script>
-<script src="../site-core.js"></script>
+      // Update SVG balls arrangement
+      document.getElementById('svg-balls-single').classList.add('hidden');
+      document.getElementById('svg-balls-team').classList.add('hidden');
+      document.getElementById('svg-balls-large').classList.add('hidden');
+      
+      const activeBalls = document.getElementById(`svg-balls-${grpKey}`);
+      if (activeBalls) {
+        activeBalls.classList.remove('hidden');
+      }
+    }
+
+    document.getElementById('games-activity').addEventListener('change', updateGames);
+    document.getElementById('games-group').addEventListener('change', updateGames);
+    document.getElementById('games-drink').addEventListener('change', updateGames);
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateGames();
+    });
+  </script>
 </body>
 </html>
