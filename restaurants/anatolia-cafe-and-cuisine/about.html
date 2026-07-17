@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/anatolia-cafe-and-cuisine/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Anatolia Cafe & Cuisine</title>
@@ -11,120 +14,132 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header">
-    <div class="container">
+    <div class="header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-icon">☰</span>
-        <span class="logo-text">Anatolia Cafe & Cuisine</span>
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <span class="logo-text">Anatolia</span>
       </a>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="menu.html" class="nav-link">Menu</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="visit.html" class="nav-link">Visit</a>
-        <a href="reserve.html" class="nav-link nav-link-cta">Order</a>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" class="active">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html" class="nav-link-cta">Order</a>
         <a href="flavor-guide.html">Flavor Guide</a>
-</nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-hero-title">Our Story</h1>
-        <p class="page-hero-sub">A journey from Istanbul to Charlotte, through the heart of Anatolia.</p>
-      </div>
-    </section>
+  <main id="main">
+    <div class="head" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <span class="section-tag">Anatolian Roots &bull; Mediterranean Vibe</span>
+      <h1>Our <em>Story</em></h1>
+      <p>A journey from Istanbul to Charlotte, through the heart of Anatolia.</p>
+    </div>
 
-    <!-- Story Section -->
     <section class="section about-story">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Named After an Ancient Land</h2>
-            <p>Anatolia Cafe & Cuisine takes its name from <strong>Anatolia</strong> — the historic peninsula that is home to modern-day Turkey. It is a land where cultures, flavors, and traditions have merged for millennia, and that spirit of fusion is exactly what we bring to University City, Charlotte.</p>
-            <p>Opened on <strong>April 18, 2025</strong>, Anatolia is a Turkish and Mediterranean "hybrid house" — part cafe, part patisserie, part kebab house. We serve everything from in-house baked borek and baklava to flame-grilled Adana kebabs and Moroccan herbal teas. Our goal is to bring the warmth and richness of Anatolian hospitality to every guest who walks through the door.</p>
+      <div class="container welcome-grid">
+        <div>
+          <span class="section-tag">Travertine &amp; Hearth</span>
+          <h2 class="section-title">Named After an Ancient Land</h2>
+          <p class="welcome-text">
+            Anatolia Cafe & Cuisine takes its name from <strong>Anatolia</strong> — the historic peninsula that is home to modern-day Turkey. It is a land where cultures, flavors, and traditions have merged for millennia, and that spirit of fusion is exactly what we bring to University City, Charlotte.
+          </p>
+          <p class="welcome-text">
+            Opened on <strong>April 18, 2025</strong>, Anatolia is a Turkish and Mediterranean "hybrid house" — part cafe, part patisserie, part kebab house. We serve everything from in-house baked borek and baklava to flame-grilled Adana kebabs and Moroccan herbal teas.
+          </p>
+        </div>
+        <div>
+          <span class="section-tag">Founding Family</span>
+          <h2 class="section-title">Mehmet Tarhan</h2>
+          <p class="welcome-text">
+            Mehmet Tarhan had a vision — to create a space in Charlotte where Turkish and Mediterranean food could be experienced authentically, not as a compromise. After years of planning, he brought Anatolia to life in the heart of University City.
+          </p>
+          <p class="welcome-text">
+            Tarhan's wife is Moroccan, and her influence can be found throughout the cafe — particularly in our curated selection of <strong>Moroccan herbal teas</strong>, which sit alongside our Turkish coffee program as a tribute to both families' traditions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt about-chef">
+      <div class="container welcome-grid">
+        <div>
+          <span class="section-tag">Master Baker &amp; Griller</span>
+          <h2 class="section-title">Chef Omer Aydin</h2>
+          <p class="welcome-text">
+            Chef Omer Aydin brings <strong>15 years of professional culinary experience</strong> to Anatolia, including years spent operating two of his own stores in Istanbul, Turkey. His expertise spans the full breadth of Turkish cuisine — from the delicate art of pastry-making to the bold, smoky flavors of flame-grilled kebabs.
+          </p>
+          <p class="welcome-text">
+            At Anatolia, Chef Omer oversees everything that comes out of our kitchen. He is deeply committed to authenticity — every borek is hand-rolled, every simit is shaped by hand, and every kebab is seasoned and grilled the way it would be in Istanbul.
+          </p>
+        </div>
+        <div class="grid g3" style="align-content: center;">
+          <div class="card" style="text-align: center;">
+            <h3 style="font-size: 2.2rem; color: var(--primary);">15</h3>
+            <p>Years of Experience</p>
           </div>
-          <div class="about-text">
-            <h2>Owner: Mehmet Tarhan</h2>
-            <p>Mehmet Tarhan had a vision — to create a space in Charlotte where Turkish and Mediterranean food could be experienced authentically, not as a compromise. After years of planning, he brought Anatolia to life in the heart of University City.</p>
-            <p>Tarhan's wife is Moroccan, and her influence can be found throughout the cafe — particularly in our curated selection of <strong>Moroccan herbal teas</strong>, which sit alongside our Turkish coffee program as a tribute to both families' traditions.</p>
+          <div class="card" style="text-align: center;">
+            <h3 style="font-size: 2.2rem; color: var(--primary);">2</h3>
+            <p>Stores in Istanbul</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <h3 style="font-size: 2.2rem; color: var(--primary);">Daily</h3>
+            <p>Fresh Pastries</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Chef Section -->
-    <section class="section about-chef">
-      <div class="container">
-        <div class="chef-card">
-          <div class="chef-info">
-            <h2>Chef Omer Aydin</h2>
-            <p class="chef-title">Head Chef — 15 Years of Experience</p>
-            <p>Chef Omer Aydin brings <strong>15 years of professional culinary experience</strong> to Anatolia, including years spent operating two of his own stores in Istanbul, Turkey. His expertise spans the full breadth of Turkish cuisine — from the delicate art of pastry-making to the bold, smoky flavors of flame-grilled kebabs.</p>
-            <p>At Anatolia, Chef Omer oversees everything that comes out of our kitchen. He is deeply committed to authenticity — every borek is hand-rolled, every simit is shaped by hand, and every kebab is seasoned and grilled the way it would be in Istanbul.</p>
-            <p>His pastry skills are particularly notable. Anatolia's in-house bakery program — featuring borek, simit, pistachio baklava, kunefe, and eclairs — is the heart of the cafe, and Chef Omer's Istanbul training is evident in every bite.</p>
-          </div>
-          <div class="chef-highlights">
-            <div class="chef-stat">
-              <span class="chef-stat-number">15</span>
-              <span class="chef-stat-label">Years of Experience</span>
-            </div>
-            <div class="chef-stat">
-              <span class="chef-stat-number">2</span>
-              <span class="chef-stat-label">Stores in Istanbul</span>
-            </div>
-            <div class="chef-stat">
-              <span class="chef-stat-number">Daily</span>
-              <span class="chef-stat-label">Fresh Pastries</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interior Section -->
     <section class="section about-interior">
-      <div class="container">
-        <h2 class="section-title">A Taste of Turkey, Inside and Out</h2>
-        <p class="section-subtitle">The interior of Anatolia is a celebration of Turkish culture and geography.</p>
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Beautiful Interior Decor</h2>
-            <p>Step inside Anatolia and you'll find yourself surrounded by <strong>beautiful artwork and decor highlighting different regions of Turkey</strong> — from the coastal beauty of the Aegean to the ancient ruins of Cappadocia, from the bustling bazaars of Istanbul to the quiet villages of the Black Sea.</p>
-            <p>The space is designed to feel warm and inviting — a place where you can linger over Turkish coffee, enjoy a leisurely breakfast, or share a mixed kebab platter with friends and family. With seating for approximately 55–60 guests indoors and 8 on the patio, Anatolia is sized for community.</p>
-          </div>
-          <div class="about-text">
-            <h2>The "Hybrid House" Concept</h2>
-            <p>Anatolia is what we call a <strong>"hybrid house"</strong> — a space that blends the warmth of a bakery-cafe with the boldness of a kebab restaurant. You can grab a pistachio baklava and a Turkish coffee for breakfast, come back for a quick borek lunch, and return in the evening for Adana kebabs and mixed grills.</p>
-            <p>It's a place for every part of the day — and that's exactly what Mehmet and Chef Omer intended.</p>
-          </div>
+      <div class="container welcome-grid">
+        <div>
+          <span class="section-tag">Visuals &amp; Spaces</span>
+          <h2 class="section-title">A Taste of Turkey, Inside and Out</h2>
+          <p class="welcome-text">
+            Step inside Anatolia and you'll find yourself surrounded by <strong>beautiful artwork and decor highlighting different regions of Turkey</strong> — from the coastal beauty of the Aegean to the ancient ruins of Cappadocia, from the bustling bazaars of Istanbul to the quiet villages of the Black Sea.
+          </p>
+        </div>
+        <div>
+          <span class="section-tag">Community Seat</span>
+          <h2 class="section-title">The "Hybrid House"</h2>
+          <p class="welcome-text">
+            Anatolia is what we call a <strong>"hybrid house"</strong> — a space that blends the warmth of a bakery-cafe with the boldness of a kebab restaurant. You can grab a pistachio baklava and a Turkish coffee for breakfast, come back for a quick borek lunch, and return in the evening for Adana kebabs and mixed grills.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="section values-section">
+    <section class="section alt values-section">
       <div class="container">
-        <h2 class="section-title">What We Stand For</h2>
-        <div class="values-grid">
-          <div class="value-card">
+        <div class="head">
+          <span class="section-tag">Our Core Beliefs</span>
+          <h2>What We Stand For</h2>
+        </div>
+        <div class="grid g4">
+          <div class="card">
             <h3>Authenticity</h3>
             <p>Every recipe, technique, and ingredient is rooted in real Turkish and Mediterranean culinary tradition. No shortcuts.</p>
           </div>
-          <div class="value-card">
-            <h3>In-House Bakery</h3>
+          <div class="card">
+            <h3>In-House</h3>
             <p>Our borek, simit, baklava, and kunefe are baked fresh every morning. We believe in doing things the hard way — the right way.</p>
           </div>
-          <div class="value-card">
+          <div class="card">
             <h3>Hospitality</h3>
             <p>Anatolian hospitality is legendary. Every guest is treated like family — with warmth, generosity, and genuine care.</p>
           </div>
-          <div class="value-card">
-            <h3>Cultural Fusion</h3>
+          <div class="card">
+            <h3>Fusion</h3>
             <p>Turkish and Moroccan traditions come together in our menu and our space — reflecting the Tarhan family's own story.</p>
           </div>
         </div>
@@ -133,34 +148,20 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="footer-logo">Anatolia Cafe & Cuisine</span>
-          <p>Tastes of Ancient Anatolia in University City, Charlotte.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Visit</h4>
-            <p>1520 Overland Park Ln<br>Suite 107<br>Charlotte, NC 28262</p>
-            <a href="tel:+17046198237">(704) 619-8237</a>
-          </div>
-          <div class="footer-col">
-            <h4>Hours</h4>
-            <p>Mon, Wed–Fri: 7:30am–9pm<br>Sat: 9am–10pm<br>Sun: 9am–9pm<br>Tue: Closed</p>
-          </div>
-          <div class="footer-col">
-            <h4>Order Online</h4>
-            <p>Available on DoorDash,<br>Uber Eats &amp; Grubhub</p>
-          </div>
-        </div>
+    <div class="footer-inner">
+      <p class="footer-logo">Anatolia Cafe &amp; Cuisine</p>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Order</a>
+        <a href="flavor-guide.html">Flavor Guide</a>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Anatolia Cafe & Cuisine. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 Anatolia. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <div class="demo-toast" role="status"></div>
+  <script src="site.js" defer></script>
 </body>
 </html>

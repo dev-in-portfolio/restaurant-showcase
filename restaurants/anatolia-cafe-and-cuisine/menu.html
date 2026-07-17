@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/anatolia-cafe-and-cuisine/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu — Anatolia Cafe & Cuisine</title>
@@ -11,33 +14,37 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header">
-    <div class="container">
+    <div class="header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-icon">☰</span>
-        <span class="logo-text">Anatolia Cafe & Cuisine</span>
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <span class="logo-text">Anatolia</span>
       </a>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="menu.html" class="nav-link active">Menu</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="visit.html" class="nav-link">Visit</a>
-        <a href="reserve.html" class="nav-link nav-link-cta">Order</a>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html" class="nav-link-cta">Order</a>
         <a href="flavor-guide.html">Flavor Guide</a>
-</nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero page-hero-menu">
-      <div class="container">
-        <h1 class="page-hero-title">Our Menu</h1>
-        <p class="page-hero-sub">From our in-house bakery to the grill — everything made with care.</p>
-      </div>
-    </section>
+  <main id="main">
+    <div class="head" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <span class="section-tag">Anatolian Kitchen</span>
+      <h1>Our <em>Menu</em></h1>
+      <p>Traditional Turkish Breakfast, In-House Borek, Kebabs &amp; Coffee.</p>
+    </div>
 
     <section class="section menu-section">
       <div class="container">
@@ -52,365 +59,340 @@
             <button class="filter-btn" data-filter="pastries">Pastries</button>
             <button class="filter-btn" data-filter="drinks">Drinks</button>
           </div>
-          <div class="menu-search">
-            <input type="text" id="menuSearch" placeholder="Search the menu..." aria-label="Search menu items">
+          <label style="display:none;" for="menuSearch">Search menu items</label>
+          <input type="text" class="menu-search" id="menuSearch" placeholder="Search menu...">
+        </div>
+
+        <div class="menu-categories" id="menuCategories">
+          <!-- Breakfast -->
+          <div class="menu-category" data-category="breakfast" id="cat-breakfast">
+            <h2 class="menu-category-title">Breakfast</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Turkish Breakfast Plate" data-desc="Eggs, cheeses, olives, tomatoes, cucumbers, jams, honey, butter, and fresh bread">
+                <div class="menu-item-header">
+                  <h3>Turkish Breakfast Plate</h3>
+                  <span class="menu-price">$21.79</span>
+                </div>
+                <p>Eggs, cheeses, olives, tomatoes, cucumbers, jams, honey, butter, and fresh bread</p>
+              </div>
+              <div class="menu-item" data-name="Breakfast Toast Sandwich" data-desc="Eggs, cheese, and fresh vegetables in toasted bread">
+                <div class="menu-item-header">
+                  <h3>Breakfast Toast Sandwich</h3>
+                  <span class="menu-price">$17.19</span>
+                </div>
+                <p>Eggs, cheese, and fresh vegetables in toasted bread</p>
+              </div>
+              <div class="menu-item" data-name="Menemen" data-desc="Turkish-style scrambled eggs with tomatoes, peppers, and spices">
+                <div class="menu-item-header">
+                  <h3>Menemen</h3>
+                  <span class="menu-price">$14.89</span>
+                </div>
+                <p>Turkish-style scrambled eggs with tomatoes, peppers, and spices</p>
+              </div>
+              <div class="menu-item" data-name="Eggs with Sucuk" data-desc="Eggs fried with Turkish garlic sausage (sucuk)">
+                <div class="menu-item-header">
+                  <h3>Eggs with Sucuk</h3>
+                  <span class="menu-price">$16.04</span>
+                </div>
+                <p>Eggs fried with Turkish garlic sausage (sucuk)</p>
+              </div>
+              <div class="menu-item" data-name="Eggs Pide" data-desc="Baked eggs in a pide boat with cheese and toppings">
+                <div class="menu-item-header">
+                  <h3>Eggs Pide</h3>
+                  <span class="menu-price">$20.64</span>
+                </div>
+                <p>Baked eggs in a pide boat with cheese and toppings</p>
+              </div>
+              <div class="menu-item" data-name="Simit Sandwich" data-desc="Turkish sesame bagel sandwich with cheese and fresh vegetables">
+                <div class="menu-item-header">
+                  <h3>Simit Sandwich</h3>
+                  <span class="menu-price">$12.59</span>
+                </div>
+                <p>Turkish sesame bagel sandwich with cheese and fresh vegetables</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Borek -->
+          <div class="menu-category" data-category="borek" id="cat-borek">
+            <h2 class="menu-category-title">Borek</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Spinach & Feta Borek" data-desc="Layers of golden filo with spinach and feta cheese">
+                <div class="menu-item-header">
+                  <h3>Spinach &amp; Feta Borek</h3>
+                  <span class="menu-price">$14.89</span>
+                </div>
+                <p>Layers of golden filo with spinach and feta cheese</p>
+              </div>
+              <div class="menu-item" data-name="Ground Beef Borek" data-desc="Savory filo pastry filled with seasoned ground beef">
+                <div class="menu-item-header">
+                  <h3>Ground Beef Borek</h3>
+                  <span class="menu-price">$14.89</span>
+                </div>
+                <p>Savory filo pastry filled with seasoned ground beef</p>
+              </div>
+              <div class="menu-item" data-name="Cheese Borek" data-desc="Classic filo pastry with melted cheese filling">
+                <div class="menu-item-header">
+                  <h3>Cheese Borek</h3>
+                  <span class="menu-price">$14.89</span>
+                </div>
+                <p>Classic filo pastry with melted cheese filling</p>
+              </div>
+              <div class="menu-item" data-name="Potato Borek" data-desc="Filo pastry filled with seasoned potato">
+                <div class="menu-item-header">
+                  <h3>Potato Borek</h3>
+                  <span class="menu-price">$14.89</span>
+                </div>
+                <p>Filo pastry filled with seasoned potato</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appetizers -->
+          <div class="menu-category" data-category="appetizers" id="cat-appetizers">
+            <h2 class="menu-category-title">Appetizers</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Hummus" data-desc="Creamy chickpea dip with tahini, olive oil, and warm pita">
+                <div class="menu-item-header">
+                  <h3>Hummus</h3>
+                  <span class="menu-price">$9.14</span>
+                </div>
+                <p>Creamy chickpea dip with tahini, olive oil, and warm pita</p>
+              </div>
+              <div class="menu-item" data-name="Baba Ganoush" data-desc="Smoky roasted eggplant dip with tahini and herbs">
+                <div class="menu-item-header">
+                  <h3>Baba Ganoush</h3>
+                  <span class="menu-price">$9.14</span>
+                </div>
+                <p>Smoky roasted eggplant dip with tahini and herbs</p>
+              </div>
+              <div class="menu-item" data-name="Tzatziki" data-desc="Cool yogurt and cucumber dip with dill and garlic">
+                <div class="menu-item-header">
+                  <h3>Tzatziki</h3>
+                  <span class="menu-price">$9.14</span>
+                </div>
+                <p>Cool yogurt and cucumber dip with dill and garlic</p>
+              </div>
+              <div class="menu-item" data-name="Lentil Soup" data-desc="Traditional red lentil soup with warm spices">
+                <div class="menu-item-header">
+                  <h3>Lentil Soup</h3>
+                  <span class="menu-price">$9.14</span>
+                </div>
+                <p>Traditional red lentil soup with warm spices</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kebabs -->
+          <div class="menu-category" data-category="kebabs" id="cat-kebabs">
+            <h2 class="menu-category-title">Kebabs</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Chicken Shish Kebab" data-desc="Marinated chicken breast, grilled and served with rice and grilled peppers">
+                <div class="menu-item-header">
+                  <h3>Chicken Shish Kebab</h3>
+                  <span class="menu-price">$18 – $19</span>
+                </div>
+                <p>Marinated chicken breast, grilled and served with rice and grilled peppers</p>
+              </div>
+              <div class="menu-item" data-name="Beef Shish Kebab" data-desc="Tender beef cubes, grilled to perfection with rice and grilled peppers">
+                <div class="menu-item-header">
+                  <h3>Beef Shish Kebab</h3>
+                  <span class="menu-price">$18 – $19</span>
+                </div>
+                <p>Tender beef cubes, grilled to perfection with rice and grilled peppers</p>
+              </div>
+              <div class="menu-item" data-name="Adana Kebab" data-desc="Spiced ground beef, hand-shaped on skewers and grilled over flame">
+                <div class="menu-item-header">
+                  <h3>Adana Kebab</h3>
+                  <span class="menu-price">$18 – $19</span>
+                </div>
+                <p>Spiced ground beef, hand-shaped on skewers and grilled over flame</p>
+              </div>
+              <div class="menu-item" data-name="Kofte" data-desc="Seasoned meatballs, grilled and served with rice and salad">
+                <div class="menu-item-header">
+                  <h3>Kofte</h3>
+                  <span class="menu-price">$18 – $19</span>
+                </div>
+                <p>Seasoned meatballs, grilled and served with rice and salad</p>
+              </div>
+              <div class="menu-item" data-name="Beyti" data-desc="Ground lamb wrapped in lavash with yogurt and tomato sauce">
+                <div class="menu-item-header">
+                  <h3>Beyti</h3>
+                  <span class="menu-price">$28.69</span>
+                </div>
+                <p>Ground lamb wrapped in lavash with yogurt and tomato sauce</p>
+              </div>
+              <div class="menu-item" data-name="Ali Nazik" data-desc="Smoky eggplant yogurt base topped with grilled lamb and rice">
+                <div class="menu-item-header">
+                  <h3>Ali Nazik</h3>
+                  <span class="menu-price">$27.54</span>
+                </div>
+                <p>Smoky eggplant yogurt base topped with grilled lamb and rice</p>
+              </div>
+              <div class="menu-item" data-name="Mixed Kebab Platter" data-desc="Adana, chicken shish, beef shish, and kofte — a feast of grilled meats with rice and warm flatbread">
+                <div class="menu-item-header">
+                  <h3>Mixed Kebab Platter</h3>
+                  <span class="menu-price">$39.04</span>
+                </div>
+                <p>Adana, chicken shish, beef shish, and kofte — a feast of grilled meats with rice and warm flatbread</p>
+              </div>
+              <div class="menu-item" data-name="Anatolia Burger" data-desc="Seasoned beef patty with fresh toppings in a toasted bun">
+                <div class="menu-item-header">
+                  <h3>Anatolia Burger</h3>
+                  <span class="menu-price">$15.95</span>
+                </div>
+                <p>Seasoned beef patty with fresh toppings in a toasted bun</p>
+              </div>
+              <div class="menu-item" data-name="Doner" data-desc="Traditional rotisserie meat, shaved and served in bread or platter">
+                <div class="menu-item-header">
+                  <h3>Doner</h3>
+                  <span class="menu-price">$16.95</span>
+                </div>
+                <p>Traditional rotisserie meat, shaved and served in bread or platter</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flatbreads -->
+          <div class="menu-category" data-category="flatbreads" id="cat-flatbreads">
+            <h2 class="menu-category-title">Flatbreads</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Steak Pide" data-desc="Turkish flatbread boat topped with seasoned steak and melted cheese">
+                <div class="menu-item-header">
+                  <h3>Steak Pide</h3>
+                  <span class="menu-price">$22.94</span>
+                </div>
+                <p>Turkish flatbread boat topped with seasoned steak and melted cheese</p>
+              </div>
+              <div class="menu-item" data-name="Sucuk Pide" data-desc="Turkish flatbread with spicy sucuk sausage and cheese">
+                <div class="menu-item-header">
+                  <h3>Sucuk Pide</h3>
+                  <span class="menu-price">$21.79</span>
+                </div>
+                <p>Turkish flatbread with spicy sucuk sausage and cheese</p>
+              </div>
+              <div class="menu-item" data-name="Lahmacun" data-desc="Thin Turkish flatbread with spiced minced meat, herbs, and lemon">
+                <div class="menu-item-header">
+                  <h3>Lahmacun</h3>
+                  <span class="menu-price">$17 – $19</span>
+                </div>
+                <p>Thin Turkish flatbread with spiced minced meat, herbs, and lemon</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pastries -->
+          <div class="menu-category" data-category="pastries" id="cat-pastries">
+            <h2 class="menu-category-title">Pastries</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Simit" data-desc="Traditional Turkish sesame bagel, golden and crusty">
+                <div class="menu-item-header">
+                  <h3>Simit</h3>
+                  <span class="menu-price">$3.97</span>
+                </div>
+                <p>Traditional Turkish sesame bagel, golden and crusty</p>
+              </div>
+              <div class="menu-item" data-name="Borek (Whole)" data-desc="Take home a whole freshly baked borek — your choice of filling">
+                <div class="menu-item-header">
+                  <h3>Borek (Whole)</h3>
+                  <span class="menu-price">$21.79</span>
+                </div>
+                <p>Take home a whole freshly baked borek — your choice of filling</p>
+              </div>
+              <div class="menu-item" data-name="Pistachio Baklava" data-desc="Layers of filo, crushed pistachios, and fragrant syrup">
+                <div class="menu-item-header">
+                  <h3>Pistachio Baklava</h3>
+                  <span class="menu-price">$11.44</span>
+                </div>
+                <p>Layers of filo, crushed pistachios, and fragrant syrup</p>
+              </div>
+              <div class="menu-item" data-name="Kunefe" data-desc="Warm shredded pastry with melted cheese and sweet syrup">
+                <div class="menu-item-header">
+                  <h3>Kunefe</h3>
+                  <span class="menu-price">$11.44</span>
+                </div>
+                <p>Warm shredded pastry with melted cheese and sweet syrup</p>
+              </div>
+              <div class="menu-item" data-name="Eclairs" data-desc="Cream-filled pastry with chocolate glaze">
+                <div class="menu-item-header">
+                  <h3>Eclairs</h3>
+                  <span class="menu-price">$5.69 – $6.84</span>
+                </div>
+                <p>Cream-filled pastry with chocolate glaze</p>
+              </div>
+              <div class="menu-item" data-name="Pistachio Cheesecake" data-desc="Rich cheesecake with crushed pistachios">
+                <div class="menu-item-header">
+                  <h3>Pistachio Cheesecake</h3>
+                  <span class="menu-price">$10.29</span>
+                </div>
+                <p>Rich cheesecake with crushed pistachios</p>
+              </div>
+              <div class="menu-item" data-name="Dubai Chocolate Cake" data-desc="Decadent chocolate cake with luxurious flavor">
+                <div class="menu-item-header">
+                  <h3>Dubai Chocolate Cake</h3>
+                  <span class="menu-price">$10.29</span>
+                </div>
+                <p>Decadent chocolate cake with luxurious flavor</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drinks -->
+          <div class="menu-category" data-category="drinks" id="cat-drinks">
+            <h2 class="menu-category-title">Drinks</h2>
+            <div class="menu-items">
+              <div class="menu-item" data-name="Turkish Coffee" data-desc="Traditional ibrik-brewed Turkish coffee, rich and aromatic">
+                <div class="menu-item-header">
+                  <h3>Turkish Coffee</h3>
+                  <span class="menu-price">$3 – $4</span>
+                </div>
+                <p>Traditional ibrik-brewed Turkish coffee, rich and aromatic</p>
+              </div>
+              <div class="menu-item" data-name="Specialty Lattes" data-desc="Crafted lattes with unique flavor profiles">
+                <div class="menu-item-header">
+                  <h3>Specialty Lattes</h3>
+                  <span class="menu-price">$5 – $7</span>
+                </div>
+                <p>Crafted lattes with unique flavor profiles</p>
+              </div>
+              <div class="menu-item" data-name="Moroccan Herbal Teas" data-desc="Curated selection of Moroccan herbal teas — a family tradition">
+                <div class="menu-item-header">
+                  <h3>Moroccan Herbal Teas</h3>
+                  <span class="menu-price">$3 – $4</span>
+                </div>
+                <p>Curated selection of Moroccan herbal teas — a family tradition</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Breakfast -->
-        <div class="menu-category" data-category="breakfast" id="cat-breakfast">
-          <div class="menu-category-header">
-            <h2>Breakfast</h2>
-            <p>Served with traditional Turkish flair</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Turkish Breakfast Plate</h3>
-                <p class="menu-item-desc">Eggs, cheeses, olives, tomatoes, cucumbers, jams, honey, butter, and fresh bread</p>
-              </div>
-              <span class="menu-item-price">$21.79</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Breakfast Toast Sandwich</h3>
-                <p class="menu-item-desc">Eggs, cheese, and fresh vegetables in toasted bread</p>
-              </div>
-              <span class="menu-item-price">$17.19</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Menemen</h3>
-                <p class="menu-item-desc">Turkish-style scrambled eggs with tomatoes, peppers, and spices</p>
-              </div>
-              <span class="menu-item-price">$14.89</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Eggs with Sucuk</h3>
-                <p class="menu-item-desc">Eggs fried with Turkish garlic sausage (sucuk)</p>
-              </div>
-              <span class="menu-item-price">$16.04</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Eggs Pide</h3>
-                <p class="menu-item-desc">Baked eggs in a pide boat with cheese and toppings</p>
-              </div>
-              <span class="menu-item-price">$20.64</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Simit Sandwich</h3>
-                <p class="menu-item-desc">Turkish sesame bagel sandwich with cheese and fresh vegetables</p>
-              </div>
-              <span class="menu-item-price">$12.59</span>
-            </div>
-          </div>
+        <div class="menu-no-results" id="menuNoResults" style="display:none; text-align:center; padding: 3rem; color: var(--text-muted);">
+          <p>No dishes found matching your search.</p>
         </div>
 
-        <!-- Borek -->
-        <div class="menu-category" data-category="borek" id="cat-borek">
-          <div class="menu-category-header">
-            <h2>Borek</h2>
-            <p>Fresh from our in-house bakery</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Spinach & Feta Borek</h3>
-                <p class="menu-item-desc">Layers of golden filo with spinach and feta cheese</p>
-              </div>
-              <span class="menu-item-price">$14.89</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Ground Beef Borek</h3>
-                <p class="menu-item-desc">Savory filo pastry filled with seasoned ground beef</p>
-              </div>
-              <span class="menu-item-price">$14.89</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Cheese Borek</h3>
-                <p class="menu-item-desc">Classic filo pastry with melted cheese filling</p>
-              </div>
-              <span class="menu-item-price">$14.89</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Potato Borek</h3>
-                <p class="menu-item-desc">Filo pastry filled with seasoned potato</p>
-              </div>
-              <span class="menu-item-price">$14.89</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Appetizers -->
-        <div class="menu-category" data-category="appetizers" id="cat-appetizers">
-          <div class="menu-category-header">
-            <h2>Appetizers</h2>
-            <p>Mediterranean staples, made fresh</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Hummus</h3>
-                <p class="menu-item-desc">Creamy chickpea dip with tahini, olive oil, and warm pita</p>
-              </div>
-              <span class="menu-item-price">$9.14</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Baba Ganoush</h3>
-                <p class="menu-item-desc">Smoky roasted eggplant dip with tahini and herbs</p>
-              </div>
-              <span class="menu-item-price">$9.14</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Tzatziki</h3>
-                <p class="menu-item-desc">Cool yogurt and cucumber dip with dill and garlic</p>
-              </div>
-              <span class="menu-item-price">$9.14</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Lentil Soup</h3>
-                <p class="menu-item-desc">Traditional red lentil soup with warm spices</p>
-              </div>
-              <span class="menu-item-price">$9.14</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kebabs -->
-        <div class="menu-category" data-category="kebabs" id="cat-kebabs">
-          <div class="menu-category-header">
-            <h2>Kebabs</h2>
-            <p>Grilled over flame, seasoned with tradition</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Chicken Shish Kebab</h3>
-                <p class="menu-item-desc">Marinated chicken breast, grilled and served with rice and grilled peppers</p>
-              </div>
-              <span class="menu-item-price">$18–19</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Beef Shish Kebab</h3>
-                <p class="menu-item-desc">Tender beef cubes, grilled to perfection with rice and grilled peppers</p>
-              </div>
-              <span class="menu-item-price">$18–19</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Adana Kebab</h3>
-                <p class="menu-item-desc">Spiced ground beef, hand-shaped on skewers and grilled over flame</p>
-              </div>
-              <span class="menu-item-price">$18–19</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Kofte</h3>
-                <p class="menu-item-desc">Seasoned meatballs, grilled and served with rice and salad</p>
-              </div>
-              <span class="menu-item-price">$18–19</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Beyti</h3>
-                <p class="menu-item-desc">Ground lamb wrapped in lavash with yogurt and tomato sauce</p>
-              </div>
-              <span class="menu-item-price">$28.69</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Ali Nazik</h3>
-                <p class="menu-item-desc">Smoky eggplant yogurt base topped with grilled lamb and rice</p>
-              </div>
-              <span class="menu-item-price">$27.54</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Mixed Kebab Platter</h3>
-                <p class="menu-item-desc">Adana, chicken shish, beef shish, and kofte — a feast of grilled meats with rice and warm flatbread</p>
-              </div>
-              <span class="menu-item-price">$39.04</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Anatolia Burger</h3>
-                <p class="menu-item-desc">Seasoned beef patty with fresh toppings in a toasted bun</p>
-              </div>
-              <span class="menu-item-price">$15.95</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Doner</h3>
-                <p class="menu-item-desc">Traditional rotisserie meat, shaved and served in bread or platter</p>
-              </div>
-              <span class="menu-item-price">$16.95</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Flatbreads -->
-        <div class="menu-category" data-category="flatbreads" id="cat-flatbreads">
-          <div class="menu-category-header">
-            <h2>Flatbreads</h2>
-            <p>Hand-stretched and oven-baked</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Steak Pide</h3>
-                <p class="menu-item-desc">Turkish flatbread boat topped with seasoned steak and melted cheese</p>
-              </div>
-              <span class="menu-item-price">$22.94</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Sucuk Pide</h3>
-                <p class="menu-item-desc">Turkish flatbread with spicy sucuk sausage and cheese</p>
-              </div>
-              <span class="menu-item-price">$21.79</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Lahmacun</h3>
-                <p class="menu-item-desc">Thin Turkish flatbread with spiced minced meat, herbs, and lemon</p>
-              </div>
-              <span class="menu-item-price">$17–19</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pastries -->
-        <div class="menu-category" data-category="pastries" id="cat-pastries">
-          <div class="menu-category-header">
-            <h2>Pastries</h2>
-            <p>Baked in-house daily — the heart of Anatolia</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Simit</h3>
-                <p class="menu-item-desc">Traditional Turkish sesame bagel, golden and crusty</p>
-              </div>
-              <span class="menu-item-price">$3.97</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Borek (Whole)</h3>
-                <p class="menu-item-desc">Take home a whole freshly baked borek — your choice of filling</p>
-              </div>
-              <span class="menu-item-price">$21.79</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Pistachio Baklava</h3>
-                <p class="menu-item-desc">Layers of filo, crushed pistachios, and fragrant syrup</p>
-              </div>
-              <span class="menu-item-price">$11.44</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Kunefe</h3>
-                <p class="menu-item-desc">Warm shredded pastry with melted cheese and sweet syrup</p>
-              </div>
-              <span class="menu-item-price">$11.44</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Eclairs</h3>
-                <p class="menu-item-desc">Cream-filled pastry with chocolate glaze</p>
-              </div>
-              <span class="menu-item-price">$5.69–6.84</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Pistachio Cheesecake</h3>
-                <p class="menu-item-desc">Rich cheesecake with crushed pistachios</p>
-              </div>
-              <span class="menu-item-price">$10.29</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Dubai Chocolate Cake</h3>
-                <p class="menu-item-desc">Decadent chocolate cake with luxurious flavor</p>
-              </div>
-              <span class="menu-item-price">$10.29</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Drinks -->
-        <div class="menu-category" data-category="drinks" id="cat-drinks">
-          <div class="menu-category-header">
-            <h2>Drinks</h2>
-            <p>Turkish coffee, specialty lattes, and Moroccan teas</p>
-          </div>
-          <div class="menu-items">
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Turkish Coffee</h3>
-                <p class="menu-item-desc">Traditional ibrik-brewed Turkish coffee, rich and aromatic</p>
-              </div>
-              <span class="menu-item-price">$3–4</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Specialty Lattes</h3>
-                <p class="menu-item-desc">Crafted lattes with unique flavor profiles</p>
-              </div>
-              <span class="menu-item-price">$5–7</span>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <h3>Moroccan Herbal Teas</h3>
-                <p class="menu-item-desc">Curated selection of Moroccan herbal teas — a family tradition</p>
-              </div>
-              <span class="menu-item-price">$3–4</span>
-            </div>
-          </div>
+        <div style="text-align:center; margin-top: 5rem; border-top: 1px dashed var(--border); padding-top: 3rem;">
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Consuming raw or undercooked meats, poultry, seafood, or eggs may increase your risk of foodborne illness.</p>
+          <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="footer-logo">Anatolia Cafe & Cuisine</span>
-          <p>Tastes of Ancient Anatolia in University City, Charlotte.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Visit</h4>
-            <p>1520 Overland Park Ln<br>Suite 107<br>Charlotte, NC 28262</p>
-            <a href="tel:+17046198237">(704) 619-8237</a>
-          </div>
-          <div class="footer-col">
-            <h4>Hours</h4>
-            <p>Mon, Wed–Fri: 7:30am–9pm<br>Sat: 9am–10pm<br>Sun: 9am–9pm<br>Tue: Closed</p>
-          </div>
-          <div class="footer-col">
-            <h4>Order Online</h4>
-            <p>Available on DoorDash,<br>Uber Eats &amp; Grubhub</p>
-          </div>
-        </div>
+    <div class="footer-inner">
+      <p class="footer-logo">Anatolia Cafe &amp; Cuisine</p>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Order</a>
+        <a href="flavor-guide.html">Flavor Guide</a>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Anatolia Cafe & Cuisine. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 Anatolia. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <div class="demo-toast" role="status"></div>
+  <script src="site.js" defer></script>
 </body>
 </html>

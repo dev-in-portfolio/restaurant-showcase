@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/anatolia-cafe-and-cuisine/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order — Anatolia Cafe & Cuisine</title>
@@ -11,115 +14,111 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header">
-    <div class="container">
+    <div class="header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-icon">☰</span>
-        <span class="logo-text">Anatolia Cafe & Cuisine</span>
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <span class="logo-text">Anatolia</span>
       </a>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="menu.html" class="nav-link">Menu</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="visit.html" class="nav-link">Visit</a>
-        <a href="reserve.html" class="nav-link nav-link-cta active">Order</a>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html" class="nav-link-cta active">Order</a>
         <a href="flavor-guide.html">Flavor Guide</a>
-</nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-hero-title">Order</h1>
-        <p class="page-hero-sub">Walk-ins always welcome. Online ordering also available.</p>
-      </div>
-    </section>
+  <main id="main">
+    <div class="head" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <span class="section-tag">Dine in or take home</span>
+      <h1>Order <em>Online</em></h1>
+      <p>Walk-ins always welcome. Online ordering also available.</p>
+    </div>
 
-    <!-- Walk-in -->
-    <section class="section">
-      <div class="container">
-        <div class="reserve-content">
-          <div class="reserve-text">
-            <h2>Walk-Ins Welcome</h2>
-            <p>No reservations needed — Anatolia is a casual, welcoming space where you can sit down and enjoy a meal at your own pace. Whether you're stopping by for a quick Turkish coffee and simit, or settling in for a full kebab platter with friends, we're ready for you.</p>
-            <p>Our staff will guide you through the menu, and the pastry case is always worth a look — you might discover a kunefe or pistachio cheesecake you didn't know you needed.</p>
-          </div>
-          <div class="reserve-text">
-            <h2>Online Ordering</h2>
-            <p>Prefer to order ahead? We're available on all major delivery platforms:</p>
-            <div class="order-platforms">
-              <a href="https://www.doordash.com" target="_blank" rel="noopener" class="btn btn-primary">Order on DoorDash</a>
-              <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="btn btn-primary">Order on Uber Eats</a>
-              <a href="https://www.grubhub.com" target="_blank" rel="noopener" class="btn btn-primary">Order on Grubhub</a>
-            </div>
+    <section class="section reserve-section" style="padding-top:0;">
+      <div class="container welcome-grid">
+        <div class="card">
+          <h2>Walk-Ins Welcome</h2>
+          <p style="margin-top: 1rem; line-height: 1.8;">No reservations needed — Anatolia is a casual, welcoming space where you can sit down and enjoy a meal at your own pace. Whether you're stopping by for a quick Turkish coffee and simit, or settling in for a full kebab platter with friends, we're ready for you.</p>
+          <p style="margin-top: 1rem; line-height: 1.8;">Our staff will guide you through the menu, and the pastry case is always worth a look — you might discover a kunefe or pistachio cheesecake you didn't know you needed.</p>
+        </div>
+        <div class="card">
+          <h2>Online Ordering</h2>
+          <p style="margin-top: 1rem; margin-bottom: 2rem;">Prefer to order ahead? We're available on all major delivery platforms. Click below to start your order:</p>
+          <div class="grid g1" style="gap: 1rem;">
+            <a href="https://www.doordash.com" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">Order on DoorDash</a>
+            <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">Order on Uber Eats</a>
+            <a href="https://www.grubhub.com" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%;">Order on Grubhub</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What to Expect -->
-    <section class="section expect-section">
+    <section class="section alt expect-section">
       <div class="container">
-        <h2 class="section-title">What to Expect</h2>
-        <p class="section-subtitle">When you visit Anatolia, here's what awaits you.</p>
-        <div class="expect-grid">
-          <div class="expect-card">
-            <div class="expect-icon">🥐</div>
+        <div class="head">
+          <span class="section-tag">The Anatolia Experience</span>
+          <h2>What to Expect</h2>
+        </div>
+        <div class="grid g3">
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M20 20a8 8 0 0 0-16 0"/><rect x="6" y="8" width="12" height="4" rx="1"/><circle cx="12" cy="5" r="1"/></svg>
+            </div>
             <h3>Authentic Turkish Pastries</h3>
             <p>From the pastry case to your table — borek, simit, baklava, kunefe, and eclairs baked fresh daily by Chef Omer.</p>
           </div>
-          <div class="expect-card">
-            <div class="expect-icon">🍢</div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><rect x="8" y="7" width="8" height="4" rx="1"/><rect x="9" y="14" width="6" height="4" rx="1"/></svg>
+            </div>
             <h3>Flame-Grilled Kebabs</h3>
             <p>Adana, shish, kofte, and mixed platters — every kebab is seasoned and grilled the way it would be in Istanbul.</p>
           </div>
-          <div class="expect-card">
-            <div class="expect-icon">☕</div>
-            <h3>Turkish Coffee</h3>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="5" ry="9" transform="rotate(-45 12 12)"/><path d="M12 3 C12 3, 10 12, 12 21"/></svg>
+            </div>
+            <h3>Turkish Coffee &amp; Tea</h3>
             <p>Traditional ibrik-brewed coffee, specialty lattes, and Moroccan herbal teas — a drink for every mood.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Best For -->
     <section class="section best-for-section">
       <div class="container">
-        <h2 class="section-title">Best For</h2>
-        <div class="best-for-grid">
-          <div class="best-for-card">
+        <div class="head">
+          <span class="section-tag">Perfect settings</span>
+          <h2>Best For</h2>
+        </div>
+        <div class="grid g4">
+          <div class="card">
             <h3>Breakfast</h3>
             <p>The Turkish Breakfast Plate, Menemen, or a simit sandwich — paired with Turkish coffee or a Moroccan herbal tea. A perfect way to start the morning.</p>
           </div>
-          <div class="best-for-card">
+          <div class="card">
             <h3>Casual Lunch</h3>
             <p>A borek and lentil soup, a quick kebab wrap, or a doner — fast, fresh, and satisfying. Great for a University City lunch break.</p>
           </div>
-          <div class="best-for-card">
+          <div class="card">
             <h3>Family Dinner</h3>
             <p>The Mixed Kebab Platter, Ali Nazik, or a spread of flatbreads and appetizers — bring the family and share a feast Anatolian-style.</p>
           </div>
-          <div class="best-for-card">
+          <div class="card">
             <h3>Sweet Treats</h3>
             <p>Pistachio baklava, kunefe, Dubai chocolate cake, or a slice of pistachio cheesecake — the pastry case is calling your name.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta-card">
-          <h2>Ready to Taste Anatolia?</h2>
-          <p>Walk in or order online. We're at 1520 Overland Park Lane, Suite 107 in University City.</p>
-          <div class="cta-actions">
-            <a href="menu.html" class="btn btn-primary">View Menu</a>
-            <a href="visit.html" class="btn btn-outline">Get Directions</a>
           </div>
         </div>
       </div>
@@ -127,34 +126,20 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="footer-logo">Anatolia Cafe & Cuisine</span>
-          <p>Tastes of Ancient Anatolia in University City, Charlotte.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Visit</h4>
-            <p>1520 Overland Park Ln<br>Suite 107<br>Charlotte, NC 28262</p>
-            <a href="tel:+17046198237">(704) 619-8237</a>
-          </div>
-          <div class="footer-col">
-            <h4>Hours</h4>
-            <p>Mon, Wed–Fri: 7:30am–9pm<br>Sat: 9am–10pm<br>Sun: 9am–9pm<br>Tue: Closed</p>
-          </div>
-          <div class="footer-col">
-            <h4>Order Online</h4>
-            <p>Available on DoorDash,<br>Uber Eats &amp; Grubhub</p>
-          </div>
-        </div>
+    <div class="footer-inner">
+      <p class="footer-logo">Anatolia Cafe &amp; Cuisine</p>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Order</a>
+        <a href="flavor-guide.html">Flavor Guide</a>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Anatolia Cafe & Cuisine. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 Anatolia. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <div class="demo-toast" role="status"></div>
+  <script src="site.js" defer></script>
 </body>
 </html>
