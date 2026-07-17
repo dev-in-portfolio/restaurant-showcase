@@ -1,1 +1,204 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Cornerstone Pub &amp; Grill"><title>Pub Menu | Cornerstone Pub &amp; Grill</title><link rel="stylesheet" href="site.css"></head><body data-v="0"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Cornerstone Pub &amp; Grill</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Pub Menu</a><a href="specials.html">Daily Specials</a><a href="about.html">Neighborhood Story</a><a href="gameday.html">Game Day</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Neighborhood Pub • Grill • Sports</div><h1>Pub Menu</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Wings &amp; starters</button><button data-f="g1">Burgers &amp; grill</button><button data-f="g2">Draft direction</button><button data-f="g3">Late-game food</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Wings &amp; starters</h3><p>Shareable game-day choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Burgers &amp; grill</h3><p>Full-meal pub standards.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Draft direction</h3><p>Current taps organized by style.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Late-game food</h3><p>Owner-confirmed kitchen windows.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Cornerstone Pub &amp; Grill. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/cornerstone-pub-grill/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore our menu of wings, burgers, and draft beers at Cornerstone Pub & Grill in Matthews, NC.">
+  <title>Pub Menu | Cornerstone Pub &amp; Grill</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .filter-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      background: var(--color-card-bg);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+    }
+    .filter-btn:hover {
+      border-color: var(--color-hunter);
+      color: var(--color-hunter-hover);
+    }
+    .filter-btn.active {
+      background-color: var(--color-hunter);
+      color: #fff;
+      border-color: var(--color-hunter);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <span>🍺</span> Cornerstone Pub &amp; Grill
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Pub Menu</a>
+      <a href="specials.html">Daily Specials</a>
+      <a href="about.html">Neighborhood Story</a>
+      <a href="gameday.html">Game Day</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="hero">
+    <div class="wrap">
+      <h1>Tavern Food Board</h1>
+      <p style="margin-inline: auto;">Freshly prepared pub fare, crispy double-baked wings, and local craft microbrews on tap.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" style="margin-top: 40px;">
+    <!-- Interactive Filter Group -->
+    <div class="filter-group" id="menu-filters">
+      <button class="filter-btn active" data-filter="all">All Items</button>
+      <button class="filter-btn" data-filter="starters">Wings &amp; Starters</button>
+      <button class="filter-btn" data-filter="grill">Burgers &amp; Grill</button>
+      <button class="filter-btn" data-filter="drafts">Draft Beers</button>
+    </div>
+
+    <!-- Menu Display Grid -->
+    <div class="menu-preview" id="menu-board-grid">
+      <!-- Starters -->
+      <div class="menu-item" data-category="starters">
+        <h4>Crispy Tavern Wings <span class="price">$12.50</span></h4>
+        <p>Ten double-baked wings tossed in buffalo, honey BBQ, sweet chili, or lemon pepper dry rub.</p>
+      </div>
+
+      <div class="menu-item" data-category="starters">
+        <h4>Loaded Nachos <span class="price">$10.00</span></h4>
+        <p>Fresh tortilla chips loaded with hot queso cheese, black beans, jalapeños, and fresh pico de gallo.</p>
+      </div>
+
+      <div class="menu-item" data-category="starters">
+        <h4>Fried Mozzarella Sticks <span class="price">$8.00</span></h4>
+        <p>Breaded mozzarella fried golden brown, served with warm marinara dipping sauce.</p>
+      </div>
+
+      <!-- Grill -->
+      <div class="menu-item" data-category="grill">
+        <h4>Cornerstone Burger <span class="price">$14.00</span></h4>
+        <p>Half-pound seasoned Angus beef patty, sharp cheddar, lettuce, tomato, onion, and pickles on a brioche bun.</p>
+      </div>
+
+      <div class="menu-item" data-category="grill">
+        <h4>Chipotle Chicken Sandwich <span class="price">$13.00</span></h4>
+        <p>Grilled breast with swiss cheese, avocado slices, and smoky chipotle aioli on toasted bread.</p>
+      </div>
+
+      <div class="menu-item" data-category="grill">
+        <h4>Ribeye Steak Platter <span class="price">$19.99</span></h4>
+        <p>12oz hand-cut ribeye grilled to order, served with a baked potato and green beans.</p>
+      </div>
+
+      <!-- Drafts -->
+      <div class="menu-item" data-category="drafts">
+        <h4>Matthews Pale Ale <span class="price">$6.00</span></h4>
+        <p>Local pale ale with piney hops and a smooth citrus finish.</p>
+      </div>
+
+      <div class="menu-item" data-category="drafts">
+        <h4>Amber Lager <span class="price">$5.50</span></h4>
+        <p>Crisp, malt-forward lager brewed nearby in North Carolina.</p>
+      </div>
+
+      <div class="menu-item" data-category="drafts">
+        <h4>Dark Stout <span class="price">$6.50</span></h4>
+        <p>Rich roasted malts with notes of coffee and dark chocolate.</p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="premium-card" style="text-align: center; margin-top: 5rem; margin-bottom: 5rem;">
+      <h3 style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.8rem;">Daily Drink &amp; Food Specials</h3>
+      <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Check out our daily rotating deals and build a custom combo meal in our interactive visualizer.</p>
+      <a href="specials.html" class="btn">View Daily Specials</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Cornerstone Pub &amp; Grill</h3>
+        <p>A friendly neighborhood sports pub in Matthews, NC. Serving New American classics, draft beers, and game day wings on our patio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2001 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:00 AM - 11:00 PM<br>
+          Fri - Sat: 11:00 AM - 12:00 AM<br>
+          Sunday: 11:00 AM - 11:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cornerstone Pub &amp; Grill. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      // Toggle menu
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navToggle.classList.toggle('open');
+          navLinks.classList.toggle('open', isOpen);
+        });
+      }
+
+      // Filter board logic
+      const filters = document.getElementById('menu-filters');
+      const items = document.querySelectorAll('#menu-board-grid .menu-item');
+
+      if (filters) {
+        filters.addEventListener('click', function(e) {
+          const btn = e.target.closest('.filter-btn');
+          if (!btn) return;
+
+          filters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const cat = btn.dataset.filter;
+          items.forEach(item => {
+            if (cat === 'all' || item.dataset.category === cat) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

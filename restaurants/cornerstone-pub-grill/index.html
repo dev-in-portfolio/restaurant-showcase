@@ -1,1 +1,128 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Cornerstone Pub &amp; Grill"><title>Home | Cornerstone Pub &amp; Grill</title><link rel="stylesheet" href="site.css"></head><body data-v="0"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Cornerstone Pub &amp; Grill</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html" aria-current="page">Home</a><a href="menu.html">Pub Menu</a><a href="specials.html">Daily Specials</a><a href="about.html">Neighborhood Story</a><a href="gameday.html">Game Day</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="hero"><div><div class="tag">Matthews • Neighborhood Pub • Grill • Sports</div><h1>Give the neighborhood one dependable place for food, drafts and the game.</h1><p>A five-page sales demo that separates discovery, menu decisions, story, conversion and practical visit information instead of forcing everything into one landing page.</p><a class="btn" href="menu.html">Explore Pub Menu</a></div><div class="art" aria-label="Original concept illustration"><svg viewBox="0 0 520 520" aria-hidden="true"><path d="M90 430V90h340" fill="none" stroke="#244b38" stroke-width="48"/><path d="M155 360L360 155" stroke="#8f3e2c" stroke-width="58"/></svg></div></header><section class="alt"><div class="tag">Complete information architecture</div><h2>Five real pages. Five distinct jobs.</h2><div class="grid g4"><article class="card"><h3>Pub Menu</h3><p>Dedicated HTML menu and a working filter.</p></article><article class="card"><h3>Neighborhood Story</h3><p>Verified context without invented history.</p></article><article class="card"><h3>Game Day</h3><p>Watch-party planner for qualified requests.</p></article><article class="card"><h3>Visit</h3><p>Practical details and safe demo contact flow.</p></article></div></section><section><div class="story"><div class="mark">Cornerstone Pub &amp; Grill</div><div><div class="tag">Redesign purpose</div><h2>Make the strongest customer path obvious.</h2><p>The final production version connects verified menus, owner-approved assets and real ordering or reservation providers. This sales demo remains clearly non-operational.</p><a class="btn" href="gameday.html">Open Game Day</a></div></div></section></main><footer>Concept only — not affiliated with or operated by Cornerstone Pub &amp; Grill. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/cornerstone-pub-grill/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Welcome to Cornerstone Pub & Grill in Matthews, NC. Your local neighborhood pub serving New American classics, wings, burgers, and craft beers.">
+  <title>Cornerstone Pub &amp; Grill | Matthews neighborhood pub</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav>
+    <a href="index.html" class="brand">
+      <span>🍺</span> Cornerstone Pub &amp; Grill
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Pub Menu</a>
+      <a href="specials.html">Daily Specials</a>
+      <a href="about.html">Neighborhood Story</a>
+      <a href="gameday.html">Game Day</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero" style="padding: 7rem 0 5rem;">
+    <div class="wrap">
+      <span class="hero-badge">Serving Matthews Since 2010</span>
+      <h1 style="font-size: clamp(2.8rem, 6vw, 4.2rem); line-height: 1.1; margin: 1rem 0 1.5rem;">Your Neighborhood Tavern</h1>
+      <p style="font-size: 1.2rem; color: var(--color-text-muted); max-width: 650px; margin: 0 auto 2.5rem;">"We are the spot where Matthews gathers. Casual vibes, cold craft drafts, crispy wings, half-pound burgers, and the best game day atmosphere on the corner."</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="menu.html" class="btn">View Food Menu</a>
+        <a href="specials.html" class="btn" style="background-color: var(--color-copper); border-color: var(--color-copper); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);">Explore Specials</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cash Notice -->
+  <div class="wrap" style="margin-top: -1.5rem; position: relative; z-index: 10;">
+    <div class="notice">
+      <span>🍁 Covered patio dining available. Enjoy our craft mugs in the outdoor fresh air!</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main" class="wrap" style="margin-top: 5rem;">
+    
+    <!-- Intro Grid -->
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; margin-bottom: 5.5rem;">
+      <div class="premium-card">
+        <span style="font-size: 2rem;" aria-hidden="true">🍔</span>
+        <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none;">Angus Beef Burgers</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          Our half-pound seasoned burgers are hand-patted and griddled to order. Served with crisp seasoned fries. Try our Monday half-price special!
+        </p>
+      </div>
+
+      <div class="premium-card">
+        <span style="font-size: 2rem;" aria-hidden="true">🏈</span>
+        <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none;">Game Day Central</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          With big screens throughout the bar and patio, we stream every major matchup. Game day wings and pitcher specials active every Saturday and Sunday.
+        </p>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem; background: radial-gradient(circle, rgba(6, 78, 59, 0.04) 0%, rgba(252, 251, 250, 0.8) 100%);">
+      <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--color-text-light);">Rotating Daily Features</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem; font-weight: 500;">
+        From Taco Tuesdays to Steak Thursdays, we run food and drink specials every day of the week. Design your custom combo meal.
+      </p>
+      <a href="specials.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Daily Specials Board
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Cornerstone Pub &amp; Grill</h3>
+        <p>A friendly neighborhood sports pub in Matthews, NC. Serving New American classics, draft beers, and game day wings on our patio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2001 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:00 AM - 11:00 PM<br>
+          Fri - Sat: 11:00 AM - 12:00 AM<br>
+          Sunday: 11:00 AM - 11:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cornerstone Pub &amp; Grill. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
+</body>
+</html>

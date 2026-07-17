@@ -1,37 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/cornerstone-pub-grill/">');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Daily drink features and wing specials at Cornerstone Pub & Grill. Custom plan your tavern visit.">
-  <title>Daily Specials | Cornerstone Pub & Grill</title>
+  <title>Daily Specials | Cornerstone Pub &amp; Grill</title>
   <link rel="stylesheet" href="site.css">
-  <style>
-    /* Styling for the interactive specials visualizer */
-    .specials-mat {
-      background: radial-gradient(circle, #1a2f24 0%, #080f0c 100%);
-      border: 1.5px solid #8f3e2c;
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      transition: all 0.3s;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="notice">Unofficial six-page redesign demo • premium visual QA pending • forms do not submit</div>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <nav>
-    <a href="index.html">Cornerstone Pub &amp; Grill</a>
-    <button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-    <div class="links">
+    <a href="index.html" class="brand">
+      <span>🍺</span> Cornerstone Pub &amp; Grill
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="menu.html">Pub Menu</a>
       <a href="specials.html" aria-current="page">Daily Specials</a>
@@ -42,10 +32,9 @@
   </nav>
 
   <main id="main">
-    
     <!-- Page Header -->
-    <header class="hero" style="text-align: center; padding: 60px 0 40px;">
-      <div>
+    <header class="hero">
+      <div class="wrap">
         <h1>Daily Tavern Specials</h1>
         <p style="margin-inline: auto;">Every day has a feature at Cornerstone. Check out our rotating food specials and premium tap pairings.</p>
       </div>
@@ -53,40 +42,112 @@
 
     <!-- Interactive Specials Builder -->
     <section class="wrap" style="margin-bottom: 5rem;">
-      <div class="interactive-panel" style="background: #fffdf8; border: 1px solid #e0d4c0; padding: 40px 32px; border-radius: 12px;">
-        <h3 style="text-align: center; font-size: 1.6rem; color: #244b38; margin-bottom: 8px;">Daily Specials & Pint Planner</h3>
-        <p style="text-align: center; color: #5a4a3a; font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select a weekday special and your craft draft pairing to preview your combo meal and total price.</p>
+      <div class="interactive-panel" style="padding: 40px 32px; border-radius: var(--radius);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px; font-family: var(--font-heading); font-weight: 800;">Daily Specials &amp; Pint Planner</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select a weekday special and your craft draft pairing to preview your combo meal and total price.</p>
         
-        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+        <div class="catering-grid">
           
-          <!-- Left Side: Specials Mat -->
-          <div class="specials-mat">
-            <span style="font-size: 0.78rem; font-weight: 700; color: #8f3e2c; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="special-day-tag">Wednesday Night</span>
-            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="special-plate-title">75¢ Wing Night</h4>
-            <p style="font-size: 1.25rem; font-weight: 800; color: #8f3e2c; margin-bottom: 1.2rem;" id="special-plate-price">$13.50</p>
-            <p style="font-size: 0.95rem; color: #a3b8cc; line-height: 1.7;" id="special-plate-desc">Order of 10 crispy pub wings tossed in buffalo sauce paired with local Hazy IPA draft.</p>
+          <!-- Left Side: SVG Visualizer -->
+          <div class="plate-canvas" style="min-height: 300px;">
+            <div class="table-map-wrapper">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                <!-- Tabletop texture lines -->
+                <line x1="10" y1="120" x2="190" y2="120" stroke="var(--color-border)" stroke-width="2" />
+
+                <!-- Ceramic Dinner Plate (Left) -->
+                <circle cx="75" cy="80" r="38" fill="#ffffff" stroke="#e2e8f0" stroke-width="2.5" />
+                <circle cx="75" cy="80" r="30" fill="none" stroke="#f1f5f9" stroke-width="1.5" />
+
+                <!-- Clear Tavern Pint Glass (Right) -->
+                <path d="M 144,50 L 149,110 C 149.2,112 151,113 153,113 L 167,113 C 169,113 170.8,112 171,110 L 176,50 Z" fill="rgba(255, 255, 255, 0.15)" stroke="#e2e8f0" stroke-width="2" />
+                
+                <!-- FOOD OVERLAYS -->
+                <!-- Monday: Burger -->
+                <g id="food-mon" class="food-shape">
+                  <path d="M 58,88 Q 75,94 92,88" fill="#d97706" />
+                  <rect x="56" y="80" width="38" height="7" rx="2.2" fill="#451a03" />
+                  <polygon points="56,80 94,80 91,84" fill="#f59e0b" />
+                  <path d="M 54,78 Q 75,74 96,78" fill="none" stroke="#22c55e" stroke-width="2.5" />
+                  <path d="M 58,76 C 58,63 92,63 92,76 Z" fill="#d97706" />
+                </g>
+
+                <!-- Tuesday: Tacos -->
+                <g id="food-tue" class="food-shape">
+                  <!-- Taco 1 -->
+                  <path d="M 50,84 C 50,66 84,66 84,84 Z" fill="#eab308" />
+                  <circle cx="67" cy="72" r="2.5" fill="#dc2626" />
+                  <path d="M 55,80 Q 67,76 79,80" fill="none" stroke="#22c55e" stroke-width="2" />
+                  <!-- Taco 2 -->
+                  <path d="M 64,92 C 64,74 98,74 98,92 Z" fill="#eab308" />
+                  <circle cx="81" cy="80" r="2.5" fill="#dc2626" />
+                </g>
+
+                <!-- Wednesday: Wings -->
+                <g id="food-wed" class="food-shape show">
+                  <ellipse cx="64" cy="80" rx="11" ry="6" fill="#9a3412" transform="rotate(-15 64 80)" />
+                  <ellipse cx="84" cy="76" rx="11" ry="6" fill="#9a3412" transform="rotate(20 84 76)" />
+                  <ellipse cx="70" cy="88" rx="9" ry="5" fill="#d97706" transform="rotate(45 70 88)" />
+                  <ellipse cx="80" cy="88" rx="9" ry="5" fill="#9a3412" transform="rotate(-30 80 88)" />
+                </g>
+
+                <!-- Thursday: Steak -->
+                <g id="food-thu" class="food-shape">
+                  <path d="M 55,70 C 50,75 52,90 62,94 C 75,98 90,92 95,84 C 98,76 90,68 75,68 Z" fill="#4a0404" />
+                  <line x1="60" y1="72" x2="80" y2="92" stroke="#ffffff" stroke-width="1.2" opacity="0.35" />
+                  <line x1="68" y1="70" x2="88" y2="90" stroke="#ffffff" stroke-width="1.2" opacity="0.35" />
+                </g>
+
+
+                <!-- BEER LIQUID OVERLAYS -->
+                <!-- IPA Hazy Amber -->
+                <g id="beer-ipa" class="beer-liquid show">
+                  <path d="M 146.5,60 L 149.8,110 A 1.8,1.8 0 0,0 152,112 L 168,112 A 1.8,1.8 0 0,0 170.2,110 L 173.5,60 Z" fill="#f59e0b" />
+                  <ellipse cx="160" cy="60" rx="13.5" ry="3.5" fill="#ffffff" />
+                </g>
+
+                <!-- Lager Golden Honey -->
+                <g id="beer-lager" class="beer-liquid">
+                  <path d="M 146.5,60 L 149.8,110 A 1.8,1.8 0 0,0 152,112 L 168,112 A 1.8,1.8 0 0,0 170.2,110 L 173.5,60 Z" fill="#eab308" />
+                  <ellipse cx="160" cy="60" rx="13.5" ry="3.5" fill="#ffffff" />
+                </g>
+
+                <!-- Stout Dark Black -->
+                <g id="beer-stout" class="beer-liquid">
+                  <path d="M 146.5,60 L 149.8,110 A 1.8,1.8 0 0,0 152,112 L 168,112 A 1.8,1.8 0 0,0 170.2,110 L 173.5,60 Z" fill="#1c1917" />
+                  <ellipse cx="160" cy="60" rx="13.5" ry="3.5" fill="#d6d3d1" />
+                </g>
+              </svg>
+            </div>
           </div>
 
-          <!-- Right Side: Controls -->
-          <div class="form-group" style="margin-bottom: 0;">
-            <div style="margin-bottom: 1.5rem;">
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #244b38; display: block; margin-bottom: 0.5rem;">1. Select Daily Special</label>
-              <select id="special-select" onchange="updateSpecials()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px;">
-                <option value="mon">Monday: Half-Price Burgers ($7.50)</option>
-                <option value="tue">Tuesday: Taco Night ($2.00 / taco)</option>
-                <option value="wed" selected>Wednesday: 75¢ Wing Night (10 Wings: $7.50)</option>
-                <option value="thu">Thursday: Ribeye Steak Night ($14.99)</option>
-              </select>
-            </div>
+          <!-- Right Side: Specials Board & Selector -->
+          <div class="specials-mat" id="confirm-box">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="special-day-tag">Wednesday Night</span>
+            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);" id="special-plate-title">75¢ Wing Night</h4>
+            <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-copper); margin-bottom: 1.2rem; font-family: var(--font-heading);" id="special-plate-price">$13.50</p>
+            <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.7;" id="special-plate-desc">Order of 10 crispy pub wings tossed in buffalo sauce paired with local Hazy IPA draft.</p>
+            
+            <div class="form-group" style="margin-top: 2rem; text-align: left;">
+              <div style="margin-bottom: 1rem;">
+                <label for="special-select" style="color: #cbd5e1;">1. Select Daily Special</label>
+                <select id="special-select">
+                  <option value="mon">Monday: Half-Price Burgers ($7.50)</option>
+                  <option value="tue">Tuesday: Taco Night (4 Tacos: $8.00)</option>
+                  <option value="wed" selected>Wednesday: 75¢ Wing Night (10 Wings: $7.50)</option>
+                  <option value="thu">Thursday: Ribeye Steak Night ($14.99)</option>
+                </select>
+              </div>
 
-            <div>
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #244b38; display: block; margin-bottom: 0.5rem;">2. Select Draft Beer</label>
-              <select id="beer-select" onchange="updateSpecials()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px;">
-                <option value="ipa" selected>Local Hazy IPA (+$6.00)</option>
-                <option value="lager">Amber Lager (+$5.50)</option>
-                <option value="stout">Dark Roasted Stout (+$6.50)</option>
-                <option value="none">No Drink (+$0.00)</option>
-              </select>
+              <div>
+                <label for="beer-select" style="color: #cbd5e1;">2. Select Draft Beer</label>
+                <select id="beer-select">
+                  <option value="ipa" selected>Local Hazy IPA (+$6.00)</option>
+                  <option value="lager">Amber Lager (+$5.50)</option>
+                  <option value="stout">Dark Roasted Stout (+$6.50)</option>
+                  <option value="none">No Drink (+$0.00)</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -95,9 +156,9 @@
     </section>
 
     <!-- Curated Weekly Specials Lists -->
-    <section class="alt">
+    <section class="alt" style="border-radius: var(--radius); padding: 3rem;">
       <div class="wrap">
-        <h3 style="text-align: center; color: #244b38; font-size: 1.8rem; margin-bottom: 2rem;">Tavern Weekly Schedule</h3>
+        <h3 class="section-title text-center" style="margin-bottom: 2rem;">Tavern Weekly Schedule</h3>
         <div class="menu-preview">
           
           <div class="menu-item">
@@ -126,8 +187,33 @@
 
   </main>
 
-  <footer>Concept only — not affiliated with or operated by Cornerstone Pub &amp; Grill. Current operational details require owner confirmation.</footer>
-  
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Cornerstone Pub &amp; Grill</h3>
+        <p>A friendly neighborhood sports pub in Matthews, NC. Serving New American classics, draft beers, and game day wings on our patio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2001 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:00 AM - 11:00 PM<br>
+          Fri - Sat: 11:00 AM - 12:00 AM<br>
+          Sunday: 11:00 AM - 11:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cornerstone Pub &amp; Grill. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
   <script>
     const foodData = {
       mon: { day: "Monday Special", title: "Half-Price Burger", price: 7.50, desc: "Our half-pound seasoned Angus beef burger with fries" },
@@ -142,6 +228,16 @@
       stout: { name: "Dark Roasted Stout", price: 6.50 },
       none: { name: "No Drink", price: 0.00 }
     };
+
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
 
     function updateSpecials() {
       const foodKey = document.getElementById('special-select').value;
@@ -163,9 +259,25 @@
         description += `.`;
       }
       document.getElementById('special-plate-desc').innerText = description;
+
+      // Handle foods shapes display
+      const foods = ['mon', 'tue', 'wed', 'thu'];
+      foods.forEach(f => {
+        const el = document.getElementById(`food-${f}`);
+        if (el) el.classList.toggle('show', foodKey === f);
+      });
+
+      // Handle beer liquid display
+      const beers = ['ipa', 'lager', 'stout'];
+      beers.forEach(b => {
+        const el = document.getElementById(`beer-${b}`);
+        if (el) el.classList.toggle('show', beerKey === b);
+      });
     }
 
-    // Trigger initial load
+    document.getElementById('special-select').addEventListener('change', updateSpecials);
+    document.getElementById('beer-select').addEventListener('change', updateSpecials);
+
     window.addEventListener('load', () => {
       updateSpecials();
     });
