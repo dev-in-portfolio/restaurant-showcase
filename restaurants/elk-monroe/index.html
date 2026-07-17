@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/elk-monroe/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.L.K. Bar & Restaurant - Monroe, NC | Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>E.L.K. Tavern | Monroe, NC</title>
+  <meta name="description" content="Eggs, Legs, and Kegs. E.L.K. Tavern serves fresh deviled eggs, crispy wings, and NC craft drafts in historic downtown Monroe, NC.">
+  <link rel="stylesheet" href="site.css">
   <style>
-    /* Absolute Positioning for Tavern Platter Food Items */
-    #food-deviled { top: 30px; left: 30px; }
-    #food-scotch { top: 30px; left: 40px; }
-    
-    #food-bbq { top: 100px; left: 80px; }
-    #food-buffalo { top: 100px; left: 80px; }
-    #food-lemon { top: 100px; left: 80px; }
-    
-    #food-ipa { bottom: 30px; right: 30px; }
-    #food-cocktail { bottom: 30px; right: 30px; }
+    .plate-wireframe {
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-green-dim);
+      margin-bottom: 2rem;
+    }
+    .plate-food-item {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-green);
+      margin: 0.4rem 0;
+      transition: var(--transition-smooth);
+    }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        E.L.K. Tavern <span>🦌</span>
       </a>
-      
-      <div class="brand-wrapper">
-        <div class="brand-logo-css">E</div>
-        <h1 class="brand-name">
-          E.L.K. Tavern
-          <span>Eggs Legs Kegs</span>
-        </h1>
-      </div>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
         <a href="menu.html">Menu</a>
         <a href="kegs.html">Kegs &amp; Cocktails</a>
         <a href="about.html">About</a>
@@ -46,228 +52,211 @@
     </div>
   </nav>
 
-  <!-- Hero Banner Section -->
-  <header class="hero-section" style="background-image: url('hero.jpg');">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <div class="hero-frame">
-        <span class="hero-badge">Historic Downtown Monroe Landmark</span>
-        <h2 class="hero-title">E.L.K. Bar & Restaurant</h2>
-        <p class="hero-desc">"Modern Southern-inspired tavern favorites in a revitalized historic space. Where you can Eggs, Legs, and Kegs — and Eat Like a King."</p>
+  <main id="main">
+    <!-- Hero Header -->
+    <header class="hero" style="padding: 7rem 0 5rem;">
+      <div class="wrap">
+        <span class="page-hero-badge">Eggs • Legs • Kegs</span>
+        <h1 style="line-height: 1.1; margin: 1rem 0 1.5rem;">Eggs, Legs, and Kegs</h1>
+        <p style="max-width: 650px; margin: 0 auto 2.5rem; color: var(--color-text-muted);">"Modern Southern-inspired tavern favorites in a revitalized historic space in downtown Monroe, NC. Where you can Eat Like a King."</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="menu.html" class="btn">View Menu</a>
+          <a href="kegs.html" class="btn" style="background-color: var(--color-amber); border-color: var(--color-amber); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);">Tavern Pairings</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Notice Banner -->
+    <div class="wrap" style="margin-top: -1.5rem; position: relative; z-index: 10;">
+      <div class="notice">
+        <span>✨ Scratch Kitchen & NC Craft Drafts. Open Thursday - Monday. Closed Tuesday - Wednesday.</span>
       </div>
     </div>
-  </header>
 
-  <!-- Operating Notice -->
-  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
-    <div class="notice-banner">
-      <span>📞 Tavern Hotline: (704) 993-0744. Franklin St Drafts & Scratch Kitchen. Closed Tue-Wed.</span>
-    </div>
-  </div>
+    <!-- Interactive Builder Block -->
+    <section class="wrap" style="margin-top: 5rem;">
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-family: var(--font-heading); font-size: 2rem; color: var(--color-green); margin-bottom: 0.5rem;">Eggs, Legs, &amp; Kegs Builder</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 3rem;">Build your tavern platter. Select one option from each category and explore our classic pairings.</p>
 
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">Eggs, Legs, and Kegs</h2>
-      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
-        Located on East Franklin Street in historic downtown Monroe, E.L.K. is a modern tavern serving made-from-scratch pub classics. Our name stands for **Eggs** (our signature deviled eggs), **Legs** (crispy jumbo chicken wings), and **Kegs** (our rotating NC craft drafts and specialty cocktails).
-      </p>
-      <a href="about.html" style="color: var(--color-amber); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-amber); padding-bottom: 4px; transition: var(--transition-fast);">
-        Explore Downtown History ➔
-      </a>
+        <div class="menu-preview" style="align-items: start; gap: 3rem;">
+          
+          <!-- Left: Preview Slate -->
+          <div>
+            <div class="plate-wireframe">
+              <div class="plate-food-item" id="food-deviled">🥚 Deviled Eggs</div>
+              <div class="plate-food-item" id="food-scotch" style="display: none;">🥚 Scotch Egg</div>
+              
+              <div class="plate-food-item" id="food-bbq">🍗 BBQ Wings</div>
+              <div class="plate-food-item" id="food-buffalo" style="display: none;">🍗 Buffalo Wings</div>
+              <div class="plate-food-item" id="food-lemon" style="display: none;">🍗 Lemon Pepper</div>
+              
+              <div class="plate-food-item" id="food-ipa">🍺 Craft IPA</div>
+              <div class="plate-food-item" id="food-cocktail" style="display: none;">🥃 Bourbon Cocktail</div>
+            </div>
+
+            <div class="premium-card" style="text-align: center; padding: 2rem;">
+              <h4 id="display-plate-name" style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--color-green);">Deviled Eggs, BBQ Wings, &amp; Craft IPA</h4>
+              <p id="display-plate-price" style="font-size: 1.25rem; font-weight: 800; color: var(--color-amber); margin-bottom: 1rem;">$24.00</p>
+              <p id="display-plate-desc" style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">Our signature whipped deviled eggs paired with sweet smokey hickory wings and a crisp, citrus-forward local craft draft.</p>
+            </div>
+          </div>
+
+          <!-- Right: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div>
+              <label>1. Select Eggs</label>
+              <select id="select-egg">
+                <option value="deviled" selected>Deviled Eggs ($6.00)</option>
+                <option value="scotch">Scotch Eggs ($8.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label>2. Select Legs (Wings)</label>
+              <select id="select-wing">
+                <option value="bbq" selected>BBQ Chicken Wings ($12.00)</option>
+                <option value="buffalo">Buffalo Wings ($12.00)</option>
+                <option value="lemon">Lemon Pepper Wings ($12.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label>3. Select Kegs (Drink)</label>
+              <select id="select-drink">
+                <option value="ipa" selected>NC Craft IPA Draft ($6.00)</option>
+                <option value="cocktail">Specialty Bourbon Cocktail ($10.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Interactive Platter Customizer Panel -->
-    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Eggs, Legs, & Kegs Builder</h2>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Build your tavern platter. Select one option from each category and explore our classic pairings.</p>
-      
-      <div class="mixer-container">
+    <!-- Welcome Details -->
+    <section class="wrap">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
         
-        <!-- Left Side: Interactive Slate -->
-        <div class="plate-canvas">
-          <div class="plate-wireframe">
-            <div class="plate-gold-rim"></div>
-            <!-- Food Graphics (clean text + emoji representations for fast rendering) -->
-            <div class="plate-food-item" id="food-deviled">🥚 Deviled Eggs</div>
-            <div class="plate-food-item" id="food-scotch">🥚 Scotch Egg</div>
-            
-            <div class="plate-food-item" id="food-bbq">🍗 BBQ Wings</div>
-            <div class="plate-food-item" id="food-buffalo">🍗 Buffalo Wings</div>
-            <div class="plate-food-item" id="food-lemon">🍗 Lemon Pepper</div>
-            
-            <div class="plate-food-item" id="food-ipa">🍺 Craft IPA</div>
-            <div class="plate-food-item" id="food-cocktail">🥃 Bourbon Tail</div>
-          </div>
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🥚</span>
+          <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none; color: var(--color-green);">Tavern Eggs</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Signature whipped deviled eggs topped with local bacon, or whole soft-boiled scotch eggs wrapped in savory pork sausage.
+          </p>
         </div>
 
-        <!-- Right Side: Controls -->
-        <div class="bowl-controls">
-          <div class="control-group">
-            <label>1. Select Eggs</label>
-            <div class="option-grid" id="egg-options">
-              <button class="option-btn active" onclick="setEgg('deviled', 6.00, 'Deviled Eggs')">Deviled Eggs ($6)</button>
-              <button class="option-btn" onclick="setEgg('scotch', 8.00, 'Scotch Eggs')">Scotch Eggs ($8)</button>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label>2. Select Legs (Wings)</label>
-            <div class="option-grid" id="wing-options">
-              <button class="option-btn active" onclick="setWing('bbq', 12.00, 'BBQ Chicken Wings')">BBQ Wings ($12)</button>
-              <button class="option-btn" onclick="setWing('buffalo', 12.00, 'Buffalo Wings')">Buffalo Wings ($12)</button>
-              <button class="option-btn" onclick="setWing('lemon', 12.00, 'Lemon Pepper Wings')">Lemon Pepper ($12)</button>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label>3. Select Kegs (Drink)</label>
-            <div class="option-grid" id="drink-options">
-              <button class="option-btn active" onclick="setDrink('ipa', 6.00, 'NC Craft IPA Draft')">Craft IPA ($6)</button>
-              <button class="option-btn" onclick="setDrink('cocktail', 10.00, 'Specialty Bourbon Cocktail')">Bourbon Cocktail ($10)</button>
-            </div>
-          </div>
-
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🍗</span>
+          <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none; color: var(--color-green);">Crispy Legs</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Double-fried crispy jumbo chicken wings tossed in your choice of sweet hickory BBQ, spicy buffalo, or lemon pepper butter.
+          </p>
         </div>
 
       </div>
-
-      <div class="builder-display" style="margin-top: 3.5rem;">
-        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Platter Selection</span>
-        <h4 class="builder-display-title" id="display-plate-name">Deviled Eggs, BBQ Wings, & Craft IPA</h4>
-        <div class="builder-display-price" id="display-plate-price">$24.00</div>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-plate-desc">Our signature whipped deviled eggs paired with sweet smokey hickory wings and a crisp, citrus-forward local craft draft.</p>
-      </div>
     </section>
-
-    <!-- Quick Call to Action -->
-    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Tavern Availability Timer</h2>
-      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        From half-pound bacon burgers and deviled eggs to local NC craft keg beer. Click below to check if the tavern is open.
-      </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
-        Check Tavern Hours
-      </a>
-    </section>
-
   </main>
 
-  <!-- Info Footer -->
-  <footer class="container">
-    <div class="footer-info">
-      <div class="info-block">
-        <h3>Address</h3>
-        <p>301 E. Franklin St<br>Monroe, NC 28112</p>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>E.L.K. Tavern</h3>
+        <p>Serving Monroe, NC since 2022. Famous for craft draft beer pairings, deviled eggs, and crispy jumbo wings.</p>
       </div>
-      <div class="info-block">
-        <h3>Hours</h3>
-        <p>Thu - Mon: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Tue - Wed: Closed</p>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          301 E. Franklin St<br>
+          Monroe, NC 28112<br>
+          Phone: (704) 993-0744
+        </p>
       </div>
-      <div class="info-block">
-        <h3>Details</h3>
-        <p>Phone: (704) 993-0744<br>Eggs, Legs, and Kegs | Downtown Tavern</p>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="kegs.html">Kegs &amp; Cocktails</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyright-footer">
-      <p>© 2026 E.L.K. of Monroe. Historic downtown tavern since 2022.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 E.L.K. Tavern of Monroe. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
   <script>
-    // State variables
-    let selectedEgg = { key: 'deviled', price: 6.00, name: 'Deviled Eggs' };
-    let selectedWing = { key: 'bbq', price: 12.00, name: 'BBQ Wings' };
-    let selectedDrink = { key: 'ipa', price: 6.00, name: 'Craft IPA' };
-
-    function setEgg(key, price, name) {
-      const buttons = document.getElementById('egg-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedEgg = { key, price, name };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
     }
 
-    function setWing(key, price, name) {
-      const buttons = document.getElementById('wing-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    const eggPrices = { deviled: 6.00, scotch: 8.00 };
+    const wingPrices = { bbq: 12.00, buffalo: 12.00, lemon: 12.00 };
+    const drinkPrices = { ipa: 6.00, cocktail: 10.00 };
 
-      selectedWing = { key, price, name };
-      updateDisplay();
-    }
-
-    function setDrink(key, price, name) {
-      const buttons = document.getElementById('drink-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedDrink = { key, price, name };
-      updateDisplay();
-    }
+    const eggNames = { deviled: 'Deviled Eggs', scotch: 'Scotch Eggs' };
+    const wingNames = { bbq: 'BBQ Wings', buffalo: 'Buffalo Wings', lemon: 'Lemon Pepper' };
+    const drinkNames = { ipa: 'Craft IPA', cocktail: 'Bourbon Cocktail' };
 
     function updateDisplay() {
-      // Calculate Total Cost
-      const totalPrice = (selectedEgg.price + selectedWing.price + selectedDrink.price).toFixed(2);
-      document.getElementById('display-plate-price').innerText = `$${totalPrice}`;
+      const eggVal = document.getElementById('select-egg').value;
+      const wingVal = document.getElementById('select-wing').value;
+      const drinkVal = document.getElementById('select-drink').value;
 
-      document.getElementById('display-plate-name').innerText = `${selectedEgg.name}, ${selectedWing.name}, & ${selectedDrink.name}`;
+      const total = eggPrices[eggVal] + wingPrices[wingVal] + drinkPrices[drinkVal];
+      
+      document.getElementById('display-plate-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-plate-name').innerText = `${eggNames[eggVal]}, ${wingNames[wingVal]}, & ${drinkNames[drinkVal]}`;
 
-      // Pair description
+      // Update description
       let desc = '';
-      if (selectedEgg.key === 'deviled') {
+      if (eggVal === 'deviled') {
         desc += 'Our signature whipped deviled eggs ';
       } else {
         desc += 'Our crispy panko Scotch eggs with sausage casing ';
       }
 
-      if (selectedWing.key === 'bbq') {
+      if (wingVal === 'bbq') {
         desc += 'paired with sweet smokey hickory wings ';
-      } else if (selectedWing.key === 'buffalo') {
+      } else if (wingVal === 'buffalo') {
         desc += 'paired with spicy tang buffalo wings ';
       } else {
         desc += 'paired with buttery lemon-pepper wings ';
       }
 
-      if (selectedDrink.key === 'ipa') {
-        desc += 'and a crisp, citrus-forward local craft draft.';
+      if (drinkVal === 'ipa') {
+        desc += 'and a crisp, local craft draft.';
       } else {
-        desc += 'and a smooth, premium small-batch bourbon specialty cocktail.';
+        desc += 'and a smooth, specialty bourbon cocktail.';
       }
 
       document.getElementById('display-plate-desc').innerText = desc;
 
-      // Animate graphics on virtual slate
-      const allFoodItems = document.querySelectorAll('.plate-food-item');
-      allFoodItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.5)';
-      });
+      // Toggle display of items
+      document.getElementById('food-deviled').style.display = eggVal === 'deviled' ? 'block' : 'none';
+      document.getElementById('food-scotch').style.display = eggVal === 'scotch' ? 'block' : 'none';
 
-      // Show selected items
-      const eggEl = document.getElementById(`food-${selectedEgg.key}`);
-      if (eggEl) {
-        eggEl.style.opacity = '1';
-        eggEl.style.transform = 'scale(1)';
-      }
+      document.getElementById('food-bbq').style.display = wingVal === 'bbq' ? 'block' : 'none';
+      document.getElementById('food-buffalo').style.display = wingVal === 'buffalo' ? 'block' : 'none';
+      document.getElementById('food-lemon').style.display = wingVal === 'lemon' ? 'block' : 'none';
 
-      const wingEl = document.getElementById(`food-${selectedWing.key}`);
-      if (wingEl) {
-        wingEl.style.opacity = '1';
-        wingEl.style.transform = 'scale(1)';
-      }
-
-      const drinkEl = document.getElementById(`food-${selectedDrink.key}`);
-      if (drinkEl) {
-        drinkEl.style.opacity = '1';
-        drinkEl.style.transform = 'scale(1)';
-      }
+      document.getElementById('food-ipa').style.display = drinkVal === 'ipa' ? 'block' : 'none';
+      document.getElementById('food-cocktail').style.display = drinkVal === 'cocktail' ? 'block' : 'none';
     }
 
-    // Trigger initial show
+    document.getElementById('select-egg').addEventListener('change', updateDisplay);
+    document.getElementById('select-wing').addEventListener('change', updateDisplay);
+    document.getElementById('select-drink').addEventListener('change', updateDisplay);
+
+    // Initial trigger
     window.addEventListener('load', () => {
       updateDisplay();
     });

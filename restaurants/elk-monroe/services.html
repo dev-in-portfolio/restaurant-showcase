@@ -1,163 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/elk-monroe/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.L.K. Bar & Restaurant - Monroe, NC | Catering & Services</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Catering &amp; Services | E.L.K. Tavern</title>
+  <meta name="description" content="Tavern party platter catering in Monroe, NC. Feed your group with E.L.K. deviled eggs, wing trays, and sliders.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        E.L.K. Tavern <span>🦌</span>
       </a>
-      
-      <div class="brand-wrapper">
-        <div class="brand-logo-css">E</div>
-        <h1 class="brand-name">
-          E.L.K. Tavern
-          <span>Eggs Legs Kegs</span>
-        </h1>
-      </div>
-
-      <div class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="kegs.html">Kegs &amp; Cocktails</a>
         <a href="about.html">About</a>
-        <a href="services.html">Catering</a>
+        <a href="services.html" class="active">Catering</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <header class="page-header container">
-    <h2 class="page-title">Tavern Party Platter Catering</h2>
-    <p class="page-subtitle">Feed your corporate lunch, game day crowd, or birthday party with E.L.K.'s scratch-made Southern deviled eggs and wing platters.</p>
-  </header>
-
-  <!-- Interactive Platter Planner -->
-  <main class="container">
-    
-    <section class="interactive-panel">
-      <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Tavern Banquet Calculator</h3>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Drag the slider to input your expected guest count. Our calculator will estimate the required pans and total cost.</p>
-      
-      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
-        <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-amber); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">30</span> people</label>
-        <input type="range" id="guests-count" min="10" max="120" value="30" step="5" style="width: 100%; accent-color: var(--color-amber); cursor: pointer;" oninput="calculateFeast(this.value)">
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Catering Board</span>
+        <h1>Tavern Party Catering</h1>
+        <p>Feed your corporate meeting, game day watch, or family gathering with E.L.K.'s scratch Southern platters.</p>
       </div>
+    </header>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+    <!-- Banquet Calculator -->
+    <section class="wrap">
+      <div class="interactive-panel" style="margin-bottom: 5rem;">
+        <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-green); margin-bottom: 0.5rem;">Banquet Calculator</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 3rem;">Drag the slider to input your expected guest count and calculate pans and estimates.</p>
         
-        <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <span style="font-size: 2rem;">🥚</span>
-          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Deviled Egg Platters</h4>
-          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-amber);" id="egg-pans">3 Platters</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">24 deviled eggs per platter ($30/ea)</p>
+        <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+          <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-green); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: var(--color-amber);">30</span> people</label>
+          <input type="range" id="guests-count" min="10" max="120" value="30" step="5" style="width: 100%; accent-color: var(--color-amber); cursor: pointer;" oninput="calculateFeast(this.value)">
         </div>
 
-        <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <span style="font-size: 2rem;">🍗</span>
-          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Jumbo Wing Platters</h4>
-          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-amber);" id="wing-pans">3 Platters</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">30 wings per platter ($50/ea)</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+          
+          <div class="premium-card" style="padding: 2rem; text-align: center;">
+            <span style="font-size: 2rem;">🥚</span>
+            <h4 style="margin: 0.8rem 0 0.4rem 0; color: var(--color-green); font-family: var(--font-heading);">Deviled Egg Platters</h4>
+            <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-amber);" id="egg-pans">3 Platters</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">24 deviled eggs per platter ($30/ea)</p>
+          </div>
+
+          <div class="premium-card" style="padding: 2rem; text-align: center;">
+            <span style="font-size: 2rem;">🍗</span>
+            <h4 style="margin: 0.8rem 0 0.4rem 0; color: var(--color-green); font-family: var(--font-heading);">Jumbo Wing Platters</h4>
+            <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-amber);" id="wing-pans">3 Platters</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">30 wings per platter ($50/ea)</p>
+          </div>
+
+          <div class="premium-card" style="padding: 2rem; text-align: center;">
+            <span style="font-size: 2rem;">🍔</span>
+            <h4 style="margin: 0.8rem 0 0.4rem 0; color: var(--color-green); font-family: var(--font-heading);">Tavern Slider Platters</h4>
+            <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-amber);" id="slider-pans">4 Platters</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">16 beef sliders per platter ($60/ea)</p>
+          </div>
+
         </div>
 
-        <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <span style="font-size: 2rem;">🍔</span>
-          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Tavern Slider Platters</h4>
-          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-amber);" id="slider-pans">4 Platters</p>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">16 beef sliders per platter ($60/ea)</p>
+        <div class="premium-card" style="text-align: center; background: var(--color-green-dim);">
+          <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-green); letter-spacing: 0.05em;">Estimated Banquet Total</span>
+          <h4 style="font-size: 3rem; color: var(--color-green); margin: 0.5rem 0;" id="feast-cost">$480.00</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 3 Deviled Egg platters, 3 Jumbo Wing platters, and 4 Slider platters.</p>
         </div>
-
       </div>
 
-      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%);">
-        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.05em;">Estimated Banquet Total</span>
-        <h4 style="font-size: 3rem; color: #ffffff; margin: 0.5rem 0;" id="feast-cost">$480.00</h4>
-        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 3 Deviled Egg platters, 3 Jumbo Wing platters, and 4 Slider platters.</p>
-      </div>
-    </section>
-
-    <!-- Inquiry Form -->
-    <section class="form-wrapper">
-      <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Booking Request</h2>
-        
-        <form id="catering-form">
-          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. All catering orders require 48 hours notice. pickup-only at our East Franklin Street tavern counter.</p>
+      <!-- Inquiry Form Card -->
+      <div class="form-wrapper" style="margin-bottom: 5rem;">
+        <form class="demo-form" id="catering-form">
+          <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 2rem; color: var(--color-green);">Catering Booking Inquiry</h3>
+          
           <div class="form-grid">
             <div class="form-group">
-              <label for="name">Contact Name</label>
-              <input type="text" id="name" required placeholder="John Doe">
-            </div>
-            
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+              <label for="catname">Contact Name</label>
+              <input id="catname" type="text" required placeholder="John Doe">
             </div>
 
             <div class="form-group">
-              <label for="pickup-date">Requested Pickup Date</label>
-              <input type="date" id="pickup-date" required>
+              <label for="catphone">Phone Number</label>
+              <input id="catphone" type="tel" required placeholder="(704) 555-0199">
             </div>
 
             <div class="form-group">
-              <label for="guests-count-input">Estimated Guest Count</label>
-              <input type="number" id="guests-count-input" value="30" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(245, 158, 11, 0.1);">
+              <label for="catdate">Requested Pickup Date</label>
+              <input id="catdate" type="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="catguests">Estimated Guest Count</label>
+              <input id="catguests" type="number" readonly value="30" style="background: #e5e5e5; font-weight: 700;">
             </div>
 
             <div class="form-group" style="grid-column: 1 / -1;">
-              <label for="notes">Details of your request (Beer growlers, specific wing sauces, dietary concerns)</label>
-              <textarea id="notes" placeholder="e.g. Please make 2 wing platters Buffalo and 1 BBQ. 2 growlers local IPA, and extra honey mustard..."></textarea>
+              <label for="catnotes">Event Menu Notes &amp; Requests</label>
+              <textarea id="catnotes" rows="4" placeholder="e.g. Please make 2 wing platters Buffalo and 1 BBQ. Extra honey mustard..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Catering Inquiry</button>
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Send Catering Request</button>
           </div>
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🍻</div>
-          <h3 class="success-title">Feast Request Logged!</h3>
+          <div class="success-icon" aria-hidden="true">✔</div>
+          <h3 class="success-title">Banquet Request Submitted!</h3>
           <p class="success-msg" id="success-message">Thank you. E.L.K.'s catering coordinator will review details and call you to arrange pricing and pick-up details.</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
-  <footer class="container">
-    <div class="footer-info">
-      <div class="info-block">
-        <h3>Address</h3>
-        <p>301 E. Franklin St<br>Monroe, NC 28112</p>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>E.L.K. Tavern</h3>
+        <p>Serving Monroe, NC since 2022. Famous for craft draft beer pairings, deviled eggs, and crispy jumbo wings.</p>
       </div>
-      <div class="info-block">
-        <h3>Hours</h3>
-        <p>Thu - Mon: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Tue - Wed: Closed</p>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          301 E. Franklin St<br>
+          Monroe, NC 28112<br>
+          Phone: (704) 993-0744
+        </p>
       </div>
-      <div class="info-block">
-        <h3>Details</h3>
-        <p>Phone: (704) 993-0744<br>Eggs, Legs, and Kegs | Downtown Tavern</p>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="kegs.html">Kegs &amp; Cocktails</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyright-footer">
-      <p>© 2026 E.L.K. of Monroe. Historic downtown tavern since 2022.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 E.L.K. Tavern of Monroe. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
   <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
     function calculateFeast(guests) {
       document.getElementById('guests-val').innerText = guests;
-      document.getElementById('guests-count-input').value = guests;
+      document.getElementById('catguests').value = guests;
 
-      // Calculation logic
       const eggs = Math.ceil(guests * 2 / 24);
       const wings = Math.ceil(guests * 3 / 30);
       const sliders = Math.ceil(guests * 2 / 16);
@@ -171,19 +184,21 @@
       document.getElementById('feast-summary').innerText = `Includes ${eggs} Deviled Egg ${eggs === 1 ? 'platter' : 'platters'}, ${wings} Jumbo Wing ${wings === 1 ? 'platter' : 'platters'}, and ${sliders} Slider ${sliders === 1 ? 'platter' : 'platters'}.`;
     }
 
-    // Handle catering submissions
+    // Form submit
     const form = document.getElementById('catering-form');
     const successPanel = document.getElementById('success-panel');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your tavern catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
-    });
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('catname').value;
+        const phone = document.getElementById('catphone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your tavern catering request has been logged successfully. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
+      });
+    }
   </script>
 </body>
 </html>

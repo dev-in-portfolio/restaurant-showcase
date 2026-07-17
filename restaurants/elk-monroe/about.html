@@ -1,104 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/elk-monroe/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E.L.K. Bar & Restaurant - Monroe, NC | About Us</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>About Us | E.L.K. Tavern</title>
+  <meta name="description" content="Learn about E.L.K. Tavern in Monroe, NC. Historic downtown tavern serving local drafts and scratch Southern comfort.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .story-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        E.L.K. Tavern <span>🦌</span>
       </a>
-      
-      <div class="brand-wrapper">
-        <div class="brand-logo-css">E</div>
-        <h1 class="brand-name">
-          E.L.K. Tavern
-          <span>Eggs Legs Kegs</span>
-        </h1>
-      </div>
-
-      <div class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="kegs.html">Kegs &amp; Cocktails</a>
-        <a href="about.html">About</a>
+        <a href="about.html" class="active">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <header class="page-header container">
-    <h2 class="page-title">The E.L.K. Chronicles</h2>
-    <p class="page-subtitle">Monroe's modern tavern landmark, serving scratch-made Southern favorites in historic downtown.</p>
-  </header>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Tavern Chronicles</span>
+        <h1>Our Story</h1>
+        <p>A neighborhood landmark serving scratch-made Southern favorites in historic downtown Monroe, NC.</p>
+      </div>
+    </header>
 
-  <!-- Main Narrative -->
-  <main class="container">
-    
-    <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
-      
-      <!-- History Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">Revitalizing Downtown Monroe</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          E.L.K. Bar & Restaurant opened in 2022 inside a beautifully restored brick building on the corner of 301 E. Franklin Street in historic downtown Monroe, NC. Combining rustic tavern brick walls with modern steel finishes, our space is designed for relaxing pub dining.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          Whether you sit at our custom timber bar or tuck into a cozy dining room booth, E.L.K. welcomes you to eat, drink, and socialize.
-        </p>
+    <section class="wrap">
+      <div class="story-layout">
+        
+        <!-- Story Text -->
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-green); margin-bottom: 1.5rem;">Revitalizing Downtown Monroe</h2>
+          <p style="font-size: 1.1rem; font-weight: 500; line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+            E.L.K. Tavern opened inside a beautifully restored brick building on the corner of East Franklin Street in historic downtown Monroe, NC.
+          </p>
+
+          <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+            Combining rustic brick walls with modern steel finishes, our space is designed for relaxing pub dining. Whether you sit at our custom timber bar or tuck into a cozy dining room booth, E.L.K. welcomes you to eat, drink, and socialize.
+          </p>
+
+          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-green); margin-top: 3rem; margin-bottom: 1.5rem;">What is E.L.K.?</h2>
+          <p style="color: var(--color-text-muted); line-height: 1.8;">
+            While our name inspires our mascot, E.L.K. stands for **Eggs, Legs, and Kegs**, representing our primary menu anchors. It also stands for our ultimate hospitality goal: **Eat Like a King**.
+          </p>
+        </div>
+
+        <!-- Sidebar stats -->
+        <div style="width: 100%;">
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">Core Anchors</h3>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8;">
+              • <strong>Eggs</strong> &mdash; deviled &amp; scotch eggs<br>
+              • <strong>Legs</strong> &mdash; double-fried crispy wings<br>
+              • <strong>Kegs</strong> &mdash; NC craft drafts &amp; spirits<br>
+              • <strong>King</strong> &mdash; hospitable service
+            </p>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Deviled Eggs Heritage Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">What is E.L.K.?</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          While our name inspires our mascot, E.L.K. stands for **Eggs, Legs, and Kegs**, representing our primary menu anchors. It also stands for our ultimate hospitality goal: **Eat Like a King**.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          From creamy whipped deviled egg appetizers (Eggs) and golden-fried crispy chicken wings (Legs) to local North Carolina craft draft beer (Kegs), our tavern board represents modern comfort.
-        </p>
+      <!-- Values Grid -->
+      <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 5rem; margin-bottom: 1.5rem; text-align: center;">The Scratch Standard</h2>
+      <div class="menu-preview" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        
+        <div class="premium-card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-green); margin-bottom: 0.5rem;">Custom Ground Patties</h4>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">Every single burger is pressed and griddled fresh daily using our custom beef blend.</p>
+        </div>
+
+        <div class="premium-card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-green); margin-bottom: 0.5rem;">House Scotch Eggs</h4>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">Soft-boiled eggs hand-wrapped in pork sausage and rolled in crispy seasoned panko crumbs.</p>
+        </div>
+
+        <div class="premium-card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-green); margin-bottom: 0.5rem;">Local Micro-Brews</h4>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">We partner with Union County and Charlotte regional craft breweries to source fresh seasonal kegs.</p>
+        </div>
+
       </div>
-
-      <!-- Scratch Sourcing Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">The Scratch Kitchen Standard</h3>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          Every item that leaves our kitchen is made from scratch. We grind our own custom Angus beef burger patties, wrap our Scotch eggs in custom seasoned sausage meat, and whisk our honey-paprika yolk cream daily. We partner with Monroe and Charlotte micro-breweries to guarantee fresh, rotating keg selections.
-        </p>
-      </div>
-
-    </div>
-
+    </section>
   </main>
 
-  <!-- Info Footer -->
-  <footer class="container">
-    <div class="footer-info">
-      <div class="info-block">
-        <h3>Address</h3>
-        <p>301 E. Franklin St<br>Monroe, NC 28112</p>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>E.L.K. Tavern</h3>
+        <p>Serving Monroe, NC since 2022. Famous for craft draft beer pairings, deviled eggs, and crispy jumbo wings.</p>
       </div>
-      <div class="info-block">
-        <h3>Hours</h3>
-        <p>Thu - Mon: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Tue - Wed: Closed</p>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          301 E. Franklin St<br>
+          Monroe, NC 28112<br>
+          Phone: (704) 993-0744
+        </p>
       </div>
-      <div class="info-block">
-        <h3>Details</h3>
-        <p>Phone: (704) 993-0744<br>Eggs, Legs, and Kegs | Downtown Tavern</p>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="kegs.html">Kegs &amp; Cocktails</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Catering</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="copyright-footer">
-      <p>© 2026 E.L.K. of Monroe. Historic downtown tavern since 2022.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 E.L.K. Tavern of Monroe. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
