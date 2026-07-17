@@ -122,7 +122,15 @@ function setupAlchemistLab() {
   const milkLayer = document.getElementById('svg-milk-layer');
   const aromaLayer = document.getElementById('svg-aroma-layer');
 
-  if (!buildBtn || !summaryText) return;
+  const icons = {
+    coffee: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>`,
+    milk: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold);"><path d="M6 3h12l-1 18H7L6 3z"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="7" y1="14" x2="17" y2="14"/></svg>`,
+    lemon: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M16.24 7.76l-8.48 8.48"/><path d="M7.76 7.76l8.48 8.48"/></svg>`,
+    peach: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><circle cx="12" cy="12" r="9"/><path d="M12 3a3 3 0 0 0-3 3c0 2 3 5 3 5s3-3 3-5a3 3 0 0 0-3-3z"/></svg>`,
+    caramel: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M12 3v18"/><path d="M3 12h18"/></svg>`,
+    ice: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold);"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><line x1="9" y1="4" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg>`,
+    herb: `<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M12 2v20"/><path d="M12 6c3 1.5 4 4.5 4 6s-1 4.5-4 6"/><path d="M12 6c-3 1.5-4 4.5-4 6s1 4.5 4 6"/></svg>`
+  };
 
   buildBtn.addEventListener('click', () => {
     const base = baseSelect.value;
@@ -131,7 +139,7 @@ function setupAlchemistLab() {
 
     let drinkName = "Apothecary Blend";
     let description = "";
-    let icon = "☕";
+    let icon = "coffee";
 
     // Set colors for layers
     let baseColor = "#5c3d24";  // Default coffee brown
@@ -145,19 +153,19 @@ function setupAlchemistLab() {
         description = "A warm double shot of espresso layered with thick steamed oat milk and sweet lavender honey syrup.";
         milkColor = "#e8d8e8"; // Lavender tinted cream
         aromaColor = "#a080a0"; // Purple lavender
-        icon = "🥛";
+        icon = "milk";
       } else if (texture === "Bright") {
         drinkName = "Espresso Tonic Elixir";
         description = "A double shot of espresso poured over ice and sparkling tonic water with a twist of lemon peel.";
         milkColor = "#e0f2fe"; // Bubbling blue tonic
         aromaColor = "#eab308"; // Lemon yellow
-        icon = "🍋";
+        icon = "lemon";
       } else {
         drinkName = "Traditional Cafe Au Lait";
         description = "Our classic bold espresso topped with smooth steamed whole milk. Simple and satisfying.";
         milkColor = "#fffdfa";
         aromaColor = "#d4af37";
-        icon = "☕";
+        icon = "coffee";
       }
     } else if (base === "Cold & refreshing") {
       baseColor = "#735135"; // Lighter cold brew
@@ -166,19 +174,19 @@ function setupAlchemistLab() {
         description = "Cold brew coffee mixed with peach nectar and club soda over crushed ice. Incredibly refreshing.";
         milkColor = "#fed7aa"; // Peach orange
         aromaColor = "#ea580c";
-        icon = "🍑";
+        icon = "peach";
       } else if (texture === "Creamy") {
         drinkName = "Salted Caramel Cold Foam";
         description = "Slow-steeped cold brew topped with a thick, velvety layer of salted caramel sweet cold foam.";
         milkColor = "#ffedd5";
         aromaColor = "#b45309";
-        icon = "🍮";
+        icon = "caramel";
       } else {
         drinkName = "Cozy Iced Americano";
         description = "Espresso shots topped with cold water and ice for a rich, bold flavor profile served chilled.";
         milkColor = "#bae6fd"; // Ice water blue
         aromaColor = "#0284c7";
-        icon = "🧊";
+        icon = "ice";
       }
     } else {
       // Slow-sipped
@@ -188,13 +196,13 @@ function setupAlchemistLab() {
         description = "Black tea steeped with cardamoms, cloves, and ginger, finished with steamed milk and fresh rosemary oil.";
         milkColor = "#fef3c7"; // Warm tea yellow
         aromaColor = "#15803d"; // Rosemary green
-        icon = "🌿";
+        icon = "herb";
       } else {
         drinkName = "Aged Vanilla Pour-Over";
         description = "Slow-drip single origin beans filtered over sweet bourbon vanilla beans for a rich, aromatic finish.";
         milkColor = "#fffbeb";
         aromaColor = "#f59e0b";
-        icon = "☕";
+        icon = "coffee";
       }
     }
 
@@ -204,6 +212,7 @@ function setupAlchemistLab() {
       baseLayer.classList.add('show');
     }
     if (milkLayer) {
+      milkColor = milkColor;
       milkLayer.style.fill = milkColor;
       // Show milk layer if texture is not "Classic"
       if (texture !== "Classic") {
@@ -222,7 +231,7 @@ function setupAlchemistLab() {
     }
 
     // Update Result Panel text
-    if (resultIcon) resultIcon.textContent = icon;
+    if (resultIcon && icons[icon]) resultIcon.innerHTML = icons[icon];
     if (resultHeader) resultHeader.textContent = drinkName;
     summaryText.textContent = description;
 
