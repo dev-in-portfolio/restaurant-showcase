@@ -1,224 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lunch Specials & Curry Selector · Deejai Thai</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--red:#8b1a1a;--gold:#e8b830;--cream:#f5efe6;--mint:#2d7a4f;--charcoal:#1a1a1a;--muted:#778877}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
-.nav a:hover{opacity:1;color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.hero{min-height:40vh;background:linear-gradient(135deg,#1a0a0a,#4a1515 50%,#0a1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
-.hero h1{font-size:2.5rem;margin:0;color:var(--gold)}
-.hero .tagline{font-size:1rem;opacity:.6;font-style:italic;margin:.5rem 0 1.5rem}
-.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
-.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
-.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
-
-/* Interactive Box Styling */
-.curry-mat {
-  background: radial-gradient(circle, #2d100d 0%, #0d0403 100%);
-  border: 1.5px solid var(--gold);
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-}
-.curry-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .curry-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(232, 184, 48, 0.2);
-  color: var(--cream);
-  padding: 10px;
-  border-radius: 4px;
-  width: 100%;
-}
-select:focus {
-  outline: none;
-  border-color: var(--gold);
-}
-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/deejai-thai/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specials | Deejai Thai</title>
+  <meta name="description" content="Explore our customizable Thai curries and traditional lunch sets at Deejai Thai in Myers Park.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Deejai Thai</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="specials.html" style="color: var(--gold);">Specials</a>
-    <a href="story.html">Our Story</a>
-    <a href="locations.html">Locations</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<header class="hero">
-  <div>
-    <h1>Deejai Lunch &amp; Curry Specials</h1>
-    <p class="tagline">Traditional lunch sets, bottomless sangria, and customizable house curries</p>
-  </div>
-</header>
-<main id="main">
-
-
-<section class="section">
-  <h2>Thai Curry Customizer &amp; Builder</h2>
-  <p class="subtitle">Design your curry bowl exactly to your liking. Select your sauce, protein, and spice level in real-time.</p>
-  
-  <div class="curry-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(232,184,48,0.05);">
-    
-    <!-- Left: Platter Visualizer -->
-    <div class="curry-mat">
-      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="curry-tag-display">GREEN CURRY</span>
-      <h3 style="font-size: 2.2rem; color: var(--warm); margin: 0 0 0.8rem 0;" id="curry-title-display">Jasmine Rice Bowl</h3>
-      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="curry-price-display">$14.95</p>
-      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="curry-desc-display">Traditional Green Curry with chicken cooked at Level 2 (Medium) heat.</p>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Deejai Thai Home">
+        <div class="logo-icon" aria-hidden="true">🥢</div>
+        <div><span class="logo-text">Deejai Thai</span><span class="logo-sub">Myers Park</span></div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html" class="active">Specials</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Right: Controls -->
-    <div>
-      <div style="margin-bottom: 1.5rem;">
-        <label>1. Select Curry Base</label>
-        <select id="curry-base" onchange="updateCurry()">
-          <option value="green" selected>Green Curry ($14.95)</option>
-          <option value="red">Red Curry ($14.95)</option>
-          <option value="panang">Panang Peanut Curry ($15.95)</option>
-          <option value="massaman">Massaman Cashew Curry ($15.95)</option>
-        </select>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Lunch &amp; Curry Deals</span>
+        <h1>Lunch &amp; Curry Specials</h1>
+        <p>Traditional lunch sets, bottomless sangria, and customizable house curries in Myers Park.</p>
       </div>
+    </header>
 
-      <div style="margin-bottom: 1.5rem;">
-        <label>2. Choose Protein</label>
-        <select id="curry-protein" onchange="updateCurry()">
-          <option value="chicken" selected>Chicken (+$0.00)</option>
-          <option value="tofu">Organic Tofu (+$0.00)</option>
-          <option value="steak">USDA Sirloin Steak (+$3.00)</option>
-          <option value="shrimp">Jumbo Shrimp (+$4.00)</option>
-        </select>
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="padding: 40px 32px; border-radius: var(--radius);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px; font-family: var(--font-heading); font-weight: 900;">Thai Curry Customizer &amp; Builder</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Design your curry bowl exactly to your liking. Select your sauce, protein, and spice level in real-time.</p>
+        
+        <div class="curry-grid">
+          
+          <!-- Left: Platter Visualizer -->
+          <div class="plate-canvas" style="min-height: 300px;">
+            <div class="table-map-wrapper">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                <!-- Wooden table paneling line -->
+                <line x1="10" y1="130" x2="190" y2="130" stroke="var(--color-border)" stroke-width="2" />
+
+                <!-- Ceramic Curry Bowl (Left) -->
+                <circle cx="70" cy="80" r="40" fill="#e2e8f0" stroke="#0f766e" stroke-width="2.5" />
+                <circle cx="70" cy="80" r="35" fill="#f1f5f9" />
+                <!-- Curry Liquid Fill (Changes color based on base) -->
+                <circle id="curry-liquid" class="curry-base show" cx="70" cy="80" r="32" fill="#86efac" />
+
+                <!-- Floating Protein Overlays -->
+                <g id="protein-chicken" class="protein-overlay show">
+                  <path d="M 54,66 Q 60,60 68,64" fill="none" stroke="#fed7aa" stroke-width="4.5" stroke-linecap="round" />
+                  <path d="M 72,92 Q 80,88 84,94" fill="none" stroke="#fed7aa" stroke-width="4.5" stroke-linecap="round" />
+                </g>
+
+                <g id="protein-tofu" class="protein-overlay">
+                  <rect x="52" y="62" width="7" height="7" rx="1" fill="#ffffff" stroke="#cbd5e1" />
+                  <rect x="74" y="90" width="7" height="7" rx="1" fill="#ffffff" stroke="#cbd5e1" />
+                </g>
+
+                <g id="protein-steak" class="protein-overlay">
+                  <path d="M 52,65 Q 60,62 68,66" fill="none" stroke="#7c2d12" stroke-width="4" stroke-linecap="round" />
+                  <path d="M 70,90 Q 78,88 84,92" fill="none" stroke="#7c2d12" stroke-width="4" stroke-linecap="round" />
+                </g>
+
+                <g id="protein-shrimp" class="protein-overlay">
+                  <path d="M 52,65 A 6,6 0 0,1 64,65" fill="none" stroke="#fca5a5" stroke-width="4.5" stroke-linecap="round" />
+                  <path d="M 70,90 A 6,6 0 0,1 82,90" fill="none" stroke="#fca5a5" stroke-width="4.5" stroke-linecap="round" />
+                </g>
+
+                <!-- Bird's-Eye Red Chili Flakes (Shown for spicy levels) -->
+                <g id="chili-flakes" class="chili-overlay">
+                  <circle cx="60" cy="78" r="1.5" fill="#ef4444" />
+                  <circle cx="80" cy="74" r="1.5" fill="#ef4444" />
+                  <circle cx="70" cy="88" r="1.5" fill="#ef4444" />
+                </g>
+
+                <!-- Jasmine Rice Plate (Right) -->
+                <ellipse cx="145" cy="80" rx="28" ry="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+                <ellipse cx="145" cy="80" rx="20" ry="14" fill="#fafafa" stroke="#f1f5f9" stroke-width="1" />
+                <g fill="#cbd5e1">
+                  <circle cx="140" cy="76" r="0.6" />
+                  <circle cx="148" cy="84" r="0.6" />
+                  <circle cx="144" cy="80" r="0.6" />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right: Specials Output -->
+          <div class="curry-mat" id="confirm-box">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-saffron); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="curry-tag-display">GREEN CURRY</span>
+            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);" id="curry-title-display">Green Curry Jasmine Bowl</h4>
+            <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-saffron); margin-bottom: 1.2rem; font-family: var(--font-heading);" id="curry-price-display">$14.95</p>
+            <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.7;" id="curry-desc-display">Traditional Green Curry cooked with chicken at Level 2 (Medium) heat.</p>
+            
+            <div class="form-group" style="margin-top: 2rem; text-align: left;">
+              <div style="margin-bottom: 1rem;">
+                <label for="curry-base" style="color: #cbd5e1;">1. Select Curry Base</label>
+                <select id="curry-base">
+                  <option value="green" selected>Green Curry ($14.95)</option>
+                  <option value="red">Red Curry ($14.95)</option>
+                  <option value="panang">Panang Peanut Curry ($15.95)</option>
+                  <option value="massaman">Massaman Cashew Curry ($15.95)</option>
+                </select>
+              </div>
+
+              <div style="margin-bottom: 1rem;">
+                <label for="curry-protein" style="color: #cbd5e1;">2. Choose Protein</label>
+                <select id="curry-protein">
+                  <option value="chicken" selected>Chicken (+$0.00)</option>
+                  <option value="tofu">Organic Tofu (+$0.00)</option>
+                  <option value="steak">USDA Sirloin Steak (+$3.00)</option>
+                  <option value="shrimp">Jumbo Shrimp (+$4.00)</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="curry-heat" style="color: #cbd5e1;">3. Select Heat Scale</label>
+                <select id="curry-heat">
+                  <option value="1">Level 1: Mild (Sweet &amp; Creamy)</option>
+                  <option value="2" selected>Level 2: Medium (Slight Warmth)</option>
+                  <option value="3">Level 3: Hot (Spicy Kick)</option>
+                  <option value="4">Level 4: Thai Hot (Extremely Fiery)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <div>
-        <label>3. Select Heat Scale</label>
-        <select id="curry-heat" onchange="updateCurry()">
-          <option value="1">Level 1: Mild (Sweet & Creamy)</option>
-          <option value="2" selected>Level 2: Medium (Slight Warmth)</option>
-          <option value="3">Level 3: Hot (Spicy Kick)</option>
-          <option value="4">Level 4: Thai Hot (Extremely Fiery)</option>
-        </select>
+    <!-- Lunch Deals -->
+    <section class="alt" style="border-radius: var(--radius); padding: 3rem;">
+      <div class="wrap">
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">Deejai Famous Lunch Deals</h2>
+        <div class="featured-grid">
+          
+          <div class="feature-card">
+            <h3>Lunch Combo Set <span style="float: right; color: var(--color-saffron);">$13.95</span></h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.8rem;">
+              Available Tuesday through Friday from 11:00 AM - 3:00 PM. Includes hot soup of the day, vegetable spring roll, and choice of Pad Thai or Red Curry entree.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Sangria Special <span style="float: right; color: var(--color-saffron);">$5.00</span></h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.8rem;">
+              Myers Park's favorite mid-day treat. A glass of our house-blended red or white wine sangria loaded with citrus fruit. Available with any lunch combo set order.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Deejai Thai</h3>
+        <p>Myers Park's landmark for traditional Thai curries, noodle stir-fries, and lunch sangria pairings.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Myers Park</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          613 Providence Rd<br>
+          Charlotte, NC 28207<br>
+          Phone: (704) 333-7884
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-
-  </div>
-</section>
-
-<section class="section" style="border-top:1px solid rgba(232,184,48,.06)">
-  <h2>Deejai Famous Lunch Deals</h2>
-  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
-    <div class="feature-card">
-      <h3>Lunch Combo Set <span class="price" style="float:right; color:var(--gold);">$13.95</span></h3>
-      <p>Available Tuesday through Friday from 11 AM - 3 PM. Includes hot soup of the day, vegetable spring roll, and choice of Pad Thai or Red Curry entree.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deejai Thai. All rights reserved. Unofficial concept presentation.</p>
     </div>
-    <div class="feature-card">
-      <h3>Sangria Special <span class="price" style="float:right; color:var(--gold);">$5.00</span></h3>
-      <p>Myers Park's favorite mid-day treat. A glass of our house-blended red or white wine sangria loaded with citrus fruit. Available with any lunch set order.</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    const curryBaseData = {
+      green: { tag: "GREEN CURRY", name: "Green Curry Jasmine Bowl", basePrice: 14.95, color: "#86efac", desc: "Traditional sweet green chili coconut curry paste cooked with bamboo shoots, basil, and peas." },
+      red: { tag: "RED CURRY", name: "Red Curry Jasmine Bowl", basePrice: 14.95, color: "#f87171", desc: "Classic spicy red chili coconut curry paste cooked with bamboo shoots, bell peppers, and basil." },
+      panang: { tag: "PANANG CURRY", name: "Panang Peanut Curry Bowl", basePrice: 15.95, color: "#fb923c", desc: "Thicker coconut milk curry cooked with ground peanuts, kaffir lime leaves, and bell peppers." },
+      massaman: { tag: "MASSAMAN CURRY", name: "Massaman Cashew Curry Bowl", basePrice: 15.95, color: "#fde047", desc: "Southern Thai sweet curry paste cooked with potatoes, white onions, carrots, and roasted cashews." }
+    };
 
-</main>
-<footer>
-  <p>Deejai Thai · 613 Providence Rd · Charlotte, NC 28207 · (704) 333-7884</p>
-  <p><a href="menu.html">Menu</a> · <a href="specials.html">Specials</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
+    const proteinData = {
+      chicken: { name: "tender chicken slices", charge: 0.00 },
+      tofu: { name: "organic cubed tofu", charge: 0.00 },
+      steak: { name: "thinly sliced USDA sirloin steak", charge: 3.00 },
+      shrimp: { name: "jumbo tiger shrimp", charge: 4.00 }
+    };
 
-<script>
-  const curryBaseData = {
-    green: { tag: "GREEN CURRY", name: "Green Curry Jasmine Bowl", basePrice: 14.95, desc: "Traditional sweet green chili coconut curry paste cooked with bamboo shoots, basil, and peas." },
-    red: { tag: "RED CURRY", name: "Red Curry Jasmine Bowl", basePrice: 14.95, desc: "Classic spicy red chili coconut curry paste cooked with bamboo shoots, bell peppers, and basil." },
-    panang: { tag: "PANANG CURRY", name: "Panang Peanut Curry Bowl", basePrice: 15.95, desc: "Thicker coconut milk curry cooked with ground peanuts, kaffir lime leaves, and bell peppers." },
-    massaman: { tag: "MASSAMAN CURRY", name: "Massaman Cashew Curry Bowl", basePrice: 15.95, desc: "Southern Thai sweet curry paste cooked with potatoes, white onions, carrots, and roasted cashews." }
-  };
+    const heatData = {
+      "1": { label: "Level 1 (Mild)", note: "Creamy and sweet with no lingering heat.", showChili: false },
+      "2": { label: "Level 2 (Medium)", note: "A gentle warmth suitable for most palate preferences.", showChili: false },
+      "3": { label: "Level 3 (Hot)", note: "An authentic spicy kick that pairs perfectly with cold beverages.", showChili: true },
+      "4": { label: "Level 4 (Thai Hot)", note: "Extremely fiery heat using real birds-eye chilies. Chef warning applies!", showChili: true }
+    };
 
-  const proteinData = {
-    chicken: { name: "tender chicken slices", charge: 0.00 },
-    tofu: { name: "organic cubed tofu", charge: 0.00 },
-    steak: { name: "thinly sliced USDA sirloin steak", charge: 3.00 },
-    shrimp: { name: "jumbo tiger shrimp", charge: 4.00 }
-  };
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
 
-  const heatData = {
-    "1": { label: "Level 1 (Mild)", note: "Creamy and sweet with no lingering heat." },
-    "2": { label: "Level 2 (Medium)", note: "A gentle warmth suitable for most palate preferences." },
-    "3": { label: "Level 3 (Hot)", note: "An authentic spicy kick that pairs perfectly with cold beverages." },
-    "4": { label: "Level 4 (Thai Hot)", note: "Extremely fiery heat using real birds-eye chilies. Chef warning applies!" }
-  };
+    function updateCurry() {
+      const baseKey = document.getElementById('curry-base').value;
+      const proteinKey = document.getElementById('curry-protein').value;
+      const heatKey = document.getElementById('curry-heat').value;
 
-  function updateCurry() {
-    const baseKey = document.getElementById('curry-base').value;
-    const proteinKey = document.getElementById('curry-protein').value;
-    const heatKey = document.getElementById('curry-heat').value;
+      const base = curryBaseData[baseKey];
+      const protein = proteinData[proteinKey];
+      const heat = heatData[heatKey];
 
-    const base = curryBaseData[baseKey];
-    const protein = proteinData[proteinKey];
-    const heat = heatData[heatKey];
+      const totalPrice = base.basePrice + protein.charge;
 
-    const totalPrice = base.basePrice + protein.charge;
+      document.getElementById('curry-tag-display').innerText = base.tag;
+      document.getElementById('curry-title-display').innerText = base.name;
+      document.getElementById('curry-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
-    document.getElementById('curry-tag-display').innerText = base.tag;
-    document.getElementById('curry-title-display').innerText = base.name;
-    document.getElementById('curry-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+      let desc = `${base.desc} Prepared with ${protein.name} and seasoned at ${heat.label}. ${heat.note}`;
+      document.getElementById('curry-desc-display').innerText = desc;
 
-    let desc = `${base.desc} Prepared with ${protein.name} and seasoned at ${heat.label}. ${heat.note}`;
-    document.getElementById('curry-desc-display').innerText = desc;
-  }
+      // Update SVG liquid fill
+      const liquid = document.getElementById('curry-liquid');
+      if (liquid) {
+        liquid.style.fill = base.color;
+      }
 
-  // Initial trigger
-  window.addEventListener('load', () => {
-    updateCurry();
-  });
-</script>
-<script src="../site-core.js"></script>
+      // Update SVG protein layers
+      const proteins = ["chicken", "tofu", "steak", "shrimp"];
+      proteins.forEach(p => {
+        const overlay = document.getElementById(`protein-${p}`);
+        if (overlay) {
+          if (p === proteinKey) {
+            overlay.classList.add('show');
+          } else {
+            overlay.classList.remove('show');
+          }
+        }
+      });
+
+      // Update SVG chili overlays
+      const chili = document.getElementById('chili-flakes');
+      if (chili) {
+        if (heat.showChili) {
+          chili.classList.add('show');
+        } else {
+          chili.classList.remove('show');
+        }
+      }
+    }
+
+    document.getElementById('curry-base').addEventListener('change', updateCurry);
+    document.getElementById('curry-protein').addEventListener('change', updateCurry);
+    document.getElementById('curry-heat').addEventListener('change', updateCurry);
+
+    window.addEventListener('load', () => {
+      updateCurry();
+    });
+  </script>
 </body>
 </html>

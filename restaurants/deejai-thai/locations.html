@@ -1,93 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Locations · Deejai Thai</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--red:#8b1a1a;--gold:#e8b830;--cream:#f5efe6;--mint:#2d7a4f;--charcoal:#1a1a1a;--muted:#778877}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--red);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
-.nav a:hover{opacity:1;color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#1a0a0a,#4a1515);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
-.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
-.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 1rem;border-left:3px solid var(--gold);padding-left:.75rem}
-.loc-card{background:rgba(255,255,255,.03);border:1px solid rgba(232,184,48,.08);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem}
-.loc-card .name{font-size:1.1rem;color:var(--gold);font-family:'Fraunces',serif;font-weight:600;margin:0 0 .5rem}
-.loc-card .detail{font-size:.85rem;opacity:.65;line-height:1.6;margin:0}
-.loc-card .detail strong{color:var(--cream);opacity:.9}
-footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(232,184,48,.08)}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/deejai-thai/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locations | Deejai Thai</title>
+  <meta name="description" content="Find Deejai Thai locations in Myers Park and South Kings Drive in Charlotte, NC. View hours and addresses.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Deejai Thai</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="specials.html">Specials</a>
-    <a href="story.html">Our Story</a>
-    <a href="locations.html">Locations</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Locations</h1>
-  <p>Serving Charlotte with Thai &amp; sushi at two convenient spots</p>
-</header>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<section class="section">
-  <h2>Find Deejai Thai</h2>
-  <div class="loc-card">
-    <h3 class="name">Providence Road · Myers Park</h3>
-    <p class="detail"><strong>Address:</strong> 613 Providence Rd, Charlotte, NC 28207</p>
-    <p class="detail"><strong>Phone:</strong> (704) 333-7884</p>
-    <p class="detail"><strong>Hours:</strong> Tue–Fri 11:00am–2:30pm, 5:00pm–9:30pm | Sat–Sun 5:00pm–9:30pm | Mon Closed</p>
-  </div>
-  <div class="loc-card">
-    <h3 class="name">South Kings Drive</h3>
-    <p class="detail"><strong>Address:</strong> 205 S Kings Dr, Charlotte, NC 28204</p>
-    <p class="detail"><strong>Hours:</strong> Tue–Fri 11:00am–2:30pm, 5:00pm–9:30pm | Sat–Sun 5:00pm–9:30pm | Mon Closed</p>
-  </div>
-  <div style="text-align:center;margin-top:2rem;padding:1.5rem;background:rgba(232,184,48,.04);border-radius:8px">
-    <p style="font-size:.9rem;opacity:.6;margin:0">Lunch specials served Tue–Fri 11am–2:30pm at both locations<br>Includes soup, appetizer, and entree — plus $5 bottomless sangria</p>
-  </div>
-</section>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Deejai Thai Home">
+        <div class="logo-icon" aria-hidden="true">🥢</div>
+        <div><span class="logo-text">Deejai Thai</span><span class="logo-sub">Myers Park</span></div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html" class="active">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Charlotte Metro</span>
+        <h1>Our Locations</h1>
+        <p>Find Deejai Thai near you. Two convenient Charlotte locations serving fresh Thai and sushi.</p>
+      </div>
+    </header>
 
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-deejaithailocationshtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-deejaithailocationshtml" style="margin:.1rem 0 1rem;">Choose the location that matches the plan</h2>
-  <p>Choosing a Deejai Thai location is about more than whichever address appears first. Compare the route, the needs of the group, and the service you expect to use. Location-specific hours, menus, ordering options, and event availability can change, so the best choice is the one confirmed for the actual day and purpose of the visit.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Compare travel time and the needs of everyone in the group.</li><li>Confirm location-specific hours, menus, and services.</li><li>Use the official location listing before relying on older directory information.</li></ul>
-  <p>This page is organized around choosing the most convenient location and confirming location-specific details. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-<footer>
-  <p>Deejai Thai · 613 Providence Rd · Charlotte, NC 28207 · (704) 333-7884</p>
-  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
+    <section class="wrap">
+      <div class="locations-grid">
+        
+        <!-- Location 1 -->
+        <div class="premium-card">
+          <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-jade); margin-bottom: 0.8rem;">Providence Road · Myers Park</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.25rem;">
+            <strong>Address:</strong> 613 Providence Rd, Charlotte, NC 28207<br>
+            <strong>Phone:</strong> (704) 333-7884
+          </p>
+          
+          <div style="border-top: 1px dashed var(--color-border); padding-top: 1rem; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem;">Hours</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Tue–Fri: 11:00 AM – 2:30 PM, 5:00 PM – 9:30 PM</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Sat–Sun: 5:00 PM – 9:30 PM</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600;">Monday: Closed</p>
+          </div>
+          
+          <a href="https://maps.google.com" target="_blank" class="btn" style="width: 100%;">Get Directions</a>
+        </div>
+
+        <!-- Location 2 -->
+        <div class="premium-card">
+          <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-jade); margin-bottom: 0.8rem;">South Kings Drive</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.25rem;">
+            <strong>Address:</strong> 205 S Kings Dr, Charlotte, NC 28204<br>
+            <strong>Phone:</strong> (704) 333-7884
+          </p>
+          
+          <div style="border-top: 1px dashed var(--color-border); padding-top: 1rem; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem;">Hours</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Tue–Fri: 11:00 AM – 2:30 PM, 5:00 PM – 9:30 PM</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Sat–Sun: 5:00 PM – 9:30 PM</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600;">Monday: Closed</p>
+          </div>
+          
+          <a href="https://maps.google.com" target="_blank" class="btn" style="width: 100%;">Get Directions</a>
+        </div>
+
+      </div>
+
+      <!-- Info Banner -->
+      <div style="text-align: center; padding: 2.5rem; background: var(--color-jade-dim); border: 1px solid var(--color-border); border-radius: var(--radius); margin-bottom: 5rem;">
+        <p style="font-size: 1rem; font-weight: 600; color: var(--color-jade-hover); margin: 0;">
+          Lunch combo specials served Tuesday through Friday from 11:00 AM – 2:30 PM at both locations. Includes hot soup, spring roll, and choice of entree.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Deejai Thai</h3>
+        <p>Myers Park's landmark for traditional Thai curries, noodle stir-fries, and lunch sangria pairings.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Myers Park</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          613 Providence Rd<br>
+          Charlotte, NC 28207<br>
+          Phone: (704) 333-7884
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deejai Thai. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>
