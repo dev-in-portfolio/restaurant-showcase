@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/curry-gate/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curry Gate | Authentic Indian & Nepali | Charlotte NC</title>
-  <meta name="description" content="Award-winning Indian and Nepali cuisine in Charlotte. Butter Chicken, Biryani, Momo, and more. Multiple locations.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Curry Gate - Charlotte, NC | Home</title>
+  <meta name="description" content="Award-winning Indian and Nepalese curries, fresh momo dumplings, and tandoori breads in Charlotte, NC. Visit our taproom locations.">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="index.html" class="logo" aria-label="Curry Gate Home">
-        <div class="logo-icon" aria-hidden="true">&#127835;</div>
-        <div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div>
+        <div class="logo-icon" aria-hidden="true">🍛</div>
+        <div>
+          <span class="logo-text">Curry Gate</span>
+          <span class="logo-sub">Indian &amp; Nepali</span>
+        </div>
       </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="locations.html">Locations</a></li>
@@ -31,98 +38,101 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-content">
-          <span class="hero-badge">&#11781; Award-Winning</span>
-          <h1>Authentic Indian &amp; Nepali Flavors</h1>
-          <p class="hero-sub">Butter Chicken, Biryani, Momo, Samosas, and Garlic Naan. A true taste of Indo-Nepali cuisine in Charlotte.</p>
-          <div class="hero-ctas">
-            <a href="menu.html" class="btn btn-p">View Menu</a>
-            <a href="locations.html" class="btn btn-o">Find a Location</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-badge-card">
-            <span class="hero-badge-num">5</span>
-            <span class="hero-badge-label">Charlotte<br>Locations</span>
-          </div>
+    <!-- Hero Header -->
+    <header class="hero" style="padding: 7rem 0 5rem;">
+      <div class="wrap">
+        <span class="hero-badge">Award-Winning Indian &amp; Nepali Cuisine</span>
+        <h1 style="line-height: 1.1; margin: 1rem 0 1.5rem;">Authentic Clay Tandoor &amp; Aromatic Curries</h1>
+        <p style="max-width: 650px; margin: 0 auto 2.5rem; color: var(--color-text-muted);">"We believe in traditional family recipes. Our chef prepares rich tikka masala, spicy traditional goat curry, and fresh steamed momo dumplings in small batches for the ultimate flavor density."</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="menu.html" class="btn">Explore Menu</a>
+          <a href="spice.html" class="btn" style="background-color: var(--color-saffron); border-color: var(--color-saffron); box-shadow: 0 4px 15px rgba(234, 88, 12, 0.2);">Explore Spice Guide</a>
         </div>
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Signature Dishes</h2>
-          <p>Traditional Indian and Nepali flavors, prepared fresh every day.</p>
+    </header>
+
+    <!-- Notice Banner -->
+    <div class="wrap" style="margin-top: -1.5rem; position: relative; z-index: 10;">
+      <div class="notice">
+        <span>🌶️ Customized Spice Scale: Choose your spice level from 1 to 10+ (Volcanic) for all curries!</span>
+      </div>
+    </div>
+
+    <!-- Main Content Details -->
+    <section class="wrap" style="margin-top: 5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; margin-bottom: 5.5rem;">
+        
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🔥</span>
+          <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none;">Clay Tandoor Oven</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Our garlic naan and tandoori chicken are baked fresh inside a clay tandoor oven at searing heats, producing the traditional char and soft texture.
+          </p>
         </div>
-        <div class="favorites-grid">
-          <div class="fav-card">
-            <div class="fav-icon" aria-hidden="true">&#127835;</div>
-            <h3>Butter Chicken</h3>
-            <p>Tender chicken simmered in a creamy tomato sauce, served with basmati rice. Our most popular dish.</p>
-          </div>
-          <div class="fav-card">
-            <div class="fav-icon" aria-hidden="true">&#127834;</div>
-            <h3>Biryani</h3>
-            <p>Fragrant rice cooked with aromatic spices and your choice of chicken, lamb, or vegetables.</p>
-          </div>
-          <div class="fav-card">
-            <div class="fav-icon" aria-hidden="true">&#129371;</div>
-            <h3>Momo</h3>
-            <p>Nepali dumplings filled with spiced vegetables or chicken, served with tangy dipping sauce.</p>
-          </div>
-          <div class="fav-card">
-            <div class="fav-icon" aria-hidden="true">&#127831;</div>
-            <h3>Garlic Naan</h3>
-            <p>Soft, fluffy bread infused with garlic. The perfect companion to any curry dish.</p>
-          </div>
+
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🥟</span>
+          <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none;">Traditional Steamed Momos</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Nepali style flour dumplings stuffed with chicken or garden vegetables, seasoned with Himalayan spices, and served with custom tomato sesame sauce.
+          </p>
         </div>
-        <div class="center-cta">
-          <a href="menu.html" class="btn btn-p">See Full Menu</a>
-        </div>
+
       </div>
     </section>
-    <section class="section-dark">
+
+    <!-- Location Banner CTA -->
+    <section class="alt" style="border-radius: var(--radius); padding: 3.5rem; text-align: center; margin-bottom: 5rem;">
       <div class="wrap">
-        <div class="section-header">
-          <h2>Find Us Near You</h2>
-          <p>Five locations across Charlotte and Matthews.</p>
-        </div>
-        <div class="locations-preview">
-          <div class="loc-card">
-            <h3>Matthews</h3>
-            <p>1240 Matthews-Mint Hill Rd<br>Matthews, NC 28105</p>
-            <p class="loc-hours">Mon&ndash;Sat 12PM&ndash;9PM</p>
-          </div>
-          <div class="loc-card">
-            <h3>Uptown</h3>
-            <p>101 N Tryon St, #105<br>Charlotte, NC 28202</p>
-            <p class="loc-hours">Mon&ndash;Sat 11AM&ndash;9PM</p>
-          </div>
-          <div class="loc-card">
-            <h3>University</h3>
-            <p>630 W 24th St<br>Charlotte, NC 28206</p>
-            <p class="loc-hours">Mon&ndash;Sat 11AM&ndash;9PM</p>
-          </div>
-        </div>
-        <div class="center-cta">
-          <a href="locations.html" class="btn btn-o-w">All Locations &amp; Directions</a>
-        </div>
+        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem;">Multiple Charlotte Locations</h2>
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2.5rem; font-weight: 500;">
+          From our original Graham Street takeout stand to our South End and Matthews taproom pairings, find a location near you.
+        </p>
+        <a href="locations.html" class="btn">View All Locations</a>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Curry Gate</h3><p>Authentic Indian and Nepali cuisine. Award-winning flavors. Five locations across Charlotte.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="locations.html">Locations</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9809877936">(980) 987-7936</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Curry Gate</h3>
+        <p>Serving award-winning Indian and Nepalese curries, tandoori breads, and fresh momo dumplings across our Charlotte area locations.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Curry Gate. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Uptown / Graham St</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          101 N Tryon St, #105<br>
+          Charlotte, NC 28202<br>
+          Phone: (704) 375-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Matthews</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1240 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-0909
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Curry Gate. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
-  <script src="site.js"></script>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>

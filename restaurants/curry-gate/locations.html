@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/curry-gate/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Locations | Curry Gate</title>
   <meta name="description" content="Find a Curry Gate near you - Matthews, Uptown Charlotte, and University locations.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <style>
+    .location-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .loc-tab {
+      background: var(--color-card-bg);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+    }
+    .loc-tab:hover {
+      border-color: var(--color-crimson);
+      color: var(--color-crimson-hover);
+    }
+    .loc-tab.active {
+      background-color: var(--color-crimson);
+      color: #fff;
+      border-color: var(--color-crimson);
+    }
+    .loc-panel {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Curry Gate Home"><div class="logo-icon" aria-hidden="true">&#127835;</div><div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div></a>
+      <a href="index.html" class="logo" aria-label="Curry Gate Home">
+        <div class="logo-icon" aria-hidden="true">🍛</div>
+        <div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div>
+      </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="locations.html" class="active">Locations</a></li>
@@ -28,88 +68,130 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-locations">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#128205; Five Locations</span>
-        <h1>Find Us</h1>
-        <p>Five locations across the Charlotte metro area, bringing authentic Indian and Nepali flavors closer to you.</p>
+        <span class="page-hero-badge">Five Locations</span>
+        <h1>Charlotte Locations</h1>
+        <p>Five locations across the Charlotte area, bringing authentic Indian and Nepali flavors closer to you.</p>
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="location-tabs" role="tablist" aria-label="Select a location">
-          <button class="loc-tab active" data-loc="matthews" role="tab" aria-selected="true">Matthews</button>
-          <button class="loc-tab" data-loc="uptown" role="tab" aria-selected="false">Uptown</button>
-          <button class="loc-tab" data-loc="university" role="tab" aria-selected="false">University</button>
-        </div>
-        <div class="loc-panel" id="loc-matthews" role="tabpanel">
-          <div class="loc-detail">
-            <div class="loc-detail-info">
-              <h2>Matthews</h2>
-              <p class="loc-address">1240 Matthews-Mint Hill Road<br>Matthews, NC 28105</p>
-              <p class="loc-phone"><a href="tel:9809877936">(980) 987-7936</a></p>
-              <div class="loc-hours">
-                <h3>Hours</h3>
-                <p>Monday &ndash; Saturday: 12 PM &ndash; 9 PM</p>
-                <p>Sunday: 12 PM &ndash; 8:30 PM</p>
-              </div>
-              <div class="loc-actions">
-                <a href="https://www.google.com/maps/dir/?api=1&destination=1240+Matthews-Mint+Hill+Rd+Matthews+NC+28105" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
-                <a href="https://www.ezordering.com/currygatematthews" class="btn btn-o" target="_blank" rel="noopener">Order Online</a>
-              </div>
-            </div>
+    </header>
+
+    <section class="wrap">
+      <!-- Location Tabs -->
+      <div class="location-tabs" role="tablist" aria-label="Select a location">
+        <button class="loc-tab active" data-loc="matthews" role="tab" aria-selected="true">Matthews Parlor</button>
+        <button class="loc-tab" data-loc="uptown" role="tab" aria-selected="false">Uptown Charlotte</button>
+        <button class="loc-tab" data-loc="university" role="tab" aria-selected="false">University City</button>
+      </div>
+
+      <!-- Matthews Panel -->
+      <div class="loc-panel" id="loc-matthews" role="tabpanel">
+        <div class="premium-card">
+          <h2 style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.8rem;">Matthews</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            1240 Matthews-Mint Hill Road<br>
+            Matthews, NC 28105
+          </p>
+          <p style="font-weight: 700; color: var(--color-crimson); margin-bottom: 1.5rem;">
+            Phone: <a href="tel:9809877936" style="color: var(--color-crimson);">(980) 987-7936</a>
+          </p>
+          
+          <div style="border-top: 1px dashed var(--color-border); padding-top: 1.25rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Weekly Opening Hours</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Monday &ndash; Saturday: 12:00 PM &ndash; 9:00 PM</p>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Sunday: 12:00 PM &ndash; 8:30 PM</p>
           </div>
-        </div>
-        <div class="loc-panel" id="loc-uptown" role="tabpanel" hidden>
-          <div class="loc-detail">
-            <div class="loc-detail-info">
-              <h2>Uptown</h2>
-              <p class="loc-address">101 N Tryon St, #105<br>Charlotte, NC 28202</p>
-              <p class="loc-phone"><a href="tel:7047414406">(704) 741-4406</a></p>
-              <div class="loc-hours">
-                <h3>Hours</h3>
-                <p>Monday &ndash; Saturday: 11 AM &ndash; 9 PM</p>
-                <p>Sunday: 12 PM &ndash; 8:30 PM</p>
-              </div>
-              <div class="loc-actions">
-                <a href="https://www.google.com/maps/dir/?api=1&destination=101+N+Tryon+St+105+Charlotte+NC+28202" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
-                <a href="https://www.ezordering.com/currygateuptown" class="btn btn-o" target="_blank" rel="noopener">Order Online</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="loc-panel" id="loc-university" role="tabpanel" hidden>
-          <div class="loc-detail">
-            <div class="loc-detail-info">
-              <h2>University</h2>
-              <p class="loc-address">630 W 24th St<br>Charlotte, NC 28206</p>
-              <p class="loc-phone"><a href="tel:7047414406">(704) 741-4406</a></p>
-              <div class="loc-hours">
-                <h3>Hours</h3>
-                <p>Monday &ndash; Saturday: 11 AM &ndash; 9 PM</p>
-                <p>Sunday: 12 PM &ndash; 8:30 PM</p>
-              </div>
-              <div class="loc-actions">
-                <a href="https://www.google.com/maps/dir/?api=1&destination=630+W+24th+St+Charlotte+NC+28206" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
-                <a href="https://www.ezordering.com/currygateuniversity" class="btn btn-o" target="_blank" rel="noopener">Order Online</a>
-              </div>
-            </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://google.com" class="btn">Get Directions</a>
+            <a href="https://google.com" class="btn" style="background-color: var(--color-saffron); border-color: var(--color-saffron);">Order Online</a>
           </div>
         </div>
       </div>
+
+      <!-- Uptown Panel -->
+      <div class="loc-panel" id="loc-uptown" role="tabpanel" hidden>
+        <div class="premium-card">
+          <h2 style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.8rem;">Uptown</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            101 N Tryon St, #105<br>
+            Charlotte, NC 28202
+          </p>
+          <p style="font-weight: 700; color: var(--color-crimson); margin-bottom: 1.5rem;">
+            Phone: <a href="tel:7047414406" style="color: var(--color-crimson);">(704) 741-4406</a>
+          </p>
+          
+          <div style="border-top: 1px dashed var(--color-border); padding-top: 1.25rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Weekly Opening Hours</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Monday &ndash; Saturday: 11:00 AM &ndash; 9:00 PM</p>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Sunday: 12:00 PM &ndash; 8:30 PM</p>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://google.com" class="btn">Get Directions</a>
+            <a href="https://google.com" class="btn" style="background-color: var(--color-saffron); border-color: var(--color-saffron);">Order Online</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- University Panel -->
+      <div class="loc-panel" id="loc-university" role="tabpanel" hidden>
+        <div class="premium-card">
+          <h2 style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.8rem;">University</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            630 W 24th St<br>
+            Charlotte, NC 28206
+          </p>
+          <p style="font-weight: 700; color: var(--color-crimson); margin-bottom: 1.5rem;">
+            Phone: <a href="tel:7047414406" style="color: var(--color-crimson);">(704) 741-4406</a>
+          </p>
+          
+          <div style="border-top: 1px dashed var(--color-border); padding-top: 1.25rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Weekly Opening Hours</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Monday &ndash; Saturday: 11:00 AM &ndash; 9:00 PM</p>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Sunday: 12:00 PM &ndash; 8:30 PM</p>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://google.com" class="btn">Get Directions</a>
+            <a href="https://google.com" class="btn" style="background-color: var(--color-saffron); border-color: var(--color-saffron);">Order Online</a>
+          </div>
+        </div>
+      </div>
     </section>
+
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Curry Gate</h3><p>Authentic Indian and Nepali cuisine. Award-winning flavors. Five locations across Charlotte.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="locations.html">Locations</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9809877936">(980) 987-7936</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Curry Gate</h3>
+        <p>Serving award-winning Indian and Nepalese curries, tandoori breads, and fresh momo dumplings across our Charlotte area locations.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Curry Gate. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Uptown / Graham St</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          101 N Tryon St, #105<br>
+          Charlotte, NC 28202<br>
+          Phone: (704) 375-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Matthews</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1240 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-0909
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Curry Gate. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>

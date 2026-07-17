@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/curry-gate/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visit | Curry Gate</title>
   <meta name="description" content="Plan your visit to Curry Gate. Order online, find locations, or contact us.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <style>
+    .visit-hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Curry Gate Home"><div class="logo-icon" aria-hidden="true">&#127835;</div><div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div></a>
+      <a href="index.html" class="logo" aria-label="Curry Gate Home">
+        <div class="logo-icon" aria-hidden="true">🍛</div>
+        <div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div>
+      </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="locations.html">Locations</a></li>
@@ -28,104 +43,152 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-visit">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#127970; Come See Us</span>
-        <h1>Visit Curry Gate</h1>
-        <p>Five locations, one mission: serve authentic Indian and Nepali food to the Charlotte community.</p>
+        <span class="page-hero-badge">Five Locations</span>
+        <h1>Visit Us</h1>
+        <p>Drop by any of our five Charlotte locations for authentic clay oven delicacies and slow-simmered curries.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div class="visit-hours-grid">
+        
+        <div class="premium-card">
+          <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.4rem;">Matthews</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8;">
+            1240 Matthews-Mint Hill Rd<br>
+            Matthews, NC 28105<br>
+            Phone: <a href="tel:9809877936">(980) 987-7936</a>
+          </p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.8rem;">Mon-Sat: 12 PM - 9 PM | Sun: 12 PM - 8:30 PM</p>
+        </div>
+
+        <div class="premium-card">
+          <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.4rem;">Uptown</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8;">
+            101 N Tryon St, #105<br>
+            Charlotte, NC 28202<br>
+            Phone: <a href="tel:7047414406">(704) 741-4406</a>
+          </p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.8rem;">Mon-Sat: 11 AM - 9 PM | Sun: 12 PM - 8:30 PM</p>
+        </div>
+
+        <div class="premium-card">
+          <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.4rem;">University</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8;">
+            630 W 24th St<br>
+            Charlotte, NC 28206<br>
+            Phone: <a href="tel:7047414406">(704) 741-4406</a>
+          </p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.8rem;">Mon-Sat: 11 AM - 9 PM | Sun: 12 PM - 8:30 PM</p>
+        </div>
+
       </div>
     </section>
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Hours &amp; Locations</h2>
-          <p>Find the Curry Gate nearest to you.</p>
-        </div>
-        <div class="visit-hours-grid">
-          <div class="vh-card">
-            <h3>Matthews</h3>
-            <p class="vh-addr">1240 Matthews-Mint Hill Rd, Matthews, NC 28105</p>
-            <p class="vh-phone"><a href="tel:9809877936">(980) 987-7936</a></p>
-            <p class="vh-time">Mon&ndash;Sat: 12 PM&ndash;9 PM</p>
-            <p class="vh-time">Sun: 12 PM&ndash;8:30 PM</p>
-          </div>
-          <div class="vh-card">
-            <h3>Uptown</h3>
-            <p class="vh-addr">101 N Tryon St, #105, Charlotte, NC 28202</p>
-            <p class="vh-phone"><a href="tel:7047414406">(704) 741-4406</a></p>
-            <p class="vh-time">Mon&ndash;Sat: 11 AM&ndash;9 PM</p>
-            <p class="vh-time">Sun: 12 PM&ndash;8:30 PM</p>
-          </div>
-          <div class="vh-card">
-            <h3>University</h3>
-            <p class="vh-addr">630 W 24th St, Charlotte, NC 28206</p>
-            <p class="vh-phone"><a href="tel:7047414406">(704) 741-4406</a></p>
-            <p class="vh-time">Mon&ndash;Sat: 11 AM&ndash;9 PM</p>
-            <p class="vh-time">Sun: 12 PM&ndash;8:30 PM</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Order Online</h2>
-          <p>Skip the line. Order ahead for pickup or delivery.</p>
-        </div>
-        <div class="order-options">
-          <div class="order-card">
-            <div class="order-icon" aria-hidden="true">&#128230;</div>
-            <h3>Delivery</h3>
-            <p>We deliver through all major platforms. Get Curry Gate delivered to your door.</p>
-          </div>
-          <div class="order-card">
-            <div class="order-icon" aria-hidden="true">&#127968;</div>
-            <h3>Pickup</h3>
-            <p>Order online and pick up at any of our five locations. Ready in 20 minutes.</p>
-          </div>
-          <div class="order-card">
-            <div class="order-icon" aria-hidden="true">&#128722;</div>
-            <h3>Catering</h3>
-            <p>Feeding a crowd? We offer family-style platters and full catering for events.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Contact Us</h2>
-          <p>Have a question? We'd love to hear from you.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>General Inquiries</h3>
-            <p><a href="tel:9809877936">(980) 987-7936</a></p>
-            <p><a href="mailto:info@currygateclt.com">info@currygateclt.com</a></p>
-          </div>
-          <div class="contact-card">
-            <h3>Follow Us</h3>
-            <p>Stay connected for specials, events, and new menu items.</p>
-            <div class="social-links">
-              <a href="#" aria-label="Instagram">Instagram</a>
-              <a href="#" aria-label="Facebook">Facebook</a>
+
+    <!-- Message Inquiry Form -->
+    <section class="form-wrapper" style="margin-bottom: 5rem;">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Contact Us</h2>
+        
+        <form id="contact-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Have a catering request or a question about our locations? Submit below.</p>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="c-name">Your Name</label>
+              <input type="text" id="c-name" required placeholder="Jane Smith">
             </div>
+
+            <div class="form-group">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" required placeholder="jane@example.com">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="c-location">Preferred Location</label>
+              <select id="c-location">
+                <option value="matthews">Matthews</option>
+                <option value="uptown">Uptown Charlotte</option>
+                <option value="university">University City</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="c-message">Message Details</label>
+              <textarea id="c-message" required placeholder="Describe your inquiry..." style="min-height: 120px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Send Inquiry</button>
           </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">✉</div>
+          <h3 class="success-title">Message Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. Your inquiry has been successfully recorded. Our management team will read and reply shortly.</p>
         </div>
       </div>
     </section>
+
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Curry Gate</h3><p>Authentic Indian and Nepali cuisine. Award-winning flavors. Five locations across Charlotte.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="locations.html">Locations</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9809877936">(980) 987-7936</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Curry Gate</h3>
+        <p>Serving award-winning Indian and Nepalese curries, tandoori breads, and fresh momo dumplings across our Charlotte area locations.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Curry Gate. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Uptown / Graham St</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          101 N Tryon St, #105<br>
+          Charlotte, NC 28202<br>
+          Phone: (704) 375-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Matthews</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1240 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-0909
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Curry Gate. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
-  <script src="site.js"></script>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+
+    // Form submission
+    const form = document.getElementById('contact-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('c-name').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your greeting has been successfully submitted. We will read your note shortly.`;
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/curry-gate/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Curry Gate</title>
   <meta name="description" content="The story behind Curry Gate - bringing authentic Indian and Nepali cuisine to Charlotte since 2018.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <style>
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .stats-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .stats-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--color-crimson);
+      font-family: var(--font-heading);
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Curry Gate Home"><div class="logo-icon" aria-hidden="true">&#127835;</div><div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div></a>
+      <a href="index.html" class="logo" aria-label="Curry Gate Home">
+        <div class="logo-icon" aria-hidden="true">🍛</div>
+        <div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div>
+      </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="locations.html">Locations</a></li>
@@ -28,73 +70,108 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-about">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#127835; Our Story</span>
+        <span class="page-hero-badge">Our Story</span>
         <h1>About Curry Gate</h1>
-        <p>Bringing authentic Indian and Nepali flavors to the Charlotte community.</p>
+        <p>Bringing award-winning Indian and Nepali flavors to the Charlotte community.</p>
       </div>
-    </section>
-    <section>
-      <div class="wrap about-content">
-        <div class="about-text">
-          <h2>A Family Tradition</h2>
-          <p>Curry Gate was born from a simple vision: to share the rich, diverse flavors of Indian and Nepali cuisine with the Charlotte community. What began as a single restaurant serving family recipes has grown into five locations across the metro area, each rooted in the same commitment to authentic spices and fresh ingredients.</p>
-          <p>Our menu draws from both Indian and Nepali culinary traditions. From the creamy Butter Chicken to the delicate momos filled with spiced vegetables, every dish is prepared with care and served with warmth.</p>
-        </div>
-        <div class="about-stats">
-          <div class="stat-card">
-            <span class="stat-num">5</span>
-            <span class="stat-label">Locations</span>
+    </header>
+
+    <section class="wrap">
+      <div class="about-layout">
+        
+        <!-- Left Side: Main Narrative -->
+        <div>
+          <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+            Curry Gate was born from a simple vision: to share the rich, diverse flavors of Indian and Nepali cuisine with the Charlotte community. What began as a single restaurant serving family recipes has grown into five locations across the metro area, each rooted in the same commitment to authentic spices and fresh ingredients.
+          </p>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem;">Authentic Spices</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8;">
+              We source our raw spices directly, ensuring every single curry pot has the depth, aroma, and complexity of traditional Himalayan and sub-continental cooking.
+            </p>
           </div>
-          <div class="stat-card">
-            <span class="stat-num">4.7</span>
-            <span class="stat-label">Star Rating</span>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem;">Fresh &amp; Hand-Made</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8;">
+              Our flatbread naan is baked fresh inside our clay tandoor ovens, our momos are hand-folded daily, and all curry bases are slow-simmered in small batches.
+            </p>
           </div>
-          <div class="stat-card">
-            <span class="stat-num">25+</span>
-            <span class="stat-label">Menu Items</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Why Curry Gate?</h2>
-          <p>What makes our food special.</p>
-        </div>
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon" aria-hidden="true">&#127836;</div>
-            <h3>Authentic Spices</h3>
-            <p>We source our spices directly from South Asia, ensuring every dish has the depth and complexity of traditional Indian and Nepali cooking.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon" aria-hidden="true">&#128737;</div>
-            <h3>Fresh &amp; Made Daily</h3>
-            <p>Our bread is baked in the tandoor, our momos are hand-folded, and our sauces are made from scratch every day.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon" aria-hidden="true">&#129309;</div>
-            <h3>Community First</h3>
-            <p>We believe good food brings people together. Five locations means we're closer to our neighbors across the Charlotte metro.</p>
+
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem;">Community Focus</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8;">
+              We believe great food brings neighbors together. By expanding our taproom pairings and neighborhood presence, we make authentic dining more accessible.
+            </p>
           </div>
         </div>
+
+        <!-- Right Side: Sidebar Cards -->
+        <div style="display: flex; flex-direction: column; gap: 2rem; width: 100%;">
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">By the Numbers</h3>
+            <ul class="stats-list">
+              <li>
+                <span class="stat-num">5</span>
+                <span class="stat-label">Charlotte Locations</span>
+              </li>
+              <li>
+                <span class="stat-num">4.7</span>
+                <span class="stat-label">Google Rating</span>
+              </li>
+              <li>
+                <span class="stat-num">25+</span>
+                <span class="stat-label">Traditional Recipes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">Guest Review</h3>
+            <blockquote style="font-style: italic; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.7;">
+              "Best curry in Charlotte! Hands down. Their spice scale is serious business, and the garlic naan is absolute perfection."
+            </blockquote>
+            <p style="font-size: 0.8rem; font-weight: 700; color: var(--color-crimson);">&mdash; Charlotte Foodie</p>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Curry Gate</h3><p>Authentic Indian and Nepali cuisine. Award-winning flavors. Five locations across Charlotte.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="locations.html">Locations</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9809877936">(980) 987-7936</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Curry Gate</h3>
+        <p>Serving award-winning Indian and Nepalese curries, tandoori breads, and fresh momo dumplings across our Charlotte area locations.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Curry Gate. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Uptown / Graham St</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          101 N Tryon St, #105<br>
+          Charlotte, NC 28202<br>
+          Phone: (704) 375-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Matthews</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1240 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-0909
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Curry Gate. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>

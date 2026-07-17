@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/curry-gate/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu | Curry Gate</title>
   <meta name="description" content="Full menu at Curry Gate - curries, biryani, momo, naan, appetizers, and drinks.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <style>
+    /* search bar custom styling */
+    .menu-search {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .menu-search input {
+      width: 100%;
+      padding: 0.9rem 1.4rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background-color: #fff;
+      color: var(--color-text-light);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+    .menu-search input:focus {
+      outline: none;
+      border-color: var(--color-saffron);
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Curry Gate Home"><div class="logo-icon" aria-hidden="true">&#127835;</div><div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div></a>
+      <a href="index.html" class="logo" aria-label="Curry Gate Home">
+        <div class="logo-icon" aria-hidden="true">🍛</div>
+        <div><span class="logo-text">Curry Gate</span><span class="logo-sub">Indian &amp; Nepali</span></div>
+      </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html" class="active">Menu</a></li>
           <li><a href="locations.html">Locations</a></li>
@@ -28,98 +57,208 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-menu">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#127835; Fresh &amp; Flavorful</span>
+        <span class="page-hero-badge">Fresh &amp; Aromatic</span>
         <h1>Our Menu</h1>
         <p>Traditional Indian and Nepali dishes, prepared with authentic spices and fresh ingredients.</p>
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="menu-search">
-          <label for="menu-search-input" class="sr-only">Search menu</label>
-          <input type="text" id="menu-search-input" placeholder="Search menu items..." autocomplete="off">
-        </div>
-        <div class="menu-controls" role="toolbar" aria-label="Menu filter">
-          <button class="active" data-filter="all">All</button>
-          <button data-filter="appetizers">Appetizers</button>
-          <button data-filter="curries">Curries</button>
-          <button data-filter="biryani">Biryani &amp; Rice</button>
-          <button data-filter="bread">Bread &amp; Sides</button>
-          <button data-filter="drinks">Drinks</button>
-        </div>
-        <div class="menu-content" id="menu-content">
-          <div class="menu-section" data-category="appetizers">
-            <h3>Appetizers</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Samosa (2 pcs)</h4><p>Crispy pastry filled with spiced potatoes and peas. Served with chutney.</p></div><span class="menu-price">$5</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken Momo (8 pcs)</h4><p>Nepali dumplings filled with spiced chicken, served with tomato achar.</p></div><span class="menu-price">$10</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Veg Momo (8 pcs)</h4><p>Nepali dumplings filled with spiced vegetables, served with tomato achar.</p></div><span class="menu-price">$9</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Paneer Tikka</h4><p>Grilled paneer marinated in yogurt and spices. Smoky and rich.</p></div><span class="menu-price">$10</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chaat</h4><p>Crispy fried dough, potatoes, chickpeas, and tangy chutneys.</p></div><span class="menu-price">$7</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken Wings</h4><p>Tandoori-spiced wings, grilled to perfection.</p></div><span class="menu-price">$9</span></div>
+    </header>
+
+    <section class="wrap">
+      <div class="menu-search">
+        <input type="text" id="menu-search-input" placeholder="Search menu items..." autocomplete="off" aria-label="Search menu items">
+      </div>
+
+      <div class="menu-controls" role="group" aria-label="Menu category filter">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="appetizers">Appetizers</button>
+        <button data-filter="curries">Curries</button>
+        <button data-filter="biryani">Biryani &amp; Rice</button>
+        <button data-filter="bread">Bread &amp; Sides</button>
+        <button data-filter="drinks">Drinks</button>
+      </div>
+
+      <div class="menu-content" id="menu-content">
+        <!-- Appetizers -->
+        <div class="menu-section" data-category="appetizers">
+          <h3>Appetizers</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Samosa (2 pcs)</h4>
+                <p>Crispy fried pastry filled with spiced green peas and potatoes. Served with tamarind chutney.</p>
+              </div>
+              <span class="menu-price">$5</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="curries">
-            <h3>Curries</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Butter Chicken</h4><p>Tender chicken in creamy tomato sauce. Our most popular dish. Served with basmati rice.</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken Tikka Masala</h4><p>Grilled chicken in a rich, spiced tomato-cream sauce.</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Lamb Curry</h4><p>Succulent lamb cooked in traditional spices and onions.</p></div><span class="menu-price">$17</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Palak Paneer</h4><p>Spinach and paneer in a creamy sauce. A vegetarian classic.</p></div><span class="menu-price">$13</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Paneer Curry</h4><p>Paneer in a rich tomato-based sauce with aromatic spices.</p></div><span class="menu-price">$13</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Dal Makhani</h4><p>Creamy black lentils slow-cooked overnight. A staff favorite.</p></div><span class="menu-price">$12</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken Korma</h4><p>Chicken in a mild, creamy cashew and almond sauce.</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Vegetable Curry</h4><p>Mixed vegetables in a spiced tomato sauce. Vegan-friendly.</p></div><span class="menu-price">$12</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Chicken Momo (8 pcs)</h4>
+                <p>Steamed Nepali style dumplings stuffed with spiced chicken mince, served with sesame tomato achar.</p>
+              </div>
+              <span class="menu-price">$10</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="biryani">
-            <h3>Biryani &amp; Rice</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken Biryani</h4><p>Fragrant basmati rice layered with spiced chicken and saffron.</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Lamb Biryani</h4><p>Fragrant basmati rice layered with tender lamb and aromatic spices.</p></div><span class="menu-price">$17</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Vegetable Biryani</h4><p>Fragrant rice cooked with mixed vegetables and aromatic spices.</p></div><span class="menu-price">$13</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Plain Basmati Rice</h4><p>Fluffy steamed basmati rice.</p></div><span class="menu-price">$4</span></div>
-            </div>
-          </div>
-          <div class="menu-section" data-category="bread">
-            <h3>Bread &amp; Sides</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Garlic Naan</h4><p>Soft, fluffy bread infused with garlic. Baked in tandoor.</p></div><span class="menu-price">$4</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Plain Naan</h4><p>Classic tandoor-baked bread.</p></div><span class="menu-price">$3</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Onion Kulcha</h4><p>Naan stuffed with caramelized onions.</p></div><span class="menu-price">$5</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Cheese Naan</h4><p>Naan stuffed with melted cheese.</p></div><span class="menu-price">$5</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Mango Lassi</h4><p>Sweet yogurt-based drink with mango. Refreshing and cooling.</p></div><span class="menu-price">$5</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Masala Chai</h4><p>Traditional spiced tea with milk.</p></div><span class="menu-price">$4</span></div>
-            </div>
-          </div>
-          <div class="menu-section" data-category="drinks">
-            <h3>Drinks</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Mango Lassi</h4><p>Sweet yogurt-based drink with mango.</p></div><span class="menu-price">$5</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Sweet Lassi</h4><p>Classic sweet yogurt drink.</p></div><span class="menu-price">$4</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Masala Chai</h4><p>Spiced tea with milk and aromatic spices.</p></div><span class="menu-price">$4</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Mango Juice</h4><p>100% mango juice.</p></div><span class="menu-price">$4</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Soft Drinks</h4><p>Coke, Diet Coke, Sprite, or Ginger Ale.</p></div><span class="menu-price">$2.50</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Veg Momo (8 pcs)</h4>
+                <p>Steamed dumplings stuffed with spiced shredded vegetables, served with tomato achar.</p>
+              </div>
+              <span class="menu-price">$9</span>
             </div>
           </div>
         </div>
-        <div class="menu-empty" id="menu-empty" hidden><p>No items match your search.</p></div>
+
+        <!-- Curries -->
+        <div class="menu-section" data-category="curries">
+          <h3>Curries</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Butter Chicken</h4>
+                <p>Tender grilled chicken chunks simmered in rich creamy tomato butter sauce. Served with rice.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Chicken Tikka Masala</h4>
+                <p>Spiced tikka chicken breast cubes tossed in thick ginger garlic tomato onion gravy.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Lamb Curry</h4>
+                <p>Slow-braised tender lamb pieces stewed in traditional onion gravy and whole spices.</p>
+              </div>
+              <span class="menu-price">$17</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Palak Paneer</h4>
+                <p>Fresh cottage cheese cubes cooked in creamy puréed spiced spinach leaves.</p>
+              </div>
+              <span class="menu-price">$13</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biryani -->
+        <div class="menu-section" data-category="biryani">
+          <h3>Biryani &amp; Rice</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Chicken Biryani</h4>
+                <p>Aromatic long-grain basmati rice layered with spiced chicken, mint leaves, and saffron.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Lamb Biryani</h4>
+                <p>Long-grain basmati rice slow cooked with succulent lamb cuts and hot spices.</p>
+              </div>
+              <span class="menu-price">$17</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bread & Sides -->
+        <div class="menu-section" data-category="bread">
+          <h3>Bread &amp; Sides</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Garlic Naan</h4>
+                <p>Soft tandoor-baked flatbread topped with minced garlic, fresh cilantro, and ghee butter.</p>
+              </div>
+              <span class="menu-price">$4</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Plain Naan</h4>
+                <p>Classic oven-baked white flour flatbread.</p>
+              </div>
+              <span class="menu-price">$3</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Mango Lassi</h4>
+                <p>Thick, cooling yogurt shake mixed with sweet mango pulp.</p>
+              </div>
+              <span class="menu-price">$5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-section" data-category="drinks">
+          <h3>Drinks</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Masala Chai</h4>
+                <p>Traditional boiled milk tea brewed with cardamom, cloves, and ginger.</p>
+              </div>
+              <span class="menu-price">$4</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Soft Drinks</h4>
+                <p>Coke, Diet Coke, Sprite, or Ginger Ale.</p>
+              </div>
+              <span class="menu-price">$2.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-empty" id="menu-empty" hidden>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.15rem; padding: 3rem;">No items match your search term.</p>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Curry Gate</h3><p>Authentic Indian and Nepali cuisine. Award-winning flavors. Five locations across Charlotte.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="locations.html">Locations</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9809877936">(980) 987-7936</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Curry Gate</h3>
+        <p>Serving award-winning Indian and Nepalese curries, tandoori breads, and fresh momo dumplings across our Charlotte area locations.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Curry Gate. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Uptown / Graham St</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          101 N Tryon St, #105<br>
+          Charlotte, NC 28202<br>
+          Phone: (704) 375-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Matthews</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1240 Matthews-Mint Hill Rd<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-0909
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Curry Gate. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>
