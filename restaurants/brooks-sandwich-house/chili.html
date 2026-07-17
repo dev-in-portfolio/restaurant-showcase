@@ -1,63 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/brooks-sandwich-house/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brooks' Sandwich House - Charlotte, NC | Legendary Chili</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Styling for the visual chili pot customizer */
-    .chili-pot-container {
-      background: radial-gradient(circle, #1a120b 0%, #08080a 100%);
-      border: 1.5px solid var(--color-amber);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      box-shadow: var(--shadow-premium);
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      transition: var(--transition-smooth);
-    }
-    .chili-pot-graphic {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, #be123c 0%, #881337 100%);
-      border: 3px solid var(--color-amber);
-      border-radius: 50% 50% 15% 15%;
-      margin: 0 auto 1.5rem auto;
-      position: relative;
-      box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
-      transition: var(--transition-smooth);
-    }
-    .chili-pot-graphic:before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 10%;
-      right: 10%;
-      height: 10px;
-      background: var(--color-amber);
-      border-radius: 5px;
-    }
-    .chili-heat-glow {
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(circle, rgba(239, 68, 68, 0.8) 0%, transparent 70%);
-      opacity: 0;
-      transition: var(--transition-fast);
-    }
-  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
@@ -68,25 +28,28 @@
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="chili.html" class="active">Legendary Chili</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
     <h2 class="page-title">The Legendary Chili</h2>
-    <p class="page-subtitle">The recipe that defined Charlotte's Noda district for half a century. Take home quarts or party tubs of our signature beef chili.</p>
+    <p class="page-subtitle">The recipe that defined Charlotte's NoDa district for half a century. Take home quarts or party tubs of our signature beef chili.</p>
   </header>
 
   <!-- Interactive Chili Planner -->
-  <main class="container">
+  <main id="main" class="container">
     
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
       <h3 class="section-title" style="margin-bottom: 1rem;">Chili To-Go Planner</h3>
@@ -94,47 +57,77 @@
       
       <div class="mixer-container">
         
-        <!-- Left Side: Pot Visualizer -->
+        <!-- Left Side: Cauldron Visualizer -->
         <div class="plate-canvas" style="min-height: 300px;">
-          <div class="chili-pot-container" id="pot-box">
-            <div class="chili-pot-graphic" id="pot-graphic">
-              <div class="chili-heat-glow" id="pot-glow"></div>
-            </div>
-            <h4 style="font-size: 1.6rem; color: #ffffff;" id="pot-display-title">1 Pint Tub</h4>
-            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-amber); margin: 0.5rem 0;" id="pot-display-price">$8.00</p>
+          <div class="cauldron-wrapper">
+            <svg class="cauldron-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Boiling Steam Waves -->
+              <path class="steam-wave" d="M 50,65 C 45,50 55,40 50,20" fill="none" stroke="var(--color-amber)" stroke-width="1.8" stroke-linecap="round" opacity="0.3" />
+              <path class="steam-wave" d="M 72,65 C 67,50 77,40 72,20" fill="none" stroke="var(--color-amber)" stroke-width="1.8" stroke-linecap="round" opacity="0.3" />
+              <path class="steam-wave" d="M 94,65 C 89,50 99,40 94,20" fill="none" stroke="var(--color-amber)" stroke-width="1.8" stroke-linecap="round" opacity="0.3" />
+
+              <!-- Cauldron Side Handles -->
+              <circle cx="28" cy="95" r="9" fill="none" stroke="#71717a" stroke-width="3" />
+              <circle cx="112" cy="95" r="9" fill="none" stroke="#71717a" stroke-width="3" />
+
+              <!-- Cauldron Main Pot Base -->
+              <path d="M 34,80 L 106,80 C 106,115 92,135 70,135 C 48,135 34,115 34,80 Z" fill="#7f1d1d" stroke="#5c1d1d" stroke-width="2" />
+              
+              <!-- Cauldron Rim -->
+              <ellipse cx="70" cy="80" rx="36" ry="8" fill="#451a03" stroke="#991b1b" stroke-width="2.5" />
+              <!-- Chili liquid layer -->
+              <ellipse cx="70" cy="80" rx="33" ry="6" fill="#3f1a0a" />
+
+              <!-- Sizzling bubbles -->
+              <circle class="chili-bubble" cx="54" cy="80" r="2" fill="#ea580c" opacity="0.7" />
+              <circle class="chili-bubble" cx="82" cy="81" r="1.8" fill="#f59e0b" opacity="0.7" />
+              <circle class="chili-bubble" cx="68" cy="79" r="2.5" fill="#ea580c" opacity="0.7" />
+
+              <!-- Heat glow overlay ring -->
+              <ellipse id="pot-glow-level" cx="70" cy="80" rx="33" ry="6" fill="none" stroke="#ea580c" stroke-width="3" opacity="0" class="chili-glow-layer" />
+
+              <!-- TO GO TUB (Right side) -->
+              <g id="to-go-tub" class="chili-tub">
+                <!-- Tub Body -->
+                <path d="M 142,85 L 168,85 L 164,122 L 146,122 Z" fill="#fafafa" stroke="#d4d4d8" stroke-width="1.5" opacity="0.9" />
+                <!-- Lid -->
+                <ellipse cx="155" cy="85" rx="13" ry="3" fill="#e4e4e7" stroke="#d4d4d8" stroke-width="1" />
+                <!-- Red Label strip -->
+                <rect x="144" y="96" width="22" height="11" fill="var(--color-red)" rx="1" />
+                <text x="155" y="104" font-family="'Outfit', sans-serif" font-size="4.5" fill="#fff" text-anchor="middle" font-weight="900">CHILI</text>
+              </g>
+            </svg>
           </div>
         </div>
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
-          
           <div class="control-group">
-            <label>1. Container Size</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Container Size</span>
             <div class="option-grid" id="size-options">
-              <button class="option-btn active" onclick="setSize('pint', '1 Pint Tub', 8.00, '100px')">Pint ($8)</button>
-              <button class="option-btn" onclick="setSize('quart', '1 Quart Tub', 15.00, '125px')">Quart ($15)</button>
-              <button class="option-btn" onclick="setSize('gallon', '1 Gallon Party Tub', 55.00, '160px')">Gallon ($55)</button>
+              <button class="option-btn active" data-key="pint" data-price="8.00" data-scale="0.8" data-name="1 Pint Tub">Pint ($8)</button>
+              <button class="option-btn" data-key="quart" data-price="15.00" data-scale="1.0" data-name="1 Quart Tub">Quart ($15)</button>
+              <button class="option-btn" data-key="gallon" data-price="55.00" data-scale="1.3" data-name="1 Gallon Party Tub">Gallon ($55)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Agave Chili Heat level</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Agave Chili Heat Level</span>
             <div class="option-grid" id="heat-options">
-              <button class="option-btn active" onclick="setHeat('mild', 'Standard Mild', 0.00, 0)">Mild</button>
-              <button class="option-btn" onclick="setHeat('hot', 'Texas Pete Hot', 1.00, 0.6)">Hot (+$1)</button>
-              <button class="option-btn" onclick="setHeat('reaper', 'Carolina Reaper Fiery', 2.50, 0.95)">Reaper (+$2.50)</button>
+              <button class="option-btn active" data-key="mild" data-price="0.00" data-glow="0" data-name="Standard Mild">Mild</button>
+              <button class="option-btn" data-key="hot" data-price="1.00" data-glow="0.6" data-name="Texas Pete Hot">Hot (+$1)</button>
+              <button class="option-btn" data-key="reaper" data-price="2.50" data-glow="0.95" data-name="Carolina Reaper Fiery">Reaper (+$2.50)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Condiments Package</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Condiments Package</span>
             <div class="option-grid" id="condiment-options">
-              <button class="option-btn active" onclick="setCondiments('none', 'No Extra Condiments', 0.00)">None</button>
-              <button class="option-btn" onclick="setCondiments('standard', 'Buns & Onions Package', 3.00)">Buns/Onions (+$3)</button>
-              <button class="option-btn" onclick="setCondiments('picnic', 'Full Picnic Pack', 6.00)">Picnic Pack (+$6)</button>
+              <button class="option-btn active" data-key="none" data-price="0.00" data-name="No Extra Condiments">None</button>
+              <button class="option-btn" data-key="standard" data-price="3.00" data-name="Buns &amp; Onions Package">Buns/Onions (+$3)</button>
+              <button class="option-btn" data-key="picnic" data-price="6.00" data-name="Full Picnic Pack">Picnic Pack (+$6)</button>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -151,7 +144,7 @@
     <!-- Large Order Inquiry Form -->
     <section class="form-wrapper" style="margin-top: 5rem;">
       <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Large Chili Orders & Tailgates</h2>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Large Chili Orders &amp; Tailgates</h2>
         
         <form id="tailgate-form">
           <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Planning a backyard cookout or tailgating at Bank of America Stadium? Request bulk chili pickup with 48 hours notice.</p>
@@ -185,7 +178,7 @@
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🌶️</div>
+          <div class="success-icon" aria-hidden="true">🌶️</div>
           <h3 class="success-title">Inquiry Submitted!</h3>
           <p class="success-msg" id="success-message">Thank you. We have logged your bulk order request. Our stand manager will call you shortly.</p>
         </div>
@@ -211,41 +204,70 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Brooks' Sandwich House. Charlotte, NC.</p>
+      <p>&copy; 2026 Brooks' Sandwich House. Charlotte, NC.</p>
     </div>
   </footer>
 
   <script>
     // State variables
-    let selectedSize = { key: 'pint', name: '1 Pint Tub', price: 8.00, size: '100px' };
+    let selectedSize = { key: 'pint', name: '1 Pint Tub', price: 8.00, scale: 0.8 };
     let selectedHeat = { key: 'mild', name: 'Standard Mild', price: 0.00, glow: 0 };
     let selectedCondiments = { key: 'none', name: 'No Extra Condiments', price: 0.00 };
 
-    function setSize(key, name, price, size) {
-      const buttons = document.getElementById('size-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedSize = { key, name, price, size };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setHeat(key, name, price, glow) {
-      const buttons = document.getElementById('heat-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    function setupSelectors() {
+      const sizeBtns = document.querySelectorAll('#size-options .option-btn');
+      sizeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sizeBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedSize = { 
+            key: btn.dataset.key, 
+            name: btn.dataset.name, 
+            price: parseFloat(btn.dataset.price), 
+            scale: parseFloat(btn.dataset.scale) 
+          };
+          updateDisplay();
+        });
+      });
 
-      selectedHeat = { key, name, price, glow };
-      updateDisplay();
-    }
+      const heatBtns = document.querySelectorAll('#heat-options .option-btn');
+      heatBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          heatBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedHeat = { 
+            key: btn.dataset.key, 
+            name: btn.dataset.name, 
+            price: parseFloat(btn.dataset.price), 
+            glow: parseFloat(btn.dataset.glow) 
+          };
+          updateDisplay();
+        });
+      });
 
-    function setCondiments(key, name, price) {
-      const buttons = document.getElementById('condiment-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedCondiments = { key, name, price };
-      updateDisplay();
+      const condBtns = document.querySelectorAll('#condiment-options .option-btn');
+      condBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          condBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedCondiments = { 
+            key: btn.dataset.key, 
+            name: btn.dataset.name, 
+            price: parseFloat(btn.dataset.price) 
+          };
+          updateDisplay();
+        });
+      });
     }
 
     function updateDisplay() {
@@ -254,20 +276,28 @@
       document.getElementById('display-chili-name').innerText = selectedSize.name;
       document.getElementById('display-chili-heat').innerText = selectedHeat.name;
 
-      document.getElementById('pot-display-title').innerText = selectedSize.name;
-      document.getElementById('pot-display-price').innerText = `$${total.toFixed(2)}`;
-
-      // Update graphic size and glow
-      const graphic = document.getElementById('pot-graphic');
-      graphic.style.width = selectedSize.size;
-      graphic.style.height = selectedSize.size;
-
-      const glow = document.getElementById('pot-glow');
-      glow.style.opacity = selectedHeat.glow;
-
       // Update description
       const desc = `Our signature hand-stirred beef chili in a ${selectedSize.name} container, prepared at ${selectedHeat.name.toLowerCase()} spice with ${selectedCondiments.name.toLowerCase()}.`;
       document.getElementById('display-chili-desc').innerText = desc;
+
+      // Update Cauldron SVG visuals
+      const glow = document.getElementById('pot-glow-level');
+      if (glow) {
+        glow.style.opacity = selectedHeat.glow;
+        if (selectedHeat.key === 'reaper') {
+          glow.setAttribute('stroke', '#be123c'); // bright blood crimson for reaper
+        } else if (selectedHeat.key === 'hot') {
+          glow.setAttribute('stroke', '#ea580c'); // orange-red for hot
+        } else {
+          glow.setAttribute('stroke', 'none');
+        }
+      }
+
+      // Update To Go Tub scale
+      const tub = document.getElementById('to-go-tub');
+      if (tub) {
+        tub.style.transform = `scale(${selectedSize.scale})`;
+      }
     }
 
     // Handle tailgate inquiries
@@ -275,17 +305,19 @@
     const successPanel = document.getElementById('success-panel');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('tg-name').value;
-      const phone = document.getElementById('tg-phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your bulk chili inquiry has been logged. Our stand manager will call you at <strong>${phone}</strong> shortly to review timing.`;
-    });
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('tg-name').value;
+        const phone = document.getElementById('tg-phone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your bulk order request has been logged. Our stand manager will call you at <strong>${phone}</strong> shortly to review timing.`;
+      });
+    }
 
-    // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>

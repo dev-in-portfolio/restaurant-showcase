@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/brooks-sandwich-house/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brooks' Sandwich House - Charlotte, NC | About Us</title>
+  <title>About — Brooks' Sandwich House</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
@@ -23,82 +28,88 @@
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="chili.html">Legendary Chili</a>
         <a href="about.html" class="active">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">The Soul of Brevard Street</h2>
-    <p class="page-subtitle">Fifty years of family, community, and the best burgers in the Queen City.</p>
+    <h2 class="page-title">Legacy &amp; Story</h2>
+    <p class="page-subtitle">A walk-up Southern food tradition on the corner of Brevard and 30th Streets since 1973.</p>
   </header>
 
   <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
-      <!-- The Beginning Card -->
+      <!-- Roots Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Founded in 1973</h3>
+        <h3 class="menu-category-title">Fifty Years in NoDa</h3>
         <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Brooks' Sandwich House was founded in 1973 by twins David and Floyd Brooks. Originally, the red wooden shack on North Brevard Street was built to serve cheap, fast, and filling meals to railway workers, industrial warehouse hands, and truck drivers who dominated the local neighborhood at the time.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          The menu was kept minimal, focusing on walk-up window service where guests would take their food to stand at wooden high-top tables outdoors—a setup that remains identical to this day.
+          Founded by CT Brooks Sr. in 1973, Brooks' Sandwich House began as a simple walk-up food counter serving nearby textile mills and neighborhood regulars. Decades before South Boulevard and North Davidson evolved into Charlotte's primary entertainment corridors, the red wooden stand was a local gathering spot.
         </p>
       </div>
 
-      <!-- NoDa Card -->
+      <!-- Sourcing Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Anchor of the NoDa Neighborhood</h3>
+        <h3 class="menu-category-title">Southern Diner Roots</h3>
         <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Over the decades, the surrounding neighborhood transitioned from industrial mills to NoDa (North Davidson), Charlotte's premier arts district full of trendy bars, galleries, and apartments. While the skyline transformed, Brooks' Sandwich House remained unchanged.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          We became a bridge between old and new Charlotte. Bankers, artists, construction crews, and tourists all queue together at our window, united by their craving for our chili-topped burgers and hot dogs.
+          Our approach to food has never changed. We have no indoor dining area and no table service. Guests order from our walk-up windows, receive their burgers wrapped in classic paper, and eat on the run or around our outdoor stand barrels. It is a traditional Southern food experience that honors Charlotte's working heritage.
         </p>
       </div>
 
-      <!-- Resilience Card -->
+      <!-- Sourcing Details -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Community & Resilience</h3>
+        <h3 class="menu-category-title">Signature Chili Recipe</h3>
         <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          In 2019, our family suffered the tragic loss of co-owner Scott Brooks. The outpouring of love and support from the Charlotte community was overwhelming. Thousands of locals lined Brevard Street, raising funds and offering support to ensure the windows at Brooks' would reopen. Today, we carry on Scott's legacy with pride, serving every burger and dog with the same dedication and local love that has defined us for over half a century.
+          The cornerstone of our menu is our signature homemade beef chili. Prepared fresh daily using the same secret family recipe since 1973, it is cooked low and slow to top our burgers, hot dogs, and fries. Ordered "All The Way" with mustard and onions, it represents the definitive flavor of Charlotte dining history.
         </p>
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
-        <p>2710 N. Brevard St.<br>Charlotte, NC 28205</p>
+        <h3>Walk-Up Stand</h3>
+        <p>2710 N Brevard St<br>Charlotte, NC 28205</p>
       </div>
       <div class="info-block">
-        <h3>Hours</h3>
-        <p>Monday - Friday: 10:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+        <h3>Operating Hours</h3>
+        <p>Mon - Fri: 10:00 AM - 5:00 PM<br>Sat - Sun: Closed</p>
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Cash-Only | ATM on Site<br>Walk-Up Windows Only</p>
+        <p>Aged Beef Chili | Walk-up Counter | Est. 1973 | NoDa Landmark</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Brooks' Sandwich House. Charlotte landmark since 1973.</p>
+      <p>&copy; 2026 Brooks' Sandwich House. Charlotte, NC.</p>
     </div>
   </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>

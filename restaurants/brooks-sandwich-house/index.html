@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/brooks-sandwich-house/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brooks' Sandwich House - Charlotte, NC | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
@@ -23,24 +28,27 @@
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="menu.html">Menu</a>
         <a href="chili.html">Legendary Chili</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Hero Banner Section -->
-  <header class="hero-section" style="background-image: url('hero.jpg');">
+  <header class="hero-section" style="background-image: url('hero.jpg');" aria-label="Welcome banner">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-frame">
         <span class="hero-badge">Charlotte Icon Since 1973</span>
-        <h2 class="hero-title">Burgers & Hot Dogs Done All The Way</h2>
+        <h2 class="hero-title">Burgers &amp; Hot Dogs Done All The Way</h2>
         <p class="hero-desc">"No seating. No frills. Just fifty years of legendary house-chili topped burgers and classic Southern sandwiches served fresh from our walk-up windows in NoDa."</p>
       </div>
     </div>
@@ -54,8 +62,7 @@
   </div>
 
   <!-- Main Content -->
-  <main class="container">
-    
+  <main id="main" class="container" style="margin-top: 5rem;">
     <!-- Welcome Block -->
     <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
       <h2 class="section-title">The NoDa Landmark</h2>
@@ -107,29 +114,39 @@
         View Our Menu Board
       </a>
     </section>
-
   </main>
 
   <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
-        <p>2710 N. Brevard St.<br>Charlotte, NC 28205</p>
+        <h3>Walk-Up Stand</h3>
+        <p>2710 N Brevard St<br>Charlotte, NC 28205<br>Phone: (704) 375-7808</p>
       </div>
       <div class="info-block">
-        <h3>Hours</h3>
-        <p>Monday - Friday: 10:00 AM - 5:00 PM<br>Saturday - Sunday: Closed</p>
+        <h3>Operating Hours</h3>
+        <p>Mon - Fri: 10:00 AM - 5:00 PM<br>Sat - Sun: Closed</p>
       </div>
       <div class="info-block">
-        <h3>Details</h3>
-        <p>Cash-Only | ATM on Site<br>Walk-Up Windows Only</p>
+        <h3>Payment Policy</h3>
+        <p>Cash-Only. ATM on-site inside the walk-up queue.</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Brooks' Sandwich House. Charlotte landmark since 1973.</p>
+      <p>&copy; 2026 Brooks' Sandwich House. Charlotte, NC.</p>
     </div>
   </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>
