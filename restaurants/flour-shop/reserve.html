@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/flour-shop/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reserve — Flour Shop</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Reserve a Table | Flour Shop</title>
+  <meta name="description" content="Book a counter seat at our open kitchen bar or reserve a creekside patio table at Flour Shop in Charlotte.">
   <link rel="stylesheet" href="site.css">
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Flour Shop</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html" class="active nav-cta">Reserve</a></li>
-      <li><a href="pasta-pairing.html">Pasta Pairing</a></li></ul>
+        <li><a href="reserve.html" class="active">Reserve</a></li>
+        <li><a href="pasta-pairing.html">Pasta Pairing</a></li>
+      </ul>
     </div>
   </nav>
-<main id="main">
 
-
-  <header class="page-header">
-    <h1>Reserve a Table</h1>
-    <p class="page-sub">Evenings at the pasta bar, nights on the patio</p>
-  </header>
-
-  <section class="section">
-    <div class="container reservation-grid">
-      <div class="reservation-main">
-        <h2>Book on OpenTable</h2>
-        <p>We partner with OpenTable for all reservations. Select your party size, date, and time — you'll be seated in our dining room, at the pasta bar, or on the creekside patio (weather permitting).</p>
-        <a href="https://www.opentable.com/r/flour-shop-charlotte" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Book on OpenTable</a>
-
-        <h3 style="margin-top:3rem;">Walk-Ins Welcome</h3>
-        <p>We hold a portion of our seats for walk-in guests. If you don't have a reservation, come by and we'll do our best to seat you. The pasta bar is often the best spot for walk-ins — grab a seat and watch the kitchen work.</p>
-
-        <h3 style="margin-top:2rem;">Creekside Patio</h3>
-        <p>Our patio seating is available on a first-come, first-served basis. Request patio seating when you book, or ask your server when you arrive. The patio is beautiful on warm evenings — shaded, quiet, and right along the creek.</p>
+  <main id="main">
+    <section class="page-hero page-hero-reserve" style="background: radial-gradient(circle at center, #2e1e19 0%, #0f0e0d 100%);">
+      <div class="container menu-header">
+        <span class="eyebrow" style="color:var(--p); font-size:0.8rem; letter-spacing:2px; font-weight:700;">STOOLS &bull; TABLES &bull; PATIO</span>
+        <h1 style="font-size:clamp(2.5rem, 5vw, 3.8rem); color:#ffffff; margin: 12px 0;">Reserve a Table</h1>
+        <p style="color:var(--muted); font-size:1.1rem;">Secure a counter seat around the kitchen fire, or enjoy a table on the creekside deck.</p>
       </div>
+    </section>
 
-      <div class="reservation-sidebar">
-        <div class="sidebar-card">
-          <h3>What to Expect</h3>
-          <ul class="expect-list">
-            <li><strong>Open Kitchen</strong> — Watch your meal come together at the pasta bar</li>
-            <li><strong>24 Pasta Bar Seats</strong> — The best seats in the house, up close to the action</li>
-            <li><strong>Creekside Patio</strong> — Shaded outdoor dining in the backlot</li>
-            <li><strong>Seasonal Menu</strong> — Every visit is a little different</li>
-          </ul>
+    <section class="section">
+      <div class="container reservation-grid">
+        
+        <div class="reservation-form">
+          <h2>Book via OpenTable</h2>
+          <p style="color: var(--muted); margin-bottom: 24px; line-height: 1.8;">We partner with OpenTable to manage reservations. Tap below to select your party size, date, and preferred dining area: the main open kitchen bar, our cozy indoor tables, or the creekside patio.</p>
+          
+          <a href="https://www.opentable.com/r/flour-shop-charlotte" class="btn btn-p" target="_blank" rel="noopener" style="display: inline-block; width: 100%; text-align: center; font-size: 1.05rem;">Book Seat on OpenTable &rarr;</a>
+
+          <h3 style="font-family: var(--font-serif); color: var(--gold); font-size: 1.35rem; margin-top: 40px; margin-bottom: 8px;">Walk-In Policy</h3>
+          <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.7;">We reserve a portion of our U-shaped counter seats for walk-ins every evening. If booking times are full, stop by the bar directly and we will accommodate you as quickly as possible. Enjoying drinks and snacks at the counter is the classic way to experience the open kitchen.</p>
+
+          <h3 style="font-family: var(--font-serif); color: var(--gold); font-size: 1.35rem; margin-top: 24px; margin-bottom: 8px;">Creekside Dining</h3>
+          <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.7;">Patio seating is weather-permitting and managed on a first-come basis. Feel free to request the patio on your reservation notes, or speak to our host when arriving.</p>
         </div>
 
-        <div class="sidebar-card">
-          <h3>Date Night</h3>
-          <p>Flour Shop is one of Charlotte's favorite date night spots. The intimate dining room, open kitchen, and creekside patio set the mood. Start with Burrata Di Bufala, share the Squid Ink Linguine, and linger over dessert.</p>
+        <div class="reserve-details">
+          <div class="details-card">
+            <h3>What to Expect</h3>
+            <ul style="padding-left: 20px; color: var(--muted); font-size: 0.95rem; line-height: 1.8;">
+              <li style="margin-bottom: 8px;"><strong>Hearth Cooking</strong>: Watch your pasta rolled, stuffed, and cooked in front of you.</li>
+              <li style="margin-bottom: 8px;"><strong>24 Stool Counter</strong>: The vibrant center of our restaurant surrounding the fire.</li>
+              <li style="margin-bottom: 8px;"><strong>Myers Park Creek</strong>: A peaceful outdoor seating area among the trees.</li>
+              <li><strong>Rotating Recipes</strong>: A fresh menu highlighting daily market arrivals.</li>
+            </ul>
+          </div>
+
+          <div class="details-card">
+            <h3>Celebrations &amp; Groups</h3>
+            <p>Flour Shop is one of Myers Park's favorite spaces for anniversaries, date nights, and group gatherings. Share plates of burrata, pass around fresh pasta bowls, and toast over a curated bottle. For groups larger than six, please contact the restaurant directly.</p>
+          </div>
+
+          <div class="details-card">
+            <h3>Evening Service Hours</h3>
+            <table class="hours-table" style="margin-top: 8px;">
+              <tr><td>Monday – Saturday</td><td>5:00 PM – 10:00 PM</td></tr>
+              <tr><td>Sunday</td><td>5:00 PM – 9:00 PM</td></tr>
+            </table>
+          </div>
         </div>
 
-        <div class="sidebar-card">
-          <h3>Hours</h3>
-          <ul class="hours-list compact">
-            <li><span>Mon – Sat</span><span>5:00 – 10:00 pm</span></li>
-            <li><span>Sunday</span><span>5:00 – 9:00 pm</span></li>
-          </ul>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  
-</main>
-<footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-logo">Flour Shop</p>
-      <p class="footer-addr">530 A Brandywine Rd, Charlotte, NC 28209 · <a href="tel:+19802993754">(980) 299-3754</a></p>
-      <nav class="footer-nav">
+      <p class="footer-addr">530 Brandywine Rd, Charlotte, NC 28209 &bull; <a href="tel:+19802993754">(980) 299-3754</a></p>
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="about.html">About</a>
         <a href="visit.html">Visit</a>
         <a href="reserve.html">Reserve</a>
+        <a href="pasta-pairing.html">Pasta Pairing</a>
       </nav>
-      <p class="footer-copy">&copy; 2026 Flour Shop. All rights reserved.</p>
+      <p class="footer-copy">Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 

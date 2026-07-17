@@ -1,117 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/flour-shop/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Flour Shop</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <title>About | Flour Shop</title>
+  <meta name="description" content="Learn about Flour Shop, Chef Trey Wilson's neighborhood pasta bar in Charlotte, NC. Handmade in-house cuisine.">
   <link rel="stylesheet" href="site.css">
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Flour Shop</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html" class="nav-cta">Reserve</a></li>
-      <li><a href="pasta-pairing.html">Pasta Pairing</a></li></ul>
+        <li><a href="reserve.html">Reserve</a></li>
+        <li><a href="pasta-pairing.html">Pasta Pairing</a></li>
+      </ul>
     </div>
   </nav>
-<main id="main">
 
-
-  <header class="page-header">
-    <h1>Our Story</h1>
-    <p class="page-sub">A pasta bar born from the garden and the kitchen</p>
-  </header>
-
-  <section class="section story">
-    <div class="container story-grid">
-      <div class="story-text">
-        <h2>From the Garden to the Open Kitchen</h2>
-        <p>Since 2018, Flour Shop has been Charlotte's neighborhood pasta bar — a place where the kitchen is the stage and handmade pasta is the star. Tucked into the backlot of Park Road Shopping Center, Chef Trey Wilson built something intimate and honest: a 24-seat pasta bar where every dish is made from scratch, right in front of you.</p>
-        <p>The concept is simple but rare. Everything is made in-house — the pasta, the sauces, the bread, the desserts. Ingredients come from local farms and fishermen across the Carolinas. And a good portion comes from Chef Trey's own backyard garden, where he grows herbs and produce specifically for the restaurant.</p>
-        <p>This isn't farm-to-table as a trend. It's the way this kitchen has always worked.</p>
+  <main id="main">
+    <section class="page-hero page-hero-about" style="background: radial-gradient(circle at center, #2e1e19 0%, #0f0e0d 100%);">
+      <div class="container menu-header">
+        <span class="eyebrow" style="color:var(--p); font-size:0.8rem; letter-spacing:2px; font-weight:700;">OUR PHILOSOPHY</span>
+        <h1 style="font-size:clamp(2.5rem, 5vw, 3.8rem); color:#ffffff; margin: 12px 0;">Our Story</h1>
+        <p style="color:var(--muted); font-size:1.1rem;">A pasta bar born from the garden and cooked at the wood-fired open hearth.</p>
       </div>
-      <div class="story-sidebar">
-        <div class="sidebar-card">
-          <h3>The Pasta Bar</h3>
-          <p>24 seats, open kitchen, one chef's vision. Sit at the bar and watch your meal come together — from rolling the dough to the final plate.</p>
-        </div>
-        <div class="sidebar-card">
-          <h3>Everything In-House</h3>
-          <p>Pasta made daily. Sauces from scratch. Bread baked fresh. If it can be made here, it is.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section chef">
-    <div class="container chef-inner">
-      <h2>Chef Trey Wilson</h2>
-      <p>Chef Trey's approach is rooted in respect for ingredients and craft. His backyard garden supplies the restaurant with seasonal herbs and produce. He sources from local farms and fishermen — ethical, sustainable, and as fresh as it gets. The result is a menu that changes with the seasons and always feels personal.</p>
-      <p>Under his direction, Flour Shop has earned recognition as one of Charlotte's best restaurants from <em>Southern Living</em>, and has been an OpenTable Diners' Choice winner multiple years running — currently holding a 4.7 rating from over 1,300 reviews.</p>
-    </div>
-  </section>
-
-  <section class="section recognition">
-    <div class="container">
-      <h2>Recognition</h2>
-      <div class="recognition-grid">
-        <div class="rec-card">
-          <h3>Southern Living</h3>
-          <p>Named among Charlotte's best restaurants</p>
+    <section class="section story">
+      <div class="container story-grid">
+        <div class="story-text">
+          <h2>From the Ground to the Hearth</h2>
+          <p>Opened in 2018, Flour Shop has established itself as Charlotte's cozy neighborhood pasta sanctuary. Nestled in the Backlot of Myers Park's Park Road Shopping Center, Chef Trey Wilson constructed a rare, chef-centric space: a 24-seat U-shaped walnut bar wrapping around an open, wood-fired hearth.</p>
+          <p>Our philosophy is rooted in scratch-made simplicity. Everything from our breads and dessert reductions to our extruded and hand-stamped pasta shapes is made in-house daily. We source our fish and meats from sustainable Carolina producers, supplemented by herbs and greens harvested directly from Chef Trey's backyard garden plot.</p>
+          <p>This isn't farm-to-table as a buzzword; it's the core method of how our kitchen creates every single plate.</p>
         </div>
-        <div class="rec-card">
-          <h3>OpenTable Diners' Choice</h3>
-          <p>Multiple years · 4.7 rating · 1,372+ reviews</p>
-        </div>
-        <div class="rec-card">
-          <h3>Since 2018</h3>
-          <p>A Charlotte original in Park Road Shopping Center</p>
+        <div class="story-sidebar">
+          <div class="sidebar-card">
+            <h3>The U-Shaped Bar</h3>
+            <p>24 stools wrapping around the open kitchen hearth. Watch dough rolled and cut, then roasted over oak wood fire right before you.</p>
+          </div>
+          <div class="sidebar-card">
+            <h3>Scratch Prepared</h3>
+            <p>Fresh flour, farm eggs, house-made stocks. If it can be hand-kneaded or fresh-whipped in our room, it is.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section cta-band">
-    <div class="container cta-inner">
-      <h2>Come See the Kitchen</h2>
-      <p>Book a seat at the pasta bar and watch the craft firsthand.</p>
-      <div class="cta-actions">
-        <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
-        <a href="menu.html" class="btn btn-outline">View Menu</a>
+    <section class="section chef" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2>Chef Trey Wilson</h2>
+        <p class="section-sub" style="margin-bottom: 24px;">Honoring seasonal ingredients with rustic technique.</p>
+        <p style="color: var(--muted); margin-bottom: 20px; line-height: 1.85;">Chef Trey's culinary approach is defined by a deep respect for seasonal produce and wood-fire cookery. By bridging local Carolina sourcing with hand-rolled pasta, he delivers dishes that are comforting yet refined. Flour Shop has earned its reputation as one of Charlotte's premier dining rooms, recognized by publications like <em>Southern Living</em> and maintaining a multi-year OpenTable Diners' Choice standing.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  
-</main>
-<footer class="footer">
+    <section class="section recognition">
+      <div class="container">
+        <h2>Recognition</h2>
+        <p class="section-sub">A Charlotte favorite since 2018.</p>
+        <div class="recognition-grid">
+          <div class="recognition-card">
+            <h3>Southern Living</h3>
+            <p>Lauded among Charlotte's best neighborhood dining rooms for fresh pasta and intimate atmosphere.</p>
+          </div>
+          <div class="recognition-card">
+            <h3>OpenTable Diners' Choice</h3>
+            <p>Highly rated year-over-year &bull; 4.7 out of 5 stars based on over 1,300 local reviews.</p>
+          </div>
+          <div class="recognition-card">
+            <h3>Since 2018</h3>
+            <p>Proudly serving fresh Italian-inspired cuisine in Charlotte's historic Park Road Shopping Center.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band" style="background: radial-gradient(circle at center, #2e1e19 0%, #0f0e0d 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <h2>Dine at the Hearth</h2>
+        <p style="color: var(--muted); margin-bottom: 32px;">Reserve your stools at our open kitchen bar and watch your pasta being created live.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="reserve.html" class="btn btn-p">Book a Table</a>
+          <a href="menu.html" class="btn btn-o">View the Menu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-logo">Flour Shop</p>
-      <p class="footer-addr">530 A Brandywine Rd, Charlotte, NC 28209 · <a href="tel:+19802993754">(980) 299-3754</a></p>
-      <nav class="footer-nav">
+      <p class="footer-addr">530 Brandywine Rd, Charlotte, NC 28209 &bull; <a href="tel:+19802993754">(980) 299-3754</a></p>
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="about.html">About</a>
         <a href="visit.html">Visit</a>
         <a href="reserve.html">Reserve</a>
+        <a href="pasta-pairing.html">Pasta Pairing</a>
       </nav>
-      <p class="footer-copy">&copy; 2026 Flour Shop. All rights reserved.</p>
+      <p class="footer-copy">Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 

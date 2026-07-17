@@ -1,153 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/flour-shop/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flour Shop — Your Neighborhood Pasta Bar</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Flour Shop | Fresh Pasta Bar &amp; Open Kitchen in Charlotte</title>
+  <meta name="description" content="Watch fresh handmade pasta being rolled and cooked in Chef Trey Wilson's U-shaped open kitchen bar in Myers Park, Charlotte.">
   <link rel="stylesheet" href="site.css">
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Flour Shop</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks" role="list">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html" class="nav-cta">Reserve</a></li>
-      <li><a href="pasta-pairing.html">Pasta Pairing</a></li></ul>
+        <li><a href="reserve.html">Reserve</a></li>
+        <li><a href="pasta-pairing.html">Pasta Pairing</a></li>
+      </ul>
     </div>
   </nav>
-<main id="main">
-
 
   <header class="hero">
-    <div class="hero-content">
-      <h1>Flour Shop</h1>
-      <p class="hero-sub">Your Neighborhood Pasta Bar</p>
-      <p class="hero-tagline">Handmade pasta. Locally sourced. Open kitchen.<br>530 A Brandywine Rd, Charlotte, NC</p>
-      <div class="hero-actions">
-        <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
-        <a href="menu.html" class="btn btn-outline">View Menu</a>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="hero-subtitle">Myers Park &bull; Fresh Pasta Bar</span>
+        <h1>Flour Shop</h1>
+        <p class="hero-desc">Fresh handmade pasta rolled daily, locally sourced ingredients, and a wood-fired open kitchen bar centered in Charlotte, NC.</p>
+        <div class="hero-ctas">
+          <a href="reserve.html" class="btn btn-p">Reserve a Seat</a>
+          <a href="menu.html" class="btn btn-o">View the Menu</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-card">
+          <p class="hero-art-title">Watch the craft</p>
+          <div class="hero-art-stat">24</div>
+          <p class="hero-art-title" style="margin-top:8px;">Counter seats around the chef's hearth</p>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="section about-intro">
-    <div class="container">
-      <h2>A Pasta Bar with a View of the Kitchen</h2>
-      <p>At Flour Shop, Chef Trey Wilson brings the garden and the kitchen together in Charlotte's Park Road Shopping Center. Our 24-seat pasta bar puts you front and center — watch handmade pasta come to life at the open kitchen, then enjoy it by the creek on our patio or in our warm, intimate dining room. Every dish starts with ingredients sourced from local farms and fishermen, and plenty from Chef Trey's own backyard garden.</p>
-    </div>
-  </section>
+  <main id="main">
+    <section class="section about-intro">
+      <div class="container">
+        <h2>A Pasta Bar with a Kitchen view</h2>
+        <p class="section-sub" style="margin-bottom: 24px;">Chef Trey Wilson's neighborhood gathering place in Myers Park.</p>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); max-width: 800px;">At Flour Shop, we put the craft of pasta-making front and center. Our 24-seat U-shaped bar wraps directly around the open kitchen hearth, letting you watch flour and eggs transform into delicate linguine, pappardelle, and stuffed ravioli. Sourcing directly from Carolina growers and fishermen, we offer an intimate dining experience where every plate is cooked to order right before your eyes.</p>
+      </div>
+    </section>
 
-  <section class="section features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🍝</div>
-          <h3>Handmade Pasta</h3>
-          <p>Every strand, every shape — made fresh daily in our open kitchen. Sit at the pasta bar and watch the craft up close.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌿</div>
-          <h3>Locally Sourced</h3>
-          <p>Ingredients from Carolina farms and fishermen, plus produce from Chef Trey's own backyard garden. Ethical, seasonal, honest.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🍂</div>
-          <h3>Seasonal Menu</h3>
-          <p>Our menu changes frequently based on what's fresh and available. Each visit offers something new to discover.</p>
+    <section class="section features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🍝</span>
+            <h3>Handmade Daily</h3>
+            <p>Every shape and texture is rolled and cut fresh from scratch each morning. Pull up a stool and watch the culinary craft up close.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🌿</span>
+            <h3>Locally Gathered</h3>
+            <p>Ingredients gathered from local Carolina farms and day-boat fishermen, plus seasonal highlights from our own kitchen gardens.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🔥</span>
+            <h3>Wood-Fired Hearth</h3>
+            <p>Our kitchen burns oak hardwood to roast meats and finish sauces, giving a rich, rustic depth to traditional Italian recipes.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section signature">
-    <div class="container">
-      <h2>Signature Plates</h2>
-      <p class="section-sub">A taste of what's waiting for you</p>
-      <div class="plates-grid">
-        <div class="plate-card">
-          <h3>Squid Ink Linguine</h3>
-          <p>Chorizo &amp; Carolina shrimp</p>
-          <span class="plate-price">$28</span>
+    <section class="section signature">
+      <div class="container">
+        <h2>Signature Plates</h2>
+        <p class="section-sub">A sample of what is cooking in the hearth tonight.</p>
+        <div class="plates-grid">
+          <div class="plate-card">
+            <div class="plate-info">
+              <h3>Squid Ink Linguine</h3>
+              <p>Spiced chorizo sausage &amp; local Carolina shrimp</p>
+              <span class="plate-price">$28.00</span>
+            </div>
+          </div>
+          <div class="plate-card">
+            <div class="plate-info">
+              <h3>Burrata Di Bufala</h3>
+              <p>House pistachio pesto, extra virgin olive oil, grilled sourdough</p>
+              <span class="plate-price">$16.00</span>
+            </div>
+          </div>
+          <div class="plate-card">
+            <div class="plate-info">
+              <h3>Coal-Roasted Ribeye</h3>
+              <p>Salsa verde, roasted fingerling potatoes, sea salt</p>
+              <span class="plate-price">$42.00</span>
+            </div>
+          </div>
+          <div class="plate-card">
+            <div class="plate-info">
+              <h3>Ricotta Gnocchi</h3>
+              <p>Tender pork shoulder ragu, freshly grated pecorino cheese</p>
+              <span class="plate-price">$26.00</span>
+            </div>
+          </div>
         </div>
-        <div class="plate-card">
-          <h3>Burrata Di Bufala</h3>
-          <p>Pistachio pesto &amp; sourdough</p>
-          <span class="plate-price">$16</span>
-        </div>
-        <div class="plate-card">
-          <h3>Hanger Steak</h3>
-          <p>Pomme frites</p>
-          <span class="plate-price">$30</span>
-        </div>
-        <div class="plate-card">
-          <h3>Ricotta Gnocchi</h3>
-          <p>Pork meatballs</p>
-          <span class="plate-price">$26</span>
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="menu.html" class="btn btn-o">Explore Full Menu</a>
         </div>
       </div>
-      <div class="section-cta">
-        <a href="menu.html" class="btn btn-outline">See Full Menu</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section patio">
-    <div class="container patio-inner">
-      <h2>Creekside Patio</h2>
-      <p>Dine among the trees on our creekside patio — one of Charlotte's most charming outdoor settings. Perfect for warm evenings, date nights, and long dinners with friends. The backlot at Park Road Shopping Center feels a world away from the city.</p>
-      <a href="reserve.html" class="btn btn-primary">Reserve Patio Seating</a>
-    </div>
-  </section>
-
-  <section class="section hours-location">
-    <div class="container hl-grid">
-      <div class="hl-card">
-        <h3>Hours</h3>
-        <ul class="hours-list">
-          <li><span>Monday – Thursday</span><span>5:00 pm – 10:00 pm</span></li>
-          <li><span>Friday – Saturday</span><span>5:00 pm – 10:00 pm</span></li>
-          <li><span>Sunday</span><span>5:00 pm – 9:00 pm</span></li>
-        </ul>
+    <section class="section patio" style="background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <h2>Creekside Patio Seating</h2>
+        <p class="section-sub" style="margin-bottom: 24px;">Dine outdoors under the trees in Charlotte's Park Road Backlot.</p>
+        <p style="margin-bottom: 32px; color: var(--muted);">Enjoy Myers Park's most peaceful outdoor dining setting, positioned right alongside the creek. Perfect for balmy Carolina evenings, group dinners, or date nights. Patio tables are available for reservations or walk-ins.</p>
+        <a href="reserve.html" class="btn btn-p">Book Patio Table</a>
       </div>
-      <div class="hl-card">
-        <h3>Find Us</h3>
-        <p class="address">530 A Brandywine Rd<br>Charlotte, NC 28209</p>
-        <p class="location-note">Park Road Shopping Center — Backlot<br>Myers Park · Selwyn · Dilworth · SouthPark</p>
-        <p class="phone"><a href="tel:+19802993754">(980) 299-3754</a></p>
-        <a href="reserve.html" class="btn btn-primary" style="margin-top:1rem;">Reserve Now</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  
-</main>
-<footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-logo">Flour Shop</p>
-      <p class="footer-addr">530 A Brandywine Rd, Charlotte, NC 28209 · <a href="tel:+19802993754">(980) 299-3754</a></p>
-      <nav class="footer-nav">
+      <p class="footer-addr">530 Brandywine Rd, Charlotte, NC 28209 &bull; <a href="tel:+19802993754">(980) 299-3754</a></p>
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="about.html">About</a>
         <a href="visit.html">Visit</a>
         <a href="reserve.html">Reserve</a>
+        <a href="pasta-pairing.html">Pasta Pairing</a>
       </nav>
-      <p class="footer-copy">&copy; 2026 Flour Shop. All rights reserved.</p>
+      <p class="footer-copy">Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 
