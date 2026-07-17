@@ -1,238 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pho Customizer · Doan's Vietnamese Cuisine</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root {
-  --crimson: #a32020;
-  --golden: #d4a017;
-  --mint: #2d7a4f;
-  --charcoal: #1a1a1a;
-  --cream: #f7f0e6;
-  --warm-white: #faf5ee;
-  --muted: #999;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
-h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
-.nav { background: var(--crimson); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
-.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
-.nav a:hover { opacity: 1; color: var(--golden); }
-.nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--golden) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
-.hero { min-height: 40vh; background: linear-gradient(135deg, #0d0d0d, #2a0a0a 50%, #0d1a0d); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
-.hero h1 { font-size: 2.5rem; margin: 0; color: var(--golden); }
-.hero .tagline { font-size: 1.1rem; opacity: .5; font-style: italic; margin: .5rem 0 1.5rem; }
-.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; border-left: 3px solid var(--golden); padding-left: .75rem; }
-.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/doans-vietnamese-cuisine/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pho Customizer | Doan's Vietnamese Cuisine</title>
+  <meta name="description" content="Design your custom traditional Vietnamese phở bowl. Choose broth bases, proteins, and table herbs at Doan's.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive pho bowl */
+    .pho-mat {
+      background: radial-gradient(circle, var(--color-teal) 0%, #042f2c 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+    
+    .pho-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
-/* Interactive Pho Styling */
-.pho-mat {
-  background: radial-gradient(circle, #2a0a0a 0%, #0c0303 100%);
-  border: 1.5px solid var(--golden);
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-}
-.pho-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .pho-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select, input[type="checkbox"] {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 160, 23, 0.2);
-  color: var(--cream);
-  padding: 10px;
-  border-radius: 4px;
-  width: 100%;
-}
-select:focus {
-  outline: none;
-  border-color: var(--golden);
-}
-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--golden);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,160,23,.08); }
-footer a { color: var(--golden); text-decoration: none; }
-.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    /* SVG sub-items toggle classes */
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Doan's</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="pho.html" style="color: var(--golden);">Pho Customizer</a>
-    <a href="story.html">Our Story</a>
-    <a href="order.html">Order</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<header class="hero">
-  <div>
-    <h1>Traditional Phở Bowl Customizer</h1>
-    <p class="tagline">Explore our 24-hour slow-simmered beef, chicken, or vegan broths and toppings</p>
-  </div>
-</header>
-<main id="main">
-
-
-<section class="section">
-  <h2>Design Your Phở Bowl</h2>
-  <p class="subtitle">Select your bowl size, signature broth base, protein addition, and table garnishes in real-time.</p>
-  
-  <div class="pho-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(212,160,23,0.05);">
-    
-    <!-- Left: Platter Visualizer -->
-    <div class="pho-mat">
-      <span style="font-size: 0.78rem; font-weight: 600; color: var(--golden); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="pho-tag-display">MEDIUM BOWL PHO</span>
-      <h3 style="font-size: 2.2rem; color: var(--warm-white); margin: 0 0 0.8rem 0;" id="pho-title-display">Traditional Beef Phở</h3>
-      <p style="font-size: 1.5rem; font-weight: 700; color: var(--golden); margin: 0 0 1.2rem 0;" id="pho-price-display">$13.95</p>
-      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="pho-desc-display">Medium bowl of traditional beef bone broth slow-simmered for 24 hours, topped with rare eye round steak, finished with fresh Thai basil, bean sprouts, and jalapeños.</p>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🥣</span> Doan's
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="pho.html" class="active">Pho Customizer</a>
+      <a href="story.html">Our Story</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
     </div>
+  </nav>
 
-    <!-- Right: Controls -->
-    <div>
-      <div style="margin-bottom: 1.5rem;">
-        <label>1. Select Bowl Size</label>
-        <select id="pho-size" onchange="updatePho()">
-          <option value="medium" selected>Medium Bowl ($12.95)</option>
-          <option value="large">Large Bowl ($14.95)</option>
-        </select>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Slow-Simmered</span>
+        <h1>Design Your Phở Bowl</h1>
+        <p>Select your bowl size, signature broth base, protein additions, and table garnishes below.</p>
       </div>
+    </header>
 
-      <div style="margin-bottom: 1.5rem;">
-        <label>2. Choose Broth Base</label>
-        <select id="pho-broth" onchange="updatePho()">
-          <option value="beef" selected>Beef Bone Broth (24-Hour)</option>
-          <option value="chicken">Free-Range Chicken Broth</option>
-          <option value="vegan">Vegan Star Anise Broth</option>
-        </select>
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-teal); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Traditional Phở Bowl Customizer</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your options below to watch your noodle bowl come to life with authentic ingredients.</p>
+        
+        <div class="form-grid" style="grid-template-columns: 1.2fr 0.8fr; align-items: start; gap: 3rem;">
+          
+          <!-- Left Side: Pho SVG Visualizer -->
+          <div>
+            <div class="pho-canvas">
+              <svg viewBox="0 0 200 160" width="100%" max-width="320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outermost Ceramic Bowl -->
+                <circle cx="100" cy="80" r="62" fill="#ffffff" stroke="#0f766e" stroke-width="3.5" />
+                <circle cx="100" cy="80" r="54" fill="none" stroke="#0f766e" stroke-width="1" stroke-dasharray="3,3" />
+                
+                <!-- Broth Base liquid layer -->
+                <circle id="svg-broth" cx="100" cy="80" r="48" fill="#b45309" stroke="#eed9c4" stroke-width="0.8" />
+
+                <!-- Rice Noodle Loops -->
+                <path d="M 68,52 C 78,56 80,72 90,68 C 100,64 102,78 112,74 C 122,70 120,86 130,82 C 140,78 138,94 148,90" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.9" />
+                <path d="M 58,80 C 68,82 72,96 82,98 C 92,100 96,114 106,116 M 88,60 C 98,62 102,76 112,78 C 122,80 126,94 136,96" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.85" />
+
+                <!-- Proteins (Center-Left) -->
+                <!-- Steak -->
+                <g id="svg-protein-steak" class="protein-graphic">
+                  <path d="M 88,66 C 84,62 76,64 74,70 C 72,76 80,78 78,84 C 76,90 68,88 66,94" fill="none" stroke="#fca5a5" stroke-width="4.5" stroke-linecap="round" />
+                </g>
+                <!-- Flank -->
+                <g id="svg-protein-flank" class="protein-graphic hidden">
+                  <path d="M 90,68 L 74,84 M 82,60 L 66,76" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round" />
+                </g>
+                <!-- Meatballs -->
+                <g id="svg-protein-meatballs" class="protein-graphic hidden">
+                  <circle cx="82" cy="68" r="6" fill="#7c2d12" stroke="#431407" />
+                  <circle cx="72" cy="84" r="6" fill="#7c2d12" stroke="#431407" />
+                </g>
+                <!-- Tendon -->
+                <g id="svg-protein-tendon" class="protein-graphic hidden">
+                  <path d="M 88,68 Q 78,74 72,84 T 66,94" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+                </g>
+                <!-- Tofu -->
+                <g id="svg-protein-tofu" class="protein-graphic hidden">
+                  <rect x="76" y="62" width="10" height="10" fill="#fff" stroke="#cbd5e1" rx="1" />
+                  <rect x="66" y="78" width="10" height="10" fill="#fff" stroke="#cbd5e1" rx="1" />
+                </g>
+
+                <!-- Table Garnishes -->
+                <g id="svg-garnish" class="garnish-graphic">
+                  <!-- Thai Basil leaves -->
+                  <path d="M 112,62 Q 124,54 128,66 Q 116,74 112,62 Z" fill="#15803d" />
+                  <path d="M 122,86 Q 134,78 138,90 Q 126,98 122,86 Z" fill="#15803d" />
+                  <!-- Jalapeno Green rings -->
+                  <circle cx="112" cy="80" r="5" fill="#22c55e" stroke="#15803d" stroke-width="1.5" />
+                  <circle cx="100" cy="98" r="5" fill="#22c55e" stroke="#15803d" stroke-width="1.5" />
+                  <!-- Bean sprouts -->
+                  <path d="M 94,92 Q 98,90 102,96" fill="none" stroke="#f1f5f9" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M 118,72 Q 122,70 126,76" fill="none" stroke="#f1f5f9" stroke-width="1.5" stroke-linecap="round" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="pho-mat">
+              <span id="pho-tag-display" style="font-size: 0.78rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;">MEDIUM BOWL PHO</span>
+              <h4 id="pho-title-display" style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);">Traditional Beef Phở</h4>
+              <p id="pho-price-display" style="font-size: 1.25rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;">$13.95</p>
+              <p id="pho-desc-display" style="font-size: 0.95rem; color: #e2f1f2; line-height: 1.7;">Medium bowl of traditional beef bone broth slow-simmered for 24 hours, topped with rare eye round steak, finished with fresh Thai basil, bean sprouts, and jalapeños.</p>
+            </div>
+          </div>
+
+          <!-- Right Side: Controls Selects -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div>
+              <label for="pho-size">1. Select Bowl Size</label>
+              <select id="pho-size">
+                <option value="medium" selected>Medium Bowl ($12.95)</option>
+                <option value="large">Large Bowl ($14.95)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="pho-broth">2. Choose Broth Base</label>
+              <select id="pho-broth">
+                <option value="beef" selected>Beef Bone Broth (24-Hour)</option>
+                <option value="chicken">Free-Range Chicken Broth</option>
+                <option value="vegan">Vegan Star Anise Broth</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="pho-protein">3. Add Protein</label>
+              <select id="pho-protein">
+                <option value="steak" selected>Rare Eye Round Steak (+$1.00)</option>
+                <option value="flank">Well-Done Flank (+$1.00)</option>
+                <option value="meatballs">Beef Meatballs (+$1.00)</option>
+                <option value="tendon">Soft Beef Tendon (+$1.50)</option>
+                <option value="tofu">Organic Cubed Tofu (+$0.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="margin-bottom: 0.5rem; display: block;">4. Table Garnishes</label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; text-transform: none; color: var(--color-text-light); font-weight: normal; margin-top: 0.25rem;">
+                <input type="checkbox" id="chk-garnish" checked style="width: auto;"> Include Basil, Sprouts, &amp; Jalapeños
+              </label>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <div style="margin-bottom: 1.5rem;">
-        <label>3. Add Protein</label>
-        <select id="pho-protein" onchange="updatePho()">
-          <option value="steak" selected>Rare Eye Round Steak (+$1.00)</option>
-          <option value="flank">Well-Done Flank (+$1.00)</option>
-          <option value="meatballs">Beef Meatballs (+$1.00)</option>
-          <option value="tendon">Soft Beef Tendon (+$1.50)</option>
-          <option value="tofu">Organic Cubed Tofu (+$0.00)</option>
-        </select>
+    <!-- Info Section -->
+    <section class="alt" style="border-top: 1px solid var(--color-border);">
+      <div class="wrap">
+        <h2 style="font-family: var(--font-heading); text-align: center; font-size: 2rem; margin-bottom: 2.5rem;">Our Broth Preparation Process</h2>
+        <div class="featured-grid">
+          
+          <div class="feature-card">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-teal); margin-bottom: 0.5rem;">Beef Bone Broth</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">Beef marrow bones simmered for a full 24 hours with charred ginger, onions, cinnamon, cloves, cardamom, coriander, and star anise.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-teal); margin-bottom: 0.5rem;">Chicken Broth</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">Light, sweet broth prepared with free-range chickens, roasted ginger, onion, and cilantro roots. Simmered for 8 hours.</p>
+          </div>
+
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div>
-        <label style="margin-bottom: 0.5rem; display: block;">4. Table Garnishes</label>
-        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; text-transform: none; color: var(--cream); font-weight: normal; margin-top: 0.25rem;">
-          <input type="checkbox" id="chk-garnish" checked onchange="updatePho()" style="width: auto;"> Include Basil, Sprouts, & Jalapeños
-        </label>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Doan's Vietnamese Cuisine</h3>
+        <p>Traditional Vietnamese restaurant in Charlotte. Slow-simmered noodle soups, family specialties, and fresh table herbs.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          5937 South Blvd<br>
+          Charlotte, NC 28217<br>
+          Phone: (704) 552-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="pho.html">Pho Customizer</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-
-  </div>
-</section>
-
-<section class="section" style="border-top:1px solid rgba(212,160,23,.06)">
-  <h2>Our Broth Preparation Process</h2>
-  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
-    <div class="feature-card">
-      <h3>Beef Bone Broth</h3>
-      <p>Beef marrow bones simmered for a full 24 hours with charred ginger, onions, cinnamon, cloves, cardamom, coriander, and star anise.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Doan's Vietnamese Cuisine. All rights reserved. Unofficial concept presentation.</p>
     </div>
-    <div class="feature-card">
-      <h3>Chicken Broth</h3>
-      <p>Light, sweet broth prepared with free-range chickens, roasted ginger, onion, and cilantro roots. Simmered for 8 hours.</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
 
-</main>
-<footer>
-  <p>Doan's Vietnamese Cuisine · 5937 South Blvd · Charlotte, NC 28217 · (704) 552-0909</p>
-  <p><a href="menu.html">Menu</a> · <a href="pho.html">Pho Customizer</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
+    const sizeData = {
+      medium: { tag: "MEDIUM BOWL PHO", basePrice: 12.95, word: "Medium bowl" },
+      large: { tag: "LARGE BOWL PHO", basePrice: 14.95, word: "Large bowl" }
+    };
 
-<script>
-  const sizeData = {
-    medium: { tag: "MEDIUM BOWL PHO", basePrice: 12.95, word: "Medium bowl" },
-    large: { tag: "LARGE BOWL PHO", basePrice: 14.95, word: "Large bowl" }
-  };
+    const brothData = {
+      beef: { name: "Traditional Beef Phở", label: "traditional beef bone broth slow-simmered for 24 hours", color: "#b45309" },
+      chicken: { name: "Chicken Phở (Phở Gà)", label: "free-range chicken bone broth simmered for 8 hours", color: "#eab308" },
+      vegan: { name: "Vegan Star Anise Phở", label: "vegan vegetable broth infused with star anise and roasted ginger", color: "#facc15" }
+    };
 
-  const brothData = {
-    beef: { name: "Traditional Beef Phở", label: "traditional beef bone broth slow-simmered for 24 hours" },
-    chicken: { name: "Chicken Phở (Phở Gà)", label: "free-range chicken bone broth simmered for 8 hours" },
-    vegan: { name: "Vegan Star Anise Phở", label: "vegan vegetable broth infused with star anise and roasted ginger" }
-  };
+    const proteinData = {
+      steak: { name: "Rare Eye Round Steak", label: "rare eye round steak", charge: 1.00 },
+      flank: { name: "Well-Done Flank", label: "well-done flank", charge: 1.00 },
+      meatballs: { name: "Beef Meatballs", label: "beef meatballs", charge: 1.00 },
+      tendon: { name: "Soft Beef Tendon", label: "soft beef tendon", charge: 1.50 },
+      tofu: { name: "Organic Tofu", label: "organic cubed tofu", charge: 0.00 }
+    };
 
-  const proteinData = {
-    steak: { name: "Rare Eye Round Steak", label: "rare eye round steak", charge: 1.00 },
-    flank: { name: "Well-Done Flank", label: "well-done flank", charge: 1.00 },
-    meatballs: { name: "Beef Meatballs", label: "beef meatballs", charge: 1.00 },
-    tendon: { name: "Soft Beef Tendon", label: "soft beef tendon", charge: 1.50 },
-    tofu: { name: "Organic Tofu", label: "organic cubed tofu", charge: 0.00 }
-  };
+    function updatePho() {
+      const sizeKey = document.getElementById('pho-size').value;
+      const brothKey = document.getElementById('pho-broth').value;
+      const proteinKey = document.getElementById('pho-protein').value;
+      const hasGarnish = document.getElementById('chk-garnish').checked;
 
-  function updatePho() {
-    const sizeKey = document.getElementById('pho-size').value;
-    const brothKey = document.getElementById('pho-broth').value;
-    const proteinKey = document.getElementById('pho-protein').value;
-    const hasGarnish = document.getElementById('chk-garnish').checked;
+      const size = sizeData[sizeKey];
+      const broth = brothData[brothKey];
+      const protein = proteinData[proteinKey];
 
-    const size = sizeData[sizeKey];
-    const broth = brothData[brothKey];
-    const protein = proteinData[proteinKey];
+      const totalPrice = size.basePrice + protein.charge;
 
-    const totalPrice = size.basePrice + protein.charge;
+      document.getElementById('pho-tag-display').innerText = size.tag;
+      document.getElementById('pho-title-display').innerText = broth.name;
+      document.getElementById('pho-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
-    document.getElementById('pho-tag-display').innerText = size.tag;
-    document.getElementById('pho-title-display').innerText = broth.name;
-    document.getElementById('pho-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+      let garnishText = hasGarnish ? ", finished with fresh Thai basil, bean sprouts, and jalapeños." : ".";
+      let desc = `${size.word} of ${broth.label}, topped with ${protein.label}${garnishText}`;
+      
+      document.getElementById('pho-desc-display').innerText = desc;
 
-    let garnishText = hasGarnish ? ", finished with fresh Thai basil, bean sprouts, and jalapeños." : ".";
-    let desc = `${size.word} of ${broth.label}, topped with ${protein.label}${garnishText}`;
-    
-    document.getElementById('pho-desc-display').innerText = desc;
-  }
+      // Update SVG broth color
+      const svgBroth = document.getElementById('svg-broth');
+      if (svgBroth) {
+        svgBroth.setAttribute('fill', broth.color);
+      }
 
-  // Initial trigger
-  window.addEventListener('load', () => {
-    updatePho();
-  });
-</script>
-<script src="../site-core.js"></script>
+      // Update SVG protein visibility
+      document.querySelectorAll('.protein-graphic').forEach(el => el.classList.add('hidden'));
+      const activeProtein = document.getElementById(`svg-protein-${proteinKey}`);
+      if (activeProtein) {
+        activeProtein.classList.remove('hidden');
+      }
+
+      // Update SVG garnish visibility
+      const svgGarnish = document.getElementById('svg-garnish');
+      if (svgGarnish) {
+        if (hasGarnish) {
+          svgGarnish.classList.remove('hidden');
+        } else {
+          svgGarnish.classList.add('hidden');
+        }
+      }
+    }
+
+    document.getElementById('pho-size').addEventListener('change', updatePho);
+    document.getElementById('pho-broth').addEventListener('change', updatePho);
+    document.getElementById('pho-protein').addEventListener('change', updatePho);
+    document.getElementById('chk-garnish').addEventListener('change', updatePho);
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updatePho();
+    });
+  </script>
 </body>
 </html>
