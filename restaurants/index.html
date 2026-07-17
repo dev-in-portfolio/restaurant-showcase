@@ -619,6 +619,27 @@
       margin-top: 5rem;
     }
 
+    .star-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+    .star-btn:hover {
+      color: var(--accent);
+      transform: scale(1.2);
+    }
+    .star-btn.active {
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent-glow);
+    }
+
     @media (max-width: 768px) {
       header {
         padding-top: 3.5rem;
@@ -677,6 +698,7 @@
         <div class="filter-title">Filter by Neighborhood</div>
         <div class="filter-tags" id="neighborhood-filters">
           <span class="filter-tag active" data-filter="all">All Neighborhoods</span>
+          <span class="filter-tag" data-filter="starred" style="color: var(--accent);">★ Starred</span>
           <!-- Dynamic Neighborhood Tags -->
         </div>
       </div>
@@ -712,6 +734,12 @@
   <script>
     let restaurants = [];
     let selectedForComparison = [];
+    let starredList = [];
+    try {
+      starredList = JSON.parse(localStorage.getItem('starredRestaurants')) || [];
+    } catch (e) {
+      starredList = [];
+    }
 
     const grid = document.getElementById('restaurant-grid');
     const searchBar = document.getElementById('search-bar');
@@ -761,6 +789,14 @@
           renderGrid();
         });
 
+        // Set up the starred button
+        document.querySelector('[data-filter="starred"]').addEventListener('click', (e) => {
+          document.querySelectorAll('#neighborhood-filters .filter-tag').forEach(tag => tag.classList.remove('active'));
+          e.target.classList.add('active');
+          activeFilter = 'starred';
+          renderGrid();
+        });
+
         renderGrid();
       })
       .catch(err => {
@@ -773,8 +809,10 @@
       const query = searchBar.value.toLowerCase().trim();
       
       const filtered = restaurants.filter(r => {
-        // Neighborhood filter
-        if (activeFilter !== 'all' && r.neighborhood !== activeFilter) {
+        // Neighborhood/Starred filter
+        if (activeFilter === 'starred') {
+          if (!starredList.includes(r.id)) return false;
+        } else if (activeFilter !== 'all' && r.neighborhood !== activeFilter) {
           return false;
         }
 
@@ -802,22 +840,27 @@
 
       grid.innerHTML = filtered.map(r => {
         const isChecked = selectedForComparison.includes(r.id) ? 'checked' : '';
+        const isStarred = starredList.includes(r.id) ? 'active' : '';
+        const starChar = starredList.includes(r.id) ? '★' : '☆';
         const tagsHtml = r.tags.map(t => `<span class="card-tag">${t}</span>`).join('');
         
         return `
           <article class="card">
             <div class="card-top">
               <div class="card-emoji-box">${r.emoji}</div>
-              <label class="compare-checkbox-label" title="Select to compare">
-                <input type="checkbox" class="compare-checkbox" data-id="${r.id}" ${isChecked}>
-                <span class="compare-text">Compare</span>
-              </label>
+              <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <button class="star-btn ${isStarred}" data-id="${r.id}" title="Star this restaurant">${starChar}</button>
+                <label class="compare-checkbox-label" title="Select to compare">
+                  <input type="checkbox" class="compare-checkbox" data-id="${r.id}" ${isChecked}>
+                  <span class="compare-text">Compare</span>
+                </label>
+              </div>
             </div>
             <h2>${r.name}</h2>
             <div class="card-location">${r.neighborhood}, ${r.state}</div>
             <p class="card-description">${r.description}</p>
             <div class="card-tags">${tagsHtml}</div>
-            <a href="${r.slug}/index.html" class="card-action">
+            <a href="${r.slug}/index.html" class="card-action" target="_blank" rel="noopener">
               <span>View Final Build</span>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
@@ -844,6 +887,27 @@
             selectedForComparison = selectedForComparison.filter(item => item !== id);
           }
           updateComparisonDrawer();
+        });
+      });
+
+      // Wire star buttons
+      document.querySelectorAll('.star-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = btn.dataset.id;
+          if (starredList.includes(id)) {
+            starredList = starredList.filter(item => item !== id);
+            btn.classList.remove('active');
+            btn.textContent = '☆';
+          } else {
+            starredList.push(id);
+            btn.classList.add('active');
+            btn.textContent = '★';
+          }
+          localStorage.setItem('starredRestaurants', JSON.stringify(starredList));
+          if (activeFilter === 'starred') {
+            renderGrid();
+          }
         });
       });
     }
@@ -887,7 +951,7 @@
                 <div class="compare-feature-value">${r.city}</div>
               </div>
               <div class="compare-btn-row">
-                <a href="${r.slug}/index.html" class="compare-col-link compare-col-link-demo">View Demo</a>
+                <a href="${r.slug}/index.html" class="compare-col-link compare-col-link-demo" target="_blank" rel="noopener">View Demo</a>
                 ${currentSiteBtn}
               </div>
             </div>
