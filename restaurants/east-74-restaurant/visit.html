@@ -1,140 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/east-74-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit — East 74 Restaurant</title>
-  <meta name="description" content="Visit East 74 Restaurant in Matthews, NC. Hours, address, and directions to our family diner on Monroe Road.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <title>Visit Us | East 74 Restaurant</title>
+  <meta name="description" content="Stop by East 74 Restaurant in Matthews, NC. Find diner hours, address, and directions.">
   <link rel="stylesheet" href="site.css">
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <style>
+    .visit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-logo">East 74</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="platter.html">Platter Builder</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="catering.html">Catering</a></li>
-      </ul>
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        East 74 <span>🇬🇷</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="platter.html">Platter Builder</a>
+        <a href="about.html">About</a>
+        <a href="visit.html" class="active">Visit</a>
+        <a href="catering.html">Catering</a>
+      </div>
     </div>
   </nav>
-<main id="main">
 
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Stop By</span>
+        <h1>Visit Us</h1>
+        <p>Come visit us on Monroe Road or call ahead for takeout order pickup.</p>
+      </div>
+    </header>
 
-  <header class="page-header">
-    <div class="container">
-      <h1>Visit Us</h1>
-      <p class="page-header-sub">Where the community gathers</p>
-    </div>
-  </header>
-
-  <section class="visit-section">
-    <div class="container">
+    <section class="wrap">
       <div class="visit-grid">
-
-        <div class="visit-card visit-hours">
-          <h2>Hours</h2>
-          <div class="hours-list">
-            <div class="hours-row">
-              <span class="hours-day">Monday – Wednesday</span>
-              <span class="hours-time">6:00 AM – 4:00 PM</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Thursday – Saturday</span>
-              <span class="hours-time">6:00 AM – 9:00 PM</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Sunday</span>
-              <span class="hours-time">7:00 AM – 3:00 PM</span>
-            </div>
-          </div>
-          <p class="hours-note">Breakfast served all morning</p>
+        
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">📍</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Location</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            10915 Monroe Rd<br>
+            Matthews, NC 28105
+          </p>
+          <a href="https://maps.google.com/?q=10915+Monroe+Rd+Matthews+NC+28105" target="_blank" class="btn" style="margin-top: 1.5rem; padding: 0.6rem 1.2rem; font-size: 0.8rem;">Get Directions</a>
         </div>
 
-        <div class="visit-card visit-location">
-          <h2>Find Us</h2>
-          <div class="visit-address">
-            <p class="visit-address-text">10915 Monroe Rd<br>Matthews, NC 28105</p>
-            <a href="https://maps.google.com/?q=10915+Monroe+Rd+Matthews+NC+28105" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
-          </div>
-          <div class="visit-map-placeholder">
-            <p>Monroe Road (NC-74) in the heart of Matthews</p>
-          </div>
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">📞</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Phone</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Call in orders:<br>
+            <a href="tel:+17048475035" style="color: var(--color-accent); font-weight: 700;">(704) 847-5035</a>
+          </p>
         </div>
 
-        <div class="visit-card visit-contact">
-          <h2>Contact</h2>
-          <div class="visit-contact-item">
-            <span class="visit-contact-label">Phone</span>
-            <a href="tel:+17048475035" class="visit-phone">(704) 847-5035</a>
-          </div>
-          <div class="visit-contact-item">
-            <span class="visit-contact-label">Order</span>
-            <p>Call ahead for takeout</p>
-          </div>
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🕐</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Weekly Hours</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.6;">
+            Monday–Wednesday: 6:00 AM – 4:00 PM<br>
+            Thursday–Saturday: 6:00 AM – 9:00 PM<br>
+            Sunday: 7:00 AM – 3:00 PM
+          </p>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="visit-message">
-    <div class="container">
-      <div class="visit-message-card">
-        <h2>Where the Community Gathers</h2>
-        <p>East 74 isn't just a restaurant — it's a neighborhood institution. Grab a booth with your family, catch up with a friend over coffee, or just stop in for a quick bite on your way through. Whether you're a regular or it's your first time, you're part of the family here.</p>
-        <div class="visit-actions">
-          <a href="menu.html" class="btn btn-primary">View the Menu</a>
-          <a href="catering.html" class="btn btn-outline">Catering &amp; Large Orders</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-</main>
-<footer class="footer">
-    <div class="container footer-container">
+  <footer class="footer">
+    <div class="wrap footer-grid">
       <div class="footer-brand">
-        <span class="footer-logo">East 74</span>
-        <p>Fresh homestyle cooking in the heart of Matthews, NC.</p>
+        <h3>East 74</h3>
+        <p>Serving Matthews, NC since 1997. Famous for Greek souvlaki, lamb gyros, and country fried steaks.</p>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          10110 E John St<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-7400
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
         <ul>
           <li><a href="menu.html">Menu</a></li>
+          <li><a href="platter.html">Platter Builder</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="visit.html">Visit</a></li>
           <li><a href="catering.html">Catering</a></li>
         </ul>
       </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>10915 Monroe Rd<br>Matthews, NC 28105</p>
-        <p>(704) 847-5035</p>
-      </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 East 74 Restaurant. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 East 74 Restaurant. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

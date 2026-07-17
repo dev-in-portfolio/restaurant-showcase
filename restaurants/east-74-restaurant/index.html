@@ -1,159 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/east-74-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>East 74 Restaurant — Fresh Homestyle Cooking Since 2013</title>
-  <meta name="description" content="East 74 Restaurant in Matthews, NC — family diner serving homestyle American and Greek food since 2013. Breakfast, gyros, fried favorites, and baklava.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <title>East 74 Restaurant | Matthews, NC</title>
+  <meta name="description" content="Greek specialties, Gyros, Chicken Souvlaki, country fried steak, and homemade baklava desserts at East 74 Restaurant.">
   <link rel="stylesheet" href="site.css">
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-logo">East 74</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="platter.html">Platter Builder</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="catering.html">Catering</a></li>
-      </ul>
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        East 74 <span>🇬🇷</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="platter.html">Platter Builder</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="catering.html">Catering</a>
+      </div>
     </div>
   </nav>
-<main id="main">
 
-
-  <header class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-tagline">Family Diner · Matthews, NC</p>
-        <h1>East 74 Restaurant</h1>
-        <p class="hero-subtitle">Fresh Homestyle Cooking Since 2013</p>
-        <p class="hero-desc">A neighborhood diner serving generous plates of American homestyle favorites and Greek classics — where everyone's a regular.</p>
-        <div class="hero-actions">
-          <a href="menu.html" class="btn btn-primary">View Our Menu</a>
-          <a href="visit.html" class="btn btn-outline">Visit Us</a>
+  <main id="main">
+    <!-- Hero Header -->
+    <header class="hero" style="padding: 7rem 0 5rem;">
+      <div class="wrap">
+        <span class="page-hero-badge">Matthews Kitchen since 1997</span>
+        <h1 style="line-height: 1.1; margin: 1rem 0 1.5rem;">Greek &amp; American Comfort</h1>
+        <p style="max-width: 650px; margin: 0 auto 2.5rem; color: var(--color-text-muted);">"East 74 Restaurant brings Greek souvlaki, lamb gyro pitas, and country fried steak platters straight from our family kitchen to Matthews, NC."</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="menu.html" class="btn">View Menu</a>
+          <a href="platter.html" class="btn" style="background-color: var(--color-gold); border-color: var(--color-gold); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);">Build a Platter</a>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🍳</div>
-          <h3>Breakfast All Morning</h3>
-          <p>Omelets stuffed to the brim, country breakfast platters, and sandwiches that fuel your day right. Served fresh every morning.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🥙</div>
-          <h3>Greek & American</h3>
-          <p>From gyros and Greek omelets to burgers and fried seafood — the best of both traditions on one menu.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">👨‍👩‍👧</div>
-          <h3>Family Friendly</h3>
-          <p>Kids menu, generous portions, and prices that don't break the bank. This is a place the whole family can enjoy together.</p>
-        </div>
+    <!-- Notice Banner -->
+    <div class="wrap" style="margin-top: -1.5rem; position: relative; z-index: 10;">
+      <div class="notice">
+        <span>✨ Authentic family recipes prepared fresh daily in our scratch kitchen.</span>
       </div>
     </div>
-  </section>
 
-  <section class="signature-plates">
-    <div class="container">
-      <h2 class="section-title">Signature Plates</h2>
-      <p class="section-subtitle">The dishes that keep folks coming back</p>
-      <div class="plates-grid">
-        <div class="plate-card">
-          <div class="plate-name">Greek Omelet</div>
-          <p class="plate-desc">Feta, tomatoes, onions, and gyro meat in a fluffy three-egg omelet</p>
-          <div class="plate-price">$7.25</div>
+    <!-- Main Content Details -->
+    <section class="wrap" style="margin-top: 5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; margin-bottom: 5.5rem;">
+        
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🍖</span>
+          <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none;">Traditional Greek Plates</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            From marinated chicken souvlaki skewers and lamb gyros to house-made tzatziki and sweet, flaky baklava.
+          </p>
         </div>
-        <div class="plate-card">
-          <div class="plate-name">Gyro Pita</div>
-          <p class="plate-desc">Seasoned gyro meat, fresh veggies, and tzatziki in a warm pita</p>
-          <div class="plate-price">$7.85</div>
+
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🍳</span>
+          <h3 class="menu-category-title" style="margin-top: 1rem; margin-bottom: 0.8rem; font-size: 1.4rem; border: none;">Southern American Diner</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+            Fluffy buttermilk breakfast pancake stacks, country fried steak smothered in white gravy, and fried squash.
+          </p>
         </div>
-        <div class="plate-card">
-          <div class="plate-name">Fried Squash</div>
-          <p class="plate-desc">Golden, crispy fried squash — a Southern diner staple done right</p>
-          <div class="plate-price">$4.95</div>
-        </div>
-        <div class="plate-card">
-          <div class="plate-name">Homemade Baklava</div>
-          <p class="plate-desc">Flaky layers of phyllo, walnuts, and honey — a sweet finish to any meal</p>
-          <div class="plate-price">$2.90</div>
-        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="location-card-section">
-    <div class="container">
-      <div class="location-card">
-        <div class="location-info">
-          <h2>Find Us</h2>
-          <div class="location-detail">
-            <span class="location-label">Address</span>
-            <p>10915 Monroe Rd<br>Matthews, NC 28105</p>
-          </div>
-          <div class="location-detail">
-            <span class="location-label">Hours</span>
-            <p>Mon–Wed: 6am – 4pm<br>Thu–Sat: 6am – 9pm<br>Sunday: 7am – 3pm</p>
-          </div>
-          <div class="location-detail">
-            <span class="location-label">Phone</span>
-            <p>(704) 847-5035</p>
-          </div>
-          <a href="visit.html" class="btn btn-primary">Get Directions</a>
-        </div>
+    <!-- Taproom CTA Banner -->
+    <section class="alt" style="border-radius: var(--radius); padding: 3.5rem; text-align: center; margin-bottom: 5rem;">
+      <div class="wrap">
+        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1rem; color: var(--color-blue);">Matthews Family Traditions</h2>
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2.5rem; font-weight: 500;">
+          Baked fresh, seasoned to perfection, and served with true Southern hospitality. Drop by for lunch or dinner.
+        </p>
+        <a href="about.html" class="btn">About Our Story</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  
-</main>
-<footer class="footer">
-    <div class="container footer-container">
+  <footer class="footer">
+    <div class="wrap footer-grid">
       <div class="footer-brand">
-        <span class="footer-logo">East 74</span>
-        <p>Fresh homestyle cooking in the heart of Matthews, NC.</p>
+        <h3>East 74</h3>
+        <p>Serving Matthews, NC since 1997. Famous for Greek souvlaki, lamb gyros, and country fried steaks.</p>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          10110 E John St<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-7400
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
         <ul>
           <li><a href="menu.html">Menu</a></li>
+          <li><a href="platter.html">Platter Builder</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="visit.html">Visit</a></li>
           <li><a href="catering.html">Catering</a></li>
         </ul>
       </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>10915 Monroe Rd<br>Matthews, NC 28105</p>
-        <p>(704) 847-5035</p>
-      </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 East 74 Restaurant. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 East 74 Restaurant. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

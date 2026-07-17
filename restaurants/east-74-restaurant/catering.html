@@ -1,177 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/east-74-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catering — East 74 Restaurant</title>
-  <meta name="description" content="Catering and large orders from East 74 Restaurant in Matthews, NC. Party platters, breakfast packages, and takeout for groups.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <title>Catering | East 74 Restaurant</title>
+  <meta name="description" content="Host your event with Greek and American classic comfort food. Office platters and family boxes from East 74 Restaurant.">
   <link rel="stylesheet" href="site.css">
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <style>
+    .catering-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-logo">East 74</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="platter.html">Platter Builder</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="catering.html">Catering</a></li>
-      </ul>
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        East 74 <span>🇬🇷</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="platter.html">Platter Builder</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="catering.html" class="active">Catering</a>
+      </div>
     </div>
   </nav>
-<main id="main">
 
-
-  <header class="page-header">
-    <div class="container">
-      <h1>Catering &amp; Large Orders</h1>
-      <p class="page-header-sub">East 74 for your next gathering</p>
-    </div>
-  </header>
-
-  <section class="catering-intro">
-    <div class="container">
-      <div class="catering-intro-content">
-        <h2>Feed a Crowd the East 74 Way</h2>
-        <p>Planning a family reunion, office lunch, church event, or birthday party? Let East 74 handle the food. We offer party platters, breakfast packages, and large takeout orders made fresh with the same homestyle quality our regulars love.</p>
-        <p>All catering and large orders are prepared fresh. Give us a heads up so we can have everything ready when you need it.</p>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Large Orders</span>
+        <h1>Catering</h1>
+        <p>Homestyle Greek &amp; Southern platters fresh from our kitchen for your next event.</p>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section class="catering-options">
-    <div class="container">
-      <h2 class="section-title">What We Offer</h2>
+    <section class="wrap">
+      <h2 style="font-family: var(--font-heading); text-align: center; font-size: 2rem; margin-bottom: 1rem; color: var(--color-blue);">What We Offer</h2>
+      
       <div class="catering-grid">
-
-        <div class="catering-card">
-          <div class="catering-icon">🥞</div>
-          <h3>Breakfast Catering</h3>
-          <p>Feed your morning crowd with omelet platters, country breakfasts, biscuits and gravy, and coffee service. Perfect for meetings and church groups.</p>
-          <ul class="catering-list">
-            <li>Omelet platters (assorted varieties)</li>
-            <li>Country breakfast trays</li>
-            <li>Biscuits and sausage gravy</li>
-            <li>Coffee and juice service</li>
+        
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🍳</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Breakfast Trays</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+            Feed your morning office group with assorted omelet platters, home fries, scratch biscuits, and gravy.
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--color-text-muted); padding-left: 1.2rem; line-height: 1.8;">
+            <li>Greek or Western Omelet Trays</li>
+            <li>Buttermilk pancakes</li>
+            <li>Fresh coffee service</li>
           </ul>
         </div>
 
-        <div class="catering-card">
-          <div class="catering-icon">🍽️</div>
-          <h3>Party Platters</h3>
-          <p>Bring our favorites to your event. Gyros, fried favorites, sandwiches, and sides — enough to keep everyone happy.</p>
-          <ul class="catering-list">
-            <li>Gyro meat platter with pita and toppings</li>
-            <li>Fried chicken tenders</li>
-            <li>Fried squash and okra trays</li>
-            <li>Party-sized salads</li>
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🍖</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Gyro &amp; Souvlaki Platters</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+            Assemble your own Greek wraps. Trays of gyro meat, grilled chicken skewers, pitas, and house tzatziki.
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--color-text-muted); padding-left: 1.2rem; line-height: 1.8;">
+            <li>Lamb gyro meat trays</li>
+            <li>Souvlaki chicken skewers</li>
+            <li>Greek salad bowls</li>
           </ul>
         </div>
 
-        <div class="catering-card">
-          <div class="catering-icon">📦</div>
-          <h3>Takeout Orders</h3>
-          <p>Need 5 or 50 meals? Call ahead and we'll have your order boxed and ready for pickup. Great for offices, families, and events.</p>
-          <ul class="catering-list">
-            <li>Individual and group takeout</li>
-            <li>Family meal deals</li>
-            <li>Custom orders welcome</li>
-            <li>Advance notice appreciated</li>
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🍗</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Southern Sides</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+            Perfect sharing sides. Trays of golden fried squash, okra, pickles, and sweet honey baklava.
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--color-text-muted); padding-left: 1.2rem; line-height: 1.8;">
+            <li>Southern fried squash</li>
+            <li>Fried okra trays</li>
+            <li>Fresh house baklava boxes</li>
           </ul>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <section class="catering-order">
-    <div class="container">
-      <div class="catering-order-card">
-        <h2>How to Order</h2>
-        <div class="order-steps">
-          <div class="order-step">
-            <span class="order-step-num">1</span>
-            <div>
-              <h3>Call Us</h3>
-              <p>Reach us at <a href="tel:+17048475035">(704) 847-5035</a> to discuss your event, group size, and menu preferences.</p>
-            </div>
-          </div>
-          <div class="order-step">
-            <span class="order-step-num">2</span>
-            <div>
-              <h3>Plan Your Menu</h3>
-              <p>We'll help you pick the right platters and quantities for your group. Don't forget the baklava!</p>
-            </div>
-          </div>
-          <div class="order-step">
-            <span class="order-step-num">3</span>
-            <div>
-              <h3>Pick Up Fresh</h3>
-              <p>Your order will be freshly prepared and ready for pickup at the scheduled time.</p>
-            </div>
-          </div>
-        </div>
-        <a href="tel:+17048475035" class="btn btn-primary btn-large">Call to Order: (704) 847-5035</a>
+      <!-- How to Order Callout -->
+      <div class="interactive-panel" style="text-align: center; margin-bottom: 5rem;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-blue); margin-bottom: 1rem;">Reserve Your Order</h3>
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2rem; line-height: 1.8;">
+          All group platters are prepared completely fresh to order. Please call us at least 24 hours in advance to arrange pickup times.
+        </p>
+        <a href="tel:+17048475035" class="btn" style="background-color: var(--color-gold); border-color: var(--color-gold); box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);">Call (704) 847-5035</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="catering-contact">
-    <div class="container">
-      <div class="catering-contact-card">
-        <h2>Questions?</h2>
-        <p>Give us a call or stop by. We're happy to work with you to put together the right menu for your event, big or small.</p>
-        <div class="catering-contact-info">
-          <p><strong>Phone:</strong> <a href="tel:+17048475035">(704) 847-5035</a></p>
-          <p><strong>Address:</strong> 10915 Monroe Rd, Matthews, NC 28105</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-</main>
-<footer class="footer">
-    <div class="container footer-container">
+  <footer class="footer">
+    <div class="wrap footer-grid">
       <div class="footer-brand">
-        <span class="footer-logo">East 74</span>
-        <p>Fresh homestyle cooking in the heart of Matthews, NC.</p>
+        <h3>East 74</h3>
+        <p>Serving Matthews, NC since 1997. Famous for Greek souvlaki, lamb gyros, and country fried steaks.</p>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          10110 E John St<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-7400
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
         <ul>
           <li><a href="menu.html">Menu</a></li>
+          <li><a href="platter.html">Platter Builder</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="visit.html">Visit</a></li>
           <li><a href="catering.html">Catering</a></li>
         </ul>
       </div>
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <p>10915 Monroe Rd<br>Matthews, NC 28105</p>
-        <p>(704) 847-5035</p>
-      </div>
     </div>
     <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 East 74 Restaurant. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 East 74 Restaurant. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

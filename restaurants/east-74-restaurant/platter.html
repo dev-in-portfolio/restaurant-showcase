@@ -1,155 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Platter Builder · East 74 Restaurant</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-/* Local style adjustments to match the site's design */
-.platter-mat {
-  background: radial-gradient(circle, #2a5a8c 0%, #0f2840 100%);
-  border: 1.5px solid var(--a);
-  border-radius: var(--radius-lg);
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-lg);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-  color: #fff;
-}
-.platter-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .platter-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px;
-  border-radius: var(--radius);
-  width: 100%;
-  font-family: inherit;
-}
-select:focus {
-  outline: none;
-  border-color: var(--a);
-}
-.control-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--p);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/east-74-restaurant/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platter Builder | East 74 Restaurant</title>
+  <meta name="description" content="Design your customized Greek &amp; American diner combo platter in real-time. Choose mains, sides, and desserts.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive platter visualizer */
+    .platter-mat {
+      background: radial-gradient(circle, var(--color-bg) 0%, #f1efe9 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: var(--color-text-light);
+    }
+    
+    .platter-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="nav-logo">East 74</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="platter.html" class="active">Platter Builder</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="catering.html">Catering</a></li>
-      </ul>
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        East 74 <span>🇬🇷</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="platter.html" class="active">Platter Builder</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="catering.html">Catering</a>
+      </div>
     </div>
   </nav>
-<main id="main">
 
-
-  <header class="hero" style="padding: 4rem 2rem; min-height: 30vh;">
-    <div class="container">
-      <div class="hero-content">
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Greek &amp; Southern Customizer</span>
         <h1>Greek &amp; American Platter Builder</h1>
-        <p class="hero-subtitle">Design your customized lunch or dinner combo platter from our traditional family kitchen</p>
+        <p>Design your customized lunch or dinner combo platter from our traditional family kitchen.</p>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="section" style="padding: 4rem 0;">
-    <div class="container">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Platter Customizer</h2>
-      
-      <div class="platter-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow);">
-        
-        <!-- Left: Platter Visualizer -->
-        <div class="platter-mat">
-          <span style="font-size: 0.78rem; font-weight: 600; color: var(--a-light); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="plat-tag-display">SIGNATURE GREEK CLASSIC</span>
-          <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Playfair Display', serif; margin: 0 0 0.8rem 0;" id="plat-title-display">Gyro Pita Plate</h3>
-          <p style="font-size: 1.5rem; font-weight: 700; color: var(--a-light); margin: 0 0 1.2rem 0;" id="plat-price-display">$12.95</p>
-          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="plat-desc-display">Traditional Greek Gyro Pita loaded with onions, tomatoes, and tzatziki sauce, served with lemon potatoes.</p>
-        </div>
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-blue); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Platter Customizer</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your main entree, family side, and sweet baklava dessert finish to arrange your plate.</p>
 
-        <!-- Right: Controls -->
-        <div>
-          <div style="margin-bottom: 1.5rem;">
-            <label class="control-label">1. Select Main Dish</label>
-            <select id="plat-main" onchange="updatePlatter()">
-              <option value="gyro" selected>Greek Gyro Pita Plate ($12.95)</option>
-              <option value="souvlaki">Chicken Souvlaki Skewers ($13.95)</option>
-              <option value="steak">Country Fried Steak ($11.95)</option>
-            </select>
-          </div>
-
-          <div style="margin-bottom: 1.5rem;">
-            <label class="control-label">2. Select Side</label>
-            <select id="plat-side" onchange="updatePlatter()">
-              <option value="potatoes" selected>Greek Lemon Potatoes (+$0.00)</option>
-              <option value="squash">Southern Fried Squash (+$0.50)</option>
-              <option value="fries">Crinkle-Cut French Fries (+$0.00)</option>
-            </select>
-          </div>
-
+        <div class="platter-grid" style="align-items: start; gap: 3rem;">
+          
+          <!-- Left Side: Platter SVG -->
           <div>
-            <label class="control-label">3. Add Sweet Finish</label>
-            <select id="plat-dessert" onchange="updatePlatter()">
-              <option value="none" selected>No Dessert (+$0.00)</option>
-              <option value="baklava">Slice of Homemade Baklava (+$1.50)</option>
-            </select>
-          </div>
-        </div>
+            <div class="platter-canvas">
+              <svg viewBox="0 0 200 160" width="100%" max-width="320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Blue-Trim Hand-Painted Ceramic Plate -->
+                <circle cx="85" cy="80" r="56" fill="#ffffff" stroke="#2a5a8c" stroke-width="4.5" />
+                <!-- Greek Scroll pattern on border -->
+                <circle cx="85" cy="80" r="50" fill="none" stroke="#2a5a8c" stroke-width="1.2" stroke-dasharray="6,4" />
 
+                <!-- Main Dishes -->
+                <!-- Gyro Pita (Folded pocket with gyro strips, red tomato slices, and tzatziki white paint) -->
+                <g id="svg-main-gyro">
+                  <path d="M 50,85 Q 40,60 70,55 T 105,70 Q 115,95 85,110 Z" fill="#d5bdaf" stroke="#bfa897" stroke-width="0.8" /> <!-- Pita -->
+                  <!-- Meat slices -->
+                  <path d="M 55,75 Q 70,68 85,73" fill="none" stroke="#451a03" stroke-width="5" stroke-linecap="round" />
+                  <path d="M 60,85 Q 75,78 90,83" fill="none" stroke="#451a03" stroke-width="5" stroke-linecap="round" />
+                  <!-- Tomato wedges -->
+                  <circle cx="68" cy="65" r="4.5" fill="#ef4444" />
+                  <circle cx="80" cy="78" r="4.5" fill="#ef4444" />
+                  <!-- Tzatziki dollop -->
+                  <path d="M 72,74 Q 78,72 82,75" fill="none" stroke="#fafaf9" stroke-width="6" stroke-linecap="round" />
+                </g>
+
+                <!-- Souvlaki Skewers (marinated skewers) -->
+                <g id="svg-main-souvlaki" class="hidden">
+                  <!-- Skewer 1 -->
+                  <line x1="42" y1="58" x2="118" y2="82" stroke="#dda15e" stroke-width="1.8" stroke-linecap="round" />
+                  <rect x="52" y="52" width="12" height="12" rx="2" fill="#b45309" stroke="#78350f" stroke-width="0.5" />
+                  <rect x="72" y="58" width="12" height="12" rx="2" fill="#b45309" stroke="#78350f" stroke-width="0.5" />
+                  <rect x="92" y="65" width="12" height="12" rx="2" fill="#b45309" stroke="#78350f" stroke-width="0.5" />
+                  <!-- Skewer 2 -->
+                  <line x1="42" y1="82" x2="118" y2="106" stroke="#dda15e" stroke-width="1.8" stroke-linecap="round" />
+                  <rect x="52" y="76" width="12" height="12" rx="2" fill="#b45309" stroke="#78350f" stroke-width="0.5" />
+                  <rect x="72" y="82" width="12" height="12" rx="2" fill="#b45309" stroke="#78350f" stroke-width="0.5" />
+                  <rect x="92" y="89" width="12" height="12" rx="2" fill="#b45309" stroke="#78350f" stroke-width="0.5" />
+                </g>
+
+                <!-- Country Fried Steak (Patty smothered in white gravy) -->
+                <g id="svg-main-steak" class="hidden">
+                  <ellipse cx="78" cy="80" rx="30" ry="22" fill="#9a3412" stroke="#7c2d12" stroke-width="0.5" />
+                  <!-- Gravy puddle -->
+                  <path d="M 62,80 Q 72,70 82,75 T 98,82 Q 88,95 72,92 Z" fill="#faf8f5" opacity="0.95" />
+                  <circle cx="70" cy="82" r="0.8" fill="#57534e" /> <!-- Pepper specks -->
+                  <circle cx="82" cy="78" r="0.8" fill="#57534e" />
+                  <circle cx="88" cy="84" r="0.8" fill="#57534e" />
+                </g>
+
+                <!-- Sides -->
+                <!-- Lemon Potatoes (3 yellow wedges) -->
+                <g id="svg-side-potatoes">
+                  <path d="M 102,95 C 102,95 106,112 118,105 Z" fill="#eab308" stroke="#ca8a04" stroke-width="0.5" />
+                  <path d="M 112,85 C 112,85 125,98 128,88 Z" fill="#eab308" stroke="#ca8a04" stroke-width="0.5" />
+                  <path d="M 98,110 C 98,110 115,120 120,110 Z" fill="#eab308" stroke="#ca8a04" stroke-width="0.5" />
+                </g>
+
+                <!-- Fried Squash (circles) -->
+                <g id="svg-side-squash" class="hidden">
+                  <circle cx="112" cy="98" r="7" fill="#d97706" stroke="#b45309" stroke-width="0.5" />
+                  <circle cx="122" cy="88" r="7.5" fill="#d97706" stroke="#b45309" stroke-width="0.5" />
+                  <circle cx="118" cy="112" r="7" fill="#d97706" stroke="#b45309" stroke-width="0.5" />
+                </g>
+
+                <!-- French Fries (crinkle-cut rods) -->
+                <g id="svg-side-fries" class="hidden">
+                  <rect x="105" y="88" width="22" height="5" rx="1.5" fill="#facc15" stroke="#ca8a04" stroke-width="0.5" transform="rotate(15 105 88)" />
+                  <rect x="108" y="98" width="22" height="5" rx="1.5" fill="#facc15" stroke="#ca8a04" stroke-width="0.5" transform="rotate(-10 108 98)" />
+                  <rect x="100" y="105" width="22" height="5" rx="1.5" fill="#facc15" stroke="#ca8a04" stroke-width="0.5" transform="rotate(35 100 105)" />
+                </g>
+
+                <!-- Baklava Dessert (Triangular layered pastry next to the plate) -->
+                <g id="svg-dessert-baklava" class="hidden">
+                  <!-- Honey-phyllo triangle -->
+                  <polygon points="152,70 182,50 178,92" fill="#d97706" stroke="#b45309" stroke-width="0.8" />
+                  <!-- Pistachio green crumbles -->
+                  <circle cx="168" cy="68" r="1.2" fill="#65a30d" />
+                  <circle cx="172" cy="65" r="1.2" fill="#65a30d" />
+                  <circle cx="170" cy="74" r="1.2" fill="#65a30d" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="platter-mat">
+              <span id="plat-tag-display" style="font-size: 0.78rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;">SIGNATURE GREEK CLASSIC</span>
+              <h4 id="plat-title-display" style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);">Gyro Pita Plate</h4>
+              <p id="plat-price-display" style="font-size: 1.25rem; font-weight: 800; color: var(--color-accent); margin-bottom: 1.2rem;">$12.95</p>
+              <p id="plat-desc-display" style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;">Traditional Greek Gyro Pita loaded with onions, tomatoes, and tzatziki sauce, served with lemon potatoes.</p>
+            </div>
+          </div>
+
+          <!-- Right Side: Controls Selects -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div>
+              <label for="plat-main">1. Select Main Dish</label>
+              <select id="plat-main">
+                <option value="gyro" selected>Greek Gyro Pita Plate ($12.95)</option>
+                <option value="souvlaki">Chicken Souvlaki Skewers ($13.95)</option>
+                <option value="steak">Country Fried Steak ($11.95)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="plat-side">2. Select Side</label>
+              <select id="plat-side">
+                <option value="potatoes" selected>Greek Lemon Potatoes (+$0.00)</option>
+                <option value="squash">Southern Fried Squash (+$0.50)</option>
+                <option value="fries">Crinkle-Cut French Fries (+$0.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="plat-dessert">3. Add Sweet Finish</label>
+              <select id="plat-dessert">
+                <option value="none" selected>No Dessert (+$0.00)</option>
+                <option value="baklava">Slice of Homemade Baklava (+$1.50)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>East 74</h3>
+        <p>Serving Matthews, NC since 1997. Famous for Greek souvlaki, lamb gyros, and country fried steaks.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          10110 E John St<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-7400
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="platter.html">Platter Builder</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="catering.html">Catering</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  
-</main>
-<footer class="footer">
-    <div class="container">
-      <p>East 74 Restaurant · 10110 E John St · Matthews, NC 28105 · (704) 847-7400</p>
-      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 East 74 Restaurant. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
   <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
     const mainData = {
       gyro: { tag: "SIGNATURE GREEK CLASSIC", name: "Gyro Pita Plate", basePrice: 12.95, label: "traditional Greek Gyro Pita loaded with fresh onions, tomatoes, and tzatziki sauce" },
       souvlaki: { tag: "GREEK SPECIALTY", name: "Chicken Souvlaki Skewers", basePrice: 13.95, label: "lemon-herb marinated grilled chicken skewers with pita bread and tzatziki" },
@@ -183,15 +271,35 @@ html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-
       document.getElementById('plat-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
       let desc = `A generous plate featuring our ${main.label}, served with a side of ${side.label}${dessert.label}.`;
-      
       document.getElementById('plat-desc-display').innerText = desc;
+
+      // Update SVG Main Dish
+      document.getElementById('svg-main-gyro').classList.add('hidden');
+      document.getElementById('svg-main-souvlaki').classList.add('hidden');
+      document.getElementById('svg-main-steak').classList.add('hidden');
+      document.getElementById(`svg-main-${mainKey}`).classList.remove('hidden');
+
+      // Update SVG Side Dish
+      document.getElementById('svg-side-potatoes').classList.add('hidden');
+      document.getElementById('svg-side-squash').classList.add('hidden');
+      document.getElementById('svg-side-fries').classList.add('hidden');
+      document.getElementById(`svg-side-${sideKey}`).classList.remove('hidden');
+
+      // Update SVG Dessert
+      document.getElementById('svg-dessert-baklava').classList.add('hidden');
+      if (dessertKey !== 'none') {
+        document.getElementById('svg-dessert-baklava').classList.remove('hidden');
+      }
     }
+
+    document.getElementById('plat-main').addEventListener('change', updatePlatter);
+    document.getElementById('plat-side').addEventListener('change', updatePlatter);
+    document.getElementById('plat-dessert').addEventListener('change', updatePlatter);
 
     // Initial trigger
     window.addEventListener('load', () => {
       updatePlatter();
     });
   </script>
-  <script src="../site-core.js"></script>
 </body>
 </html>
