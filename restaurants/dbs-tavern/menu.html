@@ -1,129 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu · DB's Tavern</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--navy:#1a2a3a;--gold:#d4a84b;--red:#c0392b;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
-.nav a:hover{opacity:1;color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#0d1219,#1a2a3a);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
-.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
-.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.cat-tab{background:rgba(255,255,255,.03);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
-.cat-tab:hover{color:var(--cream)}
-.cat-tab.active{background:rgba(212,168,75,.12);color:var(--gold)}
-.cat-panel{display:none}
-.cat-panel.active{display:block}
-.menu-cat-title{color:var(--gold);font-size:1.1rem;margin:0 0 1rem}
-.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.menu-item:last-child{border-bottom:none}
-.menu-item .name{font-weight:600;font-size:.95rem}
-.menu-item .desc{font-size:.82rem;opacity:.55;line-height:1.4;margin:.15rem 0 0;max-width:75%}
-.menu-item .price{font-size:.9rem;color:var(--gold);font-weight:600;white-space:nowrap;margin-left:1rem}
-.menu-item .badge{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(192,57,43,.15);color:var(--red);padding:.15rem .5rem;border-radius:3px;margin-left:.5rem}
-footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dbs-tavern/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | DB's Tavern</title>
+  <meta name="description" content="Tavern classics, signature pizza rolls, burgers, and legendary wings at DB's Tavern in Ballantyne.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .cat-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .cat-tab {
+      background: var(--color-steel);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+      font-family: var(--font-heading);
+    }
+    .cat-tab:hover {
+      border-color: var(--color-amber);
+      color: var(--color-amber);
+    }
+    .cat-tab.active {
+      background-color: var(--color-amber);
+      color: #fff;
+      border-color: var(--color-amber);
+    }
+    .cat-panel {
+      display: none;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .cat-panel.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">DB's Tavern</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="wings.html">Wings</a>
-    <a href="story.html">Our Story</a>
-    <a href="order.html">Order</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Menu</h1>
-  <p>Tavern classics made fresh</p>
-</header>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<section class="section">
-  <div class="cat-tabs">
-    <button class="cat-tab active" data-tab="starters">Starters</button>
-    <button class="cat-tab" data-tab="rolls">Pizza Rolls</button>
-    <button class="cat-tab" data-tab="wings">Wings</button>
-    <button class="cat-tab" data-tab="burgers">Burgers</button>
-    <button class="cat-tab" data-tab="breakfast">Breakfast</button>
-  </div>
-  <div class="cat-panel active" data-panel="starters">
-    <h3 class="menu-cat-title">Starters</h3>
-    <div class="menu-item"><div><span class="name">Spinach &amp; Artichoke Dip</span><span class="badge">Popular</span><p class="desc">Homemade, served bubbling hot with tortilla chips</p></div><span class="price">$10.99</span></div>
-    <div class="menu-item"><div><span class="name">Buffalo Chicken Dip</span><p class="desc">Our famous recipe served with tortilla chips</p></div><span class="price">$11.50</span></div>
-    <div class="menu-item"><div><span class="name">Giant Pretzel</span><p class="desc">Sea salt, spicy mustard or queso for dipping</p></div><span class="price">$10.99</span></div>
-    <div class="menu-item"><div><span class="name">Fried Mozzarella Sticks</span><p class="desc">Served with marinara</p></div><span class="price">$8.99</span></div>
-    <div class="menu-item"><div><span class="name">Jalapeño Poppers</span><p class="desc">Fresh jalapeño, buffalo chicken dip, bacon, pepper jack</p></div><span class="price">$10.99</span></div>
-    <div class="menu-item"><div><span class="name">Buffalo Chicken Bites</span><p class="desc">Buffalo chicken dip rolled, battered, fried — served with jalapeño ranch</p></div><span class="price">$8.99</span></div>
-    <div class="menu-item"><div><span class="name">Fried Pickles or Mushrooms</span><p class="desc">Herb battered, fried to perfection</p></div><span class="price">$9.99</span></div>
-    <div class="menu-item"><div><span class="name">Meatballs &amp; Marinara</span><p class="desc">Three homemade meatballs with fresh mozzarella — served with pita</p></div><span class="price">$10.50</span></div>
-  </div>
-  <div class="cat-panel" data-panel="rolls">
-    <h3 class="menu-cat-title">Pizza Rolls</h3>
-    <p style="opacity:.5;font-size:.85rem;margin-bottom:1rem">Our homemade dough, hand-rolled and baked golden brown</p>
-    <div class="menu-item"><div><span class="name">Pepperoni Roll</span><span class="badge">Popular</span><p class="desc">Pepperoni, mozzarella, parmesan</p></div><span class="price">$14.55</span></div>
-    <div class="menu-item"><div><span class="name">Jimmy Roll</span><p class="desc">Pepperoni, steak, jalapeño, onions, mozzarella, parmesan</p></div><span class="price">$14.55</span></div>
-    <div class="menu-item"><div><span class="name">Carnivore Roll</span><p class="desc">Pepperoni, sausage, bacon, hamburger, cheddar, mozzarella</p></div><span class="price">$14.55</span></div>
-    <div class="menu-item"><div><span class="name">Buffalo Chicken Roll</span><span class="badge">Spicy</span><p class="desc">Grilled or fried chicken, blue cheese, hot/medium/mild sauce</p></div><span class="price">$14.55</span></div>
-    <div class="menu-item"><div><span class="name">Philly Roll</span><p class="desc">Steak or chicken, onions, green peppers, mushrooms, provolone</p></div><span class="price">$14.55</span></div>
-    <div class="menu-item"><div><span class="name">Chicken Parmesan Roll</span><p class="desc">Mozzarella, parmesan, chicken, marinara</p></div><span class="price">$14.55</span></div>
-    <div class="menu-item"><div><span class="name">Veggie Roll</span><p class="desc">Provolone, spinach, tomato, onions, peppers, mushrooms</p></div><span class="price">$14.55</span></div>
-  </div>
-  <div class="cat-panel" data-panel="wings">
-    <h3 class="menu-cat-title">Wings</h3>
-    <p style="opacity:.5;font-size:.85rem;margin-bottom:1rem">Best wings in town since 1988 · 18 sauces available</p>
-    <div class="menu-item"><div><span class="name">Classic Wings</span><span class="badge">Popular</span><p class="desc">Choose from: Lemon Pepper, Honey BBQ, Garlic Parmesan, Teriyaki, Mild, Medium, Hot, and more</p></div><span class="price">MP</span></div>
-    <div class="menu-item"><div><span class="name">Signature Wings</span><span class="badge">Spicy</span><p class="desc">DB's Dry Rub, Our Way, Lucifer's Own, Honey Chipotle, Caribbean Creeper, Hot Teriyaki</p></div><span class="price">MP</span></div>
-    <div class="menu-item"><div><span class="name">Chicken Tender Basket</span><p class="desc">Hand-breaded tenders, fried crispy — choice of side and dipping sauce</p></div><span class="price">$13.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="burgers">
-    <h3 class="menu-cat-title">Burgers &amp; Sandwiches</h3>
-    <div class="menu-item"><div><span class="name">Tavern Burger</span><span class="badge">Popular</span><p class="desc">Hand-pressed 1/2lb patty, lettuce, tomato, onion, pickle — choice of cheese</p></div><span class="price">$12.99</span></div>
-    <div class="menu-item"><div><span class="name">DB's Smokehouse Burger</span><p class="desc">Bacon, cheddar, BBQ sauce, onion rings</p></div><span class="price">$14.99</span></div>
-    <div class="menu-item"><div><span class="name">Black &amp; Blue Burger</span><p class="desc">Blackened seasoning, blue cheese crumbles, bacon</p></div><span class="price">$14.99</span></div>
-    <div class="menu-item"><div><span class="name">Buffalo Chicken Sandwich</span><p class="desc">Fried chicken breast tossed in wing sauce — ranch, lettuce, tomato</p></div><span class="price">$13.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="breakfast">
-    <h3 class="menu-cat-title">Weekend Breakfast</h3>
-    <p style="opacity:.5;font-size:.85rem;margin-bottom:1rem">Served Saturday &amp; Sunday 11 AM – 3 PM</p>
-    <div class="menu-item"><div><span class="name">Pancake Stack</span><p class="desc">Plain, blueberry, or banana with candied pecans</p></div><span class="price">$9.99</span></div>
-    <div class="menu-item"><div><span class="name">Mexi Shrimp &amp; Grits</span><p class="desc">Queso-infused grits, seasoned shrimp, pico de gallo</p></div><span class="price">$15.99</span></div>
-    <div class="menu-item"><div><span class="name">Breakfast Burrito</span><p class="desc">Scrambled eggs, bacon, cheeses, queso, pico</p></div><span class="price">$13.99</span></div>
-    <div class="menu-item"><div><span class="name">Carnivore Omelet</span><p class="desc">Sausage, bacon, ham, mixed cheeses, side</p></div><span class="price">$14.99</span></div>
-    <div class="menu-item"><div><span class="name">Veggie Omelet</span><p class="desc">Spinach, onions, mushrooms, tomatoes, mixed cheeses</p></div><span class="price">$13.99</span></div>
-  </div>
-</section>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍺</span> DB's Tavern
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="wings.html">Wings</a>
+      <a href="story.html">Our Story</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-</main>
-<footer>
-  <p>DB's Tavern · 8155 Ardrey Kell Rd · Charlotte, NC 28277 · (704) 844-0534</p>
-  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
-<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();</script>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Tavern Classics Made Fresh</span>
+        <h1>Our Menu</h1>
+        <p>From burgers and signature pizza rolls to Ballantyne's favorite wings, explore our favorites.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <!-- Category Tabs -->
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-tab="starters">Starters</button>
+        <button class="cat-tab" data-tab="rolls">Pizza Rolls</button>
+        <button class="cat-tab" data-tab="wings">Wings</button>
+        <button class="cat-tab" data-tab="burgers">Burgers</button>
+        <button class="cat-tab" data-tab="breakfast">Breakfast</button>
+      </div>
+
+      <!-- Starters Panel -->
+      <div class="cat-panel active" data-panel="starters">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Starters</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Spinach &amp; Artichoke Dip <span class="badge" style="background: rgba(16,185,129,0.15); color: #10b981; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">Popular</span></h4>
+                  <p>Homemade spinach and artichoke cream, served bubbling hot with yellow tortilla chips.</p>
+                </div>
+                <span class="menu-price">$10.99</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Buffalo Chicken Dip</h4>
+                  <p>Our signature recipe whipped with cream cheese and hot sauce, served with tortilla chips.</p>
+                </div>
+                <span class="menu-price">$11.50</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Fried Mozzarella Sticks</h4>
+                  <p>Wisconsin mozzarella sticks coated in herb breadcrumbs, served with hot marinara sauce.</p>
+                </div>
+                <span class="menu-price">$8.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza Rolls Panel -->
+      <div class="cat-panel" data-panel="rolls">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Pizza Rolls</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem; margin-top: -1rem; margin-bottom: 1.5rem;">Our homemade dough, hand-rolled and baked golden brown.</p>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Pepperoni Roll <span class="badge" style="background: rgba(16,185,129,0.15); color: #10b981; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">Popular</span></h4>
+                  <p>Crispy pepperoni shreds, melted mozzarella, and fresh grated parmesan.</p>
+                </div>
+                <span class="menu-price">$14.55</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Jimmy Roll</h4>
+                  <p>Pepperoni, shaved steak, sliced jalapeños, red onions, mozzarella, and parmesan.</p>
+                </div>
+                <span class="menu-price">$14.55</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Carnivore Roll</h4>
+                  <p>Pepperoni, Italian sausage, crisp bacon, seasoned hamburger, cheddar, and mozzarella.</p>
+                </div>
+                <span class="menu-price">$14.55</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wings Panel -->
+      <div class="cat-panel" data-panel="wings">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Tavern Wings</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem; margin-top: -1rem; margin-bottom: 1.5rem;">Best wings in town since 1988 · 18 sauces available.</p>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Classic Wings <span class="badge" style="background: rgba(16,185,129,0.15); color: #10b981; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">Popular</span></h4>
+                  <p>Lemon Pepper, Honey BBQ, Garlic Parmesan, Teriyaki, Mild, Medium, Hot, and more.</p>
+                </div>
+                <span class="menu-price">Market Price</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Signature Wings <span class="badge" style="background: rgba(239,68,68,0.15); color: #ef4444; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">Spicy</span></h4>
+                  <p>DB's Dry Rub, Our Way, Lucifer's Own, Honey Chipotle, Caribbean Creeper, Hot Teriyaki.</p>
+                </div>
+                <span class="menu-price">Market Price</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Chicken Tender Basket</h4>
+                  <p>Hand-breaded fresh tenders, fried golden — served with a choice of side and dipping sauce.</p>
+                </div>
+                <span class="menu-price">$13.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burgers Panel -->
+      <div class="cat-panel" data-panel="burgers">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Burgers &amp; Sandwiches</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Tavern Burger <span class="badge" style="background: rgba(16,185,129,0.15); color: #10b981; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">Popular</span></h4>
+                  <p>Hand-pressed 1/2lb choice patty, fresh lettuce, tomato, sliced onion, pickles, and cheddar.</p>
+                </div>
+                <span class="menu-price">$12.99</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>DB's Smokehouse Burger</h4>
+                  <p>Crispy bacon, cheddar, sweet BBQ sauce, and crunchy onion rings piled high.</p>
+                </div>
+                <span class="menu-price">$14.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breakfast Panel -->
+      <div class="cat-panel" data-panel="breakfast">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Weekend Breakfast</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.88rem; margin-top: -1rem; margin-bottom: 1.5rem;">Served Saturday &amp; Sunday 11:00 AM &ndash; 3:00 PM.</p>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Pancake Stack</h4>
+                  <p>Plain, sweet blueberry, or fresh banana batter topped with candied Georgia pecans and syrup.</p>
+                </div>
+                <span class="menu-price">$9.99</span>
+              </div>
+
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Mexi Shrimp &amp; Grits</h4>
+                  <p>Creamy warm queso-infused grits, sautéed seasoned shrimp, and fresh pico de gallo.</p>
+                </div>
+                <span class="menu-price">$15.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>DB's Tavern</h3>
+        <p>Ballantyne neighborhood pub and grill. Hand-tossed wings, craft beers, and weekend sports updates.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          8155 Ardrey Kell Rd<br>
+          Charlotte, NC 28277<br>
+          Phone: (704) 844-0534
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="wings.html">Wings</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DB's Tavern. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // Tabs toggle
+    (function(){
+      const t = document.querySelectorAll('[data-tab]');
+      const p = document.querySelectorAll('[data-panel]');
+      t.forEach(tb => {
+        tb.addEventListener('click', function() {
+          t.forEach(item => item.classList.remove('active'));
+          this.classList.add('active');
+          p.forEach(panel => {
+            panel.classList.toggle('active', panel.dataset.panel === this.dataset.tab);
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

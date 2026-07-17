@@ -1,135 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order · DB's Tavern</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--navy:#1a2a3a;--gold:#d4a84b;--red:#c0392b;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
-.nav a:hover{opacity:1;color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#0d1219,#1a2a3a);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
-.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
-.quick-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
-.qa-card{background:rgba(255,255,255,.03);border:1px solid rgba(212,168,75,.08);border-radius:8px;padding:1.25rem;text-align:center;text-decoration:none;color:var(--cream)}
-.qa-card:hover{border-color:var(--gold)}
-.qa-card .icon{font-size:1.5rem;display:block;margin-bottom:.35rem}
-.qa-card h3{font-size:.95rem;margin:0;color:var(--gold)}
-.qa-card p{font-size:.82rem;opacity:.55;margin:.25rem 0 0}
-.quiz-box{background:#111;padding:2rem;border-radius:8px;border:1px solid rgba(212,168,75,.1);margin:2rem 0}
-.quiz-box h3{text-align:center;color:var(--gold);font-size:1.1rem;margin:0 0 .25rem}
-.quiz-box .hint{text-align:center;font-size:.85rem;opacity:.55;margin-bottom:1.25rem}
-.quiz-step{display:none}
-.quiz-step.active{display:block}
-.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
-.quiz-opt{background:rgba(255,255,255,.04);border:1px solid rgba(212,168,75,.1);padding:.75rem;border-radius:6px;cursor:pointer;text-align:center;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--cream);transition:all .2s}
-.quiz-opt:hover{border-color:var(--gold)}
-.quiz-opt.selected{border-color:var(--gold);background:rgba(212,168,75,.12);color:var(--gold)}
-.quiz-result{display:none;text-align:center;padding:1rem}
-.quiz-result.show{display:block}
-.quiz-result h4{color:var(--gold);font-size:1.1rem;margin:0 0 .5rem}
-.quiz-result p{opacity:.7;margin-bottom:.5rem}
-.quiz-result .btn{display:inline-block;background:var(--red);color:var(--cream);padding:.65rem 2rem;border-radius:3px;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;border:none;cursor:pointer}
-.demo-form{background:rgba(255,255,255,.03);padding:2rem;border-radius:8px;border:1px solid rgba(212,168,75,.1);margin:2rem 0}
-.demo-form h3{text-align:center;color:var(--gold);font-family:'Fraunces',serif;font-size:1.2rem;margin:0 0 1.5rem}
-.form-group{margin-bottom:1rem}
-.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.35rem;opacity:.7}
-.form-group input,.form-group textarea{width:100%;padding:.65rem;border:1px solid rgba(255,255,255,.15);border-radius:4px;font-size:.9rem;font-family:'DM Sans',sans-serif;background:rgba(255,255,255,.05);color:var(--cream)}
-.btn{display:inline-block;background:var(--red);color:var(--cream);padding:.8rem 2.5rem;border-radius:3px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;border:none;cursor:pointer;width:100%}
-.toast{background:var(--gold);color:var(--charcoal);padding:1rem;border-radius:6px;text-align:center;margin-top:1rem;display:none;font-weight:600}
-footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dbs-tavern/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order | DB's Tavern</title>
+  <meta name="description" content="Submit a takeout order request or find delivery details at DB's Tavern in Ballantyne.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .qa-card {
+      background: var(--color-card-bg);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-premium);
+    }
+    .qa-card:hover {
+      border-color: var(--color-amber);
+      box-shadow: var(--shadow-glow), var(--shadow-premium);
+    }
+    .qa-card .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .qa-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--color-text-light);
+      margin-bottom: 0.4rem;
+    }
+    .qa-card p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
 
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    /* Quiz box styling */
+    .quiz-box {
+      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-premium);
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .quiz-opt {
+      background: var(--color-steel);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-light);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    .quiz-opt:hover {
+      border-color: var(--color-amber);
+      color: var(--color-amber);
+    }
+    .quiz-opt.selected {
+      background-color: var(--color-amber);
+      border-color: var(--color-amber);
+      color: #fff;
+    }
+    .quiz-step {
+      display: none;
+    }
+    .quiz-step.active {
+      display: block;
+    }
+    .quiz-result {
+      display: none;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+    .quiz-result.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">DB's Tavern</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="wings.html">Wings</a>
-    <a href="story.html">Our Story</a>
-    <a href="order.html">Order</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Order</h1>
-  <p>Takeout, delivery, or come on in</p>
-</header>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<section class="section">
-  <div class="quick-actions">
-    <a href="tel:+17048440534" class="qa-card"><span class="icon" aria-hidden="true">📞</span><h3>Call</h3><p>(704) 844-0534</p></a>
-    <a href="#" class="qa-card"><span class="icon" aria-hidden="true">🛵</span><h3>Delivery</h3><p>Available via DoorDash, Uber Eats</p></a>
-    <a href="contact.html" class="qa-card"><span class="icon" aria-hidden="true">📍</span><h3>Visit</h3><p>8155 Ardrey Kell Rd</p></a>
-  </div>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍺</span> DB's Tavern
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="wings.html">Wings</a>
+      <a href="story.html">Our Story</a>
+      <a href="order.html" class="active">Order</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-  <div class="quiz-box" id="wingQuiz">
-    <h3>Find Your Wing Sauce</h3>
-    <p class="hint">18 sauces to choose from — let us narrow it down</p>
-    <div class="quiz-step active" data-step="1">
-      <p style="text-align:center;font-weight:600;margin-bottom:.75rem;color:var(--warm)">How spicy do you want it?</p>
-      <div class="quiz-options">
-        <button class="quiz-opt" data-answer="mild" data-next="2">Mild — give me flavor</button>
-        <button class="quiz-opt" data-answer="medium" data-next="2">Medium — some heat</button>
-        <button class="quiz-opt" data-answer="hot" data-next="2">Hot — bring it on</button>
-        <button class="quiz-opt" data-answer="wild" data-next="2">Wild — hurt me good</button>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Order Online</span>
+        <h1>Order Takeout</h1>
+        <p>Estimate your order items and submit an inquiry below. We will call you to finalize details.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div class="quick-actions">
+        <a href="tel:+17048440534" class="qa-card">
+          <span class="icon" aria-hidden="true">📞</span>
+          <h3>Call Tavern</h3>
+          <p>(704) 844-0534</p>
+        </a>
+        <div class="qa-card">
+          <span class="icon" aria-hidden="true">🛵</span>
+          <h3>Delivery</h3>
+          <p>Available on DoorDash &amp; Uber Eats</p>
+        </div>
+        <a href="contact.html" class="qa-card">
+          <span class="icon" aria-hidden="true">📍</span>
+          <h3>Location</h3>
+          <p>8155 Ardrey Kell Rd</p>
+        </a>
+      </div>
+
+      <!-- Wing Sauce Quiz -->
+      <div class="quiz-box" id="wingQuiz">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Find Your Wing Sauce</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem;">18 house sauces to choose from — let us match your palate</p>
+        
+        <div class="quiz-step active" data-step="1">
+          <p style="text-align: center; font-weight: 600; color: var(--color-text-light);">How spicy do you want it?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-answer="mild" data-next="2">Mild — give me flavor</button>
+            <button class="quiz-opt" data-answer="medium" data-next="2">Medium — some heat</button>
+            <button class="quiz-opt" data-answer="hot" data-next="2">Hot — bring it on</button>
+            <button class="quiz-opt" data-answer="wild" data-next="2">Wild — extreme heat</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="2">
+          <p style="text-align: center; font-weight: 600; color: var(--color-text-light);">What sauce style?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-answer="classic" data-next="done">Classic Buffalo</button>
+            <button class="quiz-opt" data-answer="sweet" data-next="done">Sweet &amp; Smoky</button>
+            <button class="quiz-opt" data-answer="garlic" data-next="done">Garlic &amp; Savory</button>
+            <button class="quiz-opt" data-answer="dry" data-next="done">Dry Rub</button>
+          </div>
+        </div>
+
+        <div class="quiz-result" id="wingResult">
+          <h4 id="wingName" style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-amber); margin-bottom: 0.5rem;">Mild + Classic = Mild Buffalo</h4>
+          <p id="wingDesc" style="color: var(--color-text-light); max-width: 500px; margin: 0 auto 1.5rem; font-size: 0.95rem;">The gateway wing — tangy, buttery, and impossible to stop eating.</p>
+          <button class="btn" id="wingOrder" style="width: auto;">Add Wings to Order</button>
+          <div class="toast" id="wingToast" style="display:none; background: var(--color-gold); color: #000; padding: 10px; border-radius: var(--radius-sm); margin-top: 15px; font-weight: 700;">Wings added! Fill out form below to submit order request.</div>
+        </div>
+      </div>
+
+      <!-- Order Request Form -->
+      <div class="form-wrapper" style="margin-bottom: 5rem;">
+        <form class="demo-form" id="order-form">
+          <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 2rem; font-weight: 700;">Order Request Form</h3>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="oname">Your Name</label>
+              <input id="oname" type="text" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="ophone">Phone Number</label>
+              <input id="ophone" type="tel" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="oitems">Order Items Details</label>
+              <textarea id="oitems" rows="4" required placeholder="e.g. 12 Traditional Wings (Medium Buffalo), 1 Tavern Burger with Cheddar" style="min-height: 120px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Submit Order Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">✔</div>
+          <h3 class="success-title">Order Request Received!</h3>
+          <p class="success-msg" id="success-message">Thank you. Your order request has been submitted. We will call you at the provided number to confirm cooking times.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>DB's Tavern</h3>
+        <p>Ballantyne neighborhood pub and grill. Hand-tossed wings, craft beers, and weekend sports updates.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          8155 Ardrey Kell Rd<br>
+          Charlotte, NC 28277<br>
+          Phone: (704) 844-0534
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="wings.html">Wings</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="quiz-step" data-step="2">
-      <p style="text-align:center;font-weight:600;margin-bottom:.75rem;color:var(--warm)">What style?</p>
-      <div class="quiz-options">
-        <button class="quiz-opt" data-answer="classic" data-next="done">Classic Buffalo</button>
-        <button class="quiz-opt" data-answer="sweet" data-next="done">Sweet &amp; Smoky</button>
-        <button class="quiz-opt" data-answer="garlic" data-next="done">Garlic &amp; Savory</button>
-        <button class="quiz-opt" data-answer="dry" data-next="done">Dry Rub</button>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DB's Tavern. All rights reserved. Unofficial concept presentation.</p>
     </div>
-    <div class="quiz-result" id="wingResult">
-      <h4 id="wingName">Mild + Classic = Mild Buffalo</h4>
-      <p id="wingDesc">The gateway wing — tangy, buttery, and impossible to stop eating.</p>
-      <button class="btn" id="wingOrder" style="width:auto">Add Wings to Order</button>
-      <div class="toast" id="wingToast" style="display:none">Wings noted! Call (704) 844-0534 to finish your order.</div>
-    </div>
-  </div>
+  </footer>
 
-  <form class="demo-form" data-demo-form>
-    <h3>Order Request</h3>
-    <div class="form-group"><label for="oname">Name</label><input id="oname" type="text" required></div>
-    <div class="form-group"><label for="ophone">Phone</label><input id="ophone" type="tel" required></div>
-    <div class="form-group"><label for="oitems">Items</label><textarea id="oitems" rows="3" placeholder="What would you like to order?"></textarea></div>
-    <button class="btn" type="submit">Submit Order</button>
-    <div class="toast" role="alert">Thanks! We'll call to confirm.</div>
-  </form>
-</section>
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
 
-</main>
-<footer>
-  <p>DB's Tavern · 8155 Ardrey Kell Rd · Charlotte, NC 28277 · (704) 844-0534</p>
-  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
-<script>
-(function(){const q=document.getElementById('wingQuiz'),steps=q.querySelectorAll('.quiz-step'),r=document.getElementById('wingResult'),wn=document.getElementById('wingName'),wd=document.getElementById('wingDesc'),wo=document.getElementById('wingOrder'),wt=document.getElementById('wingToast');const picks={'mild-classic':['Mild Buffalo','The gateway wing \u2014 tangy, buttery, and impossible to stop eating.'],'mild-sweet':['Honey BBQ','Sweet, sticky, and smoky \u2014 a crowd-pleaser.'],'mild-garlic':['Garlic Parmesan','Savory garlic, nutty parmesan \u2014 zero heat, all flavor.'],'mild-dry':['Lemon Pepper','Classic dry rub \u2014 bright citrus, cracked pepper, addictive.'],'medium-classic':['Medium Buffalo','Classic heat turned up \u2014 still manageable, still delicious.'],'medium-sweet':['Honey Chipotle','Sweet heat with a smoky chipotle kick.'],'medium-garlic':['Cajun Garlic','Spicy garlic butter with Louisiana attitude.'],'medium-dry':["DB's Dry Rub",'Our signature blend \u2014 savory, spicy, one of a kind.'],'hot-classic':['Hot Buffalo','Traditional hot sauce \u2014 no frills, all fire.'],'hot-sweet':['Hot BBQ','Smoky BBQ meets serious heat.'],'hot-garlic':['Hot Teriyaki','Sweet soy, ginger, garlic \u2014 with a spicy finish.'],'hot-dry':['Salt & Pepper','Sometimes simple is best \u2014 bold, crunchy, perfect.'],'wild-classic':["Lucifer's Own",'Our hottest traditional sauce \u2014 proceed with caution.'],'wild-sweet':['Caribbean Creeper','Jerk-inspired sweet heat \u2014 it creeps up on you.'],'wild-garlic':['Our Way (Spicy)','The kitchen\u2019s personal blend \u2014 garlicky, fiery, complex.'],'wild-dry':['Hot Lemon Pepper','Everything you love about lemon pepper \u2014 turned up to 11.']};let ans={};q.querySelectorAll('.quiz-opt').forEach(o=>{o.addEventListener('click',function(){const s=this.closest('.quiz-step'),nx=this.dataset.next,sn=s.dataset.step;ans[sn]=this.dataset.answer;s.querySelectorAll('.quiz-opt').forEach(x=>x.classList.remove('selected'));this.classList.add('selected');if(nx==='done'){s.classList.remove('active');const key=ans['1']+'-'+ans['2'];const pick=picks[key]||picks['mild-classic'];wn.textContent=pick[0];wd.textContent=pick[1];r.classList.add('show');wo.addEventListener('click',function(){wt.style.display='block'})}else{setTimeout(()=>{s.classList.remove('active');const ns=q.querySelector('[data-step="'+nx+'"]');if(ns)ns.classList.add('active')},300)}})})})();</script>
+    // Form submit
+    const form = document.getElementById('order-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('oname').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your order request has been submitted. We will call you shortly to confirm.`;
+      });
+    }
+
+    // Wing Quiz Logic
+    (function(){
+      const q = document.getElementById('wingQuiz');
+      const steps = q.querySelectorAll('.quiz-step');
+      const r = document.getElementById('wingResult');
+      const wn = document.getElementById('wingName');
+      const wd = document.getElementById('wingDesc');
+      const wo = document.getElementById('wingOrder');
+      const wt = document.getElementById('wingToast');
+
+      const picks = {
+        'mild-classic': ['Mild Buffalo', 'The gateway wing — tangy, buttery, and impossible to stop eating.'],
+        'mild-sweet': ['Honey BBQ', 'Sweet, sticky, and smoky — a crowd-pleaser.'],
+        'mild-garlic': ['Garlic Parmesan', 'Savory garlic, nutty parmesan — zero heat, all flavor.'],
+        'mild-dry': ['Lemon Pepper', 'Classic dry rub — bright citrus, cracked pepper, addictive.'],
+        'medium-classic': ['Medium Buffalo', 'Classic heat turned up — still manageable, still delicious.'],
+        'medium-sweet': ['Honey Chipotle', 'Sweet heat with a smoky chipotle kick.'],
+        'medium-garlic': ['Cajun Garlic', 'Spicy garlic butter with Louisiana attitude.'],
+        'medium-dry': ["DB's Dry Rub", 'Our signature blend — savory, spicy, one of a kind.'],
+        'hot-classic': ['Hot Buffalo', 'Traditional hot sauce — no frills, all fire.'],
+        'hot-sweet': ['Hot BBQ', 'Smoky BBQ meets serious heat.'],
+        'hot-garlic': ['Hot Teriyaki', 'Sweet soy, ginger, garlic — with a spicy finish.'],
+        'hot-dry': ['Salt & Pepper', 'Sometimes simple is best — bold, crunchy, perfect.'],
+        'wild-classic': ["Lucifer's Own", 'Our hottest traditional sauce — proceed with caution.'],
+        'wild-sweet': ['Caribbean Creeper', 'Jerk-inspired sweet heat — it creeps up on you.'],
+        'wild-garlic': ['Our Way (Spicy)', 'The kitchen’s personal blend — garlicky, fiery, complex.'],
+        'wild-dry': ['Hot Lemon Pepper', 'Everything you love about lemon pepper — turned up to 11.']
+      };
+
+      let ans = {};
+
+      q.querySelectorAll('.quiz-opt').forEach(o => {
+        o.addEventListener('click', function() {
+          const s = this.closest('.quiz-step');
+          const nx = this.dataset.next;
+          const sn = s.dataset.step;
+          ans[sn] = this.dataset.answer;
+
+          s.querySelectorAll('.quiz-opt').forEach(x => x.classList.remove('selected'));
+          this.classList.add('selected');
+
+          if (nx === 'done') {
+            s.classList.remove('active');
+            const key = ans['1'] + '-' + ans['2'];
+            const pick = picks[key] || picks['mild-classic'];
+            wn.textContent = pick[0];
+            wd.textContent = pick[1];
+            r.classList.add('show');
+            wo.addEventListener('click', function() {
+              wt.style.display = 'block';
+              // Append to order items field
+              const itemsBox = document.getElementById('oitems');
+              if (itemsBox) {
+                itemsBox.value = `12 Traditional Wings (${pick[0]})\n` + itemsBox.value;
+              }
+            });
+          } else {
+            setTimeout(() => {
+              s.classList.remove('active');
+              const ns = q.querySelector('[data-step="' + nx + '"]');
+              if (ns) ns.classList.add('active');
+            }, 300);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
