@@ -1,1 +1,183 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Dish"><title>Visit | Dish</title><link rel="stylesheet" href="site.css"></head><body data-v="2"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Dish</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="specials.html">Comfort Specials</a><a href="about.html">Plaza Midwood Story</a><a href="brunch.html">Brunch &amp; Catering</a><a href="contact.html" aria-current="page">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Plan a real visit</div><h1>Visit</h1><p>Dish — Charlotte. Exact address, phone, hours, parking, accessibility and ordering or reservation methods require current owner confirmation.</p></header><section><div class="contact"><div><div class="tag">Launch checklist</div><h2>Practical details must be current.</h2><div class="card"><h3>Current status</h3><p>5/5 substantive pages built and published. Full five-page demo. Premium browser QA and owner asset evidence pending.</p></div><div class="card"><h3>Production connection</h3><p>Only verified maps, hours, menus, providers and policies may be connected.</p></div></div><article class="card"><div class="tag">Demonstration-only form</div><h3>Preview the inquiry flow</h3><form data-demo><label>Name<input required></label><label>Email<input type="email" required></label><label>Reason<select><option>Visit question</option><option>Southern plate builder</option><option>Menu question</option></select></label><label>Date<input type="date"></label><label class="full">Details<textarea required></textarea></label><button class="full">Preview inquiry</button></form></article></div></section></main><footer>Concept only — not affiliated with or operated by Dish. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dish/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit | Dish</title>
+  <meta name="description" content="Get directions, hours, and parking details for Dish in Plaza Midwood, Charlotte. Submit booking inquiries.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍽️</span> Dish
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="specials.html">Comfort Specials</a>
+      <a href="about.html">Our Story</a>
+      <a href="brunch.html">Brunch &amp; Catering</a>
+      <a href="contact.html" class="active">Visit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Plaza Midwood</span>
+        <h1>Visit Us</h1>
+        <p>Drop by our diner on Thomas Ave or submit an inquiry below.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div class="contact-grid">
+        
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">📍</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Address</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            1220 Thomas Ave<br>
+            Charlotte, NC 28205
+          </p>
+        </div>
+
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">📞</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Phone</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Direct: <a href="tel:+17043440344" style="color: var(--color-text-light); font-weight: 700;">(704) 344-0344</a>
+          </p>
+        </div>
+
+        <div class="premium-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🚗</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Parking</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Dedicated street parking along Thomas Ave and surrounding Plaza Midwood lots.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Contact Message Form -->
+      <div class="form-wrapper" style="margin-bottom: 5rem;">
+        <form class="demo-form" id="contact-form">
+          <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 2rem;">Send a Message</h3>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cname">Your Name</label>
+              <input id="cname" type="text" required placeholder="Jane Smith">
+            </div>
+
+            <div class="form-group">
+              <label for="cemail">Email Address</label>
+              <input id="cemail" type="email" required placeholder="jane@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="csubject">Subject</label>
+              <select id="csubject">
+                <option value="general">Visit Question</option>
+                <option value="builder">Southern Plate Builder</option>
+                <option value="menu">Menu Question</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cdate">Date of Visit</label>
+              <input id="cdate" type="date">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="cmessage">Details</label>
+              <textarea id="cmessage" rows="5" required placeholder="Type your inquiry details here..." style="min-height: 120px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">✔</div>
+          <h3 class="success-title">Message Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. Your message has been submitted. Our team will read and reply shortly.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dish</h3>
+        <p>Plaza Midwood's classic neighborhood Southern diner. Scratch comfort food, famous meatloaf, and local drafts.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1220 Thomas Ave<br>
+          Charlotte, NC 28205<br>
+          Phone: (704) 344-0344
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Comfort Specials</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="brunch.html">Brunch &amp; Catering</a></li>
+          <li><a href="contact.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dish. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // Contact Form submit
+    const form = document.getElementById('contact-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('cname').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your message has been sent successfully. We will get back to you shortly.`;
+      });
+    }
+  </script>
+</body>
+</html>

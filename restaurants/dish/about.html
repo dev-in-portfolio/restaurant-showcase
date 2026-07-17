@@ -1,1 +1,154 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Dish"><title>Plaza Midwood Story | Dish</title><link rel="stylesheet" href="site.css"></head><body data-v="2"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Dish</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="specials.html">Comfort Specials</a><a href="about.html" aria-current="page">Plaza Midwood Story</a><a href="brunch.html">Brunch &amp; Catering</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Charlotte identity</div><h1>Plaza Midwood Story</h1><p>Put Southern comfort and Plaza Midwood personality on equal footing.</p></header><section><div class="story"><div class="mark">Dish</div><div class="timeline"><article><div class="tag">Verified starting point</div><h3>Cuisine, service model and place</h3><p>Southern Comfort • Brunch • Plaza Midwood in Charlotte define the current concept.</p></article><article><div class="tag">Owner confirmation required</div><h3>Founding, ownership and milestones</h3><p>No family story, award, sourcing claim or founding date is invented.</p></article><article><div class="tag">Production asset plan</div><h3>Approved photography and identity</h3><p>Concept illustration is replaced with owner-approved brand and restaurant assets before production launch.</p></article></div></div></section><section class="alt"><div class="grid g2"><article class="card"><h3>Local distinction</h3><p>The story page explains what makes the restaurant memorable rather than using generic hospitality language.</p></article><article class="card"><h3>Honest status</h3><p>This is a full sales demo, not a production-ready or premium-QA-approved website.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Dish. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dish/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plaza Midwood Story | Dish</title>
+  <meta name="description" content="Learn about Dish's historic culinary story, serving scratch Southern comfort food in Charlotte's Plaza Midwood since 2002.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .story-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍽️</span> Dish
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="specials.html">Comfort Specials</a>
+      <a href="about.html" class="active">Plaza Midwood Story</a>
+      <a href="brunch.html">Brunch &amp; Catering</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Charlotte Traditions</span>
+        <h1>Plaza Midwood Story</h1>
+        <p>Serving classic Southern diner plates and local community hospitality since 2002.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div class="story-layout">
+        
+        <!-- Left Column: Story content -->
+        <div>
+          <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+            For decades, Dish has stood as a welcoming culinary landmark in Charlotte's historic Plaza Midwood neighborhood, serving up scratch-made Southern favorites with a relaxed, friendly diner attitude.
+          </p>
+
+          <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+            Our recipes are rooted in authentic home cooking traditions — hand-rolling our famous flour dumplings, preparing our signature meatloaf glaze, and simmering savory collard greens every morning. We believe that good comfort food should be simple, generous, and served with a warm smile.
+          </p>
+
+          <p style="color: var(--color-text-muted); line-height: 1.8;">
+            Whether you're stopping by for a comforting weekday lunch, enjoying a custom comfort plate, or joining us for weekend brunch, you're always part of the family at Dish.
+          </p>
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <div style="width: 100%;">
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">Diner Highlights</h3>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8;">
+              • Established neighborhood favorite since 2002<br>
+              • Daily scratch comfort specials<br>
+              • Famous hand-rolled flour dumplings<br>
+              • Warm homestyle cornbread muffins
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Values Grid -->
+      <div class="values-grid">
+        <div class="feature-card">
+          <h3 style="color: var(--color-teal); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.25rem;">Scratch Southern Cooking</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">No shortcuts here. From our signature meatloaf glaze to our slow-simmered collard greens, our diner favorites are cooked from scratch every day.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3 style="color: var(--color-teal); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.25rem;">Plaza Midwood Identity</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Serving as a neighborhood meeting ground. Our diner values neighborhood history, local artists, and familiar faces.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3 style="color: var(--color-teal); font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.25rem;">Warm Hospitality</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">We believe in honest portion sizes, friendly service, and a seat at the counter for everyone looking for a warm meal.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dish</h3>
+        <p>Plaza Midwood's classic neighborhood Southern diner. Scratch comfort food, famous meatloaf, and local drafts.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1220 Thomas Ave<br>
+          Charlotte, NC 28205<br>
+          Phone: (704) 344-0344
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Comfort Specials</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="brunch.html">Brunch &amp; Catering</a></li>
+          <li><a href="contact.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dish. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,40 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Southern comfort classics and daily diner specials at Dish in Plaza Midwood, Charlotte. Build your dream comfort plate.">
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dish/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Comfort Specials | Dish</title>
+  <meta name="description" content="Southern comfort classics and daily diner specials at Dish in Plaza Midwood, Charlotte. Build your dream comfort plate.">
   <link rel="stylesheet" href="site.css">
   <style>
     /* Styling for the interactive Southern plate */
     .plate-mat {
-      background: radial-gradient(circle, #2a5a60 0%, #0d2226 100%);
-      border: 1.5px solid #d56754;
-      border-radius: 20px;
+      background: radial-gradient(circle, var(--color-teal) 0%, #042f2c 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: var(--radius);
       padding: 3rem 2.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      box-shadow: var(--shadow-premium);
       min-height: 290px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      transition: all 0.3s;
+      transition: var(--transition-smooth);
       color: #fff;
+    }
+    
+    .plate-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    /* SVG sub-items toggle classes */
+    .hidden {
+      display: none !important;
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="notice">Unofficial six-page redesign demo • premium visual QA pending • forms do not submit</div>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <nav>
-    <a href="index.html">Dish</a>
-    <button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-    <div class="links">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍽️</span> Dish
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
-      <a href="specials.html" aria-current="page">Comfort Specials</a>
+      <a href="specials.html" class="active">Comfort Specials</a>
       <a href="about.html">Plaza Midwood Story</a>
       <a href="brunch.html">Brunch &amp; Catering</a>
       <a href="contact.html">Visit</a>
@@ -42,35 +59,139 @@
   </nav>
 
   <main id="main">
-    
-    <!-- Page Header -->
-    <header class="head" style="text-align: center; padding: 60px 0 40px;">
-      <div class="tag">Weekly diner favorites</div>
-      <h1>Daily Comfort Specials</h1>
-      <p style="margin-inline: auto;">Our scratch-made Southern favorites rotating daily, served warm with house sides and fresh-baked bread.</p>
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Diner Traditions</span>
+        <h1>Daily Comfort Specials</h1>
+        <p>Our scratch-made Southern favorites rotating daily, served warm with house sides and fresh-baked bread.</p>
+      </div>
     </header>
 
-    <!-- Interactive Plate Customizer -->
     <section class="wrap" style="margin-bottom: 5rem;">
-      <div class="interactive-panel" style="background: #fffdf9; border: 1px solid #e0d4c0; padding: 40px 32px; border-radius: 12px; color: #1e6570;">
-        <h3 style="text-align: center; font-size: 1.6rem; color: #1e6570; margin-bottom: 8px;">Daily Southern Plate Builder</h3>
-        <p style="text-align: center; color: #555; font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your main Southern comfort entree, two house sides, and bread to preview your custom plate and price.</p>
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-teal); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Daily Southern Plate Builder</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your main Southern comfort entree, two house sides, and bread to preview your custom plate and price.</p>
         
-        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+        <div class="form-grid" style="grid-template-columns: 1.2fr 0.8fr; align-items: start; gap: 3rem;">
           
-          <!-- Left Side: Plate Mat -->
-          <div class="plate-mat">
-            <span style="font-size: 0.78rem; font-weight: 700; color: #d8aa46; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="plate-tag">SCRATCH COMFORT PLATE</span>
-            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="plate-title">Famous Meatloaf</h4>
-            <p style="font-size: 1.25rem; font-weight: 800; color: #d8aa46; margin-bottom: 1.2rem;" id="plate-price">$14.99</p>
-            <p style="font-size: 0.95rem; color: #e2f1f2; line-height: 1.7;" id="plate-desc">Savory slow-baked ground beef meatloaf served with Mac & Cheese, Collard Greens, and a Fluffy Biscuit.</p>
+          <!-- Left Side: Plate SVG Visualizer -->
+          <div>
+            <div class="plate-canvas">
+              <svg viewBox="0 0 200 160" width="100%" max-width="320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Plate Rim -->
+                <circle cx="100" cy="80" r="62" fill="#ffffff" stroke="#ea580c" stroke-width="2.5" />
+                <circle cx="100" cy="80" r="56" fill="none" stroke="#ea580c" stroke-width="0.8" stroke-dasharray="2,2" />
+                <circle cx="100" cy="80" r="48" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+
+                <!-- Entrees (Center-Left) -->
+                <!-- Meatloaf -->
+                <g id="svg-entree-meatloaf" class="entree-graphic">
+                  <path d="M 52,65 L 75,60 L 80,85 L 57,90 Z M 62,72 L 80,68 L 85,90 L 67,94 Z" fill="#7c2d12" stroke="#431407" stroke-width="1" />
+                  <path d="M 54,65 L 74,61 L 76,73 L 56,77 Z" fill="#dc2626" opacity="0.85" />
+                </g>
+                <!-- Dumplings -->
+                <g id="svg-entree-dumplings" class="entree-graphic hidden">
+                  <circle cx="68" cy="80" r="22" fill="#fef08a" stroke="#ca8a04" stroke-width="1" />
+                  <circle cx="60" cy="74" r="5" fill="#fef9c3" stroke="#eab308" />
+                  <circle cx="76" cy="74" r="5" fill="#fef9c3" stroke="#eab308" />
+                  <circle cx="68" cy="86" r="6" fill="#fef9c3" stroke="#eab308" />
+                </g>
+                <!-- Shrimp & Grits -->
+                <g id="svg-entree-grits" class="entree-graphic hidden">
+                  <circle cx="68" cy="80" r="24" fill="#fef9c3" stroke="#fef08a" />
+                  <path d="M 58,74 C 54,72 54,66 60,66 C 64,66 64,72 60,74" fill="none" stroke="#fca5a5" stroke-width="3" stroke-linecap="round" />
+                  <path d="M 74,86 C 70,84 70,78 76,78 C 80,78 80,84 76,86" fill="none" stroke="#fca5a5" stroke-width="3" stroke-linecap="round" />
+                </g>
+                <!-- Fried Chicken -->
+                <path id="svg-entree-chicken" class="entree-graphic hidden" d="M 48,76 C 46,62 68,54 84,68 C 90,74 88,88 78,92 C 64,96 52,90 48,76 Z" fill="#ca8a04" stroke="#854d0e" stroke-width="1.5" />
+
+                <!-- Side 1 (Top-Right around cx=126, cy=58) -->
+                <!-- Mac -->
+                <g id="svg-side1-mac" class="side1-graphic">
+                  <rect x="118" y="52" width="7" height="3" rx="1" fill="#f97316" transform="rotate(15 118 52)" />
+                  <rect x="126" y="49" width="7" height="3" rx="1" fill="#f97316" transform="rotate(-30 126 49)" />
+                  <rect x="120" y="58" width="7" height="3" rx="1" fill="#f97316" transform="rotate(45 120 58)" />
+                  <rect x="128" y="57" width="7" height="3" rx="1" fill="#f97316" transform="rotate(-10 128 57)" />
+                </g>
+                <!-- Greens -->
+                <path id="svg-side1-greens" class="side1-graphic hidden" d="M 112,56 C 114,46 128,46 132,54 C 134,62 124,68 116,64 C 112,62 110,60 112,56 Z" fill="#14532d" />
+                <!-- Okra -->
+                <g id="svg-side1-okra" class="side1-graphic hidden">
+                  <circle cx="118" cy="54" r="4.5" fill="#4d7c0f" stroke="#365314" />
+                  <circle cx="128" cy="58" r="4.5" fill="#4d7c0f" stroke="#365314" />
+                  <circle cx="122" cy="64" r="4.5" fill="#4d7c0f" stroke="#365314" />
+                </g>
+                <!-- Eggs -->
+                <g id="svg-side1-eggs" class="side1-graphic hidden">
+                  <ellipse cx="118" cy="56" rx="5.5" ry="7.5" fill="#fff" stroke="#cbd5e1" transform="rotate(30 118 56)" />
+                  <circle cx="118" cy="56" r="2.8" fill="#eab308" />
+                  <ellipse cx="129" cy="62" rx="5.5" ry="7.5" fill="#fff" stroke="#cbd5e1" transform="rotate(-40 129 62)" />
+                  <circle cx="129" cy="62" r="2.8" fill="#eab308" />
+                </g>
+                <!-- Salad -->
+                <g id="svg-side1-salad" class="side1-graphic hidden">
+                  <path d="M 112,52 L 122,56 L 114,64 Z" fill="#ef4444" />
+                  <circle cx="128" cy="52" r="4.5" fill="#22c55e" stroke="#15803d" />
+                  <path d="M 124,64 L 132,60 L 132,68 Z" fill="#ef4444" />
+                </g>
+
+                <!-- Side 2 (Bottom-Right around cx=126, cy=96) -->
+                <!-- Mac -->
+                <g id="svg-side2-mac" class="side2-graphic hidden">
+                  <rect x="118" y="90" width="7" height="3" rx="1" fill="#f97316" transform="rotate(15 118 90)" />
+                  <rect x="126" y="87" width="7" height="3" rx="1" fill="#f97316" transform="rotate(-30 126 87)" />
+                  <rect x="120" y="96" width="7" height="3" rx="1" fill="#f97316" transform="rotate(45 120 96)" />
+                  <rect x="128" y="95" width="7" height="3" rx="1" fill="#f97316" transform="rotate(-10 128 95)" />
+                </g>
+                <!-- Greens -->
+                <path id="svg-side2-greens" class="side2-graphic" d="M 112,94 C 114,84 128,84 132,92 C 134,100 124,106 116,102 C 112,100 110,98 112,94 Z" fill="#14532d" />
+                <!-- Okra -->
+                <g id="svg-side2-okra" class="side2-graphic hidden">
+                  <circle cx="118" cy="92" r="4.5" fill="#4d7c0f" stroke="#365314" />
+                  <circle cx="128" cy="96" r="4.5" fill="#4d7c0f" stroke="#365314" />
+                  <circle cx="122" cy="102" r="4.5" fill="#4d7c0f" stroke="#365314" />
+                </g>
+                <!-- Eggs -->
+                <g id="svg-side2-eggs" class="side2-graphic hidden">
+                  <ellipse cx="118" cy="94" rx="5.5" ry="7.5" fill="#fff" stroke="#cbd5e1" transform="rotate(30 118 94)" />
+                  <circle cx="118" cy="94" r="2.8" fill="#eab308" />
+                  <ellipse cx="129" cy="100" rx="5.5" ry="7.5" fill="#fff" stroke="#cbd5e1" transform="rotate(-40 129 100)" />
+                  <circle cx="129" cy="100" r="2.8" fill="#eab308" />
+                </g>
+                <!-- Salad -->
+                <g id="svg-side2-salad" class="side2-graphic hidden">
+                  <path d="M 112,90 L 122,94 L 114,102 Z" fill="#ef4444" />
+                  <circle cx="128" cy="90" r="4.5" fill="#22c55e" stroke="#15803d" />
+                  <path d="M 124,102 L 132,98 L 132,106 Z" fill="#ef4444" />
+                </g>
+
+                <!-- Bread (Bottom-Left) -->
+                <!-- Biscuit -->
+                <g id="svg-bread-bis" class="bread-graphic">
+                  <circle cx="55" cy="102" r="11" fill="#fef08a" stroke="#ca8a04" stroke-width="1" />
+                  <circle cx="55" cy="102" r="8" fill="#ca8a04" opacity="0.2" />
+                </g>
+                <!-- Cornbread -->
+                <g id="svg-bread-corn" class="bread-graphic hidden">
+                  <rect x="46" y="102" width="18" height="9" fill="#ca8a04" rx="2" />
+                  <circle cx="55" cy="99" r="9.5" fill="#fef08a" stroke="#eab308" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="plate-mat">
+              <span id="plate-tag" style="font-size: 0.78rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;">SCRATCH COMFORT PLATE</span>
+              <h4 id="plate-title" style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);">Famous Meatloaf</h4>
+              <p id="plate-price" style="font-size: 1.25rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;">$14.99</p>
+              <p id="plate-desc" style="font-size: 0.95rem; color: #e2f1f2; line-height: 1.7;">Savory slow-baked ground beef meatloaf served with Mac & Cheese, Collard Greens, and a Fluffy Biscuit.</p>
+            </div>
           </div>
 
-          <!-- Right Side: Controls -->
+          <!-- Right Side: Controls Selects -->
           <div class="form-group" style="margin-bottom: 0;">
-            <div style="margin-bottom: 1.2rem;">
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">1. Select Southern Entree</label>
-              <select id="entree-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570; font-weight:600;">
+            <div>
+              <label for="entree-select">1. Select Southern Entree</label>
+              <select id="entree-select">
                 <option value="meatloaf" selected>Famous Meatloaf ($14.99)</option>
                 <option value="dumplings">Chicken & Dumplings ($13.99)</option>
                 <option value="grits">Cajun Shrimp & Grits ($16.99)</option>
@@ -78,9 +199,9 @@
               </select>
             </div>
 
-            <div style="margin-bottom: 1.2rem;">
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">2. Select Side One</label>
-              <select id="side1-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570;">
+            <div>
+              <label for="side1-select">2. Select Side One</label>
+              <select id="side1-select">
                 <option value="mac" selected>Homemade Mac & Cheese</option>
                 <option value="greens">Slow-Simmered Collard Greens</option>
                 <option value="okra">Crispy Fried Okra</option>
@@ -89,9 +210,9 @@
               </select>
             </div>
 
-            <div style="margin-bottom: 1.2rem;">
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">3. Select Side Two</label>
-              <select id="side2-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570;">
+            <div>
+              <label for="side2-select">3. Select Side Two</label>
+              <select id="side2-select">
                 <option value="mac">Homemade Mac & Cheese</option>
                 <option value="greens" selected>Slow-Simmered Collard Greens</option>
                 <option value="okra">Crispy Fried Okra</option>
@@ -101,8 +222,8 @@
             </div>
 
             <div>
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #1e6570; display: block; margin-bottom: 0.5rem;">4. Select Bread</label>
-              <select id="bread-select" onchange="updatePlate()" style="width: 100%; padding: 12px; border: 1px solid #e0d4c0; border-radius: 6px; color: #1e6570;">
+              <label for="bread-select">4. Select Bread</label>
+              <select id="bread-select">
                 <option value="bis" selected>Fluffy Southern Biscuit</option>
                 <option value="corn">Cornbread Muffin</option>
               </select>
@@ -116,11 +237,11 @@
     <!-- Weekly Comfort Menu Lists -->
     <section class="alt">
       <div class="wrap">
-        <h3 style="text-align: center; color: #1e6570; font-size: 1.8rem; margin-bottom: 2rem;">Weekly Diner Comfort Specials</h3>
+        <h3 style="text-align: center; color: var(--color-teal); font-size: 1.8rem; margin-bottom: 2rem; font-family: var(--font-heading);">Weekly Diner Comfort Specials</h3>
         <div class="menu-preview">
           
           <div class="menu-item">
-            <h4>Chicken & Dumplings Monday <span class="price">$13.99</span></h4>
+            <h4>Chicken &amp; Dumplings Monday <span class="price">$13.99</span></h4>
             <p>Our famous hand-rolled dumplings simmered in rich chicken broth with tender chicken meat, served with two sides.</p>
           </div>
 
@@ -130,19 +251,55 @@
           </div>
 
           <div class="menu-item">
-            <h4>Cajun Shrimp & Grits Friday <span class="price">$16.99</span></h4>
+            <h4>Cajun Shrimp &amp; Grits Friday <span class="price">$16.99</span></h4>
             <p>Creamy stone-ground grits topped with pan-seared jumbo shrimp, cajun butter sauce, scallions, and crumbled bacon.</p>
           </div>
 
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer>Concept only — not affiliated with or operated by Dish. Current operational details require owner confirmation.</footer>
-  
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dish</h3>
+        <p>Plaza Midwood's classic neighborhood Southern diner. Scratch comfort food, famous meatloaf, and local drafts.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1220 Thomas Ave<br>
+          Charlotte, NC 28205<br>
+          Phone: (704) 344-0344
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Comfort Specials</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="brunch.html">Brunch &amp; Catering</a></li>
+          <li><a href="contact.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dish. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
   <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
     const entreeData = {
       meatloaf: { title: "Famous Meatloaf", price: 14.99, desc: "Savory slow-baked ground beef meatloaf topped with tomato glaze" },
       dumplings: { title: "Chicken & Dumplings", price: 13.99, desc: "Hand-rolled Southern flour dumplings simmered in rich chicken broth" },
@@ -179,7 +336,40 @@
 
       let desc = `${ent.desc} served with ${s1}, ${s2}, and ${brd}.`;
       document.getElementById('plate-desc').innerText = desc;
+
+      // Update SVG entree visibility
+      document.querySelectorAll('.entree-graphic').forEach(el => el.classList.add('hidden'));
+      const activeEntree = document.getElementById(`svg-entree-${entreeKey}`);
+      if (activeEntree) {
+        activeEntree.classList.remove('hidden');
+      }
+
+      // Update SVG Side 1 visibility
+      document.querySelectorAll('.side1-graphic').forEach(el => el.classList.add('hidden'));
+      const activeSide1 = document.getElementById(`svg-side1-${side1Key}`);
+      if (activeSide1) {
+        activeSide1.classList.remove('hidden');
+      }
+
+      // Update SVG Side 2 visibility
+      document.querySelectorAll('.side2-graphic').forEach(el => el.classList.add('hidden'));
+      const activeSide2 = document.getElementById(`svg-side2-${side2Key}`);
+      if (activeSide2) {
+        activeSide2.classList.remove('hidden');
+      }
+
+      // Update SVG Bread visibility
+      document.querySelectorAll('.bread-graphic').forEach(el => el.classList.add('hidden'));
+      const activeBread = document.getElementById(`svg-bread-${breadKey}`);
+      if (activeBread) {
+        activeBread.classList.remove('hidden');
+      }
     }
+
+    document.getElementById('entree-select').addEventListener('change', updatePlate);
+    document.getElementById('side1-select').addEventListener('change', updatePlate);
+    document.getElementById('side2-select').addEventListener('change', updatePlate);
+    document.getElementById('bread-select').addEventListener('change', updatePlate);
 
     // Trigger initial load
     window.addEventListener('load', () => {

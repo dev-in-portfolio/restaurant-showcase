@@ -1,1 +1,179 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Dish"><title>Menu | Dish</title><link rel="stylesheet" href="site.css"></head><body data-v="2"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Dish</a><button class="toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="specials.html">Comfort Specials</a><a href="about.html">Plaza Midwood Story</a><a href="brunch.html">Brunch &amp; Catering</a><a href="contact.html">Visit</a></div></nav><main id="main"><header class="head"><div class="tag">Southern Comfort • Brunch • Plaza Midwood</div><h1>Menu</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Brunch</button><button data-f="g1">Southern plates</button><button data-f="g2">Sandwiches &amp; lighter</button><button data-f="g3">Catering direction</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Brunch</h3><p>Morning and midday comfort directions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Southern plates</h3><p>Entrées, vegetables and familiar sides.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Sandwiches &amp; lighter</h3><p>Faster or less-heavy choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Catering direction</h3><p>Group-friendly food and service questions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Dish. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dish/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Dish</title>
+  <meta name="description" content="Homemade chicken & dumplings, classic Southern sides, and fresh weekend brunch menus at Dish in Plaza Midwood.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .cat-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .cat-tab {
+      background: var(--color-card-bg);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+      font-family: var(--font-heading);
+    }
+    .cat-tab:hover {
+      border-color: var(--color-teal);
+      color: var(--color-teal);
+    }
+    .cat-tab.active {
+      background-color: var(--color-teal);
+      color: #fff;
+      border-color: var(--color-teal);
+    }
+    .menu-card {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍽️</span> Dish
+    </a>
+    <button class="toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="specials.html">Comfort Specials</a>
+      <a href="about.html">Plaza Midwood Story</a>
+      <a href="brunch.html">Brunch &amp; Catering</a>
+      <a href="contact.html">Visit</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Scratch Kitchen</span>
+        <h1>Our Menu</h1>
+        <p>A classic selection of Southern plates, morning brunch starters, and lunch sandwiches.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <!-- Category Tabs -->
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-f="all">All Items</button>
+        <button class="cat-tab" data-f="g0">Brunch</button>
+        <button class="cat-tab" data-f="g1">Southern Plates</button>
+        <button class="cat-tab" data-f="g2">Sandwiches &amp; Lighter</button>
+        <button class="cat-tab" data-f="g3">Catering</button>
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div class="menu-preview" style="grid-template-columns: 1fr; max-width: 750px; margin: 0 auto 5rem auto;">
+        
+        <!-- Brunch Card -->
+        <div class="menu-item menu-card" data-g="g0">
+          <h3>Brunch Comforts <span class="price"> rotating </span></h3>
+          <p style="margin-bottom: 1rem;">Morning pancakes, fluffy scrambled eggs, homemade grit bowls, and biscuit sandwiches served every Saturday and Sunday.</p>
+          <a href="brunch.html" style="font-weight: 700; color: var(--color-teal); font-size: 0.85rem;">View Brunch Details &rarr;</a>
+        </div>
+
+        <!-- Southern Plates Card -->
+        <div class="menu-item menu-card" data-g="g1">
+          <h3>Southern Entrees &amp; Plates <span class="price"> starting $13.99 </span></h3>
+          <p style="margin-bottom: 1rem;">Choose your main comfort entree like chicken & dumplings or famous meatloaf, served with choice of two daily vegetable sides and fresh-baked bread.</p>
+          <a href="specials.html" style="font-weight: 700; color: var(--color-teal); font-size: 0.85rem;">Build Comfort Plate &rarr;</a>
+        </div>
+
+        <!-- Sandwiches Card -->
+        <div class="menu-item menu-card" data-g="g2">
+          <h3>Sandwiches &amp; Lighter <span class="price"> starting $9.99 </span></h3>
+          <p style="margin-bottom: 1rem;">Lighter options, including homemade chicken salad sandwich wraps, pimento cheese melts, and classic tomato cucumber salads.</p>
+        </div>
+
+        <!-- Catering Card -->
+        <div class="menu-item menu-card" data-g="g3">
+          <h3>Family Style Catering <span class="price"> custom quotes </span></h3>
+          <p style="margin-bottom: 1rem;">Generous portions of our famous Southern comfort plates packaged for group pickup, perfect for office events or family reunions.</p>
+          <a href="brunch.html" style="font-weight: 700; color: var(--color-teal); font-size: 0.85rem;">Catering Details &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dish</h3>
+        <p>Plaza Midwood's classic neighborhood Southern diner. Scratch comfort food, famous meatloaf, and local drafts.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1220 Thomas Ave<br>
+          Charlotte, NC 28205<br>
+          Phone: (704) 344-0344
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Comfort Specials</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="brunch.html">Brunch &amp; Catering</a></li>
+          <li><a href="contact.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dish. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // Filter logic
+    (function(){
+      const tabs = document.querySelectorAll('[data-f]');
+      const items = document.querySelectorAll('[data-g]');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-f');
+          items.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-g') === filter) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
