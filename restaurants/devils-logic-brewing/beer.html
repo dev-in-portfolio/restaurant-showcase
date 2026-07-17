@@ -1,132 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beer · Devil's Logic Brewing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--black:#0a0a0a;--red:#cc2222;--gold:#d4a017;--cream:#e8ddd0;--charcoal:#121212;--muted:#776655}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--black);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(204,34,34,.2)}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
-.nav a:hover{opacity:1;color:var(--red)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--red)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#0a0a0a,#1a0505);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
-.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
-.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.cat-tab{background:rgba(255,255,255,.02);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
-.cat-tab:hover{color:var(--cream)}
-.cat-tab.active{background:rgba(204,34,34,.1);color:var(--red)}
-.cat-panel{display:none}
-.cat-panel.active{display:block}
-.beer-item{background:rgba(255,255,255,.02);border:1px solid rgba(204,34,34,.08);border-radius:8px;padding:1.25rem;margin-bottom:.75rem}
-.beer-item .name{font-size:1.05rem;font-weight:600;color:var(--red);font-family:'Fraunces',serif}
-.beer-item .style{font-size:.78rem;opacity:.4;text-transform:uppercase;letter-spacing:.08em}
-.beer-item .desc{font-size:.85rem;opacity:.55;line-height:1.5;margin:.35rem 0 0}
-.beer-item .abv{font-size:.82rem;color:var(--gold);font-weight:600;margin-top:.35rem}
-.quiz-box{background:rgba(204,34,34,.04);border:1px solid rgba(204,34,34,.12);border-radius:8px;padding:2rem;margin:2rem 0}
-.quiz-box h3{color:var(--red);margin:0 0 1rem;font-size:1.2rem}
-.quiz-step{margin-bottom:1.25rem}
-.quiz-step label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem;opacity:.6}
-.quiz-step select{width:100%;padding:.7rem;border:1px solid rgba(204,34,34,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
-.quiz-result{background:rgba(204,34,34,.08);padding:1rem;border-radius:6px;margin-top:1rem;text-align:center;display:none}
-.quiz-result.show{display:block}
-.quiz-result .name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--red)}
-.quiz-result .desc{font-size:.85rem;opacity:.55;margin-top:.25rem}
-footer{background:var(--black);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(204,34,34,.08)}
-footer a{color:var(--red);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/devils-logic-brewing/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beer Taplist | Devil's Logic Brewing</title>
+  <meta name="description" content="View our current rotating craft beer taplist, including hazy IPAs, stouts, pilsners, and fruited sours.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .cat-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .cat-tab {
+      background: var(--color-steel);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+      font-family: var(--font-heading);
+    }
+    .cat-tab:hover {
+      border-color: var(--color-crimson);
+      color: var(--color-crimson);
+    }
+    .cat-tab.active {
+      background-color: var(--color-crimson);
+      color: #fff;
+      border-color: var(--color-crimson);
+    }
+    .cat-panel {
+      display: none;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .cat-panel.active {
+      display: block;
+    }
 
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    /* Quiz box styling */
+    .quiz-box {
+      background: radial-gradient(circle at center, rgba(220, 38, 38, 0.05) 0%, rgba(3, 7, 18, 0.98) 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-premium);
+    }
+    .quiz-step {
+      margin-bottom: 1.5rem;
+    }
+    .quiz-step label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .quiz-step select {
+      width: 100%;
+      background: var(--color-steel);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 1.2rem;
+      color: var(--color-text-light);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+    }
+    .quiz-result {
+      background: var(--color-crimson-dim);
+      border: 1px dashed var(--color-crimson);
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1.5rem;
+      text-align: center;
+      display: none;
+    }
+    .quiz-result.show {
+      display: block;
+    }
+    .quiz-result .name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-crimson);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .quiz-result .desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Devil's Logic</a>
-  <div class="nav-links">
-    <a href="beer.html">Beer</a>
-    <a href="flight.html">Flight Builder</a>
-    <a href="taproom.html">Taproom</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Our Beers</h1>
-  <p>Hazy, dark, crisp, or wild — find your devilish pour</p>
-</header>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<section class="section">
-  <div class="cat-tabs">
-    <button class="cat-tab active" data-tab="ipa">IPAs</button>
-    <button class="cat-tab" data-tab="stout">Stouts &amp; Porters</button>
-    <button class="cat-tab" data-tab="lager">Lagers &amp; Pilsners</button>
-    <button class="cat-tab" data-tab="sour">Sours &amp; Wilds</button>
-  </div>
-  <div class="cat-panel active" data-panel="ipa">
-    <div class="beer-item"><span class="name">Haze of the Devil</span><span class="style">NEIPA</span><p class="desc">Juicy, hazy, and loaded with Citra and Mosaic — our flagship IPA</p><span class="abv">6.8% ABV</span></div>
-    <div class="beer-item"><span class="name">Lucifer's Lunchbox</span><span class="style">Double IPA</span><p class="desc">Bold, resinous, and dangerously smooth — a double IPA for the damned</p><span class="abv">8.4% ABV</span></div>
-    <div class="beer-item"><span class="name">Sinful Session</span><span class="style">Session IPA</span><p class="desc">All the hop character, half the guilt — crisp, clean, and crushable</p><span class="abv">4.5% ABV</span></div>
-    <div class="beer-item"><span class="name">West Coast Damnation</span><span class="style">West Coast IPA</span><p class="desc">Piney, bitter, and unapologetic — a classic WCIPA with attitude</p><span class="abv">7.0% ABV</span></div>
-  </div>
-  <div class="cat-panel" data-panel="stout">
-    <div class="beer-item"><span class="name">Midnight Contract</span><span class="style">Imperial Stout</span><p class="desc">Dark, rich, and signed in blood — notes of chocolate, coffee, and dark fruit</p><span class="abv">10.2% ABV</span></div>
-    <div class="beer-item"><span class="name">Pitchfork Porter</span><span class="style">English Porter</span><p class="desc">Smooth, roasty, and approachable — a devilishly drinkable dark ale</p><span class="abv">5.8% ABV</span></div>
-    <div class="beer-item"><span class="name">Brimstone Brown</span><span class="style">Brown Ale</span><p class="desc">Toasty malt, caramel, and a hint of smoke — warm your soul</p><span class="abv">5.5% ABV</span></div>
-  </div>
-  <div class="cat-panel" data-panel="lager">
-    <div class="beer-item"><span class="name">Hellfire Helles</span><span class="style">Helles Lager</span><p class="desc">Crisp, malty, and smooth — a German-style helles with a devilish twist</p><span class="abv">5.2% ABV</span></div>
-    <div class="beer-item"><span class="name">Fallen Angel Pils</span><span class="style">Czech Pilsner</span><p class="desc">Bright, floral, and refreshing — a fallen angel you can trust</p><span class="abv">4.8% ABV</span></div>
-    <div class="beer-item"><span class="name">Sinner's Seltzer</span><span class="style">Hard Seltzer</span><p class="desc">Light, bubbly, and guilt-free — for when you want to sin less</p><span class="abv">4.2% ABV</span></div>
-  </div>
-  <div class="cat-panel" data-panel="sour">
-    <div class="beer-item"><span class="name">Sour Soul</span><span class="style">Fruited Sour</span><p class="desc">Tart, fruity, and electric — loaded with raspberry and passionfruit</p><span class="abv">5.0% ABV</span></div>
-    <div class="beer-item"><span class="name">Dealer's Choice</span><span class="style">Barrel-Aged Sour</span><p class="desc">Funky, complex, aged in wine barrels — for the adventurous palate</p><span class="abv">7.5% ABV</span></div>
-    <div class="beer-item"><span class="name">Garden of Eden</span><span class="style">Gose</span><p class="desc">Salty, tart, with a hint of coriander and fresh apricot</p><span class="abv">4.5% ABV</span></div>
-  </div>
-  <h2>Find Your Pour</h2>
-  <p style="font-size:.9rem;opacity:.5;margin:-.5rem 0 0">Not sure what to drink? Let the devil decide.</p>
-  <div class="quiz-box">
-    <h3>Devil's Choice</h3>
-    <div class="quiz-step">
-      <label for="mood">What's your mood?</label>
-      <select id="mood"><option value="">Select...</option><option value="hoppy">Hoppy &amp; bold</option><option value="dark">Dark &amp; roasty</option><option value="crisp">Crisp &amp; light</option><option value="wild">Wild &amp; sour</option></select>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>😈</span> Devil's Logic
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="beer.html" class="active">Beer</a>
+      <a href="flight.html">Flight Builder</a>
+      <a href="taproom.html">Taproom</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div class="quiz-step">
-      <label for="abv">How strong?</label>
-      <select id="abv"><option value="">Select...</option><option value="session">Easy drinking</option><option value="standard">Standard strength</option><option value="high">Bring the pain</option></select>
-    </div>
-    <div class="quiz-result" id="quiz-result">
-      <p class="name" id="quiz-name"></p>
-      <p class="desc" id="quiz-desc"></p>
-    </div>
-  </div>
-</section>
+  </nav>
 
-</main>
-<footer>
-  <p>Devil's Logic Brewing · 1426 E 4th St · Charlotte, NC 28204 · (704) 666-1001</p>
-  <p><a href="beer.html">Beer</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
-<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();
-(function(){const m=document.getElementById('mood'),a=document.getElementById('abv'),r=document.getElementById('quiz-result'),n=document.getElementById('quiz-name'),d=document.getElementById('quiz-desc');const picks={hoppy:{session:'Sinful Session — all the hops, low ABV, infinitely crushable',standard:'Haze of the Devil — juicy NEIPA, Citra and Mosaic',high:'Lucifer\'s Lunchbox — double IPA, 8.4%, dangerously smooth'},dark:{session:'Pitchfork Porter — roasty, smooth, 5.8%',standard:'Brimstone Brown — toasty malt, caramel, a hint of smoke',high:'Midnight Contract — imperial stout, 10.2%, signed in blood'},crisp:{session:'Sinner\'s Seltzer — light, bubbly, 4.2%',standard:'Fallen Angel Pils — bright Czech pilsner, 4.8%',high:'Hellfire Helles — crisp German helles, 5.2%'},wild:{session:'Garden of Eden — apricot gose, tart and salty',standard:'Sour Soul — fruited sour with raspberry and passionfruit',high:'Dealer\'s Choice — barrel-aged, funky, 7.5%'}};function update(){if(!m.value||!a.value){r.classList.remove('show');return}
-const p=picks[m.value][a.value];const parts=p.split(' — ');n.textContent=parts[0];d.textContent=parts[1];r.classList.add('show')}
-m.addEventListener('change',update);a.addEventListener('change',update)})();
-</script>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">On Tap Weekly</span>
+        <h1>Beer Taplist</h1>
+        <p>Hazy, dark, crisp, or wild — find your perfect devilish pour below.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <!-- Category Tabs -->
+      <div class="cat-tabs">
+        <button class="cat-tab active" data-tab="ipa">IPAs</button>
+        <button class="cat-tab" data-tab="stout">Stouts &amp; Porters</button>
+        <button class="cat-tab" data-tab="lager">Lagers &amp; Pilsners</button>
+        <button class="cat-tab" data-tab="sour">Sours &amp; Wilds</button>
+      </div>
+
+      <!-- IPAs Panel -->
+      <div class="cat-panel active" data-panel="ipa">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>India Pale Ales</h3>
+            <div class="beer-item">
+              <span class="name">Haze of the Devil</span>
+              <span class="style">New England IPA</span>
+              <p class="desc">Juicy, hazy, and loaded with Citra and Mosaic hops — our flagship NEIPA pour.</p>
+              <span class="abv">6.8% ABV</span>
+            </div>
+
+            <div class="beer-item">
+              <span class="name">Lucifer's Lunchbox</span>
+              <span class="style">Double IPA</span>
+              <p class="desc">Bold, piney, and dangerously smooth — a double IPA for the adventurous.</p>
+              <span class="abv">8.4% ABV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stouts Panel -->
+      <div class="cat-panel" data-panel="stout">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Stouts &amp; Porters</h3>
+            <div class="beer-item">
+              <span class="name">Midnight Contract</span>
+              <span class="style">Imperial Stout</span>
+              <p class="desc">Dark, rich, roasted malt profile with intense notes of cocoa and espresso beans.</p>
+              <span class="abv">10.2% ABV</span>
+            </div>
+
+            <div class="beer-item">
+              <span class="name">Pitchfork Porter</span>
+              <span class="style">English Porter</span>
+              <p class="desc">Smooth, light roasty characteristics, highly drinkable session-friendly dark ale.</p>
+              <span class="abv">5.8% ABV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lagers Panel -->
+      <div class="cat-panel" data-panel="lager">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Lagers &amp; Pilsners</h3>
+            <div class="beer-item">
+              <span class="name">Hellfire Helles</span>
+              <span class="style">Helles Lager</span>
+              <p class="desc">Crisp, sweet malt forwardness, exceptionally clean German lager finish.</p>
+              <span class="abv">5.2% ABV</span>
+            </div>
+
+            <div class="beer-item">
+              <span class="name">Fallen Angel Pils</span>
+              <span class="style">Czech Pilsner</span>
+              <p class="desc">Bright straw color, light noble floral hops, a refreshing summer classic.</p>
+              <span class="abv">4.8% ABV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sours Panel -->
+      <div class="cat-panel" data-panel="sour">
+        <div class="menu-content">
+          <div class="menu-section">
+            <h3>Sours &amp; Wilds</h3>
+            <div class="beer-item">
+              <span class="name">Sour Soul</span>
+              <span class="style">Fruited Sour</span>
+              <p class="desc">Tart, mouth-puckering, electric pink pour loaded with real raspberry purée.</p>
+              <span class="abv">5.0% ABV</span>
+            </div>
+
+            <div class="beer-item">
+              <span class="name">Dealer's Choice</span>
+              <span class="style">Barrel-Aged Sour</span>
+              <p class="desc">Complex wild yeast funkiness, aged gracefully in local red wine oak barrels.</p>
+              <span class="abv">7.5% ABV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matchmaker Quiz -->
+      <div style="margin-top: 5rem; margin-bottom: 5rem;">
+        <h2 style="font-family: var(--font-heading); text-align: center; font-size: 2rem;">Find Your Pour</h2>
+        <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2rem; font-size: 0.95rem;">Not sure what to drink? Let us recommend the perfect glass.</p>
+        
+        <div class="quiz-box">
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; text-align: center; margin-bottom: 1.5rem;">Devil's Choice Matchmaker</h3>
+          
+          <div class="quiz-step">
+            <label for="mood">1. What is your flavor mood?</label>
+            <select id="mood">
+              <option value="">Select flavor profile...</option>
+              <option value="hoppy">Hoppy &amp; bold</option>
+              <option value="dark">Dark &amp; roasty</option>
+              <option value="crisp">Crisp &amp; light</option>
+              <option value="wild">Wild &amp; sour</option>
+            </select>
+          </div>
+
+          <div class="quiz-step">
+            <label for="abv">2. Desired strength range?</label>
+            <select id="abv">
+              <option value="">Select strength level...</option>
+              <option value="session">Easy drinking (Under 5% ABV)</option>
+              <option value="standard">Standard strength (5% - 7% ABV)</option>
+              <option value="high">Imperial / Double strength (7%+ ABV)</option>
+            </select>
+          </div>
+
+          <div class="quiz-result" id="quiz-result">
+            <p class="name" id="quiz-name"></p>
+            <p class="desc" id="quiz-desc"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Devil's Logic Brewing</h3>
+        <p>Midtown Charlotte neighborhood brewery. Rotating microbrews, tasting flights, and community events.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1426 E 4th St<br>
+          Charlotte, NC 28204<br>
+          Phone: (704) 666-1001
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="beer.html">Beer</a></li>
+          <li><a href="flight.html">Flight Builder</a></li>
+          <li><a href="taproom.html">Taproom</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Devil's Logic Brewing. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // Tabs toggle
+    (function(){
+      const t = document.querySelectorAll('[data-tab]');
+      const p = document.querySelectorAll('[data-panel]');
+      t.forEach(tb => {
+        tb.addEventListener('click', function() {
+          t.forEach(item => item.classList.remove('active'));
+          this.classList.add('active');
+          p.forEach(panel => {
+            panel.classList.toggle('active', panel.dataset.panel === this.dataset.tab);
+          });
+        });
+      });
+    })();
+
+    // Matchmaker logic
+    (function(){
+      const m = document.getElementById('mood');
+      const a = document.getElementById('abv');
+      const r = document.getElementById('quiz-result');
+      const n = document.getElementById('quiz-name');
+      const d = document.getElementById('quiz-desc');
+
+      const picks = {
+        hoppy: {
+          session: 'Sinful Session — all the hops, low ABV, infinitely crushable',
+          standard: 'Haze of the Devil — juicy NEIPA, Citra and Mosaic',
+          high: 'Lucifer\'s Lunchbox — double IPA, 8.4%, dangerously smooth'
+        },
+        dark: {
+          session: 'Pitchfork Porter — roasty, smooth, 5.8%',
+          standard: 'Brimstone Brown — toasty malt, caramel, a hint of smoke',
+          high: 'Midnight Contract — imperial stout, 10.2%, signed in blood'
+        },
+        crisp: {
+          session: 'Sinner\'s Seltzer — light, bubbly, 4.2%',
+          standard: 'Fallen Angel Pils — bright Czech pilsner, 4.8%',
+          high: 'Hellfire Helles — crisp German helles, 5.2%'
+        },
+        wild: {
+          session: 'Garden of Eden — apricot gose, tart and salty',
+          standard: 'Sour Soul — fruited sour with raspberry and passionfruit',
+          high: 'Dealer\'s Choice — barrel-aged, funky, 7.5%'
+        }
+      };
+
+      function update() {
+        if (!m.value || !a.value) {
+          r.classList.remove('show');
+          return;
+        }
+        const p = picks[m.value][a.value];
+        const parts = p.split(' — ');
+        n.textContent = parts[0];
+        d.textContent = parts[1];
+        r.classList.add('show');
+      }
+
+      m.addEventListener('change', update);
+      a.addEventListener('change', update);
+    })();
+  </script>
 </body>
 </html>

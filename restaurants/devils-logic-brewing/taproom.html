@@ -1,92 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taproom · Devil's Logic Brewing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--black:#0a0a0a;--red:#cc2222;--gold:#d4a017;--cream:#e8ddd0;--charcoal:#121212;--muted:#776655}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--black);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(204,34,34,.2)}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
-.nav a:hover{opacity:1;color:var(--red)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--red)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#0a0a0a,#1a0505);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
-.page-header p{opacity:.5;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
-.section h2{font-size:1.5rem;color:var(--red);margin:2rem 0 1rem;border-left:3px solid var(--red);padding-left:.75rem}
-.section p{font-size:.92rem;line-height:1.7;opacity:.65}
-.amenities{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
-.amenity-card{background:rgba(255,255,255,.02);border:1px solid rgba(204,34,34,.08);border-radius:8px;padding:1.25rem;text-align:center}
-.amenity-card .icon{font-size:1.5rem}
-.amenity-card h3{font-size:.95rem;color:var(--red);margin:.5rem 0 .25rem}
-.amenity-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:0}
-.hours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;margin:1.5rem 0}
-.hour-card{background:rgba(255,255,255,.02);border:1px solid rgba(204,34,34,.06);border-radius:8px;padding:.85rem 1rem;text-align:center}
-.hour-card .day{font-size:.82rem;font-weight:600;color:var(--red)}
-.hour-card .time{font-size:.85rem;opacity:.55}
-footer{background:var(--black);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(204,34,34,.08)}
-footer a{color:var(--red);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/devils-logic-brewing/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taproom | Devil's Logic Brewing</title>
+  <meta name="description" content="Visit the Devil's Logic Brewing taproom in Elizabeth. View taproom opening hours, directions, and rooftop skyline amenities.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .hour-card {
+      background: var(--color-card-bg);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .hour-card .day {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-crimson);
+      margin-bottom: 0.4rem;
+    }
+    .hour-card .time {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .amenities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Devil's Logic</a>
-  <div class="nav-links">
-    <a href="beer.html">Beer</a>
-    <a href="flight.html">Flight Builder</a>
-    <a href="taproom.html">Taproom</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Taproom</h1>
-  <p>Your Elizabeth neighborhood brewery</p>
-</header>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<section class="section">
-  <h2>Hours</h2>
-  <div class="hours-grid">
-    <div class="hour-card"><span class="day">Tuesday–Thursday</span><span class="time">3:00–10:00 PM</span></div>
-    <div class="hour-card"><span class="day">Friday &amp; Saturday</span><span class="time">12:00–11:00 PM</span></div>
-    <div class="hour-card"><span class="day">Sunday</span><span class="time">12:00–8:00 PM</span></div>
-    <div class="hour-card"><span class="day">Monday</span><span class="time">Closed</span></div>
-  </div>
-  <h2>Location</h2>
-  <p><strong>1426 E 4th St, Charlotte, NC 28204</strong> — in the heart of the Elizabeth neighborhood. Parking available in the deck across the street or behind the brewery.</p>
-  <h2>What You'll Find</h2>
-  <div class="amenities">
-    <div class="amenity-card"><span class="icon" aria-hidden="true">🍺</span><h3>16 Tap Lines</h3><p>Rotating selection of our core, seasonal, and experimental brews</p></div>
-    <div class="amenity-card"><span class="icon" aria-hidden="true">🍽️</span><h3>Full Kitchen</h3><p>Comfort food and snacks — plus rotating food truck partnerships</p></div>
-    <div class="amenity-card"><span class="icon" aria-hidden="true">🌿</span><h3>Outdoor Patio</h3><p>Dog-friendly, string-lit, one of Charlotte's best brewery patios</p></div>
-    <div class="amenity-card"><span class="icon" aria-hidden="true">🎉</span><h3>Event Space</h3><p>Private events, parties, and gatherings — indoor and outdoor options</p></div>
-    <div class="amenity-card"><span class="icon" aria-hidden="true">🎯</span><h3>Trivia &amp; Games</h3><p>Weekly trivia, board games, and a relaxed neighborhood vibe</p></div>
-    <div class="amenity-card"><span class="icon" aria-hidden="true">🎵</span><h3>Live Music</h3><p>Local bands and acoustic sets on the patio — check events for dates</p></div>
-  </div>
-</section>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>😈</span> Devil's Logic
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="beer.html">Beer</a>
+      <a href="flight.html">Flight Builder</a>
+      <a href="taproom.html" class="active">Taproom</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-</main>
-<footer>
-  <p>Devil's Logic Brewing · 1426 E 4th St · Charlotte, NC 28204 · (704) 666-1001</p>
-  <p><a href="beer.html">Beer</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Elizabeth Neighborhood Hub</span>
+        <h1>Our Taproom</h1>
+        <p>Your local brewery home in the heart of Midtown Charlotte.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem;">Taproom Hours</h2>
+      <div class="hours-grid">
+        <div class="hour-card">
+          <span class="day">Tuesday &ndash; Thursday</span>
+          <span class="time">3:00 PM &ndash; 10:00 PM</span>
+        </div>
+
+        <div class="hour-card">
+          <span class="day">Friday &amp; Saturday</span>
+          <span class="time">12:00 PM &ndash; 11:00 PM</span>
+        </div>
+
+        <div class="hour-card">
+          <span class="day">Sunday</span>
+          <span class="time">12:00 PM &ndash; 8:00 PM</span>
+        </div>
+
+        <div class="hour-card">
+          <span class="day">Monday</span>
+          <span class="time">Closed</span>
+        </div>
+      </div>
+
+      <div class="premium-card" style="margin-bottom: 4rem;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-crimson); margin-bottom: 0.8rem;">Taproom Location</h2>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.25rem;">
+          <strong>1426 E 4th St, Charlotte, NC 28204</strong> — located directly in Elizabeth. Convenient parking is available in the parking deck directly across the street or in the lot behind our building.
+        </p>
+        <a href="https://maps.google.com" target="_blank" style="font-weight: 700; color: var(--color-crimson);">Get Directions &rarr;</a>
+      </div>
+
+      <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem;">Taproom Features</h2>
+      <div class="amenities">
+        
+        <div class="feature-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🍻</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-crimson); margin: 0.5rem 0;">16 Tap Lines</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Weekly rotating selection of small-batch IPAs, stouts, pilsners, sours, and hard seltzers.</p>
+        </div>
+
+        <div class="feature-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🍔</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-crimson); margin: 0.5rem 0;">Full Kitchen</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">Enjoy a menu of gastropub comfort food, sandwich sliders, and loaded snacks cooked in-house.</p>
+        </div>
+
+        <div class="feature-card">
+          <span style="font-size: 1.5rem;" aria-hidden="true">🐶</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-crimson); margin: 0.5rem 0;">Dog-Friendly Patio</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem;">String-lit, spacious outdoor deck seating with Charlotte skyline views and pet accommodations.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Devil's Logic Brewing</h3>
+        <p>Midtown Charlotte neighborhood brewery. Rotating microbrews, tasting flights, and community events.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          1426 E 4th St<br>
+          Charlotte, NC 28204<br>
+          Phone: (704) 666-1001
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="beer.html">Beer</a></li>
+          <li><a href="flight.html">Flight Builder</a></li>
+          <li><a href="taproom.html">Taproom</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Devil's Logic Brewing. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+  </script>
 </body>
 </html>
