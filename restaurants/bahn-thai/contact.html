@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bahn-thai/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahn Thai Restaurant - Charlotte, NC | Contact & Orders</title>
+  <title>Contact — Bahn Thai Restaurant</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bahn Thai
           <span>Ballantyne Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="sushi.html">Sushi & Bar</a>
+        <a href="sushi.html">Sushi &amp; Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html" class="active">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Contact & Takeout Orders</h2>
+    <h2 class="page-title">Contact &amp; Takeout Orders</h2>
     <p class="page-subtitle">Visit our dining room on Copper Way, or submit your details below to place a hot takeout counter order.</p>
   </header>
 
@@ -49,25 +57,25 @@
   </div>
 
   <!-- Content Grid -->
-  <main class="container">
+  <main id="main" class="container">
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
       
       <!-- Details Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Contact & Location</h3>
+        <h3 class="menu-category-title">Contact &amp; Location</h3>
         
         <div style="margin-bottom: 2rem;">
-          <h4 style="font-size: 1rem; color: var(--color-copper); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Address</h4>
+          <h4 style="font-size: 1rem; color: var(--color-copper); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; font-family: var(--font-heading);">Address</h4>
           <p style="font-size: 0.95rem; color: var(--color-text-muted);">
             12206 Copper Way, Ste 122<br>Charlotte, NC 28277
           </p>
         </div>
 
         <div style="margin-bottom: 2rem;">
-          <h4 style="font-size: 1rem; color: var(--color-copper); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Hours of Operation</h4>
+          <h4 style="font-size: 1rem; color: var(--color-copper); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; font-family: var(--font-heading);">Hours of Operation</h4>
           <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
-            <strong>Mon - Fri:</strong> 11:00 AM - 2:30 PM & 5:00 PM - 9:00 PM<br>
+            <strong>Mon - Fri:</strong> 11:00 AM - 2:30 PM &amp; 5:00 PM - 9:00 PM<br>
             <strong>Saturday:</strong> 12:00 PM - 9:00 PM<br>
             <strong>Sunday:</strong> Closed<br>
             <span style="display: block; margin-top: 0.5rem; font-size: 0.85rem; font-style: italic; color: var(--color-text-muted);">
@@ -77,7 +85,7 @@
         </div>
 
         <div>
-          <h4 style="font-size: 1rem; color: var(--color-copper); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Direct Line</h4>
+          <h4 style="font-size: 1rem; color: var(--color-copper); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; font-family: var(--font-heading);">Direct Line</h4>
           <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
             <strong>Phone:</strong> (704) 919-0111<br>
             <span style="display: block; margin-top: 0.5rem; font-size: 0.85rem; font-style: italic; color: #10b981;">
@@ -112,8 +120,8 @@
         </form>
 
         <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
-          <div class="success-icon">✉</div>
-          <h3 class="success-title">Message Sent!</h3>
+          <div class="success-icon" aria-hidden="true">✉</div>
+          <h3 class="success-title">Khop Khun! Message Sent</h3>
           <p class="success-msg">Thank you. We will read your note after the dinner rush and contact you if needed.</p>
         </div>
       </div>
@@ -161,8 +169,8 @@
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🍜</div>
-          <h3 class="success-title">Order Request Logged!</h3>
+          <div class="success-icon" aria-hidden="true">🍜</div>
+          <h3 class="success-title">Khop Khun! Order Received</h3>
           <p class="success-msg" id="success-message">Thank you. We have received your pickup request. Grab it hot at the register!</p>
         </div>
       </div>
@@ -173,19 +181,32 @@
   <!-- Info Footer -->
   <footer class="container">
     <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
-      <p>© 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
+      <p>&copy; 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
     </div>
   </footer>
 
   <script>
-    // Live Wait time calculation based on hour of the day
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+
+    // Live Wait time calculation based on Charlotte (Eastern) Time
     function updateWaitTime() {
       const now = new Date();
-      const hour = now.getHours();
-      const minute = now.getMinutes();
-      const day = now.getDay();
+      const estTime = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+      
+      const hour = estTime.getHours();
+      const minute = estTime.getMinutes();
+      const day = estTime.getDay();
       
       const badge = document.getElementById('live-wait-badge');
+      if (!badge) return;
 
       // Closed Sunday (0)
       if (day === 0) {
@@ -243,33 +264,36 @@
       }
     }
 
-    // Run on startup
     updateWaitTime();
 
     // Handle message submissions
     const contactForm = document.getElementById('contact-form');
     const contactSuccess = document.getElementById('contact-success');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      contactForm.style.display = 'none';
-      contactSuccess.style.display = 'block';
-    });
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        contactForm.style.display = 'none';
+        contactSuccess.style.display = 'block';
+      });
+    }
 
     // Handle order submissions
     const form = document.getElementById('reservation-form');
     const successPanel = document.getElementById('success-panel');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const time = document.getElementById('pickup-time').value;
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const time = document.getElementById('pickup-time').value;
 
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Order logged, <strong>${name}</strong>! We will have it ready for counter pickup at <strong>${time} today</strong>. If we have questions, we'll call you at <strong>${phone}</strong>. Pay at the register!`;
-    });
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Khop khun (Thank you), <strong>${name}</strong>! We will have it ready for counter pickup at <strong>${time} today</strong>. If we have questions, we'll call you at <strong>${phone}</strong>. Pay at the register!`;
+      });
+    }
   </script>
 </body>
 </html>

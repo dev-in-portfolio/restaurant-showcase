@@ -1,130 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bahn-thai/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahn Thai Restaurant - Charlotte, NC | Sushi & Bar</title>
+  <title>Sushi &amp; Bar — Bahn Thai Restaurant</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Custom layout styling for the interactive sushi tray */
+    /* Sushi Boat custom visualizer styles */
     .sushi-tray-container {
-      background: radial-gradient(circle, #1a100a 0%, #0d0603 100%);
-      border: 1.5px solid var(--color-copper);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
+      background: radial-gradient(circle, #1e120a 0%, #0d0603 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2rem;
       box-shadow: var(--shadow-premium);
-      min-height: 290px;
+      min-height: 300px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: center;
-      transition: var(--transition-smooth);
-    }
-    .sushi-graphic-tray {
-      display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 0.6rem;
-      margin: 1.5rem 0;
-      background: #2a160d;
-      border: 2px solid var(--color-copper);
-      border-radius: 6px;
-      padding: 1rem;
-      min-height: 80px;
-    }
-    .sushi-roll-piece {
-      width: 40px;
-      height: 40px;
-      border: 2px solid var(--color-text-light);
-      border-radius: 50%;
-      background: #ffffff; /* Rice base */
       position: relative;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      transition: var(--transition-smooth);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .sushi-core {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #f43f5e; /* Tuna core default */
-      transition: var(--transition-smooth);
-    }
-    .sushi-wrap {
-      position: absolute;
-      inset: -2px;
-      border-radius: 50%;
-      border: 3.5px solid #0f3f2d; /* Nori seaweed wrap */
-      pointer-events: none;
+    .sushi-boat-canvas {
+      width: 100%;
+      max-width: 380px;
+      height: 160px;
+      margin-bottom: 1.5rem;
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bahn Thai
           <span>Ballantyne Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="sushi.html" class="active">Sushi & Bar</a>
+        <a href="sushi.html" class="active">Sushi &amp; Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Sushi & Saké Bar</h2>
+    <h2 class="page-title">Sushi &amp; Saké Bar</h2>
     <p class="page-subtitle">Savor fresh hand-rolled classics and specialty rolls at our modern Ballantyne sushi counter.</p>
   </header>
 
-  <!-- Interactive Sushi Builder -->
-  <main class="container">
+  <!-- Main Content -->
+  <main id="main" class="container">
     
+    <!-- Interactive Sushi Builder -->
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
       <h3 class="section-title" style="margin-bottom: 1rem;">Sushi Roll Customizer</h3>
       <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Design your custom roll. Choose your base roll cut, select your core filling protein, and garnish with premium toppings.</p>
       
       <div class="mixer-container">
         
-        <!-- Left Side: Sushi Tray Visualizer -->
+        <!-- Left Side: Sushi Boat Visualizer -->
         <div class="plate-canvas" style="min-height: 300px;">
           <div class="sushi-tray-container" id="tray-box">
-            <div class="sushi-graphic-tray" id="graphic-tray">
-              <div class="sushi-roll-piece">
-                <div class="sushi-core" id="core-0"></div>
-                <div class="sushi-wrap"></div>
-              </div>
-              <div class="sushi-roll-piece">
-                <div class="sushi-core" id="core-1"></div>
-                <div class="sushi-wrap"></div>
-              </div>
-              <div class="sushi-roll-piece">
-                <div class="sushi-core" id="core-2"></div>
-                <div class="sushi-wrap"></div>
-              </div>
-              <div class="sushi-roll-piece">
-                <div class="sushi-core" id="core-3"></div>
-                <div class="sushi-wrap"></div>
-              </div>
-            </div>
+            <!-- Teak Sushi Boat SVG -->
+            <svg class="sushi-boat-canvas" viewBox="0 0 380 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Wooden Boat Hull Shadow -->
+              <path d="M 30,110 L 320,110 C 350,110 365,95 370,85 C 345,135 45,135 10,85 C 15,95 20,110 30,110 Z" fill="#1b0f0a" />
+              
+              <!-- Wooden Teak Boat Hull Base -->
+              <path d="M 25,100 L 325,100 C 355,100 365,90 370,80 C 340,125 40,125 10,80 C 15,90 20,100 25,100 Z" fill="#8c583c" stroke="#5d341a" stroke-width="2" />
+              
+              <!-- Deck Planks -->
+              <path d="M 40,103 L 340,103" stroke="#5d341a" stroke-width="1.5" />
+              <path d="M 60,112 L 320,112" stroke="#5d341a" stroke-width="1.5" />
+              
+              <!-- Teak Mast and Sail -->
+              <line x1="75" y1="95" x2="75" y2="40" stroke="#c29f63" stroke-width="2.5" />
+              <path d="M 75,45 Q 50,55 45,75 L 75,75 Z" fill="#faf6f0" opacity="0.85" stroke="#c29f63" stroke-width="1" />
+
+              <!-- Sushi Roll Pieces container group -->
+              <g id="sushi-pieces-group"></g>
+            </svg>
+
             <h4 style="font-size: 1.6rem; color: #ffffff;" id="roll-display-title">Uramaki Roll</h4>
             <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-copper); margin: 0.5rem 0;" id="roll-display-price">$15.00</p>
           </div>
@@ -132,35 +111,33 @@
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
-          
           <div class="control-group">
-            <label>1. Select Roll Base</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Select Roll Base</span>
             <div class="option-grid" id="base-options">
-              <button class="option-btn active" onclick="setBase('uramaki', 'Uramaki (Inside-out)', 11.00, 4)">Uramaki (8pcs)</button>
-              <button class="option-btn" onclick="setBase('futomaki', 'Futomaki (Thick cut)', 12.00, 3)">Futomaki (6pcs)</button>
-              <button class="option-btn" onclick="setBase('hosomaki', 'Hosomaki (Skinny)', 8.00, 5)">Hosomaki (6pcs)</button>
+              <button class="option-btn active" data-key="uramaki" data-name="Uramaki (Inside-out)" data-price="11.00" data-count="4">Uramaki (8pcs)</button>
+              <button class="option-btn" data-key="futomaki" data-name="Futomaki (Thick cut)" data-price="12.00" data-count="3">Futomaki (6pcs)</button>
+              <button class="option-btn" data-key="hosomaki" data-name="Hosomaki (Skinny)" data-price="8.00" data-count="5">Hosomaki (6pcs)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Select Core Protein</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Select Core Protein</span>
             <div class="option-grid" id="protein-options">
-              <button class="option-btn active" onclick="setProtein('tuna', 'Yellowfin Tuna', 4.00, '#be123c')">Tuna (+$4)</button>
-              <button class="option-btn" onclick="setProtein('salmon', 'Atlantic Salmon', 3.50, '#fb923c')">Salmon (+$3.50)</button>
-              <button class="option-btn" onclick="setProtein('shrimp', 'Tempura Shrimp', 3.00, '#fed7aa')">Shrimp (+$3)</button>
-              <button class="option-btn" onclick="setProtein('avocado', 'Organic Avocado', 0.00, '#84cc16')">Avocado</button>
+              <button class="option-btn active" data-key="tuna" data-name="Yellowfin Tuna" data-price="4.00" data-color="#be123c">Tuna (+$4)</button>
+              <button class="option-btn" data-key="salmon" data-name="Atlantic Salmon" data-price="3.50" data-color="#fb923c">Salmon (+$3.5)</button>
+              <button class="option-btn" data-key="shrimp" data-name="Tempura Shrimp" data-price="3.00" data-color="#fed7aa">Shrimp (+$3)</button>
+              <button class="option-btn" data-key="avocado" data-name="Organic Avocado" data-price="0.00" data-color="#84cc16">Avocado</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Premium Garnish</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Premium Garnish</span>
             <div class="option-grid" id="garnish-options">
-              <button class="option-btn active" onclick="setGarnish('spicy', 'Spicy Mayo & Unagi Sauce', 0.00)">Spicy Mayo</button>
-              <button class="option-btn" onclick="setGarnish('masago', 'Black Masago Caviar', 2.00)">Masago (+$2)</button>
-              <button class="option-btn" onclick="setGarnish('shallots', 'Crispy Shallots', 0.00)">Crispy Shallots</button>
+              <button class="option-btn active" data-key="spicy" data-name="Spicy Mayo &amp; Unagi Sauce" data-price="0.00">Spicy Mayo</button>
+              <button class="option-btn" data-key="masago" data-name="Black Masago Caviar" data-price="2.00">Masago (+$2)</button>
+              <button class="option-btn" data-key="shallots" data-name="Crispy Shallots" data-price="0.00">Shallots</button>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -170,7 +147,7 @@
         <h4 class="builder-display-title" id="display-roll-name">Uramaki (Inside-out)</h4>
         <p id="display-roll-protein" style="color: var(--color-copper); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Yellowfin Tuna</p>
         <div class="builder-display-price" id="display-roll-price">$15.00</div>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-roll-desc">A premium Uramaki (Inside-out) sushi roll filled with fresh yellowfin tuna, topped with spicy mayo & unagi sauce.</p>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-roll-desc">A premium Uramaki (Inside-out) sushi roll filled with fresh yellowfin tuna, topped with spicy mayo &amp; unagi sauce.</p>
       </div>
     </section>
 
@@ -235,7 +212,6 @@
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
@@ -255,7 +231,7 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bahn Thai Restaurant. Charlotte, NC.</p>
+      <p>&copy; 2026 Bahn Thai Restaurant. Charlotte, NC.</p>
     </div>
   </footer>
 
@@ -265,31 +241,46 @@
     let selectedProtein = { key: 'tuna', name: 'Yellowfin Tuna', price: 4.00, color: '#be123c' };
     let selectedGarnish = { key: 'spicy', name: 'Spicy Mayo & Unagi Sauce', price: 0.00 };
 
-    function setBase(key, name, price, count) {
-      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedBase = { key, name, price, count };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setProtein(key, name, price, color) {
-      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    function setupSelectors() {
+      const baseBtns = document.querySelectorAll('#base-options .option-btn');
+      baseBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          baseBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedBase = { key: btn.dataset.key, name: btn.dataset.name, price: parseFloat(btn.dataset.price), count: parseInt(btn.dataset.count) };
+          updateDisplay();
+        });
+      });
 
-      selectedProtein = { key, name, price, color };
-      updateDisplay();
-    }
+      const proteinBtns = document.querySelectorAll('#protein-options .option-btn');
+      proteinBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          proteinBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedProtein = { key: btn.dataset.key, name: btn.dataset.name, price: parseFloat(btn.dataset.price), color: btn.dataset.color };
+          updateDisplay();
+        });
+      });
 
-    function setGarnish(key, name, price) {
-      const buttons = document.getElementById('garnish-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedGarnish = { key, name, price };
-      updateDisplay();
+      const garnishBtns = document.querySelectorAll('#garnish-options .option-btn');
+      garnishBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          garnishBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedGarnish = { key: btn.dataset.key, name: btn.dataset.name, price: parseFloat(btn.dataset.price) };
+          updateDisplay();
+        });
+      });
     }
 
     function updateDisplay() {
@@ -301,23 +292,85 @@
       document.getElementById('display-roll-name').innerText = selectedBase.name;
       document.getElementById('display-roll-protein').innerText = selectedProtein.name;
 
-      // Update visual pieces on the tray
-      const tray = document.getElementById('graphic-tray');
-      tray.innerHTML = '';
-      for (let i = 0; i < selectedBase.count; i++) {
-        const piece = document.createElement('div');
-        piece.className = 'sushi-roll-piece';
+      // Update visual pieces on the boat SVG
+      const group = document.getElementById('sushi-pieces-group');
+      if (group) {
+        group.innerHTML = '';
         
-        const core = document.createElement('div');
-        core.className = 'sushi-core';
-        core.style.backgroundColor = selectedProtein.color;
+        // Calculate positions dynamically along the boat deck (from x = 110 to x = 320)
+        const startX = 120;
+        const endX = 310;
+        const totalWidth = endX - startX;
         
-        const wrap = document.createElement('div');
-        wrap.className = 'sushi-wrap';
-        
-        piece.appendChild(core);
-        piece.appendChild(wrap);
-        tray.appendChild(piece);
+        for (let i = 0; i < selectedBase.count; i++) {
+          const x = selectedBase.count === 1 
+            ? startX + totalWidth / 2 
+            : startX + (totalWidth / (selectedBase.count - 1)) * i;
+          
+          const y = 92 + Math.sin((i / (selectedBase.count - 1)) * Math.PI) * 10; // curved deck layout!
+          
+          // Piece group
+          const gPiece = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          gPiece.setAttribute('transform', `translate(${x}, ${y})`);
+          
+          // Nori Seaweed Wrap (dark outline ring)
+          const nori = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          nori.setAttribute('cx', '0');
+          nori.setAttribute('cy', '0');
+          nori.setAttribute('r', '17');
+          nori.setAttribute('fill', '#0a1a12');
+          
+          // Rice base (white circle inside)
+          const rice = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          rice.setAttribute('cx', '0');
+          rice.setAttribute('cy', '0');
+          rice.setAttribute('r', '14');
+          rice.setAttribute('fill', '#fffff7');
+          
+          // Core filling protein
+          const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          core.setAttribute('cx', '0');
+          core.setAttribute('cy', '0');
+          core.setAttribute('r', '8');
+          core.setAttribute('fill', selectedProtein.color);
+
+          // Garnish lines or dots
+          const garnishGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+          if (selectedGarnish.key === 'spicy') {
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', 'M -8,-8 Q -4,-2 0,-8 Q 4,-2 8,-8');
+            path.setAttribute('stroke', '#ea580c');
+            path.setAttribute('stroke-width', '2.2');
+            path.setAttribute('fill', 'none');
+            garnishGroup.appendChild(path);
+          } else if (selectedGarnish.key === 'masago') {
+            for (let k = 0; k < 6; k++) {
+              const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+              dot.setAttribute('cx', `${(Math.random() - 0.5) * 14}`);
+              dot.setAttribute('cy', `${(Math.random() - 0.5) * 14}`);
+              dot.setAttribute('r', '1.5');
+              dot.setAttribute('fill', '#e65100');
+              garnishGroup.appendChild(dot);
+            }
+          } else {
+            // Shallots
+            for (let k = 0; k < 4; k++) {
+              const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+              rect.setAttribute('x', `${(Math.random() - 0.5) * 14}`);
+              rect.setAttribute('y', `${(Math.random() - 0.5) * 14}`);
+              rect.setAttribute('width', '4');
+              rect.setAttribute('height', '2');
+              rect.setAttribute('fill', '#795548');
+              garnishGroup.appendChild(rect);
+            }
+          }
+          
+          gPiece.appendChild(nori);
+          gPiece.appendChild(rice);
+          gPiece.appendChild(core);
+          gPiece.appendChild(garnishGroup);
+          group.appendChild(gPiece);
+        }
       }
 
       // Update description text
@@ -327,6 +380,7 @@
 
     // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>

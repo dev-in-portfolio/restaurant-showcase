@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bahn-thai/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahn Thai Restaurant - Charlotte, NC | Menu</title>
+  <title>Menu — Bahn Thai Restaurant</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Pairing Board specific styles */
     .pairing-board {
       background: radial-gradient(circle, #1a0f0a 0%, #0d0604 100%);
       border: 2px solid var(--color-copper);
-      border-radius: 12px;
+      border-radius: var(--radius);
       padding: 2.5rem;
       box-shadow: var(--shadow-premium);
       min-height: 250px;
@@ -21,82 +24,88 @@
       transition: all 0.3s ease;
     }
     .pairing-title {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: #ffffff;
       margin-bottom: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      font-family: var(--font-heading);
     }
     .pairing-curry {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: var(--color-copper);
       font-weight: 800;
       margin-bottom: 0.8rem;
       text-transform: uppercase;
+      font-family: var(--font-heading);
     }
     .pairing-desc {
       font-size: 0.95rem;
       color: var(--color-text-muted);
-      line-height: 1.6;
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bahn Thai
           <span>Ballantyne Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html" class="active">Menu</a>
-        <a href="sushi.html">Sushi & Bar</a>
+        <a href="sushi.html">Sushi &amp; Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Traditional & Sushi Menu</h2>
+    <h2 class="page-title">Traditional &amp; Sushi Menu</h2>
     <p class="page-subtitle">Savor hand-rolled sushi and slow-simmered curries. Discover our chef recommendations on the pairing board below.</p>
   </header>
 
-  <!-- Interactive Sushi & Curry Pairing Guide -->
-  <main class="container">
-    
+  <main id="main" class="container">
+    <!-- Interactive Sushi & Curry Pairing Guide -->
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h3 class="section-title" style="margin-bottom: 2rem;">Sushi & Curry Pairing Guide</h3>
+      <h3 class="section-title" style="margin-bottom: 2rem;">Sushi &amp; Curry Pairing Guide</h3>
       
       <div class="mixer-container">
         
         <!-- Left Side: Interactive Board -->
         <div class="pairing-board" id="pairing-board-box">
           <h4 class="pairing-title" id="pair-roll-name">Spicy Tuna Roll</h4>
-          <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-text-muted);">Pairs Best With</span>
+          <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 0.05em; display:block; margin-bottom:0.5rem;">Pairs Best With</span>
           <div class="pairing-curry" id="pair-curry-name">Green Curry</div>
           <p class="pairing-desc" id="pair-desc">The rich coconut milk base and sweet herbaceous notes of Green Curry perfectly balance the spicy tuna’s kick, cool cucumber, and seaweed crispness. Recommended with cold Ozeki Sake.</p>
         </div>
 
         <!-- Right Side: Selection list -->
         <div style="display: flex; flex-direction: column; gap: 0.80rem;">
-          <button class="option-btn active" onclick="showPairing('tuna', this)">Spicy Tuna Roll ($7.95)</button>
-          <button class="option-btn" onclick="showPairing('rainbow', this)">Rainbow Specialty Roll ($12.95)</button>
-          <button class="option-btn" onclick="showPairing('dragon', this)">Eel Dragon Roll ($11.95)</button>
-          <button class="option-btn" onclick="showPairing('fire', this)">Ballantyne Fire Roll ($13.95)</button>
+          <button class="option-btn active" data-key="tuna">Spicy Tuna Roll ($7.95)</button>
+          <button class="option-btn" data-key="rainbow">Rainbow Specialty Roll ($12.95)</button>
+          <button class="option-btn" data-key="dragon">Eel Dragon Roll ($11.95)</button>
+          <button class="option-btn" data-key="fire">Ballantyne Fire Roll ($13.95)</button>
         </div>
 
       </div>
@@ -143,7 +152,7 @@
       </div>
 
       <div class="premium-card">
-        <h4 class="menu-category-title">Sushi & Specialties</h4>
+        <h4 class="menu-category-title">Sushi &amp; Specialties</h4>
 
         <div class="menu-item">
           <div class="menu-item-header">
@@ -179,7 +188,6 @@
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
@@ -195,11 +203,11 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 919-0111<br>Thai Cuisine & Sushi | Dine-In & Takeout</p>
+        <p>Phone: (704) 919-0111<br>Thai Cuisine &amp; Sushi | Dine-In &amp; Takeout</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
+      <p>&copy; 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
     </div>
   </footer>
 
@@ -227,25 +235,38 @@
       }
     };
 
-    function showPairing(key, buttonElement) {
-      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      buttonElement.classList.add('active');
-
-      const board = document.getElementById('pairing-board-box');
-      board.style.opacity = '0';
-      board.style.transform = 'translateY(10px)';
-
-      setTimeout(() => {
-        const data = pairings[key];
-        document.getElementById('pair-roll-name').innerText = data.roll;
-        document.getElementById('pair-curry-name').innerText = data.curry;
-        document.getElementById('pair-desc').innerText = data.desc;
-        
-        board.style.opacity = '1';
-        board.style.transform = 'translateY(0)';
-      }, 300);
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
+
+    const pairingBtns = document.querySelectorAll('.option-btn');
+    pairingBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        pairingBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const key = btn.dataset.key;
+        const board = document.getElementById('pairing-board-box');
+        board.style.opacity = '0';
+        board.style.transform = 'translateY(10px)';
+
+        setTimeout(() => {
+          const data = pairings[key];
+          document.getElementById('pair-roll-name').innerText = data.roll;
+          document.getElementById('pair-curry-name').innerText = data.curry;
+          document.getElementById('pair-desc').innerText = data.desc;
+          
+          board.style.opacity = '1';
+          board.style.transform = 'translateY(0)';
+        }, 300);
+      });
+    });
   </script>
 </body>
 </html>

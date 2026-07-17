@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bahn-thai/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahn Thai Restaurant - Charlotte, NC | About Us</title>
+  <title>About — Bahn Thai Restaurant</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bahn Thai
           <span>Ballantyne Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="sushi.html">Sushi & Bar</a>
+        <a href="sushi.html">Sushi &amp; Bar</a>
         <a href="about.html" class="active">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Sourcing & Heritage</h2>
+    <h2 class="page-title">Sourcing &amp; Heritage</h2>
     <p class="page-subtitle">Our journey of bringing authentic sweet, sour, salty, and spicy flavors to Charlotte's Ballantyne community.</p>
   </header>
 
   <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
       <!-- Roots Card -->
@@ -58,7 +65,7 @@
 
       <!-- Sourcing Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Lemongrass, Galangal & Lime Leaves</h3>
+        <h3 class="menu-category-title">Lemongrass, Galangal &amp; Lime Leaves</h3>
         <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
           To capture the true depth of Thai curries, we import fresh herbs and spices weekly. Fresh kaffir lime leaves, aromatic galangal root, lemongrass stalks, and sweet Thai basil are hand-crushed in our kitchen to create our signature green and red curry bases.
         </p>
@@ -69,14 +76,13 @@
 
       <!-- Sushi Integration Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">The Art of Thai & Japanese Sushi</h3>
+        <h3 class="menu-category-title">The Art of Thai &amp; Japanese Sushi</h3>
         <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
           In addition to our traditional wok entrees, Bahn Thai houses a full-service sushi bar. Our experienced sushi chefs select premium fish daily to prepare classic sashimi, nigiri, and creative specialty rolls like the Ballantyne Fire Roll. We strive to provide a dining experience where classic Thai wok heat meets fresh Japanese precision.
         </p>
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
@@ -92,13 +98,24 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 919-0111<br>Thai Cuisine & Sushi | Dine-In & Takeout</p>
+        <p>Phone: (704) 919-0111<br>Thai Cuisine &amp; Sushi | Dine-In &amp; Takeout</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
+      <p>&copy; 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
     </div>
   </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>

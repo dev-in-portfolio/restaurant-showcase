@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bahn-thai/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bahn Thai Restaurant - Charlotte, NC | Home</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Absolute Positioning for Curry Platter Food Items */
-    #food-green { top: 30px; left: 40px; }
-    #food-red { top: 30px; left: 45px; }
-    #food-panang { top: 30px; left: 35px; }
-    #food-massaman { top: 30px; left: 50px; }
-    
-    #food-tofu { top: 100px; left: 75px; }
-    #food-chicken { top: 100px; left: 70px; }
-    #food-beef { top: 105px; left: 75px; }
-    #food-shrimp { top: 95px; left: 80px; }
-    #food-duck { top: 100px; left: 65px; }
-    
-    #food-mild { bottom: 40px; left: 40px; }
-    #food-medium { bottom: 40px; left: 35px; }
-    #food-spicy { bottom: 40px; left: 45px; }
-    #food-thaihot { bottom: 40px; left: 30px; }
-  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bahn Thai
           <span>Ballantyne Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="menu.html">Menu</a>
         <a href="sushi.html">Sushi & Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero-section">
+  <header class="hero-section" aria-label="Welcome banner">
     <div class="container hero-content">
       <div class="hero-frame">
-        <span class="hero-badge">Premium Thai & Fresh Sushi</span>
+        <span class="hero-badge">Premium Thai &amp; Fresh Sushi</span>
         <h2 class="hero-title">Bahn Thai</h2>
         <p class="hero-desc">"Savor the exquisite balance of fresh lemongrass, hand-ground galangal, sweet coconut curries, and signature sushi rolls in Ballantyne."</p>
       </div>
@@ -71,8 +61,7 @@
   </div>
 
   <!-- Main Content -->
-  <main class="container">
-    
+  <main id="main" class="container" style="margin-top: 5rem;">
     <!-- Welcome Block -->
     <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
       <h2 class="section-title">Authentic Culinary Heritage</h2>
@@ -86,74 +75,126 @@
 
     <!-- Interactive Curry & Spice Selector -->
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Curry & Spice Selector</h2>
+      <h2 class="section-title" style="margin-bottom: 1rem;">Curry &amp; Spice Selector</h2>
       <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Custom-craft your perfect curry bowl. Choose your curry style, select your protein, and set your spice level.</p>
       
       <div class="mixer-container">
         
-        <!-- Left Side: Interactive Platter -->
+        <!-- Left Side: Celadon Stone Curry Bowl SVG -->
         <div class="plate-canvas">
-          <div class="plate-wireframe">
-            <div class="plate-gold-rim"></div>
-            <!-- Food Graphics (text + emoji representations for fast rendering) -->
-            <div class="plate-food-item" id="food-green">🍲 Green Curry</div>
-            <div class="plate-food-item" id="food-red">🍲 Red Curry</div>
-            <div class="plate-food-item" id="food-panang">🍲 Panang Curry</div>
-            <div class="plate-food-item" id="food-massaman">🍲 Massaman Curry</div>
-            
-            <div class="plate-food-item" id="food-tofu">🥦 Tofu & Veggies</div>
-            <div class="plate-food-item" id="food-chicken">🍗 Sliced Chicken</div>
-            <div class="plate-food-item" id="food-beef">🥩 Sirloin Beef</div>
-            <div class="plate-food-item" id="food-shrimp">🦐 Tiger Shrimp</div>
-            <div class="plate-food-item" id="food-duck">🍖 Roast Duck</div>
-            
-            <div class="plate-food-item" id="food-mild">🌶️ Mild Spice</div>
-            <div class="plate-food-item" id="food-medium">🌶️🌶️ Medium Spice</div>
-            <div class="plate-food-item" id="food-spicy">🌶️🌶️🌶️ Spicy Hot</div>
-            <div class="plate-food-item" id="food-thaihot">🌶️🌶️🌶️🌶️ Thai Hot</div>
+          <div class="celadon-bowl-wrapper">
+            <svg class="celadon-bowl-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Steam waves -->
+              <path class="curry-steam" d="M 80,60 C 75,45 85,35 80,20" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+              <path class="curry-steam" d="M 120,60 C 115,45 125,35 120,20" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+
+              <!-- Outer Celadon Stoneware Rim -->
+              <circle cx="100" cy="110" r="82" fill="var(--color-bg)" stroke="#1a3528" stroke-width="6" />
+              <circle cx="100" cy="110" r="77" fill="none" stroke="#528f73" stroke-width="3" />
+
+              <!-- Broth Area Clip -->
+              <g clip-path="url(#broth-clip)">
+                <!-- Broth Color Base -->
+                <circle id="curry-broth-color" class="curry-broth" cx="100" cy="110" r="74" fill="#4d825c" />
+                
+                <!-- Coconut swirl design -->
+                <path d="M 50,110 C 70,80 130,80 150,110 C 130,140 70,140 50,110" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="4" stroke-linecap="round" />
+
+                <!-- Floating Tofu (🥦 emoji representation path) -->
+                <g id="ing-tofu" class="curry-ingredient">
+                  <rect x="70" y="90" width="16" height="16" rx="2" fill="#fffef2" opacity="0.9" stroke="#e6e4cf" stroke-width="1" />
+                  <rect x="110" y="130" width="14" height="14" rx="2" fill="#fffef2" opacity="0.9" stroke="#e6e4cf" stroke-width="1" />
+                </g>
+
+                <!-- Sliced Chicken -->
+                <g id="ing-chicken" class="curry-ingredient">
+                  <path d="M 70,95 Q 85,85 95,100" fill="none" stroke="#ffebc2" stroke-width="6" stroke-linecap="round" />
+                  <path d="M 110,125 Q 120,115 130,130" fill="none" stroke="#ffebc2" stroke-width="5" stroke-linecap="round" />
+                </g>
+
+                <!-- Sirloin Beef -->
+                <g id="ing-beef" class="curry-ingredient">
+                  <rect x="65" y="105" width="22" height="10" rx="3" fill="#6d4c41" stroke="#3e2723" stroke-width="1" />
+                  <rect x="115" y="95" width="20" height="9" rx="3" fill="#6d4c41" stroke="#3e2723" stroke-width="1" />
+                </g>
+
+                <!-- Tiger Shrimp -->
+                <g id="ing-shrimp" class="curry-ingredient">
+                  <path d="M 80,95 C 65,95 60,115 75,115 C 80,115 85,110 85,105" fill="none" stroke="#ffa726" stroke-width="7" stroke-linecap="round" />
+                  <path d="M 120,115 C 105,115 100,135 115,135 C 120,135 125,130 125,125" fill="none" stroke="#ffa726" stroke-width="7" stroke-linecap="round" />
+                </g>
+
+                <!-- Roast Duck -->
+                <g id="ing-duck" class="curry-ingredient">
+                  <rect x="75" y="85" width="18" height="12" rx="2" fill="#4e342e" stroke="#27120c" stroke-width="1" />
+                  <rect x="105" y="125" width="18" height="12" rx="2" fill="#4e342e" stroke="#27120c" stroke-width="1" />
+                </g>
+
+                <!-- Spice Garnishes -->
+                <!-- Basil Leaf -->
+                <path id="garnish-basil-1" class="curry-garnish" d="M 90,85 C 85,75 105,75 100,85 Z" fill="#2e7d32" />
+                <path id="garnish-basil-2" class="curry-garnish" d="M 125,115 C 120,105 140,105 135,115 Z" fill="#2e7d32" />
+
+                <!-- Red Chili Slices -->
+                <g id="garnish-chili" style="opacity: 0; transition: opacity 0.4s ease;">
+                  <circle cx="85" cy="130" r="5" fill="#c62828" />
+                  <circle cx="85" cy="130" r="2.5" fill="#ffd54f" />
+                  <circle cx="120" cy="85" r="5" fill="#c62828" />
+                  <circle cx="120" cy="85" r="2.5" fill="#ffd54f" />
+                </g>
+              </g>
+
+              <!-- Inner Bowl Travertine Shadow -->
+              <circle cx="100" cy="110" r="74" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="4" />
+
+              <defs>
+                <clipPath id="broth-clip">
+                  <circle cx="100" cy="110" r="74" />
+                </clipPath>
+              </defs>
+            </svg>
           </div>
         </div>
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
           <div class="control-group">
-            <label>1. Select Curry Base</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Select Curry Base</span>
             <div class="option-grid" id="curry-options">
-              <button class="option-btn active" onclick="setCurry('green', 'Green Curry')">Green Curry</button>
-              <button class="option-btn" onclick="setCurry('red', 'Red Curry')">Red Curry</button>
-              <button class="option-btn" onclick="setCurry('panang', 'Panang Curry')">Panang Curry</button>
-              <button class="option-btn" onclick="setCurry('massaman', 'Massaman Curry')">Massaman Curry</button>
+              <button class="option-btn active" data-key="green" data-name="Green Curry">Green Curry</button>
+              <button class="option-btn" data-key="red" data-name="Red Curry">Red Curry</button>
+              <button class="option-btn" data-key="panang" data-name="Panang Curry">Panang Curry</button>
+              <button class="option-btn" data-key="massaman" data-name="Massaman Curry">Massaman Curry</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Select Protein</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Select Protein</span>
             <div class="option-grid" id="protein-options">
-              <button class="option-btn active" onclick="setProtein('tofu', 0.00, 'Tofu & Veggies')">Tofu & Veg (+$0)</button>
-              <button class="option-btn" onclick="setProtein('chicken', 2.00, 'Chicken')">Chicken (+$2)</button>
-              <button class="option-btn" onclick="setProtein('beef', 3.00, 'Beef')">Beef (+$3)</button>
-              <button class="option-btn" onclick="setProtein('shrimp', 4.00, 'Tiger Shrimp')">Shrimp (+$4)</button>
-              <button class="option-btn" onclick="setProtein('duck', 6.00, 'Roast Duck')">Roast Duck (+$6)</button>
+              <button class="option-btn active" data-key="tofu" data-price="0.00" data-name="Tofu &amp; Veggies">Tofu &amp; Veg (+$0)</button>
+              <button class="option-btn" data-key="chicken" data-price="2.00" data-name="Chicken">Chicken (+$2)</button>
+              <button class="option-btn" data-key="beef" data-price="3.00" data-name="Beef">Beef (+$3)</button>
+              <button class="option-btn" data-key="shrimp" data-price="4.00" data-name="Tiger Shrimp">Shrimp (+$4)</button>
+              <button class="option-btn" data-key="duck" data-price="6.00" data-name="Roast Duck">Roast Duck (+$6)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Set Spice Level</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Set Spice Level</span>
             <div class="option-grid" id="spice-options">
-              <button class="option-btn active" onclick="setSpice('mild', 'Mild')">Mild 🌶️</button>
-              <button class="option-btn" onclick="setSpice('medium', 'Medium')">Medium 🌶️🌶️</button>
-              <button class="option-btn" onclick="setSpice('spicy', 'Spicy')">Spicy 🌶️🌶️🌶️</button>
-              <button class="option-btn" onclick="setSpice('thaihot', 'Thai Hot')">Thai Hot 🌶️🌶️🌶️🌶️</button>
+              <button class="option-btn active" data-key="mild" data-name="Mild">Mild 🌶️</button>
+              <button class="option-btn" data-key="medium" data-name="Medium">Medium 🌶️🌶️</button>
+              <button class="option-btn" data-key="spicy" data-name="Spicy">Spicy 🌶️🌶️🌶️</button>
+              <button class="option-btn" data-key="thaihot" data-name="Thai Hot">Thai Hot 🌶️🌶️🌶️🌶️</button>
             </div>
           </div>
-
         </div>
 
       </div>
 
       <div class="builder-display" style="margin-top: 3.5rem;">
         <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Thai Kitchen Recommendation</span>
-        <h4 class="builder-display-title" id="display-plate-name">Green Curry with Tofu & Veggies</h4>
+        <h4 class="builder-display-title" id="display-plate-name">Green Curry with Tofu &amp; Veggies</h4>
         <p id="display-plate-sides" style="color: var(--color-copper); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Spice Level: Mild</p>
         <div class="builder-display-price" id="display-plate-price">$14.00</div>
         <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-plate-desc">Authentic green curry broth simmered with bamboo shoots, basil, eggplant, bell peppers, and peas. Served hot with jasmine rice.</p>
@@ -162,7 +203,7 @@
 
     <!-- Quick Call to Action -->
     <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Sushi & Curry Pairing Guide</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Sushi &amp; Curry Pairing Guide</h2>
       <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
         Discover which micro-brews, sakes, or curries pair best with our signature sushi rolls. Click below to view the interactive guide.
       </p>
@@ -170,7 +211,6 @@
         View Pairing Guide
       </a>
     </section>
-
   </main>
 
   <!-- Info Footer -->
@@ -186,11 +226,11 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 919-0111<br>Thai Cuisine & Sushi | Dine-In & Takeout</p>
+        <p>Phone: (704) 919-0111<br>Thai Cuisine &amp; Sushi | Dine-In &amp; Takeout</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
+      <p>&copy; 2026 Bahn Thai Ballantyne. Authenticity served daily.</p>
     </div>
   </footer>
 
@@ -207,31 +247,54 @@
       massaman: "Slow-simmered Southern Thai curry flavored with cloves, cardamoms, potatoes, sweet onions, and roasted peanuts."
     };
 
-    function setCurry(key, name) {
-      const buttons = document.getElementById('curry-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    const brothColors = {
+      green: "#4d825c",
+      red: "#a8291a",
+      panang: "#b85e1c",
+      massaman: "#9c6730"
+    };
 
-      selectedCurry = { key, name };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setProtein(key, price, name) {
-      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    // Set selectors
+    function setupSelectors() {
+      const curryBtns = document.querySelectorAll('#curry-options .option-btn');
+      curryBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          curryBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedCurry = { key: btn.dataset.key, name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
 
-      selectedProtein = { key, price, name };
-      updateDisplay();
-    }
+      const proteinBtns = document.querySelectorAll('#protein-options .option-btn');
+      proteinBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          proteinBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedProtein = { key: btn.dataset.key, price: parseFloat(btn.dataset.price), name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
 
-    function setSpice(key, name) {
-      const buttons = document.getElementById('spice-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedSpice = { key, name };
-      updateDisplay();
+      const spiceBtns = document.querySelectorAll('#spice-options .option-btn');
+      spiceBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          spiceBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedSpice = { key: btn.dataset.key, name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
     }
 
     function updateDisplay() {
@@ -246,35 +309,37 @@
       // Pair description
       document.getElementById('display-plate-desc').innerText = `${descriptions[selectedCurry.key]} Cooked with fresh ${selectedProtein.name} and seasoned to ${selectedSpice.name} spice. Served with Jasmine rice.`;
 
-      // Animate graphics on virtual plate
-      const allFoodItems = document.querySelectorAll('.plate-food-item');
-      allFoodItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.5)';
+      // Animate broth color
+      const broth = document.getElementById('curry-broth-color');
+      if (broth) {
+        broth.setAttribute('fill', brothColors[selectedCurry.key]);
+      }
+
+      // Hide all ingredients
+      const ingredients = ['tofu', 'chicken', 'beef', 'shrimp', 'duck'];
+      ingredients.forEach(ing => {
+        const el = document.getElementById(`ing-${ing}`);
+        if (el) el.classList.remove('show');
       });
 
-      // Show selected items
-      const curryEl = document.getElementById(`food-${selectedCurry.key}`);
-      if (curryEl) {
-        curryEl.style.opacity = '1';
-        curryEl.style.transform = 'scale(1)';
-      }
+      // Show selected protein
+      const activeIng = document.getElementById(`ing-${selectedProtein.key}`);
+      if (activeIng) activeIng.classList.add('show');
 
-      const proteinEl = document.getElementById(`food-${selectedProtein.key}`);
-      if (proteinEl) {
-        proteinEl.style.opacity = '1';
-        proteinEl.style.transform = 'scale(1)';
-      }
-
-      const spiceEl = document.getElementById(`food-${selectedSpice.key}`);
-      if (spiceEl) {
-        spiceEl.style.opacity = '1';
-        spiceEl.style.transform = 'scale(1)';
+      // Adjust spice level visual garnish
+      const chiliGarnish = document.getElementById('garnish-chili');
+      if (chiliGarnish) {
+        if (selectedSpice.key === 'spicy' || selectedSpice.key === 'thaihot') {
+          chiliGarnish.style.opacity = '1';
+        } else {
+          chiliGarnish.style.opacity = '0';
+        }
       }
     }
 
     // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>
