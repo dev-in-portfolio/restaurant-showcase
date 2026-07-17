@@ -1,152 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/el-valle-mexican-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - El Valle Mexican Restaurant</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..800&display=swap" rel="stylesheet">
+  <title>Our Story | El Valle Mexican Restaurant</title>
+  <meta name="description" content="History of El Valle Mexican Restaurant in Charlotte &amp; Matthews, NC. Family-owned and operated since 1998.">
   <link rel="stylesheet" href="site.css">
+  <style>
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .story-layout {
+        grid-template-columns: 1fr;
+      }
+    }
 
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .stat-card {
+      background: var(--color-terracotta-dim);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      display: block;
+      font-family: var(--font-heading);
+    }
+    .stat-lbl {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+    }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <nav class="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">El Valle</a>
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="tacos.html">Taco Builder</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html" class="btn btn-sm">Visit</a></li>
-      </ul>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        El Valle <span>🇲🇽</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="tacos.html">Taco Builder</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html" class="active">About</a>
+        <a href="visit.html">Visit</a>
+      </div>
     </div>
   </nav>
-<main id="main">
 
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Our Heritage</span>
+        <h1>About El Valle</h1>
+        <p>A family dream rooted in the culinary traditions of a small Mexican village.</p>
+      </div>
+    </header>
 
-  <header class="page-header">
-    <div class="container">
-      <span class="section-tag">Our Story</span>
-      <h1>About El Valle</h1>
-      <p>A family dream rooted in the traditions of a small Mexican village.</p>
-    </div>
-  </header>
+    <section class="wrap">
+      <div class="story-layout">
+        
+        <!-- Story Text -->
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-terracotta); margin-bottom: 1.5rem;">Our Name, Our Roots</h2>
+          <p style="font-size: 1.1rem; font-weight: 500; line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+            El Valle &mdash; meaning "The Valley" &mdash; is named after the village in Jalisco, Mexico, where our founder's family roots run deep.
+          </p>
 
-  <section class="section">
-    <div class="container">
-      <div class="about-content">
-        <div class="about-story">
-          <h2>Our Name, Our Roots</h2>
-          <p>El Valle — meaning "The Valley" — is named after the village in Jalisco, Mexico, where our founder's family roots run deep. It's a tribute to the land, the people, and the culinary traditions that shaped who we are.</p>
+          <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+            What started as a single small diner location in Matthews, NC was born from a simple idea: share authentic, homestyle Mexican food with a community far from home. Our founder brought recipes passed down for generations and opened the doors of El Valle for the first time in 1998.
+          </p>
 
-          <h2>Founded in 1998</h2>
-          <p>What started as a small restaurant in Matthews, North Carolina, was born from a simple idea: share authentic, homestyle Mexican food with a community far from home. Our founder brought family recipes across the border — dishes passed down for generations — and opened the doors of El Valle for the very first time.</p>
-          <p>The Charlotte area welcomed us with open arms, and word quickly spread about our food. People came for the cheese dip and stayed for the warmth of a family that treated every guest like one of their own.</p>
-
-          <h2>Growing With Our Community</h2>
-          <p>From that original Matthews location, El Valle has grown to three restaurants across the Charlotte area, plus our taco truck that brings the flavors of El Valle directly to your neighborhood. But no matter how much we've grown, the heart of our restaurant has never changed.</p>
-          <p>Every dish is still prepared with the same love and care as it was in 1998. Our ingredients are fresh. Our recipes are authentic. And our commitment to treating every guest like family is as strong as ever.</p>
-
-          <h2>More Than a Restaurant</h2>
-          <p>El Valle is a gathering place. It's where families celebrate birthdays over sizzling fajitas, where friends share chips and queso on Friday nights, and where our team comes together every day to serve the community we love. We are proud to be part of the Charlotte area, and we look forward to serving you for many more years to come.</p>
+          <p style="color: var(--color-text-muted); line-height: 1.8;">
+            From that original site, we have grown to serve Matthews and South Charlotte with warm hospitality, fresh-pressed tortillas, and local micro-brews.
+          </p>
         </div>
 
-        <div class="about-stats">
-          <div class="about-stat-card">
-            <span class="about-stat-number">1998</span>
-            <span class="about-stat-label">Founded in<br>Matthews, NC</span>
-          </div>
-          <div class="about-stat-card">
-            <span class="about-stat-number">3</span>
-            <span class="about-stat-label">Restaurant<br>Locations</span>
-          </div>
-          <div class="about-stat-card">
-            <span class="about-stat-number">25+</span>
-            <span class="about-stat-label">Years of<br>Service</span>
-          </div>
-          <div class="about-stat-card">
-            <span class="about-stat-number">1</span>
-            <span class="about-stat-label">Taco Truck<br>& Counting</span>
+        <!-- Sidebar stats -->
+        <div style="width: 100%;">
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">Diner Highlights</h3>
+            
+            <div class="stat-row">
+              <div class="stat-card">
+                <span class="stat-val">1998</span>
+                <span class="stat-lbl">Established</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-val">2</span>
+                <span class="stat-lbl">Locations</span>
+              </div>
+            </div>
           </div>
         </div>
+
+      </div>
+
+      <!-- Values Grid -->
+      <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 5rem; margin-bottom: 1.5rem; text-align: center;">What We Believe</h2>
+      <div class="menu-preview" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        
+        <div class="premium-card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-terracotta); margin-bottom: 0.5rem;">Authenticity</h4>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">Real ingredients, family-crafted seasoning blends, and traditional slow-braised birria.</p>
+        </div>
+
+        <div class="premium-card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-terracotta); margin-bottom: 0.5rem;">Neighborhood Focus</h4>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">We invest in Matthews and Charlotte groups, local schools, and community events.</p>
+        </div>
+
+        <div class="premium-card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-terracotta); margin-bottom: 0.5rem;">Kitchen Quality</h4>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;">Cracking open fresh avocados daily and griddling every tortilla to a perfect blister.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>El Valle</h3>
+        <p>Serving South Charlotte &amp; Matthews, NC. Famous for quesabirria tacos, street platters, and fresh guacamole.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Matthews: 13735 E John St<br>
+          Charlotte: 305 South Blvd<br>
+          NC, USA
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="tacos.html">Taco Builder</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <span class="section-tag">Values</span>
-      <h2 class="section-title">What We Stand For</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6 2 11c0 3 1.5 5.5 4 7v4l3-2c1 .3 2 .5 3 .5 5.52 0 10-4 10-9S17.52 2 12 2z"/></svg>
-          </div>
-          <h3>Authenticity</h3>
-          <p>Real recipes, real ingredients, real flavors — nothing artificial, always honest.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3>Community</h3>
-          <p>We invest in the neighborhoods we serve, supporting local schools, events, and families.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M16 8l-4 4-4-4"/><path d="M16 16l-4-4-4 4"/></svg>
-          </div>
-          <h3>Excellence</h3>
-          <p>From the kitchen to the dining room, we hold ourselves to the highest standard in everything we do.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-</main>
-<footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <span class="footer-logo">El Valle</span>
-          <p>Authentic Mexican cuisine serving the Charlotte community since 1998.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="visit.html">Visit</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Locations</h5>
-          <ul>
-            <li>Matthews: 704-845-1417</li>
-            <li>Charlotte: 704-398-9696</li>
-            <li>Mt Holly: 704-820-0798</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 El Valle Mexican Restaurant. All rights reserved.</p>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 El Valle Mexican Restaurant. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

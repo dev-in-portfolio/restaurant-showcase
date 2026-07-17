@@ -1,156 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taco Builder · El Valle Mexican Restaurant</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-/* Local style adjustments to match El Valle's branding */
-.taco-mat {
-  background: radial-gradient(circle, #5c2c10 0%, #1a0b04 100%);
-  border: 1.5px solid var(--primary);
-  border-radius: var(--radius-lg);
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-lg);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-  color: #fff;
-}
-.taco-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .taco-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px;
-  border-radius: var(--radius);
-  width: 100%;
-  font-family: inherit;
-}
-select:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-.control-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--primary);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/el-valle-mexican-restaurant/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taco Builder | El Valle Mexican Restaurant</title>
+  <meta name="description" content="Design your custom street tacos, quesabirria plate, or burrito bowl in real-time. Choose fillings and legendary sides.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive taco visualizer */
+    .taco-mat {
+      background: radial-gradient(circle, var(--color-bg) 0%, #f6e8cc 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: var(--color-text-light);
+    }
+    
+    .taco-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
 
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo">El Valle</a>
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="tacos.html" class="active">Taco Builder</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html" class="btn btn-sm">Visit</a></li>
-      </ul>
-    </div>
-  </nav>
-<main id="main">
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-
-  <header class="hero" style="padding: 4rem 2rem; min-height: 30vh;">
-    <div class="hero-bg"></div>
-    <div class="hero-content container">
-      <h1>Street Taco &amp; Quesabirria Builder</h1>
-      <p class="hero-sub">Design your custom street taco platter or quesabirria plate using our authentic Mexican recipes</p>
-    </div>
-  </header>
-
-  <section class="section" style="padding: 4rem 0;">
-    <div class="container">
-      <h2 style="font-family: 'Fraunces', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Taco Customizer</h2>
-      
-      <div class="taco-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow);">
-        
-        <!-- Left: Platter Visualizer -->
-        <div class="taco-mat">
-          <span style="font-size: 0.78rem; font-weight: 600; color: #f4b251; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="taco-tag-display">SIGNATURE QUESABIRRIA</span>
-          <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Fraunces', serif; margin: 0 0 0.8rem 0;" id="taco-title-display">Quesabirria Plate</h3>
-          <p style="font-size: 1.5rem; font-weight: 700; color: #f4b251; margin: 0 0 1.2rem 0;" id="taco-price-display">$16.00</p>
-          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="taco-desc-display">Three folded corn tortillas stuffed with slow-cooked braised beef birria and melted Monterey Jack cheese, served with a cup of hot birria consommé.</p>
-        </div>
-
-        <!-- Right: Controls -->
-        <div>
-          <div style="margin-bottom: 1.5rem;">
-            <label class="control-label">1. Choose Taco Base</label>
-            <select id="taco-base" onchange="updateTaco()">
-              <option value="quesabirria" selected>Quesabirria Tacos with Consommé ($16.00)</option>
-              <option value="street">Three Street Tacos Platter ($13.00)</option>
-              <option value="bowl">Jumbo Burrito Bowl ($12.00)</option>
-            </select>
-          </div>
-
-          <div style="margin-bottom: 1.5rem;">
-            <label class="control-label">2. Select Protein Filling</label>
-            <select id="taco-protein" onchange="updateTaco()">
-              <option value="birria" selected>Slow-Cooked Braised Beef Birria</option>
-              <option value="asada">Grilled Marinated Steak (Asada)</option>
-              <option value="pastor">Chili-Rubbed Pork with Pineapple (Pastor)</option>
-              <option value="pollo">Flame-Grilled Chicken Breast</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="control-label">3. Add Legend Sides</label>
-            <select id="taco-side" onchange="updateTaco()">
-              <option value="none" selected>No Extras (+$0.00)</option>
-              <option value="queso">Legendary Cheese Dip (+$4.00)</option>
-              <option value="guac">Fresh-Muddled Guacamole (+$3.50)</option>
-            </select>
-          </div>
-        </div>
-
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="nav-logo">
+        El Valle <span>🇲🇽</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="tacos.html" class="active">Taco Builder</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
       </div>
     </div>
-  </section>
+  </nav>
 
-  
-</main>
-<footer class="footer">
-    <div class="container">
-      <p>El Valle Mexican Restaurant · Charlotte, NC</p>
-      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Taco Customizer</span>
+        <h1>Street Taco &amp; Quesabirria Builder</h1>
+        <p>Design your custom street taco platter or quesabirria plate using our authentic Mexican recipes.</p>
+      </div>
+    </header>
+
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-terracotta); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Taco Customizer</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your taco base, protein filling, and legendary extra sides to arrange your plate.</p>
+
+        <div class="menu-preview" style="align-items: start; gap: 3rem;">
+          
+          <!-- Left Side: Platter SVG -->
+          <div>
+            <div class="taco-canvas">
+              <svg viewBox="0 0 200 160" width="100%" max-width="320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Terracotta Talavera Plate Base -->
+                <circle cx="85" cy="80" r="56" fill="#ffffff" stroke="#c2410c" stroke-width="4.5" />
+                <circle cx="85" cy="80" r="50" fill="none" stroke="#eab308" stroke-width="1.2" stroke-dasharray="5,3" />
+
+                <!-- Base Categories -->
+                <!-- Quesabirria (3 griddled folded corn taco shapes + small cup of consomme) -->
+                <g id="svg-base-quesabirria">
+                  <!-- Taco 1 -->
+                  <path d="M 45,70 Q 35,45 65,48 T 85,75 Z" fill="#ea580c" stroke="#b45309" stroke-width="0.5" />
+                  <path d="M 46,65 Q 40,58 52,58" fill="none" stroke="#fef08a" stroke-width="2" /> <!-- Cheese string -->
+                  <!-- Taco 2 -->
+                  <path d="M 60,82 Q 50,57 80,60 T 100,87 Z" fill="#ea580c" stroke="#b45309" stroke-width="0.5" />
+                  <!-- Taco 3 -->
+                  <path d="M 75,94 Q 65,69 95,72 T 115,99 Z" fill="#ea580c" stroke="#b45309" stroke-width="0.5" />
+
+                  <!-- Consomme small clay bowl -->
+                  <circle cx="112" cy="55" r="14" fill="#854d0e" stroke="#451a03" stroke-width="1" />
+                  <circle cx="112" cy="55" r="10" fill="#7c2d12" /> <!-- Liquid -->
+                </g>
+
+                <!-- Street Tacos (3 soft flat round corn shells with fillings) -->
+                <g id="svg-base-street" class="hidden">
+                  <!-- Shell 1 -->
+                  <circle cx="55" cy="72" r="18" fill="#eab308" stroke="#ca8a04" stroke-width="0.5" />
+                  <!-- Cilantro / onion specks -->
+                  <circle cx="52" cy="70" r="1.5" fill="#15803d" />
+                  <circle cx="58" cy="74" r="1.5" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5" />
+                  <circle cx="48" cy="75" r="1.5" fill="#15803d" />
+
+                  <!-- Shell 2 -->
+                  <circle cx="85" cy="85" r="18" fill="#eab308" stroke="#ca8a04" stroke-width="0.5" />
+                  <circle cx="82" cy="83" r="1.5" fill="#15803d" />
+                  <circle cx="88" cy="87" r="1.5" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5" />
+
+                  <!-- Shell 3 -->
+                  <circle cx="108" cy="70" r="18" fill="#eab308" stroke="#ca8a04" stroke-width="0.5" />
+                  <circle cx="104" cy="68" r="1.5" fill="#15803d" />
+                  <circle cx="112" cy="72" r="1.5" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5" />
+                </g>
+
+                <!-- Burrito Bowl (large white ceramic bowl filled) -->
+                <g id="svg-base-bowl" class="hidden">
+                  <circle cx="85" cy="80" r="42" fill="#ffffff" stroke="#e5e5e5" stroke-width="1" />
+                  <!-- Black Beans -->
+                  <ellipse cx="68" cy="80" rx="12" ry="18" fill="#1c1917" />
+                  <!-- Corn Maize -->
+                  <ellipse cx="85" cy="72" rx="14" ry="10" fill="#facc15" />
+                  <!-- Cilantro rice -->
+                  <ellipse cx="98" cy="85" rx="12" ry="18" fill="#f5efe6" />
+                  <circle cx="95" cy="80" r="0.8" fill="#15803d" />
+                  <!-- Lettuce stripe -->
+                  <path d="M 68,92 Q 85,98 102,90" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round" />
+                  <!-- Pico de gallo (tomato dots) -->
+                  <circle cx="80" cy="82" r="2.2" fill="#ef4444" />
+                  <circle cx="88" cy="80" r="2.2" fill="#ef4444" />
+                </g>
+
+                <!-- Side Extras -->
+                <!-- Cheese Dip (Yellow queso bowl + chips) -->
+                <g id="svg-side-queso" class="hidden">
+                  <circle cx="160" cy="110" r="15" fill="#a16207" stroke="#713f12" stroke-width="0.8" />
+                  <circle cx="160" cy="110" r="11" fill="#fef08a" /> <!-- Cream cheese -->
+                  <!-- Tortilla chips -->
+                  <polygon points="135,110 148,102 144,118" fill="#facc15" stroke="#ca8a04" stroke-width="0.5" />
+                  <polygon points="144,122 158,128 152,114" fill="#facc15" stroke="#ca8a04" stroke-width="0.5" />
+                </g>
+
+                <!-- Guacamole (Green avocado bowl + cilantro) -->
+                <g id="svg-side-guac" class="hidden">
+                  <circle cx="160" cy="110" r="15" fill="#a16207" stroke="#713f12" stroke-width="0.8" />
+                  <circle cx="160" cy="110" r="11" fill="#4d7c0f" /> <!-- Guacamole -->
+                  <circle cx="158" cy="107" r="1.5" fill="#ef4444" /> <!-- Tomato -->
+                  <circle cx="164" cy="112" r="1.5" fill="#ef4444" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="taco-mat">
+              <span id="taco-tag-display" style="font-size: 0.78rem; font-weight: 700; color: var(--color-terracotta); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;">SIGNATURE QUESABIRRIA</span>
+              <h4 id="taco-title-display" style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);">Quesabirria Plate</h4>
+              <p id="taco-price-display" style="font-size: 1.25rem; font-weight: 800; color: var(--color-terracotta); margin-bottom: 1.2rem;">$16.00</p>
+              <p id="taco-desc-display" style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;">Three folded corn tortillas stuffed with slow-cooked braised beef birria and melted Monterey Jack cheese, served with a cup of hot birria consommé.</p>
+            </div>
+          </div>
+
+          <!-- Right Side: Controls Selects -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div>
+              <label for="taco-base">1. Choose Taco Base</label>
+              <select id="taco-base">
+                <option value="quesabirria" selected>Quesabirria Tacos with Consommé ($16.00)</option>
+                <option value="street">Three Street Tacos Platter ($13.00)</option>
+                <option value="bowl">Jumbo Burrito Bowl ($12.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="taco-protein">2. Select Protein Filling</label>
+              <select id="taco-protein">
+                <option value="birria" selected>Slow-Cooked Braised Beef Birria</option>
+                <option value="asada">Grilled Marinated Steak (Asada)</option>
+                <option value="pastor">Chili-Rubbed Pork with Pineapple (Pastor)</option>
+                <option value="pollo">Flame-Grilled Chicken Breast</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="taco-side">3. Add Legend Sides</label>
+              <select id="taco-side">
+                <option value="none" selected>No Extras (+$0.00)</option>
+                <option value="queso">Legendary Cheese Dip (+$4.00)</option>
+                <option value="guac">Fresh-Muddled Guacamole (+$3.50)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>El Valle</h3>
+        <p>Serving South Charlotte &amp; Matthews, NC. Famous for quesabirria tacos, street platters, and fresh guacamole.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Matthews: 13735 E John St<br>
+          Charlotte: 305 South Blvd<br>
+          NC, USA
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="tacos.html">Taco Builder</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 El Valle Mexican Restaurant. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
   <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
     const baseData = {
       quesabirria: { tag: "SIGNATURE QUESABIRRIA", name: "Quesabirria Plate", basePrice: 16.00, label: "three folded griddled corn tortillas melted with Monterey Jack cheese" },
       street: { tag: "AUTHENTIC STREET TACOS", name: "Street Taco Platter", basePrice: 13.00, label: "three soft corn tortillas topped with fresh onions, cilantro, and radishes" },
@@ -183,23 +272,35 @@ html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-
 
       document.getElementById('taco-tag-display').innerText = base.tag;
       
-      let titleName = baseKey === "bowl" ? `Birria Burrito Bowl` : `${protein.name} ${base.name}`;
-      if (baseKey === "bowl") {
-        titleName = `${protein.name} Burrito Bowl`;
-      }
+      let titleName = baseKey === "bowl" ? `${protein.name} Burrito Bowl` : `${protein.name} ${base.name}`;
       document.getElementById('taco-title-display').innerText = titleName;
       document.getElementById('taco-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
-      let desc = `A platter of ${base.label}, ${protein.label}. ${protein.sauce}${side.label}.`;
-      
+      let desc = `A platter of ${base.label}, ${protein.label}. ${protein.style || protein.sauce}${side.label}.`;
       document.getElementById('taco-desc-display').innerText = desc;
+
+      // Update SVG bases
+      document.getElementById('svg-base-quesabirria').classList.add('hidden');
+      document.getElementById('svg-base-street').classList.add('hidden');
+      document.getElementById('svg-base-bowl').classList.add('hidden');
+      document.getElementById(`svg-base-${baseKey}`).classList.remove('hidden');
+
+      // Update SVG sides
+      document.getElementById('svg-side-queso').classList.add('hidden');
+      document.getElementById('svg-side-guac').classList.add('hidden');
+      if (sideKey !== 'none') {
+        document.getElementById(`svg-side-${sideKey}`).classList.remove('hidden');
+      }
     }
+
+    document.getElementById('taco-base').addEventListener('change', updateTaco);
+    document.getElementById('taco-protein').addEventListener('change', updateTaco);
+    document.getElementById('taco-side').addEventListener('change', updateTaco);
 
     // Initial trigger
     window.addEventListener('load', () => {
       updateTaco();
     });
   </script>
-  <script src="../site-core.js"></script>
 </body>
 </html>
