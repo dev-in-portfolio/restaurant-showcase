@@ -1,292 +1,531 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Cafe South full breakfast and lunch menu — omelettes, griddle specials, seafood, sandwiches, burgers, and more.">
-<title>Menu | Cafe South</title>
-<link rel="stylesheet" href="site.css">
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/cafe-south/">');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Cafe South full breakfast and lunch menu — omelettes, griddle specials, seafood, sandwiches, burgers, and more.">
+  <title>Menu | Cafe South</title>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="notice">Unofficial five-page redesign demo &bull; prices subject to change &bull; not affiliated with Cafe South</div>
-<nav>
-  <a class="brand" href="index.html"><span>&#9749;</span> Cafe South</a>
-  <button class="toggle-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">Menu</button>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="menu.html" aria-current="page">Menu</a>
-    <a href="specials.html">Daily Specials</a>
-    <a href="about.html">Our Story</a>
-    <a href="catering.html">Catering</a>
-    <a href="visit.html">Visit Us</a>
-  </div>
-</nav>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<main id="main">
-  <div class="head">
-    <div class="tag">Breakfast &amp; Lunch &bull; Seven Days a Week</div>
-    <h1>The Menu</h1>
-  </div>
-
-  <section>
-    <input type="text" class="menu-search" id="menu-search" placeholder="Search the menu..." aria-label="Search menu items">
-
-    <div class="menu-controls" id="menu-filters" role="group" aria-label="Filter menu by category">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="breakfast">Breakfast</button>
-      <button class="filter-btn" data-filter="omelettes">Omelettes</button>
-      <button class="filter-btn" data-filter="griddle">Griddle</button>
-      <button class="filter-btn" data-filter="lunch-plates">Lunch Plates</button>
-      <button class="filter-btn" data-filter="seafood">Seafood</button>
-      <button class="filter-btn" data-filter="sandwiches">Sandwiches</button>
-      <button class="filter-btn" data-filter="burgers">Burgers</button>
-      <button class="filter-btn" data-filter="gyros">Gyros</button>
-      <button class="filter-btn" data-filter="wraps">Wraps &amp; Subs</button>
-      <button class="filter-btn" data-filter="sides">Sides</button>
-      <button class="filter-btn" data-filter="drinks">Drinks</button>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span>☕</span>
+        <div class="logo-text">
+          CAFE SOUTH
+          <span class="logo-sub">Breakfast &amp; Lunch Est. 2012</span>
+        </div>
+      </a>
+      <button class="toggle-btn" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="specials.html">Daily Specials</a>
+        <a href="about.html">Our Story</a>
+        <a href="catering.html">Catering</a>
+        <a href="visit.html">Visit Us</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="menu-note">
-      <strong>Breakfast Hours:</strong> Monday&ndash;Friday 6 AM&ndash;11:30 AM &bull; Saturday 6 AM&ndash;1 PM &bull; Sunday 7 AM&ndash;1 PM<br>
-      <strong>Lunch Hours:</strong> Monday&ndash;Saturday 11:30 AM&ndash;3 PM &bull; Sunday 11 AM&ndash;3 PM<br>
-      <em>*Items cooked to order. Consuming raw or undercooked meats may increase risk of foodborne illness.</em>
+  <header class="hero" style="padding: 60px 0 40px; text-align: center;">
+    <div class="wrap">
+      <h1>The Full Menu</h1>
+      <p style="margin-inline: auto;">Generous homestyle plates prepared fresh in our kitchen, served seven days a week in South Charlotte.</p>
     </div>
+  </header>
 
-    <!-- BREAKFAST -->
-    <div class="menu-section" data-category="breakfast">
-      <h3>Farm Fresh Eggs</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Any style, served with creamy grits or hashbrowns and toast or biscuits.</p>
-      <div class="menu-item"><span class="name">Two Eggs</span><span class="desc">One egg $0.10 less</span><span class="price">$7.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Ham</span><span class="desc"></span><span class="price">$11.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Country Ham</span><span class="desc"></span><span class="price">$13.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Corned Beef Hash</span><span class="desc"></span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Smoked Sausage</span><span class="desc"></span><span class="price">$11.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Pork Chops</span><span class="desc">One or two chops</span><span class="price">$13.95 / $19.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Ribeye</span><span class="desc"></span><span class="price">$19.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Grilled Chicken</span><span class="desc"></span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Flounder or Catfish</span><span class="desc"></span><span class="price">$17.95</span></div>
-      <div class="menu-item"><span class="name">Two Eggs with Country Fried Steak</span><span class="desc">White country gravy. One or two</span><span class="price">$12.95 / $17.95</span></div>
+  <main id="main" class="wrap" style="margin-top: 40px;">
+    
+    <section>
+      <!-- Search Input -->
+      <input type="text" class="menu-search" id="menu-search" placeholder="Search the menu..." aria-label="Search menu items">
+
+      <!-- Category Filter Group -->
+      <div class="menu-controls" id="menu-filters" role="group" aria-label="Filter menu by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+        <button class="filter-btn" data-filter="omelettes">Omelettes</button>
+        <button class="filter-btn" data-filter="griddle">Griddle</button>
+        <button class="filter-btn" data-filter="lunch-plates">Lunch Plates</button>
+        <button class="filter-btn" data-filter="seafood">Seafood</button>
+        <button class="filter-btn" data-filter="sandwiches">Sandwiches</button>
+        <button class="filter-btn" data-filter="burgers">Burgers</button>
+        <button class="filter-btn" data-filter="gyros">Gyros</button>
+        <button class="filter-btn" data-filter="wraps">Wraps &amp; Subs</button>
+        <button class="filter-btn" data-filter="sides">Sides</button>
+        <button class="filter-btn" data-filter="drinks">Drinks</button>
+      </div>
+
+      <!-- Meal Timings -->
+      <div class="premium-card" style="margin-bottom: 3.5rem; padding: 1.5rem; text-align: center; border-color: var(--p-l); background: var(--bg2);">
+        <p style="color: var(--tx2); font-size: 0.95rem; font-weight: 600;">
+          ⏰ <strong>Breakfast Hours:</strong> Mon&ndash;Fri 6:00 AM&ndash;11:30 AM &bull; Sat 6:00 AM&ndash;1:00 PM &bull; Sun 7:00 AM&ndash;1:00 PM<br>
+          ⏰ <strong>Lunch Hours:</strong> Mon&ndash;Sat 11:30 AM&ndash;3:00 PM &bull; Sun 11:00 AM&ndash;3:00 PM
+        </p>
+      </div>
+
+      <!-- Breakfast Section -->
+      <div class="menu-section" data-category="breakfast">
+        <h3>Farm Fresh Eggs</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Any style, served with creamy grits or hashbrowns and toast or biscuits.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Two Eggs <span class="price">$7.95</span></h4>
+            <p>One egg is available for $0.10 less.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Ham <span class="price">$11.95</span></h4>
+            <p>Served with standard sides.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Country Ham <span class="price">$13.95</span></h4>
+            <p>Premium Alexander Farms country ham.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Corned Beef Hash <span class="price">$12.95</span></h4>
+            <p>Fresh pan-seared hash.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Smoked Sausage <span class="price">$11.95</span></h4>
+            <p>Grilled smoked sausage links.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Pork Chops <span class="price">$13.95 / $19.95</span></h4>
+            <p>Choose one or two chops.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Ribeye <span class="price">$19.95</span></h4>
+            <p>Premium hand-cut ribeye steak.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Grilled Chicken <span class="price">$16.95</span></h4>
+            <p>Tender grilled breast.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Flounder or Catfish <span class="price">$17.95</span></h4>
+            <p>Grilled or blackened fish.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Two Eggs with Country Fried Steak <span class="price">$12.95 / $17.95</span></h4>
+            <p>Smothered in country gravy. One or two chops.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-section" data-category="breakfast">
+        <h3>Breakfast Plates</h3>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Breakfast Special <span class="price">$10.95</span></h4>
+            <p>Two eggs, bacon, sausage or livermush, grits or hashbrowns, and toast or biscuits.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Country Breakfast <span class="price">$10.95</span></h4>
+            <p>Two eggs, choice of breakfast meat, and one gravy biscuit.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Hobo Breakfast <span class="price">$14.95</span></h4>
+            <p>Hashbrowns with onions, peppers, cheese, bacon, two eggs, sausage gravy, and toast or biscuits.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Omelettes -->
+      <div class="menu-section" data-category="omelettes">
+        <h3>Cafe Omelettes</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Served with creamy grits or hashbrowns and toast or biscuits.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Cheese Omelette <span class="price">$11.95</span></h4>
+            <p>Classic three-cheese blend.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Ham, Bacon or Sausage Omelette <span class="price">$13.95</span></h4>
+            <p>With choice of breakfast meat and cheese.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Meat Lovers Omelette <span class="price">$15.95</span></h4>
+            <p>Bacon, ham, and sausage with cheese.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Mushroom or Spinach Omelette <span class="price">$12.95</span></h4>
+            <p>Fresh vegetables and melted cheese.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Western Omelette <span class="price">$14.95</span></h4>
+            <p>Diced ham, onions, peppers, and cheese.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Spanish Omelette <span class="price">$16.95</span></h4>
+            <p>Ham, onions, peppers, cheese, and salsa.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Greek Omelette <span class="price">$14.95</span></h4>
+            <p>Feta cheese, kalamata olives, and tomatoes.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Vegetable Omelette <span class="price">$14.95</span></h4>
+            <p>Peppers, onions, tomatoes, mushrooms, and cheese.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Cafe Omelette <span class="price">$16.95</span></h4>
+            <p>Choose any four of our ingredients to build your own.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Griddle -->
+      <div class="menu-section" data-category="griddle">
+        <h3>Griddle Specials</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Served with butter and syrup. Powdered sugar upon request.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Buttermilk Pancakes <span class="price">$9.25</span></h4>
+            <p>Three large pancakes. 2 for $6.95, 1 for $3.75.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Pecan Pancakes <span class="price">$11.95</span></h4>
+            <p>Blueberry, Chocolate Chip or Pecan. 3 for $11.95.</p>
+          </div>
+          <div class="menu-item">
+            <h4>The Works Buttermilk Pancakes <span class="price">$12.95</span></h4>
+            <p>With blueberries, chocolate chips, and pecans.</p>
+          </div>
+          <div class="menu-item">
+            <h4>French Toast <span class="price">$10.95</span></h4>
+            <p>Thick slices of Challah bread dipped in cinnamon custard.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Belgian Waffle <span class="price">$7.95</span></h4>
+            <p>Fluffy golden classic waffle.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Pecan Waffle <span class="price">$8.95</span></h4>
+            <p>Baked with local chopped pecans.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Chicken &amp; Waffles <span class="price">$11.95 / $14.95</span></h4>
+            <p>Served with 2 or 3 crispy chicken tenders.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lunch Plates -->
+      <div class="menu-section" data-category="lunch-plates">
+        <h3>Cafe Favorites</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Served with two vegetables, or substitute one vegetable for a house or Caesar salad: $2.75</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Beef Liver <span class="price">$14.95</span></h4>
+            <p>Smothered with caramelized onions and brown gravy.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Country Style Steak <span class="price">$15.95</span></h4>
+            <p>Cube steak, pan fried then baked, with gravy over rice.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Southern Fried Chicken Tenders <span class="price">$13.95</span></h4>
+            <p>Served with BBQ or honey mustard dipping sauces.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Chopped Steak <span class="price">$14.95 / $18.95</span></h4>
+            <p>Premium Angus, smothered with onions and gravy. 8oz or 12oz.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Virginia Ham Steak <span class="price">$14.95</span></h4>
+            <p>Grilled with sweet pineapple rings.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Carolina Smoked Sausage <span class="price">$15.95</span></h4>
+            <p>Grilled with sweet bell onions and peppers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-section" data-category="lunch-plates">
+        <h3>Grilled Entrees</h3>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Marinated Chicken Tips <span class="price">$17.95</span></h4>
+            <p>Served with grilled onions and peppers over rice.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Supreme Beef Tips <span class="price">$21.95</span></h4>
+            <p>Premium Angus beef tips, marinated, with onions and peppers over rice.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Grilled or Blackened Chicken Breast <span class="price">$16.95</span></h4>
+            <p>Over rice with your choice of sides.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Monterey Chicken <span class="price">$18.95</span></h4>
+            <p>Barbecue sauce, bacon, and three cheeses.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seafood -->
+      <div class="menu-section" data-category="seafood">
+        <h3>Fish &amp; Seafood</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Served with hushpuppies and two vegetables, or substitute one vegetable for a salad: $2.75</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Catfish <span class="price">$17.95</span></h4>
+            <p>Blackened and grilled, or salt-and-pepper deep fried.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Filet of Flounder <span class="price">$16.95</span></h4>
+            <p>Grilled or deep fried flounder filet.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Grilled Salmon <span class="price">$23.95</span></h4>
+            <p>Served over mashed potatoes and one side.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Calabash Shrimp <span class="price">$16.95</span></h4>
+            <p>Popcorn shrimp fried golden brown.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sandwiches -->
+      <div class="menu-section" data-category="sandwiches">
+        <h3>Sandwich Platters</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Served with fries, onion rings, or soup.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Junior Club <span class="price">$11.95</span></h4>
+            <p>Ham, turkey, bacon, cheese, lettuce, tomato, and mayo.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Cafe Club Triple Decker <span class="price">$14.95</span></h4>
+            <p>Classic triple-decker ham, turkey, bacon, cheese, lettuce, and mayo.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Fish Filet Sandwich <span class="price">$13.95</span></h4>
+            <p>Flounder or catfish on a fresh bun with southern slaw.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Turkey Reuben <span class="price">$13.95</span></h4>
+            <p>Turkey, coleslaw, thousand island, and Swiss on grilled rye.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gyros -->
+      <div class="menu-section" data-category="gyros">
+        <h3>Gyros</h3>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Gyro Pita <span class="price">$12.95</span></h4>
+            <p>Seasoned lamb, lettuce, tomato, red onion, tzatziki, with fries.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Chicken Pita <span class="price">$12.95</span></h4>
+            <p>Marinated chicken, lettuce, tomato, red onion, tzatziki, with fries.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Gyro Pita Platter <span class="price">$15.95</span></h4>
+            <p>Lamb, fries, Greek salad, tzatziki, and pita points.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burgers -->
+      <div class="menu-section" data-category="burgers">
+        <h3>Burgers</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">1/3 pound patties. Served with fries or onion rings. Sweet potato fries +$1.50. Double +$3.00.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Cheeseburger <span class="price">$12.95</span></h4>
+            <p>American cheese, lettuce, tomato, and red onion on bun or pita.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Hickory BBQ Burger <span class="price">$14.95</span></h4>
+            <p>Bacon, cheddar, BBQ sauce, and a crispy onion ring.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Patty Melt <span class="price">$12.95</span></h4>
+            <p>Caramelized onions and provolone cheese on rye bread.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wraps & Subs -->
+      <div class="menu-section" data-category="wraps">
+        <h3>Wraps</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Served with fries or onion rings. Sweet potato fries +$1.50.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Club Wrap <span class="price">$12.95</span></h4>
+            <p>Turkey, ham, cheese, bacon, lettuce, and tomato.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Buffalo Chicken Wrap <span class="price">$12.95</span></h4>
+            <p>Breaded tenders, buffalo sauce, provolone, lettuce, and tomato.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sides -->
+      <div class="menu-section" data-category="sides">
+        <h3>Vegetables &amp; Sides</h3>
+        <p style="color:var(--tx2); font-size:0.9rem; margin-bottom:1.5rem;">Vegetable plate: 1 for $3.75, choice of 3 for $10.95, choice of 4 for $12.95.</p>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Mashed Potatoes &amp; Gravy <span class="price">$3.75</span></h4>
+            <p>Homestyle potatoes with beef or country gravy.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Collard Greens <span class="price">$3.75</span></h4>
+            <p>Cooked low and slow with pork seasoning.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Macaroni &amp; Cheese <span class="price">$3.75</span></h4>
+            <p>Creamy baked three-cheese mac.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Homemade Banana Pudding <span class="price">$3.75</span></h4>
+            <p>Southern style pudding layered with vanilla wafers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drinks -->
+      <div class="menu-section" data-category="drinks">
+        <h3>Beverages</h3>
+        <div class="menu-preview">
+          <div class="menu-item">
+            <h4>Iced Tea <span class="price">$2.95</span></h4>
+            <p>Sweetened or unsweetened classic tea.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Coffee <span class="price">$2.95</span></h4>
+            <p>Fresh drip house blend.</p>
+          </div>
+          <div class="menu-item">
+            <h4>Mimosa <span class="price">$9.00</span></h4>
+            <p>Champagne with orange, cranberry, or pineapple juice.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- No results indicator -->
+      <div id="no-results" style="display:none; text-align:center; padding:3rem; color:var(--tx2);">
+        <p style="font-size:1.2rem; font-weight:600;">No menu items match your search.</p>
+        <button class="filter-btn" style="margin-top:1rem;" id="clearSearchBtn">Clear Search</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>☕ Cafe South</h3>
+        <p>Family-owned breakfast and lunch restaurant serving South Charlotte since 2012. Homestyle Southern hospitality and fresh cooking daily.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          7901 Forest Pine Dr<br>
+          Charlotte, NC 28273<br>
+          Phone: (704) 527-0909
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Daily Specials</a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="menu-section" data-category="breakfast">
-      <h3>Breakfast Plates</h3>
-      <div class="menu-item"><span class="name">Breakfast Special</span><span class="desc">Two eggs, bacon, sausage or livermush, creamy grits or hashbrowns, toast or biscuits</span><span class="price">$10.95</span></div>
-      <div class="menu-item"><span class="name">Country Breakfast</span><span class="desc">Two eggs, choice of meat, one gravy biscuit</span><span class="price">$10.95</span></div>
-      <div class="menu-item"><span class="name">Hobo Breakfast</span><span class="desc">Hashbrowns with onions, peppers, cheese, bacon, two eggs, sausage gravy, toast or biscuits</span><span class="price">$14.95</span></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cafe South. All rights reserved. Unofficial concept presentation.</p>
     </div>
+  </footer>
 
-    <!-- OMELETTES -->
-    <div class="menu-section" data-category="omelettes">
-      <h3>Cafe Omelettes</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with creamy grits or hashbrowns and toast or biscuits.</p>
-      <div class="menu-item"><span class="name">Cheese Omelette</span><span class="desc"></span><span class="price">$11.95</span></div>
-      <div class="menu-item"><span class="name">Ham, Bacon or Sausage Omelette</span><span class="desc">With cheese</span><span class="price">$13.95</span></div>
-      <div class="menu-item"><span class="name">Meat Lovers Omelette</span><span class="desc">Bacon, ham, and sausage with cheese</span><span class="price">$15.95</span></div>
-      <div class="menu-item"><span class="name">Mushroom or Spinach Omelette</span><span class="desc">With cheese</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Western Omelette</span><span class="desc">Ham, onions, peppers, cheese</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Spanish Omelette</span><span class="desc">Ham, onions, peppers, cheese, salsa</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Greek Omelette</span><span class="desc">Feta cheese, olives, tomatoes</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Vegetable Omelette</span><span class="desc">Peppers, onions, tomatoes, mushroom with cheese</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Cafe Omelette</span><span class="desc">Choose any four ingredients</span><span class="price">$16.95</span></div>
-    </div>
+  <script>
+    // Search & filter implementation
+    (function(){
+      const search = document.getElementById('menu-search');
+      const filters = document.getElementById('menu-filters');
+      const noResults = document.getElementById('no-results');
+      const clearBtn = document.getElementById('clearSearchBtn');
 
-    <!-- GRIDDLE -->
-    <div class="menu-section" data-category="griddle">
-      <h3>Griddle Specials</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with butter and syrup. Powdered sugar upon request.</p>
-      <div class="menu-item"><span class="name">Buttermilk Pancakes</span><span class="desc">3 cakes, 2 for $6.95, 1 for $3.75</span><span class="price">$9.25</span></div>
-      <div class="menu-item"><span class="name">Blueberry, Chocolate Chip or Pecan Pancakes</span><span class="desc">3 cakes, 2 for $7.95, 1 for $4.95</span><span class="price">$11.95</span></div>
-      <div class="menu-item"><span class="name">The Works Buttermilk Pancakes</span><span class="desc">Blueberries, chocolate chips, and pecans</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">French Toast</span><span class="desc">Thick slices of Challah bread</span><span class="price">$10.95</span></div>
-      <div class="menu-item"><span class="name">Belgian Waffle</span><span class="desc"></span><span class="price">$7.95</span></div>
-      <div class="menu-item"><span class="name">Pecan Waffle</span><span class="desc"></span><span class="price">$8.95</span></div>
-      <div class="menu-item"><span class="name">Chicken &amp; Waffles</span><span class="desc">2 tenders or 3 tenders</span><span class="price">$11.95 / $14.95</span></div>
-    </div>
+      // Toggle menu
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navToggle.classList.toggle('open');
+          navLinks.classList.toggle('open', isOpen);
+        });
+      }
 
-    <!-- LUNCH PLATES -->
-    <div class="menu-section" data-category="lunch-plates">
-      <h3>Cafe Favorites</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with two vegetables, or substitute one vegetable for a house or Caesar salad: $2.75</p>
-      <div class="menu-item"><span class="name">Beef Liver</span><span class="desc">Grilled, smothered with caramelized onions and gravy</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Country Style Steak</span><span class="desc">Cube steak, pan fried then baked, gravy over rice</span><span class="price">$15.95</span></div>
-      <div class="menu-item"><span class="name">Southern Fried Chicken Tenders</span><span class="desc">BBQ or honey mustard</span><span class="price">$13.95</span></div>
-      <div class="menu-item"><span class="name">Chopped Steak</span><span class="desc">Premium Angus, smothered with onions and gravy. 8oz or 12oz</span><span class="price">$14.95 / $18.95</span></div>
-      <div class="menu-item"><span class="name">Virginia Ham Steak</span><span class="desc">Grilled with pineapple rings</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Carolina Smoked Sausage</span><span class="desc">Grilled with onions and peppers</span><span class="price">$15.95</span></div>
-      <div class="menu-item"><span class="name">Country Ham</span><span class="desc">Alexander Farms, grilled</span><span class="price">$13.95</span></div>
-      <div class="menu-item"><span class="name">Thanksgiving Dinner</span><span class="desc">Roasted turkey, white rice, gravy</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Country Fried Steak</span><span class="desc">White country gravy</span><span class="price">$14.95</span></div>
-    </div>
-
-    <div class="menu-section" data-category="lunch-plates">
-      <h3>Grilled Entrees</h3>
-      <div class="menu-item"><span class="name">Marinated Chicken Tips</span><span class="desc">Onions and peppers over rice</span><span class="price">$17.95</span></div>
-      <div class="menu-item"><span class="name">Supreme Beef Tips</span><span class="desc">Premium Angus, marinated, onions and peppers over rice</span><span class="price">$21.95</span></div>
-      <div class="menu-item"><span class="name">Grilled or Blackened Chicken Breast</span><span class="desc">Over rice</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">BBQ Chicken Breast</span><span class="desc">Smothered in barbecue sauce</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Monterey Chicken</span><span class="desc">BBQ sauce, bacon, three cheeses</span><span class="price">$18.95</span></div>
-      <div class="menu-item"><span class="name">Center Cut Pork Chops</span><span class="desc">Two chops, grilled</span><span class="price">$19.95</span></div>
-      <div class="menu-item"><span class="name">Ribeye Steak</span><span class="desc">Premium Angus, chargrilled. 8oz or 12oz</span><span class="price">$21.95 / $32.95</span></div>
-    </div>
-
-    <!-- SEAFOOD -->
-    <div class="menu-section" data-category="seafood">
-      <h3>Fish &amp; Seafood</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with hushpuppies and two vegetables, or substitute one vegetable for a house or Caesar salad: $2.75</p>
-      <div class="menu-item"><span class="name">Catfish</span><span class="desc">Blackened and grilled, or salt and pepper and deep fried</span><span class="price">$17.95</span></div>
-      <div class="menu-item"><span class="name">Filet of Flounder</span><span class="desc">Grilled or fried</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Grilled Salmon</span><span class="desc">Over mashed potatoes and one side</span><span class="price">$23.95</span></div>
-      <div class="menu-item"><span class="name">Calabash Shrimp</span><span class="desc">Popcorn shrimp, fried golden brown</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Jumbo Shrimp</span><span class="desc">Lightly breaded and fried. 6 or 12</span><span class="price">$12.95 / $22.95</span></div>
-      <div class="menu-item"><span class="name">Fried Flounder &amp; Calabash Shrimp Combo</span><span class="desc"></span><span class="price">$21.95</span></div>
-    </div>
-
-    <!-- SANDWICHES -->
-    <div class="menu-section" data-category="sandwiches">
-      <h3>Sandwich Platters</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with fries, onion rings, or soup.</p>
-      <div class="menu-item"><span class="name">Junior Club</span><span class="desc">Ham, turkey, bacon, cheese, lettuce, tomato, mayo</span><span class="price">$11.95</span></div>
-      <div class="menu-item"><span class="name">Cafe Club Triple Decker</span><span class="desc">Ham, turkey, bacon, cheese, lettuce, tomato, mayo</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Fish Filet Sandwich</span><span class="desc">Flounder or catfish on a fresh bun with slaw</span><span class="price">$13.95</span></div>
-      <div class="menu-item"><span class="name">Turkey Reuben</span><span class="desc">Turkey, coleslaw, thousand island, swiss on grilled rye</span><span class="price">$13.95</span></div>
-      <div class="menu-item"><span class="name">Chicken Salad</span><span class="desc">Homemade, with lettuce and tomato</span><span class="price">$10.95</span></div>
-      <div class="menu-item"><span class="name">Grilled Ham &amp; Cheese</span><span class="desc"></span><span class="price">$10.95</span></div>
-      <div class="menu-item"><span class="name">Grilled Cheese</span><span class="desc"></span><span class="price">$8.95</span></div>
-      <div class="menu-item"><span class="name">Grilled or Fried Chicken Sandwich</span><span class="desc">Lettuce, tomato, red onion. Deluxe adds bacon and cheese</span><span class="price">$13.95 / $15.95</span></div>
-      <div class="menu-item"><span class="name">Ribeye Steak Sandwich</span><span class="desc">Lettuce, tomato, red onion, mayo on toasted bun</span><span class="price">$17.95</span></div>
-    </div>
-
-    <!-- GYROS -->
-    <div class="menu-section" data-category="gyros">
-      <h3>Gyros</h3>
-      <div class="menu-item"><span class="name">Gyro Pita</span><span class="desc">Seasoned lamb, lettuce, tomato, red onion, tzatziki, with fries</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Chicken Pita</span><span class="desc">Marinated chicken, lettuce, tomato, red onion, tzatziki, with fries</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Veggie Pita</span><span class="desc">Lettuce, tomato, olives, feta, tzatziki, grilled vegetables, with fries</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Gyro Pita Platter</span><span class="desc">Lamb, fries, Greek salad, tzatziki, pita points</span><span class="price">$15.95</span></div>
-      <div class="menu-item"><span class="name">Chicken Pita Platter</span><span class="desc">Chicken, fries, Greek salad, tzatziki, pita points</span><span class="price">$15.95</span></div>
-    </div>
-
-    <!-- BURGERS -->
-    <div class="menu-section" data-category="burgers">
-      <h3>Burgers</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">1/3 pound patties. Served with fries or onion rings. Sweet potato fries +$1.50. Double +$3.00</p>
-      <div class="menu-item"><span class="name">Cheeseburger</span><span class="desc">American cheese, lettuce, tomato, red onion on bun or pita</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Hickory BBQ Burger</span><span class="desc">Bacon, cheddar, BBQ sauce, crispy onion ring</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Black and Bleu Burger</span><span class="desc">Bleu cheese crumbles, lettuce, tomato, red onion</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Bacon and Swiss Burger</span><span class="desc">Lettuce, tomato, red onion</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Patty Melt</span><span class="desc">Caramelized onions and provolone on rye</span><span class="price">$12.95</span></div>
-    </div>
-
-    <!-- WRAPS & SUBS -->
-    <div class="menu-section" data-category="wraps">
-      <h3>Wraps</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with fries or onion rings. Sweet potato fries +$1.50</p>
-      <div class="menu-item"><span class="name">Club Wrap</span><span class="desc">Turkey, ham, cheese, bacon, lettuce, tomato</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Turkey Wrap</span><span class="desc">Turkey, provolone, lettuce, tomato</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Buffalo Chicken Wrap</span><span class="desc">Breaded tenders, buffalo sauce, provolone, lettuce, tomato</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Chicken Caesar Wrap</span><span class="desc">Grilled chicken, romaine, caesar dressing</span><span class="price">$12.95</span></div>
-    </div>
-
-    <div class="menu-section" data-category="wraps">
-      <h3>Hot Oven Subs</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Served with fries or onion rings. Sweet potato fries +$1.50</p>
-      <div class="menu-item"><span class="name">Chicken or Steak Philly</span><span class="desc">Onions, peppers, mushrooms, provolone on hoagie</span><span class="price">$14.95</span></div>
-      <div class="menu-item"><span class="name">Chicken Parmesan Sub</span><span class="desc">Chicken breast, marinara, mozzarella on hoagie</span><span class="price">$16.95</span></div>
-      <div class="menu-item"><span class="name">Ham or Turkey Sub</span><span class="desc">Lettuce, tomato, mayo, provolone on hoagie</span><span class="price">$12.95</span></div>
-      <div class="menu-item"><span class="name">Super Star Sub</span><span class="desc">Ham, turkey, bacon, provolone, lettuce, tomato, mayo on hoagie</span><span class="price">$14.95</span></div>
-    </div>
-
-    <!-- SIDES -->
-    <div class="menu-section" data-category="sides">
-      <h3>Vegetables &amp; Sides</h3>
-      <p style="color:#7a6a5a;font-size:.9rem;margin-bottom:1rem">Vegetable plate: 1 for $3.75, choice of 3 for $10.95, choice of 4 for $12.95. Substitute one vegetable for a salad: $2.75</p>
-      <div class="menu-item"><span class="name">Mashed Potatoes &amp; Gravy</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Green Beans</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Collard Greens</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Macaroni &amp; Cheese</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">White Rice &amp; Gravy</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Fried Okra</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Fried Squash</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Sweet Corn</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">French Fries</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Sweet Potato Fries</span><span class="price">$5.25</span></div>
-      <div class="menu-item"><span class="name">Onion Rings</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Fresh Cole Slaw</span><span class="price">$3.75</span></div>
-      <div class="menu-item"><span class="name">Homemade Banana Pudding</span><span class="price">$3.75</span></div>
-    </div>
-
-    <!-- DRINKS -->
-    <div class="menu-section" data-category="drinks">
-      <h3>Beverages</h3>
-      <div class="menu-item"><span class="name">Coffee</span><span class="price">$2.95</span></div>
-      <div class="menu-item"><span class="name">Iced Tea</span><span class="price">$2.95</span></div>
-      <div class="menu-item"><span class="name">Hot Tea</span><span class="price">$2.95</span></div>
-      <div class="menu-item"><span class="name">Hot Chocolate</span><span class="price">$3.95</span></div>
-      <div class="menu-item"><span class="name">Soft Drinks</span><span class="desc">Coke, Diet Coke, Sprite, Mello Yello, Hi-C Lemonade, Fanta</span><span class="price">$3.25</span></div>
-      <div class="menu-item"><span class="name">Milk or Chocolate Milk</span><span class="price">$2.50 / $3.95</span></div>
-      <div class="menu-item"><span class="name">Juice</span><span class="desc">Orange, Pineapple, Apple, Cranberry, Tomato</span><span class="price">$2.50 / $3.95</span></div>
-      <div class="menu-item"><span class="name">Bottled Water</span><span class="price">$1.95</span></div>
-      <div class="menu-item"><span class="name">Sparkling Mineral Water</span><span class="price">$3.50</span></div>
-      <div class="menu-item"><span class="name">Mimosa</span><span class="desc">Orange, cranberry, or pineapple juice</span><span class="price">$9.00</span></div>
-    </div>
-
-    <div class="menu-section" data-category="drinks">
-      <h3>Beer &amp; Wine</h3>
-      <div class="menu-item"><span class="name">Bud Light / Miller Lite / Michelob Ultra</span><span class="price">$3.50</span></div>
-      <div class="menu-item"><span class="name">Sam Adams / Corona / Newcastle / Heineken</span><span class="price">$4.50</span></div>
-      <div class="menu-item"><span class="name">Olde Mecklenburg Copper</span><span class="desc">Local craft</span><span class="price">$5.50</span></div>
-      <div class="menu-item"><span class="name">House Wine (White or Red)</span><span class="desc">Sutter Home or Cavit</span><span class="price">$6.50 / $7.50</span></div>
-    </div>
-
-    <div id="no-results" style="display:none;text-align:center;padding:3rem;color:#7a6a5a">
-      <p style="font-size:1.2rem;font-weight:600">No menu items match your search.</p>
-      <button class="filter-btn" style="margin-top:1rem" onclick="document.getElementById('menu-search').value='';filterMenu()">Clear Search</button>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div><strong>Cafe South</strong><br>7901 Forest Pine Dr.<br>Charlotte, NC 28273<br><a href="tel:9802247328">(980) 224-7328</a></div>
-  <div><strong>Quick Links</strong><br><a href="menu.html">Menu</a><br><a href="catering.html">Catering</a><br><a href="visit.html">Directions</a><br><a href="https://postmates.com/store/cafe-south/yrDJ5sFHRH6yt1sT9wd84w">Order Online</a></div>
-  <div><strong>Connect</strong><br><a href="https://www.facebook.com/CafeSouthcharlotte/">Facebook</a><br><a href="https://www.yelp.com/biz/cafe-south-charlotte">Yelp</a></div>
-  <div><strong>Disclaimer</strong><br>This is an unofficial redesign demonstration and is not affiliated with, operated by, or endorsed by Cafe South.</div>
-</footer>
-<div class="disclosure">This site is an unofficial concept presentation for portfolio purposes only. All content is based on publicly available information. Forms do not submit data.</div>
-<script src="site.js"></script>
-<script>
-(function(){
-  var search=document.getElementById('menu-search');
-  var filters=document.getElementById('menu-filters');
-  var noResults=document.getElementById('no-results');
-  filters.addEventListener('click',function(e){
-    var btn=e.target.closest('.filter-btn');
-    if(!btn)return;
-    filters.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
-    btn.classList.add('active');
-    window.filterMenu();
-  });
-  search.addEventListener('input', function(){ window.filterMenu(); });
-  window.filterMenu=function(){
-    var q=search.value.toLowerCase().trim();
-    var active=filters.querySelector('.filter-btn.active');
-    var cat=active?active.dataset.filter:'all';
-    var sections=document.querySelectorAll('.menu-section');
-    var visible=0;
-    sections.forEach(function(s){
-      var matchCat=cat==='all'||s.dataset.category===cat;
-      var items=s.querySelectorAll('.menu-item');
-      var anyVisible=false;
-      items.forEach(function(item){
-        var text=item.textContent.toLowerCase();
-        var matchSearch=!q||text.indexOf(q)!==-1;
-        if(matchCat&&matchSearch){item.style.display='';anyVisible=true}else{item.style.display='none'}
+      filters.addEventListener('click', function(e){
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        filters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterMenu();
       });
-      if(matchCat&&anyVisible){s.style.display='';visible++}else{s.style.display='none'}
-    });
-    noResults.style.display=visible===0?'block':'none';
-  };
-})();
-</script>
+
+      search.addEventListener('input', filterMenu);
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          search.value = '';
+          filterMenu();
+        });
+      }
+
+      function filterMenu(){
+        const q = search.value.toLowerCase().trim();
+        const active = filters.querySelector('.filter-btn.active');
+        const cat = active ? active.dataset.filter : 'all';
+        const sections = document.querySelectorAll('.menu-section');
+        let visible = 0;
+
+        sections.forEach(s => {
+          const matchCat = cat === 'all' || s.dataset.category === cat;
+          const items = s.querySelectorAll('.menu-item');
+          let anyVisible = false;
+
+          items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const matchSearch = !q || text.indexOf(q) !== -1;
+            if (matchCat && matchSearch) {
+              item.style.display = '';
+              anyVisible = true;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+
+          if (matchCat && anyVisible) {
+            s.style.display = '';
+            visible++;
+          } else {
+            s.style.display = 'none';
+          }
+        });
+
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      window.filterMenu = filterMenu;
+    })();
+  </script>
 </body>
 </html>

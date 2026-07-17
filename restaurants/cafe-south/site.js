@@ -1,2 +1,12 @@
-document.querySelector('.toggle-btn')?.addEventListener('click',()=>{const links=document.querySelector('.nav-links');links?.classList.toggle('open');const btn=document.querySelector('.toggle-btn');if(links?.classList.contains('open')){btn.setAttribute('aria-expanded','true')}else{btn.setAttribute('aria-expanded','false')}});
-document.querySelectorAll('[data-demo-form]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();let t=document.querySelector('.demo-toast');if(!t){t=document.createElement('div');t.className='demo-toast';t.setAttribute('role','status');document.body.appendChild(t)}t.textContent='Demo only \u2014 no information was sent to the restaurant.';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4200)}));
+// Cafe South: Navigation and Interaction Utilities
+(function() {
+  const toggleBtn = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+})();
