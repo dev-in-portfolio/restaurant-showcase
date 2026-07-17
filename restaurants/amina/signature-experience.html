@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/amina/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Amina interactive concept experience.">
   <title>Build a Signature Visit | Amina</title>
-  <link rel="stylesheet" href="../site-core.css">
-  <style>
-    :root{--ink:hsl(319 45% 10%);--accent:hsl(10 68% 52%);--paper:hsl(149 38% 86%);--muted:color-mix(in srgb,var(--paper) 62%,transparent)}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 34%),var(--ink);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .site-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1rem clamp(1rem,4vw,3.5rem);background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
-    .brand{font-weight:900;letter-spacing:.02em;text-decoration:none}
-    .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.85rem}
-    .nav-links a{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.72}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1;color:var(--accent)}
-    main{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem)}
-    .eyebrow{color:var(--accent);font-size:.76rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    h1{max-width:820px;margin:.7rem 0 1rem;font-size:clamp(2.7rem,7vw,6.7rem);line-height:.92;letter-spacing:-.055em}
-    .lede{max-width:720px;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.75}
-    .planner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.25rem;margin-top:3rem}
-    .panel{border:1px solid color-mix(in srgb,var(--paper) 16%,transparent);border-radius:1.5rem;background:color-mix(in srgb,var(--paper) 6%,transparent);box-shadow:0 26px 80px rgba(0,0,0,.25);padding:clamp(1.2rem,3vw,2rem)}
-    .controls{display:grid;gap:1rem}
-    label span{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    select{width:100%;border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:.85rem;background:color-mix(in srgb,var(--ink) 72%,black);color:var(--paper);padding:.95rem 1rem;font:inherit}
-    button{margin-top:.35rem;border:0;border-radius:999px;background:var(--accent);color:#080808;padding:.9rem 1.25rem;font-weight:900;cursor:pointer}
-    .result{display:flex;min-height:100%;flex-direction:column;justify-content:space-between}
-    .result-icon{font-size:3rem}
-    .result h2{margin:.8rem 0 .4rem;font-size:clamp(1.7rem,3vw,2.7rem)}
-    #summary{color:var(--muted);line-height:1.7}
-    .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
-    @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
-  </style>
+  <meta name="description" content="Amina interactive concept experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="index.html">Amina</a>
-    <div class="nav-links">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Amina</a>
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="menu.html">Menu</a>
-        <a href="reserve.html">Reserve</a>
+        <a href="about.html">About</a>
         <a href="visit.html">Visit</a>
-      <a href="signature-experience.html" aria-current="page">Signature Experience</a>
+        <a href="reserve.html">Reserve</a>
+        <a href="signature-experience.html" class="active">Signature Experience</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+  </header>
+
   <main id="main">
-    <p class="eyebrow">A RESTAURANT-SPECIFIC SIXTH PAGE</p>
-    <h1>Build a Signature Visit</h1>
-    <p class="lede">Use this demonstration planner to shape the pace, purpose, and flavor direction of a future visit.</p>
-    <section class="planner" aria-label="Build a Signature Visit interactive planner">
-      <div class="panel controls">
-          <label>
+    <div class="head" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <span class="section-tag">Occasion Planner</span>
+      <h1>Signature <em>Experience</em></h1>
+      <p>Shape the pace, purpose, and flavor direction of your future visit to Amina.</p>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container planner" aria-label="Build a Signature Visit interactive planner">
+        <div class="panel controls">
+          <label style="display:flex; flex-direction:column; gap:0.5rem; font-weight:800; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent);">
             <span>Occasion</span>
             <select id="choice-1">
               <option>Everyday meal</option>
@@ -60,7 +52,8 @@
               <option>Group gathering</option>
             </select>
           </label>
-          <label>
+
+          <label style="display:flex; flex-direction:column; gap:0.5rem; font-weight:800; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent);">
             <span>Pace</span>
             <select id="choice-2">
               <option>Quick</option>
@@ -68,46 +61,101 @@
               <option>Celebratory</option>
             </select>
           </label>
-          <label>
-            <span>Direction</span>
+
+          <label style="display:flex; flex-direction:column; gap:0.5rem; font-weight:800; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent);">
+            <span>Flavor Direction</span>
             <select id="choice-3">
               <option>Familiar</option>
               <option>Seasonal</option>
               <option>Surprising</option>
             </select>
           </label>
-        <button type="button" id="build-plan">Build My Demonstration Plan</button>
-      </div>
-      <div class="panel result" aria-live="polite">
-        <div>
-          <div class="result-icon" aria-hidden="true">🍽️</div>
-          <h2>Your Signature Experience</h2>
-          <p id="summary">Choose one option from each field, then build a demonstration plan.</p>
+
+          <button type="button" id="build-plan" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Concoct Ritual</button>
         </div>
-        <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
+
+        <div class="panel result" aria-live="polite">
+          <div class="hearth-wrapper">
+            <svg class="hearth-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+              <!-- Back Hearth Grate (shadow) -->
+              <rect x="30" y="165" width="140" height="20" rx="3" fill="#1c1b1a" />
+              
+              <!-- Sparkly particles (Embers) -->
+              <circle class="ember-particle" cx="70" cy="180" r="3" style="animation-delay: 0.1s; --ember-drift: -15px;" />
+              <circle class="ember-particle" cx="130" cy="180" r="2" style="animation-delay: 0.5s; --ember-drift: 20px;" />
+              <circle class="ember-particle" cx="100" cy="180" r="2.5" style="animation-delay: 0.9s; --ember-drift: 5px;" />
+              <circle class="ember-particle" cx="85" cy="180" r="3.5" style="animation-delay: 1.3s; --ember-drift: -25px;" />
+              <circle class="ember-particle" cx="115" cy="180" r="2" style="animation-delay: 1.7s; --ember-drift: 15px;" />
+              <circle class="ember-particle" cx="95" cy="180" r="3" style="animation-delay: 2.1s; --ember-drift: -5px;" />
+
+              <!-- Outer Flame -->
+              <path id="svg-flame-outer" class="hearth-flame" d="M100 20 C60 80 40 130 40 170 C40 200 60 210 100 210 C140 210 160 200 160 170 C160 130 140 80 100 20 Z" fill="#c0392b" />
+              
+              <!-- Middle Flame -->
+              <path id="svg-flame-middle" class="hearth-flame" d="M100 50 C70 90 55 130 55 170 C55 190 70 200 100 200 C130 200 145 190 145 170 C145 130 130 90 100 50 Z" fill="#d35400" />
+              
+              <!-- Inner Flame -->
+              <path id="svg-flame-inner" class="hearth-flame" d="M100 80 C80 110 70 140 70 170 C70 185 80 190 100 190 C120 190 130 185 130 170 C130 140 120 110 100 80 Z" fill="#f1c40f" />
+
+              <!-- Logs -->
+              <path d="M40 190 L160 200 C165 200 165 205 160 205 L40 195 C35 195 35 190 40 190 Z" fill="#5c3d24" stroke="#2c1d10" stroke-width="1.5" />
+              <path d="M60 205 L140 185 C145 183 148 188 143 190 L63 210 C58 212 55 207 60 205 Z" fill="#4d331e" stroke="#2c1d10" stroke-width="1.5" />
+
+              <!-- Front Iron Grate -->
+              <rect x="25" y="200" width="150" height="8" rx="2" fill="#2c2b2a" />
+              <line x1="50" y1="200" x2="50" y2="215" stroke="#2c2b2a" stroke-width="4" />
+              <line x1="100" y1="200" x2="100" y2="215" stroke="#2c2b2a" stroke-width="4" />
+              <line x1="150" y1="200" x2="150" y2="215" stroke="#2c2b2a" stroke-width="4" />
+            </svg>
+          </div>
+
+          <div>
+            <div class="result-icon" aria-hidden="true" style="margin-bottom: 0.5rem;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M12 2L2 22h20L12 2z"/></svg>
+            </div>
+            <h2>Culinary Ritual</h2>
+            <p id="summary" style="color:var(--text-muted); font-size:0.95rem; line-height:1.65; max-width: 320px;">Adjust the apothecary dials to formulate your signature pace and fireplace embers.</p>
+          </div>
+          <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
+        </div>
       </div>
     </section>
-  
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-aminasignatureexperiencehtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-aminasignatureexperiencehtml" style="margin:.1rem 0 1rem;">Shape the experience around your occasion</h2>
-  <p>A visit to Amina can be planned around the occasion instead of a rigid sequence. A quick meal, an unhurried dinner, and a celebration each need a different rhythm. Use this page to think through arrival, sharing, pacing, and the point in the meal when the table wants to slow down and enjoy the atmosphere.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Match the pace of the meal to the occasion.</li><li>Decide early whether the table plans to share or order individually.</li><li>Leave room for a final course, conversation, or a second round instead of over-ordering at once.</li></ul>
-  <p>This page is organized around a polished contemporary dining experience shaped by African-inspired flavors. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-  <script>
-    (() => {
-      const button = document.getElementById('build-plan');
-      const fields = [...document.querySelectorAll('select')];
-      const summary = document.getElementById('summary');
-      button.addEventListener('click', () => {
-        const values = fields.map(field => field.value);
-        summary.textContent = `Start with ${values[0]}; keep the experience ${values[1].toLowerCase()}; finish with ${values[2].toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
-      });
-    })();
-  </script>
+
+    <!-- PHASE2-CONTENT-EXPANSION -->
+    <section class="section alt" aria-labelledby="phase2-aminasignatureexperiencehtml">
+      <div class="container">
+        <div class="card" style="max-width: 860px; margin: 0 auto; padding: 2.5rem;">
+          <span class="tag">Plan with confidence</span>
+          <h2 id="phase2-aminasignatureexperiencehtml" style="text-align: left; margin-bottom: 1.25rem;">Shape the experience around your occasion</h2>
+          <p style="color: var(--ink-muted); line-height: 1.75; margin-bottom: 1.5rem;">A visit to Amina can be planned around the occasion instead of a rigid sequence. A quick meal, an unhurried dinner, and a celebration each need a different rhythm. Use this page to think through arrival, sharing, pacing, and the point in the meal when the table wants to slow down and enjoy the atmosphere.</p>
+          
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; color:var(--primary); margin-top:1.5rem;">A simple way to decide</h3>
+          <ul style="color:var(--ink-muted); padding-left: 1.25rem; line-height: 1.8;">
+            <li>Match the pace of the meal to the occasion.</li>
+            <li>Decide early whether the table plans to share or order individually.</li>
+            <li>Leave room for a final course, conversation, or a second round instead of over-ordering at once.</li>
+          </ul>
+          <p style="color: var(--ink-muted); font-size: 0.95rem; margin-top: 1.5rem;">This page is organized around a polished contemporary dining experience shaped by African-inspired flavors. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-logo">Amina</p>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Reserve</a>
+        <a href="signature-experience.html">Signature Experience</a>
+      </div>
+      <p>&copy; 2026 Amina. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <div class="demo-toast" role="status"></div>
+  <script src="site.js" defer></script>
 </body>
 </html>

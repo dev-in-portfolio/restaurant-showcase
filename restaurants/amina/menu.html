@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/amina/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu — Amina</title>
@@ -11,31 +14,32 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">Amina</a>
-      <nav class="main-nav" id="mainNav">
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="menu.html" class="active">Menu</a>
         <a href="about.html">About</a>
         <a href="visit.html">Visit</a>
         <a href="reserve.html">Reserve</a>
         <a href="signature-experience.html">Signature Experience</a>
-</nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Our Menu</h1>
-        <p class="hero-subtitle">Eritrean Heritage. Mediterranean Craft. Wood-Fired Soul.</p>
-      </div>
-    </section>
+  <main id="main">
+    <div class="head" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <span class="section-tag">Ember &amp; Earth Culinary</span>
+      <h1>Our <em>Menu</em></h1>
+      <p>Eritrean Heritage. Mediterranean Craft. Wood-Fired Soul.</p>
+    </div>
 
     <section class="section menu-section">
       <div class="container">
@@ -48,49 +52,51 @@
             <button class="filter-btn" data-filter="bowls">Bowls</button>
             <button class="filter-btn" data-filter="sides">Sides</button>
           </div>
+          <label style="display:none;" for="menuSearch">Search dishes</label>
           <input type="text" class="menu-search" id="menuSearch" placeholder="Search dishes...">
         </div>
 
         <div class="menu-categories" id="menuCategories">
+          <!-- Starters -->
           <div class="menu-category" data-category="starters">
             <h2 class="menu-category-title">Starters</h2>
             <div class="menu-items">
-              <div class="menu-item" data-name="Golden Crab Toast">
+              <div class="menu-item" data-name="Golden Crab Toast" data-desc="Delicate crab, golden crisp, bright citrus notes.">
                 <div class="menu-item-header">
                   <h3>Golden Crab Toast</h3>
                   <span class="menu-price">$18 – $24</span>
                 </div>
                 <p>Delicate crab, golden crisp, bright citrus notes.</p>
               </div>
-              <div class="menu-item" data-name="Golden Beef Sambusa">
+              <div class="menu-item" data-name="Golden Beef Sambusa" data-desc="Hand-folded, spiced beef, golden-fried to order.">
                 <div class="menu-item-header">
                   <h3>Golden Beef Sambusa</h3>
                   <span class="menu-price">$10 – $14</span>
                 </div>
                 <p>Hand-folded, spiced beef, golden-fried to order.</p>
               </div>
-              <div class="menu-item" data-name="Berbere Honey Wings">
+              <div class="menu-item" data-name="Berbere Honey Wings" data-desc="Berbere spice, raw honey glaze, cooling aioli.">
                 <div class="menu-item-header">
                   <h3>Berbere Honey Wings</h3>
                   <span class="menu-price">$14 – $19</span>
                 </div>
                 <p>Berbere spice, raw honey glaze, cooling aioli.</p>
               </div>
-              <div class="menu-item" data-name="Halloumi Fries">
+              <div class="menu-item" data-name="Halloumi Fries" data-desc="Crispy-fried halloumi, herb dust, dipping sauce.">
                 <div class="menu-item-header">
                   <h3>Halloumi Fries</h3>
                   <span class="menu-price">$14</span>
                 </div>
                 <p>Crispy-fried halloumi, herb dust, dipping sauce.</p>
               </div>
-              <div class="menu-item" data-name="Slow-Braised Oxtail Sliders">
+              <div class="menu-item" data-name="Slow-Braised Oxtail Sliders" data-desc="Fall-apart oxtail, pickled onion, house-made brioche.">
                 <div class="menu-item-header">
                   <h3>Slow-Braised Oxtail Sliders</h3>
                   <span class="menu-price">$22 – $30</span>
                 </div>
                 <p>Fall-apart oxtail, pickled onion, house-made brioche.</p>
               </div>
-              <div class="menu-item" data-name="Midnight Luxe Sliders">
+              <div class="menu-item" data-name="Midnight Luxe Sliders" data-desc="Wagyu beef, truffle aioli, aged gouda, brioche bun.">
                 <div class="menu-item-header">
                   <h3>Midnight Luxe Sliders</h3>
                   <span class="menu-price">$28</span>
@@ -100,86 +106,88 @@
             </div>
           </div>
 
+          <!-- Flatbreads -->
           <div class="menu-category" data-category="flatbreads">
             <h2 class="menu-category-title">Wood-Fired Flatbreads</h2>
             <div class="menu-items">
-              <div class="menu-item" data-name="Fire-Kissed Margherita">
+              <div class="menu-item" data-name="Fire-Kissed Margherita" data-desc="San Marzano, fresh mozzarella, basil, wood-fired.">
                 <div class="menu-item-header">
                   <h3>Fire-Kissed Margherita</h3>
                   <span class="menu-price">$16</span>
                 </div>
                 <p>San Marzano, fresh mozzarella, basil, wood-fired.</p>
               </div>
-              <div class="menu-item" data-name="Berbere-Honey Pepperoni">
+              <div class="menu-item" data-name="Berbere-Honey Pepperoni" data-desc="Spiced pepperoni, berbere honey drizzle, mozzarella.">
                 <div class="menu-item-header">
                   <h3>Berbere-Honey Pepperoni</h3>
                   <span class="menu-price">$18</span>
                 </div>
                 <p>Spiced pepperoni, berbere honey drizzle, mozzarella.</p>
               </div>
-              <div class="menu-item" data-name="Awaze Chicken Flatbread">
+              <div class="menu-item" data-name="Awaze Chicken Flatbread" data-desc="Awaze-marinated chicken, pickled jalapeño, herb crema.">
                 <div class="menu-item-header">
                   <h3>Awaze Chicken Flatbread</h3>
                   <span class="menu-price">$19</span>
                 </div>
                 <p>Awaze-marinated chicken, pickled jalapeño, herb crema.</p>
               </div>
-              <div class="menu-item" data-name="Whipped Feta Veggie Flatbread">
+              <div class="menu-item" data-name="Whipped Feta Veggie Flatbread" data-desc="Whipped feta, roasted vegetables, za'atar, olive oil.">
                 <div class="menu-item-header">
                   <h3>Whipped Feta Veggie Flatbread</h3>
                   <span class="menu-price">$17</span>
                 </div>
-                <p>Whipped feta, roasted vegetables, za&rsquo;atar, olive oil.</p>
+                <p>Whipped feta, roasted vegetables, za'atar, olive oil.</p>
               </div>
             </div>
           </div>
 
+          <!-- Entrees -->
           <div class="menu-category" data-category="entrees">
             <h2 class="menu-category-title">Entrees</h2>
             <div class="menu-items">
-              <div class="menu-item" data-name="Wood-Fired Branzino">
+              <div class="menu-item" data-name="Wood-Fired Branzino" data-desc="Whole branzino, wood-fired, herb butter, seasonal accompaniment.">
                 <div class="menu-item-header">
                   <h3>Wood-Fired Branzino</h3>
                   <span class="menu-price">$54</span>
                 </div>
                 <p>Whole branzino, wood-fired, herb butter, seasonal accompaniment.</p>
               </div>
-              <div class="menu-item" data-name="Golden Crispy Snapper">
+              <div class="menu-item" data-name="Golden Crispy Snapper" data-desc="Whole snapper, golden-fried, Mediterranean sauces.">
                 <div class="menu-item-header">
                   <h3>Golden Crispy Snapper</h3>
                   <span class="menu-price">$46</span>
                 </div>
                 <p>Whole snapper, golden-fried, Mediterranean sauces.</p>
               </div>
-              <div class="menu-item" data-name="Honey Rosemary Lamb Chops">
+              <div class="menu-item" data-name="Honey Rosemary Lamb Chops" data-desc="Wood-fired lamb, honey-rosemary glaze, roasted root vegetables.">
                 <div class="menu-item-header">
                   <h3>Honey Rosemary Lamb Chops</h3>
                   <span class="menu-price">$48</span>
                 </div>
                 <p>Wood-fired lamb, honey-rosemary glaze, roasted root vegetables.</p>
               </div>
-              <div class="menu-item" data-name="Center-Cut Filet">
+              <div class="menu-item" data-name="Center-Cut Filet" data-desc="Premium center-cut, wood-grilled, compound butter, choice of side.">
                 <div class="menu-item-header">
                   <h3>Center-Cut Filet</h3>
                   <span class="menu-price">$68</span>
                 </div>
                 <p>Premium center-cut, wood-grilled, compound butter, choice of side.</p>
               </div>
-              <div class="menu-item" data-name="Amina Reserve Salmon">
+              <div class="menu-item" data-name="Amina Reserve Salmon" data-desc="Reserve-cut salmon, wood-fired, citrus herb glaze.">
                 <div class="menu-item-header">
                   <h3>Amina Reserve Salmon</h3>
                   <span class="menu-price">$38</span>
                 </div>
                 <p>Reserve-cut salmon, wood-fired, citrus herb glaze.</p>
               </div>
-              <div class="menu-item" data-name="Steak Tibs">
+              <div class="menu-item" data-name="Steak Tibs" data-desc="Cubed steak, sautéed peppers, onions, traditional berbere spice.">
                 <div class="menu-item-header">
                   <h3>Steak Tibs</h3>
                   <span class="menu-price">$26</span>
                 </div>
                 <p>Cubed steak, sautéed peppers, onions, traditional berbere spice.</p>
               </div>
-              <div class="menu-item" data-name="Chicken Tibs">
+              <div class="menu-item" data-name="Chicken Tibs" data-desc="Sautéed chicken, peppers, onions, rosemary, mild spice.">
                 <div class="menu-item-header">
                   <h3>Chicken Tibs</h3>
                   <span class="menu-price">$22</span>
@@ -189,31 +197,32 @@
             </div>
           </div>
 
+          <!-- Bowls -->
           <div class="menu-category" data-category="bowls">
             <h2 class="menu-category-title">Bowls</h2>
             <div class="menu-items">
-              <div class="menu-item" data-name="Chicken Tibs Bowl">
+              <div class="menu-item" data-name="Chicken Tibs Bowl" data-desc="Chicken tibs, jasmine rice, sautéed greens, berbere sauce.">
                 <div class="menu-item-header">
                   <h3>Chicken Tibs Bowl</h3>
                   <span class="menu-price">$19</span>
                 </div>
                 <p>Chicken tibs, jasmine rice, sautéed greens, berbere sauce.</p>
               </div>
-              <div class="menu-item" data-name="Steak Tibs Bowl">
+              <div class="menu-item" data-name="Steak Tibs Bowl" data-desc="Steak tibs, jasmine rice, peppers, onions, berbere spice.">
                 <div class="menu-item-header">
                   <h3>Steak Tibs Bowl</h3>
                   <span class="menu-price">$26</span>
                 </div>
                 <p>Steak tibs, jasmine rice, peppers, onions, berbere spice.</p>
               </div>
-              <div class="menu-item" data-name="Mediterranean Salmon Bowl">
+              <div class="menu-item" data-name="Mediterranean Salmon Bowl" data-desc="Wood-fired salmon, grains, roasted vegetables, herb vinaigrette.">
                 <div class="menu-item-header">
                   <h3>Mediterranean Salmon Bowl</h3>
                   <span class="menu-price">$25</span>
                 </div>
                 <p>Wood-fired salmon, grains, roasted vegetables, herb vinaigrette.</p>
               </div>
-              <div class="menu-item" data-name="Falafel Grain Bowl">
+              <div class="menu-item" data-name="Falafel Grain Bowl" data-desc="Crispy falafel, ancient grains, hummus, pickled vegetables, tahini.">
                 <div class="menu-item-header">
                   <h3>Falafel Grain Bowl</h3>
                   <span class="menu-price">$18</span>
@@ -223,31 +232,32 @@
             </div>
           </div>
 
+          <!-- Sides -->
           <div class="menu-category" data-category="sides">
             <h2 class="menu-category-title">Sides</h2>
             <div class="menu-items">
-              <div class="menu-item" data-name="Berbere Sea Salt Fries">
+              <div class="menu-item" data-name="Berbere Sea Salt Fries" data-desc="Crispy fries, berbere seasoning, flaky sea salt.">
                 <div class="menu-item-header">
                   <h3>Berbere Sea Salt Fries</h3>
                   <span class="menu-price">$7 – $9</span>
                 </div>
                 <p>Crispy fries, berbere seasoning, flaky sea salt.</p>
               </div>
-              <div class="menu-item" data-name="Lemon Herb Rice">
+              <div class="menu-item" data-name="Lemon Herb Rice" data-desc="Fluffy rice, fresh lemon, mixed herbs.">
                 <div class="menu-item-header">
                   <h3>Lemon Herb Rice</h3>
                   <span class="menu-price">$6 – $11</span>
                 </div>
                 <p>Fluffy rice, fresh lemon, mixed herbs.</p>
               </div>
-              <div class="menu-item" data-name="Truffle Fries">
+              <div class="menu-item" data-name="Truffle Fries" data-desc="Truffle oil, parmesan, fresh herbs.">
                 <div class="menu-item-header">
                   <h3>Truffle Fries</h3>
                   <span class="menu-price">$9 – $12</span>
                 </div>
                 <p>Truffle oil, parmesan, fresh herbs.</p>
               </div>
-              <div class="menu-item" data-name="Golden Alicha">
+              <div class="menu-item" data-name="Golden Alicha" data-desc="Traditional Eritrean cabbage, turmeric, mild spice.">
                 <div class="menu-item-header">
                   <h3>Golden Alicha</h3>
                   <span class="menu-price">$13</span>
@@ -258,12 +268,12 @@
           </div>
         </div>
 
-        <div class="menu-no-results" id="menuNoResults" style="display:none;">
+        <div class="menu-no-results" id="menuNoResults" style="display:none; text-align:center; padding: 3rem; color: var(--text-muted);">
           <p>No dishes found matching your search.</p>
         </div>
 
-        <div class="menu-cta">
-          <p>Consuming raw or undercooked meats, poultry, seafood, or eggs may increase your risk of foodborne illness.</p>
+        <div style="text-align:center; margin-top: 5rem; border-top: 1px dashed var(--border); padding-top: 3rem;">
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Consuming raw or undercooked meats, poultry, seafood, or eggs may increase your risk of foodborne illness.</p>
           <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
         </div>
       </div>
@@ -273,10 +283,18 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <p class="footer-logo">Amina</p>
-      <p>&copy; 2026 Amina. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Reserve</a>
+        <a href="signature-experience.html">Signature Experience</a>
+      </div>
+      <p>&copy; 2026 Amina. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <div class="demo-toast" role="status"></div>
+  <script src="site.js" defer></script>
 </body>
 </html>

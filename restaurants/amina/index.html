@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/amina/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amina — Eritrean-Mediterranean Fine Dining & Late-Night Lounge</title>
@@ -11,28 +14,30 @@
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">Amina</a>
-      <nav class="main-nav" id="mainNav">
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="active">Home</a>
         <a href="menu.html">Menu</a>
         <a href="about.html">About</a>
         <a href="visit.html">Visit</a>
         <a href="reserve.html">Reserve</a>
         <a href="signature-experience.html">Signature Experience</a>
-</nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
+  <main id="main">
+    <section class="hero" aria-label="Welcome banner">
       <div class="hero-content">
-        <p class="hero-tag">Est. April 2026 &mdash; Charlotte, NC</p>
+        <p class="hero-tag">Charlotte, NC &bull; Est. April 2026</p>
         <h1 class="hero-title">Amina</h1>
         <p class="hero-subtitle">Eritrean-Mediterranean Fine Dining &amp; Late-Night Lounge</p>
         <div class="hero-actions">
@@ -43,38 +48,51 @@
     </section>
 
     <section class="section welcome">
-      <div class="container">
-        <p class="section-tag">Welcome to Amina</p>
-        <h2 class="section-title">Where Heritage Meets Fire</h2>
-        <p class="welcome-text">
-          Born from the vision of Charlotte native and &ldquo;food surgeon&rdquo; <strong>Chef Chianti Peek</strong>,
-          Amina is a celebration of Eritrean roots and Mediterranean craft. Every dish is shaped by heritage — from
-          berbere-rubbed wings to wood-fired flatbreads — and every visit is an experience, whether it&rsquo;s a
-          weeknight dinner or a Saturday night in the lounge.
-        </p>
-        <p class="welcome-text">
-          Our <strong>wood-fired program</strong> brings out the depth in everything from branzino to lamb chops.
-          Our <strong>late-night lounge</strong>, with resident DJs spinning R&amp;B and house, keeps the energy alive
-          Friday and Saturday until 2 AM.
-        </p>
+      <div class="container welcome-grid">
+        <div>
+          <span class="section-tag">Welcome to Amina</span>
+          <h2 class="section-title">Where Heritage Meets <em>Fire</em></h2>
+          <p class="welcome-text">
+            Born from the vision of Charlotte native and &ldquo;food surgeon&rdquo; <strong>Chef Chianti Peek</strong>,
+            Amina is a celebration of Eritrean roots and Mediterranean craft. Every dish is shaped by heritage — from
+            berbere-rubbed wings to wood-fired flatbreads — and every visit is an experience, whether it&rsquo;s a
+            weeknight dinner or a Saturday night in the lounge.
+          </p>
+        </div>
+        <div>
+          <p class="welcome-text">
+            Our <strong>wood-fired program</strong> brings out the depth in everything from branzino to lamb chops.
+            Our <strong>late-night lounge</strong>, with resident DJs spinning R&amp;B and house, keeps the energy alive
+            Friday and Saturday until 2 AM.
+          </p>
+          <div style="margin-top: 2rem;">
+            <a href="about.html" class="btn btn-outline">Our Story &rarr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section features">
+    <section class="section alt features">
       <div class="container">
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">&#x1F525;</div>
+        <div class="grid g3">
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1.38 0 2.63.56 3.54 1.46L19 7v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7l3.46-3.54A4.98 4.98 0 0 1 12 2z"/><path d="M12 6v12"/></svg>
+            </div>
             <h3>Fire &amp; Earth</h3>
             <p>Wood-fired flatbreads, branzino, honey rosemary lamb chops, and center-cut filet — all kissed by open flame and rooted in the earth.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#x1F3ED;</div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
             <h3>Eritrean Heritage</h3>
             <p>Berbere spice, awaze marinades, hand-folded sambusa, and classic tibs — the flavors of Eritrea refined for an upscale Charlotte table.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">&#x1F3B6;</div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
             <h3>Late-Night Lounge</h3>
             <p>Fri &amp; Sat 10 PM–2 AM. DJs spinning R&amp;B and house, craft cocktails, and a 40-ft bar designed for a night you won&rsquo;t forget.</p>
           </div>
@@ -84,48 +102,50 @@
 
     <section class="section signatures">
       <div class="container">
-        <p class="section-tag">Signature Dishes</p>
-        <h2 class="section-title">The Plates That Define Us</h2>
-        <div class="sig-grid">
-          <div class="sig-card">
-            <h4>Wood-Fired Branzino</h4>
-            <p>$54</p>
+        <div class="head">
+          <span class="section-tag">Signature Dishes</span>
+          <h2>The Plates That Define Us</h2>
+        </div>
+        <div class="grid g4">
+          <div class="card">
+            <span class="badge" style="margin-bottom:1rem;">Wood-Fired</span>
+            <h3>Branzino</h3>
+            <p>Fresh whole fish roasted over open coals. Seasoned with Mediterranean herbs and citrus.</p>
+            <p style="margin-top:1.5rem; font-weight:700; color:var(--accent); font-size:1.2rem;">$54</p>
           </div>
-          <div class="sig-card">
-            <h4>Honey Rosemary Lamb Chops</h4>
-            <p>$48</p>
+          <div class="card">
+            <span class="badge" style="margin-bottom:1rem;">House Specialty</span>
+            <h3>Lamb Chops</h3>
+            <p>Honey rosemary glaze, fire-grilled over oak embers. Succulent and tender.</p>
+            <p style="margin-top:1.5rem; font-weight:700; color:var(--accent); font-size:1.2rem;">$48</p>
           </div>
-          <div class="sig-card">
-            <h4>Slow-Braised Oxtail Sliders</h4>
-            <p>$22 – $30</p>
+          <div class="card">
+            <span class="badge" style="margin-bottom:1rem;">Shareable</span>
+            <h3>Oxtail Sliders</h3>
+            <p>Slow-braised oxtail served on sweet brioche rolls with pickled house onions.</p>
+            <p style="margin-top:1.5rem; font-weight:700; color:var(--accent); font-size:1.2rem;">$22 – $30</p>
           </div>
-          <div class="sig-card">
-            <h4>Center-Cut Filet</h4>
-            <p>$68</p>
+          <div class="card">
+            <span class="badge" style="margin-bottom:1rem;">Premium Cut</span>
+            <h3>Center filet</h3>
+            <p>Hand-selected center-cut beef tenderloin grilled to your liking over hot embers.</p>
+            <p style="margin-top:1.5rem; font-weight:700; color:var(--accent); font-size:1.2rem;">$68</p>
           </div>
+        </div>
+        <div style="text-align:center; margin-top:3.5rem;">
+          <a href="menu.html" class="btn btn-primary">Explore Full Menu</a>
         </div>
       </div>
     </section>
 
-    <section class="section hours-location">
-      <div class="container hours-location-grid">
-        <div class="hours-card">
-          <h3>Hours</h3>
-          <ul>
-            <li><span>Monday</span><span>Closed</span></li>
-            <li><span>Tue – Thu</span><span>11 AM – 11 PM</span></li>
-            <li><span>Friday</span><span>11 AM – 2 AM</span></li>
-            <li><span>Saturday</span><span>5 PM – 2 AM</span></li>
-            <li><span>Sunday</span><span>5 PM – 11 PM</span></li>
-          </ul>
+    <section class="section alt hours-location" style="text-align:center;">
+      <div class="container" style="max-width: 600px;">
+        <div id="live-hours-status" style="margin-bottom: 2.5rem;">
+          <div id="live-status-container"></div>
         </div>
-        <div class="location-card">
-          <h3>Find Us</h3>
-          <p>225 East 6th Street, Suite C<br>Charlotte, NC 28202</p>
-          <p class="location-note">First Ward, Uptown — walking distance to Spectrum Center</p>
-          <p>Complimentary 2-hour parking validation</p>
-          <a href="visit.html" class="btn btn-outline">Plan Your Visit</a>
-        </div>
+        <h2>Join Us in the <em>First Ward</em></h2>
+        <p style="color:var(--text-muted); margin-bottom: 2rem;">225 East 6th Street, Suite C, Charlotte, NC. Complimentary 2-hour parking validation is provided for dining guests.</p>
+        <a href="visit.html" class="btn btn-outline">Directions &amp; Hours</a>
       </div>
     </section>
   </main>
@@ -133,10 +153,18 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <p class="footer-logo">Amina</p>
-      <p>&copy; 2026 Amina. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="reserve.html">Reserve</a>
+        <a href="signature-experience.html">Signature Experience</a>
+      </div>
+      <p>&copy; 2026 Amina. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <div class="demo-toast" role="status"></div>
+  <script src="site.js" defer></script>
 </body>
 </html>
