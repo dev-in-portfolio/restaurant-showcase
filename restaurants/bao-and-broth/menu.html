@@ -1,88 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bao-and-broth/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bao and Broth - Charlotte, NC | Menu</title>
+  <title>Menu — Bao and Broth Restaurant</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Ramen bowl visualizer */
+    /* circular ramen bowl visualizer override */
     .ramen-bowl-visualizer {
-      height: 220px;
-      width: 220px;
-      border: 6px solid #ef4444; /* Bright red ceramic bowl */
-      border-radius: 50%;
+      height: 240px;
+      width: 240px;
       position: relative;
-      background: radial-gradient(circle, #facc15 0%, #d97706 100%); /* Rich broth color */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      box-shadow: var(--shadow-premium);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
-    .ramen-noodle-swirl {
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      border: 3px double rgba(255,255,255,0.25);
-      border-radius: 50%;
-      animation: swirl 8s linear infinite;
+    
+    .ramen-svg {
+      width: 100%;
+      height: 100%;
     }
-    .ramen-topping-emoji {
-      position: absolute;
-      font-size: 1.5rem;
-      transition: all 0.4s ease;
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    #ramen-egg { top: 40px; left: 55px; }
-    #ramen-chashu { top: 110px; left: 50px; }
-    #ramen-bamboo { top: 60px; left: 120px; }
-    #ramen-nori { top: 105px; left: 125px; }
 
-    @keyframes swirl {
+    /* Broth color transition */
+    .ramen-broth {
+      transition: fill 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Rotating noodle swirl */
+    .noodle-swirl-svg {
+      animation: swirl-rotate 10s infinite linear;
+      transform-origin: 100px 110px;
+    }
+    
+    @keyframes swirl-rotate {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
+    }
+
+    /* Toppings transition logic */
+    .topping-item-svg {
+      opacity: 0;
+      transform: scale(0.5);
+      transform-origin: center;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .topping-item-svg.show {
+      opacity: 1;
+      transform: scale(1);
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
-          Bao & Broth
+          Bao &amp; Broth
           <span>Optimist Hall Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html" class="active">Menu</a>
         <a href="ramen.html">Ramen Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Steamed Bao & Ramen Menu</h2>
+    <h2 class="page-title">Steamed Bao &amp; Ramen Menu</h2>
     <p class="page-subtitle">Savor fluffy buns and rich slow-simmered noodle bowls. Design your custom ramen bowl in our interactive mixer below.</p>
   </header>
 
   <!-- Interactive Ramen Mixer -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
       <h3 class="section-title" style="margin-bottom: 2rem;">Ramen Customizer</h3>
       
@@ -90,14 +102,59 @@
         
         <!-- Left Side: Ramen Bowl Visualizer -->
         <div class="plate-canvas" style="min-height: 300px;">
-          <div class="ramen-bowl-visualizer" id="bowl-color-box">
-            <div class="ramen-noodle-swirl"></div>
-            <div style="font-size: 2.2rem; z-index: 5;">🍜</div>
-            <!-- Toppings overlays -->
-            <div class="ramen-topping-emoji" id="ramen-egg">🥚</div>
-            <div class="ramen-topping-emoji" id="ramen-chashu">🥩</div>
-            <div class="ramen-topping-emoji" id="ramen-bamboo">🎍</div>
-            <div class="ramen-topping-emoji" id="ramen-nori">🟫</div>
+          <div class="ramen-bowl-visualizer" id="bowl-box">
+            <svg class="ramen-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outer Ceramic Bowl (red clay stoneware) -->
+              <circle cx="100" cy="110" r="82" fill="#be123c" stroke="#5c0011" stroke-width="5" />
+              <circle cx="100" cy="110" r="76" fill="none" stroke="#fff" stroke-width="2" opacity="0.35" />
+
+              <!-- Broth Area Clip -->
+              <g clip-path="url(#broth-clip)">
+                <!-- Broth Color Fill -->
+                <circle id="ramen-broth-color" class="ramen-broth" cx="100" cy="110" r="74" fill="#f3d69c" />
+
+                <!-- Rotating Noodle Swirl -->
+                <g class="noodle-swirl-svg">
+                  <!-- Swirling yellow noodle paths -->
+                  <path d="M 60,110 C 60,80 140,80 140,110 C 140,140 60,140 60,110 Z" fill="none" stroke="#fef08a" stroke-width="4.5" stroke-linecap="round" opacity="0.85" />
+                  <path d="M 70,110 C 70,90 130,90 130,110 C 130,130 70,130 70,110 Z" fill="none" stroke="#eab308" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+                </g>
+
+                <!-- Floating Toppings -->
+                <!-- Ajitama Soft Boiled Egg -->
+                <g id="ramen-egg" class="topping-item-svg">
+                  <!-- Egg white oval -->
+                  <ellipse cx="78" cy="95" rx="14" ry="10" transform="rotate(-30 78 95)" fill="#fffef7" stroke="#e0dbd5" stroke-width="1" />
+                  <!-- Egg yolk -->
+                  <circle cx="78" cy="95" r="6" fill="#f97316" />
+                </g>
+
+                <!-- Pork Chashu slice -->
+                <g id="ramen-chashu" class="topping-item-svg">
+                  <circle cx="82" cy="132" r="15" fill="#8d6e63" stroke="#5d4037" stroke-width="1.5" />
+                  <!-- Grilled lines -->
+                  <line x1="72" y1="125" x2="92" y2="135" stroke="#3e2723" stroke-width="1.5" />
+                  <line x1="74" y1="133" x2="90" y2="141" stroke="#3e2723" stroke-width="1.5" />
+                </g>
+
+                <!-- Bamboo Shoots -->
+                <g id="ramen-bamboo" class="topping-item-svg">
+                  <rect x="110" y="85" width="22" height="7" rx="1" fill="#ffe082" transform="rotate(15 110 85)" />
+                  <rect x="115" y="94" width="22" height="7" rx="1" fill="#ffe082" transform="rotate(15 115 94)" />
+                </g>
+
+                <!-- Nori Sheets (dark square) -->
+                <g id="ramen-nori" class="topping-item-svg">
+                  <rect x="120" y="115" width="26" height="26" rx="2" fill="#1b2e25" transform="rotate(-10 120 115)" />
+                </g>
+              </g>
+
+              <defs>
+                <clipPath id="broth-clip">
+                  <circle cx="100" cy="110" r="74" />
+                </clipPath>
+              </defs>
+            </svg>
           </div>
         </div>
 
@@ -105,32 +162,32 @@
         <div class="bowl-controls">
           
           <div class="control-group">
-            <label>1. Select Broth Base</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Select Broth Base</span>
             <div class="option-grid" id="broth-options">
-              <button class="option-btn active" onclick="setBroth('tonkotsu', 13.50, 'Tonkotsu Broth', '#f3d69c')">Tonkotsu ($13.50)</button>
-              <button class="option-btn" onclick="setBroth('miso', 14.00, 'Spicy Miso Broth', '#e06b3e')">Spicy Miso ($14.00)</button>
-              <button class="option-btn" onclick="setBroth('shoyu', 13.00, 'Shoyu Soy Broth', '#ca8a04')">Shoyu ($13.00)</button>
-              <button class="option-btn" onclick="setBroth('vegan', 12.50, 'Mushroom Broth', '#a38a75')">Vegan Mushroom ($12.50)</button>
+              <button class="option-btn active" data-key="tonkotsu" data-price="13.50" data-name="Tonkotsu Broth" data-color="#f3d69c">Tonkotsu ($13.50)</button>
+              <button class="option-btn" data-key="miso" data-price="14.00" data-name="Spicy Miso Broth" data-color="#e06b3e">Spicy Miso ($14.00)</button>
+              <button class="option-btn" data-key="shoyu" data-price="13.00" data-name="Shoyu Soy Broth" data-color="#ca8a04">Shoyu ($13.00)</button>
+              <button class="option-btn" data-key="vegan" data-price="12.50" data-name="Mushroom Broth" data-color="#a38a75">Vegan Mushroom ($12.50)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Choose Spice Tier</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Choose Spice Tier</span>
             <div class="option-grid" id="spice-options">
-              <button class="option-btn active" onclick="setSpice('0', 'Non-Spicy')">None (0)</button>
-              <button class="option-btn" onclick="setSpice('1', 'Mild Spice 🌶️')">Mild (1)</button>
-              <button class="option-btn" onclick="setSpice('2', 'Spicy 🌶️🌶️')">Spicy (2)</button>
-              <button class="option-btn" onclick="setSpice('3', 'Fire Hot 🌶️🌶️🌶️')">Fire (3)</button>
+              <button class="option-btn active" data-key="0" data-name="Non-Spicy">None (0)</button>
+              <button class="option-btn" data-key="1" data-name="Mild Spice 🌶️">Mild (1)</button>
+              <button class="option-btn" data-key="2" data-name="Spicy 🌶️🌶️">Spicy (2)</button>
+              <button class="option-btn" data-key="3" data-name="Fire Hot 🌶️🌶️🌶️">Fire (3)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Add Premium Toppings</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Add Premium Toppings</span>
             <div class="option-grid">
-              <button class="option-btn active" id="btn-egg" onclick="toggleTopping('egg', 1.50)">Soft Boiled Egg (+$1.50)</button>
-              <button class="option-btn active" id="btn-chashu" onclick="toggleTopping('chashu', 3.00)">Pork Chashu (+$3.00)</button>
-              <button class="option-btn active" id="btn-bamboo" onclick="toggleTopping('bamboo', 1.00)">Bamboo Shoots (+$1.00)</button>
-              <button class="option-btn active" id="btn-nori" onclick="toggleTopping('nori', 1.00)">Nori Sheets (+$1.00)</button>
+              <button class="option-btn active" id="btn-egg" data-key="egg" data-price="1.50" data-name="Soft Boiled Egg">Soft Boiled Egg (+$1.50)</button>
+              <button class="option-btn active" id="btn-chashu" data-key="chashu" data-price="3.00" data-name="Pork Chashu">Pork Chashu (+$3.00)</button>
+              <button class="option-btn active" id="btn-bamboo" data-key="bamboo" data-price="1.00" data-name="Bamboo Shoots">Bamboo Shoots (+$1.00)</button>
+              <button class="option-btn active" id="btn-nori" data-key="nori" data-price="1.00" data-name="Nori Sheets">Nori Sheets (+$1.00)</button>
             </div>
           </div>
 
@@ -148,7 +205,7 @@
     </section>
 
     <!-- Traditional Menu List Grid -->
-    <h3 class="section-title">Bao & Broth Menu</h3>
+    <h3 class="section-title">Bao &amp; Broth Menu</h3>
     <div class="menu-grid">
       
       <div class="premium-card">
@@ -208,7 +265,6 @@
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
@@ -228,7 +284,7 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bao and Broth. Optimist Hall Charlotte.</p>
+      <p>&copy; 2026 Bao and Broth. Optimist Hall Charlotte.</p>
     </div>
   </footer>
 
@@ -243,33 +299,48 @@
       nori: { active: true, price: 1.00, name: 'Nori Sheets' }
     };
 
-    function setBroth(key, price, name, color) {
-      const buttons = document.getElementById('broth-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedBroth = { key, basePrice: price, name, color };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setSpice(key, name) {
-      const buttons = document.getElementById('spice-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    function setupSelectors() {
+      const brothBtns = document.querySelectorAll('#broth-options .option-btn');
+      brothBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          brothBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedBroth = { key: btn.dataset.key, basePrice: parseFloat(btn.dataset.price), name: btn.dataset.name, color: btn.dataset.color };
+          updateDisplay();
+        });
+      });
 
-      selectedSpice = { key, name };
-      updateDisplay();
-    }
+      const spiceBtns = document.querySelectorAll('#spice-options .option-btn');
+      spiceBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          spiceBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedSpice = { key: btn.dataset.key, name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
 
-    function toggleTopping(key, price) {
-      toppings[key].active = !toppings[key].active;
-      const btn = document.getElementById(`btn-${key}`);
-      if (toppings[key].active) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-      updateDisplay();
+      const toppingKeys = ['egg', 'chashu', 'bamboo', 'nori'];
+      toppingKeys.forEach(key => {
+        const btn = document.getElementById(`btn-${key}`);
+        if (btn) {
+          btn.addEventListener('click', (e) => {
+            toppings[key].active = !toppings[key].active;
+            btn.classList.toggle('active', toppings[key].active);
+            updateDisplay();
+          });
+        }
+      });
     }
 
     function updateDisplay() {
@@ -294,24 +365,26 @@
       document.getElementById('display-ramen-desc').innerText = `Classic wavy ramen noodles served in rich ${selectedBroth.name} (${selectedSpice.name})${toppingsText}.`;
 
       // Update fluid color of ramen bowl
-      const bowl = document.getElementById('bowl-color-box');
-      bowl.style.background = `radial-gradient(circle, #facc15 0%, ${selectedBroth.color} 100%)`;
+      const brothFill = document.getElementById('ramen-broth-color');
+      if (brothFill) {
+        brothFill.setAttribute('fill', selectedBroth.color);
+      }
 
       // Show/hide graphic toppings overlays
       for (const k in toppings) {
         const el = document.getElementById(`ramen-${k}`);
-        if (toppings[k].active) {
-          el.style.opacity = '1';
-          el.style.transform = 'scale(1)';
-        } else {
-          el.style.opacity = '0';
-          el.style.transform = 'scale(0.5)';
+        if (el) {
+          if (toppings[k].active) {
+            el.classList.add('show');
+          } else {
+            el.classList.remove('show');
+          }
         }
       }
     }
 
-    // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>

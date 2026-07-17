@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bao-and-broth/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bao and Broth - Charlotte, NC | Ramen Bar</title>
+  <title>Ramen Bar — Bao and Broth Restaurant</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Styling for the interactive ramen bowl visualizer */
+    /* Side-View Ramen Bowl custom visualizer styles */
     .ramen-bowl-container {
       background: radial-gradient(circle, #1f140e 0%, #0d0806 100%);
-      border: 1.5px solid var(--color-orange);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
       box-shadow: var(--shadow-premium);
       min-height: 290px;
       display: flex;
@@ -19,88 +22,67 @@
       justify-content: center;
       text-align: center;
       transition: var(--transition-smooth);
+      align-items: center;
     }
-    .ramen-bowl-graphic {
-      width: 140px;
-      height: 90px;
-      border: 3.5px solid var(--color-text-light);
-      border-radius: 10px 10px 80px 80px;
-      background: rgba(255,255,255,0.05);
-      margin: 0 auto 1.5rem auto;
-      position: relative;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-      transition: var(--transition-smooth);
-      overflow: hidden;
+    
+    .ramen-bowl-svg {
+      width: 160px;
+      height: 140px;
+      margin-bottom: 1.5rem;
     }
-    .ramen-liquid {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 55px; /* Liquid level */
-      background: #c29363; /* Tonkotsu broth default */
-      transition: var(--transition-smooth);
+
+    /* Broth color transition */
+    .ramen-liquid-svg {
+      transition: fill 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    .ramen-noodles {
-      position: absolute;
-      bottom: 10px;
-      left: 15px;
-      right: 15px;
-      height: 35px;
-      background: repeating-linear-gradient(45deg, #fef08a, #fef08a 4px, #eab308 4px, #eab308 8px);
-      border-radius: 5px;
-      opacity: 0.85;
-      z-index: 2;
-    }
-    .ramen-protein {
-      position: absolute;
-      bottom: 25px;
-      left: 25px;
-      width: 45px;
-      height: 25px;
-      background: #be123c; /* Chashu pork default */
-      border-radius: 4px;
-      z-index: 3;
-      transition: var(--transition-smooth);
+
+    /* Protein color transition */
+    .ramen-protein-svg {
+      transition: fill 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
-          Bao & Broth
+          Bao &amp; Broth
           <span>Optimist Hall Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="ramen.html" class="active">Ramen Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Ramen & Broth Bar</h2>
+    <h2 class="page-title">Ramen &amp; Broth Bar</h2>
     <p class="page-subtitle">Rich 24-hour slow-cooked tonkotsu and shoyu broths, fresh ramen noodles, and chef-curated toppings.</p>
   </header>
 
   <!-- Interactive Ramen Customizer -->
-  <main class="container">
+  <main id="main" class="container">
     
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
       <h3 class="section-title" style="margin-bottom: 1rem;">Ramen Bowl Builder</h3>
@@ -108,14 +90,50 @@
       
       <div class="mixer-container">
         
-        <!-- Left Side: Ramen Bowl Visualizer -->
+        <!-- Left Side: Side-View Ramen Bowl SVG -->
         <div class="plate-canvas" style="min-height: 300px;">
           <div class="ramen-bowl-container" id="bowl-box">
-            <div class="ramen-bowl-graphic">
-              <div class="ramen-liquid" id="liquid-layer"></div>
-              <div class="ramen-noodles" id="noodles-layer"></div>
-              <div class="ramen-protein" id="protein-layer"></div>
-            </div>
+            <!-- Side-View Ramen Bowl SVG -->
+            <svg class="ramen-bowl-svg" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <!-- Steam lines -->
+              <path class="steamer-steam" d="M 85,35 C 80,25 90,15 85,5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+              <path class="steamer-steam" d="M 115,35 C 110,25 120,15 115,5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+
+              <!-- Broth Liquid Base (Inside clip path) -->
+              <g clip-path="url(#bowl-clip)">
+                <!-- Broth Color Liquid -->
+                <path id="liquid-layer" class="ramen-liquid-svg" d="M 10,48 L 190,48 L 170,120 L 30,120 Z" fill="#c29363" />
+                
+                <!-- Wavy Noodles -->
+                <g id="noodles-group">
+                  <!-- Wavy noodle lines -->
+                  <path d="M 32,105 Q 42,95 52,105 T 72,105 T 92,105 T 112,105 T 132,105 T 152,105 T 168,105" fill="none" stroke="#fef08a" stroke-width="4.5" stroke-linecap="round" opacity="0.85" />
+                  <path d="M 38,115 Q 48,105 58,115 T 78,115 T 98,115 T 118,115 T 138,115 T 158,115" fill="none" stroke="#eab308" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+                </g>
+
+                <!-- Protein toppings blocks -->
+                <!-- Pork Chashu or Lemongrass chicken or tofu -->
+                <rect id="protein-layer" class="ramen-protein-svg" x="50" y="58" width="48" height="28" rx="4" fill="#be123c" stroke="#5c0011" stroke-width="1" />
+                
+                <!-- soft boiled egg halved -->
+                <g id="egg-topping-s">
+                  <ellipse cx="125" cy="65" rx="14" ry="9" fill="#fffef7" stroke="#e0dbd5" stroke-width="1" transform="rotate(15 125 65)" />
+                  <circle cx="125" cy="65" r="5" fill="#f97316" />
+                </g>
+              </g>
+
+              <!-- Ceramic Bowl Body Outline -->
+              <path d="M 20,40 L 180,40 L 150,120 L 50,120 Z" fill="none" stroke="var(--color-text-light)" stroke-width="4.5" stroke-linejoin="round" />
+              <!-- Base Stand -->
+              <path d="M 70,120 L 75,130 L 125,130 L 130,120" fill="none" stroke="var(--color-text-light)" stroke-width="4.5" stroke-linejoin="round" />
+
+              <defs>
+                <clipPath id="bowl-clip">
+                  <path d="M 20,40 L 180,40 L 150,120 L 50,120 Z" />
+                </clipPath>
+              </defs>
+            </svg>
+
             <h4 style="font-size: 1.6rem; color: #ffffff;" id="bowl-display-title">Rich Tonkotsu Ramen</h4>
             <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-orange); margin: 0.5rem 0;" id="bowl-display-price">$18.50</p>
           </div>
@@ -125,30 +143,30 @@
         <div class="bowl-controls">
           
           <div class="control-group">
-            <label>1. Select Broth Base</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Select Broth Base</span>
             <div class="option-grid" id="broth-options">
-              <button class="option-btn active" onclick="setBroth('tonkotsu', 'Rich Tonkotsu Pork Broth', 15.00, '#c29363')">Tonkotsu ($15)</button>
-              <button class="option-btn" onclick="setBroth('shoyu', 'Shoyu Chicken Broth', 14.00, '#854d0e')">Shoyu ($14)</button>
-              <button class="option-btn" onclick="setBroth('miso', 'Creamy Spicy Miso', 14.50, '#ea580c')">Spicy Miso ($14.50)</button>
-              <button class="option-btn" onclick="setBroth('shio', 'Shio Veggie Broth', 13.50, '#eab308')">Shio Veggie ($13.50)</button>
+              <button class="option-btn active" data-key="tonkotsu" data-name="Rich Tonkotsu Pork Broth" data-price="15.00" data-color="#c29363">Tonkotsu ($15)</button>
+              <button class="option-btn" data-key="shoyu" data-name="Shoyu Chicken Broth" data-price="14.00" data-color="#854d0e">Shoyu ($14)</button>
+              <button class="option-btn" data-key="miso" data-name="Creamy Spicy Miso" data-price="14.50" data-color="#ea580c">Spicy Miso ($14.50)</button>
+              <button class="option-btn" data-key="shio" data-name="Shio Veggie Broth" data-price="13.50" data-color="#eab308">Shio Veggie ($13.50)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Noodle style</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Noodle style</span>
             <div class="option-grid" id="noodle-options">
-              <button class="option-btn active" onclick="setNoodle('thin', 'Thin Wavy Noodles')">Thin Wavy</button>
-              <button class="option-btn" onclick="setNoodle('thick', 'Thick Straight Noodles')">Thick Straight</button>
-              <button class="option-btn" onclick="setNoodle('rice', 'Gluten-Free Rice Noodles')">Rice Noodles</button>
+              <button class="option-btn active" data-key="thin" data-name="Thin Wavy Noodles">Thin Wavy</button>
+              <button class="option-btn" data-key="thick" data-name="Thick Straight Noodles">Thick Straight</button>
+              <button class="option-btn" data-key="rice" data-name="Gluten-Free Rice Noodles">Rice Noodles</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Add Protein</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Add Protein</span>
             <div class="option-grid" id="protein-options">
-              <button class="option-btn active" onclick="setProtein('chashu', 'Chashu Pork Belly', 3.50, '#be123c')">Chashu Pork Belly (+$3.50)</button>
-              <button class="option-btn" onclick="setProtein('chicken', 'Lemongrass Grilled Chicken', 3.00, '#fb923c')">Lemongrass Chicken (+$3)</button>
-              <button class="option-btn" onclick="setProtein('tofu', 'Crispy Organic Tofu', 2.50, '#a3e635')">Crispy Tofu (+$2.50)</button>
+              <button class="option-btn active" data-key="chashu" data-name="Chashu Pork Belly" data-price="3.50" data-color="#be123c">Chashu Pork Belly (+$3.50)</button>
+              <button class="option-btn" data-key="chicken" data-name="Lemongrass Grilled Chicken" data-price="3.00" data-color="#fb923c">Lemongrass Chicken (+$3)</button>
+              <button class="option-btn" data-key="tofu" data-name="Crispy Organic Tofu" data-price="2.50" data-color="#a3e635">Crispy Tofu (+$2.50)</button>
             </div>
           </div>
 
@@ -198,7 +216,7 @@
       </div>
 
       <div class="premium-card">
-        <h4 class="menu-category-title">Steamed Potstickers & Sides</h4>
+        <h4 class="menu-category-title">Steamed Potstickers &amp; Sides</h4>
 
         <div class="menu-item">
           <div class="menu-item-header">
@@ -246,7 +264,7 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bao and Broth. Charlotte, NC.</p>
+      <p>&copy; 2026 Bao and Broth. Charlotte, NC.</p>
     </div>
   </footer>
 
@@ -256,31 +274,46 @@
     let selectedNoodle = { key: 'thin', name: 'Thin Wavy Noodles' };
     let selectedProtein = { key: 'chashu', name: 'Chashu Pork Belly', price: 3.50, color: '#be123c' };
 
-    function setBroth(key, name, price, color) {
-      const buttons = document.getElementById('broth-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedBroth = { key, name, price, color };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setNoodle(key, name) {
-      const buttons = document.getElementById('noodle-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    function setupSelectors() {
+      const brothBtns = document.querySelectorAll('#broth-options .option-btn');
+      brothBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          brothBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedBroth = { key: btn.dataset.key, name: btn.dataset.name, price: parseFloat(btn.dataset.price), color: btn.dataset.color };
+          updateDisplay();
+        });
+      });
 
-      selectedNoodle = { key, name };
-      updateDisplay();
-    }
+      const noodleBtns = document.querySelectorAll('#noodle-options .option-btn');
+      noodleBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          noodleBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedNoodle = { key: btn.dataset.key, name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
 
-    function setProtein(key, name, price, color) {
-      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedProtein = { key, name, price, color };
-      updateDisplay();
+      const proteinBtns = document.querySelectorAll('#protein-options .option-btn');
+      proteinBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          proteinBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedProtein = { key: btn.dataset.key, name: btn.dataset.name, price: parseFloat(btn.dataset.price), color: btn.dataset.color };
+          updateDisplay();
+        });
+      });
     }
 
     function updateDisplay() {
@@ -293,10 +326,16 @@
       document.getElementById('display-bowl-protein').innerText = selectedProtein.name;
 
       // Update liquid color
-      document.getElementById('liquid-layer').style.backgroundColor = selectedBroth.color;
+      const liquid = document.getElementById('liquid-layer');
+      if (liquid) {
+        liquid.setAttribute('fill', selectedBroth.color);
+      }
 
       // Update protein color representation
-      document.getElementById('protein-layer').style.backgroundColor = selectedProtein.color;
+      const protein = document.getElementById('protein-layer');
+      if (protein) {
+        protein.setAttribute('fill', selectedProtein.color);
+      }
 
       // Update description text
       const desc = `Slow-simmered ${selectedBroth.name} served with ${selectedNoodle.name.toLowerCase()}, topped with savory ${selectedProtein.name.toLowerCase()}.`;
@@ -305,6 +344,7 @@
 
     // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>

@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bao-and-broth/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bao and Broth - Charlotte, NC | Catering & Services</title>
+  <title>Catering — Bao and Broth Restaurant</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Catering slider styling */
+    .slider-group {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    .c-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 10px;
+      outline: none;
+      background: var(--color-border);
+      accent-color: var(--color-orange);
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
-          Bao & Broth
+          Bao &amp; Broth
           <span>Optimist Hall Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="ramen.html">Ramen Bar</a>
         <a href="about.html">About</a>
         <a href="services.html" class="active">Catering</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -40,45 +65,43 @@
     <p class="page-subtitle">Elevate your office party, corporate lunch, or private gathering with Bao and Broth’s signature party platters and DIY ramen kits.</p>
   </header>
 
-  <!-- Interactive Platter Planner -->
-  <main class="container">
-    
-    <section class="interactive-panel">
+  <!-- Main Content -->
+  <main id="main" class="container">
+    <!-- Interactive Platter Planner -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
       <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Platter Calculator</h3>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Drag the slider to input your expected guest count. Our calculator will estimate the required boxes and total cost.</p>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; font-weight: 500;">Drag the slider to input your expected guest count. Our calculator will estimate the required boxes and total cost.</p>
       
-      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+      <div class="slider-group">
         <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-orange); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">30</span> people</label>
-        <input type="range" id="guests-count" min="10" max="120" value="30" step="5" style="width: 100%; accent-color: var(--color-orange); cursor: pointer;" oninput="calculateFeast(this.value)">
+        <input type="range" class="c-slider" id="guests-count" min="10" max="120" value="30" step="5">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
-        
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <span style="font-size: 2rem;">🥟</span>
+          <span style="font-size: 2rem;" aria-hidden="true">🥟</span>
           <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Steamed Bao Platters</h4>
           <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-orange);" id="bao-platters">5 Platters</p>
           <p style="font-size: 0.85rem; color: var(--color-text-muted);">12 baos per platter ($36/ea)</p>
         </div>
 
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <span style="font-size: 2rem;">🍜</span>
+          <span style="font-size: 2rem;" aria-hidden="true">🍜</span>
           <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Ramen Broth Kits</h4>
           <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-orange);" id="ramen-kits">5 Kits</p>
           <p style="font-size: 0.85rem; color: var(--color-text-muted);">Half-gallon serves ~6 ($45/ea)</p>
         </div>
 
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <span style="font-size: 2rem;">🥟</span>
+          <span style="font-size: 2rem;" aria-hidden="true">🥟</span>
           <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Potsticker Trays</h4>
           <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-orange);" id="potsticker-trays">4 Trays</p>
           <p style="font-size: 0.85rem; color: var(--color-text-muted);">24 potstickers per tray ($30/ea)</p>
         </div>
-
       </div>
 
-      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
-        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-light); letter-spacing: 0.05em; font-family: var(--font-sans);">Estimated Catering Total</span>
+      <div class="premium-card" style="text-align: center; background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border-color:var(--color-orange);">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-light); letter-spacing: 0.05em;">Estimated Catering Total</span>
         <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="feast-cost">$525.00</h4>
         <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 5 Steamed Bao platters, 5 Ramen broth kits, and 4 Potsticker trays.</p>
       </div>
@@ -122,13 +145,12 @@
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🥡</div>
+          <div class="success-icon" aria-hidden="true">🥡</div>
           <h3 class="success-title">Feast Request Logged!</h3>
           <p class="success-msg" id="success-message">Thank you. Bao and Broth's catering coordinator will review details and call you to arrange pricing and pick-up details.</p>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Info Footer -->
@@ -148,11 +170,21 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bao and Broth. Optimist Hall Charlotte.</p>
+      <p>&copy; 2026 Bao and Broth. Optimist Hall Charlotte.</p>
     </div>
   </footer>
 
   <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+
     function calculateFeast(guests) {
       document.getElementById('guests-val').innerText = guests;
       document.getElementById('guests-count-input').value = guests;
@@ -171,19 +203,28 @@
       document.getElementById('feast-summary').innerText = `Includes ${platters} Steamed Bao platters, ${kits} Ramen broth kits, and ${trays} Potsticker trays.`;
     }
 
+    const slider = document.getElementById('guests-count');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        calculateFeast(e.target.value);
+      });
+    }
+
     // Handle catering submissions
     const form = document.getElementById('catering-form');
     const successPanel = document.getElementById('success-panel');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
-    });
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
+      });
+    }
   </script>
 </body>
 </html>

@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/bao-and-broth/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bao and Broth - Charlotte, NC | Home</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Styling absolute positions for bao toppings inside visualizer */
-    #food-filling { top: 70px; left: 50px; font-size: 1.15rem; color: #fff; background: rgba(0,0,0,0.8); border-radius: 4px; padding: 0.15rem 0.5rem; }
-    #food-pickles { top: 110px; left: 35px; }
-    #food-peanuts { top: 110px; left: 115px; }
-    #food-scallions { top: 30px; left: 55px; }
-    #food-sauce { top: 140px; left: 60px; }
-  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
-          Bao & Broth
+          Bao &amp; Broth
           <span>Optimist Hall Charlotte</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="menu.html">Menu</a>
         <a href="ramen.html">Ramen Bar</a>
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero-section">
+  <header class="hero-section" aria-label="Welcome banner">
     <div class="container hero-content">
       <div class="hero-frame">
         <span class="hero-badge">Charlotte's Modern Street Food Stall</span>
@@ -61,8 +61,7 @@
   </div>
 
   <!-- Main Content -->
-  <main class="container">
-    
+  <main id="main" class="container" style="margin-top: 5rem;">
     <!-- Welcome Block -->
     <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
       <h2 class="section-title">Asian Street Comfort Food</h2>
@@ -83,76 +82,138 @@
         
         <!-- Left Side: Steamer visualizer -->
         <div class="plate-canvas" style="min-height: 300px;">
-          <div class="bao-basket-wireframe">
-            <div class="bao-basket-rim"></div>
-            <!-- Steaming bao emojis -->
-            <div class="bao-bun-emoji" id="visual-bun">🥟</div>
-            
-            <!-- Graphic toppings absolute positioned -->
-            <div class="plate-food-item" id="food-filling">Pork Belly</div>
-            <div class="plate-food-item" id="food-pickles">🥒 Pickles</div>
-            <div class="plate-food-item" id="food-peanuts">🥜 Peanuts</div>
-            <div class="plate-food-item" id="food-scallions">🌿 Scallions</div>
-            <div class="plate-food-item" id="food-sauce">🍯 Sauce</div>
+          <div class="steamer-wrapper">
+            <svg class="steamer-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Steam particles -->
+              <path class="steamer-steam" d="M 75,50 C 70,35 80,25 75,10" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+              <path class="steamer-steam" d="M 125,50 C 120,35 130,25 125,10" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+
+              <!-- Outer Bamboo Steamer Ring -->
+              <circle cx="100" cy="110" r="82" fill="#d7ccc8" stroke="#a1887f" stroke-width="6" />
+              <circle cx="100" cy="110" r="77" fill="none" stroke="#8d6e63" stroke-width="2" />
+              
+              <!-- Bamboo weave texture lines in floor -->
+              <line x1="30" y1="110" x2="170" y2="110" stroke="#b0958a" stroke-width="1.5" />
+              <line x1="40" y1="80" x2="160" y2="80" stroke="#b0958a" stroke-width="1.5" />
+              <line x1="40" y1="140" x2="160" y2="140" stroke="#b0958a" stroke-width="1.5" />
+
+              <!-- Fluffy Steamed Bun Wrapper (Bao Bun shape) -->
+              <!-- Wrapper color changes based on choice: wheat (white/cream), lotus (pale pink/white), gf (slightly yellow-white) -->
+              <path id="svg-bao-wrapper" d="M 55,125 C 45,95 80,75 100,95 C 120,75 155,95 145,125 C 130,150 70,150 55,125 Z" fill="#fffef7" stroke="#e0dbd5" stroke-width="1.5" />
+
+              <!-- Split/Hollow core for ingredients -->
+              <path d="M 75,120 C 75,120 85,98 100,98 C 115,98 125,120 125,120 C 115,130 85,130 75,120 Z" fill="#fdfbf7" opacity="0.3" />
+
+              <!-- Protein Fillings -->
+              <!-- Pork Belly -->
+              <rect id="fill-pork" class="bao-filling" x="72" y="105" width="56" height="20" rx="3" fill="#3e2723" stroke="#27120c" stroke-width="1" />
+              <!-- Glazed Chicken -->
+              <rect id="fill-chicken" class="bao-filling" x="72" y="105" width="56" height="18" rx="3" fill="#d84315" stroke="#bf360c" stroke-width="1" />
+              <!-- BBQ Beef -->
+              <g id="fill-beef" class="bao-filling">
+                <rect x="72" y="105" width="56" height="9" rx="2" fill="#2e1c0c" />
+                <rect x="76" y="116" width="48" height="9" rx="2" fill="#2e1c0c" />
+              </g>
+              <!-- Fried Tofu -->
+              <rect id="fill-tofu" class="bao-filling" x="75" y="102" width="50" height="22" rx="2" fill="#afb42b" stroke="#9e9d24" stroke-width="1" />
+
+              <!-- Toppings (Garnishes) -->
+              <!-- Cucumber pickles -->
+              <g id="top-pickles" class="bao-garnish">
+                <circle cx="85" cy="115" r="9" fill="#81c784" stroke="#2e7d32" stroke-width="1.5" />
+                <circle cx="85" cy="115" r="5" fill="none" stroke="#2e7d32" stroke-width="1" stroke-dasharray="2,2" />
+                <circle cx="115" cy="115" r="9" fill="#81c784" stroke="#2e7d32" stroke-width="1.5" />
+                <circle cx="115" cy="115" r="5" fill="none" stroke="#2e7d32" stroke-width="1" stroke-dasharray="2,2" />
+              </g>
+
+              <!-- Roasted Peanuts (yellow crumb dots) -->
+              <g id="top-peanuts" class="bao-garnish">
+                <circle cx="90" cy="110" r="1.5" fill="#ffe082" />
+                <circle cx="95" cy="120" r="1.5" fill="#ffe082" />
+                <circle cx="100" cy="108" r="1.5" fill="#ffe082" />
+                <circle cx="105" cy="118" r="1.5" fill="#ffe082" />
+                <circle cx="110" cy="110" r="1.5" fill="#ffe082" />
+              </g>
+
+              <!-- Green Scallions (green ring outlines) -->
+              <g id="top-scallions" class="bao-garnish">
+                <circle cx="80" cy="108" r="3" fill="none" stroke="#4caf50" stroke-width="1.8" />
+                <circle cx="100" cy="122" r="3" fill="none" stroke="#4caf50" stroke-width="1.8" />
+                <circle cx="120" cy="108" r="3" fill="none" stroke="#4caf50" stroke-width="1.8" />
+              </g>
+
+              <!-- Sauce drizzle (glossy hoisin wave) -->
+              <path id="top-sauce" class="bao-garnish" d="M 70,115 Q 85,100 100,122 T 130,115" fill="none" stroke="#1c0d02" stroke-width="3" stroke-linecap="round" />
+
+              <!-- Bamboo Steamer Lid (placed on top, transitions up/away) -->
+              <g id="svg-steamer-lid" class="steamer-lid">
+                <!-- Woven lid main circle -->
+                <circle cx="100" cy="110" r="82" fill="#d7ccc8" stroke="#a1887f" stroke-width="2" />
+                <!-- Woven lines -->
+                <path d="M 30,80 Q 100,50 170,80" fill="none" stroke="#8d6e63" stroke-width="2.5" />
+                <path d="M 20,110 Q 100,80 180,110" fill="none" stroke="#8d6e63" stroke-width="2.5" />
+                <path d="M 30,140 Q 100,110 170,140" fill="none" stroke="#8d6e63" stroke-width="2.5" />
+                <!-- Top wicker handle -->
+                <rect x="85" y="100" width="30" height="20" rx="3" fill="#8d6e63" stroke="#5d4037" stroke-width="1.5" />
+                <line x1="90" y1="110" x2="110" y2="110" stroke="#3e2723" stroke-width="2" />
+              </g>
+            </svg>
           </div>
         </div>
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
-          
           <div class="control-group">
-            <label>1. Select Bun Wrapper</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Select Bun Wrapper</span>
             <div class="option-grid" id="bun-options">
-              <button class="option-btn active" onclick="setBun('traditional', 6.50, 'Steamed Wheat Bun')">Steamed Wheat ($6.50)</button>
-              <button class="option-btn" onclick="setBun('lotus', 6.50, 'Lotus Leaf Bun')">Lotus Leaf ($6.50)</button>
-              <button class="option-btn" onclick="setBun('gf', 7.50, 'Gluten-Free Bun')">Gluten-Free ($7.50)</button>
+              <button class="option-btn active" data-key="traditional" data-price="6.50" data-name="Steamed Wheat Bun" data-color="#fffef7">Steamed Wheat ($6.50)</button>
+              <button class="option-btn" data-key="lotus" data-price="6.50" data-name="Lotus Leaf Bun" data-color="#ffebef">Lotus Leaf ($6.50)</button>
+              <button class="option-btn" data-key="gf" data-price="7.50" data-name="Gluten-Free Bun" data-color="#fffde7">Gluten-Free ($7.50)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Select Filling (2 pcs)</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Select Filling (2 pcs)</span>
             <div class="option-grid" id="filling-options">
-              <button class="option-btn active" onclick="setFilling('pork', 'Braised Pork Belly')">Braised Pork Belly</button>
-              <button class="option-btn" onclick="setFilling('chicken', 'Soy Glazed Chicken')">Glazed Chicken</button>
-              <button class="option-btn" onclick="setFilling('beef', 'Sweet BBQ Beef')">Sweet BBQ Beef</button>
-              <button class="option-btn" onclick="setFilling('tofu', 'Crispy Fried Tofu')">Crispy Fried Tofu</button>
+              <button class="option-btn active" data-key="pork" data-name="Braised Pork Belly">Braised Pork Belly</button>
+              <button class="option-btn" data-key="chicken" data-name="Soy Glazed Chicken">Glazed Chicken</button>
+              <button class="option-btn" data-key="beef" data-name="Sweet BBQ Beef">Sweet BBQ Beef</button>
+              <button class="option-btn" data-key="tofu" data-name="Crispy Fried Tofu">Crispy Fried Tofu</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Add Garnishes</label>
-            <div class="option-grid">
-              <button class="option-btn active" id="btn-pickles" onclick="toggleGarnish('pickles')">Pickled Cucumber</button>
-              <button class="option-btn active" id="btn-peanuts" onclick="toggleGarnish('peanuts')">Crushed Peanuts</button>
-              <button class="option-btn active" id="btn-scallions" onclick="toggleGarnish('scallions')">Scallions</button>
-              <button class="option-btn active" id="btn-sauce" onclick="toggleGarnish('sauce')">Hoisin Drizzle</button>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Select Toppings</span>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem;">
+              <button class="option-btn active" id="btn-pickles" data-key="pickles" data-name="Pickled Cucumber">Pickles</button>
+              <button class="option-btn active" id="btn-peanuts" data-key="peanuts" data-name="Crushed Peanuts">Peanuts</button>
+              <button class="option-btn active" id="btn-scallions" data-key="scallions" data-name="Green Scallions">Scallions</button>
+              <button class="option-btn active" id="btn-sauce" data-key="sauce" data-name="Sweet Hoisin Drizzle">Hoisin Sauce</button>
             </div>
           </div>
-
         </div>
 
       </div>
 
       <div class="builder-display" style="margin-top: 3.5rem;">
-        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Steamer Platter</span>
-        <h4 class="builder-display-title" id="display-bao-name">Braised Pork Belly Bao</h4>
-        <p id="display-bao-garnishes" style="color: var(--color-orange); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Pickled Cucumber, Crushed Peanuts, Scallions, Hoisin Drizzle</p>
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Fresh Bao Customizer</span>
+        <h4 class="builder-display-title" id="display-bao-name">Steamed Wheat Bun</h4>
+        <p id="display-bao-toppings" style="color: var(--color-orange); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Braised Pork Belly</p>
         <div class="builder-display-price" id="display-bao-price">$6.50</div>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-bao-desc">Two fluffy steamed wheat buns stuffed with rich, melt-in-your-mouth Braised Pork Belly, garnished with pickled cucumber, crushed peanuts, green scallions, and sweet hoisin drizzle.</p>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-bao-desc">A fluffy steamed wheat bun loaded with braised pork belly, pickled cucumber, crushed peanuts, green scallions, and sweet hoisin drizzle.</p>
       </div>
     </section>
 
     <!-- Quick Call to Action -->
     <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Ramen Mixer</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Ramen Broth Mixer</h2>
       <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        Choose your 24-hour slow-cooked broth base, noodle style, and dial in your preferred spice tier. Click below to view the interactive Ramen Mixer.
+        Design your custom ramen bowl with seared chashu pork, running ajitama egg, and slow-simmered shoyu or tonkotsu. Click below to view the interactive mixer.
       </p>
       <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
         View Ramen Mixer
       </a>
     </section>
-
   </main>
 
   <!-- Info Footer -->
@@ -172,106 +233,128 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bao and Broth. Optimist Hall Charlotte.</p>
+      <p>&copy; 2026 Bao and Broth. Optimist Hall Charlotte.</p>
     </div>
   </footer>
 
   <script>
     // State variables
-    let selectedBun = { key: 'traditional', price: 6.50, name: 'Steamed Wheat Bun' };
+    let selectedBun = { key: 'traditional', price: 6.50, name: 'Steamed Wheat Bun', color: '#fffef7' };
     let selectedFilling = { key: 'pork', name: 'Braised Pork Belly' };
-    const garnishes = {
+    const toppings = {
       pickles: { active: true, name: 'Pickled Cucumber' },
       peanuts: { active: true, name: 'Crushed Peanuts' },
-      scallions: { active: true, name: 'Scallions' },
-      sauce: { active: true, name: 'Hoisin Drizzle' }
+      scallions: { active: true, name: 'Green Scallions' },
+      sauce: { active: true, name: 'Sweet Hoisin Drizzle' }
     };
 
-    function setBun(key, price, name) {
-      const buttons = document.getElementById('bun-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedBun = { key, price, name };
-      
-      // Update visual bun style (emoji swap or size adjustment)
-      const visualBun = document.getElementById('visual-bun');
-      if (key === 'gf') {
-        visualBun.innerText = "🥟";
-        visualBun.style.filter = "sepia(0.3) drop-shadow(0 5px 8px rgba(0,0,0,0.3))";
-      } else {
-        visualBun.innerText = "🥟";
-        visualBun.style.filter = "sepia(0) drop-shadow(0 5px 8px rgba(0,0,0,0.3))";
-      }
-
-      updateDisplay();
+    // Toggle mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setFilling(key, name) {
-      const buttons = document.getElementById('filling-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    function setupSelectors() {
+      const bunBtns = document.querySelectorAll('#bun-options .option-btn');
+      bunBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          bunBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedBun = { key: btn.dataset.key, price: parseFloat(btn.dataset.price), name: btn.dataset.name, color: btn.dataset.color };
+          triggerLidLift();
+          updateDisplay();
+        });
+      });
 
-      selectedFilling = { key, name };
-      updateDisplay();
+      const fillingBtns = document.querySelectorAll('#filling-options .option-btn');
+      fillingBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          fillingBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedFilling = { key: btn.dataset.key, name: btn.dataset.name };
+          triggerLidLift();
+          updateDisplay();
+        });
+      });
+
+      const toppingKeys = ['pickles', 'peanuts', 'scallions', 'sauce'];
+      toppingKeys.forEach(key => {
+        const btn = document.getElementById(`btn-${key}`);
+        if (btn) {
+          btn.addEventListener('click', (e) => {
+            toppings[key].active = !toppings[key].active;
+            btn.classList.toggle('active', toppings[key].active);
+            triggerLidLift();
+            updateDisplay();
+          });
+        }
+      });
     }
 
-    function toggleGarnish(key) {
-      garnishes[key].active = !garnishes[key].active;
-      const btn = document.getElementById(`btn-${key}`);
-      if (garnishes[key].active) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
+    function triggerLidLift() {
+      const lid = document.getElementById('svg-steamer-lid');
+      if (lid) {
+        lid.classList.add('lifted');
       }
-      updateDisplay();
     }
 
     function updateDisplay() {
       // Calculate Total Cost
       document.getElementById('display-bao-price').innerText = `$${selectedBun.price.toFixed(2)}`;
-      document.getElementById('display-bao-name').innerText = `${selectedFilling.name} Bao`;
+      document.getElementById('display-bao-name').innerText = selectedBun.name;
 
-      // Compile active garnishes
-      const activeGarnishes = [];
-      for (const k in garnishes) {
-        if (garnishes[k].active) {
-          activeGarnishes.push(garnishes[k].name);
+      const activeToppings = [];
+      for (const k in toppings) {
+        if (toppings[k].active) {
+          activeToppings.push(toppings[k].name);
         }
       }
-      document.getElementById('display-bao-garnishes').innerText = activeGarnishes.length > 0 ? activeGarnishes.join(', ') : 'No Toppings';
 
-      // Update descriptions
-      const garnishText = activeGarnishes.length > 0 ? `, garnished with ${activeGarnishes.join(', ').toLowerCase()}` : '';
-      document.getElementById('display-bao-desc').innerText = `Two fluffy ${selectedBun.name.toLowerCase()}s stuffed with rich, hot ${selectedFilling.name.toLowerCase()}${garnishText}.`;
+      const toppingsLine = activeToppings.length > 0 ? activeToppings.join(', ') : 'No Toppings';
+      document.getElementById('display-bao-toppings').innerText = `${selectedFilling.name} &bull; ${toppingsLine}`;
 
-      // Update graphic overlay items
-      const allFoodItems = document.querySelectorAll('.plate-food-item');
-      allFoodItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.5)';
+      // Update bun wrapper color
+      const wrap = document.getElementById('svg-bao-wrapper');
+      if (wrap) {
+        wrap.setAttribute('fill', selectedBun.color);
+      }
+
+      // Hide all fillings
+      const fillings = ['pork', 'chicken', 'beef', 'tofu'];
+      fillings.forEach(f => {
+        const el = document.getElementById(`fill-${f}`);
+        if (el) el.classList.remove('show');
       });
 
-      // Show filling overlay label
-      const fillingEl = document.getElementById('food-filling');
-      fillingEl.innerText = selectedFilling.name.replace('Braised ', '').replace('Soy ', '').replace('Sweet ', '').replace('Crispy ', '');
-      fillingEl.style.opacity = '1';
-      fillingEl.style.transform = 'scale(1)';
+      // Show active filling
+      const activeFill = document.getElementById(`fill-${selectedFilling.key}`);
+      if (activeFill) activeFill.classList.add('show');
 
-      // Show active toppings
-      for (const k in garnishes) {
-        if (garnishes[k].active) {
-          const el = document.getElementById(`food-${k}`);
-          if (el) {
-            el.style.opacity = '1';
-            el.style.transform = 'scale(1)';
+      // Update toppings visibility
+      for (const k in toppings) {
+        const el = document.getElementById(`top-${k}`);
+        if (el) {
+          if (toppings[k].active) {
+            el.classList.add('show');
+          } else {
+            el.classList.remove('show');
           }
         }
       }
+
+      // Update text description
+      const toppingDesc = activeToppings.length > 0 
+        ? `, loaded with ${activeToppings.join(', ').toLowerCase()}` 
+        : '';
+      document.getElementById('display-bao-desc').innerText = `A fluffy ${selectedBun.name.toLowerCase()} stuffed with savory ${selectedFilling.name.toLowerCase()}${toppingDesc}.`;
     }
 
-    // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>
