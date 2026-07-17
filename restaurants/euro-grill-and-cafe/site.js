@@ -8,11 +8,13 @@
   if (toggle && navLinks) {
     toggle.addEventListener('click', function () {
       const open = navLinks.classList.toggle('open');
+      toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
     });
     document.addEventListener('click', function (e) {
       if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
+        toggle.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
@@ -53,7 +55,7 @@
         sec.style.display = secVisible ? '' : 'none';
         if (secVisible) anyVisible = true;
       });
-      if (menuEmpty) menuEmpty.hidden = anyVisible;
+      if (menuEmpty) menuEmpty.hidden = !anyVisible;
     }
   }
 })();

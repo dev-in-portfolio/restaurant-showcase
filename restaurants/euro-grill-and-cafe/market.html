@@ -1,109 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/euro-grill-and-cafe/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bosna Market | Euro Grill &amp; Cafe</title>
   <meta name="description" content="Bosna Market - Eastern European grocery attached to Euro Grill & Cafe. Meats, cheeses, imported sodas, and more.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Euro Grill & Cafe Home"><span class="logo-text">Euro Grill &amp; Cafe</span><span class="logo-sub">House of Cevaps</span></a>
+      <a href="index.html" class="logo" aria-label="Euro Grill & Cafe Home">
+        <span class="logo-text">Euro Grill &amp; Cafe</span>
+        <span class="logo-sub">House of Cevaps</span>
+      </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links" id="main-nav" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="cevapi.html">Cevapi &amp; Coffee</a></li>
           <li><a href="about.html">Our Story</a></li>
-          <li><a href="market.html">Bosna Market</a></li>
+          <li><a href="market.html" class="active">Bosna Market</a></li>
           <li><a href="visit.html">Visit</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main id="main">
     <section class="page-hero page-hero-market">
       <div class="wrap">
-        <span class="page-hero-badge">&#128722; Eastern European Grocery</span>
+        <span class="page-hero-badge">European Imports &bull; Plaza Midwood</span>
         <h1>Bosna Market</h1>
-        <p>Walk through the market to reach the cafe. Stay for the imports you won't find anywhere else in Charlotte.</p>
+        <p>Walk through the shelves of imported Balkan staples to find our cozy kitchen inside.</p>
       </div>
     </section>
+
     <section>
       <div class="wrap">
         <div class="section-header">
-          <h2>What We Carry</h2>
-          <p>Imported meats, cheeses, sodas, and pantry staples from Bosnia, Serbia, Croatia, Slovenia, Bulgaria, and across Europe.</p>
+          <h2>Balkan Pantry &amp; Imports</h2>
+          <p>We stock cured meats, regional cheeses, specialty sodas, and baking ingredients imported directly from Bosnia, Croatia, Serbia, and across Europe.</p>
         </div>
         <div class="market-grid">
           <div class="market-card">
-            <div class="market-icon" aria-hidden="true">&#129385;</div>
+            <div class="market-icon" aria-hidden="true">🥓</div>
             <h3>Meats &amp; Sausages</h3>
-            <p>Smoked sausages, cured meats, and fresh cevap meat&mdash;the same beef we use in the restaurant.</p>
+            <p>Traditional dried beef, smoked sudžuk sausages, and the same fresh spiced ćevapi meat we grill in the restaurant.</p>
           </div>
           <div class="market-card">
-            <div class="market-icon" aria-hidden="true">&#129472;</div>
+            <div class="market-icon" aria-hidden="true">🧀</div>
             <h3>Cheeses &amp; Dairy</h3>
-            <p>Kajmak, feta, and European-style cheeses you won't find at the chain grocery.</p>
+            <p>Ivory-white kajmak spreads, authentic block feta, and sour cream cheese rolls imported for the neighborhood.</p>
           </div>
           <div class="market-card">
-            <div class="market-icon" aria-hidden="true">&#127866;</div>
-            <h3>European Sodas</h3>
-            <p>Fanta Shokata, Cockta, Jupi, Orangina, and more. The flavors of home for European expats.</p>
+            <div class="market-icon" aria-hidden="true">🍾</div>
+            <h3>European Beverages</h3>
+            <p>Herbal Cockta sodas, Fanta Shokata (elderflower &amp; lemon), mineral waters, and regional fruit juices.</p>
           </div>
           <div class="market-card">
-            <div class="market-icon" aria-hidden="true">&#129362;</div>
-            <h3>Frozen Foods</h3>
-            <p>Burek, pastries, and prepared foods ready to heat at home.</p>
+            <div class="market-icon" aria-hidden="true">❄️</div>
+            <h3>Bake-At-Home Burek</h3>
+            <p>Frozen hand-rolled pastry wheels ready to bake in your home oven for a perfect hot, flaky breakfast.</p>
           </div>
           <div class="market-card">
-            <div class="market-icon" aria-hidden="true">&#127809;</div>
-            <h3>Seasonings &amp; Pantry</h3>
-            <p>Vegeta, ajvar, paprika, and the essential ingredients for Balkan cooking.</p>
+            <div class="market-icon" aria-hidden="true">🌶️</div>
+            <h3>Balkan Seasonings</h3>
+            <p>Bags of Vegeta seasoning, jars of sweet or hot ajvar red pepper puree, and pickling mixes.</p>
           </div>
           <div class="market-card">
-            <div class="market-icon" aria-hidden="true">&#127851;</div>
-            <h3>Chocolates &amp; Sweets</h3>
-            <p>European chocolates, biscuits, and confections. Great gifts.</p>
+            <div class="market-icon" aria-hidden="true">🍫</div>
+            <h3>Sweets &amp; Biscuits</h3>
+            <p>Rich European hazelnut chocolates, tea biscuits, traditional lokum (Turkish delight), and wafers.</p>
           </div>
         </div>
       </div>
     </section>
+
     <section class="section-dark">
       <div class="wrap">
         <div class="section-header">
-          <h2>The Experience</h2>
+          <h2>The Market Experience</h2>
           <p>Eat. Shop. Discover.</p>
         </div>
         <div class="market-experience">
           <div class="me-text">
-            <p>Bosna Market is where Euro Grill &amp; Cafe began. When you visit, you walk through the market to reach the cafe&mdash;stepping past shelves of imported goods, hanging sausages, and European sodas before descending into the intimate dining room.</p>
-            <p>Many customers come for the cevaps and leave with a bag full of Vegeta, kajmak, and Cockta. That's the experience: eat, shop, and discover something you didn't know you were looking for.</p>
+            <p>Before Euro Grill &amp; Cafe became a dining room, it was Dino and Amela's neighborhood grocery store. Today, you still step past rows of tall European jars, dry cured meats, and imports before stepping down into our cozy diner room.</p>
+            <p>Our customers love to grab a plate of fresh hot cevaps, and then load up on specialty ingredients, ajvar spreads, and sodas to take home to their families. It is an authentic taste of Sarajevo right on Central Avenue.</p>
           </div>
           <div class="me-cta">
-            <a href="visit.html" class="btn btn-p">Visit the Market</a>
+            <a href="visit.html" class="btn btn-p">Find the Market</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div class="footer-brand"><h3>Euro Grill &amp; Cafe</h3><p>House of Cevaps. Authentic Bosnian and Balkan cuisine in Plaza Midwood since 2003.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="about.html">Our Story</a></li><li><a href="market.html">Bosna Market</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:7043439828">(704) 343-9828</a></li><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li></ul></div>
+        <div class="footer-brand">
+          <h3>Euro Grill &amp; Cafe</h3>
+          <p>House of Cevaps. Authentic Bosnian and Balkan cuisine in Plaza Midwood since 2003.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="market.html">Bosna Market</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="tel:7043439828">(704) 343-9828</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Euro Grill &amp; Cafe. All rights reserved.</p></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Euro Grill &amp; Cafe. All rights reserved.</p>
+        <p>Concept Presentation Site</p>
+      </div>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>
