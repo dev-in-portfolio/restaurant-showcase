@@ -1,95 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/beef-n-bottle/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Private Banquets</title>
+  <title>Banquets — Beef 'N Bottle Steakhouse</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* slider styling */
+    .slider-group {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    .c-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 10px;
+      outline: none;
+      background: var(--color-border);
+      accent-color: var(--color-gold);
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           BEEF 'N BOTTLE
           <span>Steakhouse Est. 1958</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="wine.html">Wine & Bar</a>
+        <a href="wine.html">Wine &amp; Bar</a>
         <a href="about.html">History</a>
         <a href="services.html" class="active">Banquets</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Banquets & Boardrooms</h2>
-    <p class="page-subtitle">Host your corporate luncheon, business mixer, or rehearsal dinner in our private wood-paneled banquets room.</p>
+    <h2 class="page-title">Steakhouse Banquets &amp; Events</h2>
+    <p class="page-subtitle">Host your private party, rehearsal dinner, or corporate function in our historic speakeasy lounge or reserve private group dining rooms.</p>
   </header>
 
-  <!-- Interactive Planner -->
-  <main class="container">
-    
-    <section class="interactive-panel">
-      <h3 class="section-title" style="margin-bottom: 1rem;">Group Dinner Cost Planner</h3>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Select your guest count, course tier, and bar package to calculate estimated banquet invoices.</p>
+  <!-- Main Content -->
+  <main id="main" class="container">
+    <!-- Interactive Platter Planner -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Event Calculator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; font-weight: 500;">Drag the slider to input your expected guests. We will estimate your dining packages and rental costs.</p>
       
-      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
-        <label for="guests-count" style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-sans);">Expected Guests: <span id="guests-val" style="font-size: 1.8rem; color: #ffffff;">20</span> people</label>
-        <input type="range" id="guests-count" min="15" max="80" value="20" step="5" style="width: 100%; accent-color: var(--color-gold); cursor: pointer;" oninput="calculateEvent(this.value)">
+      <div class="slider-group">
+        <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">20</span> people</label>
+        <input type="range" class="c-slider" id="guests-count" min="10" max="60" value="20" step="5">
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
-        
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Dining Course Tier</h4>
-          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
-            <button class="option-btn" id="btn-tier-bistro" onclick="selectTier(45, 'Tavern Tier')">Tavern ($45)</button>
-            <button class="option-btn active" id="btn-tier-exec" onclick="selectTier(75, 'Legacy Tier')">Legacy ($75)</button>
-            <button class="option-btn" id="btn-tier-sig" onclick="selectTier(110, 'Proprietor\'s Tier')">Proprietor ($110)</button>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Custom steak menus prepared daily.</p>
+          <span style="font-size: 2rem;" aria-hidden="true">🥩</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Prime Steak Entrees</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-gold);" id="steak-plates">20 Plates</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Choice aged steak cut ($45.00/ea)</p>
         </div>
 
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Bar & Beverage Package</h4>
-          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
-            <button class="option-btn active" id="btn-bar-dry" onclick="selectBar(0, 'Dry Event')">Dry ($0)</button>
-            <button class="option-btn" id="btn-bar-beer" onclick="selectBar(20, 'Beer & Wine')">Beer/Wine ($20)</button>
-            <button class="option-btn" id="btn-bar-open" onclick="selectBar(35, 'Full Bar')">Full Bar ($35)</button>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Calculated per guest attending.</p>
+          <span style="font-size: 2rem;" aria-hidden="true">🍷</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Napa Wine Bottles</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-gold);" id="wine-bottles">7 Bottles</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Duckhorn Merlot / Stags' Leap ($62.00/ea)</p>
         </div>
 
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;" aria-hidden="true">🥬</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Appetizer Trays</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-gold);" id="appetizer-trays">4 Trays</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Oysters &amp; Starters ($35.00/ea)</p>
+        </div>
       </div>
 
-      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(217, 119, 6, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
-        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; font-family: var(--font-sans);">Estimated Banquet Invoice</span>
-        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="event-cost">$2,100.00</h4>
-        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="event-summary">Based on 20 guests with Legacy Tier & Dry Event ($300 setup + $1,500 food & drink + $300 auto gratuity).</p>
+      <div class="premium-card" style="text-align: center; background: radial-gradient(circle, rgba(217, 119, 6, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border-color:var(--color-gold);">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-light); letter-spacing: 0.05em;">Estimated Banquet Total</span>
+        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="feast-cost">$1,474.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 20 Prime Steak plates, 7 Wine bottles, and 4 Appetizer trays.</p>
       </div>
     </section>
 
     <!-- Inquiry Form -->
-    <section class="form-wrapper" style="margin-top: 5rem;">
+    <section class="form-wrapper">
       <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Booking Request</h2>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Banquet Inquiry Form</h2>
         
         <form id="catering-form">
-          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit details below. Banquet bookings require at least 96 hours notice to coordinate prep sheets.</p>
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. All private bookings require 72 hours notice and deposit.</p>
           <div class="form-grid">
             <div class="form-group">
               <label for="name">Contact Name</label>
@@ -102,8 +126,8 @@
             </div>
 
             <div class="form-group">
-              <label for="event-date">Requested Date</label>
-              <input type="date" id="event-date" required>
+              <label for="pickup-date">Requested Banquet Date</label>
+              <input type="date" id="pickup-date" required>
             </div>
 
             <div class="form-group">
@@ -112,22 +136,21 @@
             </div>
 
             <div class="form-group" style="grid-column: 1 / -1;">
-              <label for="notes">Details & Requests (Specify boardroom setup preferences, allergy notes, or drink wishes)</label>
-              <textarea id="notes" placeholder="e.g. This is a business rehearsal dinner. We would like to request double platters of Caesar salad for the table..."></textarea>
+              <label for="notes">Details of your request (Specify steak cuts, wine preferences, booth configurations, etc.)</label>
+              <textarea id="notes" placeholder="e.g. Booking a corporate dinner. We would love to arrange 20 filet steaks and pre-pour Duckhorn Merlot..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Booking Request</button>
+            <button type="submit" class="submit-btn">Send Banquet Inquiry</button>
           </div>
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">💼</div>
-          <h3 class="success-title">Booking Requested!</h3>
-          <p class="success-msg" id="success-message">Thank you. Beef 'N Bottle's event director will check calendar lists and call you shortly.</p>
+          <div class="success-icon" aria-hidden="true">🥩</div>
+          <h3 class="success-title">Banquet Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Beef 'N Bottle's banquet coordinator will review details and call you to arrange pricing and setup details.</p>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Info Footer -->
@@ -135,94 +158,73 @@
     <div class="footer-info">
       <div class="info-block">
         <h3>Steakhouse Lounge</h3>
-        <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
+        <p>4538 South Blvd<br>Charlotte, NC 28209</p>
       </div>
       <div class="info-block">
-        <h3>Operating Hours</h3>
+        <h3>Hours</h3>
         <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
       </div>
       <div class="info-block">
-        <h3>Reservations</h3>
-        <p>Available on OpenTable or call the tavern directly for private booth bookings.</p>
+        <h3>Details</h3>
+        <p>Located in Eastway Crossing | Craft Beer | Retro Gaming | Community Hub</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+      <p>&copy; 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
     </div>
   </footer>
 
   <script>
-    let currentGuests = 20;
-    let selectedTierCost = 75;
-    let selectedTierName = 'Legacy Tier';
-    let selectedBarCost = 0;
-    let selectedBarName = 'Dry Event';
-
-    function selectTier(cost, name) {
-      selectedTierCost = cost;
-      selectedTierName = name;
-
-      document.getElementById('btn-tier-bistro').classList.remove('active');
-      document.getElementById('btn-tier-exec').classList.remove('active');
-      document.getElementById('btn-tier-sig').classList.remove('active');
-      
-      if (cost === 45) {
-        document.getElementById('btn-tier-bistro').classList.add('active');
-      } else if (cost === 75) {
-        document.getElementById('btn-tier-exec').classList.add('active');
-      } else {
-        document.getElementById('btn-tier-sig').classList.add('active');
-      }
-
-      calculateEvent(currentGuests);
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function selectBar(cost, name) {
-      selectedBarCost = cost;
-      selectedBarName = name;
-
-      document.getElementById('btn-bar-dry').classList.remove('active');
-      document.getElementById('btn-bar-beer').classList.remove('active');
-      document.getElementById('btn-bar-open').classList.remove('active');
-      
-      if (cost === 0) {
-        document.getElementById('btn-bar-dry').classList.add('active');
-      } else if (cost === 20) {
-        document.getElementById('btn-bar-beer').classList.add('active');
-      } else {
-        document.getElementById('btn-bar-open').classList.add('active');
-      }
-
-      calculateEvent(currentGuests);
-    }
-
-    function calculateEvent(guests) {
-      currentGuests = parseInt(guests);
+    function calculateFeast(guests) {
       document.getElementById('guests-val').innerText = guests;
       document.getElementById('guests-count-input').value = guests;
 
-      const baseSetup = 300;
-      const subtotal = currentGuests * (selectedTierCost + selectedBarCost);
-      const gratuity = subtotal * 0.20;
-      const totalCost = baseSetup + subtotal + gratuity;
+      // Calculation logic
+      const plates = guests;
+      const bottles = Math.ceil(guests / 3);
+      const trays = Math.ceil(guests / 5);
 
-      document.getElementById('event-cost').innerText = `$${totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-      document.getElementById('event-summary').innerText = `Based on ${currentGuests} guests with ${selectedTierName} & ${selectedBarName} ($300 setup + $${subtotal.toLocaleString('en-US')} food & drink + $${gratuity.toLocaleString('en-US')} auto-gratuity).`;
+      const totalCost = (plates * 45.00) + (bottles * 62.00) + (trays * 35.00);
+
+      document.getElementById('steak-plates').innerText = `${plates} ${plates === 1 ? 'Plate' : 'Plates'}`;
+      document.getElementById('wine-bottles').innerText = `${bottles} ${bottles === 1 ? 'Bottle' : 'Bottles'}`;
+      document.getElementById('appetizer-trays').innerText = `${trays} ${trays === 1 ? 'Tray' : 'Trays'}`;
+      document.getElementById('feast-cost').innerText = `$${totalCost.toFixed(2)}`;
+      document.getElementById('feast-summary').innerText = `Includes ${plates} Prime Steak plates, ${bottles} Wine bottles, and ${trays} Appetizer trays.`;
     }
 
-    // Handle catering submissions
+    const slider = document.getElementById('guests-count');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        calculateFeast(e.target.value);
+      });
+    }
+
+    // Handle submissions
     const form = document.getElementById('catering-form');
     const successPanel = document.getElementById('success-panel');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your private room request has been logged. Our banquet coordinator will call you at <strong>${phone}</strong> shortly to review calendar availability.`;
-    });
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your banquet request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule setup.`;
+      });
+    }
   </script>
 </body>
 </html>

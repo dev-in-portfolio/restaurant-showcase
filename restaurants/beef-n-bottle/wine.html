@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/beef-n-bottle/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Wine & Bar</title>
+  <title>Wine &amp; Bar — Beef 'N Bottle Steakhouse</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .sommelier-box {
-      background: radial-gradient(circle, #251815 0%, #0d0807 100%);
-      border: 1.5px solid var(--color-gold);
-      border-radius: 8px;
-      padding: 3rem 2.5rem;
-      box-shadow: var(--shadow-premium);
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           BEEF 'N BOTTLE
           <span>Steakhouse Est. 1958</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="wine.html" class="active">Wine & Bar</a>
+        <a href="wine.html" class="active">Wine &amp; Bar</a>
         <a href="about.html">History</a>
         <a href="services.html">Banquets</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Wine & Vintage Spirits</h2>
+    <h2 class="page-title">Wine &amp; Vintage Spirits</h2>
     <p class="page-subtitle">A cellar collection of premium Napa Valley Cabernets and iconic hand-stirred classic cocktails. Choose your pairing below.</p>
   </header>
 
   <!-- Interactive Sommelier Widget -->
-  <main class="container">
+  <main id="main" class="container">
     
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
       <h3 class="section-title" style="margin-bottom: 1rem;">Sommelier Pairing Assistant</h3>
@@ -64,22 +57,63 @@
       
       <div class="mixer-container">
         
-        <!-- Left Side: Wine Details Display -->
-        <div class="sommelier-box" id="sommelier-display">
-          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="pairing-steak-tag">For 8oz Filet Mignon</span>
-          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="pairing-wine-name">Duckhorn Merlot</h4>
-          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;" id="pairing-wine-price">$16 Glass / $62 Bottle</p>
-          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="pairing-wine-desc">"Napa Valley. A plush and elegant red with red cherry and cocoa accents. Its refined tannins provide a soft finish that elevates the lean filet mignon."</p>
+        <!-- Left Side: Sommelier Wine Carafe SVG -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="sommelier-box" id="sommelier-display">
+            <!-- Sommelier SVG -->
+            <svg class="sommelier-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Linen table line -->
+              <line x1="10" y1="140" x2="190" y2="140" stroke="rgba(254, 243, 199, 0.25)" stroke-width="2" />
+
+              <!-- Wine Bottle (left) -->
+              <!-- Glass bottle base -->
+              <path d="M 50,135 L 80,135 L 80,75 C 80,60 67,52 67,40 L 67,20 L 63,20 L 63,40 C 63,52 50,60 50,75 Z" fill="#14301d" stroke="#052e16" stroke-width="1.5" />
+              <!-- Bottle cork top -->
+              <rect x="63" y="16" width="4" height="4" fill="#a16207" />
+              
+              <!-- Dynamic Wine Bottle Label -->
+              <g id="wine-label-group">
+                <rect x="52" y="78" width="26" height="35" rx="1" fill="#fcfaf2" stroke="#d6d3d1" stroke-width="0.5" />
+                <!-- Label text -->
+                <text id="label-wine-title" x="65" y="90" font-family="'Oswald', sans-serif" font-size="5" fill="#1c1917" text-anchor="middle" font-weight="bold">DUCKHORN</text>
+                <text id="label-wine-sub" x="65" y="98" font-family="sans-serif" font-size="3.5" fill="#78716c" text-anchor="middle">MERLOT</text>
+                <!-- Gold stripe -->
+                <line x1="55" y1="104" x2="75" y2="104" stroke="var(--color-gold)" stroke-width="1" />
+              </g>
+
+              <!-- Wine Glass (right) -->
+              <!-- Glass base & stem -->
+              <path d="M 120,135 L 140,135 M 130,135 L 130,105" fill="none" stroke="rgba(245, 242, 248, 0.55)" stroke-width="2.5" />
+              <!-- Wine Glass Bowl clip-path definition -->
+              <g clip-path="url(#glass-bowl-clip)">
+                <!-- Red Wine liquid fill -->
+                <path id="wine-liquid-fill" class="wine-fluid-path" d="M 115,105 L 145,105 L 145,90 L 115,90 Z" fill="#7f1d1d" />
+              </g>
+              <!-- Glass Bowl outline -->
+              <path d="M 116,75 C 114,95 116,105 130,105 C 144,105 146,95 144,75 Z" fill="none" stroke="rgba(245, 242, 248, 0.55)" stroke-width="2" stroke-linejoin="round" />
+
+              <defs>
+                <clipPath id="glass-bowl-clip">
+                  <path d="M 116,75 C 114,95 116,105 130,105 C 144,105 146,95 144,75 Z" />
+                </clipPath>
+              </defs>
+            </svg>
+
+            <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="pairing-steak-tag">For 8oz Filet Mignon</span>
+            <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);" id="pairing-wine-name">Duckhorn Merlot</h4>
+            <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;" id="pairing-wine-price">$16 Glass / $62 Bottle</p>
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; text-align: center;" id="pairing-wine-desc">"Napa Valley. A plush and elegant red with red cherry and cocoa accents. Its refined tannins provide a soft finish that elevates the lean filet mignon."</p>
+          </div>
         </div>
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
           <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Steak / Entree</label>
-          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;">
-            <button class="option-btn active" onclick="selectPairing('filet', this)">8oz Filet Mignon</button>
-            <button class="option-btn" onclick="selectPairing('ribeye', this)">14oz Hand-Cut Ribeye</button>
-            <button class="option-btn" onclick="selectPairing('tbone', this)">16oz Kansas City T-Bone</button>
-            <button class="option-btn" onclick="selectPairing('salmon', this)">Cedar Plank Salmon</button>
+          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;" id="entree-options">
+            <button class="option-btn active" data-key="filet">8oz Filet Mignon</button>
+            <button class="option-btn" data-key="ribeye">14oz Hand-Cut Ribeye</button>
+            <button class="option-btn" data-key="tbone">16oz Kansas City T-Bone</button>
+            <button class="option-btn" data-key="salmon">Cedar Plank Salmon</button>
           </div>
         </div>
 
@@ -167,7 +201,7 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+      <p>&copy; 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
     </div>
   </footer>
 
@@ -176,49 +210,97 @@
       filet: {
         entree: "For 8oz Filet Mignon",
         wine: "Duckhorn Merlot",
+        labelTitle: "DUCKHORN",
+        labelSub: "MERLOT",
         price: "$16 Glass / $62 Bottle",
+        color: "#7f1d1d", // deep ruby
         desc: "\"Napa Valley. A plush and elegant red with red cherry and cocoa accents. Its refined tannins provide a soft finish that elevates the lean filet mignon.\""
       },
       ribeye: {
         entree: "For 14oz Hand-Cut Ribeye",
         wine: "Caymus Cabernet Sauvignon",
+        labelTitle: "CAYMUS",
+        labelSub: "CABERNET",
         price: "$28 Glass / $120 Bottle",
+        color: "#4c0519", // dark burgundy
         desc: "\"Napa Valley. Rich and smooth with dark berries, chocolate, and oak tones. Its structure cuts through the heavy marbling of our hand-cut ribeye.\""
       },
       tbone: {
         entree: "For 16oz Kansas City T-Bone",
-        wine: "Stags' Leap Cabernet Sauvignon",
+        wine: "Stags' Leap Cabernet",
+        labelTitle: "STAGS' LEAP",
+        labelSub: "CABERNET",
         price: "$22 Glass / $85 Bottle",
+        color: "#5c0620", // rich red
         desc: "\"Napa Valley. Features bold flavors of blackberry, black currant, and cocoa. Its firm tannins balance the rich marbled cuts of our T-Bone.\""
       },
       salmon: {
         entree: "For Cedar Plank Salmon",
         wine: "Belle Glos Pinot Noir",
+        labelTitle: "BELLE GLOS",
+        labelSub: "PINOT NOIR",
         price: "$15 Glass / $58 Bottle",
+        color: "#991b1b", // lighter bright ruby
         desc: "\"Monterey County. Robust flavors of black cherry, pie crust, and warm spice. Its rich, velvety structure complements the smokiness of our cedar salmon.\""
       }
     };
 
-    function selectPairing(key, btn) {
-      const buttons = btn.parentElement.querySelectorAll('.option-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const display = document.getElementById('sommelier-display');
-      display.style.opacity = '0';
-      display.style.transform = 'translateY(10px)';
-
-      setTimeout(() => {
-        const data = pairingData[key];
-        document.getElementById('pairing-steak-tag').innerText = data.entree;
-        document.getElementById('pairing-wine-name').innerText = data.wine;
-        document.getElementById('pairing-wine-price').innerText = data.price;
-        document.getElementById('pairing-wine-desc').innerText = data.desc;
-
-        display.style.opacity = '1';
-        display.style.transform = 'translateY(0)';
-      }, 250);
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
+
+    function setupSelector() {
+      const btns = document.querySelectorAll('#entree-options .option-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const key = btn.dataset.key;
+          const display = document.getElementById('sommelier-display');
+          
+          // Animate glass fill
+          const fluid = document.getElementById('wine-liquid-fill');
+          if (fluid) {
+            fluid.style.transform = 'scaleY(0.1)';
+          }
+
+          display.style.opacity = '0.3';
+          display.style.transform = 'translateY(4px)';
+
+          setTimeout(() => {
+            const data = pairingData[key];
+            document.getElementById('pairing-steak-tag').innerText = data.entree;
+            document.getElementById('pairing-wine-name').innerText = data.wine;
+            document.getElementById('pairing-wine-price').innerText = data.price;
+            document.getElementById('pairing-wine-desc').innerText = data.desc;
+
+            // Update SVG bottle label
+            document.getElementById('label-wine-title').textContent = data.labelTitle;
+            document.getElementById('label-wine-sub').textContent = data.labelSub;
+
+            // Update wine color & trigger fill animation
+            if (fluid) {
+              fluid.setAttribute('fill', data.color);
+              fluid.style.transform = 'scaleY(1)';
+            }
+
+            display.style.opacity = '1';
+            display.style.transform = 'translateY(0)';
+          }, 200);
+        });
+      });
+    }
+
+    window.addEventListener('load', () => {
+      setupSelector();
+    });
   </script>
 </body>
 </html>

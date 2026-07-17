@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/beef-n-bottle/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beef 'N Bottle Steakhouse - Charlotte, NC | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           BEEF 'N BOTTLE
           <span>Steakhouse Est. 1958</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="wine.html">Wine & Bar</a>
+        <a href="wine.html">Wine &amp; Bar</a>
         <a href="about.html">History</a>
         <a href="services.html">Banquets</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero-section">
+  <header class="hero-section" aria-label="Welcome banner">
     <div class="container hero-content">
       <div class="hero-frame">
         <span class="hero-badge">Charlotte's Landmark Steakhouse Since 1958</span>
@@ -53,8 +61,7 @@
   </div>
 
   <!-- Main Content -->
-  <main class="container">
-    
+  <main id="main" class="container" style="margin-top: 5rem;">
     <!-- Welcome Block -->
     <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
       <h2 class="section-title">An Honest Charlotte Legacy</h2>
@@ -75,77 +82,141 @@
         
         <!-- Left Side: Platter visualizer -->
         <div class="plate-canvas" style="min-height: 300px;">
-          <div class="steak-wireframe">
-            <div class="steak-graphic-piece" id="steak-graphic">
-              <div class="steak-crust-overlay" id="steak-crust"></div>
-            </div>
-            <div class="side-graphic-piece" id="side-graphic">Mashed</div>
+          <div class="skillet-wrapper">
+            <svg class="skillet-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Sizzling heat path waves -->
+              <path class="steamer-steam" d="M 80,40 C 75,30 85,20 80,5" fill="none" stroke="var(--color-gold)" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+              <path class="steamer-steam" d="M 120,40 C 115,30 125,20 120,5" fill="none" stroke="var(--color-gold)" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+
+              <!-- Cast Iron Skillet Body -->
+              <!-- Left Tab Handle -->
+              <path d="M 18,90 C 8,90 8,110 18,110 Z" fill="#1e1e1e" stroke="#121212" stroke-width="2" />
+              <!-- Right Tab Handle -->
+              <path d="M 182,90 C 192,90 192,110 182,110 Z" fill="#1e1e1e" stroke="#121212" stroke-width="2" />
+              
+              <!-- Skillet main circle bowl -->
+              <circle cx="100" cy="100" r="82" fill="#1c1c1c" stroke="#121212" stroke-width="4.5" />
+              <circle cx="100" cy="100" r="77" fill="none" stroke="#2a2a2a" stroke-width="1.5" />
+
+              <!-- STEAK CUTS -->
+              <!-- Filet Mignon (thick round fillet) -->
+              <path id="cut-filet" class="steak-cut show" d="M 75,100 C 65,80 135,80 125,100 C 135,120 65,120 75,100 Z" fill="#42221b" stroke="#25120f" stroke-width="2" />
+              <!-- Ribeye (larger marbled oval) -->
+              <path id="cut-ribeye" class="steak-cut" d="M 60,100 C 50,65 150,65 140,100 C 150,135 50,135 60,100 Z" fill="#42221b" stroke="#25120f" stroke-width="2" />
+              <!-- T-Bone (large bone-in contour) -->
+              <g id="cut-tbone" class="steak-cut">
+                <path d="M 55,100 C 42,65 158,65 145,100 C 158,135 42,135 55,100 Z" fill="#42221b" stroke="#25120f" stroke-width="2" />
+                <path d="M 100,70 L 100,115 L 75,115 M 100,115 L 125,115" fill="none" stroke="#fef8f0" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+              </g>
+
+              <!-- Grill sear marks (overlay on steaks) -->
+              <g opacity="0.55">
+                <line x1="75" y1="85" x2="125" y2="115" stroke="#1c0703" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="85" y1="80" x2="135" y2="110" stroke="#1c0703" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="65" y1="90" x2="115" y2="120" stroke="#1c0703" stroke-width="3.5" stroke-linecap="round" />
+              </g>
+
+              <!-- Grilling temp glows -->
+              <!-- Rare (bright red edge) -->
+              <path id="glow-rare" class="steak-juice" d="M 75,100 C 65,80 135,80 125,100 C 135,120 65,120 75,100 Z" fill="none" stroke="#ef4444" stroke-width="4.5" opacity="0.45" />
+              <!-- Medium Rare (pink-red edge) -->
+              <path id="glow-medrare" class="steak-juice show" d="M 75,100 C 65,80 135,80 125,100 C 135,120 65,120 75,100 Z" fill="none" stroke="#f87171" stroke-width="4.5" opacity="0.45" />
+              <!-- Medium (pink edge) -->
+              <path id="glow-med" class="steak-juice" d="M 75,100 C 65,80 135,80 125,100 C 135,120 65,120 75,100 Z" fill="none" stroke="#fca5a5" stroke-width="4.5" opacity="0.4" />
+
+              <!-- Toppings / Crusts -->
+              <!-- Garlic Butter (glowing yellow puddle) -->
+              <path id="crust-garlic" class="steak-crust show" d="M 90,96 Q 100,88 110,96 T 100,104 Z" fill="#facc15" stroke="#ca8a04" stroke-width="1" opacity="0.85" />
+              <!-- Horseradish Crust (textured white crumb blob) -->
+              <ellipse id="crust-horseradish" class="steak-crust" cx="100" cy="100" rx="18" ry="10" fill="#fafafa" stroke="#e2e8f0" stroke-width="1.5" opacity="0.9" />
+              <!-- Melted Bleu Cheese (blue/tan bubble patches) -->
+              <g id="crust-bleu" class="steak-crust">
+                <ellipse cx="100" cy="100" rx="20" ry="12" fill="#cbd5e1" opacity="0.8" />
+                <circle cx="94" cy="98" r="2.5" fill="#475569" />
+                <circle cx="104" cy="102" r="2.5" fill="#475569" />
+                <circle cx="108" cy="96" r="2.5" fill="#475569" />
+              </g>
+
+              <!-- SIDE ITEMS -->
+              <!-- Mashed potatoes (yellow scoop with butter well) -->
+              <g id="side-mashed" class="side-item show">
+                <circle cx="140" cy="135" r="14" fill="#fef08a" stroke="#ca8a04" stroke-width="1" />
+                <circle cx="140" cy="135" r="4" fill="#eab308" opacity="0.8" />
+              </g>
+              <!-- Creamed spinach (deep green leafy circle) -->
+              <g id="side-spinach" class="side-item">
+                <circle cx="140" cy="135" r="14" fill="#14532d" stroke="#052e16" stroke-width="1" />
+                <path d="M 134,130 Q 140,140 146,130" fill="none" stroke="#16a34a" stroke-width="1.2" />
+              </g>
+              <!-- Asparagus (spears) -->
+              <g id="side-asparagus" class="side-item">
+                <line x1="125" y1="130" x2="155" y2="140" stroke="#16a34a" stroke-width="3" stroke-linecap="round" />
+                <line x1="123" y1="135" x2="153" y2="145" stroke="#16a34a" stroke-width="3" stroke-linecap="round" />
+              </g>
+            </svg>
           </div>
         </div>
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
-          
           <div class="control-group">
-            <label>1. Select Beef Cut</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">1. Select Beef Cut</span>
             <div class="option-grid" id="cut-options">
-              <button class="option-btn active" onclick="setCut('filet', '8oz Filet Mignon', 42.00, '120px', '80px')">8oz Filet ($42)</button>
-              <button class="option-btn" onclick="setCut('ribeye', '14oz Hand-Cut Ribeye', 48.00, '150px', '95px')">14oz Ribeye ($48)</button>
-              <button class="option-btn" onclick="setCut('tbone', '16oz Kansas City T-Bone', 54.00, '165px', '105px')">16oz T-Bone ($54)</button>
+              <button class="option-btn active" data-key="filet" data-price="42.00" data-name="8oz Filet Mignon">8oz Filet ($42)</button>
+              <button class="option-btn" data-key="ribeye" data-price="48.00" data-name="14oz Hand-Cut Ribeye">14oz Ribeye ($48)</button>
+              <button class="option-btn" data-key="tbone" data-price="54.00" data-name="16oz Kansas City T-Bone">16oz T-Bone ($54)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>2. Grilling Temperature</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">2. Grilling Temperature</span>
             <div class="option-grid" id="temp-options">
-              <button class="option-btn active" onclick="setTemp('Medium Rare', 'warm red center')">Medium Rare</button>
-              <button class="option-btn" onclick="setTemp('Medium', 'warm pink center')">Medium</button>
-              <button class="option-btn" onclick="setTemp('Rare', 'cool red center')">Rare</button>
+              <button class="option-btn active" data-key="medrare" data-desc="warm red center">Medium Rare</button>
+              <button class="option-btn" data-key="med" data-desc="warm pink center">Medium</button>
+              <button class="option-btn" data-key="rare" data-desc="cool red center">Rare</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>3. Premium Crust / Topping</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">3. Premium Crust / Topping</span>
             <div class="option-grid" id="topping-options">
-              <button class="option-btn active" onclick="setTopping('garlic', 'Garlic Butter Melt', 0.00, 0)">Garlic Butter</button>
-              <button class="option-btn" onclick="setTopping('horseradish', 'Horseradish Crust', 3.50, 0.7)">Horseradish (+$3.50)</button>
-              <button class="option-btn" onclick="setTopping('bleu', 'Melted Bleu Cheese', 4.00, 0.8)">Bleu Cheese (+$4.00)</button>
+              <button class="option-btn active" data-key="garlic" data-price="0.00" data-name="Garlic Butter Melt">Garlic Butter</button>
+              <button class="option-btn" data-key="horseradish" data-price="3.50" data-name="Horseradish Crust">Horseradish (+$3.50)</button>
+              <button class="option-btn" data-key="bleu" data-price="4.00" data-name="Melted Bleu Cheese">Bleu Cheese (+$4)</button>
             </div>
           </div>
 
           <div class="control-group">
-            <label>4. Steakhouse Side</label>
+            <span class="control-label" style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.6rem;">4. Steakhouse Side</span>
             <div class="option-grid" id="side-options">
-              <button class="option-btn active" onclick="setSide('mashed', 'Red-Skin Garlic Mashed Potatoes')">Mashed Potatoes</button>
-              <button class="option-btn" onclick="setSide('spinach', 'Creamed Spinach')">Creamed Spinach</button>
-              <button class="option-btn" onclick="setSide('brussels', 'Balsamic Brussels Sprouts')">Brussels Sprouts</button>
+              <button class="option-btn active" data-key="mashed" data-name="Red-Skin Garlic Mashed Potatoes">Mashed Potatoes</button>
+              <button class="option-btn" data-key="spinach" data-name="Creamed Spinach">Creamed Spinach</button>
+              <button class="option-btn" data-key="asparagus" data-name="Grilled Asparagus Spears">Asparagus</button>
             </div>
           </div>
-
         </div>
 
       </div>
 
       <div class="builder-display" style="margin-top: 3.5rem;">
-        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Gourmet Dinner Platter</span>
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Steak Platter</span>
         <h4 class="builder-display-title" id="display-steak-name">8oz Filet Mignon</h4>
-        <p id="display-steak-garnish" style="color: var(--color-gold); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Garlic Butter Melt</p>
+        <p id="display-steak-toppings" style="color: var(--color-gold); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Medium Rare &bull; Garlic Butter Melt</p>
         <div class="builder-display-price" id="display-steak-price">$42.00</div>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-steak-desc">Premium 8oz Filet Mignon grilled to medium rare (warm red center), finished with garlic butter melt and served with red-skin garlic mashed potatoes.</p>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-steak-desc">Aged 8oz Filet Mignon, grilled to medium rare (warm red center), topped with garlic butter melt. Served with red-skin garlic mashed potatoes.</p>
       </div>
     </section>
 
     <!-- Quick Call to Action -->
     <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Check out our Grilling Temp Guide</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Sommelier Wine Pairing Assistant</h2>
       <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        Learn the secret to steakhouse precision. View steak cross-sections, chef advice, and internal temperatures.
+        Match your chosen cut of prime beef with our cellar selection of Napa Cabernets and red blends. View recommended bottles on our pairings guide.
       </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
-        View Cooking Guide
+      <a href="wine.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Sommelier Guide
       </a>
     </section>
-
   </main>
 
   <!-- Info Footer -->
@@ -156,7 +227,7 @@
         <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
       </div>
       <div class="info-block">
-        <h3>Operating Hours</h3>
+        <h3>Hours</h3>
         <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
       </div>
       <div class="info-block">
@@ -165,78 +236,142 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+      <p>&copy; 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
     </div>
   </footer>
 
   <script>
     // State variables
-    let selectedCut = { key: 'filet', name: '8oz Filet Mignon', price: 42.00, width: '120px', height: '80px' };
-    let selectedTemp = { name: 'Medium Rare', desc: 'warm red center' };
-    let selectedTopping = { key: 'garlic', name: 'Garlic Butter Melt', price: 0.00, opacity: 0 };
+    let selectedCut = { key: 'filet', price: 42.00, name: '8oz Filet Mignon' };
+    let selectedTemp = { key: 'medrare', name: 'Medium Rare', desc: 'warm red center' };
+    let selectedTopping = { key: 'garlic', price: 0.00, name: 'Garlic Butter Melt' };
     let selectedSide = { key: 'mashed', name: 'Red-Skin Garlic Mashed Potatoes' };
 
-    function setCut(key, name, price, width, height) {
-      const buttons = document.getElementById('cut-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedCut = { key, name, price, width, height };
-      updateDisplay();
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function setTemp(name, desc) {
-      const buttons = document.getElementById('temp-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+    function setupSelectors() {
+      const cutBtns = document.querySelectorAll('#cut-options .option-btn');
+      cutBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          cutBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedCut = { key: btn.dataset.key, price: parseFloat(btn.dataset.price), name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
 
-      selectedTemp = { name, desc };
-      updateDisplay();
-    }
+      const tempBtns = document.querySelectorAll('#temp-options .option-btn');
+      tempBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tempBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedTemp = { key: btn.dataset.key, name: btn.innerText, desc: btn.dataset.desc };
+          updateDisplay();
+        });
+      });
 
-    function setTopping(key, name, price, opacity) {
-      const buttons = document.getElementById('topping-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+      const toppingBtns = document.querySelectorAll('#topping-options .option-btn');
+      toppingBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          toppingBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedTopping = { key: btn.dataset.key, price: parseFloat(btn.dataset.price), name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
 
-      selectedTopping = { key, name, price, opacity };
-      updateDisplay();
-    }
-
-    function setSide(key, name) {
-      const buttons = document.getElementById('side-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
-
-      selectedSide = { key, name };
-      updateDisplay();
+      const sideBtns = document.querySelectorAll('#side-options .option-btn');
+      sideBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sideBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedSide = { key: btn.dataset.key, name: btn.dataset.name };
+          updateDisplay();
+        });
+      });
     }
 
     function updateDisplay() {
+      // Calculate Total Cost
       const total = selectedCut.price + selectedTopping.price;
       document.getElementById('display-steak-price').innerText = `$${total.toFixed(2)}`;
       document.getElementById('display-steak-name').innerText = selectedCut.name;
-      document.getElementById('display-steak-garnish').innerText = selectedTopping.name;
+      document.getElementById('display-steak-toppings').innerText = `${selectedTemp.name} &bull; ${selectedTopping.name}`;
 
-      // Update steak graphic
-      const graphic = document.getElementById('steak-graphic');
-      graphic.style.width = selectedCut.width;
-      graphic.style.height = selectedCut.height;
+      // Update text description
+      document.getElementById('display-steak-desc').innerText = `Aged ${selectedCut.name}, grilled to ${selectedTemp.name.toLowerCase()} (${selectedTemp.desc}), topped with ${selectedTopping.name.toLowerCase()}. Served with ${selectedSide.name.toLowerCase()}.`;
 
-      const overlay = document.getElementById('steak-crust');
-      overlay.style.opacity = selectedTopping.opacity;
+      // Update SVG beef cut shapes
+      const cuts = ['filet', 'ribeye', 'tbone'];
+      cuts.forEach(c => {
+        const el = document.getElementById(`cut-${c}`);
+        if (el) {
+          if (c === selectedCut.key) {
+            el.classList.add('show');
+          } else {
+            el.classList.remove('show');
+          }
+        }
+      });
 
-      // Update side graphic text
-      const sideText = selectedSide.key === 'mashed' ? 'Mashed' : selectedSide.key === 'spinach' ? 'Spinach' : 'Brussels';
-      document.getElementById('side-graphic').innerText = sideText;
+      // Update grilling temperature glows
+      const temps = ['rare', 'medrare', 'med'];
+      temps.forEach(t => {
+        const el = document.getElementById(`glow-${t}`);
+        if (el) {
+          if (t === selectedTemp.key) {
+            el.classList.add('show');
+          } else {
+            el.classList.remove('show');
+          }
+          // Correct shape alignment
+          let pathData = "M 75,100 C 65,80 135,80 125,100 C 135,120 65,120 75,100 Z"; // filet default
+          if (selectedCut.key === 'ribeye') {
+            pathData = "M 60,100 C 50,65 150,65 140,100 C 150,135 50,135 60,100 Z";
+          } else if (selectedCut.key === 'tbone') {
+            pathData = "M 55,100 C 42,65 158,65 145,100 C 158,135 42,135 55,100 Z";
+          }
+          el.setAttribute('d', pathData);
+        }
+      });
 
-      // Update description
-      const desc = `Premium ${selectedCut.name} grilled to ${selectedTemp.name.toLowerCase()} (${selectedTemp.desc}), finished with ${selectedTopping.name.toLowerCase()} and served with a side of ${selectedSide.name.toLowerCase()}.`;
-      document.getElementById('display-steak-desc').innerText = desc;
+      // Update toppings visibility
+      const toppingsList = ['garlic', 'horseradish', 'bleu'];
+      toppingsList.forEach(top => {
+        const el = document.getElementById(`crust-${top}`);
+        if (el) {
+          if (top === selectedTopping.key) {
+            el.classList.add('show');
+          } else {
+            el.classList.remove('show');
+          }
+        }
+      });
+
+      // Update sides visibility
+      const sidesList = ['mashed', 'spinach', 'asparagus'];
+      sidesList.forEach(sd => {
+        const el = document.getElementById(`side-${sd}`);
+        if (el) {
+          if (sd === selectedSide.key) {
+            el.classList.add('show');
+          } else {
+            el.classList.remove('show');
+          }
+        }
+      });
     }
 
-    // Trigger initial show
     window.addEventListener('load', () => {
+      setupSelectors();
       updateDisplay();
     });
   </script>

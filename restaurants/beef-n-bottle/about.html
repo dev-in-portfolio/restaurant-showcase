@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/beef-n-bottle/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beef 'N Bottle Steakhouse - Charlotte, NC | History & Heritage</title>
+  <title>History — Beef 'N Bottle Steakhouse</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           BEEF 'N BOTTLE
           <span>Steakhouse Est. 1958</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
-        <a href="wine.html">Wine & Bar</a>
+        <a href="wine.html">Wine &amp; Bar</a>
         <a href="about.html" class="active">History</a>
         <a href="services.html">Banquets</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Our Heritage</h2>
-    <p class="page-subtitle">Understand our history, our iconic celebrity walls, and our dedication to preserving vintage steakhouse standards.</p>
+    <h2 class="page-title">Sourcing &amp; Heritage</h2>
+    <p class="page-subtitle">A legacy of grilling premium choice cuts and pouring classic cocktails on Charlotte's South Boulevard since 1958.</p>
   </header>
 
   <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
-      <!-- History Card -->
+      <!-- Roots Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Established 1958</h3>
+        <h3 class="menu-category-title">Steakhouse Heritage</h3>
         <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          For over 65 years, Beef 'N Bottle has occupied its landmark spot on South Boulevard. Opened in 1958, our steakhouse has witnessed the evolution of Charlotte from a textile town to a banking center. Through it all, our dining room has remained largely untouched, preserving the intimate, cozy atmosphere that our guests expect.
-        </p>
-      </div>
-
-      <!-- Celebrity Wall Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">The Celebrity Walls</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Our wood-paneled walls tell a story of their own. Covered with hundreds of signed black-and-white headshots from actors, musicians, and athletes who have dined here over the decades, they offer a glimpse into the classic era of American dining. We maintain this collection as a tribute to our patrons.
+          Beef 'N Bottle stands as one of Charlotte's oldest and most iconic culinary landmarks. Established in 1958, we have spent over six decades serving premium choice cuts of beef, fresh seafood, and vintage highballs. Our dining room preserves the classic speakeasy atmosphere that has welcomed generations of local diners.
         </p>
       </div>
 
       <!-- Sourcing Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Traditional Butchery</h3>
+        <h3 class="menu-category-title">Red Leather Booths</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
+          We believe in preserving the honest, dim lighting and rich mahogany walls that define our legacy. As guests dine under vintage celebrity headshots, they enjoy the same dedicated service and attention to detail that our founder envisioned in 1958.
+        </p>
+      </div>
+
+      <!-- Sourcing Details -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Premium Aged Cuts</h3>
         <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          We maintain strict sourcing agreements to supply our kitchen. Our beef is premium aged choice and prime Angus, hand-cut on-site by our butchery team. We serve our steaks with classic steakhouse sides like red-skin garlic mashed potatoes and creamed spinach, preserving traditional culinary standards.
+          Every cut of beef served in our dining room is aged to perfection, hand-cut, and flame-grilled to absolute precision. Paired with classic steakhouse sides like creamed spinach and garlic mashed potatoes, we deliver a dining experience that honors our historic roots.
         </p>
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
@@ -78,21 +84,32 @@
     <div class="footer-info">
       <div class="info-block">
         <h3>Steakhouse Lounge</h3>
-        <p>4538 South Blvd<br>Charlotte, NC 28209<br>Phone: (704) 523-9977</p>
+        <p>4538 South Blvd<br>Charlotte, NC 28209</p>
       </div>
       <div class="info-block">
-        <h3>Operating Hours</h3>
+        <h3>Hours</h3>
         <p>Mon - Thu: 5:00 PM - 10:00 PM<br>Fri - Sat: 5:00 PM - 11:00 PM<br>Sunday: 5:00 PM - 9:00 PM</p>
       </div>
       <div class="info-block">
-        <h3>Reservations</h3>
-        <p>Available on OpenTable or call the tavern directly for private booth bookings.</p>
+        <h3>Details</h3>
+        <p>Aged Beef Cuts | Vintage Speakeasy Lounge | Est. 1958 | Charlotte Legacy</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
+      <p>&copy; 2026 Beef 'N Bottle Steakhouse. Charlotte, NC.</p>
     </div>
   </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>
