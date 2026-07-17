@@ -1,261 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reservations · Dolce Osteria</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root {
-  --olive: #4a6b3a;
-  --cream: #f5efe6;
-  --terra: #8b3a2a;
-  --charcoal: #1a1a1a;
-  --warm: #f5e6d0;
-  --gold: #c9a84c;
-  --muted: #999;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
-h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
-.nav { background: var(--olive); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
-.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
-.nav a:hover { opacity: 1; color: var(--gold); }
-.nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
-.page-header { background: linear-gradient(135deg, #1a1410, #2d1f16); padding: 3rem 2rem; text-align: center; }
-.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
-.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
-.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
-.section h2 { font-size: 1.5rem; color: var(--warm); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
-.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
-.quiz-section { background: #111; padding: 3rem 2rem; }
-.quiz-box { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.1); border-radius: 12px; padding: 2rem; }
-.quiz-box h3 { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 0 0 .25rem; }
-.quiz-box .hint { text-align: center; font-size: .85rem; opacity: .55; margin-bottom: 1.5rem; }
-.quiz-step { display: none; }
-.quiz-step.active { display: block; }
-.quiz-q { font-size: .95rem; font-weight: 600; margin-bottom: .75rem; color: var(--warm); text-align: center; }
-.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
-.quiz-opt { background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.1); padding: .75rem; border-radius: 6px; cursor: pointer; text-align: center; font-family: 'DM Sans', sans-serif; font-size: .85rem; color: var(--cream); transition: all .2s; }
-.quiz-opt:hover { border-color: var(--gold); background: rgba(201,168,76,.08); }
-.quiz-opt.selected { border-color: var(--gold); background: rgba(201,168,76,.12); color: var(--gold); }
-.quiz-result { display: none; text-align: center; padding: 1rem; }
-.quiz-result.show { display: block; }
-.quiz-result h4 { color: var(--gold); font-size: 1.1rem; margin: 0 0 .5rem; }
-.quiz-result p { opacity: .7; line-height: 1.6; margin-bottom: .5rem; }
-.quiz-result .btn { display: inline-block; background: var(--terra); color: var(--cream); padding: .65rem 2rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; border: none; cursor: pointer; }
-.quiz-result .btn:hover { background: #a84532; }
-.demo-form { max-width: 600px; margin: 3rem auto 0; background: rgba(255,255,255,.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(201,168,76,.1); }
-.demo-form h3 { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 0 0 1.5rem; }
-.form-group { margin-bottom: 1rem; }
-.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; opacity: .7; }
-.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,.05); color: var(--cream); }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.btn { display: inline-block; background: var(--terra); color: var(--cream); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; }
-.btn:hover { background: #a84532; }
-.toast { background: var(--gold); color: var(--charcoal); padding: 1rem 2rem; border-radius: 6px; text-align: center; margin-top: 1rem; display: none; font-weight: 600; }
-.toast.show { display: block; }
-footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
-footer a { color: var(--gold); text-decoration: none; }
-.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/dolce-osteria/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations | Dolce Osteria</title>
+  <meta name="description" content="Request a table reservation or find your perfect pasta pairing at Dolce Osteria in Dilworth.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .quiz-section {
+      background: var(--color-olive-dim);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: 5rem 0;
+      border-radius: var(--radius);
+      margin-bottom: 4rem;
+    }
+    .quiz-box {
+      max-width: 650px;
+      margin: 0 auto;
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: var(--shadow-premium);
+    }
+    .quiz-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      text-align: center;
+      color: var(--color-olive);
+      margin-bottom: 0.5rem;
+    }
+    .quiz-box .hint {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+    .quiz-step {
+      display: none;
+    }
+    .quiz-step.active {
+      display: block;
+    }
+    .quiz-q {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+    }
+    .quiz-opt {
+      background: var(--color-bg);
+      border: 1.5px solid var(--color-border);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: center;
+      font-family: var(--font-sans);
+      color: var(--color-text-light);
+      transition: var(--transition-fast);
+    }
+    .quiz-opt:hover {
+      border-color: var(--color-olive);
+      background: var(--color-olive-dim);
+    }
+    .quiz-opt.selected {
+      border-color: var(--color-olive);
+      background-color: var(--color-olive-dim);
+      color: var(--color-olive);
+    }
+    .quiz-result {
+      display: none;
+      text-align: center;
+      border-top: 1px dashed var(--color-border);
+      padding-top: 1.5rem;
+    }
+    .quiz-result.show {
+      display: block;
+    }
+    .quiz-result h4 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--color-olive);
+      margin-bottom: 0.4rem;
+    }
+    .quiz-result p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Dolce Osteria</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="pasta.html">Pasta &amp; Wine</a>
-    <a href="story.html">Our Story</a>
-    <a href="reservations.html">Reservations</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<header class="page-header">
-  <h1>Reservations</h1>
-  <p>Book your table or find your perfect pasta pairing</p>
-</header>
-<main id="main">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <span>🍝</span> Dolce Osteria
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="pasta.html">Pasta &amp; Wine</a>
+      <a href="story.html">Our Story</a>
+      <a href="reservations.html" class="active">Reservations</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-
-<section class="section">
-  <div style="text-align:center;margin-bottom:2rem">
-    <p style="opacity:.6">Call us at <a href="tel:+17043327525" style="color:var(--gold);text-decoration:none;font-weight:600">(704) 332-7525</a> or use the form below to request a table.</p>
-  </div>
-
-  <form class="demo-form" data-demo-form>
-    <h3>Request a Reservation</h3>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="rname">Name</label>
-        <input id="rname" type="text" required>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Reservations</span>
+        <h1>Reserve a Table</h1>
+        <p>Book your table online or call us at (704) 333-5534 to secure your dining details.</p>
       </div>
-      <div class="form-group">
-        <label for="remail">Email</label>
-        <input id="remail" type="email" required>
+    </header>
+
+    <section class="wrap">
+      <!-- Form Container -->
+      <div class="form-wrapper" style="margin-bottom: 5rem;">
+        <form class="demo-form" id="res-form">
+          <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 2rem;">Request a Reservation</h3>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="rname">Your Name</label>
+              <input id="rname" type="text" required placeholder="Jane Smith">
+            </div>
+
+            <div class="form-group">
+              <label for="remail">Email Address</label>
+              <input id="remail" type="email" required placeholder="jane@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="rdate">Preferred Date</label>
+              <input id="rdate" type="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="rtime">Preferred Time</label>
+              <select id="rtime" required>
+                <option value="">Select Time...</option>
+                <option>11:30 AM</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>5:00 PM</option>
+                <option>5:30 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+                <option>8:30 PM</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rguests">Number of Guests</label>
+              <select id="rguests" required>
+                <option value="">Select Guests...</option>
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5 Guests</option>
+                <option>6 Guests</option>
+                <option>7 Guests</option>
+                <option>8+ Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="roccasion">Special Occasion</label>
+              <select id="roccasion">
+                <option value="">None Specified</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Date Night</option>
+                <option>Business Dinner</option>
+                <option>Other Special Occasion</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="rnotes">Special Seating Requests</label>
+              <textarea id="rnotes" rows="3" placeholder="Allergies, dietary constraints, seating preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Request Reservation</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">✔</div>
+          <h3 class="success-title">Reservation Requested!</h3>
+          <p class="success-msg" id="success-message">Thank you. Your table reservation request has been submitted successfully. We will email or call you to confirm shortly.</p>
+        </div>
+      </div>
+
+      <!-- Multi-step Matchmaker Quiz -->
+      <div class="quiz-section">
+        <div class="quiz-box" id="pastaQuiz">
+          <h3>Find Your Pasta Pairing</h3>
+          <p class="hint">Answer two quick questions to find your culinary match.</p>
+
+          <div class="quiz-step active" data-step="1">
+            <p class="quiz-q">What is your mood tonight?</p>
+            <div class="quiz-options">
+              <button class="quiz-opt" data-answer="comfort" data-next="2">Comforting &amp; Classic</button>
+              <button class="quiz-opt" data-answer="adventurous" data-next="2">Adventurous &amp; Bold</button>
+              <button class="quiz-opt" data-answer="light" data-next="2">Light &amp; Fresh</button>
+              <button class="quiz-opt" data-answer="decadent" data-next="2">Decadent &amp; Indulgent</button>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-step="2">
+            <p class="quiz-q">What are you drinking?</p>
+            <div class="quiz-options">
+              <button class="quiz-opt" data-answer="red" data-next="done">Red Wine</button>
+              <button class="quiz-opt" data-answer="white" data-next="done">White Wine</button>
+              <button class="quiz-opt" data-answer="cocktail" data-next="done">Cocktail</button>
+            </div>
+          </div>
+
+          <div class="quiz-result" id="pairingResult">
+            <h4 id="dishName">Pappardelle alla Genovese</h4>
+            <p id="dishDesc">Slow-cooked onion and beef ragù with fresh pappardelle &mdash; pairs beautifully with a bold Chianti Classico.</p>
+            <button class="submit-btn" id="pairingReserve">Reserve This Experience</button>
+            
+            <div class="success-panel" id="pairingToast" style="margin-top: 1.5rem; display: none; padding: 1rem 0;">
+              <div class="success-icon" style="font-size: 2rem;">✔</div>
+              <p style="font-size: 0.95rem; font-weight: 700; color: var(--color-olive); margin-bottom: 0.25rem;">Experience Selected!</p>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Please fill out the booking form above to reserve your table.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Dolce Osteria</h3>
+        <p>Artisan Italian kitchen in Dilworth. House-extruded bronze-cut noodle boards, slow-simmered sauces, and fine Italian wines.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255, 255, 255, 0.7);">
+          1710 Dilworth Rd E<br>
+          Charlotte, NC 28203<br>
+          Phone: (704) 333-5534
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="pasta.html">Pasta &amp; Wine</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="rdate">Date</label>
-        <input id="rdate" type="date" required>
-      </div>
-      <div class="form-group">
-        <label for="rtime">Time</label>
-        <select id="rtime" required>
-          <option value="">Select...</option>
-          <option>11:30 AM</option>
-          <option>12:00 PM</option>
-          <option>12:30 PM</option>
-          <option>5:00 PM</option>
-          <option>5:30 PM</option>
-          <option>6:00 PM</option>
-          <option>6:30 PM</option>
-          <option>7:00 PM</option>
-          <option>7:30 PM</option>
-          <option>8:00 PM</option>
-          <option>8:30 PM</option>
-        </select>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dolce Osteria. All rights reserved. Unofficial concept presentation.</p>
     </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="rguests">Guests</label>
-        <select id="rguests" required>
-          <option value="">Select...</option>
-          <option>1</option><option>2</option><option>3</option><option>4</option>
-          <option>5</option><option>6</option><option>7</option><option>8+</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="roccasion">Occasion</label>
-        <select id="roccasion">
-          <option value="">None specified</option>
-          <option>Birthday</option>
-          <option>Anniversary</option>
-          <option>Date Night</option>
-          <option>Business Dinner</option>
-          <option>Other</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="rnotes">Special Requests</label>
-      <textarea id="rnotes" rows="2" placeholder="Allergies, dietary needs, seating preferences..."></textarea>
-    </div>
-    <button class="btn" type="submit" style="width:100%">Request Reservation</button>
-    <div class="toast" role="alert">Thanks! We'll confirm your reservation within 24 hours.</div>
-  </form>
-</section>
+  </footer>
 
-<div class="quiz-section">
-  <div class="quiz-box" id="pastaQuiz">
-    <h3>Find Your Pasta Pairing</h3>
-    <p class="hint">Not sure what to order? Answer two quick questions and we'll recommend the perfect dish.</p>
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
 
-    <div class="quiz-step active" data-step="1">
-      <p class="quiz-q">What's your mood tonight?</p>
-      <div class="quiz-options">
-        <button class="quiz-opt" data-answer="comfort" data-next="2">Comforting &amp; Classic</button>
-        <button class="quiz-opt" data-answer="adventurous" data-next="2">Adventurous &amp; Bold</button>
-        <button class="quiz-opt" data-answer="light" data-next="2">Light &amp; Fresh</button>
-        <button class="quiz-opt" data-answer="decadent" data-next="2">Decadent &amp; Indulgent</button>
-      </div>
-    </div>
+    // Reservation Form Submit
+    const form = document.getElementById('res-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
 
-    <div class="quiz-step" data-step="2">
-      <p class="quiz-q">What are you drinking?</p>
-      <div class="quiz-options">
-        <button class="quiz-opt" data-answer="red" data-next="done">Red Wine</button>
-        <button class="quiz-opt" data-answer="white" data-next="done">White Wine</button>
-        <button class="quiz-opt" data-answer="cocktail" data-next="done">Cocktail</button>
-      </div>
-    </div>
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('rname').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your reservation request has been submitted successfully. We will call or email you to confirm shortly.`;
+      });
+    }
 
-    <div class="quiz-result" id="pairingResult">
-      <h4 id="dishName">Pappardelle alla Genovese</h4>
-      <p id="dishDesc">Slow-cooked onion and beef ragu with fresh pappardelle — pairs beautifully with a bold Chianti Classico.</p>
-      <button class="btn" id="pairingReserve">Reserve This Experience</button>
-      <div class="toast" id="pairingToast" style="display:none">Great choice! Use the form above to book your table.</div>
-    </div>
-  </div>
-</div>
+    // Quiz Matchmaker logic
+    (function() {
+      const quiz = document.getElementById('pastaQuiz');
+      if (!quiz) return;
+      const steps = quiz.querySelectorAll('.quiz-step');
+      const result = document.getElementById('pairingResult');
+      const dishName = document.getElementById('dishName');
+      const dishDesc = document.getElementById('dishDesc');
+      const reserveBtn = document.getElementById('pairingReserve');
+      const toast = document.getElementById('pairingToast');
 
+      const picks = {
+        'comfort-red': ['Pappardelle alla Genovese', 'Slow-cooked onion and beef ragu with fresh pappardelle — pairs beautifully with a bold Chianti Classico.'],
+        'comfort-white': ['Penne alla Vodka', 'Creamy tomato-vodka sauce with pancetta and parmesan — try it with a crisp Pinot Grigio.'],
+        'comfort-cocktail': ['Chicken Parmigiana', 'Breaded cutlet with mozzarella and marinara — an Italian Old Fashioned is the perfect companion.'],
+        'adventurous-red': ['Tagliolini Cinghiale', 'Homemade tagliolini with wild boar ragu — earthy, gamey, and ideal with a Barbera d\'Alba.'],
+        'adventurous-white': ['Cozze', 'PEI mussels in white wine, garlic, and lemon butter — a bright Pinot Grigio keeps it classic.'],
+        'adventurous-cocktail': ['Funghi + Gnocchi alla Sorrentina', 'Start with sautéed wild mushrooms, then house potato gnocchi in tomato and mozzarella — a Negroni sets the mood.'],
+        'light-red': ['Insalata Cesare + Salmone alla Griglia', 'Classic Caesar followed by grilled salmon with lemon caper butter — a light Nero d\'Avola bridges the meal.'],
+        'light-white': ['Prosciutto & Burrata + Pappardelle alla Genovese', 'Start light and finish rich — a crisp Pinot Grigio for the starter, then switch to Chianti.'],
+        'light-cocktail': ['Insalata Cesare + Penne alla Vodka', 'Caesar salad followed by creamy vodka pasta — a Limoncello Spritz keeps things bright.'],
+        'decadent-red': ['Costata di Manzo', 'Grilled 10oz ribeye with rosemary potatoes and seasonal vegetables — only a big Barbera will do.'],
+        'decadent-white': ['Salmone alla Griglia', 'Grilled salmon with lemon caper butter, asparagus, and risotto — a rich Pinot Grigio stands up to it.'],
+        'decadent-cocktail': ['Tiramisu + Limoncello Cake', 'Skip straight to dessert — espresso martini or limoncello spritz to match the sweetness.']
+      };
 
-</main>
-<footer>
-  <p>Dolce Osteria · 1710 Kenilworth Ave · Charlotte, NC 28203 · (704) 332-7525</p>
-  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="reservations.html">Reservations</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
-<script>
-(function() {
-  const quiz = document.getElementById('pastaQuiz');
-  const steps = quiz.querySelectorAll('.quiz-step');
-  const result = document.getElementById('pairingResult');
-  const dishName = document.getElementById('dishName');
-  const dishDesc = document.getElementById('dishDesc');
-  const reserveBtn = document.getElementById('pairingReserve');
-  const toast = document.getElementById('pairingToast');
+      let answers = {};
+      quiz.querySelectorAll('.quiz-opt').forEach(opt => {
+        opt.addEventListener('click', function() {
+          const step = this.closest('.quiz-step');
+          const next = this.dataset.next;
+          const stepNum = step.dataset.step;
+          answers[stepNum] = this.dataset.answer;
+          
+          step.querySelectorAll('.quiz-opt').forEach(s => s.classList.remove('selected'));
+          this.classList.add('selected');
 
-  const picks = {
-    'comfort-red': ['Pappardelle alla Genovese', 'Slow-cooked onion and beef ragu with fresh pappardelle \u2014 pairs beautifully with a bold Chianti Classico.'],
-    'comfort-white': ['Penne alla Vodka', 'Creamy tomato-vodka sauce with pancetta and parmesan \u2014 try it with a crisp Pinot Grigio.'],
-    'comfort-cocktail': ['Chicken Parmigiana', 'Breaded cutlet with mozzarella and marinara \u2014 an Italian Old Fashioned is the perfect companion.'],
-    'adventurous-red': ['Tagliolini Cinghiale', 'Homemade tagliolini with wild boar ragu \u2014 earthy, gamey, and ideal with a Barbera d\'Alba.'],
-    'adventurous-white': ['Cozze', 'PEI mussels in white wine, garlic, and lemon butter \u2014 a bright Pinot Grigio keeps it classic.'],
-    'adventurous-cocktail': ['Funghi + Gnocchi alla Sorrentina', 'Start with sautéed wild mushrooms, then house potato gnocchi in tomato and mozzarella \u2014 a Negroni sets the mood.'],
-    'light-red': ['Insalata Cesare + Salmone alla Griglia', 'Classic Caesar followed by grilled salmon with lemon caper butter \u2014 a light Nero d\'Avola bridges the meal.'],
-    'light-white': ['Prosciutto & Burrata + Pappardelle alla Genovese', 'Start light and finish rich \u2014 a crisp Pinot Grigio for the starter, then switch to Chianti.'],
-    'light-cocktail': ['Insalata Cesare + Penne alla Vodka', 'Caesar salad followed by creamy vodka pasta \u2014 a Limoncello Spritz keeps things bright.'],
-    'decadent-red': ['Costata di Manzo', 'Grilled 10oz ribeye with rosemary potatoes and seasonal vegetables \u2014 only a big Barbera will do.'],
-    'decadent-white': ['Salmone alla Griglia', 'Grilled salmon with lemon caper butter, asparagus, and risotto \u2014 a rich Pinot Grigio stands up to it.'],
-    'decadent-cocktail': ['Tiramisu + Limoncello Cake', 'Skip straight to dessert \u2014 espresso martini or limoncello spritz to match the sweetness.']
-  };
+          if (next === 'done') {
+            step.classList.remove('active');
+            const key = `${answers['1']}-${answers['2']}`;
+            const pick = picks[key] || picks['comfort-red'];
+            dishName.textContent = pick[0];
+            dishDesc.textContent = pick[1];
+            result.classList.add('show');
+          } else {
+            setTimeout(() => {
+              step.classList.remove('active');
+              const ns = quiz.querySelector(`[data-step="${next}"]`);
+              if (ns) ns.classList.add('active');
+            }, 300);
+          }
+        });
+      });
 
-  let answers = {};
-  quiz.querySelectorAll('.quiz-opt').forEach(opt => {
-    opt.addEventListener('click', function() {
-      const step = this.closest('.quiz-step');
-      const next = this.dataset.next;
-      const stepNum = step.dataset.step;
-      answers[stepNum] = this.dataset.answer;
-      const siblings = step.querySelectorAll('.quiz-opt');
-      siblings.forEach(s => s.classList.remove('selected'));
-      this.classList.add('selected');
-
-      if (next === 'done') {
-        step.classList.remove('active');
-        const key = answers['1'] + '-' + answers['2'];
-        const pick = picks[key] || picks['comfort-red'];
-        dishName.textContent = pick[0];
-        dishDesc.textContent = pick[1];
-        result.classList.add('show');
+      if (reserveBtn) {
         reserveBtn.addEventListener('click', function() {
           toast.style.display = 'block';
         });
-      } else {
-        setTimeout(() => {
-          step.classList.remove('active');
-          const ns = quiz.querySelector('[data-step="' + next + '"]');
-          if (ns) ns.classList.add('active');
-        }, 300);
       }
-    });
-  });
-})();
-</script>
+    })();
+  </script>
 </body>
 </html>
