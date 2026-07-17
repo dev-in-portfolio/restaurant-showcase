@@ -1,8 +1,8 @@
 // === CASWELL STATION: Site JavaScript ===
 (function(){
   // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
   if(toggle && navLinks){
     toggle.addEventListener('click',()=>{
       const open = navLinks.classList.toggle('open');
@@ -10,7 +10,7 @@
     });
   }
 
-  // Category filter
+  // Category filter for menu
   const filterBtns = document.querySelectorAll('.menu-controls button[data-filter]');
   const sections = document.querySelectorAll('.menu-section[data-category]');
   if(filterBtns.length && sections.length){
@@ -21,9 +21,9 @@
         const cat = btn.dataset.filter;
         sections.forEach(s=>{
           if(cat==='all' || s.dataset.category===cat){
-            s.classList.remove('hidden');
+            s.style.display = 'block';
           } else {
-            s.classList.add('hidden');
+            s.style.display = 'none';
           }
         });
       });
@@ -40,25 +40,14 @@
       document.querySelectorAll('.menu-row').forEach(row=>{
         const text = row.textContent.toLowerCase();
         const match = !q || text.includes(q);
-        row.style.display = match ? '' : 'none';
+        row.style.display = match ? 'flex' : 'none';
         if(match) anyVisible = true;
       });
       if(q){
-        sections.forEach(s=>s.classList.remove('hidden'));
+        sections.forEach(s=>s.style.display = 'block');
         filterBtns.forEach(b=>b.classList.remove('active'));
       }
       if(menuEmpty) menuEmpty.hidden = anyVisible;
     });
   }
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',(e)=>{
-      const target = document.querySelector(a.getAttribute('href'));
-      if(target){
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    });
-  });
 })();

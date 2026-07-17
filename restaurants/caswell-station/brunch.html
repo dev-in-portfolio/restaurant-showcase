@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/caswell-station/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brunch | Caswell Station</title>
   <meta name="description" content="Weekend brunch at Caswell Station - chorizo benedict, brunch burgers, mimosa carafes, and all the favorites.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="index.html" class="logo" aria-label="Caswell Station Home">
-        <div class="logo-icon" aria-hidden="true">&#127968;</div>
+        <div class="logo-icon" aria-hidden="true">🏠</div>
         <div><span class="logo-text">Caswell Station</span><span class="logo-sub">Elizabeth Neighborhood</span></div>
       </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="brunch.html" class="active">Brunch</a></li>
@@ -32,77 +36,177 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-brunch">
+    <section class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#127869; Sat &amp; Sun</span>
+        <span class="page-hero-badge">🍳 Sat &amp; Sun 10AM - 3PM</span>
         <h1>Weekend Brunch</h1>
-        <p>Starting at 10AM every Saturday and Sunday. Benedicts, burgers, mimosa carafes, and all the favorites.</p>
+        <p>Benedicts, burgers, mimosa carafes, and all your tavern comfort favorites.</p>
       </div>
     </section>
-    <section>
-      <div class="wrap">
-        <div class="brunch-intro">
-          <p>Brunch is served Saturday and Sunday from 10AM. Walk-ins welcome, but the patio fills up fast. Arrive early, grab a mimosa, and start your weekend right.</p>
-        </div>
-        <div class="menu-controls" role="toolbar" aria-label="Brunch filter">
-          <button class="active" data-filter="all">All</button>
-          <button data-filter="benedicts">Benedicts</button>
-          <button data-filter="mains">Mains</button>
-          <button data-filter="sweets">Sweets</button>
-          <button data-filter="drinks">Drinks</button>
-        </div>
-        <div class="menu-content" id="menu-content">
-          <div class="menu-section" data-category="benedicts">
-            <h3>Benedicts</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Chorizo Benedict</h4><p>Chorizo, poached eggs, chipotle hollandaise on an English muffin</p></div><span class="menu-price">$14</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Crab Cake Benedict</h4><p>Lump crab cake, poached eggs, Old Bay hollandaise</p></div><span class="menu-price">$16</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Classic Benedict</h4><p>Canadian bacon, poached eggs, hollandaise on an English muffin</p></div><span class="menu-price">$13</span></div>
+
+    <section class="wrap">
+      <div class="menu-controls" role="group" aria-label="Brunch filter">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="benedicts">Benedicts</button>
+        <button data-filter="mains">Mains</button>
+        <button data-filter="sweets">Sweets</button>
+        <button data-filter="drinks">Drinks</button>
+      </div>
+
+      <div class="menu-content" id="menu-content">
+        <!-- Benedicts -->
+        <div class="menu-section" data-category="benedicts">
+          <h3>Benedicts</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Chorizo Benedict</h4>
+                <p>Spicy chorizo sausage, poached eggs, and chipotle hollandaise served on a toasted English muffin.</p>
+              </div>
+              <span class="menu-price">$14</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="mains">
-            <h3>Brunch Mains</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Brunch Burger</h4><p>Angus patty, fried egg, bacon, cheddar, special sauce, fries</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken &amp; Waffles</h4><p>Hand-breaded chicken tenders on a Belgian waffle with maple syrup and hot sauce</p></div><span class="menu-price">$14</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Shrimp &amp; Grits</h4><p>Jumbo shrimp, andouille, creamy stone-ground grits</p></div><span class="menu-price">$16</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Veggie Scramble</h4><p>Eggs, peppers, onions, tomatoes, feta cheese, home fries</p></div><span class="menu-price">$12</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Breakfast Burrito</h4><p>Eggs, chorizo, cheese, black beans, salsa, sour cream</p></div><span class="menu-price">$13</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Crab Cake Benedict</h4>
+                <p>Lump crab cake, soft poached eggs, and Old Bay seasoned hollandaise sauce.</p>
+              </div>
+              <span class="menu-price">$16</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="sweets">
-            <h3>Sweet Stuff</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>French Toast</h4><p>Brioche French toast with powdered sugar, maple syrup, and berries</p></div><span class="menu-price">$11</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Pancake Stack</h4><p>Three buttermilk pancakes with butter and maple syrup</p></div><span class="menu-price">$10</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Biscuits &amp; Gravy</h4><p>House-made biscuits with sausage gravy</p></div><span class="menu-price">$9</span></div>
-            </div>
-          </div>
-          <div class="menu-section" data-category="drinks">
-            <h3>Brunch Drinks</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Mimosa Carafe</h4><p>Champagne and orange juice, enough for the table</p></div><span class="menu-price">$16</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Single Mimosa</h4><p>Champagne and OJ, one glass</p></div><span class="menu-price">$6</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Build Your Own Bloody Mary</h4><p>Vodka, house mix, choose your toppings from the bar</p></div><span class="menu-price">$9</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Bottomless Coffee</h4><p>House coffee, unlimited refills</p></div><span class="menu-price">$3</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Classic Benedict</h4>
+                <p>Canadian bacon, poached eggs, and house-made hollandaise sauce on an English muffin.</p>
+              </div>
+              <span class="menu-price">$13</span>
             </div>
           </div>
         </div>
-        <div class="menu-empty" id="menu-empty" hidden><p>No items match your search.</p></div>
+
+        <!-- Brunch Mains -->
+        <div class="menu-section" data-category="mains">
+          <h3>Brunch Mains</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Brunch Burger</h4>
+                <p>Angus beef patty, fried egg, hickory bacon, cheddar cheese, special sauce, and home fries.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Chicken &amp; Waffles</h4>
+                <p>Hand-breaded fresh chicken tenders served on a Belgian waffle with maple syrup and hot sauce.</p>
+              </div>
+              <span class="menu-price">$14</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Shrimp &amp; Grits</h4>
+                <p>Jumbo tail-on shrimp, andouille sausage, and creamy stone-ground grits in a rich gravy.</p>
+              </div>
+              <span class="menu-price">$16</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sweets -->
+        <div class="menu-section" data-category="sweets">
+          <h3>Sweet Stuff</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Brioche French Toast</h4>
+                <p>Thick-sliced brioche with powdered sugar, pure maple syrup, and fresh berries.</p>
+              </div>
+              <span class="menu-price">$11</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Pancake Stack</h4>
+                <p>Three buttermilk pancakes griddled golden, served with whipped butter and maple syrup.</p>
+              </div>
+              <span class="menu-price">$10</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Biscuits &amp; Gravy</h4>
+                <p>House-made buttermilk biscuits smothered in savory country sausage gravy.</p>
+              </div>
+              <span class="menu-price">$9</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-section" data-category="drinks">
+          <h3>Brunch Drinks</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Mimosa Carafe</h4>
+                <p>A full bottle of champagne served with fresh orange juice for the table.</p>
+              </div>
+              <span class="menu-price">$16</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Single Mimosa</h4>
+                <p>Champagne and fresh orange juice by the glass.</p>
+              </div>
+              <span class="menu-price">$6</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Build Your Own Bloody Mary</h4>
+                <p>House vodka with our custom spicy bloody mix. Garnishes from the bar.</p>
+              </div>
+              <span class="menu-price">$9</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Caswell Station</h3><p>Elizabeth neighborhood pub and grill. New American menu, live music, weekend brunch.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="brunch.html">Brunch</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9802374256">(980) 237-4256</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Caswell Station</h3>
+        <p>A neighborhood gastropub and local tavern inside a historic Elizabeth house. Serving New American comfort plates and weekend brunch on our massive garden patio.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Caswell Station. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          366 N Caswell Rd<br>
+          Charlotte, NC 28204<br>
+          Phone: (980) 237-4256
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:30 AM - 10:00 PM<br>
+          Fri - Sat: 11:00 AM - 11:00 PM<br>
+          Sunday: 10:00 AM - 9:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caswell Station. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>

@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/caswell-station/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Caswell Station</title>
   <meta name="description" content="The story of Caswell Station - the big house on the corner, Elizabeth's neighborhood pub.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <style>
+    /* custom sidebar layout */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .stats-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .stats-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--color-moss);
+      font-family: var(--font-heading);
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="index.html" class="logo" aria-label="Caswell Station Home">
-        <div class="logo-icon" aria-hidden="true">&#127968;</div>
+        <div class="logo-icon" aria-hidden="true">🏠</div>
         <div><span class="logo-text">Caswell Station</span><span class="logo-sub">Elizabeth Neighborhood</span></div>
       </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="brunch.html">Brunch</a></li>
@@ -32,74 +72,112 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-about">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#128218; Our Story</span>
+        <span class="page-hero-badge">Our Story</span>
         <h1>About Caswell Station</h1>
         <p>The big house on the corner of Pecan and Caswell</p>
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="about-content">
-          <div class="about-main">
-            <p class="about-lead">Caswell Station started with a house. A big, beautiful, Elizabeth-neighborhood house on the corner of Pecan and Caswell. Rather than let it become just another Charlotte development story, someone saw what it could be: a place where the neighborhood could gather, eat, drink, and watch the game.</p>
-            <div class="about-section">
-              <h3>The Neighborhood</h3>
-              <p>Elizabeth is one of Charlotte's oldest neighborhoods, and Caswell Station is built into its fabric. We're the place you walk to on a Saturday morning for brunch. The spot you hit after work on a Friday. The corner where you run into your neighbors and end up staying for three more drinks.</p>
-            </div>
-            <div class="about-section">
-              <h3>The Food</h3>
-              <p>Our menu is New American — creative, sharable, and unpretentious. Tatchos (tater tots with short ribs and gravy), cheesesteak egg rolls, wings in four sauces, tacos with everything from Baja fish to pork belly. We also do a weekend brunch that the neighborhood takes seriously.</p>
-            </div>
-            <div class="about-section">
-              <h3>The Vibe</h3>
-              <p>Casual. Loud. Fun. We've got TVs for every game, a patio for warm nights, live music on select evenings, and a bar that keeps things moving. We're not trying to be anything we're not — we're your neighborhood pub, and we're good at it.</p>
-            </div>
+    </header>
+
+    <section class="wrap">
+      <div class="about-layout">
+        
+        <!-- Left Side: Main Narrative -->
+        <div>
+          <p style="font-size: 1.15rem; font-weight: 600; line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+            Caswell Station started with a house. A big, beautiful, Elizabeth-neighborhood craftsman house built in 1913 on the corner of Pecan and Caswell. Rather than let it become just another development story, we saw what it could be: a place where the neighborhood could gather, eat, drink, and watch the game.
+          </p>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem;">The Neighborhood</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8;">
+              Elizabeth is one of Charlotte's oldest residential neighborhoods, and Caswell Station is built into its fabric. We're the place you walk to on a Saturday morning for brunch, the spot you hit after work on a Friday, and the corner where you run into your neighbors.
+            </p>
           </div>
-          <aside class="about-sidebar">
-            <div class="sidebar-card">
-              <h3>By the Numbers</h3>
-              <ul class="stats-list">
-                <li><span class="stat-num">1</span><span class="stat-label">Big House on the Corner</span></li>
-                <li><span class="stat-num">97.5</span><span class="stat-label">Health Score</span></li>
-                <li><span class="stat-num">4.3</span><span class="stat-label">Google Rating</span></li>
-                <li><span class="stat-num">600+</span><span class="stat-label">Google Reviews</span></li>
-              </ul>
-            </div>
-            <div class="sidebar-card">
-              <h3>What People Say</h3>
-              <blockquote class="sidebar-quote">"Great local bar/restaurant with plenty of seating indoors and outdoor patio seating. Lots of TVs — great to watch games with friends."</blockquote>
-              <p class="quote-source">&mdash; Yelp Reviewer</p>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="cta-banner">
-          <h2>Experience the Station</h2>
-          <p>Game day, date night, brunch with friends — your neighborhood spot is waiting.</p>
-          <div class="btn-row">
-            <a href="visit.html#reserve" class="btn btn-p">Reserve a Table</a>
-            <a href="menu.html" class="btn btn-o">View Menu</a>
+
+          <div style="margin-bottom: 2.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem;">The Food</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8;">
+              Our menu is New American — creative, sharable, and unpretentious. Tatchos (tater tots topped with short ribs and gravy), cheesesteak egg rolls, wings in four signature sauces, and street tacos. We also do a weekend brunch that the neighborhood takes seriously.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 0.8rem;">The Vibe</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.8;">
+              Casual. Loud. Fun. We've got TVs for every game, a garden patio for warm Carolina nights, live songwriter music on select evenings, and a friendly bar team that keeps things moving. We are your local tavern.
+            </p>
           </div>
         </div>
+
+        <!-- Right Side: Sidebar Cards -->
+        <div style="display: flex; flex-direction: column; gap: 2rem; width: 100%;">
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">By the Numbers</h3>
+            <ul class="stats-list">
+              <li>
+                <span class="stat-num">1</span>
+                <span class="stat-label">Big House on the Corner</span>
+              </li>
+              <li>
+                <span class="stat-num">97.5</span>
+                <span class="stat-label">Health Score</span>
+              </li>
+              <li>
+                <span class="stat-num">4.3</span>
+                <span class="stat-label">Google Star Rating</span>
+              </li>
+              <li>
+                <span class="stat-num">600+</span>
+                <span class="stat-label">Google Reviews</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">Guest Review</h3>
+            <blockquote style="font-style: italic; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.7;">
+              "Great local bar/restaurant with plenty of seating indoors and outdoor patio seating. Lots of TVs — great to watch games with friends."
+            </blockquote>
+            <p style="font-size: 0.8rem; font-weight: 700; color: var(--color-moss);">&mdash; Yelp Reviewer</p>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Caswell Station</h3><p>Elizabeth neighborhood pub and grill. New American menu, live music, weekend brunch.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="brunch.html">Brunch</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9802374256">(980) 237-4256</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Caswell Station</h3>
+        <p>A neighborhood gastropub and local tavern inside a historic Elizabeth house. Serving New American comfort plates and weekend brunch on our massive garden patio.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Caswell Station. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          366 N Caswell Rd<br>
+          Charlotte, NC 28204<br>
+          Phone: (980) 237-4256
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:30 AM - 10:00 PM<br>
+          Fri - Sat: 11:00 AM - 11:00 PM<br>
+          Sunday: 10:00 AM - 9:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caswell Station. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>

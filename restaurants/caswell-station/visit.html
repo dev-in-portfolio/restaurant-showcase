@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/caswell-station/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visit | Caswell Station</title>
-  <meta name="description" content="Hours, directions, and reservation info for Caswell Station in Elizabeth, Charlotte.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Hours, directions, and reservation details for Caswell Station in Elizabeth, Charlotte.">
   <link rel="stylesheet" href="site.css">
+  <style>
+    /* hours details layout */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    .hours-table td {
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed var(--color-border);
+      font-size: 0.9rem;
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="index.html" class="logo" aria-label="Caswell Station Home">
-        <div class="logo-icon" aria-hidden="true">&#127968;</div>
+        <div class="logo-icon" aria-hidden="true">🏠</div>
         <div><span class="logo-text">Caswell Station</span><span class="logo-sub">Elizabeth Neighborhood</span></div>
       </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="brunch.html">Brunch</a></li>
@@ -32,76 +53,159 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-visit">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#128205; Elizabeth, Charlotte</span>
-        <h1>Visit Us</h1>
-        <p>Hours, directions, and everything you need for your visit.</p>
+        <span class="page-hero-badge">Elizabeth, Charlotte</span>
+        <h1>Visit Our Tavern</h1>
+        <p>Hours, directions, and details you need for your visit.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2.5rem; margin-bottom: 4rem;">
+        
+        <div class="premium-card">
+          <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.4rem;">Tavern Hours</h3>
+          <table class="hours-table" aria-label="Restaurant hours">
+            <tr><td>Monday – Thursday</td><td>11:00 AM – 11:00 PM</td></tr>
+            <tr><td>Friday</td><td>11:00 AM – 12:00 AM</td></tr>
+            <tr><td>Saturday</td><td>10:00 AM – 12:00 AM</td></tr>
+            <tr><td>Sunday</td><td>10:00 AM – 11:00 PM</td></tr>
+          </table>
+          <p style="font-size: 0.82rem; color: var(--color-moss); font-weight: 700; text-transform: uppercase;">Brunch Served: Sat &amp; Sun 10AM – 3PM</p>
+        </div>
+
+        <div class="premium-card">
+          <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.4rem;">Location</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8;">
+            <strong>Caswell Station</strong><br>
+            366 N Caswell Rd<br>
+            Charlotte, NC 28204
+          </p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.8rem;">Located at the corner of Pecan and Caswell. Free street parking is available.</p>
+          <a href="https://maps.google.com/?q=366+N+Caswell+Rd+Charlotte+NC+28204" class="btn" style="margin-top: 1rem; width: 100%;" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+
+        <div class="premium-card">
+          <h3 class="menu-category-title" style="border: none; margin-bottom: 0.8rem; font-size: 1.4rem;">Contact Line</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">For phone orders or direct parlor inquiries:</p>
+          <p style="margin-top: 0.8rem;"><a href="tel:9802374256" style="font-size: 1.3rem; font-weight: 800; color: var(--color-moss);">(980) 237-4256</a></p>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-text-muted);"><a href="mailto:info@caswellstation.com">info@caswellstation.com</a></p>
+        </div>
+
       </div>
     </section>
-    <section id="reserve">
-      <div class="wrap">
-        <div class="visit-grid">
-          <div class="visit-card">
-            <h3>&#128337; Hours</h3>
-            <table class="hours-table" aria-label="Restaurant hours">
-              <tr><td>Monday – Thursday</td><td>11:00 AM – 11:00 PM</td></tr>
-              <tr><td>Friday</td><td>11:00 AM – 12:00 AM</td></tr>
-              <tr><td>Saturday</td><td>10:00 AM – 12:00 AM</td></tr>
-              <tr><td>Sunday</td><td>10:00 AM – 11:00 PM</td></tr>
-            </table>
-            <p class="hours-note">Brunch: Sat &amp; Sun 10AM – 2PM</p>
+
+    <!-- Reservation Section -->
+    <section class="form-wrapper" id="reserve" style="margin-bottom: 5rem;">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Table Reservations</h2>
+        
+        <form id="reserve-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. Table hold requests require 2 hours confirmation lead time.</p>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="res-name">Contact Name</label>
+              <input type="text" id="res-name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="res-phone">Phone Number</label>
+              <input type="tel" id="res-phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="res-date">Requested Date</label>
+              <input type="date" id="res-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="res-guests">Number of Guests</label>
+              <select id="res-guests">
+                <option value="2">2 Guests</option>
+                <option value="4" selected>4 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="8">8 Guests</option>
+                <option value="large">Large Event (9+)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="res-notes">Seating Preference / Special Requirements</label>
+              <textarea id="res-notes" placeholder="Patio preference, high chair request, dietary notes..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Submit Table Inquiry</button>
           </div>
-          <div class="visit-card">
-            <h3>&#128205; Location</h3>
-            <p class="address">366 N Caswell Rd<br>Charlotte, NC 28204</p>
-            <p class="location-note">Elizabeth neighborhood. Corner of Pecan and Caswell. Street parking available.</p>
-            <a href="https://maps.google.com/?q=366+N+Caswell+Rd+Charlotte+NC+28204" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
-          </div>
-          <div class="visit-card">
-            <h3>&#127796; Patio &amp; Dogs</h3>
-            <p>Outdoor seating available. Dogs welcome on the patio. People-watching included free of charge.</p>
-          </div>
-          <div class="visit-card">
-            <h3>&#127866; Full Bar</h3>
-            <p>Craft cocktails, local beers on tap, house wine. Happy hour specials during the week.</p>
-          </div>
-          <div class="visit-card">
-            <h3>&#128222; Contact</h3>
-            <p><a href="tel:9802374256">(980) 237-4256</a></p>
-            <p><a href="mailto:info@caswellstation.com">info@caswellstation.com</a></p>
-          </div>
-          <div class="visit-card">
-            <h3>&#128663; Delivery</h3>
-            <p>Available through DoorDash and other delivery platforms. Takeout also available — call ahead.</p>
-          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">📅</div>
+          <h3 class="success-title">Reservation Inquiry Logged</h3>
+          <p class="success-msg" id="success-message">Thank you. Your table inquiry has been successfully recorded. The host stand will send a confirmation message shortly.</p>
         </div>
       </div>
     </section>
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="cta-banner">
-          <h2>Your Table Is Waiting</h2>
-          <p>Game day, brunch, or a random Tuesday — Caswell Station is always open for you.</p>
-          <div class="btn-row">
-            <a href="tel:9802374256" class="btn btn-a">Call (980) 237-4256</a>
-            <a href="menu.html" class="btn btn-o">View Menu</a>
-          </div>
-        </div>
-      </div>
-    </section>
+
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Caswell Station</h3><p>Elizabeth neighborhood pub and grill. New American menu, live music, weekend brunch.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="brunch.html">Brunch</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9802374256">(980) 237-4256</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Caswell Station</h3>
+        <p>A neighborhood gastropub and local tavern inside a historic Elizabeth house. Serving New American comfort plates and weekend brunch on our massive garden patio.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Caswell Station. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          366 N Caswell Rd<br>
+          Charlotte, NC 28204<br>
+          Phone: (980) 237-4256
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:30 AM - 10:00 PM<br>
+          Fri - Sat: 11:00 AM - 11:00 PM<br>
+          Sunday: 10:00 AM - 9:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caswell Station. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
-  <script src="site.js"></script>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+
+    // Form submission
+    const form = document.getElementById('reserve-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('res-name').value;
+        const phone = document.getElementById('res-phone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your reservation request has been logged. The host stand will contact you at <strong>${phone}</strong> within 15 minutes to confirm your table placement.`;
+      });
+    }
+  </script>
 </body>
 </html>

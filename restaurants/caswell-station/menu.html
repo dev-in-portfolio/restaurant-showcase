@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/caswell-station/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu | Caswell Station</title>
   <meta name="description" content="Full menu - shared plates, entrees, wings, tacos, flatbreads, burgers, and drinks at Caswell Station.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  <style>
+    /* search styling */
+    .menu-search {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .menu-search input {
+      width: 100%;
+      padding: 0.9rem 1.4rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background-color: #fff;
+      color: var(--color-text-light);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+    .menu-search input:focus {
+      outline: none;
+      border-color: var(--color-brass);
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="index.html" class="logo" aria-label="Caswell Station Home">
-        <div class="logo-icon" aria-hidden="true">&#127968;</div>
+        <div class="logo-icon" aria-hidden="true">🏠</div>
         <div><span class="logo-text">Caswell Station</span><span class="logo-sub">Elizabeth Neighborhood</span></div>
       </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html" class="active">Menu</a></li>
           <li><a href="brunch.html">Brunch</a></li>
@@ -32,94 +58,240 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-menu">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#127860; New American Kitchen</span>
-        <h1>Menu</h1>
+        <span class="page-hero-badge">New American Kitchen</span>
+        <h1>Dinner Menu</h1>
         <p>Creative sharable plates, wings, tacos, flatbreads, and mouth-watering burgers</p>
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="menu-search">
-          <label for="menu-search-input" class="sr-only">Search menu</label>
-          <input type="text" id="menu-search-input" placeholder="Search menu items..." autocomplete="off">
-        </div>
-        <div class="menu-controls" role="toolbar" aria-label="Menu filter">
-          <button class="active" data-filter="all">All</button>
-          <button data-filter="shared">Shared Plates</button>
-          <button data-filter="entrees">Entrees</button>
-          <button data-filter="wings">Wings &amp; Tacos</button>
-          <button data-filter="burgers">Burgers</button>
-          <button data-filter="drinks">Drinks</button>
-        </div>
-        <div class="menu-content" id="menu-content">
-          <div class="menu-section" data-category="shared">
-            <h3>Shared Plates</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Tatchos</h4><p>Tater tots smothered with slow-roasted short ribs, southern gravy, mixed cheeses, sunny-side-up egg, hot sauce</p></div><span class="menu-price">$10</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Cheesesteak Egg Rolls</h4><p>Marinated steak egg rolls with honey sriracha dipping sauce</p></div><span class="menu-price">$11.50</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Asian Glazed Brussels Sprouts</h4><p>Pan-seared with bacon, glazed with Asian sauce</p></div><span class="menu-price">$8</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Fried Pickles</h4><p>Fried pickle chips served with ranch dressing</p></div><span class="menu-price">$7.50</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Dip Trio</h4><p>Choice of 3: buffalo chicken, spinach queso, pimento cheese, hummus with flatbread or chips</p></div><span class="menu-price">$10.50</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Fried Green Tomatoes</h4><p>Cornmeal-crusted with remoulade</p></div><span class="menu-price">$8</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Calamari</h4><p>Lightly fried with marinara and sriracha aioli</p></div><span class="menu-price">$10</span></div>
+    </header>
+
+    <section class="wrap">
+      <div class="menu-search">
+        <input type="text" id="menu-search-input" placeholder="Search menu items..." autocomplete="off" aria-label="Search menu items">
+      </div>
+
+      <div class="menu-controls" role="group" aria-label="Menu category filter">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="shared">Shared Plates</button>
+        <button data-filter="entrees">Entrees</button>
+        <button data-filter="wings">Wings &amp; Tacos</button>
+        <button data-filter="burgers">Burgers</button>
+        <button data-filter="drinks">Drinks</button>
+      </div>
+
+      <div class="menu-content" id="menu-content">
+        <!-- Shared Plates -->
+        <div class="menu-section" data-category="shared">
+          <h3>Shared Plates</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Tatchos</h4>
+                <p>Tater tots smothered with slow-roasted short ribs, southern gravy, mixed cheeses, sunny-side-up egg, and hot sauce.</p>
+              </div>
+              <span class="menu-price">$10</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="entrees">
-            <h3>Entrees</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Grilled Salmon</h4><p>With seasonal vegetables and rice pilaf</p></div><span class="menu-price">$18</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Chicken Tenders</h4><p>Hand-breaded with choice of sauce and fries</p></div><span class="menu-price">$14</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>BBQ Pulled Pork</h4><p>Slow-smoked with coleslaw and fries</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Flatbread</h4><p>Rotating seasonal flatbread — ask your server</p></div><span class="menu-price">$13</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Power Bowl</h4><p>Quinoa, roasted vegetables, avocado, grilled chicken, house vinaigrette</p></div><span class="menu-price">$15</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Cheesesteak Egg Rolls</h4>
+                <p>Marinated steak egg rolls served with a honey sriracha dipping sauce.</p>
+              </div>
+              <span class="menu-price">$11.50</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="wings">
-            <h3>Wings &amp; Tacos</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Caswell Wings</h4><p>Choice of buffalo, BBQ, Asian glazed, or dry rub. Served with celery and ranch</p></div><span class="menu-price">$13</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Street Tacos</h4><p>Choice of grilled chicken, pulled pork, or Baja fish. Three per order.</p></div><span class="menu-price">$12</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Pork Belly Tacos</h4><p>Carnita-style pork belly, pickled onion, cilantro, lime crema</p></div><span class="menu-price">$13</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Buffalo Chicken Sliders</h4><p>Three sliders with buffalo chicken, blue cheese, pickles</p></div><span class="menu-price">$11</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Asian Glazed Brussels Sprouts</h4>
+                <p>Pan-seared with hickory bacon, glazed with custom sweet-and-sour Asian sauce.</p>
+              </div>
+              <span class="menu-price">$8</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="burgers">
-            <h3>Burgers</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>The Caswell Burger</h4><p>Half-pound Angus, lettuce, tomato, onion, pickles. Served with fries.</p></div><span class="menu-price">$14</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Bacon Cheeseburger</h4><p>Hickory bacon, cheddar, lettuce, tomato, special sauce</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Mushroom Swiss Burger</h4><p>Sautéed mushrooms, Swiss cheese, garlic aioli</p></div><span class="menu-price">$15</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Black Bean Burger</h4><p>Vegan patty, avocado, lettuce, tomato, chipotle aioli</p></div><span class="menu-price">$13</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Fried Pickles</h4>
+                <p>Crispy fried pickle chips served with a side of house ranch dressing.</p>
+              </div>
+              <span class="menu-price">$7.50</span>
             </div>
-          </div>
-          <div class="menu-section" data-category="drinks">
-            <h3>Drinks</h3>
-            <div class="menu-items">
-              <div class="menu-row"><div class="menu-item-info"><h4>Craft Beer</h4><p>Rotating selection of local and national craft brews on tap</p></div><span class="menu-price">$5–8</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Caswell Mule</h4><p>Vodka, ginger beer, lime, in a copper mug</p></div><span class="menu-price">$10</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Old Fashioned</h4><p>Bourbon, bitters, sugar, orange peel</p></div><span class="menu-price">$11</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>House Wine</h4><p>Red, white, or rosé by the glass</p></div><span class="menu-price">$7</span></div>
-              <div class="menu-row"><div class="menu-item-info"><h4>Sweet Tea</h4><p>House-brewed, Southern-style</p></div><span class="menu-price">$3</span></div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Dip Trio</h4>
+                <p>Choice of 3: buffalo chicken dip, spinach queso, pimento cheese, or hummus. Served with flatbread or tortilla chips.</p>
+              </div>
+              <span class="menu-price">$10.50</span>
             </div>
           </div>
         </div>
-        <div class="menu-empty" id="menu-empty" hidden><p>No items match your search.</p></div>
+
+        <!-- Entrees -->
+        <div class="menu-section" data-category="entrees">
+          <h3>Entrees</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Grilled Salmon</h4>
+                <p>With seasonal farm vegetables and house rice pilaf.</p>
+              </div>
+              <span class="menu-price">$18</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Chicken Tenders Platter</h4>
+                <p>Hand-breaded fresh chicken tenders, served with seasoned fries and choice of dipping sauce.</p>
+              </div>
+              <span class="menu-price">$14</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>BBQ Pulled Pork</h4>
+                <p>Slow-smoked pulled pork tossed in BBQ sauce, served with southern slaw and fries.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Rotating Flatbread</h4>
+                <p>Rotating seasonal flatbread toppings — ask your server for details.</p>
+              </div>
+              <span class="menu-price">$13</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wings & Tacos -->
+        <div class="menu-section" data-category="wings">
+          <h3>Wings &amp; Tacos</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Caswell Wings</h4>
+                <p>Choice of buffalo, BBQ, Asian glazed, or dry rub. Served with fresh celery and house ranch.</p>
+              </div>
+              <span class="menu-price">$13</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Street Tacos</h4>
+                <p>Choice of grilled chicken, pulled pork, or Baja fish. Three tacos served on flour tortillas.</p>
+              </div>
+              <span class="menu-price">$12</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Pork Belly Tacos</h4>
+                <p>Carnita-style roasted pork belly, pickled red onion, fresh cilantro, and lime crema.</p>
+              </div>
+              <span class="menu-price">$13</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Burgers -->
+        <div class="menu-section" data-category="burgers">
+          <h3>Burgers</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>The Caswell Burger</h4>
+                <p>Half-pound custom Angus beef patty, lettuce, tomato, red onion, and pickles on a bun. Served with fries.</p>
+              </div>
+              <span class="menu-price">$14</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Bacon Cheeseburger</h4>
+                <p>Hickory-smoked bacon, sharp cheddar cheese, lettuce, tomato, and special house sauce.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Mushroom Swiss Burger</h4>
+                <p>Sautéed forest mushrooms, Swiss cheese, and roasted garlic aioli.</p>
+              </div>
+              <span class="menu-price">$15</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-section" data-category="drinks">
+          <h3>Drinks</h3>
+          <div class="menu-items">
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Craft Beer</h4>
+                <p>Rotating draft selection of local Charlotte and national craft microbrews.</p>
+              </div>
+              <span class="menu-price">$5–8</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Caswell Mule</h4>
+                <p>Premium vodka, spicy ginger beer, and lime juice. Served in a copper mug.</p>
+              </div>
+              <span class="menu-price">$10</span>
+            </div>
+
+            <div class="menu-row">
+              <div class="menu-item-info">
+                <h4>Old Fashioned</h4>
+                <p>Small-batch bourbon, Angostura bitters, cane sugar, and orange peel oils.</p>
+              </div>
+              <span class="menu-price">$11</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-empty" id="menu-empty" hidden>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.1rem; padding: 3rem;">No menu items match your search query.</p>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Caswell Station</h3><p>Elizabeth neighborhood pub and grill. New American menu, live music, weekend brunch.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Menu</a></li><li><a href="brunch.html">Brunch</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9802374256">(980) 237-4256</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Caswell Station</h3>
+        <p>A neighborhood gastropub and local tavern inside a historic Elizabeth house. Serving New American comfort plates and weekend brunch on our massive garden patio.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Caswell Station. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          366 N Caswell Rd<br>
+          Charlotte, NC 28204<br>
+          Phone: (980) 237-4256
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 11:30 AM - 10:00 PM<br>
+          Fri - Sat: 11:00 AM - 11:00 PM<br>
+          Sunday: 10:00 AM - 9:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Caswell Station. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
+
   <script src="site.js"></script>
 </body>
 </html>

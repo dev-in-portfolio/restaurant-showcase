@@ -1,49 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/caswell-station/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caswell Station | Weekly Events & Game Day</title>
+  <title>Caswell Station | Weekly Events &amp; Game Day</title>
   <meta name="description" content="Trivia nights, live acoustic music, and game day viewings at Caswell Station Charlotte. Reserve your team table.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
-  <style>
-    /* Styling for the interactive event card */
-    .event-confirm-box {
-      background: radial-gradient(circle, #222e28 0%, #0d1210 100%);
-      border: 1.5px solid var(--color-a);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      box-shadow: var(--shadow-lg);
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      transition: all 0.3s;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
       <a href="index.html" class="logo" aria-label="Caswell Station Home">
-        <div class="logo-icon" aria-hidden="true">&#127968;</div>
+        <div class="logo-icon" aria-hidden="true">🏠</div>
         <div>
           <span class="logo-text">Caswell Station</span>
           <span class="logo-sub">Elizabeth Neighborhood</span>
         </div>
       </a>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <ul class="nav-links" id="navLinks" role="list">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="brunch.html">Brunch</a></li>
@@ -61,47 +45,96 @@
     <!-- Page Header -->
     <header class="page-header text-center" style="padding: 60px 0 30px;">
       <div class="wrap">
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: #fff;">Weekly Events</h1>
-        <p style="color: var(--tx2); max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem;">From packed trivia Tuesdays to high-energy football Saturdays, there is always something happening on the corner.</p>
+        <h1>Weekly Events</h1>
+        <p style="max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem; color: var(--color-text-muted);">From packed trivia Tuesdays to high-energy football Saturdays, there is always something happening on the corner.</p>
       </div>
     </header>
 
     <!-- Interactive Event Selector -->
     <section class="wrap" style="margin-bottom: 5rem;">
-      <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
-        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Weekly Event Planner & Seat Estimator</h3>
-        <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your target weekly event and group size to calculate package options and check table status.</p>
+      <div class="interactive-panel" style="padding: 40px 32px; border-radius: var(--radius);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px; font-family: var(--font-heading); font-weight: 800;">Weekly Event Planner &amp; Seat Estimator</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your target weekly event and group size to calculate package options and check table status.</p>
         
-        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+        <div class="catering-grid">
           
-          <!-- Left Side: Invoice/Details Card -->
-          <div class="event-confirm-box" id="confirm-box">
-            <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-a); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="event-tag">Trivia Night</span>
-            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem;" id="event-title">Team Trivia Tuesday</h4>
-            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-a); margin-bottom: 1.2rem;" id="event-price">Free Entry</p>
-            <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;" id="event-desc">Table reserved for 4 guests. Team trivia entry is free. Enjoy our Tuesday half-price draft pints special.</p>
+          <!-- Left Side: Interactive Table Map SVG -->
+          <div class="plate-canvas" style="min-height: 300px;">
+            <div class="table-map-wrapper">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                <!-- Tavern Floor texture grid lines -->
+                <rect x="10" y="10" width="180" height="140" fill="none" stroke="rgba(20, 83, 45, 0.05)" stroke-width="1.5" />
+                
+                <!-- Polished Mahogany Bar Table -->
+                <rect x="60" y="60" width="80" height="40" rx="8" fill="#78350f" stroke="#ca8a04" stroke-width="2.5" />
+                <!-- Inlaid details -->
+                <rect x="65" y="65" width="70" height="30" rx="5" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+
+                <!-- STOOLS (Dynamically shown/hidden) -->
+                <!-- Left side -->
+                <circle id="stool-0" class="stool-circle show" cx="44" cy="70" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+                <circle id="stool-1" class="stool-circle show" cx="44" cy="90" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+                
+                <!-- Right side -->
+                <circle id="stool-2" class="stool-circle show" cx="156" cy="70" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+                <circle id="stool-3" class="stool-circle show" cx="156" cy="90" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+
+                <!-- Top side -->
+                <circle id="stool-4" class="stool-circle" cx="85" cy="44" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+                <circle id="stool-5" class="stool-circle" cx="115" cy="44" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+
+                <!-- Bottom side -->
+                <circle id="stool-6" class="stool-circle" cx="85" cy="116" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+                <circle id="stool-7" class="stool-circle" cx="115" cy="116" r="7" fill="#451a03" stroke="#ca8a04" stroke-width="1.5" />
+
+                <!-- DRINK OVERLAYS -->
+                <!-- Wine Bottle & Glasses (Trivia / Acoustic) -->
+                <g id="wine-group" class="drink-overlay show">
+                  <rect x="96" y="72" width="8" height="16" rx="1" fill="#14532d" />
+                  <circle cx="91" cy="80" r="2" fill="#fff" opacity="0.8" />
+                  <circle cx="109" cy="80" r="2" fill="#fff" opacity="0.8" />
+                </g>
+
+                <!-- Beer Pitcher & Mugs (Football Watches) -->
+                <g id="football-group" class="football-overlay">
+                  <!-- Pitcher body -->
+                  <rect x="94" y="70" width="12" height="18" rx="2" fill="#eab308" />
+                  <path d="M 106,73 Q 112,73 106,85" fill="none" stroke="#eab308" stroke-width="2.5" />
+                  <ellipse cx="100" cy="70" rx="6" ry="2.2" fill="#ffffff" />
+                  <!-- Small mug on left -->
+                  <rect x="83" y="76" width="6" height="10" rx="1" fill="#eab308" />
+                </g>
+              </svg>
+            </div>
           </div>
 
-          <!-- Right Side: Controls -->
-          <div class="form-group" style="margin-bottom: 0;">
-            <div style="margin-bottom: 1.5rem;">
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Choose Weekly Event</label>
-              <select id="event-select" onchange="updateEvent()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
-                <option value="trivia" selected>Team Trivia Tuesday (Free)</option>
-                <option value="acoustic">Acoustic Music Wednesday (Free)</option>
-                <option value="college">College Football Saturday (Seat Cover: $5.00)</option>
-                <option value="nfl">NFL Sunday Tailgate (Entry: $10.00)</option>
-              </select>
-            </div>
+          <!-- Right Side: Outputs & Controls -->
+          <div class="event-confirm-box" id="confirm-box">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-brass); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="event-tag">Trivia Night</span>
+            <h4 style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);" id="event-title">Team Trivia Tuesday</h4>
+            <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-brass); margin-bottom: 1.2rem; font-family: var(--font-heading);" id="event-price">Free Entry</p>
+            <p style="font-size: 0.95rem; color: #fff; line-height: 1.7;" id="event-desc">Table reserved for 4 guests. Team trivia entry is free. Enjoy our Tuesday half-price draft pints special.</p>
+            
+            <div class="form-group" style="margin-top: 2rem; text-align: left;">
+              <div style="margin-bottom: 1rem;">
+                <label for="event-select" style="color: #cbd5e1;">1. Choose Weekly Event</label>
+                <select id="event-select">
+                  <option value="trivia" selected>Team Trivia Tuesday (Free)</option>
+                  <option value="acoustic">Acoustic Music Wednesday (Free)</option>
+                  <option value="college">College Football Saturday (Seat Cover: $5.00)</option>
+                  <option value="nfl">NFL Sunday Tailgate (Entry: $10.00)</option>
+                </select>
+              </div>
 
-            <div>
-              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: var(--tx); letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Party Size</label>
-              <select id="party-select" onchange="updateEvent()" style="width: 100%; padding: 12px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
-                <option value="2">2 Guests</option>
-                <option value="4" selected>4 Guests</option>
-                <option value="6">6 Guests</option>
-                <option value="8">8 Guests</option>
-              </select>
+              <div>
+                <label for="party-select" style="color: #cbd5e1;">2. Select Party Size</label>
+                <select id="party-select">
+                  <option value="2">2 Guests</option>
+                  <option value="4" selected>4 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="8">8 Guests</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -110,9 +143,9 @@
     </section>
 
     <!-- Event Lists -->
-    <section class="section-dark">
+    <section class="alt" style="border-radius: var(--radius); padding: 3rem;">
       <div class="wrap">
-        <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Tavern Weekly Schedule</h3>
+        <h3 class="section-title text-center" style="margin-bottom: 2rem;">Tavern Weekly Schedule</h3>
         <div class="menu-preview">
           
           <div class="menu-item">
@@ -152,7 +185,7 @@
         <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
           366 N Caswell Rd<br>
           Charlotte, NC 28204<br>
-          Phone: (704) 334-3660
+          Phone: (980) 237-4256
         </p>
       </div>
       <div class="footer-col">
@@ -171,11 +204,21 @@
 
   <script>
     const eventData = {
-      trivia: { tag: "Trivia Night", title: "Team Trivia Tuesday", price: 0.00, desc: "Team trivia entry is free. Enjoy our Tuesday half-price draft pints special." },
-      acoustic: { tag: "Acoustic Music", title: "Acoustic Live Music", price: 0.00, desc: "Live music is free to enjoy. Half-price bottles of wine and house sangria." },
-      college: { tag: "College Football", title: "College Game Day", price: 5.00, desc: "Premium seat cover ticket for college football watch zone. Game day drink pitchers active." },
-      nfl: { tag: "NFL Sunday", title: "NFL Sunday Tailgate", price: 10.00, desc: "Entry ticket includes a draft pint or Mimosa voucher. $5 Bloody Marys active." }
+      trivia: { tag: "Trivia Night", title: "Team Trivia Tuesday", price: 0.00, desc: "Team trivia entry is free. Enjoy our Tuesday half-price draft pints special.", showGroup: 'wine' },
+      acoustic: { tag: "Acoustic Music", title: "Acoustic Live Music", price: 0.00, desc: "Live music is free to enjoy. Half-price bottles of wine and house sangria.", showGroup: 'wine' },
+      college: { tag: "College Football", title: "College Game Day", price: 5.00, desc: "Premium seat cover ticket for college football watch zone. Game day drink pitchers active.", showGroup: 'football' },
+      nfl: { tag: "NFL Sunday", title: "NFL Sunday Tailgate", price: 10.00, desc: "Entry ticket includes a draft pint or Mimosa voucher. $5 Bloody Marys active.", showGroup: 'football' }
     };
+
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
 
     function updateEvent() {
       const eKey = document.getElementById('event-select').value;
@@ -194,9 +237,31 @@
       }
 
       document.getElementById('event-desc').innerText = `Table reserved for ${count} guests. ${ev.desc}`;
+
+      // Show/Hide Stools based on party size select
+      // count is 2, 4, 6, or 8.
+      for (let i = 0; i < 8; i++) {
+        const stool = document.getElementById(`stool-${i}`);
+        if (stool) {
+          if (i < count) {
+            stool.classList.add('show');
+          } else {
+            stool.classList.remove('show');
+          }
+        }
+      }
+
+      // Show/Hide Drink overlay groups
+      const wineGroup = document.getElementById('wine-group');
+      const footballGroup = document.getElementById('football-group');
+
+      if (wineGroup) wineGroup.classList.toggle('show', ev.showGroup === 'wine');
+      if (footballGroup) footballGroup.classList.toggle('show', ev.showGroup === 'football');
     }
 
-    // Trigger initial load
+    document.getElementById('event-select').addEventListener('change', updateEvent);
+    document.getElementById('party-select').addEventListener('change', updateEvent);
+
     window.addEventListener('load', () => {
       updateEvent();
     });
