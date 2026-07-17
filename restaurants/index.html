@@ -640,6 +640,44 @@
       text-shadow: 0 0 10px var(--accent-glow);
     }
 
+    .bulk-checkbox-label {
+      display: none;
+    }
+    body.bulk-mode-active .bulk-checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    body.bulk-mode-active .compare-checkbox-label {
+      display: none !important;
+    }
+    .bulk-checkbox {
+      appearance: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 2px solid var(--panel-border);
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+    .bulk-checkbox:checked {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .bulk-checkbox:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #11100f;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
     @media (max-width: 768px) {
       header {
         padding-top: 3.5rem;
@@ -685,13 +723,14 @@
 
   <main class="container">
     <div class="controls">
-      <div class="search-row">
-        <div class="search-input-wrapper">
+      <div class="search-row" style="display: flex; gap: 1rem; align-items: center;">
+        <div class="search-input-wrapper" style="flex: 1;">
           <input type="text" id="search-bar" class="search-input" placeholder="Search by name, neighborhood, cuisine, or description...">
           <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
           </svg>
         </div>
+        <button id="bulk-open-toggle" class="filter-tag" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); color: var(--accent); padding: 0.85rem 1.5rem; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; transition: var(--transition); white-space: nowrap; font-family: var(--font-display); font-size: 0.9rem;">⚡ Open Multiple</button>
       </div>
 
       <div class="filter-group">
@@ -701,6 +740,15 @@
           <span class="filter-tag" data-filter="starred" style="color: var(--accent);">★ Starred</span>
           <!-- Dynamic Neighborhood Tags -->
         </div>
+      </div>
+    </div>
+
+    <!-- Bulk Action Bar -->
+    <div id="bulk-action-bar" class="controls" style="display: none; margin-bottom: 2rem; background: rgba(232, 189, 114, 0.08); border-color: var(--accent); justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1.5rem;">
+      <span style="font-weight: 600; color: var(--accent); font-family: var(--font-display); font-size: 0.95rem;">Bulk Open Mode: Select restaurants below to open in separate tabs</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="bulk-open-btn" class="filter-tag" style="background: var(--accent); color: #11100f; border-color: var(--accent); font-weight: 700; padding: 0.45rem 1rem; border-radius: 9999px; cursor: pointer; font-size: 0.85rem;">Open Selected (0)</button>
+        <button id="bulk-cancel-btn" class="filter-tag" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-muted); padding: 0.45rem 1rem; border-radius: 9999px; cursor: pointer; font-size: 0.85rem;">Cancel</button>
       </div>
     </div>
 
@@ -750,6 +798,7 @@
     const compareCloseBtn = document.getElementById('compare-close-btn');
 
     let activeFilter = 'all';
+    let selectedForBulkOpen = [];
 
     // Fetch dynamic metadata from the enriched JSON
     fetch('../data/restaurants-enriched.json')
@@ -798,6 +847,60 @@
         });
 
         renderGrid();
+
+        // Bulk Open Logic
+        const bulkToggle = document.getElementById('bulk-open-toggle');
+        const bulkActionBar = document.getElementById('bulk-action-bar');
+        const bulkOpenBtn = document.getElementById('bulk-open-btn');
+        const bulkCancelBtn = document.getElementById('bulk-cancel-btn');
+
+        function updateBulkCount() {
+          const checked = document.querySelectorAll('.bulk-checkbox:checked');
+          bulkOpenBtn.textContent = `Open Selected (${checked.length})`;
+        }
+
+        if (bulkToggle) {
+          bulkToggle.addEventListener('click', () => {
+            document.body.classList.toggle('bulk-mode-active');
+            const active = document.body.classList.contains('bulk-mode-active');
+            bulkToggle.classList.toggle('active', active);
+            bulkActionBar.style.display = active ? 'flex' : 'none';
+            
+            // Reset selections
+            document.querySelectorAll('.bulk-checkbox').forEach(cb => cb.checked = false);
+            updateBulkCount();
+          });
+        }
+
+        if (bulkCancelBtn) {
+          bulkCancelBtn.addEventListener('click', () => {
+            document.body.classList.remove('bulk-mode-active');
+            bulkToggle.classList.remove('active');
+            bulkActionBar.style.display = 'none';
+            document.querySelectorAll('.bulk-checkbox').forEach(cb => cb.checked = false);
+            updateBulkCount();
+          });
+        }
+
+        if (bulkOpenBtn) {
+          bulkOpenBtn.addEventListener('click', () => {
+            const checked = document.querySelectorAll('.bulk-checkbox:checked');
+            if (checked.length === 0) {
+              alert('Please select at least one restaurant to open.');
+              return;
+            }
+            checked.forEach(cb => {
+              window.open(cb.dataset.url, '_blank');
+            });
+            
+            // Close bulk mode
+            document.body.classList.remove('bulk-mode-active');
+            bulkToggle.classList.remove('active');
+            bulkActionBar.style.display = 'none';
+            document.querySelectorAll('.bulk-checkbox').forEach(cb => cb.checked = false);
+            updateBulkCount();
+          });
+        }
       })
       .catch(err => {
         console.error('Failed to load enriched restaurant data:', err);
@@ -854,6 +957,10 @@
                   <input type="checkbox" class="compare-checkbox" data-id="${r.id}" ${isChecked}>
                   <span class="compare-text">Compare</span>
                 </label>
+                <label class="bulk-checkbox-label" title="Select to open">
+                  <input type="checkbox" class="bulk-checkbox" data-url="${r.slug}/index.html">
+                  <span class="compare-text">Select</span>
+                </label>
               </div>
             </div>
             <h2>${r.name}</h2>
@@ -887,6 +994,17 @@
             selectedForComparison = selectedForComparison.filter(item => item !== id);
           }
           updateComparisonDrawer();
+        });
+      });
+
+      // Wire bulk checkboxes
+      document.querySelectorAll('.bulk-checkbox').forEach(cb => {
+        cb.addEventListener('change', () => {
+          const bulkOpenBtn = document.getElementById('bulk-open-btn');
+          const checked = document.querySelectorAll('.bulk-checkbox:checked');
+          if (bulkOpenBtn) {
+            bulkOpenBtn.textContent = `Open Selected (${checked.length})`;
+          }
         });
       });
 
