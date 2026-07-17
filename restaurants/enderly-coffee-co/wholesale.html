@@ -1,80 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/enderly-coffee-co/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wholesale | Enderly Coffee Co.</title>
-  <meta name="description" content="Wholesale coffee partnerships - beans, equipment, training, and support for restaurants, offices, and co-working spaces.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Wholesale coffee partnerships in Charlotte, NC. Premium beans, equipment, training, and menu support.">
   <link rel="stylesheet" href="site.css">
+  <style>
+    .ws-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
-    <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Enderly Coffee Home"><span class="logo-text">Enderly Coffee Co.</span><span class="logo-sub">People First. Coffee Always.</span></a>
+    <div class="wrap header-inner" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="logo" aria-label="Enderly Coffee Home">
+        <span class="logo-text">Enderly Coffee Co.</span>
+        <span class="logo-sub">People First. Coffee Always.</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">Menu</button>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <ul class="nav-links" id="main-nav">
           <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Cafe</a></li>
+          <li><a href="brew.html">Drink Lab</a></li>
+          <li><a href="roast.html">Our Coffee</a></li>
+          <li><a href="wholesale.html" class="active">Wholesale</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <span class="page-hero-badge">Partner With Us</span>
+        <h1>Wholesale Coffee Program</h1>
+        <p>Beans, professional equipment, bar training, menu development, and friendly local support.</p>
+      </div>
+    </header>
+
+    <section class="wrap">
+      <div class="ws-layout">
+        
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🌱</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Fresh-Roasted Beans</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Small-batch beans roasted to highlight origin notes. Custom signature blends or single-origin profiles.
+          </p>
+        </div>
+
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🛠</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Gear &amp; Servicing</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Consultation, sourcing, and routine preventative servicing for commercial espresso machines and grinders.
+          </p>
+        </div>
+
+        <div class="premium-card">
+          <span style="font-size: 2rem;" aria-hidden="true">🎓</span>
+          <h3 class="menu-category-title" style="border: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 1.25rem;">Barista Training</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Hands-on training for your bar team. From milk microfoam texture to dial-in consistency.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Inquiry Form Card -->
+      <div class="form-wrapper" style="margin-bottom: 5rem;">
+        <form class="demo-form" id="wholesale-form">
+          <h3 style="text-align: center; font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 2rem; color: var(--color-green);">Partner Inquiry</h3>
+          
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="wname">Contact Name</label>
+              <input id="wname" type="text" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="worg">Company / Organization</label>
+              <input id="worg" type="text" required placeholder="Enderly Diner">
+            </div>
+
+            <div class="form-group">
+              <label for="wphone">Phone Number</label>
+              <input id="wphone" type="tel" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="wtype">Business Type</label>
+              <select id="wtype">
+                <option value="cafe">Cafe or Coffee Shop</option>
+                <option value="restaurant">Restaurant or Bar</option>
+                <option value="office">Office Space</option>
+                <option value="other">Other Vendor</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="wnotes">Partnership Goals &amp; Gear Needs</label>
+              <textarea id="wnotes" rows="4" placeholder="Tell us about your volume, equipment setup, or bean preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="grid-column: 1 / -1;">Submit Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon" aria-hidden="true">✔</div>
+          <h3 class="success-title">Request Submitted!</h3>
+          <p class="success-msg" id="success-message">Thank you. Enderly's roasting coordinator will review details and call you to arrange coffee tastings and pricing details.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Enderly Coffee Co.</h3>
+        <p>Small-batch craft coffee roasted in Enderly Park since 2012. People First. Coffee Always.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Cafe &amp; Roastery</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2620 Tuckaseegee Rd<br>
+          Charlotte, NC 28208<br>
+          Phone: (704) 448-3799
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
           <li><a href="menu.html">Cafe</a></li>
           <li><a href="brew.html">Drink Lab</a></li>
           <li><a href="roast.html">Our Coffee</a></li>
           <li><a href="wholesale.html">Wholesale</a></li>
           <li><a href="visit.html">Visit</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
-  </header>
-  <main id="main">
-    <section class="page-hero page-hero-wholesale">
-      <div class="wrap">
-        <span class="page-hero-badge">&#128188; Partner With Us</span>
-        <h1>Wholesale</h1>
-        <p>More than beans. We provide equipment, training, menu development, and ongoing support.</p>
-      </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>What We Offer</h2>
-          <p>Everything you need to serve great coffee.</p>
-        </div>
-        <div class="wholesale-grid">
-          <div class="ws-card"><div class="ws-icon" aria-hidden="true">&#127859;</div><h3>Fresh-Roasted Beans</h3><p>Small-batch beans roasted to your specifications. Single-origin or custom blends. Delivered fresh.</p></div>
-          <div class="ws-card"><div class="ws-icon" aria-hidden="true">&#9881;</div><h3>Equipment</h3><p>Consultation, sourcing, installation, and servicing of espresso machines, grinders, and brewers.</p></div>
-          <div class="ws-card"><div class="ws-icon" aria-hidden="true">&#127891;</div><h3>Bar Training</h3><p>Hands-on training for your team. From espresso fundamentals to latte art to consistency.</p></div>
-          <div class="ws-card"><div class="ws-icon" aria-hidden="true">&#128221;</div><h3>Menu Development</h3><p>We help you build a coffee menu that fits your brand, your customers, and your price point.</p></div>
-        </div>
-      </div>
-    </section>
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Who We Work With</h2>
-        </div>
-        <div class="partner-types">
-          <div class="pt-card"><h3>Restaurants &amp; Cafes</h3><p>Elevate your coffee program with craft beans and expert support.</p></div>
-          <div class="pt-card"><h3>Offices &amp; Co-Working</h3><p>Keep your team caffeinated with quality coffee and easy equipment.</p></div>
-          <div class="pt-card"><h3>Coffee Shops</h3><p>White-label and private-label roasting for your brand.</p></div>
-          <div class="pt-card"><h3>Mobile Vendors</h3><p>Beans and support for coffee trucks and pop-up vendors.</p></div>
-        </div>
-        <div class="center-cta"><a href="tel:7044483799" class="btn btn-p">Call to Discuss Partnership</a></div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Enderly Coffee Co.</h3><p>Small-batch craft coffee roasted in Enderly Park since 2012. People First. Coffee Always.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Cafe</a></li><li><a href="roast.html">Our Coffee</a></li><li><a href="wholesale.html">Wholesale</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:7044483799">(704) 448-3799</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
-      </div>
-      <div class="footer-bottom"><p>&copy; 2026 Enderly Coffee Co. All rights reserved.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Enderly Coffee Co. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
-  <script src="site.js"></script>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('main-nav');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // Form submit
+    const form = document.getElementById('wholesale-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('wname').value;
+        const org = document.getElementById('worg').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong> from <strong>${org}</strong>. Your wholesale request has been submitted successfully. Our team will review and reply shortly.`;
+      });
+    }
+  </script>
 </body>
 </html>

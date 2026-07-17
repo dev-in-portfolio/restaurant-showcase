@@ -1,103 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/enderly-coffee-co/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Coffee | Enderly Coffee Co.</title>
-  <meta name="description" content="Small-batch craft coffee roasted in-house. Direct Trade sourcing, single-origin beans, and our roasting philosophy.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Direct Trade small-batch craft coffee roasted in-house in Charlotte, NC. Sourcing philosophy and beans selection.">
   <link rel="stylesheet" href="site.css">
+  <style>
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .story-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
-    <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Enderly Coffee Home"><span class="logo-text">Enderly Coffee Co.</span><span class="logo-sub">People First. Coffee Always.</span></a>
+    <div class="wrap header-inner" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="index.html" class="logo" aria-label="Enderly Coffee Home">
+        <span class="logo-text">Enderly Coffee Co.</span>
+        <span class="logo-sub">People First. Coffee Always.</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">Menu</button>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <ul class="nav-links" id="main-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Cafe</a></li>
           <li><a href="brew.html">Drink Lab</a></li>
-          <li><a href="roast.html">Our Coffee</a></li>
+          <li><a href="roast.html" class="active">Our Coffee</a></li>
           <li><a href="wholesale.html">Wholesale</a></li>
           <li><a href="visit.html">Visit</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main id="main">
-    <section class="page-hero page-hero-roast">
+    <header class="page-hero">
       <div class="wrap">
-        <span class="page-hero-badge">&#127859; Small-Batch Roasting</span>
-        <h1>Our Coffee</h1>
-        <p>Single-origin beans, Direct Trade relationships, roasted daily in Enderly Park.</p>
+        <span class="page-hero-badge">Small-Batch Roasting</span>
+        <h1>Our Coffee Sourcing</h1>
+        <p>Single-origin craft beans, Direct Trade relationships, roasted daily in Enderly Park.</p>
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Our Sourcing Philosophy</h2>
-          <p>Direct Trade over Fair Trade. Farmer relationships over transactions.</p>
+    </header>
+
+    <section class="wrap">
+      <div class="story-layout">
+        
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-green); margin-bottom: 1.5rem;">Sourcing Philosophy</h2>
+          <p style="font-size: 1.1rem; font-weight: 500; line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+            Direct Trade over Fair Trade. Farmer relationships over transactions.
+          </p>
+
+          <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+            Enderly Coffee purchases green beans directly from farm growers, paying above-market premiums and building multi-year trust. This goes beyond simple certification seals.
+          </p>
+
+          <p style="color: var(--color-text-muted); line-height: 1.8;">
+            We partner with <strong>Balzac Brothers</strong>, a family-run import house established in 1917, to bring green beans from origin to our roastery.
+          </p>
         </div>
-        <div class="sourcing-content">
-          <div class="sourcing-text">
-            <p>Tony Santoro, our founder and head roaster, purchases beans directly from farmers, paying above-market premiums and building year-over-year relationships. This is Direct Trade&mdash;a step beyond Fair Trade certification.</p>
-            <p>We work with <strong>Balzac Brothers</strong>, a family-run import house established in 1917, to bring green beans from origin to our roastery. Our SCA-certified roaster ensures every batch is crafted to highlight the unique character of each origin.</p>
+
+        <div style="width: 100%;">
+          <div class="premium-card">
+            <h3 class="menu-category-title" style="border: none; margin-bottom: 1.25rem; font-size: 1.3rem;">Roastery Highlights</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div style="background: var(--color-green-dim); padding: 1.2rem; border-radius: var(--radius-sm); text-align: center;">
+                <span style="font-size: 1.8rem; font-weight: 700; color: var(--color-green); display: block; font-family: var(--font-heading);">SCA</span>
+                <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Certified Roasters</span>
+              </div>
+              <div style="background: var(--color-green-dim); padding: 1.2rem; border-radius: var(--radius-sm); text-align: center;">
+                <span style="font-size: 1.8rem; font-weight: 700; color: var(--color-green); display: block; font-family: var(--font-heading);">10+</span>
+                <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Origin Countries</span>
+              </div>
+            </div>
           </div>
-          <div class="sourcing-stats">
-            <div class="stat-card"><span class="stat-num">SCA</span><span class="stat-label">Certified Roaster</span></div>
-            <div class="stat-card"><span class="stat-num">10+</span><span class="stat-label">Origin Countries</span></div>
-            <div class="stat-card"><span class="stat-num">Daily</span><span class="stat-label">Fresh Roasted</span></div>
-          </div>
         </div>
+
       </div>
-    </section>
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Current Selection</h2>
-          <p>Single-origin beans available in our online store and cafe.</p>
+
+      <!-- Coffee Selection Board -->
+      <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-top: 5rem; margin-bottom: 1.5rem; text-align: center;">Current Selection</h2>
+      <div class="beans-grid">
+        
+        <div class="bean-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-green); margin-bottom: 0.5rem;">Brazil</h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">Chocolate, nuts, low acidity. A crowd-pleaser.</p>
+          <span class="bean-price">From $4.50</span>
         </div>
-        <div class="beans-grid">
-          <div class="bean-card"><h3>Brazil</h3><p>Chocolate, nuts, low acidity. A crowd-pleaser.</p><span class="bean-price">From $4.50</span></div>
-          <div class="bean-card"><h3>Ethiopia</h3><p>Bright, fruity, floral. Complex and aromatic.</p><span class="bean-price">From $5.00</span></div>
-          <div class="bean-card"><h3>Colombia</h3><p>Caramel, citrus, balanced. Our longest-standing partnership.</p><span class="bean-price">From $4.50</span></div>
-          <div class="bean-card"><h3>Rwanda</h3><p>Stone fruit, brown sugar, tea-like finish.</p><span class="bean-price">From $5.00</span></div>
-          <div class="bean-card"><h3>Guatemala</h3><p>Chocolate, spice, full body. Medium-light or dark roast.</p><span class="bean-price">From $5.00</span></div>
-          <div class="bean-card"><h3>Papua New Guinea</h3><p>Tropical fruit, earthy, bold. For adventurous palates.</p><span class="bean-price">From $4.50</span></div>
+
+        <div class="bean-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-green); margin-bottom: 0.5rem;">Ethiopia</h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">Bright, fruity, floral. Complex and aromatic.</p>
+          <span class="bean-price">From $5.00</span>
         </div>
-        <div class="center-cta"><a href="#" class="btn btn-p">Shop All Beans</a></div>
+
+        <div class="bean-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-green); margin-bottom: 0.5rem;">Colombia</h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">Caramel, citrus, balanced. Our longest-standing partnership.</p>
+          <span class="bean-price">From $4.50</span>
+        </div>
+
       </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Our Partners</h2>
-          <p>The farmers and importers we work with.</p>
-        </div>
-        <div class="partners-list">
-          <span class="partner-tag">Leiva's (Colombia)</span>
-          <span class="partner-tag">Santiago Caro (Colombia)</span>
-          <span class="partner-tag">Fazenda Do Salto (Brazil)</span>
-          <span class="partner-tag">Balzac Brothers (Import)</span>
-          <span class="partner-tag">Foster Village Charlotte</span>
-        </div>
+
+      <!-- Partners List -->
+      <h2 style="font-family: var(--font-heading); font-size: 1.5rem; margin-top: 5rem; margin-bottom: 1.5rem; text-align: center;">Our Sourcing Partners</h2>
+      <div style="text-align: center;">
+        <span class="partner-tag">Leiva's (Colombia)</span>
+        <span class="partner-tag">Santiago Caro (Colombia)</span>
+        <span class="partner-tag">Fazenda Do Salto (Brazil)</span>
+        <span class="partner-tag">Balzac Brothers (Import)</span>
+        <span class="partner-tag">Foster Village Charlotte</span>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand"><h3>Enderly Coffee Co.</h3><p>Small-batch craft coffee roasted in Enderly Park since 2012. People First. Coffee Always.</p></div>
-        <div class="footer-col"><h4>Explore</h4><ul><li><a href="menu.html">Cafe</a></li><li><a href="roast.html">Our Coffee</a></li><li><a href="wholesale.html">Wholesale</a></li><li><a href="visit.html">Visit</a></li></ul></div>
-        <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:7044483799">(704) 448-3799</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Enderly Coffee Co.</h3>
+        <p>Small-batch craft coffee roasted in Enderly Park since 2012. People First. Coffee Always.</p>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Enderly Coffee Co. All rights reserved.</p></div>
+      <div class="footer-col">
+        <h4>Cafe &amp; Roastery</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2620 Tuckaseegee Rd<br>
+          Charlotte, NC 28208<br>
+          Phone: (704) 448-3799
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Cafe</a></li>
+          <li><a href="brew.html">Drink Lab</a></li>
+          <li><a href="roast.html">Our Coffee</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Enderly Coffee Co. All rights reserved. Unofficial concept presentation.</p>
     </div>
   </footer>
-  <script src="site.js"></script>
+
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('main-nav');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

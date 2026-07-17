@@ -1,74 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drink Lab · Enderly Coffee Co.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-/* Local style overrides to match Enderly's aesthetic */
-.coffee-mat {
-  background: radial-gradient(circle, #2d5a3d 0%, #0f2617 100%);
-  border: 1.5px solid var(--a);
-  border-radius: var(--radius);
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-  color: #fff;
-}
-.coffee-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .coffee-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px;
-  border-radius: var(--radius);
-  width: 100%;
-  font-family: inherit;
-}
-select:focus {
-  outline: none;
-  border-color: var(--p);
-}
-.control-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--p);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/enderly-coffee-co/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drink Lab | Enderly Coffee Co.</title>
+  <meta name="description" content="Experiment in our interactive coffee drink lab. Mix custom espressos, cold brews, and house syrups.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .coffee-mat {
+      background: radial-gradient(circle, var(--color-bg) 0%, #f4eee2 100%);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: var(--color-text-light);
+    }
+    
+    .coffee-canvas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
   <header class="site-header" role="banner">
-    <div class="wrap header-inner">
+    <div class="wrap header-inner" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
       <a href="index.html" class="logo" aria-label="Enderly Coffee Home">
         <span class="logo-text">Enderly Coffee Co.</span>
         <span class="logo-sub">People First. Coffee Always.</span>
       </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">Menu</button>
       <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-        <ul class="nav-links" id="main-nav" role="list">
+        <ul class="nav-links" id="main-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Cafe</a></li>
           <li><a href="brew.html" class="active">Drink Lab</a></li>
@@ -81,43 +62,114 @@ select:focus {
   </header>
 
   <main id="main">
-    <section class="hero" style="padding: 4rem 0;">
+    <header class="page-hero">
       <div class="wrap">
-        <div class="hero-content">
-          <h1>The Coffee Drink Lab</h1>
-          <p class="hero-sub">Design your signature espresso or cold brew beverage using our direct-trade roasted beans and house-made syrups</p>
-        </div>
+        <span class="page-hero-badge">Drink Lab</span>
+        <h1>The Coffee Drink Lab</h1>
+        <p>Design your signature espresso or cold brew beverage using our direct-trade roasted beans and house-made syrups.</p>
       </div>
-    </section>
+    </header>
 
-    <section style="padding: 4rem 0;">
-      <div class="wrap">
-        <h2 style="font-family: var(--head); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Beverage Customizer</h2>
-        
-        <div class="coffee-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel">
+        <h3 style="text-align: center; font-size: 1.6rem; color: var(--color-green); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 700;">Beverage Customizer</h3>
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select your beverage base, dairy options, and sweet syrups to brew your recipe.</p>
+
+        <div class="menu-preview" style="align-items: start; gap: 3rem;">
           
-          <!-- Left: Cup Platter Visualizer -->
-          <div class="coffee-mat">
-            <span style="font-size: 0.78rem; font-weight: 600; color: #d5c3aa; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="coff-tag-display">SIGNATURE ESPRESSO</span>
-            <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--head); margin: 0 0 0.8rem 0;" id="coff-title-display">Hot Latte</h3>
-            <p style="font-size: 1.5rem; font-weight: 700; color: #d5c3aa; margin: 0 0 1.2rem 0;" id="coff-price-display">$4.75</p>
-            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="coff-desc-display">Double-shot of our signature Enderly espresso pulled with steamed whole milk, sweet vanilla syrup notes.</p>
+          <!-- Left Side: Cup SVG -->
+          <div>
+            <div class="coffee-canvas">
+              <svg viewBox="0 0 200 160" width="100%" max-width="320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Wooden Coaster -->
+                <ellipse cx="100" cy="130" rx="45" ry="10" fill="#a16207" stroke="#713f12" stroke-width="1.5" />
+                
+                <!-- Modern Glass Cup Outer Contour -->
+                <path d="M 68,40 L 76,120 Q 77,125 82,125 L 118,125 Q 123,125 124,120 L 132,40 Z" fill="none" stroke="#d1d5db" stroke-width="2.5" />
+                
+                <!-- Glass Cup Base Thickness -->
+                <path d="M 76,120 Q 77,125 82,125 L 118,125 Q 123,125 124,120 L 122,110 L 78,110 Z" fill="#e5e7eb" opacity="0.4" />
+
+                <!-- Liquids Bases -->
+                
+                <!-- 1. Hot Latte Liquid Structure -->
+                <g id="svg-liquid-latte">
+                  <!-- Bottom Espresso Layer (Dark Brown) -->
+                  <path d="M 77,110 L 79,90 L 121,90 L 123,110 Z" fill="#451a03" />
+                  <!-- Steamed Milk Body (Warm Cream) -->
+                  <path d="M 79,90 L 82,50 L 118,50 L 121,90 Z" fill="#faf5e6" />
+                  <!-- Thick Foam Crown on Top -->
+                  <path d="M 82,50 Q 100,53 118,50 L 119,45 Q 100,42 81,45 Z" fill="#ffffff" />
+                </g>
+
+                <!-- 2. Iced Latte Liquid Structure -->
+                <g id="svg-liquid-iced" class="hidden">
+                  <!-- Swirled Espresso Milk Liquid -->
+                  <path d="M 77,110 L 82,50 L 118,50 L 123,110 Z" fill="#854d0e" />
+                  <!-- Ice Cubes (Translucent rectangles) -->
+                  <rect x="80" y="80" width="16" height="16" rx="2" fill="#ffffff" opacity="0.35" transform="rotate(15 88 88)" />
+                  <rect x="100" y="60" width="16" height="16" rx="2" fill="#ffffff" opacity="0.35" transform="rotate(-10 108 68)" />
+                  <rect x="85" y="52" width="14" height="14" rx="2" fill="#ffffff" opacity="0.35" transform="rotate(45 92 59)" />
+                </g>
+
+                <!-- 3. Nitro Cold Brew Liquid Structure -->
+                <g id="svg-liquid-nitro" class="hidden">
+                  <!-- Dark Cold Brew Body -->
+                  <path d="M 77,110 L 82,50 L 118,50 L 123,110 Z" fill="#1c0d02" />
+                  <!-- Bubbles rising (tiny white circles) -->
+                  <circle cx="85" cy="95" r="1" fill="#ffffff" opacity="0.7" />
+                  <circle cx="95" cy="85" r="0.8" fill="#ffffff" opacity="0.6" />
+                  <circle cx="115" cy="90" r="1" fill="#ffffff" opacity="0.7" />
+                  <circle cx="102" cy="70" r="0.8" fill="#ffffff" opacity="0.5" />
+                  <!-- Creamy head -->
+                  <path d="M 82,50 Q 100,52 118,50 L 119,42 Q 100,45 81,42 Z" fill="#fef08a" opacity="0.9" />
+                </g>
+
+                <!-- Syrups Overlay -->
+                <!-- Spiced Cardamom (Tiny dark dots) -->
+                <g id="svg-syrup-cardamom" class="hidden">
+                  <circle cx="88" cy="98" r="0.6" fill="#3b2314" />
+                  <circle cx="92" cy="74" r="0.6" fill="#3b2314" />
+                  <circle cx="104" cy="88" r="0.6" fill="#3b2314" />
+                  <circle cx="112" cy="62" r="0.6" fill="#3b2314" />
+                </g>
+
+                <!-- Lavender Honey (Golden drips) -->
+                <g id="svg-syrup-lavender" class="hidden">
+                  <path d="M 85,50 C 90,65 92,60 95,50" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" />
+                  <path d="M 105,50 C 108,70 110,65 112,50" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" />
+                </g>
+
+                <!-- Sweet Vanilla (Creamy ribbons) -->
+                <g id="svg-syrup-vanilla" class="hidden">
+                  <path d="M 90,52 Q 95,80 88,105" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round" />
+                  <path d="M 110,52 Q 102,80 112,105" fill="none" stroke="#fef08a" stroke-width="2" stroke-linecap="round" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="taco-mat">
+              <span id="coff-tag-display" style="font-size: 0.78rem; font-weight: 700; color: var(--color-green); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;">SIGNATURE ESPRESSO</span>
+              <h4 id="coff-title-display" style="font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);">Hot Latte</h4>
+              <p id="coff-price-display" style="font-size: 1.25rem; font-weight: 800; color: var(--color-green); margin-bottom: 1.2rem;">$4.75</p>
+              <p id="coff-desc-display" style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.7;">Double-shot of our signature Enderly espresso pulled with steamed whole milk, sweet vanilla syrup notes.</p>
+            </div>
           </div>
 
-          <!-- Right: Controls -->
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <label class="control-label">1. Choose Beverage Style</label>
-              <select id="coff-style" onchange="updateDrink()">
+          <!-- Right Side: Controls Selects -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div>
+              <label for="coff-style">1. Choose Beverage Style</label>
+              <select id="coff-style">
                 <option value="latte" selected>Hot Latte ($4.75)</option>
                 <option value="iced">Iced Latte ($5.00)</option>
                 <option value="nitro">Nitro Cold Brew ($4.50)</option>
               </select>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-              <label class="control-label">2. Choose Milk / Creamer</label>
-              <select id="coff-milk" onchange="updateDrink()">
+            <div>
+              <label for="coff-milk">2. Choose Milk / Creamer</label>
+              <select id="coff-milk">
                 <option value="whole" selected>Steamed Whole Milk (+$0.00)</option>
                 <option value="oat">Creamy Oat Milk (+$0.75)</option>
                 <option value="almond">Organic Almond Milk (+$0.75)</option>
@@ -125,8 +177,8 @@ select:focus {
             </div>
 
             <div>
-              <label class="control-label">3. Select Syrup Flavor</label>
-              <select id="coff-syrup" onchange="updateDrink()">
+              <label for="coff-syrup">3. Select Syrup Flavor</label>
+              <select id="coff-syrup">
                 <option value="vanilla" selected>House-Made Sweet Vanilla (+$0.50)</option>
                 <option value="lavender">Real Lavender Honey (+$0.75)</option>
                 <option value="cardamom">Spiced Cardamom Syrup (+$0.70)</option>
@@ -138,16 +190,48 @@ select:focus {
         </div>
       </div>
     </section>
-
-    <footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border);">
-      <div class="wrap">
-        <p>Enderly Coffee Co. · 2620 Tuckaseegee Rd · Charlotte, NC 28208 · (704) 430-8025</p>
-        <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-      </div>
-    </footer>
   </main>
 
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Enderly Coffee Co.</h3>
+        <p>Small-batch craft coffee roasted in Enderly Park since 2012. People First. Coffee Always.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Cafe &amp; Roastery</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2620 Tuckaseegee Rd<br>
+          Charlotte, NC 28208<br>
+          Phone: (704) 448-3799
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Cafe</a></li>
+          <li><a href="brew.html">Drink Lab</a></li>
+          <li><a href="roast.html">Our Coffee</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Enderly Coffee Co. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
   <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('main-nav');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
     const styleData = {
       latte: { tag: "SIGNATURE ESPRESSO", name: "Hot Latte", basePrice: 4.75, label: "double-shot of our signature Enderly espresso pulled with steamed" },
       iced: { tag: "ICED ESPRESSO BAR", name: "Iced Latte", basePrice: 5.00, label: "double-shot of espresso poured over ice with cold" },
@@ -183,15 +267,31 @@ select:focus {
       document.getElementById('coff-price-display').innerText = `$${totalPrice.toFixed(2)}`;
 
       let desc = `A pour of our ${style.label} ${milk.label}${syrup.label}.`;
-      
       document.getElementById('coff-desc-display').innerText = desc;
+
+      // Update SVG bases
+      document.getElementById('svg-liquid-latte').classList.add('hidden');
+      document.getElementById('svg-liquid-iced').classList.add('hidden');
+      document.getElementById('svg-liquid-nitro').classList.add('hidden');
+      document.getElementById(`svg-liquid-${styleKey}`).classList.remove('hidden');
+
+      // Update SVG syrups
+      document.getElementById('svg-syrup-vanilla').classList.add('hidden');
+      document.getElementById('svg-syrup-lavender').classList.add('hidden');
+      document.getElementById('svg-syrup-cardamom').classList.add('hidden');
+      if (syrupKey !== 'none') {
+        document.getElementById(`svg-syrup-${syrupKey}`).classList.remove('hidden');
+      }
     }
+
+    document.getElementById('coff-style').addEventListener('change', updateDrink);
+    document.getElementById('coff-milk').addEventListener('change', updateDrink);
+    document.getElementById('coff-syrup').addEventListener('change', updateDrink);
 
     // Initial trigger
     window.addEventListener('load', () => {
       updateDrink();
     });
   </script>
-  <script src="../site-core.js"></script>
 </body>
 </html>
