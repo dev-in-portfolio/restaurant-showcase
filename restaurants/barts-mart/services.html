@@ -1,97 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/barts-mart/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bart's Mart - Charlotte, NC | Private Events</title>
+  <title>Events — Bart's Mart Restaurant</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* slider styling */
+    .slider-group {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    .c-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 10px;
+      outline: none;
+      background: var(--color-border);
+      accent-color: var(--color-pink);
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bart's Mart
-          <span>Bottle Shop & Arcade</span>
+          <span>Bottle Shop &amp; Arcade</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Tap List</a>
         <a href="arcade.html">Arcade Lounge</a>
         <a href="about.html">About</a>
         <a href="services.html" class="active">Events</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Arcade lounge & Patio Rentals</h2>
-    <p class="page-subtitle">Reserve our indoor vintage game corner or spacious outdoor patio for a birthday, group tournament, or retro-themed get-together.</p>
+    <h2 class="page-title">Arcade Party &amp; Event Bookings</h2>
+    <p class="page-subtitle">Rent our retro lounge, organize private draft beer tastings, or reserve our patio booths for your next community gathering.</p>
   </header>
 
-  <!-- Interactive Planner -->
-  <main class="container">
-    
-    <section class="interactive-panel">
-      <h3 class="section-title" style="margin-bottom: 1rem;">Arcade Party Planner</h3>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Select your guest count, duration, and gaming package to calculate estimated costs.</p>
+  <!-- Main Content -->
+  <main id="main" class="container">
+    <!-- Interactive Platter Planner -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Event Calculator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; font-weight: 500;">Drag the slider to input your expected guests. We will estimate your arcade tokens and package costs.</p>
       
-      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
-        <label for="guests-count" style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-pink); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-sans);">Expected Guests: <span id="guests-val" style="font-size: 1.8rem; color: #ffffff;">20</span> people</label>
-        <input type="range" id="guests-count" min="10" max="45" value="20" step="5" style="width: 100%; accent-color: var(--color-pink); cursor: pointer;" oninput="calculateEvent(this.value)">
+      <div class="slider-group">
+        <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-pink); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">20</span> people</label>
+        <input type="range" class="c-slider" id="guests-count" min="5" max="80" value="20" step="5">
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
-        
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Rental Duration</h4>
-          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
-            <select id="event-hours" style="background: rgba(0,0,0,0.5); border: 1px solid var(--color-border); color: #fff; padding: 0.5rem 1rem; border-radius: 4px;" onchange="updateHours(this.value)">
-              <option value="2">2 Hours</option>
-              <option value="3" selected>3 Hours</option>
-              <option value="4">4 Hours</option>
-            </select>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Base Room Rate: $75/hour</p>
+          <span style="font-size: 2rem;" aria-hidden="true">🪙</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Arcade Tokens</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-cyan);" id="arcade-tokens">400 Tokens</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">20 tokens per guest ($0.25/ea)</p>
         </div>
 
         <div class="premium-card" style="padding: 2rem; text-align: center;">
-          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Token Package</h4>
-          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
-            <button class="option-btn" id="btn-pkg-token" onclick="selectPkg(10, 'Token Starter')">Starter ($10)</button>
-            <button class="option-btn active" id="btn-pkg-gamer" onclick="selectPkg(20, 'Retro Gamer')">Gamer ($20)</button>
-            <button class="option-btn" id="btn-pkg-vip" onclick="selectPkg(35, 'High Score VIP')">VIP ($35)</button>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Includes snack bar access and drinks.</p>
+          <span style="font-size: 2rem;" aria-hidden="true">🍺</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Draft Drink Tickets</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-cyan);" id="drink-tickets">40 Tickets</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">2 drink tokens per guest ($7.00/ea)</p>
         </div>
 
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;" aria-hidden="true">🍕</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Lounge Pizza Pies</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-cyan);" id="pizza-pies">5 Pizzas</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">From Geno's next door (~4 serves, $18/ea)</p>
+        </div>
       </div>
 
-      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
-        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; font-family: var(--font-sans);">Estimated Party Subtotal</span>
-        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="event-cost">$625.00</h4>
-        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="event-summary">Based on 20 guests for 3 hours with Retro Gamer ($225 lounge rental + $400 tokens & snacks).</p>
+      <div class="premium-card" style="text-align: center; background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border-color:var(--color-pink);">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-light); letter-spacing: 0.05em;">Estimated Event Total</span>
+        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="feast-cost">$470.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 400 Arcade tokens, 40 Drink tickets, and 5 Pizzas.</p>
       </div>
     </section>
 
     <!-- Inquiry Form -->
     <section class="form-wrapper">
       <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Arcade Booking Request</h2>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Event Inquiry Form</h2>
         
         <form id="catering-form">
-          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. Private buyouts are scheduled outside of our peak weekend night hours.</p>
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details below. All private group reservations require 72 hours notice.</p>
           <div class="form-grid">
             <div class="form-group">
               <label for="name">Contact Name</label>
@@ -104,8 +126,8 @@
             </div>
 
             <div class="form-group">
-              <label for="event-date">Event Date</label>
-              <input type="date" id="event-date" required>
+              <label for="pickup-date">Requested Event Date</label>
+              <input type="date" id="pickup-date" required>
             </div>
 
             <div class="form-group">
@@ -114,101 +136,95 @@
             </div>
 
             <div class="form-group" style="grid-column: 1 / -1;">
-              <label for="notes">Details & Requests (Specify retro tournament brackets, food coordination, music playlists)</label>
-              <textarea id="notes" placeholder="e.g. This is a 30th birthday. We would like to run a double-elimination cabinet tournament for Street Fighter II..."></textarea>
+              <label for="notes">Details of your request (Specify console wishes, drink choices, pinball preferences, etc.)</label>
+              <textarea id="notes" placeholder="e.g. Booking a 30th birthday. We would love to reserve the N64 corner and pre-purchase 2 drink tickets per guest..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Booking Request</button>
+            <button type="submit" class="submit-btn">Send Event Inquiry</button>
           </div>
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🕹️</div>
-          <h3 class="success-title">Booking Requested!</h3>
-          <p class="success-msg" id="success-message">Thank you. Bart's Mart's crew will check the lounge schedule and call you shortly.</p>
+          <div class="success-icon" aria-hidden="true">🕹️</div>
+          <h3 class="success-title">Event Inquiry Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Bart's Mart's events coordinator will review details and call you to arrange pricing and setup details.</p>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
+        <h3>Eastway Crossing Stand</h3>
         <p>3042 Eastway Dr<br>Charlotte, NC 28205</p>
       </div>
       <div class="info-block">
         <h3>Hours</h3>
-        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+        <p>Mon - Thu: 3:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Located in Eastway Crossing | Bottle Shop & Bar | Retro Arcade</p>
+        <p>Located in Eastway Crossing | Craft Beer | Retro Gaming | Community Hub</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bart's Mart. Eastway Charlotte.</p>
+      <p>&copy; 2026 Bart's Mart. Charlotte, NC.</p>
     </div>
   </footer>
 
   <script>
-    let currentGuests = 20;
-    let selectedHours = 3;
-    let pkgCost = 20;
-    let pkgName = 'Retro Gamer';
-
-    function updateHours(val) {
-      selectedHours = parseInt(val);
-      calculateEvent(currentGuests);
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
 
-    function selectPkg(cost, name) {
-      pkgCost = cost;
-      pkgName = name;
-
-      document.getElementById('btn-pkg-token').classList.remove('active');
-      document.getElementById('btn-pkg-gamer').classList.remove('active');
-      document.getElementById('btn-pkg-vip').classList.remove('active');
-      
-      if (cost === 10) {
-        document.getElementById('btn-pkg-token').classList.add('active');
-      } else if (cost === 20) {
-        document.getElementById('btn-pkg-gamer').classList.add('active');
-      } else {
-        document.getElementById('btn-pkg-vip').classList.add('active');
-      }
-
-      calculateEvent(currentGuests);
-    }
-
-    function calculateEvent(guests) {
-      currentGuests = parseInt(guests);
+    function calculateFeast(guests) {
       document.getElementById('guests-val').innerText = guests;
       document.getElementById('guests-count-input').value = guests;
 
-      const roomFee = 75 * selectedHours;
-      const foodFee = currentGuests * pkgCost;
-      const totalCost = roomFee + foodFee;
+      // Calculation logic
+      const tokens = guests * 20;
+      const drinks = guests * 2;
+      const pizzas = Math.ceil(guests / 4);
 
-      document.getElementById('event-cost').innerText = `$${totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-      document.getElementById('event-summary').innerText = `Based on ${currentGuests} guests for ${selectedHours} hours with ${pkgName} ($${roomFee} lounge rental + $${foodFee} tokens & snacks).`;
+      const totalCost = (tokens * 0.25) + (drinks * 7.00) + (pizzas * 18);
+
+      document.getElementById('arcade-tokens').innerText = `${tokens} Tokens`;
+      document.getElementById('drink-tickets').innerText = `${drinks} Tickets`;
+      document.getElementById('pizza-pies').innerText = `${pizzas} ${pizzas === 1 ? 'Pizza' : 'Pizzas'}`;
+      document.getElementById('feast-cost').innerText = `$${totalCost.toFixed(2)}`;
+      document.getElementById('feast-summary').innerText = `Includes ${tokens} Arcade tokens, ${drinks} Drink tickets, and ${pizzas} Pizzas.`;
     }
 
-    // Handle catering submissions
+    const slider = document.getElementById('guests-count');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        calculateFeast(e.target.value);
+      });
+    }
+
+    // Handle submissions
     const form = document.getElementById('catering-form');
     const successPanel = document.getElementById('success-panel');
     const successMsg = document.getElementById('success-message');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your rental request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to coordinate brackets and check dates.`;
-    });
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        form.style.display = 'none';
+        successPanel.style.display = 'block';
+        successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your event request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule setup.`;
+      });
+    }
   </script>
 </body>
 </html>

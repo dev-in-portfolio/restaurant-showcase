@@ -1,87 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/barts-mart/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bart's Mart - Charlotte, NC | Arcade Lounge</title>
+  <title>Arcade Lounge — Bart's Mart Restaurant</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Styling for the interactive arcade cabinet visualizer */
-    .arcade-box {
-      background: radial-gradient(circle, #2e123a 0%, #0a040d 100%);
-      border: 2px solid var(--color-pink);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      box-shadow: var(--shadow-premium);
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      transition: var(--transition-smooth);
-      color: #fff;
+    /* Arcade SVG specifics */
+    .pixel-art-group {
+      opacity: 0;
+      transform: scale(0.6);
+      transform-origin: 100px 90px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .pixel-art-group.show {
+      opacity: 1;
+      transform: scale(1);
     }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bart's Mart
-          <span>Bottle Shop & Arcade</span>
+          <span>Bottle Shop &amp; Arcade</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Tap List</a>
         <a href="arcade.html" class="active">Arcade Lounge</a>
         <a href="about.html">About</a>
         <a href="services.html">Events</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
     <h2 class="page-title">The Arcade Lounge</h2>
-    <p class="page-subtitle">Grab a draft pour, change your dollars for quarters, and play classic 80s & 90s retro games and pinball cabinets.</p>
+    <p class="page-subtitle">Grab a draft pour, change your dollars for quarters, and play classic 80s &amp; 90s retro games and pinball cabinets.</p>
   </header>
 
   <!-- Interactive Arcade Cabinet Selector -->
-  <main class="container">
+  <main id="main" class="container">
     
     <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h3 class="section-title" style="margin-bottom: 1rem;">Arcade Cabinet Selector & High Scores</h3>
+      <h3 class="section-title" style="margin-bottom: 1rem;">Arcade Cabinet Selector &amp; High Scores</h3>
       <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a retro machine to view its release year, gameplay controls, and current neighborhood high scores.</p>
       
       <div class="mixer-container">
         
         <!-- Left Side: Cabinet Screen details -->
-        <div class="arcade-box" id="arcade-display">
+        <div class="arcade-box">
+          <!-- Cabinet SVG -->
+          <svg class="cabinet-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- Cabinet wooden side wings (pink laser glow lines) -->
+            <path d="M 30,220 L 30,50 L 50,20 L 150,20 L 170,50 L 170,220 Z" fill="#1b0b2e" stroke="var(--color-pink)" stroke-width="4.5" />
+            
+            <!-- Marquee Header panel ("ARCADE") -->
+            <rect x="50" y="24" width="100" height="22" fill="#000" stroke="var(--color-cyan)" stroke-width="1.5" />
+            <text x="100" y="40" font-family="'Outfit', sans-serif" font-weight="900" font-size="11" fill="var(--color-pink)" text-anchor="middle" letter-spacing="3">BARTS</text>
+
+            <!-- Bezel Glass Area -->
+            <rect x="40" y="55" width="120" height="85" rx="5" fill="#11091d" stroke="rgba(245, 242, 248, 0.2)" stroke-width="2" />
+            
+            <!-- CRT screen interior (flicker) -->
+            <g clip-path="url(#screen-clip)">
+              <rect class="crt-screen-path glowing" x="44" y="59" width="112" height="77" rx="3" fill="#1f1035" />
+              <!-- Scanlines -->
+              <line x1="44" y1="70" x2="156" y2="70" stroke="#000" stroke-width="1.5" opacity="0.15" />
+              <line x1="44" y1="85" x2="156" y2="85" stroke="#000" stroke-width="1.5" opacity="0.15" />
+              <line x1="44" y1="100" x2="156" y2="100" stroke="#000" stroke-width="1.5" opacity="0.15" />
+              <line x1="44" y1="115" x2="156" y2="115" stroke="#000" stroke-width="1.5" opacity="0.15" />
+
+              <!-- Game Graphics -->
+              <!-- Street Fighter II: red boxing gloves/hit -->
+              <g id="art-sf2" class="pixel-art-group show">
+                <circle cx="80" cy="95" r="10" fill="#be123c" />
+                <circle cx="120" cy="95" r="10" fill="#0369a1" />
+                <path d="M 92,95 L 108,95" stroke="#fff" stroke-width="2.5" />
+                <text x="100" y="78" font-family="monospace" font-size="8" fill="#fff" text-anchor="middle">FIGHT!</text>
+              </g>
+
+              <!-- Ms. Pac-Man: yellow wedge chomping pink dot -->
+              <g id="art-pacman" class="pixel-art-group">
+                <!-- Pac-Man wedge -->
+                <path d="M 85,95 A 14,14 0 1,1 85,94 L 75,95 Z" fill="#facc15" transform="rotate(30 75 95)" />
+                <circle cx="110" cy="95" r="3" fill="#ec4899" />
+                <circle cx="130" cy="95" r="3" fill="#ec4899" />
+                <!-- Cherry bonus -->
+                <circle cx="70" cy="75" r="4" fill="#ef4444" />
+                <path d="M 70,71 L 76,65" stroke="#22c55e" stroke-width="1.2" />
+              </g>
+
+              <!-- Addams Family Pinball: flippers & metal ball -->
+              <g id="art-addams" class="pixel-art-group">
+                <!-- Bumpers -->
+                <circle cx="85" cy="80" r="7" fill="none" stroke="var(--color-cyan)" stroke-width="2" />
+                <circle cx="115" cy="80" r="7" fill="none" stroke="var(--color-cyan)" stroke-width="2" />
+                <!-- Pinball -->
+                <circle cx="100" cy="95" r="3" fill="#fafafa" />
+                <!-- Flippers -->
+                <line x1="72" y1="120" x2="90" y2="114" stroke="var(--color-pink)" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="128" y1="120" x2="110" y2="114" stroke="var(--color-pink)" stroke-width="3.5" stroke-linecap="round" />
+              </g>
+
+              <!-- Mario Kart 64: steering wheel & cup -->
+              <g id="art-mariokart" class="pixel-art-group">
+                <circle cx="100" cy="95" r="16" fill="none" stroke="var(--color-yellow)" stroke-width="4.5" />
+                <line x1="84" y1="95" x2="116" y2="95" stroke="#fff" stroke-width="2" />
+                <line x1="100" y1="95" x2="100" y2="111" stroke="#fff" stroke-width="2" />
+                <text x="100" y="74" font-family="monospace" font-size="8" fill="var(--color-cyan)" text-anchor="middle">RACE</text>
+              </g>
+            </g>
+
+            <!-- Control Deck Panel -->
+            <path d="M 30,150 L 170,150 L 180,172 L 20,172 Z" fill="#0d0413" stroke="var(--color-pink)" stroke-width="2" />
+            
+            <!-- Joystick & Action Buttons -->
+            <!-- Player 1 Joystick -->
+            <line x1="60" y1="168" x2="56" y2="157" stroke="#b5ada8" stroke-width="2.5" />
+            <circle id="joy-knob" class="joystick-knob" cx="55" cy="154" r="5.5" />
+            <!-- Player 1 Buttons -->
+            <circle cx="80" cy="162" r="3.2" fill="var(--color-cyan)" />
+            <circle cx="92" cy="162" r="3.2" fill="var(--color-cyan)" />
+
+            <!-- Player 2 Joystick -->
+            <line x1="130" y1="168" x2="126" y2="157" stroke="#b5ada8" stroke-width="2.5" />
+            <circle cx="125" cy="154" r="5.5" fill="var(--color-cyan)" />
+            <!-- Player 2 Buttons -->
+            <circle cx="150" cy="162" r="3.2" fill="var(--color-pink)" />
+            <circle cx="162" cy="162" r="3.2" fill="var(--color-pink)" />
+
+            <!-- Coin door insert slot -->
+            <rect x="75" y="195" width="50" height="38" rx="2" fill="#05010a" stroke="rgba(245, 242, 248, 0.15)" stroke-width="2" />
+            <rect x="85" y="202" width="10" height="15" fill="#11091d" stroke="var(--color-pink)" stroke-width="1" />
+            <rect x="105" y="202" width="10" height="15" fill="#11091d" stroke="var(--color-pink)" stroke-width="1" />
+            <!-- Red coin slot inserts -->
+            <line x1="90" y1="205" x2="90" y2="214" stroke="#ff0000" stroke-width="1.8" />
+            <line x1="110" y1="205" x2="110" y2="214" stroke="#ff0000" stroke-width="1.8" />
+          </svg>
+
+          <!-- Text data details inside cabinet frame -->
           <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="arcade-year-tag">Released: 1991</span>
-          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="arcade-game-name">Street Fighter II</h4>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem; font-family: var(--font-heading);" id="arcade-game-name">Street Fighter II</h4>
           <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-yellow); margin-bottom: 1.2rem;" id="arcade-high-score">High Score: 999,500 (JON)</p>
-          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="arcade-game-desc">"Classic head-to-head fighting game cabinet. Choose your global warrior and master combinations to defeat M. Bison. Quarter play or free during Friday tournaments."</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; text-align: center;" id="arcade-game-desc">"Classic head-to-head fighting game cabinet. Choose your global warrior and master combinations to defeat M. Bison. Quarter play or free during Friday tournaments."</p>
         </div>
 
         <!-- Right Side: Controls -->
         <div class="bowl-controls">
           <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-pink); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Machine</label>
-          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;">
-            <button class="option-btn active" onclick="selectCabinet('sf2', this)">Street Fighter II</button>
-            <button class="option-btn" onclick="selectCabinet('pacman', this)">Ms. Pac-Man</button>
-            <button class="option-btn" onclick="selectCabinet('addams', this)">Addams Family Pinball</button>
-            <button class="option-btn" onclick="selectCabinet('mariokart', this)">Mario Kart 64 (N64 Console)</button>
+          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;" id="cabinet-options">
+            <button class="option-btn active" data-key="sf2">Street Fighter II</button>
+            <button class="option-btn" data-key="pacman">Ms. Pac-Man</button>
+            <button class="option-btn" data-key="addams">Addams Family Pinball</button>
+            <button class="option-btn" data-key="mariokart">Mario Kart 64 (N64)</button>
           </div>
         </div>
 
@@ -89,11 +183,11 @@
     </section>
 
     <!-- Lounge Details -->
-    <h3 class="section-title">Lounge Machines & Taps</h3>
+    <h3 class="section-title">Lounge Machines &amp; Taps</h3>
     <div class="menu-grid">
       
       <div class="premium-card">
-        <h4 class="menu-category-title">Pinball & Cabinets</h4>
+        <h4 class="menu-category-title">Pinball &amp; Cabinets</h4>
         
         <div class="menu-item">
           <div class="menu-item-header">
@@ -149,7 +243,6 @@
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
@@ -169,7 +262,7 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bart's Mart. Charlotte, NC.</p>
+      <p>&copy; 2026 Bart's Mart. Charlotte, NC.</p>
     </div>
   </footer>
 
@@ -201,26 +294,60 @@
       }
     };
 
-    function selectCabinet(key, btn) {
-      const buttons = btn.parentElement.querySelectorAll('.option-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const display = document.getElementById('arcade-display');
-      display.style.opacity = '0';
-      display.style.transform = 'translateY(10px)';
-
-      setTimeout(() => {
-        const data = cabinetData[key];
-        document.getElementById('arcade-year-tag').innerText = data.year;
-        document.getElementById('arcade-game-name').innerText = data.game;
-        document.getElementById('arcade-high-score').innerText = data.score;
-        document.getElementById('arcade-game-desc').innerText = data.desc;
-
-        display.style.opacity = '1';
-        display.style.transform = 'translateY(0)';
-      }, 250);
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
     }
+
+    function setupSelector() {
+      const btns = document.querySelectorAll('#cabinet-options .option-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const key = btn.dataset.key;
+          const display = document.getElementById('arcade-game-name').parentElement;
+          
+          // Animate joystick click
+          const joy = document.getElementById('joy-knob');
+          if (joy) {
+            joy.classList.add('clicked');
+            setTimeout(() => joy.classList.remove('clicked'), 150);
+          }
+
+          // Fade out display details
+          display.style.opacity = '0.3';
+          display.style.transform = 'translateY(4px)';
+
+          setTimeout(() => {
+            const data = cabinetData[key];
+            document.getElementById('arcade-year-tag').innerText = data.year;
+            document.getElementById('arcade-game-name').innerText = data.game;
+            document.getElementById('arcade-high-score').innerText = data.score;
+            document.getElementById('arcade-game-desc').innerText = data.desc;
+
+            // Toggle screen SVG illustrations
+            const artGroups = document.querySelectorAll('.pixel-art-group');
+            artGroups.forEach(g => g.classList.remove('show'));
+            const activeArt = document.getElementById(`art-${key}`);
+            if (activeArt) activeArt.classList.add('show');
+
+            display.style.opacity = '1';
+            display.style.transform = 'translateY(0)';
+          }, 200);
+        });
+      });
+    }
+
+    window.addEventListener('load', () => {
+      setupSelector();
+    });
   </script>
 </body>
 </html>

@@ -1,101 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/barts-mart/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bart's Mart - Charlotte, NC | About Us</title>
+  <title>About — Bart's Mart Restaurant</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
   <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        <span aria-hidden="true">←</span> Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
+        <div class="brand-logo-css" aria-hidden="true">B</div>
         <h1 class="brand-name">
           Bart's Mart
-          <span>Bottle Shop & Arcade</span>
+          <span>Bottle Shop &amp; Arcade</span>
         </h1>
       </div>
 
-      <div class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Tap List</a>
         <a href="arcade.html">Arcade Lounge</a>
         <a href="about.html" class="active">About</a>
         <a href="services.html">Events</a>
         <a href="contact.html">Visit</a>
-      </div>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Retro Soul & Hops</h2>
-    <p class="page-subtitle">Learn about our quirky mascot, neighborhood roots, and our collection of vintage arcade cabinets.</p>
+    <h2 class="page-title">Sourcing &amp; Arcade Roots</h2>
+    <p class="page-subtitle">Our journey of bringing craft single cans, rotating local drafts, and retro cabinets to Charlotte's Eastway Crossing.</p>
   </header>
 
   <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
       <!-- Roots Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">Who is Bart?</h3>
+        <h3 class="menu-category-title">The Bottle Shop</h3>
         <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Unlike typical stuffy craft shops, Bart’s Mart doesn’t take itself too seriously. Named in honor of a quirky, cartoonish neighborhood spirit, our mascot "Bart" represents the skater-chic, retro-loving soul of the Eastway and Plaza-Midwood communities.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          Our shelves are stocked with rare local releases, but our lounge is packed with laughter, free board games, and cheap snacks.
-        </p>
-      </div>
-
-      <!-- Plancha Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">Plaza-Midwood & Eastway Crossings</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Founded as a social bridge in the Eastway Crossing shopping center, Bart’s Mart was created to be a dedicated hub where neighbors could chat, share a bottle, or order takeout to eat on our deck. We support local North Carolina breweries and small-batch wineries.
+          At Bart's Mart, we are dedicated to celebrating the craft brewing community. Our shop contains a curated selection of over 250 craft single cans and natural wines in our walk-in coolers. Guests can create a customized 4-pack or enjoy a drink at our tables, creating a welcoming social space for neighbors.
         </p>
       </div>
 
       <!-- Arcade Card -->
       <div class="premium-card">
-        <h3 class="menu-category-title">The Retro Arcade Corner</h3>
+        <h3 class="menu-category-title">Arcade Lounge &amp; Classics</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
+          We believe in keeping retro gaming culture alive. Our lounge features physical arcade cabinets like Ms. Pac-Man and Street Fighter II, alongside classic pinball and consoles. Whether you are aiming for a high score or playing casually with friends, our cabinets bring classic arcade energy back to Charlotte.
+        </p>
+      </div>
+
+      <!-- Community Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Eastway Crossing Hangout</h3>
         <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          A primary highlight of our taproom is the retro gaming corner. From vintage pinball machines and cabinet classics like Street Fighter and Pac-Man to modern board game stacks, we encourage guests to grab a glass, grab a joystick, and settle old neighborhood rivalries the old-fashioned way.
+          Located inside the Eastway Crossing shopping center on Eastway Dr, Bart's Mart offers a spacious patio, regular game tournaments, and a draft taproom. We serve as a community hub where local artists, gamers, and beer enthusiasts gather to enjoy quality drinks and classic games.
         </p>
       </div>
 
     </div>
-
   </main>
 
   <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
+        <h3>Eastway Crossing Stand</h3>
         <p>3042 Eastway Dr<br>Charlotte, NC 28205</p>
       </div>
       <div class="info-block">
         <h3>Hours</h3>
-        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+        <p>Mon - Thu: 3:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Located in Eastway Crossing | Bottle Shop & Bar | Retro Arcade</p>
+        <p>Located in Eastway Crossing | Craft Beer | Retro Gaming | Community Hub</p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Bart's Mart. Eastway Charlotte.</p>
+      <p>&copy; 2026 Bart's Mart. Charlotte, NC.</p>
     </div>
   </footer>
 
+  <script>
+    // Toggle menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>
