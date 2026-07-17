@@ -1,136 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact · Geno D's Pizza</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--red:#c1121f;--green:#2d6a4f;--cream:#faf3e0;--dark:#1a1a1a;--warm:#2a1a10;--gold:#e8b830;--muted:#8a7a6a}
-body{margin:0;background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:#fff;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.08)}
-.nav a{color:var(--dark);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.7;transition:.2s}
-.nav a:hover{opacity:1;color:var(--red)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#fff,#faf3e0);padding:3.5rem 2rem 2.5rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
-.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0;color:var(--dark)}
-.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
-.section h2{font-size:1.3rem;color:var(--red);margin:0 0 .1rem;border-left:3px solid var(--green);padding-left:.75rem}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
-.info-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.03);margin-bottom:1rem}
-.info-card h3{color:var(--red);font-size:.95rem;margin:0 0 .5rem}
-.info-card p{font-size:.85rem;opacity:.55;line-height:1.6;margin:.25rem 0}
-.info-card .label{opacity:.35;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-.hours-grid{display:grid;grid-template-columns:auto auto;gap:.35rem 1.5rem;font-size:.85rem}
-.hours-grid .day{opacity:.45;font-weight:600}
-.hours-grid .time{opacity:.6}
-.demo-form{display:grid;gap:1rem}
-.demo-form label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
-.demo-form input,.demo-form textarea,.demo-form select{width:100%;border:1px solid rgba(0,0,0,.12);border-radius:.7rem;padding:.85rem 1rem;background:#fff;color:var(--dark)}
-.demo-form button{background:var(--red);color:#fff;border:none;padding:.85rem;border-radius:.7rem;font-weight:700;cursor:pointer;transition:.2s}
-.demo-form button:hover{opacity:.9}
-.order-btn{display:inline-block;background:var(--red);color:#fff;padding:.8rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s;border:none;cursor:pointer}
-.order-btn:hover{opacity:.9}
-footer{background:var(--dark);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/geno-ds-pizza/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Geno D's Pizza</title>
+  <meta name="description" content="Get directions, operating hours, phone numbers, and online ordering links for Geno D's Pizza in Charlotte.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .demo-form {
+      display: grid;
+      gap: 16px;
+    }
+    .demo-form label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: grid;
+      gap: 6px;
+      text-align: left;
+    }
+    .demo-form input, .demo-form textarea, .demo-form select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .demo-form input:focus, .demo-form textarea:focus, .demo-form select:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 8px rgba(193, 18, 31, 0.2);
+    }
+    .demo-form button {
+      background: var(--red);
+      color: #ffffff;
+      padding: 14px 28px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 8px;
+    }
+    .demo-form button:hover {
+      background: var(--red-hover);
+      box-shadow: 0 4px 15px rgba(193, 18, 31, 0.4);
+      transform: translateY(-2px);
+    }
+    .order-btn-block {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: var(--red);
+      color: #ffffff;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: var(--transition);
+      margin-top: 8px;
+    }
+    .order-btn-block:hover {
+      background: var(--red-hover);
+      box-shadow: 0 4px 15px rgba(193, 18, 31, 0.4);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Geno D's</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="pizza.html">Pizza Builder</a>
-    <a href="story.html">Our Story</a>
-    <a href="uptown.html">Uptown</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<main id="main">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-<div class="page-header">
-  <h1>Contact</h1>
-  <p>Stop by The Market at 7th Street or order online</p>
-</div>
-<section class="section">
-  <div class="contact-grid">
-    <div>
-      <div class="info-card">
-        <h3>Location</h3>
-        <p><span class="label">Address</span><br>224 East 7th Street<br>Charlotte, NC 28202</p>
-        <p style="margin-top:.4rem">Inside The Market at 7th Street</p>
-        <a href="https://maps.google.com/?q=224+E+7th+St+Charlotte+NC+28202" class="order-btn" style="display:inline-block;padding:.6rem 1.2rem;font-size:.78rem">Get Directions</a>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">Geno D's</a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="pizza.html">Pizza Builder</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="uptown.html">Uptown</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-contact" style="background: radial-gradient(circle at center, #3c1412 0%, #0e0b0a 100%);">
+      <div class="wrap">
+        <span class="page-hero-badge">Stop By &bull; Order online</span>
+        <h1>Contact &amp; Hours</h1>
+        <p>Find us inside Uptown's Market at 7th Street or skip the line by placing an order ahead.</p>
       </div>
-      <div class="info-card">
-        <h3>Hours</h3>
-        <div class="hours-grid">
-          <span class="day">Mon</span><span class="time">Closed</span>
-          <span class="day">Tue–Thu</span><span class="time">11:00 AM – 8:00 PM</span>
-          <span class="day">Fri–Sat</span><span class="time">11:00 AM – 9:00 PM</span>
-          <span class="day">Sun</span><span class="time">11:00 AM – 6:00 PM</span>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="contact-grid">
+          
+          <div>
+            <div class="contact-card" style="margin-bottom: 24px;">
+              <h3>Market Location</h3>
+              <p>224 E 7th St, Suite A<br>Charlotte, NC 28202</p>
+              <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 16px;">Located inside The Market at 7th Street, directly on the 7th and Brevard corner.</p>
+              <a href="https://maps.google.com/?q=224+E+7th+St+Charlotte+NC+28202" target="_blank" rel="noopener" class="btn btn-o" style="display: block; text-align: center;">Get Directions &rarr;</a>
+            </div>
+
+            <div class="contact-card" style="margin-bottom: 24px;">
+              <h3>Weekly Hours</h3>
+              <table class="hours-table">
+                <tr><td>Monday</td><td>Closed</td></tr>
+                <tr><td>Tuesday – Thursday</td><td>11:00 AM – 8:00 PM</td></tr>
+                <tr><td>Friday – Saturday</td><td>11:00 AM – 9:00 PM</td></tr>
+                <tr><td>Sunday</td><td>11:00 AM – 6:00 PM</td></tr>
+              </table>
+            </div>
+
+            <div class="contact-card" style="margin-bottom: 24px;">
+              <h3>Connect With Us</h3>
+              <p><strong>Phone:</strong> <a href="tel:7049005202" style="color: var(--text);">(704) 900-5202</a></p>
+              <p><strong>Email:</strong> genodspizza5@gmail.com</p>
+              <p style="margin-top: 16px;">
+                <a href="https://www.instagram.com/genodspizza" target="_blank" rel="noopener" style="color: var(--gold); font-weight: 700; margin-right: 16px;">Instagram</a>
+                <a href="https://www.facebook.com/GenoDsPizzeria" target="_blank" rel="noopener" style="color: var(--gold); font-weight: 700;">Facebook</a>
+              </p>
+            </div>
+
+            <div class="contact-card">
+              <h3>Order Pickup Ahead</h3>
+              <p style="margin-bottom: 12px;">Skip the line at the counter. Order your pizzas, paninis, and cannoli online.</p>
+              <a href="https://www.genods.com/" target="_blank" rel="noopener" class="order-btn-block">Place Order Now &rarr;</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="contact-card">
+              <h3>Send Geno &amp; Gena a Message</h3>
+              <p class="sub" style="margin-bottom: 24px;">Have catering questions, feedback, or general inquiries?</p>
+              
+              <form class="demo-form" data-demo-form>
+                <label for="name">Name
+                  <input type="text" id="name" placeholder="Your name" required>
+                </label>
+                
+                <label for="email">Email Address
+                  <input type="email" id="email" placeholder="you@example.com" required>
+                </label>
+                
+                <label for="subject">Topic
+                  <select id="subject">
+                    <option value="">Select a topic...</option>
+                    <option value="catering">Catering Inquiry</option>
+                    <option value="order">Order Question</option>
+                    <option value="feedback">General Feedback</option>
+                  </select>
+                </label>
+                
+                <label for="message">Message
+                  <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </label>
+                
+                <button type="submit">Submit Message</button>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="info-card">
-        <h3>Contact</h3>
-        <p><span class="label">Phone</span><br>(704) 900-5202</p>
-        <p><span class="label">Email</span><br>genodspizza5@gmail.com</p>
-        <p><span class="label">Follow Us</span><br>
-          <a href="https://www.instagram.com/genodspizza" style="color:var(--red);text-decoration:none;margin-right:.75rem;font-weight:600">Instagram</a>
-          <a href="https://www.facebook.com/GenoDsPizzeria" style="color:var(--red);text-decoration:none;font-weight:600">Facebook</a>
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>Order Online</h3>
-        <p style="margin-bottom:.75rem">Order ahead for pickup — skip the line</p>
-        <a href="https://www.genods.com/" class="order-btn">Order Now</a>
-      </div>
-    </div>
-    <div>
-      <div class="info-card">
-        <h3>Send Us a Message</h3>
-        <form class="demo-form" data-demo-form>
-          <label>Name
-            <input type="text" placeholder="Your name" required>
-          </label>
-          <label>Email
-            <input type="email" placeholder="you@example.com" required>
-          </label>
-          <label>Subject
-            <select>
-              <option value="">Select a topic</option>
-              <option value="order">Order inquiry</option>
-              <option value="catering">Catering</option>
-              <option value="feedback">Feedback</option>
-            </select>
-          </label>
-          <label>Message
-            <textarea placeholder="What's on your mind?" required></textarea>
-          </label>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-</main>
-<footer>
-  <p><strong style="color:var(--gold);font-size:.9rem">Geno D's Pizza</strong><br>224 E 7th St · The Market at 7th Street · Charlotte, NC 28202 · (704) 900-5202</p>
-  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="story.html">Our Story</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-logo">Geno D's Pizza</p>
+      <p class="footer-addr">224 E 7th St &bull; The Market at 7th Street &bull; Charlotte, NC 28202 &bull; <a href="tel:+19802966140">(980) 296-6140</a></p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="menu.html">Menu</a> &bull;
+        <a href="pizza.html">Pizza Builder</a> &bull;
+        <a href="story.html">Our Story</a> &bull;
+        <a href="uptown.html">Uptown</a> &bull;
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>

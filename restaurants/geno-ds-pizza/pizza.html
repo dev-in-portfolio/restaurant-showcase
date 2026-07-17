@@ -1,209 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizza Builder · Geno D's Pizza</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--red:#c1121f;--green:#2d6a4f;--cream:#faf3e0;--dark:#1a1a1a;--warm:#2a1a10;--gold:#e8b830;--muted:#8a7a6a}
-body{margin:0;background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:#fff;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.nav a{color:var(--dark);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.7;transition:.2s}
-.nav a:hover{opacity:1;color:var(--red)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-links a.active{opacity:1;color:var(--red)}
-.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
-.hero{min-height:35vh;background:linear-gradient(135deg,#fff,#faf3e0 50%,#f0e0c0);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
-.hero h1{font-size:3rem;margin:0;color:var(--dark);line-height:1.1}
-.hero .tagline{font-size:1.05rem;opacity:.5;font-style:italic;margin:.6rem 0 1.5rem;font-family:'Fraunces',serif;color:var(--dark)}
-.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
-
-.pizza-mat {
-  background: radial-gradient(circle, #c1121f 0%, #3a0004 100%);
-  border: 2px solid var(--gold);
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-  color: #fff;
-}
-.pizza-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .pizza-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.15);
-  color: var(--dark);
-  padding: 12px;
-  border-radius: 6px;
-  width: 100%;
-  font-family: inherit;
-}
-select:focus {
-  outline: none;
-  border-color: var(--red);
-}
-.control-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--red);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-footer{background:var(--dark);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/geno-ds-pizza/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Customizer | Geno D's Pizza</title>
+  <meta name="description" content="Design your own Jersey Shore style pizza pie. Choose crust thickness, sauce bases, and gourmet toppings.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Geno D's</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="pizza.html" class="active">Pizza Builder</a>
-    <a href="story.html">Our Story</a>
-    <a href="uptown.html">Uptown</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<main id="main">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-
-<div class="hero">
-  <div>
-    <p style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:.8rem;margin:0 0 .5rem">THE MARKET AT 7TH ST · UPTOWN CHARLOTTE</p>
-    <h1>Jersey Shore<br><span>Pizza Customizer</span></h1>
-    <p class="tagline">Select your crust, sauce style, and premium toppings for an authentic Jersey bake</p>
-  </div>
-</div>
-
-<section class="section">
-  <div class="pizza-grid" style="background: #fff; padding: 40px 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 4px 20px rgba(0,0,0,.03);">
-    
-    <!-- Left: Pizza Display -->
-    <div class="pizza-mat">
-      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="pz-tag-display">SIGNATURE BAKE</span>
-      <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Fraunces', serif; margin: 0 0 0.8rem 0;" id="pz-title-display">Square Thin Grandma</h3>
-      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="pz-price-display">$20.00</p>
-      <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="pz-desc-display">Baked square thin Sicilian style dough topped with garlic pesto strips, fresh mozzarella, and cup-and-char pepperoni.</p>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">Geno D's</a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="pizza.html" class="active">Pizza Builder</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="uptown.html">Uptown</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Right: Controls -->
-    <div>
-      <div style="margin-bottom: 1.5rem;">
-        <label class="control-label">1. Choose Pizza Crust</label>
-        <select id="pz-crust" onchange="updatePizza()">
-          <option value="grandma" selected>Square Thin Grandma Crust ($20.00)</option>
-          <option value="nystyle">18" Large Round NY-Style ($18.00)</option>
-          <option value="gf">10" Personal Gluten-Friendly ($14.00)</option>
-        </select>
+  <main id="main">
+    <section class="page-hero page-hero-pizza" style="background: radial-gradient(circle at center, #3c1412 0%, #0e0b0a 100%);">
+      <div class="wrap">
+        <span class="page-hero-badge">Boardwalk Custom bakes</span>
+        <h1>Pizza Customizer</h1>
+        <p>Select your crust, sauce style, and premium toppings for an authentic Jersey bake.</p>
       </div>
+    </section>
 
-      <div style="margin-bottom: 1.5rem;">
-        <label class="control-label">2. Select Sauce Base</label>
-        <select id="pz-sauce" onchange="updatePizza()">
-          <option value="pesto" selected>Grandma Pesto &amp; Red Sauce Strips (+$2.00)</option>
-          <option value="classic">Old World Red Tomato Sauce (+$0.00)</option>
-          <option value="white">White Garlic Ricotta Cheese (+$1.50)</option>
-        </select>
-      </div>
+    <div class="wrap" style="padding-top: 48px; padding-bottom: 48px;">
+      <section class="pizza-grid" aria-label="Pizza Customizer interactive builder">
+        
+        <!-- Left: Interactive SVG Pizza Oven Viewport -->
+        <div class="pizza-mat">
+          <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 280px; height: auto;">
+            <!-- Pizza Peel Wood Handle -->
+            <rect x="150" y="240" width="20" height="75" fill="#854d0e" stroke="#713f12" stroke-width="1.5" rx="3" aria-hidden="true"/>
+            <circle cx="160" cy="300" r="4" fill="#0e0b0a" aria-hidden="true"/>
+            
+            <!-- Wooden Pizza Peel Board -->
+            <circle cx="160" cy="155" r="95" fill="rgba(0,0,0,0.5)" filter="blur(6px)" aria-hidden="true"/>
+            <circle cx="160" cy="150" r="90" fill="#d97706" stroke="#a16207" stroke-width="2" aria-hidden="true"/>
+            <circle cx="160" cy="150" r="82" fill="none" stroke="#b45309" stroke-width="1.5" opacity="0.5" aria-hidden="true"/>
+            <path d="M 75,150 L 245,150 M 90,100 L 230,100 M 90,200 L 230,200" stroke="#b45309" stroke-width="0.8" opacity="0.3" aria-hidden="true"/>
 
-      <div>
-        <label class="control-label">3. Select Premium Toppings</label>
-        <select id="pz-toppings" onchange="updatePizza()">
-          <option value="pepperoni" selected>Cup-and-Char Pepperoni (+$2.00)</option>
-          <option value="peppadew">Sweet Peppadew Peppers (+$1.50)</option>
-          <option value="honey">Spicy Hot Honey Drizzle (+$1.00)</option>
-          <option value="none">Classic Cheese Only (+$0.00)</option>
-        </select>
-      </div>
+            <!-- Pizza Layers: Crusts -->
+            <!-- Grandma Crust -->
+            <g id="svg-crust-grandma" class="pizza-layer">
+              <rect x="85" y="75" width="150" height="150" fill="#dfc07b" stroke="#ca8a04" stroke-width="4.5" rx="8"/>
+              <!-- Grandma crust brown chars -->
+              <circle cx="95" cy="85" r="3.5" fill="#451a03"/>
+              <circle cx="225" cy="85" r="4" fill="#451a03"/>
+              <circle cx="95" cy="215" r="3" fill="#451a03"/>
+              <circle cx="225" cy="215" r="3.5" fill="#451a03"/>
+            </g>
+
+            <!-- NY-Style Crust -->
+            <g id="svg-crust-nystyle" class="pizza-layer">
+              <circle cx="160" cy="150" r="76" fill="#fef08a" stroke="#d97706" stroke-width="5"/>
+              <circle cx="110" cy="115" r="3.5" fill="#451a03"/>
+              <circle cx="210" cy="180" r="4.5" fill="#451a03"/>
+            </g>
+
+            <!-- GF Crust -->
+            <g id="svg-crust-gf" class="pizza-layer">
+              <circle cx="160" cy="150" r="58" fill="#fef08a" stroke="#d97706" stroke-width="4"/>
+              <circle cx="130" cy="120" r="3" fill="#451a03"/>
+              <circle cx="190" cy="170" r="3.5" fill="#451a03"/>
+            </g>
+
+            <!-- Pizza Layers: Sauces -->
+            <!-- Pesto Sauce -->
+            <g id="svg-sauce-pesto" class="pizza-layer">
+              <path d="M 105,95 L 105,205 M 160,90 L 160,210 M 215,95 L 215,205" stroke="#b91c1c" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+              <path d="M 132,100 L 132,200 M 188,100 L 188,200" stroke="#166534" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+            </g>
+
+            <!-- Classic Red Sauce -->
+            <g id="svg-sauce-classic" class="pizza-layer">
+              <circle cx="160" cy="150" r="66" fill="#b91c1c" opacity="0.85"/>
+              <!-- Melted cheese patches -->
+              <ellipse cx="140" cy="140" rx="14" ry="8" fill="#fef08a" opacity="0.9"/>
+              <circle cx="180" cy="160" r="10" fill="#fef08a" opacity="0.9"/>
+              <circle cx="145" cy="175" r="12" fill="#fef08a" opacity="0.9"/>
+              <circle cx="180" cy="125" r="9" fill="#fef08a" opacity="0.9"/>
+            </g>
+
+            <!-- White Sauce -->
+            <g id="svg-sauce-white" class="pizza-layer">
+              <circle cx="160" cy="150" r="68" fill="#fef3c7" opacity="0.8"/>
+              <!-- Ricotta cheese dollops -->
+              <circle cx="135" cy="125" r="9" fill="#ffffff" filter="blur(1.5px)"/>
+              <circle cx="185" cy="165" r="11" fill="#ffffff" filter="blur(1.5px)"/>
+              <circle cx="130" cy="170" r="8" fill="#ffffff" filter="blur(1.5px)"/>
+              <circle cx="180" cy="120" r="10" fill="#ffffff" filter="blur(1.5px)"/>
+            </g>
+
+            <!-- Pizza Layers: Toppings -->
+            <!-- Pepperoni -->
+            <g id="svg-topping-pepperoni" class="pizza-layer">
+              <circle cx="130" cy="120" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="180" cy="115" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="140" cy="155" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="185" cy="150" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="160" cy="135" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="160" cy="175" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="115" cy="145" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+              <circle cx="205" cy="135" r="6.5" fill="#991b1b" stroke="#7f1d1d" stroke-width="1.5"/>
+            </g>
+
+            <!-- Peppadews -->
+            <g id="svg-topping-peppadew" class="pizza-layer">
+              <circle cx="120" cy="115" r="5" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+              <circle cx="150" cy="105" r="5" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+              <circle cx="200" cy="125" r="5" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+              <circle cx="170" cy="175" r="5" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+              <circle cx="130" cy="180" r="5" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+              <circle cx="160" cy="148" r="5" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+            </g>
+
+            <!-- Hot Honey Swirl -->
+            <g id="svg-topping-honey" class="pizza-layer">
+              <path d="M 125,125 Q 160,95 195,125 T 195,185 T 125,165 Z" fill="none" stroke="#d97706" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+              <circle cx="150" cy="130" r="3.2" fill="#d97706"/>
+              <circle cx="170" cy="160" r="2.8" fill="#d97706"/>
+            </g>
+          </svg>
+
+          <!-- Label states inside wood block -->
+          <div style="margin-top: 24px;">
+            <span class="page-hero-badge" id="pz-tag-display">SIGNATURE BAKE</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin-bottom: 6px;" id="pz-title-display">Grandma Pizza Pie</h3>
+            <p style="font-family: var(--font-mono); font-size: 1.4rem; color: var(--gold); font-weight: 700;" id="pz-price-display">$20.00</p>
+          </div>
+        </div>
+
+        <!-- Right: Pizza Controls -->
+        <div class="controls-card">
+          <div>
+            <div class="control-group">
+              <label for="pz-crust" class="control-label">1. Choose Pizza Crust</label>
+              <select id="pz-crust">
+                <option value="grandma" selected>Square Thin Grandma Crust ($20.00)</option>
+                <option value="nystyle">18" Large Round NY-Style ($18.00)</option>
+                <option value="gf">10" Personal Gluten-Friendly ($14.00)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="pz-sauce" class="control-label">2. Select Sauce Base</label>
+              <select id="pz-sauce">
+                <option value="pesto" selected>Grandma Pesto &amp; Red Sauce Strips (+$2.00)</option>
+                <option value="classic">Old World Red Tomato Sauce (+$0.00)</option>
+                <option value="white">White Garlic Ricotta Cheese (+$1.50)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="pz-toppings" class="control-label">3. Select Premium Toppings</label>
+              <select id="pz-toppings">
+                <option value="pepperoni" selected>Cup-and-Char Pepperoni (+$2.00)</option>
+                <option value="peppadew">Sweet Peppadew Peppers (+$1.50)</option>
+                <option value="honey">Spicy Hot Honey Drizzle (+$1.00)</option>
+                <option value="none">Classic Cheese Only (+$0.00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; border-top: 1px solid var(--border); padding-top: 24px;">
+            <div style="font-size: 2rem; margin-bottom: 8px;">🍕</div>
+            <h4 style="font-family: var(--font-serif); color: var(--gold); font-size: 1.25rem; margin-bottom: 6px;">Your Order Details</h4>
+            <p id="pz-desc-display" style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">Our signature pizza made on square-cut thin Grandma crust, striped with Grandma pesto sauce and loaded with premium pepperoni.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Educational Content Section -->
+      <section class="phase2-expanded-content" aria-labelledby="phase2-genodspizzapizzahtml">
+        <span class="page-hero-badge">Plan with confidence</span>
+        <h2 id="phase2-genodspizzapizzahtml">Design for the perfect bake</h2>
+        <p>A great Jersey Shore style pizza is built on ratios. The balance between sauce moisture, cheese thickness, and dough strength determines whether the slice retains its signature boardwalk fold. Consider these aspects when customizing your pie.</p>
+        
+        <h3>Baking tips</h3>
+        <ul>
+          <li><strong>Crust thickness</strong>: Choose square thin Grandma for a crispier, denser chew, or Large NY-Style for foldable slices.</li>
+          <li><strong>Sauce weights</strong>: Pesto strips and ricotta bases have less water than traditional tomato sauce, allowing for a crisper crust.</li>
+          <li><strong>Topping combinations</strong>: Sweet peppadews pair beautifully with pepperoni and hot honey to create sweet-heat bakes.</li>
+        </ul>
+        <p>This customizer is an interactive guide to pizza recipes and sizing. It is designed to demonstrate crust, sauce, and topping combinations, not to place orders. Confirm menu items, pricing, hours, and availability directly with Geno D's Pizza at The Market at 7th Street.</p>
+      </section>
     </div>
+  </main>
 
-  </div>
-</section>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-logo">Geno D's Pizza</p>
+      <p class="footer-addr">224 E 7th St &bull; The Market at 7th Street &bull; Charlotte, NC 28202 &bull; <a href="tel:+19802966140">(980) 296-6140</a></p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="menu.html">Menu</a> &bull;
+        <a href="pizza.html">Pizza Builder</a> &bull;
+        <a href="story.html">Our Story</a> &bull;
+        <a href="uptown.html">Uptown</a> &bull;
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
 
-
-</main>
-<footer>
-  <p>Geno D's Pizza · The Market at 7th St · 224 E 7th St · Charlotte, NC 28202 · (980) 296-6140</p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-
-<script>
-  const crustData = {
-    grandma: { tag: "JERSEY SHORE SIGNATURE", name: "Grandma Pizza Pie", basePrice: 20.00, label: "square-cut thin Sicilian style crispy dough" },
-    nystyle: { tag: "CLASSIC ROUND PIE", name: "NY-Style Large Pie", basePrice: 18.00, label: "hand-tossed large 18-inch NY-style thin round crust" },
-    gf: { tag: "GLUTEN-FRIENDLY CRUST", name: "Personal GF Pizza", basePrice: 14.00, label: "crispy 10-inch personal gluten-free crust" }
-  };
-
-  const sauceData = {
-    pesto: { name: "Pesto", label: "striped with Grandma pesto sauce and fresh mozzarella", charge: 2.00 },
-    classic: { name: "Classic Red", label: "spread with Old World tomato sauce and shredded whole milk mozzarella", charge: 0.00 },
-    white: { name: "White Garlic", label: "slathered with white garlic ricotta cheese, dried oregano, and mozzarella", charge: 1.50 }
-  };
-
-  const toppingsData = {
-    pepperoni: { name: "Pepperoni", label: "and loaded with premium crispy cup-and-char pepperoni slices", charge: 2.00 },
-    peppadew: { name: "Peppadew", label: "and sprinkled with tangy sweet South African Peppadew peppers", charge: 1.50 },
-    honey: { name: "Hot Honey", label: "and drizzled with fiery, organic hot honey syrup", charge: 1.00 },
-    none: { name: "Cheese", label: "with standard cheese finish", charge: 0.00 }
-  };
-
-  function updatePizza() {
-    const crustKey = document.getElementById('pz-crust').value;
-    const sauceKey = document.getElementById('pz-sauce').value;
-    const toppingsKey = document.getElementById('pz-toppings').value;
-
-    const crust = crustData[crustKey];
-    const sauce = sauceData[sauceKey];
-    const toppings = toppingsData[toppingsKey];
-
-    const totalPrice = crust.basePrice + sauce.charge + toppings.charge;
-
-    document.getElementById('pz-tag-display').innerText = crust.tag;
-    
-    let titleName = toppingsKey === "none" ? `${crust.name}` : `${toppings.name} ${crust.name}`;
-    if (toppingsKey === "honey") {
-      titleName = `Hot Honey ${crust.name}`;
-    }
-    document.getElementById('pz-title-display').innerText = titleName;
-    document.getElementById('pz-price-display').innerText = `$${totalPrice.toFixed(2)}`;
-
-    let desc = `Our signature pizza made on ${crust.label}, ${sauce.label} ${toppings.label}.`;
-    
-    document.getElementById('pz-desc-display').innerText = desc;
-  }
-
-  // Initial trigger
-  window.addEventListener('load', () => {
-    updatePizza();
-  });
-</script>
-<script src="../site-core.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
