@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/house-of-leng/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>House of Leng — Chinese, Szechuan & Japanese Cuisine | Charlotte, NC</title>
-  <meta name="description" content="House of Leng: Family-owned Chinese restaurant serving Charlotte's University City area for 22+ years. Szechuan, Japanese cuisine, sushi, hibachi. Takeout & delivery.">
-  <link rel="stylesheet" href="../site-core.css">
+  <title>House of Leng — Chinese, Szechuan &amp; Japanese Cuisine | Charlotte, NC</title>
+  <meta name="description" content="House of Leng: Family-owned Chinese restaurant serving Charlotte's University City area for 22+ years. Szechuan, Japanese cuisine, sushi, hibachi. Takeout &amp; delivery.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <div class="disclosure-banner">Unofficial concept presentation — not operated by the restaurant</div>
 
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">House of <span>Leng</span></a>
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
         <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
@@ -23,7 +25,8 @@
           <li><a href="story.html">Our Story</a></li>
           <li><a href="catering.html">Catering</a></li>
           <li><a href="contact.html">Contact</a></li>
-        <li><a href="flavor-guide.html">Flavor Guide</a></li></ul>
+          <li><a href="flavor-guide.html">Flavor Guide</a></li>
+        </ul>
       </nav>
       <a href="tel:+17045105081" class="phone-cta">(704) 510-5081</a>
     </div>
@@ -96,7 +99,7 @@
             </div>
           </article>
         </div>
-        <div class="text-center mt-xl">
+        <div class="text-center" style="margin-top: 3rem;">
           <a href="menu.html" class="btn btn-primary btn-lg">Browse Full Menu</a>
         </div>
       </div>
@@ -104,7 +107,7 @@
 
     <section class="section section-dark">
       <div class="container">
-        <h2 class="section-title light">House of Leng by the Numbers</h2>
+        <h2 class="section-title">House of Leng by the Numbers</h2>
         <div class="stats-grid">
           <div class="text-center">
             <span class="stat-number" style="color:var(--color-gold-300)">22+</span>
@@ -131,22 +134,22 @@
         <h2 class="section-title">Hours &amp; Location</h2>
         <div class="quick-info">
           <div class="quick-info-item">
-            <span class="quick-info-icon">🕐</span>
+            <span class="quick-info-icon" aria-hidden="true">🕐</span>
             <span class="quick-info-label">Hours</span>
             <span class="quick-info-value">Mon–Fri: 11am–9pm<br>Sat: 12pm–9pm<br>Sunday: Closed</span>
           </div>
           <div class="quick-info-item">
-            <span class="quick-info-icon">📍</span>
+            <span class="quick-info-icon" aria-hidden="true">📍</span>
             <span class="quick-info-label">Address</span>
             <span class="quick-info-value">2712 W Mallard Creek Church Rd #430<br>Charlotte, NC 28262</span>
           </div>
           <div class="quick-info-item">
-            <span class="quick-info-icon">📞</span>
+            <span class="quick-info-icon" aria-hidden="true">📞</span>
             <span class="quick-info-label">Phone</span>
             <span class="quick-info-value"><a href="tel:+17045105081">(704) 510-5081</a></span>
           </div>
           <div class="quick-info-item">
-            <span class="quick-info-icon">🚚</span>
+            <span class="quick-info-icon" aria-hidden="true">🚚</span>
             <span class="quick-info-label">Delivery</span>
             <span class="quick-info-value">Uber Eats &amp; DoorDash<br>Takeout: call ahead</span>
           </div>
@@ -186,16 +189,16 @@
         <div>
           <h4 class="footer-heading">Hours</h4>
           <div class="footer-links">
-            <span style="display:block;padding:var(--space-xs) 0;font-size:.85rem;">Mon–Fri: 11am–9pm</span>
-            <span style="display:block;padding:var(--space-xs) 0;font-size:.85rem;">Sat: 12pm–9pm</span>
-            <span style="display:block;padding:var(--space-xs) 0;font-size:.85rem;">Sun: Closed</span>
+            <span style="display:block;padding:4px 0;font-size:.85rem;">Mon–Fri: 11am–9pm</span>
+            <span style="display:block;padding:4px 0;font-size:.85rem;">Sat: 12pm–9pm</span>
+            <span style="display:block;padding:4px 0;font-size:.85rem;">Sun: Closed</span>
           </div>
         </div>
         <div>
           <h4 class="footer-heading">Contact</h4>
           <div class="footer-links">
-            <span style="display:block;padding:var(--space-xs) 0;font-size:.85rem;">(704) 510-5081</span>
-            <span style="display:block;padding:var(--space-xs) 0;font-size:.85rem;">2712 W Mallard Creek<br>Church Rd #430<br>Charlotte, NC 28262</span>
+            <span style="display:block;padding:4px 0;font-size:.85rem;">(704) 510-5081</span>
+            <span style="display:block;padding:4px 0;font-size:.85rem;">2712 W Mallard Creek<br>Church Rd #430<br>Charlotte, NC 28262</span>
           </div>
         </div>
       </div>
@@ -205,6 +208,6 @@
     </div>
   </footer>
 
-  <script src="../site-core.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
