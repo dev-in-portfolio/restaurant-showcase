@@ -1,0 +1,223 @@
+/* 
+   Lula Bánh Mì + Bakery - Custom Stylesheet
+   Toasted Almond & Tangerine Brand System
+*/
+
+:root {
+  --brick: #f97316;              /* Tangerine Orange primary */
+  --cream: #0c0d12;              /* Deep steel blue-black background */
+  --matcha: #22c55e;             /* Mint leaf green */
+  --gold: #fbbf24;               /* Baker's Gold */
+  --charcoal: #fafaf9;           /* Flour Cream text */
+  --macaron: #e879f9;            /* Macaron Pink secondary */
+  --surface-card: rgba(23, 27, 36, 0.75); /* Steel blue boxcar glass */
+  --border-light: rgba(249, 115, 22, 0.18);
+  --text-muted: #94a3b8;         /* Slate flour grey */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --radius-lg: 12px;
+  --transition: 0.25s ease;
+  --accent-glow: rgba(249, 115, 22, 0.15);
+}
+
+body {
+  background-color: var(--cream);
+  background-image: radial-gradient(circle at top, #161e2b 0%, #0c0d12 75%);
+  color: var(--charcoal);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--brick);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--gold);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', serif;
+  color: var(--brick);
+}
+
+.site-header {
+  background: rgba(12, 13, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  padding: 1.1rem 0;
+}
+.site-header .logo {
+  color: var(--gold) !important;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.site-header .nav-links a {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active {
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--charcoal);
+}
+
+/* Hero override */
+.hero {
+  background: transparent !important;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--charcoal);
+  padding: clamp(4rem, 8vw, 8rem) 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  color: #ffffff;
+}
+.hero h1 span {
+  color: var(--brick);
+}
+.hero-cta .btn {
+  background: var(--brick) !important;
+  color: var(--cream) !important;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.hero-cta .btn:hover {
+  background: var(--gold) !important;
+  box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+}
+.hero-cta .btn-outline {
+  background: transparent !important;
+  color: var(--charcoal) !important;
+  border: 2px solid var(--border-light) !important;
+}
+.hero-cta .btn-outline:hover {
+  background: var(--brick) !important;
+  border-color: var(--brick) !important;
+  color: var(--cream) !important;
+}
+
+.hero-special {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+/* Sections */
+section {
+  padding: 5rem 24px;
+}
+section.alt {
+  background: rgba(23, 27, 36, 0.3);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Cards & Grid Items */
+.card, .cat-card, .menu-item, .bakery-item, .event-card, .contact-card {
+  background: var(--surface-card) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 2rem;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.card:hover, .cat-card:hover, .menu-item:hover, .bakery-item:hover, .event-card:hover, .contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brick) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+.cat-card { border-bottom: 4px solid var(--brick) !important; }
+.menu-item { border-left: 4px solid var(--macaron) !important; }
+
+.cat-card h3, .menu-item h4, .bakery-item h4 {
+  color: #ffffff !important;
+  font-family: 'Fraunces', serif;
+}
+
+.cat-card p, .menu-item p, .bakery-item p {
+  color: var(--text-muted) !important;
+}
+
+.price {
+  color: var(--gold) !important;
+  font-weight: 700;
+}
+
+/* Form and inputs */
+form label {
+  color: var(--brick);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+form input, form select, form textarea {
+  background: rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid var(--border-light) !important;
+  color: var(--charcoal) !important;
+  border-radius: 6px;
+  padding: 10px 14px;
+  outline: none;
+  transition: var(--transition);
+}
+form input:focus, form select:focus, form textarea:focus {
+  border-color: var(--brick) !important;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+form button {
+  background: var(--brick) !important;
+  color: var(--cream) !important;
+  border-radius: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none !important;
+  transition: var(--transition);
+}
+form button:hover {
+  background: var(--gold) !important;
+  box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+}
+
+/* Interactive Flavor Map Classes */
+.flavor-layer {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+.flavor-layer.show {
+  opacity: 1;
+}
+
+/* Footer override */
+footer {
+  background: #080a0d !important;
+  color: var(--text-muted) !important;
+  border-top: 1px solid var(--border-light);
+  padding: 3rem 24px !important;
+}
+footer a {
+  color: var(--brick);
+}
