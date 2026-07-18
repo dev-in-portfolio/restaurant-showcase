@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/the-dive-n/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dive N - Pineville, NC | Contact & Bookings</title>
+  <meta name="description" content="Diner counter hours, map directions, phone number, and griddle pickup details for The Dive N in Pineville, NC.">
+  <title>Contact &amp; Order Pickups | The Dive N</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #ffffff; color: var(--color-pink); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 3px solid var(--color-teal); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Dive N Logo" class="brand-logo">
@@ -31,26 +34,22 @@
         <a href="contact.html" class="active">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Diner Checkers Header -->
-  <div class="checker-border"></div>
+  <div class="checker-border" style="height: 12px; background-image: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px); border-bottom: 1px solid #ddd;"></div>
 
-  <!-- Page Header -->
   <header class="page-header container">
     <h2 class="page-title">Stop by the Counter</h2>
     <p class="page-subtitle">Walk in for quick counter service, or call us ahead to have your griddle orders packaged for pickup.</p>
   </header>
 
-  <!-- Content Sections -->
-  <main class="container">
-
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
       
-      <!-- Hours and Info Card -->
-      <div class="diner-card">
-        <h3 class="menu-category-title">Pineville Diner Details</h3>
+      <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
+        <h3 class="menu-category-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1.5rem;">Pineville Diner Details</h3>
         
         <div style="margin-bottom: 2rem;">
           <h4 style="font-size: 1rem; color: var(--color-teal); text-transform: uppercase; margin-bottom: 0.5rem;">Address</h4>
@@ -78,9 +77,8 @@
         </div>
       </div>
 
-      <!-- Quick Message Form Card -->
-      <div class="diner-card">
-        <h3 class="menu-category-title">Send a Greeting</h3>
+      <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
+        <h3 class="menu-category-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1.5rem;">Send a Greeting</h3>
         <form id="contact-form">
           <div style="display: flex; flex-direction: column; gap: 1.25rem;">
             <div class="form-group">
@@ -98,23 +96,21 @@
               <textarea id="contact-msg" required placeholder="Write a message to our diner staff..." style="min-height: 100px;"></textarea>
             </div>
 
-            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Message</button>
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem; border-radius: 6px; background-color: var(--color-teal); color: white; font-weight: 800; border: none; cursor: pointer;">Send Message</button>
           </div>
         </form>
 
-        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+        <div class="success-panel" id="contact-success" style="display: none; padding: 2rem 0; text-align: center;">
           <div class="success-icon">✉</div>
           <h3 class="success-title">Message Sent!</h3>
           <p class="success-msg">Thank you. We will read your message and reply via phone if necessary.</p>
         </div>
       </div>
-
     </div>
 
-    <!-- Pickup Request Section -->
     <section id="reserve-table" class="form-wrapper">
-      <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1.5rem;">Request Griddle Pickup</h2>
+      <div class="form-container" style="border: var(--card-border); border-radius: 12px; background: var(--color-bg-card); padding: 32px; box-shadow: var(--shadow-retro);">
+        <h2 class="section-title" style="margin-bottom: 1.5rem; color: var(--color-teal-dark);">Request Griddle Pickup</h2>
         
         <form id="reservation-form">
           <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details below to place a griddle pickup order. We do not support reservations.</p>
@@ -131,12 +127,12 @@
 
             <div class="form-group">
               <label for="pickup-time">Pickup Time</label>
-              <select id="pickup-time" required>
-                <option value="08:00">8:00 AM</option>
-                <option value="09:30">9:30 AM</option>
-                <option value="11:00">11:00 AM</option>
-                <option value="12:30">12:30 PM</option>
-                <option value="14:00">2:00 PM</option>
+              <select id="pickup-time" required style="cursor: pointer;">
+                <option value="8:00 AM">8:00 AM</option>
+                <option value="9:30 AM">9:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
               </select>
             </div>
 
@@ -145,52 +141,25 @@
               <textarea id="items" required placeholder="What griddle items can we prepare for you?"></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Order Request</button>
+            <button type="submit" class="submit-btn" style="border-radius: 6px; background-color: var(--color-teal); color: white; font-weight: 800;">Send Order Request</button>
           </div>
         </form>
 
-        <div class="success-panel" id="success-panel">
+        <div class="success-panel" id="success-panel" style="display: none; padding: 2rem 0; text-align: center;">
           <div class="success-icon">🥞</div>
           <h3 class="success-title">Order Curated!</h3>
           <p class="success-msg" id="success-message">Thank you. We have received your pickup request. See you at the counter!</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="copyright-footer" style="margin-top: 5rem; border-top: var(--card-border); padding-top: 3rem;">
       <p>© 2026 The Dive N. Serving Pineville since 1978.</p>
     </div>
   </footer>
 
-  <script>
-    // Handle message submissions
-    const contactForm = document.getElementById('contact-form');
-    const contactSuccess = document.getElementById('contact-success');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      contactForm.style.display = 'none';
-      contactSuccess.style.display = 'block';
-    });
-
-    // Handle order submissions
-    const form = document.getElementById('reservation-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const time = document.getElementById('pickup-time').value;
-
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Welcome to the family, <strong>${name}</strong>! We have received your request for pickup at <strong>${time}</strong>. If there are any delays, we will contact you at <strong>${phone}</strong>. Grab it hot at the counter!`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

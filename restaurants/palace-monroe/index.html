@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/palace-monroe/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Palace Restaurant - Monroe, NC | Home</title>
+  <meta name="description" content="The Palace Restaurant in Monroe, NC. Southern family kitchen serving ribeye steak, beef tips, baked spaghetti, and breakfast since 1984.">
+  <title>The Palace Restaurant - Monroe Diner | Home</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Absolute Positioning for Diner Platter Food Items */
-    #food-sunny { top: 30px; left: 40px; }
-    #food-scrambled { top: 30px; left: 45px; }
-    
-    #food-bacon { top: 90px; left: 80px; }
-    #food-sausage { top: 100px; left: 80px; }
-    #food-ham { top: 95px; left: 75px; }
-    
-    #food-hashbrowns { bottom: 40px; left: 40px; }
-    #food-grits { bottom: 40px; left: 45px; }
-    
-    #food-pancakes { bottom: 80px; right: 35px; }
-    #food-toast { bottom: 70px; right: 40px; }
-  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #0d0406; color: var(--color-cream); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">P</div>
         <h1 class="brand-name">
           The Palace
-          <span>Diner & Restaurant</span>
+          <span>Diner &amp; Restaurant</span>
         </h1>
       </div>
 
@@ -46,131 +34,72 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Hero Banner Section -->
   <header class="hero-section" style="background-image: url('hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="hero-frame">
-        <span class="hero-badge">Monroe's Favorite Retro Diner</span>
-        <h2 class="hero-title">The Palace Restaurant</h2>
-        <p class="hero-desc">"Savor the timeless comfort of traditional breakfast plates, fluffy buttermilk pancakes, seared hamburger steaks, and classic diner bakes."</p>
+      <div class="hero-frame" style="border: 1px solid var(--color-border); border-radius: 16px;">
+        <span class="hero-subtitle">Monroe Diner Landmark Since 1984</span>
+        <h2 class="hero-title" style="color: var(--color-cream); font-size: clamp(2rem, 5vw, 3.5rem);">Southern Hospitality &amp; Homestyle Cooking</h2>
+        <p class="hero-desc">Generous plates of ribeye steaks, seared beef tips, baked cheesy spaghetti, scratch buttermilk pancakes, and golden hashbrowns.</p>
+        <a class="btn-primary" href="menu.html" style="display: inline-block; margin-top: 1.5rem; background-color: var(--color-red); color: #ffffff; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: var(--transition-fast);">Browse Palace Menu</a>
       </div>
     </div>
   </header>
 
-  <!-- Operating Notice -->
-  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
-    <div class="notice-banner">
-      <span>📞 Takeout Register Counter: (704) 283-1123. Cozy Dining Booths at 1000 Lancaster Ave.</span>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">Home Cooking on Lancaster Ave</h2>
+  <main id="main" class="container">
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+      <h2 class="section-title">A Monroe Tradition</h2>
       <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
-        Welcome to The Palace Restaurant in Monroe, NC. For decades, our kitchen on Lancaster Avenue has served generous portions of classic diner breakfasts, lunch sandwiches, and hearty dinner bakes. Every egg is cracked fresh, our gravies are made from pan-drippings, and our pancakes are whipped from butter batter.
+        For over four decades, The Palace Restaurant has been Monroe's go-to dining room for honest, hearty American comfort meals. We prepare everything with family care—whether it's our breakfast hashbrowns seared crisp on the flat-top, or our slow-simmered beef tips under savory brown gravy.
       </p>
       <a href="about.html" style="color: var(--color-red); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-red); padding-bottom: 4px; transition: var(--transition-fast);">
-        Read Our Diner History ➔
+        Read Our Story &rarr;
       </a>
     </section>
 
-    <!-- Interactive Platter Customizer Panel -->
-    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Palace Breakfast Builder</h2>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Custom-build your morning diner platter. Select your egg style, choose your meat, select a side, and choose your bread.</p>
-      
-      <div class="mixer-container">
+    <section style="margin-bottom: 6.5rem;">
+      <h2 class="section-title">Palace Diner Specialties</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem;">
         
-        <!-- Left Side: Interactive Platter -->
-        <div class="plate-canvas">
-          <div class="plate-wireframe">
-            <div class="plate-gold-rim"></div>
-            <!-- Food Graphics (clean text + emoji representations for fast rendering) -->
-            <div class="plate-food-item" id="food-sunny">🍳 Sunny Eggs</div>
-            <div class="plate-food-item" id="food-scrambled">🍳 Scrambled</div>
-            
-            <div class="plate-food-item" id="food-bacon">🥓 Thick Bacon</div>
-            <div class="plate-food-item" id="food-sausage">🥩 Sausage Links</div>
-            <div class="plate-food-item" id="food-ham">🥩 Cured Ham</div>
-            
-            <div class="plate-food-item" id="food-hashbrowns">🥔 Hashbrowns</div>
-            <div class="plate-food-item" id="food-grits">🥣 Creamy Grits</div>
-            
-            <div class="plate-food-item" id="food-pancakes">🥞 Pancakes</div>
-            <div class="plate-food-item" id="food-toast">🍞 Butter Toast</div>
+        <div class="premium-card" style="padding: 2.5rem; border-radius: 16px;">
+          <span style="font-size: 1.8rem; display: block; margin-bottom: 1rem;">🥩</span>
+          <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="dish-name" style="font-size: 1.3rem; font-weight: 800; color: #ffffff;">Palace Beef Tips</span>
+            <span class="dish-price" style="color: var(--color-cream); font-weight: 700;">$14.95</span>
           </div>
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--color-text-muted);">
+            Tender, juicy marinated beef tip chunks slow-simmered with onions and mushrooms in deep, savory brown gravy over rice or mashed potatoes.
+          </p>
         </div>
 
-        <!-- Right Side: Controls -->
-        <div class="bowl-controls">
-          <div class="control-group">
-            <label>1. Select Eggs</label>
-            <div class="option-grid" id="egg-options">
-              <button class="option-btn active" onclick="setEgg('sunny', 'Sunny-Side Up Eggs')">Sunny-Side Up</button>
-              <button class="option-btn" onclick="setEgg('scrambled', 'Scrambled Eggs')">Scrambled</button>
-            </div>
+        <div class="premium-card" style="padding: 2.5rem; border-radius: 16px;">
+          <span style="font-size: 1.8rem; display: block; margin-bottom: 1rem;">🍝</span>
+          <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="dish-name" style="font-size: 1.3rem; font-weight: 800; color: #ffffff;">Baked Spaghetti</span>
+            <span class="dish-price" style="color: var(--color-cream); font-weight: 700;">$12.50</span>
           </div>
-
-          <div class="control-group">
-            <label>2. Select Meat</label>
-            <div class="option-grid" id="meat-options">
-              <button class="option-btn active" onclick="setMeat('bacon', 2.50, 'Thick-Cut Bacon')">Bacon (+$2.50)</button>
-              <button class="option-btn" onclick="setMeat('sausage', 2.50, 'Sausage Links')">Sausage (+$2.50)</button>
-              <button class="option-btn" onclick="setMeat('ham', 3.00, 'Sugar-Cured Ham')">Ham (+$3.00)</button>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label>3. Select Side</label>
-            <div class="option-grid" id="side-options">
-              <button class="option-btn active" onclick="setSide('hashbrowns', 1.50, 'Crispy Hashbrowns')">Hashbrowns (+$1.50)</button>
-              <button class="option-btn" onclick="setSide('grits', 1.50, 'Southern Grits')">Southern Grits (+$1.50)</button>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label>4. Select Bread</label>
-            <div class="option-grid" id="bread-options">
-              <button class="option-btn active" onclick="setBread('pancakes', 2.00, 'Buttermilk Pancakes')">Pancakes (+$2.00)</button>
-              <button class="option-btn" onclick="setBread('toast', 1.00, 'Buttered Toast')">Toast (+$1.00)</button>
-            </div>
-          </div>
-
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--color-text-muted);">
+            A rich pile of thin spaghetti tossed in our seasoned beef meat sauce, topped with a thick layer of melted mozzarella and provolone.
+          </p>
         </div>
 
-      </div>
-
-      <div class="builder-display" style="margin-top: 3.5rem;">
-        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Diner Morning Selection</span>
-        <h4 class="builder-display-title" id="display-plate-name">Sunny-Side Up Eggs & Thick-Cut Bacon</h4>
-        <p id="display-plate-sides" style="color: var(--color-red); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Crispy Hashbrowns, Buttermilk Pancakes</p>
-        <div class="builder-display-price" id="display-plate-price">$12.00</div>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-plate-desc">Two fresh Sunny-Side Up Eggs seared in butter, served with Thick-Cut Bacon, golden Crispy Hashbrowns, and sweet Buttermilk Pancakes.</p>
       </div>
     </section>
 
-    <!-- Quick Call to Action -->
-    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Daily Specials Board</h2>
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem; padding: 40px; border-radius: 16px;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-red);">Interactive Platter Planner</h2>
       <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        From slow-cooked pot roast and hamburger steaks to golden seafood baskets. Click below to view daily specials.
+        Planning a breakfast gathering or looking to order takeout? Use our interactive platter customizer to visualize your comfort combinations.
       </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
-        View Specials Board
+      <a href="comfort-plate.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem; text-decoration: none; border-radius: 8px;">
+        Open Comfort Customizer
       </a>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -183,7 +112,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 283-1123<br>American Diner & Family Kitchen | Dine-In</p>
+        <p>Phone: (704) 283-1123<br>American Diner &amp; Family Kitchen | Dine-In</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -191,98 +120,6 @@
     </div>
   </footer>
 
-  <script>
-    // State variables
-    let selectedEgg = { key: 'sunny', name: 'Sunny-Side Up Eggs' };
-    let selectedMeat = { key: 'bacon', price: 2.50, name: 'Thick-Cut Bacon' };
-    let selectedSide = { key: 'hashbrowns', price: 1.50, name: 'Crispy Hashbrowns' };
-    let selectedBread = { key: 'pancakes', price: 2.00, name: 'Buttermilk Pancakes' };
-
-    function setEgg(key, name) {
-      const buttons = document.getElementById('egg-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      selectedEgg = { key, name };
-      updateDisplay();
-    }
-
-    function setMeat(key, price, name) {
-      const buttons = document.getElementById('meat-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      selectedMeat = { key, price, name };
-      updateDisplay();
-    }
-
-    function setSide(key, price, name) {
-      const buttons = document.getElementById('side-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      selectedSide = { key, price, name };
-      updateDisplay();
-    }
-
-    function setBread(key, price, name) {
-      const buttons = document.getElementById('bread-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      selectedBread = { key, price, name };
-      updateDisplay();
-    }
-
-    function updateDisplay() {
-      // Calculate Total Cost
-      const baseFee = 6.00;
-      const totalPrice = (baseFee + selectedMeat.price + selectedSide.price + selectedBread.price).toFixed(2);
-      document.getElementById('display-plate-price').innerText = `$${totalPrice}`;
-
-      document.getElementById('display-plate-name').innerText = `${selectedEgg.name} & ${selectedMeat.name}`;
-      document.getElementById('display-plate-sides').innerText = `${selectedSide.name}, ${selectedBread.name}`;
-
-      // Pair description
-      document.getElementById('display-plate-desc').innerText = `Two fresh ${selectedEgg.name} seared in butter, served with ${selectedMeat.name}, golden ${selectedSide.name}, and sweet ${selectedBread.name}.`;
-
-      // Animate graphics on virtual plate
-      const allFoodItems = document.querySelectorAll('.plate-food-item');
-      allFoodItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.5)';
-      });
-
-      // Show selected items
-      const eggEl = document.getElementById(`food-${selectedEgg.key}`);
-      if (eggEl) {
-        eggEl.style.opacity = '1';
-        eggEl.style.transform = 'scale(1)';
-      }
-
-      const meatEl = document.getElementById(`food-${selectedMeat.key}`);
-      if (meatEl) {
-        meatEl.style.opacity = '1';
-        meatEl.style.transform = 'scale(1)';
-      }
-
-      const sideEl = document.getElementById(`food-${selectedSide.key}`);
-      if (sideEl) {
-        sideEl.style.opacity = '1';
-        sideEl.style.transform = 'scale(1)';
-      }
-
-      const breadEl = document.getElementById(`food-${selectedBread.key}`);
-      if (breadEl) {
-        breadEl.style.opacity = '1';
-        breadEl.style.transform = 'scale(1)';
-      }
-    }
-
-    // Trigger initial show
-    window.addEventListener('load', () => {
-      updateDisplay();
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

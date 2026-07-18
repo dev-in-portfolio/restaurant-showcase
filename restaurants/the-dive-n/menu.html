@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/the-dive-n/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dive N - Pineville, NC | Menu</title>
+  <title>Diner Counter Menu | The Dive N</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #ffffff; color: var(--color-pink); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 3px solid var(--color-teal); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Dive N Logo" class="brand-logo">
@@ -31,108 +33,82 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Diner Checkers Header -->
-  <div class="checker-border"></div>
+  <div class="checker-border" style="height: 12px; background-image: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px); border-bottom: 1px solid #ddd;"></div>
 
-  <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">The Griddle Menu Board</h2>
-    <p class="page-subtitle">Homestyle diner meals cooked hot to order on our flat-top grill. Breakfast served 7:00 AM - 11:00 AM. Lunch served 11:00 AM - 3:00 PM.</p>
+    <h2 class="page-title">Griddle Favorites Menu</h2>
+    <p class="page-subtitle">Sizzling flat-top burgers, seared sandwiches, home-baked biscuits, and cold milkshakes.</p>
   </header>
 
-  <!-- Menu Board Layout -->
-  <main class="container">
-    <div class="menu-grid">
+  <main id="main" class="container">
+    
+    <div class="filter-wrapper" style="margin-bottom: 3rem; text-align: center;">
+      <span style="font-size: 0.8rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-teal-dark); display: block; margin-bottom: 1rem;">Filter by Category</span>
+      <div class="filter" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <button class="on" data-f="all" style="font-family: var(--font-sans); cursor: pointer;">All Items</button>
+        <button data-f="g0" style="font-family: var(--font-sans); cursor: pointer;">Breakfast</button>
+        <button data-f="g1" style="font-family: var(--font-sans); cursor: pointer;">Melts &amp; Burgers</button>
+        <button data-f="g2" style="font-family: var(--font-sans); cursor: pointer;">Drinks &amp; Sweets</button>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
       
-      <!-- Breakfast Board -->
-      <div class="diner-card">
-        <h3 class="menu-category-title">Breakfast Board (7am - 11am)</h3>
-        
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">The Junkyard Plate<span class="menu-item-badge">Favorite</span></span>
-            <span class="menu-item-price">$14.00</span>
-          </div>
-          <p class="menu-item-desc">A legendary diner mashup: a generous plate of crispy seared hashbrowns topped with scrambled eggs, pork sausage crumbles, homestyle beef chili, and melted cheddar cheese.</p>
+      <!-- Breakfast -->
+      <article class="diner-card" data-g="g0" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🥞</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Buttermilk Pancake Stack</h3>
+          <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$6.50</span>
         </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">Three fluffy buttermilk pancakes served with real whipped butter and a side of maple syrup.</p>
+      </article>
 
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Golden Pancake Stack</span>
-            <span class="menu-item-price">$9.00</span>
-          </div>
-          <p class="menu-item-desc">Three fluffy buttermilk pancakes grilled golden, served with whipped butter and warm maple syrup.</p>
+      <article class="diner-card" data-g="g0" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🥯</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Bacon Egg Cheese Biscuit</h3>
+          <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$4.25</span>
         </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">Freshly baked Southern buttermilk biscuit stuffed with scrambled egg, crispy bacon, and cheddar.</p>
+      </article>
 
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Bacon, Egg & Cheese Biscuit</span>
-            <span class="menu-item-price">$6.00</span>
-          </div>
-          <p class="menu-item-desc">A flaky, warm buttermilk biscuit stuffed with crispy applewood bacon, scrambled egg, and melted cheddar cheese.</p>
+      <!-- Melts & Burgers -->
+      <article class="diner-card" data-g="g1" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🍔</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Double Cheeseburger</h3>
+          <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$9.85</span>
         </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">Two hand-pressed beef patties griddled on the flat-top, double cheese, lettuce, and tomato on a sesame bun.</p>
+      </article>
 
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">The Diner Omelet</span>
-            <span class="menu-item-price">$10.50</span>
-          </div>
-          <p class="menu-item-desc">Three-egg omelet loaded with diced ham, bell peppers, onions, and cheddar cheese. Served with a side of seared hashbrowns.</p>
+      <article class="diner-card" data-g="g1" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🍞</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">The Famous Patty Melt</h3>
+          <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$9.50</span>
         </div>
-      </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">Hand-pressed griddled beef patty, melted Swiss, and sweet caramelized onions pressed in butter-toasted rye.</p>
+      </article>
 
-      <!-- Lunch Board -->
-      <div class="diner-card">
-        <h3 class="menu-category-title">Lunch Board (11am - 3pm)</h3>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Classic Patty Melt</span>
-            <span class="menu-item-price">$10.50</span>
-          </div>
-          <p class="menu-item-desc">Fresh ground beef patty grilled flat on our griddle, melted Swiss cheese, sweet caramelized onions, served hot between buttery grilled rye bread slices.</p>
+      <!-- Drinks & Sweets -->
+      <article class="diner-card" data-g="g2" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🥤</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Diner Milkshake (16oz)</h3>
+          <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$5.50</span>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Pimento Cheeseburger<span class="menu-item-badge">Southern</span></span>
-            <span class="menu-item-price">$11.00</span>
-          </div>
-          <p class="menu-item-desc">Our juicy grilled burger patty slathered with our house-made melted Southern pimento cheese, fresh lettuce, and tomato slices on a toasted bun.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Fried Chicken Tender Basket</span>
-            <span class="menu-item-price">$12.00</span>
-          </div>
-          <p class="menu-item-desc">Crispy golden fried white meat chicken tenders, served in a basket with seasoned crinkle fries, Coleslaw, and honey mustard dip.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Hand-Battered Onion Rings</span>
-            <span class="menu-item-price">$4.50</span>
-          </div>
-          <p class="menu-item-desc">Thick-cut sweet white onions, hand-dipped in our seasoned diner batter and fried golden-brown and crispy.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Griddle Hashbrowns</span>
-            <span class="menu-item-price">$3.50</span>
-          </div>
-          <p class="menu-item-desc">Shredded potatoes seared golden and crispy on our flat-top griddle.</p>
-        </div>
-      </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem; font-weight: 500;">Vanilla, chocolate, or strawberry milkshake topped with a mountain of whipped cream and a cherry.</p>
+      </article>
 
     </div>
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -145,7 +121,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 889-4663<br>Walk-Ins & Counter Seating</p>
+        <p>Phone: (704) 889-4663<br>Walk-Ins &amp; Counter Seating</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -153,5 +129,6 @@
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/food-soul/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food For Your Soul CLT - Charlotte, NC | Menu</title>
+  <title>The Southern Comfort Menu | Food For Your Soul CLT</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #0b0808; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">S</div>
@@ -31,97 +33,69 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
-  <header class="page-header container">
-    <h2 class="page-title">Southern Soul Menu</h2>
-    <p class="page-subtitle">Savor home-cooked bowls and bakes. Check our live cooking status below, or browse our cornbread bowl and side dish listings.</p>
-  </header>
+  <main id="main" class="container">
+    <header class="page-header">
+      <h2 class="page-title">The Sunday Dinner Menu</h2>
+      <p class="page-subtitle">Rich Southern comfort entrees, loaded cornbread bowls, scratch-made sides, and delicious banana puddings.</p>
+    </header>
 
-  <!-- Interactive Cooking Status Section -->
-  <main class="container">
-    
-    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h3 class="section-title" style="margin-bottom: 1.5rem;">Live Kitchen Cooking Status</h3>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        Our kitchen prepares fresh cornbread batters daily. Check if our register counter is currently accepting orders.
-      </p>
-      
-      <!-- Display Panel -->
-      <div class="result-card" id="kitchen-display" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(251, 191, 36, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); padding: 3rem;">
-        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block; background: var(--color-gold-dim); color: var(--color-gold); border-color: rgba(251, 191, 36, 0.2);" id="kitchen-status-badge">Checking Stoves...</span>
-        <h4 style="font-size: 2.2rem; color: #ffffff; margin-bottom: 0.5rem;" id="kitchen-title">Kitchen Status</h4>
-        <p style="font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.6;" id="kitchen-desc">Determining if fresh mac is baking based on your local clock...</p>
+    <div class="filter-wrapper" style="margin-bottom: 3rem; text-align: center;">
+      <span style="font-size: 0.8rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 1rem;">Filter by Category</span>
+      <div class="filter" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <button class="on" data-f="all" style="font-family: var(--font-sans); cursor: pointer;">All Dishes</button>
+        <button data-f="g0" style="font-family: var(--font-sans); cursor: pointer;">Entrées</button>
+        <button data-f="g1" style="font-family: var(--font-sans); cursor: pointer;">Loaded Bowls</button>
+        <button data-f="g2" style="font-family: var(--font-sans); cursor: pointer;">Desserts</button>
       </div>
-    </section>
-
-    <!-- Traditional Menu List Grid -->
-    <h3 class="section-title">Signature Soul Bowls & Sides</h3>
-    <div class="menu-grid">
-      
-      <div class="premium-card">
-        <h4 class="menu-category-title">Loaded Cornbread Bowls</h4>
-        
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Sweet Lamb Chop Bowl<span class="menu-item-badge">Gourmet Choice</span></span>
-            <span class="menu-item-price">$17.00</span>
-          </div>
-          <p class="menu-item-desc">A sweet honeycomb cake bowl layered with baked four-cheese Mac & Cheese, candied sweet yams, and collard greens simmered with smoked turkey. Topped with two honey-glazed lamb chops.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Bourbon Salmon Bowl</span>
-            <span class="menu-item-price">$16.00</span>
-          </div>
-          <p class="menu-item-desc">Fresh pan-seared Atlantic salmon fillet glazed in sweet bourbon molasses reduction, layered inside the cornbread bowl over mac, yams, and greens.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Fried Chicken Wing Bowl</span>
-            <span class="menu-item-price">$14.00</span>
-          </div>
-          <p class="menu-item-desc">Three crispy Southern-fried chicken wings seasoned in our house flour dredge, served hot inside the cornbread bowl over candied yams and mac.</p>
-        </div>
-      </div>
-
-      <div class="premium-card">
-        <h4 class="menu-category-title">Southern Sides & Sweets</h4>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Four-Cheese Baked Mac</span>
-            <span class="menu-item-price">$4.00</span>
-          </div>
-          <p class="menu-item-desc">Elbow pasta baked in a rich cream sauce of sharp cheddar, monterey jack, mozzarella, and parmesan cheeses until golden bubbly.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Sweet T's Banana Pudding</span>
-            <span class="menu-item-price">$6.00</span>
-          </div>
-          <p class="menu-item-desc">Homemade sweet vanilla custard layered with vanilla wafers and whipped topping in a cup (note: traditional recipe with no actual bananas!).</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Peach Soul Lemonade</span>
-            <span class="menu-item-price">$3.50</span>
-          </div>
-          <p class="menu-item-desc">Freshly squeezed sweet Southern lemonade flavored with natural Georgia peach purée, served ice cold.</p>
-        </div>
-      </div>
-
     </div>
 
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+      
+      <!-- Entrees -->
+      <article class="premium-card" data-g="g0" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🍗</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Smothered Turkey Wings</h3>
+          <span class="dish-price" style="color: var(--color-gold); font-weight: 700;">$15.50</span>
+        </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Tender slow-roasted turkey wing draped in rich seasoned brown gravy, served over a bed of white rice.</p>
+      </article>
+
+      <article class="premium-card" data-g="g0" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🥩</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Fried Salmon Croquettes</h3>
+          <span class="dish-price" style="color: var(--color-gold); font-weight: 700;">$14.00</span>
+        </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Two crispy pan-fried seasoned salmon croquette patties served with grits or white rice and butter.</p>
+      </article>
+
+      <!-- Loaded Bowls -->
+      <article class="premium-card" data-g="g1" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🍯</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Loaded Cornbread Bowl</h3>
+          <span class="dish-price" style="color: var(--color-gold); font-weight: 700;">$13.00</span>
+        </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">A warm, sweet cornbread bowl filled with creamy macaroni, seasoned collard greens, and topped with chopped tenders.</p>
+      </article>
+
+      <!-- Desserts -->
+      <article class="premium-card" data-g="g2" style="padding: 2rem; border-radius: 12px;">
+        <span style="font-size: 1.5rem;">🍰</span>
+        <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.5rem;">
+          <h3 class="dish-name" style="font-size: 1.2rem;">Famous Banana Pudding</h3>
+          <span class="dish-price" style="color: var(--color-gold); font-weight: 700;">$5.00</span>
+        </div>
+        <p class="dish-desc" style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Creamy vanilla custard layered with ripe banana slices and fresh, sweet Nilla wafer cookies.</p>
+      </article>
+
+    </div>
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -134,7 +108,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Takeout & Pickup Only | City Kitch Kitchen Space<br>Instagram: @foodforyoursoulclt</p>
+        <p>Takeout &amp; Pickup Only | City Kitch Kitchen Space<br>Instagram: @foodforyoursoulclt</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -142,59 +116,6 @@
     </div>
   </footer>
 
-  <script>
-    function updateKitchenTracker() {
-      const now = new Date();
-      const day = now.getDay();
-      const hour = now.getHours();
-      
-      const badge = document.getElementById('kitchen-status-badge');
-      const title = document.getElementById('kitchen-title');
-      const desc = document.getElementById('kitchen-desc');
-
-      // Check closed days: Mon (1) and Tue (2)
-      if (day === 1 || day === 2) {
-        badge.innerText = "KITCHEN CLOSED TODAY";
-        badge.className = "menu-item-badge wait-high";
-        badge.style.background = "rgba(239, 68, 68, 0.1)";
-        badge.style.color = "#ef4444";
-        badge.style.borderColor = "rgba(239, 68, 68, 0.2)";
-        title.innerText = "🍳 Kitchen is Closed";
-        desc.innerText = "We are closed Mondays and Tuesdays prepping fresh cornbread batters and slow-simmering turkey collards. Stoves fire up Wednesday at 12:00 PM!";
-        return;
-      }
-
-      // Check open hours
-      let openHour = 12;
-      let closeHour = 20; // Wed-Thu close at 8pm
-      if (day === 5 || day === 6) { // Fri-Sat close at 9pm (21)
-        closeHour = 21;
-      }
-      if (day === 0) { // Sun close at 5pm (17)
-        closeHour = 17;
-      }
-
-      if (hour < openHour || hour >= closeHour) {
-        badge.innerText = "KITCHEN CLOSED FOR THE NIGHT";
-        badge.className = "menu-item-badge wait-medium";
-        badge.style.background = "rgba(249, 115, 22, 0.1)";
-        badge.style.color = "var(--color-peach)";
-        badge.style.borderColor = "rgba(249, 115, 22, 0.2)";
-        title.innerText = "🌙 Stoves are Off";
-        desc.innerText = "Our registers are closed for the night. Visit us during operating hours to order fresh cornbread bowls!";
-      } else {
-        badge.innerText = "KITCHEN OPEN & COOKING";
-        badge.className = "menu-item-badge wait-low";
-        badge.style.background = "rgba(251, 191, 36, 0.1)";
-        badge.style.color = "var(--color-gold)";
-        badge.style.borderColor = "rgba(251, 191, 36, 0.2)";
-        title.innerText = "🔥 Pots are Boiling!";
-        desc.innerText = "Open and cooking! Click the takeout button on our contact page to order your hot cornbread bowls.";
-      }
-    }
-
-    // Run on load
-    updateKitchenTracker();
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

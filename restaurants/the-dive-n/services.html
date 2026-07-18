@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/the-dive-n/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dive N - Pineville, NC | Catering & Services</title>
+  <meta name="description" content="Morning biscuit boxes, griddle pancake feast trays, and lunch melts platters catering from The Dive N in Pineville.">
+  <title>Breakfast &amp; Lunch Platters Catering | The Dive N</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #ffffff; color: var(--color-pink); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 3px solid var(--color-teal); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Dive N Logo" class="brand-logo">
@@ -31,53 +34,46 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Diner Checkers Header -->
-  <div class="checker-border"></div>
+  <div class="checker-border" style="height: 12px; background-image: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px); border-bottom: 1px solid #ddd;"></div>
 
-  <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Breakfast & Lunch Platters</h2>
+    <h2 class="page-title">Breakfast &amp; Lunch Platters</h2>
     <p class="page-subtitle">Bring Pineville's favorite griddle classics to your office, morning construction site, or family gathering.</p>
   </header>
 
-  <!-- Services Offerings -->
-  <main class="container">
+  <main id="main" class="container">
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
       
-      <!-- Service 1 -->
-      <div class="diner-card">
+      <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
         <h3 class="menu-category-title">Morning Biscuit Boxes</h3>
         <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
           Feed your early crew. We box up bulk trays of warm bacon, egg, and cheese biscuits, sausage biscuits, and country ham biscuits. Served hot with containers of grits and breakfast potatoes. Recommended for 10 to 40 guests.
         </p>
       </div>
 
-      <!-- Service 2 -->
-      <div class="diner-card">
+      <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
         <h3 class="menu-category-title">Pancake Feast Trays</h3>
         <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
           A full breakfast buffet. Includes trays of fluffy buttermilk pancakes, scrambled eggs, applewood bacon slices, pork sausage patties, whipped butter, and syrup bottles.
         </p>
       </div>
 
-      <!-- Service 3 -->
-      <div class="diner-card">
+      <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
         <h3 class="menu-category-title">Lunch Melt Planners</h3>
         <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; font-weight: 500;">
           Our seared patty melts, double cheeseburgers, turkey clubs, and BLT sandwiches, sliced into halves and arranged beautifully on platters. Paired with crinkle fries and coleslaw cups.
         </p>
       </div>
-
     </div>
 
-    <!-- Inquiry Form -->
     <section class="form-wrapper">
-      <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Inquiry Form</h2>
+      <div class="form-container" style="border: var(--card-border); border-radius: 12px; background: var(--color-bg-card); padding: 32px; box-shadow: var(--shadow-retro);">
+        <h2 class="section-title" style="margin-bottom: 1rem; color: var(--color-teal-dark);">Catering Inquiry Form</h2>
         
         <form id="catering-form">
           <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Fill out the form below to request a breakfast or lunch catering package. We will call you to finalize menu combinations.</p>
@@ -94,16 +90,16 @@
 
             <div class="form-group">
               <label for="event-date">Catering Date</label>
-              <input type="date" id="event-date" required>
+              <input type="date" id="event-date" required style="cursor: pointer;">
             </div>
 
             <div class="form-group">
               <label for="service-type">Platter Selection</label>
-              <select id="service-type" required>
+              <select id="service-type" required style="cursor: pointer;">
                 <option value="biscuits">Morning Biscuit Boxes</option>
                 <option value="pancakes">Pancake Feast Trays</option>
                 <option value="lunch">Lunch Melt Platters</option>
-                <option value="mixed">Mixed Breakfast & Lunch</option>
+                <option value="mixed">Mixed Breakfast &amp; Lunch</option>
               </select>
             </div>
 
@@ -112,21 +108,19 @@
               <textarea id="notes" placeholder="e.g. 15 Bacon Egg Biscuits, 10 Sausage Biscuits, extra syrup, gluten-free options..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Catering Inquiry</button>
+            <button type="submit" class="submit-btn" style="border-radius: 6px; background-color: var(--color-teal); color: white; font-weight: 800;">Send Catering Inquiry</button>
           </div>
         </form>
 
-        <div class="success-panel" id="success-panel">
+        <div class="success-panel" id="success-panel" style="display: none; padding: 2rem 0; text-align: center;">
           <div class="success-icon">🍳</div>
           <h3 class="success-title">Request Received!</h3>
           <p class="success-msg" id="success-message">Thank you. The Dive N kitchen staff will review your griddle options and call you back to confirm pricing.</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -139,7 +133,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 889-4663<br>Walk-Ins & Counter Seating</p>
+        <p>Phone: (704) 889-4663<br>Walk-Ins &amp; Counter Seating</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -147,20 +141,6 @@
     </div>
   </footer>
 
-  <script>
-    // Handle catering submissions
-    const form = document.getElementById('catering-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. We have received your griddle catering details. Our kitchen manager will contact you at <strong>${phone}</strong> shortly to verify quantities and pickup time.`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

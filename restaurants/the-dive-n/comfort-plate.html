@@ -1,113 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/the-dive-n/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Dive N interactive concept experience.">
+  <meta name="description" content="Build a Comfort Plate at The Dive N. Select classic pancakes, griddled cheeseburgers, crispy french fries, or milkshakes.">
   <title>Build a Comfort Plate | The Dive N</title>
-  <link rel="stylesheet" href="../site-core.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root{--ink:hsl(171 45% 10%);--accent:hsl(223 68% 52%);--paper:hsl(1 38% 86%);--muted:color-mix(in srgb,var(--paper) 62%,transparent)}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 34%),var(--ink);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .site-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1rem clamp(1rem,4vw,3.5rem);background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
-    .brand{font-weight:900;letter-spacing:.02em;text-decoration:none}
-    .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.85rem}
-    .nav-links a{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.72}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1;color:var(--accent)}
-    main{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem)}
-    .eyebrow{color:var(--accent);font-size:.76rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    h1{max-width:820px;margin:.7rem 0 1rem;font-size:clamp(2.7rem,7vw,6.7rem);line-height:.92;letter-spacing:-.055em}
-    .lede{max-width:720px;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.75}
-    .planner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.25rem;margin-top:3rem}
-    .panel{border:1px solid color-mix(in srgb,var(--paper) 16%,transparent);border-radius:1.5rem;background:color-mix(in srgb,var(--paper) 6%,transparent);box-shadow:0 26px 80px rgba(0,0,0,.25);padding:clamp(1.2rem,3vw,2rem)}
-    .controls{display:grid;gap:1rem}
-    label span{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    select{width:100%;border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:.85rem;background:color-mix(in srgb,var(--ink) 72%,black);color:var(--paper);padding:.95rem 1rem;font:inherit}
-    button{margin-top:.35rem;border:0;border-radius:999px;background:var(--accent);color:#080808;padding:.9rem 1.25rem;font-weight:900;cursor:pointer}
-    .result{display:flex;min-height:100%;flex-direction:column;justify-content:space-between}
-    .result-icon{font-size:3rem}
-    .result h2{margin:.8rem 0 .4rem;font-size:clamp(1.7rem,3vw,2.7rem)}
-    #summary{color:var(--muted);line-height:1.7}
-    .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
-    @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
+    .planner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .panel {
+      border: var(--card-border);
+      border-radius: 12px;
+      background: var(--color-bg-card);
+      box-shadow: var(--shadow-retro);
+      padding: 32px;
+    }
+    .controls {
+      display: grid;
+      gap: 20px;
+    }
+    .controls label {
+      display: block;
+    }
+    .controls label span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--color-teal-dark);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--font-heading);
+    }
+    select {
+      width: 100%;
+      border: 1px solid rgba(8, 145, 178, 0.25);
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--color-dark);
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--color-teal);
+      box-shadow: 0 0 8px rgba(8, 145, 178, 0.2);
+    }
+    .build-btn {
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      background: var(--color-teal);
+      color: #ffffff;
+      padding: 14px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      margin-top: 8px;
+    }
+    .build-btn:hover {
+      background-color: var(--color-teal-dark);
+      box-shadow: 0 5px 15px rgba(8, 145, 178, 0.25);
+    }
+    .result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      min-height: 440px;
+    }
+    .result h2 {
+      margin: 16px 0 8px 0;
+      font-size: 1.8rem;
+      color: var(--color-teal-dark);
+    }
+    #summary {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .note {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(8, 145, 178, 0.15);
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+    @media (max-width: 768px) {
+      .planner {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="index.html">The Dive N</a>
-    <div class="nav-links">
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #ffffff; color: var(--color-pink); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 3px solid var(--color-teal); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="The Dive N Logo" class="brand-logo">
+        <h1 class="brand-name">
+          The Dive N
+          <span>Pineville Diner</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Find Us</a>
         <a href="menu.html">Menu</a>
-        <a href="services.html">Services</a>
-      <a href="comfort-plate.html" aria-current="page">Comfort Plate</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="comfort-plate.html" class="active" style="color: var(--color-teal); font-weight: 700;">Comfort Plate</a>
     </div>
   </nav>
-  <main id="main">
-    <p class="eyebrow">FAMILIAR FAVORITES, YOUR WAY</p>
-    <h1>Build a Comfort Plate</h1>
-    <p class="lede">Choose a demonstration plate direction that connects the restaurant’s comfort-food identity with the meal you are planning.</p>
+
+  <!-- Diner Checkers Header -->
+  <div class="checker-border" style="height: 12px; background-image: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px); border-bottom: 1px solid #ddd;"></div>
+
+  <main id="main" class="container" style="padding-top: 40px; padding-bottom: 60px;">
+    <p class="tag" style="color: var(--color-pink); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-heading);">Familiar Favorites, Your Way</p>
+    <h1 style="margin-top: 8px; margin-bottom: 16px;">Build a Comfort Plate</h1>
+    <p style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7; max-width: 720px;">Choose a demonstration plate direction that connects the restaurant's comfort-food identity with the meal you are planning.</p>
+    
     <section class="planner" aria-label="Build a Comfort Plate interactive planner">
+      
+      <!-- Left: Controls -->
       <div class="panel controls">
-          <label>
-            <span>Meal</span>
-            <select id="choice-1">
-              <option>Breakfast</option>
-              <option>Lunch</option>
-              <option>Dinner</option>
-            </select>
-          </label>
-          <label>
-            <span>Plate mood</span>
-            <select id="choice-2">
-              <option>Classic</option>
-              <option>Lighter</option>
-              <option>Extra comforting</option>
-            </select>
-          </label>
-          <label>
-            <span>Table style</span>
-            <select id="choice-3">
-              <option>Quick stop</option>
-              <option>Family meal</option>
-              <option>Weekend gathering</option>
-            </select>
-          </label>
-        <button type="button" id="build-plan">Build My Demonstration Plan</button>
+        <label for="choice-1">
+          <span>Meal</span>
+          <select id="choice-1">
+            <option value="Breakfast" selected>Breakfast (Fluffy Pancakes &amp; Hot Coffee)</option>
+            <option value="Lunch">Lunch (Juicy Griddled Double Cheeseburger)</option>
+            <option value="Dinner">Dinner (Country Fried Steak &amp; White Gravy)</option>
+          </select>
+        </label>
+        
+        <label for="choice-2">
+          <span>Plate Mood (Sides)</span>
+          <select id="choice-2">
+            <option value="Classic" selected>Classic (Crispy Red-and-White Box Fries)</option>
+            <option value="Lighter">Lighter (Fresh Garden Cucumber Salad)</option>
+            <option value="Extra comforting">Extra Comforting (Creamy Deli Coleslaw Bowl)</option>
+          </select>
+        </label>
+        
+        <label for="choice-3">
+          <span>Table Style (Extras)</span>
+          <select id="choice-3">
+            <option value="Quick stop" selected>Quick Stop (Strawberry Milkshake &amp; Cherry)</option>
+            <option value="Family meal">Family Meal (Red Basket of Crispy Onion Rings)</option>
+            <option value="Weekend gathering">Weekend Gathering (Three-Scoop Banana Split)</option>
+          </select>
+        </label>
+        
+        <button type="button" class="build-btn" id="build-plan">Build My Diner Platter</button>
       </div>
+
+      <!-- Right: SVG Visualizer -->
       <div class="panel result" aria-live="polite">
         <div>
-          <div class="result-icon" aria-hidden="true">🍳</div>
-          <h2>Your Comfort Plate</h2>
+          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 240px; height: auto;">
+            <!-- Car dashboard or diner table base -->
+            <rect x="10" y="160" width="300" height="40" rx="4" fill="#64748b" stroke="#475569" stroke-width="2" aria-hidden="true"/>
+            <line x1="10" y1="168" x2="310" y2="168" stroke="#475569" stroke-width="1" aria-hidden="true"/>
+
+            <!-- Diner metallic tray -->
+            <rect x="50" y="90" width="220" height="90" rx="8" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2" aria-hidden="true"/>
+            <rect x="55" y="95" width="210" height="80" rx="6" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" aria-hidden="true"/>
+
+            <!-- 1. Meal Layer (Choice 1) -->
+            <!-- Breakfast: Pancakes & Coffee -->
+            <g id="svg-meal-breakfast" class="flavor-layer">
+              <!-- Pancake stack -->
+              <ellipse cx="115" cy="140" rx="30" ry="12" fill="#eab308" stroke="#ca8a04" stroke-width="1.5"/>
+              <ellipse cx="115" cy="133" rx="28" ry="11" fill="#eab308" stroke="#ca8a04" stroke-width="1"/>
+              <!-- Butter melting -->
+              <rect x="110" y="123" width="10" height="8" rx="1" fill="#fef08a" stroke="#ca8a04" stroke-width="0.5"/>
+              <!-- Steaming coffee mug -->
+              <rect x="70" y="105" width="20" height="24" rx="2" fill="#e11d48" stroke="#be123c" stroke-width="1"/>
+              <path d="M 90,111 C 94,111 96,118 90,123" fill="none" stroke="#be123c" stroke-width="1.5"/>
+              <!-- Steam lines -->
+              <path d="M 76,98 Q 78,92 76,86 M 82,99 Q 84,93 82,87" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round"/>
+            </g>
+
+            <!-- Lunch: Double Cheeseburger -->
+            <g id="svg-meal-lunch" class="flavor-layer">
+              <!-- Burger bottom bun -->
+              <ellipse cx="110" cy="142" rx="26" ry="12" fill="#ca8a04"/>
+              <!-- Beef patties & cheese -->
+              <rect x="86" y="132" width="48" height="6" fill="#451a03" rx="1"/>
+              <path d="M 86,134 L 134,134 L 126,140 L 94,140 Z" fill="#fbbf24"/> <!-- melted cheese -->
+              <rect x="88" y="126" width="44" height="6" fill="#451a03" rx="1"/>
+              <!-- Tomato / Lettuce -->
+              <rect x="90" y="122" width="40" height="4" fill="#22c55e" rx="1"/>
+              <rect x="92" y="119" width="36" height="3" fill="#ef4444" rx="1"/>
+              <!-- Top bun -->
+              <ellipse cx="110" cy="116" rx="24" ry="11" fill="#eab308"/>
+            </g>
+
+            <!-- Dinner: Country Fried Steak -->
+            <g id="svg-meal-dinner" class="flavor-layer">
+              <!-- Steak cutlet -->
+              <path d="M 80,140 Q 110,120 140,142 Q 110,154 80,140 Z" fill="#b45309" stroke="#78350f" stroke-width="1.5"/>
+              <!-- White Gravy splat on top -->
+              <path d="M 95,138 Q 110,128 125,138 Q 110,144 95,138 Z" fill="#f5f5f4" opacity="0.95"/>
+            </g>
+
+            <!-- 2. Plate Mood Sides (Choice 2) -->
+            <!-- Classic: French Fries Carton -->
+            <g id="svg-mood-classic" class="flavor-layer">
+              <!-- Red-white paper carton -->
+              <rect x="160" y="115" width="22" height="30" fill="#e11d48" stroke="#be123c" stroke-width="1"/>
+              <line x1="167" y1="115" x2="167" y2="145" stroke="#ffffff" stroke-width="3"/>
+              <line x1="175" y1="115" x2="175" y2="145" stroke="#ffffff" stroke-width="3"/>
+              <!-- French fries sticking out -->
+              <rect x="156" y="105" width="4" height="14" fill="#fbbf24"/>
+              <rect x="162" y="100" width="4" height="18" fill="#fbbf24" transform="rotate(10 162 100)"/>
+              <rect x="168" y="96" width="4" height="22" fill="#fbbf24"/>
+              <rect x="174" y="102" width="4" height="16" fill="#fbbf24" transform="rotate(-15 174 102)"/>
+              <rect x="180" y="108" width="4" height="12" fill="#fbbf24"/>
+            </g>
+
+            <!-- Lighter: Fresh Garden Cucumber Salad -->
+            <g id="svg-mood-lighter" class="flavor-layer">
+              <ellipse cx="172" cy="130" rx="16" ry="10" fill="#22c55e" stroke="#16a34a" stroke-width="1"/>
+              <!-- Cucumber slices -->
+              <circle cx="166" cy="128" r="3.5" fill="#86efac"/>
+              <circle cx="178" cy="132" r="3.5" fill="#86efac"/>
+            </g>
+
+            <!-- Extra Comforting: Creamy Deli Coleslaw Bowl -->
+            <g id="svg-mood-extra-comforting" class="flavor-layer">
+              <ellipse cx="172" cy="130" rx="16" ry="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+              <ellipse cx="172" cy="128" rx="13" ry="7" fill="#f5f5f4"/>
+              <!-- Shredded specs -->
+              <line x1="165" y1="126" x2="169" y2="130" stroke="#22c55e" stroke-width="1"/>
+              <line x1="174" y1="125" x2="177" y2="129" stroke="#ea580c" stroke-width="1"/>
+            </g>
+
+            <!-- 3. Table Style Extras (Choice 3) -->
+            <!-- Quick Stop: Strawberry Milkshake cup -->
+            <g id="svg-style-quick-stop" class="flavor-layer">
+              <!-- Clear ribbed plastic cup -->
+              <path d="M 215,96 L 235,96 L 228,142 L 222,142 Z" fill="none" stroke="#94a3b8" stroke-width="1"/>
+              <path d="M 216,102 L 234,102 L 228,141 L 222,141 Z" fill="#fda4af" opacity="0.9"/>
+              <!-- Whipped cream top -->
+              <ellipse cx="225" cy="96" rx="9" ry="5" fill="#ffffff"/>
+              <!-- Red cherry -->
+              <circle cx="225" cy="91" r="3.5" fill="#e11d48"/>
+            </g>
+
+            <!-- Family Meal: Onion Rings Basket -->
+            <g id="svg-style-family-meal" class="flavor-layer">
+              <!-- Woven red basket -->
+              <ellipse cx="222" cy="142" rx="22" ry="12" fill="#e11d48" stroke="#be123c" stroke-width="1"/>
+              <!-- Onion rings loop paths -->
+              <circle cx="212" cy="136" r="6" fill="none" stroke="#b45309" stroke-width="2.5"/>
+              <circle cx="228" cy="138" r="7" fill="none" stroke="#b45309" stroke-width="2.5"/>
+              <circle cx="220" cy="143" r="6" fill="none" stroke="#b45309" stroke-width="2.5"/>
+            </g>
+
+            <!-- Weekend Gathering: Banana Split boat -->
+            <g id="svg-style-weekend-gathering" class="flavor-layer">
+              <!-- Oval split dish -->
+              <ellipse cx="222" cy="142" rx="26" ry="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+              <!-- Yellow banana halves -->
+              <path d="M 198,142 Q 222,130 246,142" fill="none" stroke="#eab308" stroke-width="3" stroke-linecap="round"/>
+              <!-- Ice cream scoops -->
+              <circle cx="212" cy="138" r="6" fill="#fca5a5"/>
+              <circle cx="222" cy="136" r="6" fill="#fef08a"/>
+              <circle cx="232" cy="138" r="6" fill="#78350f"/>
+            </g>
+
+          </svg>
+          <h2>Your Diner Platter</h2>
           <p id="summary">Choose one option from each field, then build a demonstration plan.</p>
         </div>
         <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
       </div>
+
     </section>
-  
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-thedivencomfortplatehtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-thedivencomfortplatehtml" style="margin:.1rem 0 1rem;">Build a meal that fits the moment</h2>
-  <p>A satisfying visit to The Dive N starts with the kind of comfort you are looking for. Think first about appetite and pace: a complete plate for one person, a lighter combination, or several familiar items shared across the table. This guide keeps the decision practical while leaving room for the personal choices that make comfort food feel familiar.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Choose the appetite level before choosing individual components.</li><li>Use contrasting sides or textures to keep the plate balanced.</li><li>For groups, include at least one widely familiar option and one flexible choice.</li></ul>
-  <p>This page is organized around classic drive-in comfort food, simple combinations, and casual group ordering. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-  <script>
-    (() => {
-      const button = document.getElementById('build-plan');
-      const fields = [...document.querySelectorAll('select')];
-      const summary = document.getElementById('summary');
-      button.addEventListener('click', () => {
-        const values = fields.map(field => field.value);
-        summary.textContent = `Start with ${values[0]}; keep the experience ${values[1].toLowerCase()}; finish with ${values[2].toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
-      });
-    })();
-  </script>
+
+    <!-- Phase 2 Expanded Educational Content -->
+    <section class="phase2-expanded-content" style="margin-top: 48px; border-top: 1px solid rgba(8, 145, 178, 0.15); padding-top: 48px; line-height: 1.8;">
+      <span class="tag" style="color: var(--color-pink);">Plan with confidence</span>
+      <h2 style="margin-bottom: 16px; font-family: 'Outfit';">Build a meal that fits the moment</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 16px;">A satisfying visit to The Dive N starts with the kind of comfort you are looking for. Think first about appetite and pace: a complete plate for one person, a lighter combination, or several familiar items shared across the table. This guide keeps the decision practical while leaving room for the personal choices that make comfort food feel familiar.</p>
+      
+      <h3 style="font-size: 1.2rem; font-family: 'Outfit'; margin-bottom: 8px; color: var(--color-teal-dark);">A simple way to decide</h3>
+      <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-muted); display: grid; gap: 8px; margin-bottom: 24px;">
+        <li>Select our signature double cheeseburgers or seared patty melts on buttered toast for a classic diner lunch experience.</li>
+        <li>Pair heavy, griddled melts with fresh, tangy garden cucumber salad to keep the meal balanced.</li>
+        <li>Order milkshakes or sharing baskets of thick-cut crispy onion rings to round out your diner visit.</li>
+      </ul>
+      <p style="color: var(--color-text-muted);">This page is organized around classic drive-in comfort food, simple combinations, and casual group ordering. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>109 N. Polk St.<br>Pineville, NC 28134</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday - Saturday: 7:00 AM - 3:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 889-4663<br>Walk-Ins &amp; Counter Seating</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 The Dive N. Serving Pineville since 1978.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/the-dive-n/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dive N - Pineville, NC | Home</title>
+  <meta name="description" content="The Dive N in Pineville, NC. Classic griddled burgers, crispy bacon egg biscuits, hand-cut onion rings, and milkshakes since 1978.">
+  <title>The Dive N - Pineville Diner | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #ffffff; color: var(--color-pink); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 3px solid var(--color-teal); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Dive N Logo" class="brand-logo">
@@ -31,82 +34,75 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Diner Checkers Header -->
-  <div class="checker-border"></div>
+  <div class="checker-border" style="height: 12px; background-image: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px); border-bottom: 1px solid #ddd;"></div>
 
-  <!-- Hero Banner Section -->
   <header class="hero-section" style="background-image: url('hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="hero-frame">
-        <span class="hero-badge">Locally Owned & Operated</span>
-        <h2 class="hero-title">Good Food, Friendly Counter</h2>
-        <p class="hero-desc">"Pineville's classic hometown morning spot. We griddle up fluffy golden pancakes, seared cheeseburgers, and our legendary buttery patty melts six days a week."</p>
+      <div class="hero-frame" style="border: 2px solid var(--color-teal); border-radius: 12px; background-color: rgba(255, 255, 255, 0.95); box-shadow: var(--shadow-retro);">
+        <span class="hero-subtitle" style="color: var(--color-pink); font-weight: 800;">Pineville's Landmark Diner Since 1978</span>
+        <h2 class="hero-title" style="color: var(--color-teal-dark); font-size: clamp(2rem, 5vw, 3.2rem);">Griddled Burgers &amp; Hot Biscuits</h2>
+        <p class="hero-desc" style="color: var(--color-dark); font-weight: 500;">Generous servings of diner-style double cheeseburgers, seared melts, scratch-made buttermilk biscuits, and thick milkshakes.</p>
+        <a class="btn-primary" href="menu.html" style="display: inline-block; margin-top: 1.5rem; background-color: var(--color-teal); color: #ffffff; padding: 0.85rem 2rem; border-radius: 6px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; transition: var(--transition-fast);">Browse Diner Menu</a>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">The Heart of Pineville</h2>
-      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
-        Located on North Polk Street in historic downtown Pineville, The Dive N is the neighborhood's favorite old-school diner. We serve up massive breakfast plates, classic diner melts, and Southern burgers from our hot griddle. Known for quick service, friendly chatter, and simple diner comfort.
+  <main id="main" class="container">
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+      <h2 class="section-title">A Pineville Tradition</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem; font-weight: 500;">
+        For nearly five decades, The Dive N has been Pineville's favorite spot for honest, quick counter meals. From our hand-pressed breakfast biscuits to our legendary seared patty melts on buttered toast, we cook everything hot on our flat-top griddle.
       </p>
-      <a href="about.html" style="color: var(--color-teal); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 3px solid var(--color-teal); padding-bottom: 3px;">
-        Read Our Story ➔
+      <a href="about.html" style="color: var(--color-pink); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-pink); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story &rarr;
       </a>
     </section>
 
-    <!-- Featured Exhibition Grid -->
-    <section style="margin-bottom: 6rem;">
-      <h2 class="section-title">Griddle Favorites</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
+    <section style="margin-bottom: 6.5rem;">
+      <h2 class="section-title">Diner Specialties</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem;">
         
-        <div class="diner-card">
-          <span class="menu-item-badge" style="margin-bottom: 1rem; margin-left: 0;">Famous Melt</span>
-          <div class="menu-item-header">
-            <span class="menu-item-name" style="font-size: 1.4rem;">Classic Patty Melt</span>
-            <span class="menu-item-price">$10.50</span>
+        <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
+          <span style="font-size: 1.8rem; display: block; margin-bottom: 1rem;">🍔</span>
+          <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="dish-name" style="font-size: 1.3rem; font-weight: 800; color: var(--color-teal-dark);">The Famous Patty Melt</span>
+            <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$9.50</span>
           </div>
-          <p class="menu-item-desc" style="font-size: 0.95rem; margin-top: 0.5rem;">
-            A seasoned beef patty seared flat on the griddle, melted Swiss cheese, sweet caramelized onions, served hot between slices of buttery grilled rye bread.
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--color-text-muted); font-weight: 500;">
+            A seasoned griddled beef patty, melted Swiss cheese, and sweet caramelized onions pressed between golden butter-toasted rye bread.
           </p>
         </div>
 
-        <div class="diner-card">
-          <span class="menu-item-badge" style="margin-bottom: 1rem; margin-left: 0;">Southern Style</span>
-          <div class="menu-item-header">
-            <span class="menu-item-name" style="font-size: 1.4rem;">Pimento Cheeseburger</span>
-            <span class="menu-item-price">$11.00</span>
+        <div class="diner-card" style="padding: 2.5rem; border-radius: 12px;">
+          <span style="font-size: 1.8rem; display: block; margin-bottom: 1rem;">🥞</span>
+          <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="dish-name" style="font-size: 1.3rem; font-weight: 800; color: var(--color-teal-dark);">Double Waffle Stack</span>
+            <span class="dish-price" style="color: var(--color-pink); font-weight: 800;">$7.85</span>
           </div>
-          <p class="menu-item-desc" style="font-size: 0.95rem; margin-top: 0.5rem;">
-            Our fresh beef burger patty topped with a generous melting spread of house-made Southern pimento cheese, lettuce, and tomatoes on a toasted bun.
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--color-text-muted); font-weight: 500;">
+            Two thick golden malted waffles served piping hot off the iron with whipped country butter and maple syrup.
           </p>
         </div>
 
       </div>
     </section>
 
-    <!-- Quick Call to Action -->
-    <section style="text-align: center; background-color: #ffffff; padding: 4rem 2rem; border-radius: 12px; border: var(--card-border); margin-bottom: 5rem; box-shadow: var(--shadow-retro);">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-teal-dark);">Hot off the Griddle</h2>
-      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem auto; font-weight: 500;">
-        From eggs and bacon biscuits at 7:00 AM to fried chicken baskets and cheeseburgers for lunch. We serve it all hot, fast, and with a smile. Check out our breakfast and lunch boards!
+    <section class="diner-card" style="text-align: center; margin-bottom: 5rem; padding: 40px; border-radius: 12px;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-teal-dark);">Interactive Platter Planner</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Planning a visit or a takeout run? Use our interactive platter customizer to preview griddle and side pairings.
       </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1rem 2.5rem;">
-        View Our Menu Board
+      <a href="comfort-plate.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem; text-decoration: none; border-radius: 6px; background-color: var(--color-teal); color: white; font-weight: 800;">
+        Open Comfort Customizer
       </a>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -119,7 +115,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 889-4663<br>Walk-Ins & Counter Seating</p>
+        <p>Phone: (704) 889-4663<br>Walk-Ins &amp; Counter Seating</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -127,5 +123,6 @@
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

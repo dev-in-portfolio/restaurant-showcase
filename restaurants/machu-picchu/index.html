@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/machu-picchu/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Machu Picchu Peruvian Cuisine - Pineville, NC | Home</title>
+  <meta name="description" content="Machu Picchu Peruvian Cuisine in Pineville, NC. Fresh ceviche mixtos, sizzling Lomo Saltado stir-fry, roasted chicken, and alfajores.">
+  <title>Machu Picchu Peruvian Cuisine - Pineville Restaurant | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #050508; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">M</div>
@@ -31,100 +34,72 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flavor-table.html">Flavor Table</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Hero Banner Section -->
   <header class="hero-section" style="background-image: url('hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="hero-frame">
-        <span class="hero-badge">Pineville's Peruvian Landmark</span>
-        <h2 class="hero-title">Peruvian Cuisine & Bar</h2>
-        <p class="hero-desc">"Savor the rich culinary wonders of Peru, from fresh lime-cured citrus ceviches and wok-sizzled Lomo Saltado to hand-shaken Pisco Sours."</p>
+      <div class="hero-frame" style="border: 1px solid var(--color-border); border-radius: 16px;">
+        <span class="hero-subtitle">Est. 2012 · Authentic Peruvian Kitchen</span>
+        <h2 class="hero-title" style="color: var(--color-gold); font-size: clamp(2rem, 5vw, 3.5rem);">Andean Flavors &amp; Coastal Ceviche</h2>
+        <p class="hero-desc">Indulge in fresh fish ceviches cured in key lime juice, sizzling beef Lomo Saltado, golden-brown rotisserie chicken, and sweet dulce de leche alfajores.</p>
+        <a class="btn-primary" href="menu.html" style="display: inline-block; margin-top: 1.5rem; background-color: var(--color-teal); color: #050508; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: var(--transition-fast);">View Culinary Menu</a>
       </div>
     </div>
   </header>
 
-  <!-- To-Go Pickup Notice -->
-  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
-    <div class="notice-banner">
-      <span>📞 Counter Pickup Takeout Orders: (704) 889-0801. Dine-In & Bar.</span>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">The Wonders of Peruvian Cuisine</h2>
+  <main id="main" class="container">
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+      <h2 class="section-title">The Spirit of the Andes</h2>
       <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
-        Located on Main Street in historic Pineville, Machu Picchu Peruvian Cuisine & Bar is dedicated to serving authentic culinary treasures of the Andes and Pacific Coast. Our kitchen blends indigenous Incan ingredients with Spanish and Chinese influences, crafting mouthwatering ceviches, stir-fries, and classic Peruvian drinks.
+        Machu Picchu Peruvian Cuisine brings the authentic tastes of Lima, Cusco, and the Pacific coast to Pineville. Since 2012, our kitchen has highlighted Peru's diverse culinary influences—from traditional stir-fry Lomo Saltado woks to modern seafood specialties dressed in Aji Amarillo and Rocoto pepper.
       </p>
-      <a href="about.html" style="color: var(--color-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast);">
-        Read Our Story ➔
+      <a href="about.html" style="color: var(--color-teal); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-teal); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story &rarr;
       </a>
     </section>
 
-    <!-- Interactive Pisco Sour Mixer Panel -->
-    <section class="interactive-panel">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Virtual Pisco Sour Mixer</h2>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Customize your virtual Peruvian national drink. Choose a flavor base and see your glass fill up with flavor details.</p>
-      
-      <div class="mixer-container">
+    <section style="margin-bottom: 6.5rem;">
+      <h2 class="section-title">Andean Masterpieces</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem;">
         
-        <!-- Left Side: Interactive Glass -->
-        <div class="cocktail-canvas">
-          <div class="cocktail-glass-wireframe">
-            <div class="lime-garnish"></div>
-            <div class="cocktail-fill" id="cocktail-fill-layer">
-              <div class="foam-layer"></div>
-            </div>
+        <div class="premium-card" style="padding: 2.5rem; border-radius: 16px;">
+          <span style="font-size: 1.8rem; display: block; margin-bottom: 1rem;">🐟</span>
+          <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="dish-name" style="font-size: 1.3rem; font-weight: 800; color: #ffffff;">Ceviche Mixto</span>
+            <span class="dish-price" style="color: var(--color-teal); font-weight: 700;">$18.50</span>
           </div>
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--color-text-muted);">
+            Fresh selected sea bass, calamari, shrimp, and octopus flash-cured in key lime juice with cilantro, red onion threads, boiled sweet potato, and large Andean choclo corn.
+          </p>
         </div>
 
-        <!-- Right Side: Controls -->
-        <div class="ceviche-controls">
-          <div class="control-group">
-            <label>Select Cocktail Flavor</label>
-            <div class="option-grid" id="flavor-options">
-              <button class="option-btn active" onclick="mixCocktail('classic', '#fefcf8', 'Classic Lime Pisco Sour')">Classic Lime</button>
-              <button class="option-btn" onclick="mixCocktail('maracuya', '#facc15', 'Passion Fruit Pisco Sour')">Maracuyá (Passion Fruit)</button>
-              <button class="option-btn" onclick="mixCocktail('mango', '#f97316', 'Mango Pisco Sour')">Mango Pisco</button>
-              <button class="option-btn" onclick="mixCocktail('coco', '#ffffff', 'Coconut Pisco Cream')">Coconut Pisco</button>
-            </div>
+        <div class="premium-card" style="padding: 2.5rem; border-radius: 16px;">
+          <span style="font-size: 1.8rem; display: block; margin-bottom: 1rem;">🥩</span>
+          <div class="dish-header" style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span class="dish-name" style="font-size: 1.3rem; font-weight: 800; color: #ffffff;">Lomo Saltado</span>
+            <span class="dish-price" style="color: var(--color-teal); font-weight: 700;">$19.50</span>
           </div>
-
-          <div class="control-group">
-            <label for="sweetness-slider">Sweetness Level</label>
-            <input type="range" id="sweetness-slider" min="1" max="3" value="2" style="width: 100%; accent-color: var(--color-gold); cursor: pointer;" oninput="adjustSweetness(this.value)">
-            <p style="font-size: 0.85rem; color: var(--color-text-muted);" id="sweetness-label">Medium Sweet (Traditional)</p>
-          </div>
-
-          <div class="result-card" style="min-height: auto; padding: 1.5rem;" id="mixer-output">
-            <h4 style="color: #ffffff; margin-bottom: 0.4rem;" id="mixer-title">Classic Lime Pisco Sour</h4>
-            <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="mixer-desc">A double shot of Pisco Quebranta, fresh key lime juice, simple syrup, egg white foam, and a drop of Angostura bitters.</p>
-          </div>
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem; color: var(--color-text-muted);">
+            Sizzling beef tenderloin strips flash-fired in a wok with red onions, vine-ripened tomatoes, soy sauce, and pisco. Tossed with thick French fries and served with white rice.
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- Quick Call to Action -->
-    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Ceviche Builder</h2>
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem; padding: 40px; border-radius: 16px;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-gold);">Plan a Flavor Table</h2>
       <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        From fresh lime-cured Sea Bass and shrimp ceviches to wok-sizzled Lomo Saltado steak. Click below to view our complete menu board.
+        Planning a family gathering or a private celebration? Use our interactive flavor table tool to customize and balance your Peruvian feast.
       </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
-        Launch Ceviche Builder
+      <a href="flavor-table.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem; text-decoration: none; border-radius: 8px;">
+        Open Table Customizer
       </a>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -137,7 +112,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 889-0801<br>Counter Takeout | Dine-In & Bar</p>
+        <p>Phone: (704) 889-0801<br>Counter Takeout | Dine-In &amp; Bar</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -145,69 +120,6 @@
     </div>
   </footer>
 
-  <script>
-    const flavors = {
-      classic: {
-        title: "Classic Lime Pisco Sour",
-        desc: "A double shot of Pisco Quebranta, fresh key lime juice, simple syrup, egg white foam, and a drop of Angostura bitters. Smooth and zesty."
-      },
-      maracuya: {
-        title: "Passion Fruit Pisco Sour",
-        desc: "A vibrant blend of Pisco, organic yellow passion fruit (maracuyá) nectar, lime juice, simple syrup, and a fluffy egg white cap. Sweet and tangy."
-      },
-      mango: {
-        title: "Mango Pisco Sour",
-        desc: "Rich mango purée shaken with premium Peruvian Pisco, egg white, lime, and simple syrup. Sweet, velvety, and tropical."
-      },
-      coco: {
-        title: "Coconut Pisco Cream",
-        desc: "Artisanal coconut milk cream shaken with Quebranta Pisco, egg white foam, and sweet simple syrup. Creamy, aromatic, and dessert-like."
-      }
-    };
-
-    let activeFlavor = 'classic';
-    let activeColor = '#fefcf8';
-
-    function mixCocktail(key, color, title) {
-      // Toggle active buttons
-      const buttons = document.getElementById('flavor-options').querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      activeFlavor = key;
-      activeColor = color;
-      
-      // Animate glass fill
-      const fillLayer = document.getElementById('cocktail-fill-layer');
-      fillLayer.style.height = '0%';
-      
-      setTimeout(() => {
-        fillLayer.style.background = `linear-gradient(180deg, ${color} 0%, rgba(255,255,255,0.7) 100%)`;
-        fillLayer.style.height = '75%';
-        
-        const data = flavors[key];
-        document.getElementById('mixer-title').innerText = data.title;
-        document.getElementById('mixer-desc').innerText = data.desc;
-      }, 300);
-    }
-
-    function adjustSweetness(val) {
-      const label = document.getElementById('sweetness-label');
-      if (val == 1) {
-        label.innerText = "Dry (Crispy & Strong)";
-      } else if (val == 2) {
-        label.innerText = "Medium Sweet (Traditional Balance)";
-      } else {
-        label.innerText = "Sweet (Rich & Dessert-like)";
-      }
-    }
-
-    // Trigger initial fill on page load
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('cocktail-fill-layer').style.height = '75%';
-      }, 500);
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
