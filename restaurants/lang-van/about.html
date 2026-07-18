@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/lang-van/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lang Van Vietnamese Restaurant - Charlotte, NC | About Us</title>
+  <title>About Us | Lang Van Vietnamese Restaurant</title>
+  <meta name="description" content="Read the story of Lang Van in Charlotte. A family legacy of fresh, authentic Vietnamese cuisine since 2002.">
   <link rel="stylesheet" href="styles.css">
-
-<style data-phase4-mobile-overflow-fix>
-@media (max-width: 600px) {
-  html, body { max-width: 100%; overflow-x: clip; }
-  .nav-container { width: 100%; max-width: 100%; min-width: 0; height: auto; flex-wrap: wrap; gap: .65rem; padding: .75rem 1rem; }
-  .back-to-directory { width: 100%; min-width: 0; }
-  .brand-wrapper { max-width: 100%; min-width: 0; flex: 1 1 12rem; }
-  .brand-name { min-width: 0; max-width: 100%; font-size: 1.05rem; overflow-wrap: anywhere; }
-  .brand-name span { letter-spacing: .08em; }
-  .nav-links { width: 100%; max-width: 100%; min-width: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
-  .nav-links a { padding: .3rem .45rem; }
-  .nav-container > a:last-child { max-width: 100%; }
-  img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
-}
-</style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="disclosure-banner">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a href="../index.html" class="back-to-directory">
-        <!-- Back link -->
-        ← Directory Portal
+        &larr; Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <img src="logo.png" alt="Lang Van Logo" class="brand-logo">
+        <img src="logo.png" alt="" class="brand-logo">
         <h1 class="brand-name">
           Lang Van
           <span>Vietnamese Restaurant</span>
@@ -43,78 +32,68 @@
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="about.html" class="active">About</a>
-        <a href="services.html">Catering</a>
+        <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
+        <a href="flavor-guide.html">Flavor Guide</a>
       </div>
-      <a href="flavor-guide.html">Flavor Guide</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">The Heart of Lang Van</h2>
-    <p class="page-subtitle">A family staple in East Charlotte, serving comfort food and legendary hospitality for over two decades.</p>
+    <h2 class="page-title">Our Story</h2>
+    <p class="page-subtitle">Charlotte's beloved Vietnamese kitchen serving the community since 2002.</p>
   </header>
 
   <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main-content" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
       <!-- The Beginning Card -->
       <div class="organic-card">
-        <h3 class="menu-category-title">A Charlotte Institution Since 1999</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: #374151;">
-          Lang Van opened its doors in 1999 on Shamrock Drive in East Charlotte. At the time, authentic Vietnamese cuisine was hard to find in the city. Our founders set out to build a simple, unpretentious dining room focused purely on clean, healthy, and highly traditional recipes. 
+        <h3 class="menu-category-title">A Family Legacy</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted); font-weight: 500;">
+          Founded in 2002 on Shamrock Drive by Dan Nguyen, Lang Van was built on a simple premise: serving authentic, comforting Vietnamese meals cooked from the heart. Dan's incredible memory—remembering regular customers' orders even after years of absence—became Charlotte legend, drawing food lovers from all over the metro area.
         </p>
-        <p style="line-height: 1.8; text-align: justify; color: #374151;">
-          Over the years, as Charlotte rapidly grew, Lang Van remained a comforting, unchanging anchor. We still serve our original recipes, prepared with fresh herbs and spices daily.
-        </p>
-      </div>
-
-      <!-- The Owner Card -->
-      <div class="organic-card">
-        <h3 class="menu-category-title">The Soul of the Parlor: Dan Nguyen</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: #374151;">
-          Ask any regular at Lang Van why they return week after week, and they will mention owner Dan Nguyen. Dan has run the dining floor for decades and is famous throughout Charlotte for her incredible memory and warm, familial affection.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: #374151;">
-          She memorizes the names, families, and favorite orders of hundreds of regular customers. If you are undecided, Dan will look at you, ask a few questions about your taste preferences, and curate a customized order that is guaranteed to hit the spot. At Lang Van, you are not just a customer—you are an expected guest in Dan's dining room.
+        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted); font-weight: 500;">
+          While Charlotte has grown rapidly around us, our independent family restaurant has remained a constant. We are proud to be a gathering place where families share warm bowls of phở and fresh herbs.
         </p>
       </div>
 
-      <!-- Michelin Card -->
+      <!-- The Recipe Card -->
       <div class="organic-card">
-        <h3 class="menu-category-title">Michelin Bib Gourmand Recognition</h3>
-        <p style="line-height: 1.8; text-align: justify; color: #374151;">
-          In recognition of our long-standing devotion to quality, Lang Van was recently honored by the Michelin Guide with a **Bib Gourmand** designation. This honor recognizes establishments that serve exceptional food at moderate prices. While we are proud of this recognition, we remain dedicated to our roots—serving simple, authentic bowls of pho and fresh spring rolls with the same humble, community-first values we started with in 1999.
+        <h3 class="menu-category-title">Fresh Herbs &amp; Long-Simmered Broth</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted); font-weight: 500;">
+          Vietnamese cuisine is defined by balance: sweet, salty, sour, and fresh. At Lang Van, we do not cut corners. Our signature beef phở broth is simmered with marrow bones, ginger, star anise, cloves, and cinnamon for 24 hours to lock in deep complexity.
+        </p>
+        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted); font-weight: 500;">
+          We serve every phở bowl with a generous side plate of crisp bean sprouts, Thai basil, mint, sliced jalapeños, and fresh lime wedges, allowing each guest to customize their bowl to their exact preference.
         </p>
       </div>
 
     </div>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
-        <p>3019 Shamrock Dr.<br>Charlotte, NC 28215</p>
+        <h3>Location</h3>
+        <p>3019 Shamrock Dr<br>Charlotte, NC 28215</p>
       </div>
       <div class="info-block">
         <h3>Hours</h3>
-        <p>Tuesday - Thursday: 11:00 AM - 10:00 PM<br>Friday - Saturday: 11:00 AM - 11:00 PM<br>Sunday: 11:00 AM - 10:00 PM<br>Monday: Closed</p>
+        <p>Monday: Closed<br>Tuesday – Sunday: 11:00 AM – 10:00 PM</p>
       </div>
       <div class="info-block">
-        <h3>Call To Book</h3>
-        <p>Phone: (704) 531-9525<br>No official social media/email</p>
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17045314032" style="color: var(--color-green); font-weight: 700;">(704) 531-4032</a></p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Lang Van Restaurant. Charlotte staple since 1999.</p>
+      <p>Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

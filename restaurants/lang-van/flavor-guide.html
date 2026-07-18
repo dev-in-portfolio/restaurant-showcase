@@ -1,113 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/lang-van/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lang Van interactive concept experience.">
+  <meta name="description" content="Navigate the flavor map at Lang Van. Design your ideal combination of light rice vermicelli, aromatic beef broth, or fresh herbs.">
   <title>Navigate the Flavor Map | Lang Van</title>
-  <link rel="stylesheet" href="../site-core.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root{--ink:hsl(190 45% 10%);--accent:hsl(260 68% 52%);--paper:hsl(20 38% 86%);--muted:color-mix(in srgb,var(--paper) 62%,transparent)}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 34%),var(--ink);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .site-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1rem clamp(1rem,4vw,3.5rem);background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
-    .brand{font-weight:900;letter-spacing:.02em;text-decoration:none}
-    .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.85rem}
-    .nav-links a{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.72}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1;color:var(--accent)}
-    main{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem)}
-    .eyebrow{color:var(--accent);font-size:.76rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    h1{max-width:820px;margin:.7rem 0 1rem;font-size:clamp(2.7rem,7vw,6.7rem);line-height:.92;letter-spacing:-.055em}
-    .lede{max-width:720px;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.75}
-    .planner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.25rem;margin-top:3rem}
-    .panel{border:1px solid color-mix(in srgb,var(--paper) 16%,transparent);border-radius:1.5rem;background:color-mix(in srgb,var(--paper) 6%,transparent);box-shadow:0 26px 80px rgba(0,0,0,.25);padding:clamp(1.2rem,3vw,2rem)}
-    .controls{display:grid;gap:1rem}
-    label span{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    select{width:100%;border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:.85rem;background:color-mix(in srgb,var(--ink) 72%,black);color:var(--paper);padding:.95rem 1rem;font:inherit}
-    button{margin-top:.35rem;border:0;border-radius:999px;background:var(--accent);color:#080808;padding:.9rem 1.25rem;font-weight:900;cursor:pointer}
-    .result{display:flex;min-height:100%;flex-direction:column;justify-content:space-between}
-    .result-icon{font-size:3rem}
-    .result h2{margin:.8rem 0 .4rem;font-size:clamp(1.7rem,3vw,2.7rem)}
-    #summary{color:var(--muted);line-height:1.7}
-    .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
-    @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
+    .planner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .panel {
+      border: var(--card-border);
+      border-radius: 16px;
+      background: var(--color-bg-alt);
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 32px;
+    }
+    .controls {
+      display: grid;
+      gap: 20px;
+    }
+    .controls label {
+      display: block;
+    }
+    .controls label span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--color-gold);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    select {
+      width: 100%;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--color-text);
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--color-green);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+    .build-btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: var(--color-green);
+      color: var(--color-bg);
+      padding: 14px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      margin-top: 8px;
+    }
+    .build-btn:hover {
+      background-color: #34d399;
+      box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
+    }
+    .result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      min-height: 440px;
+    }
+    .result h2 {
+      margin: 16px 0 8px 0;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+    #summary {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .note {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--card-border);
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+    @media (max-width: 768px) {
+      .planner {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="index.html">Lang Van</a>
-    <div class="nav-links">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="disclosure-banner">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        &larr; Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="" class="brand-logo">
+        <h1 class="brand-name">
+          Lang Van
+          <span>Vietnamese Restaurant</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Find Us</a>
         <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
         <a href="services.html">Services</a>
-      <a href="flavor-guide.html" aria-current="page">Flavor Guide</a>
+        <a href="contact.html">Contact</a>
+        <a href="flavor-guide.html" class="active">Flavor Guide</a>
+      </div>
     </div>
   </nav>
-  <main id="main">
-    <p class="eyebrow">A SIXTH-PAGE TASTE GUIDE</p>
-    <h1>Navigate the Flavor Map</h1>
-    <p class="lede">Describe the balance you want—comfort, brightness, depth, or heat—before exploring the current menu.</p>
+
+  <main id="main" class="container" style="padding-top: 40px; padding-bottom: 60px;">
+    <p class="eyebrow" style="color: var(--color-green); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase;">A Sixth-Page Taste Guide</p>
+    <h1 style="color: #ffffff; margin-top: 8px; margin-bottom: 16px;">Navigate the Flavor Map</h1>
+    <p style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7; max-width: 720px;">Describe the balance you want—comfort, brightness, depth, or heat—before exploring the current menu.</p>
+    
     <section class="planner" aria-label="Navigate the Flavor Map interactive planner">
+      
+      <!-- Left: Interactive Controls -->
       <div class="panel controls">
-          <label>
-            <span>Foundation</span>
-            <select id="choice-1">
-              <option>Rice</option>
-              <option>Noodles</option>
-              <option>Shared plates</option>
-            </select>
-          </label>
-          <label>
-            <span>Intensity</span>
-            <select id="choice-2">
-              <option>Gentle</option>
-              <option>Layered</option>
-              <option>Bold</option>
-            </select>
-          </label>
-          <label>
-            <span>Balance</span>
-            <select id="choice-3">
-              <option>Fresh</option>
-              <option>Savory</option>
-              <option>Warming</option>
-            </select>
-          </label>
-        <button type="button" id="build-plan">Build My Demonstration Plan</button>
+        <label for="choice-1">
+          <span>Foundation</span>
+          <select id="choice-1">
+            <option value="Rice" selected>Rice (Broken Rice / Cơm Tấm)</option>
+            <option value="Noodles">Noodles (Rice Vermicelli / Bún)</option>
+            <option value="Shared plates">Shared Plates (Summer Salad Rolls)</option>
+          </select>
+        </label>
+        
+        <label for="choice-2">
+          <span>Intensity</span>
+          <select id="choice-2">
+            <option value="Gentle" selected>Gentle (Aromatic Chicken Broth)</option>
+            <option value="Layered">Layered (Rich Beef Marrow Pho Broth)</option>
+            <option value="Bold">Bold (Spicy Lemongrass Bun Bo Hue Broth)</option>
+          </select>
+        </label>
+        
+        <label for="choice-3">
+          <span>Balance</span>
+          <select id="choice-3">
+            <option value="Fresh" selected>Fresh (Mint, Thai Basil &amp; Bean Sprouts)</option>
+            <option value="Savory">Savory (Crushed Peanuts &amp; Scallion Oil)</option>
+            <option value="Warming">Warming (Sliced Jalapeño, Bird's Eye Chili &amp; Lime)</option>
+          </select>
+        </label>
+        
+        <button type="button" class="build-btn" id="build-plan">Build My Flavor Plan</button>
       </div>
+
+      <!-- Right: SVG Visualizer Canvas -->
       <div class="panel result" aria-live="polite">
         <div>
-          <div class="result-icon" aria-hidden="true">🥢</div>
+          <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 240px; height: auto;">
+            <!-- Bamboo placemat table shadow -->
+            <circle cx="160" cy="165" r="105" fill="rgba(0,0,0,0.55)" filter="blur(6px)" aria-hidden="true"/>
+            
+            <!-- White bowl with blue painted trim -->
+            <circle cx="160" cy="160" r="105" fill="#fcfbf7" stroke="#1e3a8a" stroke-width="2" aria-hidden="true"/>
+            <circle cx="160" cy="160" r="82" fill="#fcfbf7" stroke="#3b82f6" stroke-width="1" stroke-dasharray="6, 6" aria-hidden="true"/>
+            
+            <!-- 1. Foundation Layers -->
+            <!-- Rice -->
+            <g id="svg-base-rice" class="flavor-layer">
+              <ellipse cx="160" cy="160" rx="46" ry="40" fill="#fafaf9" stroke="#e4e2dd" stroke-width="1"/>
+              <!-- Green scallion garnish on rice -->
+              <circle cx="145" cy="155" r="3" fill="#10b981"/><circle cx="160" cy="148" r="3" fill="#10b981"/><circle cx="170" cy="162" r="3" fill="#10b981"/>
+              <!-- Shredded pork skin dots -->
+              <rect x="135" y="162" width="4" height="4" fill="#d97706" rx="1"/><rect x="155" y="170" width="5" height="3" fill="#d97706" rx="1"/>
+            </g>
+            
+            <!-- Noodles -->
+            <g id="svg-base-noodles" class="flavor-layer">
+              <path d="M 125,145 Q 160,115 195,145 M 130,155 Q 160,125 190,155 M 120,160 Q 160,135 200,160 M 125,170 Q 160,145 195,170 M 130,135 Q 160,175 190,135 M 140,125 Q 160,185 180,125" fill="none" stroke="#fcfaf2" stroke-width="4.5" stroke-linecap="round"/>
+            </g>
+            
+            <!-- Shared plates -->
+            <g id="svg-base-shared-plates" class="flavor-layer">
+              <!-- Cylindrical rolls -->
+              <rect x="120" y="132" width="28" height="56" rx="6" fill="rgba(255, 255, 255, 0.65)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5" transform="rotate(-20 134 160)"/>
+              <rect x="165" y="125" width="28" height="56" rx="6" fill="rgba(255, 255, 255, 0.65)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5" transform="rotate(30 179 153)"/>
+              <!-- Pink shrimp showing through rolls -->
+              <path d="M 128,140 Q 134,136 132,146" fill="none" stroke="#fca5a5" stroke-width="4" stroke-linecap="round" transform="rotate(-20 134 160)"/>
+              <path d="M 173,133 Q 179,129 177,139" fill="none" stroke="#fca5a5" stroke-width="4" stroke-linecap="round" transform="rotate(30 179 153)"/>
+            </g>
+
+            <!-- 2. Intensity Broth Layers -->
+            <!-- Gentle: Golden Chicken Broth -->
+            <circle id="svg-sauce-gentle" class="flavor-layer" cx="160" cy="160" r="54" fill="rgba(251, 191, 36, 0.16)" stroke="rgba(251, 191, 36, 0.3)" stroke-width="1.5" filter="blur(2px)"/>
+            
+            <!-- Layered: Rich Beef Marrow Broth -->
+            <circle id="svg-sauce-layered" class="flavor-layer" cx="160" cy="160" r="54" fill="rgba(180, 83, 9, 0.28)" stroke="rgba(180, 83, 9, 0.4)" stroke-width="1.5" filter="blur(2px)"/>
+            
+            <!-- Bold: Lemongrass Bun Bo Hue Broth with Chili Oil -->
+            <circle id="svg-sauce-bold" class="flavor-layer" cx="160" cy="160" r="54" fill="rgba(220, 38, 38, 0.38)" stroke="rgba(220, 38, 38, 0.5)" stroke-width="1.5" filter="blur(2px)"/>
+
+            <!-- 3. Balance Garnishes -->
+            <!-- Fresh: Mint & Thai Basil & Sprouts -->
+            <g id="svg-garnish-fresh" class="flavor-layer">
+              <path d="M 135,135 Q 140,128 138,122" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 180,148 Q 185,142 181,136" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 152,172 Q 158,166 155,160" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+              <!-- White bean sprouts -->
+              <line x1="145" y1="165" x2="160" y2="160" stroke="#fcfbf7" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="162" y1="135" x2="175" y2="140" stroke="#fcfbf7" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+            
+            <!-- Savory: Crushed Peanuts & Scallion Oil -->
+            <g id="svg-garnish-savory" class="flavor-layer">
+              <!-- Scallions -->
+              <circle cx="135" cy="142" r="3.5" fill="none" stroke="#059669" stroke-width="2"/>
+              <circle cx="178" cy="155" r="3.5" fill="none" stroke="#059669" stroke-width="2"/>
+              <circle cx="152" cy="165" r="3.5" fill="none" stroke="#059669" stroke-width="2"/>
+              <!-- Crushed Peanuts -->
+              <ellipse cx="144" cy="132" rx="1.2" ry="2.5" fill="#d97706" transform="rotate(30 144 132)"/>
+              <ellipse cx="162" cy="145" rx="1.2" ry="2.5" fill="#d97706" transform="rotate(-40 162 145)"/>
+              <ellipse cx="168" cy="135" rx="1.2" ry="2.5" fill="#d97706" transform="rotate(15 168 135)"/>
+            </g>
+
+            <!-- Warming: Jalapeño & Bird's eye chili & Lime -->
+            <g id="svg-garnish-warming" class="flavor-layer">
+              <!-- Jalapeño slice -->
+              <circle cx="140" cy="138" r="5" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+              <circle cx="180" cy="145" r="5" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+              <!-- Lime wedge -->
+              <path d="M 148,168 A 12 12 0 0 1 168,168 Z" fill="#84cc16" stroke="#4d7c0f" stroke-width="1" transform="rotate(20 158 168)"/>
+              <!-- Bird's eye chili -->
+              <path d="M 155,145 Q 160,140 165,146" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+            </g>
+
+            <!-- Chopsticks resting on holder to the side -->
+            <g transform="translate(18, 0) rotate(20 160 160)">
+              <line x1="50" y1="-8" x2="270" y2="-8" stroke="#1f2937" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="50" y1="6" x2="270" y2="2" stroke="#1f2937" stroke-width="4.5" stroke-linecap="round"/>
+              <!-- Blue lacquer handle wrappers -->
+              <line x1="240" y1="-8" x2="270" y2="-8" stroke="#1d4ed8" stroke-width="5"/>
+              <line x1="240" y1="5" x2="270" y2="3" stroke="#1d4ed8" stroke-width="5"/>
+            </g>
+          </svg>
           <h2>Your Flavor Guide</h2>
           <p id="summary">Choose one option from each field, then build a demonstration plan.</p>
         </div>
         <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
       </div>
+
     </section>
-  
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-langvanflavorguidehtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-langvanflavorguidehtml" style="margin:.1rem 0 1rem;">Use flavor, texture, and appetite as your guide</h2>
-  <p>Ordering at Lang Van becomes easier when the table talks about flavor and texture before choosing individual dishes. Some guests may want familiar, savory comfort; others may prefer brightness, heat, freshness, or a more adventurous combination. This guide helps the group build a meal with contrast instead of accidentally ordering several dishes that fill the same role.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Balance rich dishes with something fresh, acidic, crisp, or herb-forward.</li><li>Ask the table about heat tolerance and dietary needs before ordering.</li><li>Share strategically so each person can compare flavors without every dish becoming a duplicate.</li></ul>
-  <p>This page is organized around Vietnamese herbs, broths, grilled dishes, and bright savory balance. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-  <script>
-    (() => {
-      const button = document.getElementById('build-plan');
-      const fields = [...document.querySelectorAll('select')];
-      const summary = document.getElementById('summary');
-      button.addEventListener('click', () => {
-        const values = fields.map(field => field.value);
-        summary.textContent = `Start with ${values[0]}; keep the experience ${values[1].toLowerCase()}; finish with ${values[2].toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
-      });
-    })();
-  </script>
+
+    <!-- Phase 2 Expanded Educational Content -->
+    <section class="phase2-expanded-content" style="margin-top: 48px; border-top: 1px solid var(--card-border); padding-top: 48px;">
+      <span class="hero-badge">Plan with confidence</span>
+      <h2 style="color: #ffffff; margin-bottom: 16px;">Use flavor, texture, and appetite as your guide</h2>
+      <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: 16px;">Ordering at Lang Van becomes easier when the table talks about flavor and texture before choosing individual dishes. Some guests may want familiar, savory comfort; others may prefer brightness, heat, freshness, or a more adventurous combination. This guide helps the group build a meal with contrast instead of accidentally ordering several dishes that fill the same role.</p>
+      
+      <h3 style="color: var(--color-gold); font-size: 1.15rem; margin-bottom: 8px;">A simple way to decide</h3>
+      <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-muted); display: grid; gap: 8px; margin-bottom: 24px;">
+        <li>Balance rich dishes with something fresh, acidic, crisp, or herb-forward.</li>
+        <li>Ask the table about heat tolerance and dietary needs before ordering.</li>
+        <li>Share strategically so each person can compare flavors without every dish becoming a duplicate.</li>
+      </ul>
+      <p style="color: var(--color-text-muted); line-height: 1.8;">This page is organized around Vietnamese herbs, broths, grilled dishes, and bright savory balance. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant's current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Location</h3>
+        <p>3019 Shamrock Dr<br>Charlotte, NC 28215</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Monday: Closed<br>Tuesday – Sunday: 11:00 AM – 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17045314032" style="color: var(--color-green); font-weight: 700;">(704) 531-4032</a></p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>

@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/lang-van/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lang Van Vietnamese Restaurant - Charlotte, NC | Catering & Services</title>
+  <title>Catering &amp; Group Services | Lang Van Vietnamese Restaurant</title>
+  <meta name="description" content="Vietnamese style group takeout platters, family banquets, and customized dietary curation for events.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="disclosure-banner">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        &larr; Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <img src="logo.png" alt="Lang Van Logo" class="brand-logo">
+        <img src="logo.png" alt="" class="brand-logo">
         <h1 class="brand-name">
           Lang Van
           <span>Vietnamese Restaurant</span>
@@ -29,19 +34,19 @@
         <a href="about.html">About</a>
         <a href="services.html" class="active">Catering</a>
         <a href="contact.html">Contact</a>
+        <a href="flavor-guide.html">Flavor Guide</a>
       </div>
-      <a href="flavor-guide.html">Flavor Guide</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Family Platters & Large Groups</h2>
+    <h2 class="page-title">Family Platters &amp; Large Groups</h2>
     <p class="page-subtitle">Let Lang Van provide comforting, authentic Vietnamese meals for your next family gathering or team lunch.</p>
   </header>
 
   <!-- Services Offerings -->
-  <main class="container">
+  <main id="main-content" class="container">
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
       
@@ -74,7 +79,7 @@
     <!-- Inquiry Form -->
     <section class="form-wrapper">
       <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Curation Request</h2>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Request Form</h2>
         
         <form id="catering-form">
           <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Lang Van operates traditionally. You can submit details below to generate a draft order, which we will verify via phone.</p>
@@ -98,65 +103,51 @@
               <label for="guests">Guests Count</label>
               <select id="guests" required>
                 <option value="6">6 - 10 Guests</option>
-                <option value="15">11 - 20 Guests</option>
-                <option value="30">20+ Guests</option>
+                <option value="12">11 - 20 Guests</option>
+                <option value="50">21 - 50 Guests</option>
+                <option value="100">50+ Guests</option>
               </select>
             </div>
 
             <div class="form-group" style="grid-column: 1 / -1;">
-              <label for="notes">Special requests or favorite dishes</label>
-              <textarea id="notes" placeholder="e.g. 5 orders of Summer Rolls, 3 Beef Pho, vegetarian preferences..."></textarea>
+              <label for="details">Details of your request (Dishes, quantities, dietary rules)</label>
+              <textarea id="details" placeholder="e.g. 5 large orders of Vermicelli Bowls, 10 orders of Summer Rolls, 3 bowls of Beef Pho..." required></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Submit Order Curation</button>
+            <button type="submit" class="submit-btn">Send Catering Request</button>
           </div>
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🍃</div>
-          <h3 class="success-title">Request Submitted!</h3>
-          <p class="success-msg" id="success-message">Thank you. Dan or the staff will contact you at your phone number to finalize your order details.</p>
+          <div class="success-icon" aria-hidden="true">🥢</div>
+          <h3 class="success-title">Catering Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. The Lang Van family will review your catering details and call you back to confirm pricing.</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
-        <p>3019 Shamrock Dr.<br>Charlotte, NC 28215</p>
+        <h3>Location</h3>
+        <p>3019 Shamrock Dr<br>Charlotte, NC 28215</p>
       </div>
       <div class="info-block">
         <h3>Hours</h3>
-        <p>Tuesday - Thursday: 11:00 AM - 10:00 PM<br>Friday - Saturday: 11:00 AM - 11:00 PM<br>Sunday: 11:00 AM - 10:00 PM<br>Monday: Closed</p>
+        <p>Monday: Closed<br>Tuesday – Sunday: 11:00 AM – 10:00 PM</p>
       </div>
       <div class="info-block">
-        <h3>Call To Book</h3>
-        <p>Phone: (704) 531-9525<br>No official social media/email</p>
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17045314032" style="color: var(--color-green); font-weight: 700;">(704) 531-4032</a></p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Lang Van Restaurant. Charlotte staple since 1999.</p>
+      <p>Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 
-  <script>
-    // Handle catering submissions
-    const form = document.getElementById('catering-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. We have received your catering details. Dan or one of the staff members will call you at <strong>${phone}</strong> shortly to confirm items and pricing.`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
