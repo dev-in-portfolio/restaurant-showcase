@@ -1,137 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matcha Lab · Gotcha Matcha &amp; Espresso</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-/* Local style overrides to match Gotcha Matcha's aesthetic */
-.matcha-mat {
-  background: radial-gradient(circle, #2d5a3d 0%, #0f1d14 100%);
-  border: 1.5px solid var(--a);
-  border-radius: var(--radius-md);
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-lg);
-  min-height: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  transition: all 0.3s;
-  color: #fff;
-}
-.matcha-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 32px;
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .matcha-grid {
-    grid-template-columns: 1fr;
-  }
-}
-select {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px;
-  border-radius: var(--radius-sm);
-  width: 100%;
-  font-family: inherit;
-}
-select:focus {
-  outline: none;
-  border-color: var(--p);
-}
-.control-label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--p);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-</style>
-
-<style data-phase2-responsive>
-html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-box}img,svg,video,canvas,iframe{max-width:100%;height:auto}table{max-width:100%}
-@media(max-width:600px){body>*{max-width:100%}nav,.nav,[class*="nav"]{max-width:100%;height:auto!important;min-height:0;flex-wrap:wrap!important}.nav-links,[class*="nav-links"],[class*="links"]{max-width:100%;min-width:0;flex-wrap:wrap!important;gap:.5rem!important}main,header,footer,section,form,[class*="container"],[class*="wrapper"],[class*="grid"]{max-width:100%;min-width:0}input,select,textarea,button{max-width:100%}}
-</style>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/gotcha-matcha-espresso/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matcha Lab | Gotcha Matcha &amp; Espresso</title>
+  <meta name="description" content="Design your signature Thai-inspired matcha or hojicha cup. Select green bases, organic milk swirls, and waffle cone crust additions.">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .matcha-mat {
+      background: radial-gradient(circle, #102416 0%, #081009 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      box-shadow: var(--shadow-lg);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition);
+      color: #fff;
+    }
+    .matcha-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .control-group {
+      margin-bottom: 24px;
+    }
+    .control-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--p);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+    select {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--p);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+    @media (max-width: 768px) {
+      .matcha-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">🐼</span>
-                <span class="logo-text">Gotcha Matcha</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="matcha.html" class="active">Matcha Lab</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="visit.html">Visit</a></li>
-                <li><a href="reserve.html">Find Us</a></li>
-            </ul>
-        </div>
-    </nav>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon" aria-hidden="true">🐼</span>
+        <span class="logo-text">Gotcha Matcha</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="matcha.html" class="active">Matcha Lab</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="reserve.html">Find Us</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main id="main">
     <header class="hero" style="padding: 4rem 2rem; min-height: 35vh;">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-badge">🐼 The Panda Bar Customizer</div>
-            <h1>The Matcha Lab</h1>
-            <p class="hero-sub">Design your signature Thai-inspired matcha or hojicha cup</p>
-        </div>
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-badge">🐼 The Panda Bar Customizer</div>
+        <h1>The Matcha Lab</h1>
+        <p class="hero-sub">Design your signature Thai-inspired matcha or hojicha cup</p>
+      </div>
     </header>
 
-    <section class="section" style="padding: 4rem 0;">
-      <div class="container" style="max-width:1100px; margin:0 auto; padding:0 20px;">
-        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Beverage Planner</h2>
+    <section class="section" style="padding: 60px 0;">
+      <div class="container" style="max-width: 1000px;">
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 24px; text-align: center; color: #ffffff;">Beverage Planner</h2>
         
-        <div class="matcha-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
+        <div class="matcha-grid" style="background: var(--surface); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-xl); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
           
-          <!-- Left: Cup Visualizer -->
+          <!-- Left: Cup Visualizer Canvas -->
           <div class="matcha-mat">
-            <span style="font-size: 0.78rem; font-weight: 600; color: #d4b96a; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="mt-tag-display">CEREMONIAL DRINK</span>
-            <h3 style="font-size: 2.2rem; color: #fff; font-family: var(--font-heading); margin: 0 0 0.8rem 0;" id="mt-title-display">Uji Ceremonial Matcha</h3>
-            <p style="font-size: 1.5rem; font-weight: 700; color: #d4b96a; margin: 0 0 1.2rem 0;" id="mt-price-display">$6.50</p>
-            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="mt-desc-display">Double whisk of pure Uji ceremonial grade matcha whisked with water, swirled with sweet pandan leaf blossom syrup.</p>
+            <svg viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 200px; height: auto; margin-bottom: 24px;">
+              <defs>
+                <linearGradient id="duo-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2d6a4f"/>
+                  <stop offset="42%" stop-color="#34d399"/>
+                  <stop offset="58%" stop-color="#451a03"/>
+                  <stop offset="100%" stop-color="#1a0a02"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Floating Ice Cubes Behind Reflections -->
+              <g opacity="0.25" fill="none" stroke="#ffffff" stroke-width="1.5">
+                <rect x="90" y="90" width="22" height="22" rx="4" transform="rotate(15 90 90)"/>
+                <rect x="130" y="140" width="20" height="20" rx="4" transform="rotate(-12 130 140)"/>
+                <rect x="95" y="200" width="24" height="24" rx="4" transform="rotate(45 95 200)"/>
+              </g>
+
+              <!-- Base Liquids -->
+              <!-- Uji Matcha -->
+              <path id="svg-base-uji" class="matcha-layer" d="M 62,45 L 80,280 Q 82,292 100,292 L 140,292 Q 158,292 160,280 L 178,45 Z" fill="#2d6a4f"/>
+              
+              <!-- Hojicha -->
+              <path id="svg-base-hojicha" class="matcha-layer" d="M 62,45 L 80,280 Q 82,292 100,292 L 140,292 Q 158,292 160,280 L 178,45 Z" fill="#78350f"/>
+              
+              <!-- Duo layered -->
+              <path id="svg-base-duo" class="matcha-layer" d="M 62,45 L 80,280 Q 82,292 100,292 L 140,292 Q 158,292 160,280 L 178,45 Z" fill="url(#duo-grad)"/>
+
+              <!-- Flavored Syrup Swirls -->
+              <!-- Pandan Swirl -->
+              <g id="svg-syrup-pandan" class="matcha-layer">
+                <path d="M 75,90 Q 110,130 90,170 T 150,250" fill="none" stroke="#4ade80" stroke-width="10" stroke-linecap="round" opacity="0.75"/>
+                <path d="M 165,100 Q 130,150 145,200 T 100,260" fill="none" stroke="#4ade80" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+              </g>
+
+              <!-- Ube Swirl -->
+              <g id="svg-syrup-ube" class="matcha-layer">
+                <path d="M 75,90 Q 115,130 90,170 T 150,250" fill="none" stroke="#c084fc" stroke-width="14" stroke-linecap="round" opacity="0.8"/>
+                <path d="M 160,110 Q 130,160 150,210 T 100,270" fill="none" stroke="#e9d5ff" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+              </g>
+
+              <!-- Coconut Swirl -->
+              <g id="svg-syrup-coconut" class="matcha-layer">
+                <path d="M 65,80 Q 120,95 100,160 T 165,260" fill="none" stroke="#fafaf6" stroke-width="16" stroke-linecap="round" opacity="0.65"/>
+              </g>
+
+              <!-- Accent Toppings -->
+              <!-- Waffle Cone Crumb Rim -->
+              <g id="svg-accent-waffle" class="matcha-layer">
+                <ellipse cx="120" cy="40" rx="62" ry="8" fill="none" stroke="#b45309" stroke-width="5" stroke-dasharray="2 3"/>
+                <ellipse cx="120" cy="40" rx="62" ry="8" fill="none" stroke="#d97706" stroke-width="3" stroke-dasharray="1 4"/>
+              </g>
+
+              <!-- Boba Pearls -->
+              <g id="svg-accent-boba" class="matcha-layer">
+                <circle cx="95" cy="275" r="7.5" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+                <circle cx="110" cy="280" r="7.5" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+                <circle cx="125" cy="282" r="7.5" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+                <circle cx="140" cy="278" r="7.5" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+                <circle cx="102" cy="265" r="7.5" fill="#2d2522" stroke="#000" stroke-width="0.5"/>
+                <circle cx="120" cy="268" r="7.5" fill="#2d2522" stroke="#000" stroke-width="0.5"/>
+                <circle cx="135" cy="264" r="7.5" fill="#2d2522" stroke="#000" stroke-width="0.5"/>
+                <circle cx="112" cy="255" r="7.5" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+                <circle cx="128" cy="257" r="7.5" fill="#1c1917" stroke="#000" stroke-width="0.5"/>
+              </g>
+
+              <!-- Glass Cup Body & Reflection Outline -->
+              <path d="M 60,40 L 80,280 Q 82,295 100,295 L 140,295 Q 158,295 160,280 L 180,40 Z" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+              <ellipse cx="120" cy="40" rx="60" ry="8" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+            </svg>
+
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--a); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; display: block;" id="mt-tag-display">CEREMONIAL DRINK</span>
+            <h3 style="font-size: 1.8rem; color: #fff; font-family: var(--font-heading); margin-bottom: 6px;" id="mt-title-display">Uji Ceremonial Matcha</h3>
+            <p style="font-size: 1.35rem; font-weight: 700; color: var(--p-light); margin-bottom: 12px;" id="mt-price-display">$6.50</p>
+            <p style="font-size: 0.92rem; color: var(--muted); line-height: 1.6; max-width: 320px;" id="mt-desc-display">Double whisk of pure Uji ceremonial grade matcha whisked with water, swirled with sweet pandan leaf blossom syrup.</p>
           </div>
 
           <!-- Right: Controls -->
           <div>
-            <div style="margin-bottom: 1.5rem;">
-              <label class="control-label">1. Choose Tea Base</label>
-              <select id="mt-base" onchange="updateDrink()">
+            <div class="control-group">
+              <label for="mt-base" class="control-label">1. Choose Tea Base</label>
+              <select id="mt-base">
                 <option value="uji" selected>Ceremonial Grade Uji Matcha ($6.50)</option>
                 <option value="hojicha">Hojicha Roasted Green Tea ($6.00)</option>
                 <option value="duo">Matcha &amp; Cold Brew Espresso Duo ($7.00)</option>
               </select>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-              <label class="control-label">2. Select Thai Flavor Syrup</label>
-              <select id="mt-flavor" onchange="updateDrink()">
+            <div class="control-group">
+              <label for="mt-flavor" class="control-label">2. Select Thai Flavor Syrup</label>
+              <select id="mt-flavor">
                 <option value="pandan" selected>Sweet Pandan Blossom Syrup (+$0.75)</option>
                 <option value="ube">Creamy Purple Ube Swirl (+$0.75)</option>
                 <option value="coconut">Sweet Organic Coconut Milk (+$0.50)</option>
               </select>
             </div>
 
-            <div>
-              <label class="control-label">3. Select Cup Accent</label>
-              <select id="mt-accent" onchange="updateDrink()">
+            <div class="control-group">
+              <label for="mt-accent" class="control-label">3. Select Cup Accent</label>
+              <select id="mt-accent">
                 <option value="none" selected>No Extras (+$0.00)</option>
                 <option value="waffle">Belgian Waffle Cone Crumb Rim (+$0.50)</option>
                 <option value="boba">Tapioca Boba Pearls (+$0.75)</option>
@@ -143,56 +219,52 @@ html,body{max-width:100%;overflow-x:clip}*,*::before,*::after{box-sizing:border-
       </div>
     </section>
 
-    <footer class="footer" style="background:#111; color:rgba(255,255,255,0.4); text-align:center; padding:2rem; font-size:0.82rem; border-top:1px solid rgba(232,184,48,0.06)">
-        <p>Gotcha Matcha &amp; Espresso · Uptown Charlotte, NC</p>
-        <p class="disclosure" style="color:rgba(255,255,255,0.2); margin-top:0.5rem;">Unofficial concept presentation — not operated by the restaurant</p>
-    </footer>
+    <!-- Detailed Educational Content -->
+    <section class="section" style="border-top: 1px solid var(--border); background: var(--bg-alt); padding: 60px 0;">
+      <div class="container" style="max-width: 800px;">
+        <span class="section-label">Interactive Tea Lab</span>
+        <h2 style="font-size: 1.8rem; margin-bottom: 16px; color: #ffffff;">Customizing the Perfect Sip</h2>
+        <p style="color: var(--muted); margin-bottom: 24px; line-height: 1.8;">Our customizer allows you to mix and match flavor structures. To preserve the flavor balance of authentic stone-ground Japanese green teas, we recommend pairing our roasted Hojicha base with ube syrup, and Uji green matcha with aromatic pandan syrup.</p>
+        
+        <h3 style="font-size: 1.15rem; color: var(--p); margin-bottom: 12px;">Tips from the Baristas</h3>
+        <ul style="list-style: disc; margin-left: 20px; color: var(--muted); display: grid; gap: 10px;">
+          <li><strong>Sweetness adjustment</strong>: All custom lattes include a default sweetness recipe. You can ask for half-sweetness if you prefer a stronger tea profile.</li>
+          <li><strong>Milk options</strong>: We highly recommend oat milk as a base for matcha lattes to yield a thick, velvet texture that holds syrup spirals well.</li>
+          <li><strong>Waffle Crumbs</strong>: The waffle cone crumbs on the glass lip provide a caramelized crunch with every sip.</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const baseData = {
-      uji: { tag: "CEREMONIAL GRADE", name: "Uji Matcha", basePrice: 6.50, label: "double whisk of pure Uji ceremonial grade green tea matcha" },
-      hojicha: { tag: "ROASTED GREEN TEA", name: "Roasted Hojicha", basePrice: 6.00, label: "earthy, nutty roasted hojicha green tea powder whisked smooth" },
-      duo: { tag: "MATCHA COFFEE DUO", name: "Matcha Espresso Duo", basePrice: 7.00, label: "layered cup of cold brew espresso and pure whisked ceremonial matcha" }
-    };
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-icon" aria-hidden="true">🐼</span>
+          <span class="logo-text">Gotcha Matcha &amp; Espresso</span>
+          <p>Ceremonial grade matcha bar with Thai-inspired flavors in Uptown Charlotte.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About</a>
+          <a href="visit.html">Visit</a>
+          <a href="reserve.html">Find Us</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="tel:6463424707">(646) 342-4707</a>
+          <a href="visit.html">200 S Tryon St, Suite S112</a>
+          <p class="footer-hours">Mon–Sat 7am–6pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Unofficial concept presentation — not operated by the restaurant</p>
+      </div>
+    </div>
+  </footer>
 
-    const flavorData = {
-      pandan: { name: "Pandan", label: "swirled with sweet, fragrant pandan blossom syrup", charge: 0.75 },
-      ube: { name: "Ube", label: "swirled with a rich creamy sweet purple ube root syrup", charge: 0.75 },
-      coconut: { name: "Coconut", label: "blended with sweet organic pressed coconut milk", charge: 0.50 }
-    };
-
-    const accentData = {
-      none: { label: "", charge: 0.00 },
-      waffle: { label: ", finished with a Belgian waffle cone crushed sugar rim", charge: 0.50 },
-      boba: { label: ", topped with slow-cooked sweet brown sugar tapioca boba pearls", charge: 0.75 }
-    };
-
-    function updateDrink() {
-      const baseKey = document.getElementById('mt-base').value;
-      const flavorKey = document.getElementById('mt-flavor').value;
-      const accentKey = document.getElementById('mt-accent').value;
-
-      const base = baseData[baseKey];
-      const flavor = flavorData[flavorKey];
-      const accent = accentData[accentKey];
-
-      const totalPrice = base.basePrice + flavor.charge + accent.charge;
-
-      document.getElementById('mt-tag-display').innerText = base.tag;
-      document.getElementById('mt-title-display').innerText = `${flavor.name} ${base.name}`;
-      document.getElementById('mt-price-display').innerText = `$${totalPrice.toFixed(2)}`;
-
-      let desc = `A premium cup of ${base.label}, ${flavor.label}${accent.label}.`;
-      
-      document.getElementById('mt-desc-display').innerText = desc;
-    }
-
-    // Initial trigger
-    window.addEventListener('load', () => {
-      updateDrink();
-    });
-  </script>
-  <script src="../site-core.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
