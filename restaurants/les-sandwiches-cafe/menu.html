@@ -1,2 +1,123 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Le’s Sandwiches &amp; Café"><title>Bánh Mì Menu | Le’s Sandwiches &amp; Café</title><link rel="stylesheet" href="site.css"></head><body data-v="3"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Le’s Sandwiches &amp; Café</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Bánh Mì Menu</a><a href="about.html">The Hidden-Gem Story</a><a href="orders.html">Large Orders</a><a href="contact.html">Visit</a></div>  <a href="flavor-guide.html">Flavor Guide</a>
-</nav><main id="main"><header class="head"><div class="tag">Bánh Mì • Vietnamese Café</div><h1>Bánh Mì Menu</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Grilled</button><button data-f="g1">Classic</button><button data-f="g2">Lighter</button><button data-f="g3">Large orders</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Grilled</h3><p>Smoky pork, chicken and warm fillings.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Classic</h3><p>Cold cuts, pâté and traditional combinations.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Lighter</h3><p>Fresh, herb-forward choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Large orders</h3><p>Balanced assortments for offices and groups.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Le’s Sandwiches &amp; Café. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/les-sandwiches-cafe/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View the authentic Bánh Mì selection at Le's Sandwiches & Café. Grilled pork, cold cuts, pate, and vegetarian options.">
+  <title>Bánh Mì Menu | Le's Sandwiches &amp; Café</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-v="3">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="index.html">Le's Sandwiches &amp; Café</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Bánh Mì Menu</a>
+      <a href="about.html">The Hidden-Gem Story</a>
+      <a href="orders.html">Large Orders</a>
+      <a href="contact.html">Visit</a>
+      <a href="flavor-guide.html">Flavor Guide</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="head" style="background-color: var(--white); color: var(--charcoal); border-bottom: 1px solid var(--light-gray); padding: 5rem 5vw 3rem;">
+      <div class="tag">Bánh Mì • Vietnamese Café</div>
+      <h1 style="color: var(--p);">Bánh Mì Menu</h1>
+      <p style="color: var(--muted); margin-top: 10px;">Select a style below to browse our fresh-baked baguette sandwiches. All sandwiches served with pickled carrots/daikon, cucumber, cilantro, and jalapeños.</p>
+    </header>
+
+    <section>
+      <div class="tag">Interactive Menu Finder</div>
+      <div class="filter">
+        <button class="on" data-f="all">All</button>
+        <button data-f="g0">Grilled</button>
+        <button data-f="g1">Classic</button>
+        <button data-f="g2">Lighter</button>
+        <button data-f="g3">Large Orders</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <!-- Grilled -->
+        <article class="card" data-g="g0">
+          <div class="tag">Warm &amp; Savory</div>
+          <h3>Grilled Pork Bánh Mì</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">Grilled pork marinated in lemongrass, garlic, and sweet honey glaze, toasted crispy.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$8.75</span>
+        </article>
+
+        <article class="card" data-g="g0">
+          <div class="tag">Warm &amp; Savory</div>
+          <h3>Lemongrass Chicken</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">Lemongrass grilled chicken breast strips, served warm inside a freshly baked French baguette.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$8.75</span>
+        </article>
+
+        <!-- Classic -->
+        <article class="card" data-g="g1">
+          <div class="tag">Traditional</div>
+          <h3>Le's House Special Combo</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">Traditional combinations of liver pâté, ham, headcheese, pork roll, and creamy egg yolk mayonnaise.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$8.95</span>
+        </article>
+
+        <article class="card" data-g="g1">
+          <div class="tag">Traditional</div>
+          <h3>Pork Roll Bánh Mì</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">Traditional Vietnamese sliced pork roll (Chả Lụa) served over creamy house mayo spread.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$8.25</span>
+        </article>
+
+        <!-- Lighter -->
+        <article class="card" data-g="g2">
+          <div class="tag">Fresh &amp; Herb-Forward</div>
+          <h3>Lemongrass Tofu Bánh Mì</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">Crispy stir-fried organic tofu, fresh herbs, pickled carrots/daikon, and light soy dressing.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$8.25</span>
+        </article>
+
+        <article class="card" data-g="g2">
+          <div class="tag">Fresh &amp; Herb-Forward</div>
+          <h3>Vegetarian Special</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">Fried eggs, cucumber spears, fresh cilantro sprigs, jalapeño rings, and egg mayo.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$8.00</span>
+        </article>
+
+        <!-- Large orders -->
+        <article class="card" data-g="g3">
+          <div class="tag">Group Platters</div>
+          <h3>Office Baguette Assortment</h3>
+          <p style="color: var(--muted); margin-top: 0.5rem; margin-bottom: 1rem;">A selection of 10 assorted Bánh Mì halves (House Special, Lemongrass Pork, Lemongrass Chicken, Tofu) packed in a group catering box.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$85.00</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <article class="card">
+          <h3>Readable HTML Menu</h3>
+          <p style="color: var(--muted);">Easy to browse directly on mobile or tablet — no slow, clunky PDF downloads required.</p>
+        </article>
+        <article class="card">
+          <h3>Correct Handoff</h3>
+          <p style="color: var(--muted);">Click Bánh Mì Menu items to prepare your selections before contacting the shop.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Le's Sandwiches &amp; Café. Unofficial concept presentation — not operated by the restaurant.</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

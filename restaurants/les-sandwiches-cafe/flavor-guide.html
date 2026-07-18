@@ -1,113 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/les-sandwiches-cafe/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Le&#x27;s Sandwiches &amp; Café interactive concept experience.">
-  <title>Navigate the Flavor Map | Le&#x27;s Sandwiches &amp; Café</title>
-  <link rel="stylesheet" href="../site-core.css">
+  <meta name="description" content="Navigate the flavor map at Le's Sandwiches & Café. Plan your ideal combination of crisp toasted baguettes, pate spreads, and fresh herbs.">
+  <title>Navigate the Flavor Map | Le's Sandwiches &amp; Café</title>
+  <link rel="stylesheet" href="site.css">
   <style>
-    :root{--ink:hsl(113 45% 10%);--accent:hsl(182 68% 52%);--paper:hsl(303 38% 86%);--muted:color-mix(in srgb,var(--paper) 62%,transparent)}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 34%),var(--ink);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .site-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1rem clamp(1rem,4vw,3.5rem);background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
-    .brand{font-weight:900;letter-spacing:.02em;text-decoration:none}
-    .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.85rem}
-    .nav-links a{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.72}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1;color:var(--accent)}
-    main{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem)}
-    .eyebrow{color:var(--accent);font-size:.76rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    h1{max-width:820px;margin:.7rem 0 1rem;font-size:clamp(2.7rem,7vw,6.7rem);line-height:.92;letter-spacing:-.055em}
-    .lede{max-width:720px;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.75}
-    .planner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.25rem;margin-top:3rem}
-    .panel{border:1px solid color-mix(in srgb,var(--paper) 16%,transparent);border-radius:1.5rem;background:color-mix(in srgb,var(--paper) 6%,transparent);box-shadow:0 26px 80px rgba(0,0,0,.25);padding:clamp(1.2rem,3vw,2rem)}
-    .controls{display:grid;gap:1rem}
-    label span{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    select{width:100%;border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:.85rem;background:color-mix(in srgb,var(--ink) 72%,black);color:var(--paper);padding:.95rem 1rem;font:inherit}
-    button{margin-top:.35rem;border:0;border-radius:999px;background:var(--accent);color:#080808;padding:.9rem 1.25rem;font-weight:900;cursor:pointer}
-    .result{display:flex;min-height:100%;flex-direction:column;justify-content:space-between}
-    .result-icon{font-size:3rem}
-    .result h2{margin:.8rem 0 .4rem;font-size:clamp(1.7rem,3vw,2.7rem)}
-    #summary{color:var(--muted);line-height:1.7}
-    .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
-    @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
+    .planner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .panel {
+      border: 1px solid var(--light-gray);
+      border-radius: 16px;
+      background: var(--surface-card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 32px;
+    }
+    .controls {
+      display: grid;
+      gap: 20px;
+    }
+    .controls label {
+      display: block;
+    }
+    .controls label span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--p);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    select {
+      width: 100%;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.45);
+      color: var(--ink);
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--a);
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
+    .build-btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: var(--p);
+      color: white;
+      padding: 14px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 8px;
+    }
+    .build-btn:hover {
+      background-color: var(--s);
+      box-shadow: 0 5px 15px rgba(214, 166, 78, 0.35);
+    }
+    .result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      min-height: 440px;
+    }
+    .result h2 {
+      margin: 16px 0 8px 0;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+    #summary {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .note {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--light-gray);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+    @media (max-width: 768px) {
+      .planner {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="index.html">Le&#x27;s Sandwiches &amp; Café</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Find Us</a>
-        <a href="menu.html">Menu</a>
-        <a href="orders.html">Orders</a>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="index.html">Le's Sandwiches &amp; Café</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Bánh Mì Menu</a>
+      <a href="about.html">The Hidden-Gem Story</a>
+      <a href="orders.html">Large Orders</a>
+      <a href="contact.html">Visit</a>
       <a href="flavor-guide.html" aria-current="page">Flavor Guide</a>
     </div>
   </nav>
-  <main id="main">
-    <p class="eyebrow">A SIXTH-PAGE TASTE GUIDE</p>
-    <h1>Navigate the Flavor Map</h1>
-    <p class="lede">Describe the balance you want—comfort, brightness, depth, or heat—before exploring the current menu.</p>
-    <section class="planner" aria-label="Navigate the Flavor Map interactive planner">
-      <div class="panel controls">
-          <label>
-            <span>Foundation</span>
-            <select id="choice-1">
-              <option>Rice</option>
-              <option>Noodles</option>
-              <option>Shared plates</option>
-            </select>
-          </label>
-          <label>
-            <span>Intensity</span>
-            <select id="choice-2">
-              <option>Gentle</option>
-              <option>Layered</option>
-              <option>Bold</option>
-            </select>
-          </label>
-          <label>
-            <span>Balance</span>
-            <select id="choice-3">
-              <option>Fresh</option>
-              <option>Savory</option>
-              <option>Warming</option>
-            </select>
-          </label>
-        <button type="button" id="build-plan">Build My Demonstration Plan</button>
+
+  <main id="main" style="max-width:1120px; margin:0 auto; padding: 40px 24px;">
+    <p class="tag">A Sixth-Page Taste Guide</p>
+    <h1 style="margin-top: 8px; margin-bottom: 16px;">Navigate the Flavor Map</h1>
+    <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.7; max-width: 720px;">Describe the balance you want—comfort, brightness, depth, or heat—before exploring the current menu.</p>
+    
+    <section class="planner" aria-label="Navigate the Flavor Map interactive planner" style="padding: 0;">
+      
+      <!-- Left: Controls -->
+      <div class="panel controls" style="background: var(--surface-card); color: var(--ink); border: 1px solid var(--light-gray);">
+        <label for="choice-1">
+          <span>Foundation</span>
+          <select id="choice-1">
+            <option value="Rice" selected>Steamed Pork Roll (Chả Lụa)</option>
+            <option value="Noodles">Lemongrass Grilled Chicken</option>
+            <option value="Shared plates">Traditional Combo (Pâté &amp; Cold Cuts)</option>
+          </select>
+        </label>
+        
+        <label for="choice-2">
+          <span>Intensity</span>
+          <select id="choice-2">
+            <option value="Gentle" selected>Gentle (Creamy Egg Mayonnaise)</option>
+            <option value="Layered">Layered (Mayonnaise &amp; Savory Maggi Seasoning)</option>
+            <option value="Bold">Bold (Maggi &amp; Spicy Crimson Sriracha)</option>
+          </select>
+        </label>
+        
+        <label for="choice-3">
+          <span>Balance</span>
+          <select id="choice-3">
+            <option value="Fresh" selected>Fresh (Pickled Daikon &amp; Carrots + Cucumber)</option>
+            <option value="Savory">Savory (Fresh Cilantro &amp; Scallions)</option>
+            <option value="Warming">Warming (Thin Slices of Jalapeño Chili)</option>
+          </select>
+        </label>
+        
+        <button type="button" class="build-btn" id="build-plan">Build My Bánh Mì Plan</button>
       </div>
-      <div class="panel result" aria-live="polite">
+
+      <!-- Right: SVG Visualizer -->
+      <div class="panel result" aria-live="polite" style="background: var(--surface-card); color: var(--ink); border: 1px solid var(--light-gray);">
         <div>
-          <div class="result-icon" aria-hidden="true">🥢</div>
-          <h2>Your Flavor Guide</h2>
+          <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 240px; height: auto;">
+            <!-- Parchment paper shadow -->
+            <polygon points="20,165 295,175 270,40 45,50" fill="rgba(0,0,0,0.6)" filter="blur(6px)" aria-hidden="true"/>
+            
+            <!-- Parchment paper background -->
+            <polygon points="20,160 295,170 270,35 45,45" fill="#fcfaf0" opacity="0.85" stroke="#e6e1d1" stroke-width="1.5" aria-hidden="true"/>
+            <path d="M 30,150 C 45,155 70,140 100,145" stroke="#cbd5e1" stroke-width="1" fill="none" opacity="0.5" aria-hidden="true"/>
+
+            <!-- Toasted Baguette halves (sliced open) -->
+            <!-- Bottom half -->
+            <rect x="75" y="88" width="170" height="42" rx="21" fill="#fcd34d" stroke="#d97706" stroke-width="2.5" transform="rotate(-6 160 100)" aria-hidden="true"/>
+            <ellipse cx="160" cy="100" rx="76" ry="14" fill="#f59e0b" transform="rotate(-6 160 100)" aria-hidden="true"/>
+
+            <!-- 1. Foundation Layers -->
+            <!-- Pork Roll (Rice option) -->
+            <g id="svg-base-rice" class="flavor-layer">
+              <!-- Slices arranged in bread -->
+              <ellipse cx="110" cy="100" rx="14" ry="8" fill="#fecdd3" stroke="#fda4af" stroke-width="1" transform="rotate(-6 110 100)"/>
+              <ellipse cx="145" cy="100" rx="14" ry="8" fill="#fecdd3" stroke="#fda4af" stroke-width="1" transform="rotate(-6 145 100)"/>
+              <ellipse cx="180" cy="100" rx="14" ry="8" fill="#fecdd3" stroke="#fda4af" stroke-width="1" transform="rotate(-6 180 100)"/>
+              <ellipse cx="215" cy="100" rx="14" ry="8" fill="#fecdd3" stroke="#fda4af" stroke-width="1" transform="rotate(-6 215 100)"/>
+            </g>
+            
+            <!-- Grilled Lemongrass Chicken (Noodles option) -->
+            <g id="svg-base-noodles" class="flavor-layer">
+              <path d="M 90,102 Q 110,95 125,103 M 130,102 Q 150,96 165,104 M 170,101 Q 190,95 205,103 M 210,100 Q 230,94 245,102" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round"/>
+            </g>
+            
+            <!-- Traditional Combo (Shared Plates option) -->
+            <g id="svg-base-shared-plates" class="flavor-layer">
+              <!-- Pâté spread base -->
+              <path d="M 95,104 Q 160,95 225,102" fill="none" stroke="#991b1b" stroke-width="7" opacity="0.8" stroke-linecap="round"/>
+              <!-- Slices of cold cut ham -->
+              <rect x="100" y="96" width="30" height="10" rx="2" fill="#fda4af" transform="rotate(-15 115 101)"/>
+              <rect x="140" y="96" width="30" height="10" rx="2" fill="#fda4af" transform="rotate(-5 155 101)"/>
+              <rect x="180" y="95" width="30" height="10" rx="2" fill="#fda4af" transform="rotate(10 195 100)"/>
+            </g>
+
+            <!-- 2. Intensity Sauce Layers -->
+            <!-- Gentle: Mayonnaise -->
+            <path id="svg-sauce-gentle" class="flavor-layer" d="M 95,101 Q 160,92 225,99" fill="none" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+            
+            <!-- Layered: Mayo + Soy Maggi -->
+            <g id="svg-sauce-layered" class="flavor-layer">
+              <path d="M 95,101 Q 160,92 225,99" fill="none" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 105,101 Q 160,93 215,99" fill="none" stroke="#78350f" stroke-width="2" stroke-linecap="round" stroke-dasharray="6, 4"/>
+            </g>
+            
+            <!-- Bold: Maggi + Spicy Sriracha -->
+            <g id="svg-sauce-bold" class="flavor-layer">
+              <path d="M 95,101 Q 160,92 225,99" fill="none" stroke="#78350f" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- Sriracha lines -->
+              <path d="M 98,99 C 120,95 140,105 222,97" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- 3. Balance Toppings -->
+            <!-- Fresh: Daikon/Carrots & Cucumber -->
+            <g id="svg-garnish-fresh" class="flavor-layer">
+              <!-- Cucumber spear -->
+              <path d="M 90,95 Q 160,88 230,94" fill="none" stroke="#86efac" stroke-width="5" stroke-linecap="round"/>
+              <!-- Orange carrots -->
+              <line x1="110" y1="94" x2="130" y2="92" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="150" y1="92" x2="175" y2="91" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="190" y1="91" x2="215" y2="91" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- White daikon -->
+              <line x1="125" y1="93" x2="145" y2="92" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="170" y1="91" x2="192" y2="90" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+            
+            <!-- Savory: Cilantro & Scallions -->
+            <g id="svg-garnish-savory" class="flavor-layer">
+              <!-- Cilantro leaf clusters -->
+              <path d="M 115,92 Q 120,86 118,94" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 150,91 Q 155,85 153,93" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 185,90 Q 190,84 188,92" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+              <path d="M 215,89 Q 220,83 218,91" fill="none" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+            </g>
+
+            <!-- Warming: Jalapeño rings -->
+            <g id="svg-garnish-warming" class="flavor-layer">
+              <circle cx="120" cy="94" r="5" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+              <circle cx="160" cy="92" r="5" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+              <circle cx="200" cy="91" r="5" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+            </g>
+
+            <!-- Top Baguette half (resting slightly offset) -->
+            <rect x="75" y="66" width="170" height="34" rx="17" fill="#eab308" stroke="#ca8a04" stroke-width="2" transform="rotate(-6 160 83)" opacity="0.9" aria-hidden="true"/>
+            <path d="M 95,78 L 130,76 M 145,75 L 180,73 M 195,72 L 230,70" stroke="#fcd34d" stroke-width="2.5" transform="rotate(-6 160 83)" aria-hidden="true"/>
+          </svg>
+          <h2>Your Bánh Mì Customizer</h2>
           <p id="summary">Choose one option from each field, then build a demonstration plan.</p>
         </div>
         <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
       </div>
+
     </section>
-  
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-lessandwichescafeflavorguidehtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-lessandwichescafeflavorguidehtml" style="margin:.1rem 0 1rem;">Use flavor, texture, and appetite as your guide</h2>
-  <p>Ordering at Le&#x27;s Sandwiches &amp; Café becomes easier when the table talks about flavor and texture before choosing individual dishes. Some guests may want familiar, savory comfort; others may prefer brightness, heat, freshness, or a more adventurous combination. This guide helps the group build a meal with contrast instead of accidentally ordering several dishes that fill the same role.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Balance rich dishes with something fresh, acidic, crisp, or herb-forward.</li><li>Ask the table about heat tolerance and dietary needs before ordering.</li><li>Share strategically so each person can compare flavors without every dish becoming a duplicate.</li></ul>
-  <p>This page is organized around Vietnamese sandwiches, crisp herbs, savory fillings, and contrasting textures. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-  <script>
-    (() => {
-      const button = document.getElementById('build-plan');
-      const fields = [...document.querySelectorAll('select')];
-      const summary = document.getElementById('summary');
-      button.addEventListener('click', () => {
-        const values = fields.map(field => field.value);
-        summary.textContent = `Start with ${values[0]}; keep the experience ${values[1].toLowerCase()}; finish with ${values[2].toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
-      });
-    })();
-  </script>
+
+    <!-- Phase 2 Expanded Educational Content -->
+    <section class="phase2-expanded-content" style="margin-top: 48px; border-top: 1px solid var(--light-gray); padding-top: 48px; line-height: 1.8;">
+      <span class="tag">Plan with confidence</span>
+      <h2 style="margin-bottom: 16px; font-family: 'Fraunces';">Use flavor, texture, and appetite as your guide</h2>
+      <p style="color: var(--muted); margin-bottom: 16px;">Ordering at Le's Sandwiches &amp; Café becomes easier when the table talks about flavor and texture before choosing individual dishes. Some guests may want familiar, savory comfort; others may prefer brightness, heat, freshness, or a more adventurous combination. This guide helps the group build a meal with contrast instead of accidentally ordering several dishes that fill the same role.</p>
+      
+      <h3 style="font-size: 1.2rem; font-family: 'Fraunces'; margin-bottom: 8px; color: var(--p);">A simple way to decide</h3>
+      <ul style="list-style: disc; margin-left: 20px; color: var(--muted); display: grid; gap: 8px; margin-bottom: 24px;">
+        <li>Balance rich savory meats with pickled vegetables, crisp cucumbers, and fresh cilantro.</li>
+        <li>Ask the counter team about bread heat levels if you prefer a softer bun over a crispy baguette.</li>
+        <li>Specify chili preference during take-out to control heat levels inside the sandwich.</li>
+      </ul>
+      <p style="color: var(--muted);">This page is organized around Vietnamese sandwiches, crisp herbs, savory fillings, and contrasting textures. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant's current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Le's Sandwiches &amp; Café. Unofficial concept presentation — not operated by the restaurant.</p>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
