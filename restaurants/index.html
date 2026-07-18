@@ -19,6 +19,7 @@
       if (!response.ok) throw new Error(`Could not load showroom source (HTTP ${response.status})`);
 
       let html = await response.text();
+      html = html.replace(/\r\n/g, '\n');
 
       const oldCss = `    .metrics {
       display: grid;
