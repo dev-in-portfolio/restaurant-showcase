@@ -1,2 +1,116 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for MJ Donuts"><title>Donuts | MJ Donuts</title><link rel="stylesheet" href="site.css"></head><body data-v="2"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">MJ Donuts</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Donuts</a><a href="about.html">The Morning Story</a><a href="order.html">Build a Box</a><a href="contact.html">Visit</a></div>  <a href="box-builder.html">Box Builder</a>
-</nav><main id="main"><header class="head"><div class="tag">Classic Donuts • Morning Boxes</div><h1>Donuts</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Glazed classics</button><button data-f="g1">Cake donuts</button><button data-f="g2">Filled</button><button data-f="g3">Mixed boxes</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Glazed classics</h3><p>Simple, soft and familiar choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Cake donuts</h3><p>Denser texture and rotating finishes.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Filled</h3><p>Cream, fruit and seasonal directions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Mixed boxes</h3><p>A balanced assortment for groups.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by MJ Donuts. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/mj-donuts/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View the yeast ring, cake donut, filled donut, and bear claw menu at MJ Donuts.">
+  <title>Donuts | MJ Donuts</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-v="2">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="index.html">MJ Donuts</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Donuts</a>
+      <a href="about.html">The Morning Story</a>
+      <a href="order.html">Build a Box</a>
+      <a href="contact.html">Visit</a>
+      <a href="box-builder.html">Box Builder</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="head">
+      <div class="tag">Classic Donuts • Morning Boxes</div>
+      <h1>Donuts Menu</h1>
+      <p style="margin-top: 10px;">Select a style below to view our classic yeast rings, cake donuts, filled specialties, and bulk box options.</p>
+    </header>
+
+    <section>
+      <div class="tag">Interactive Menu Finder</div>
+      <div class="filter">
+        <button class="on" data-f="all">All</button>
+        <button data-f="g0">Glazed Classics</button>
+        <button data-f="g1">Cake Donuts</button>
+        <button data-f="g2">Filled</button>
+        <button data-f="g3">Mixed Boxes</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <!-- Glazed Classics -->
+        <article class="card" data-g="g0">
+          <div class="tag">Yeast Ring</div>
+          <h3>Classic Honey Glazed</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Our signature yeast donut rolled, fried, and dipped in warm honey glaze. Soft, airy, and melts in your mouth.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$1.50</span>
+        </article>
+
+        <article class="card" data-g="g0">
+          <div class="tag">Yeast Ring</div>
+          <h3>Strawberry Frosted with Sprinkles</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Soft yeast donut dipped in sweet pink strawberry frosting and topped with colorful rainbow sprinkles.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$1.65</span>
+        </article>
+
+        <!-- Cake Donuts -->
+        <article class="card" data-g="g1">
+          <div class="tag">Old Fashioned</div>
+          <h3>Double Chocolate Cake</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Rich, moist chocolate cake donut coated in a thick, sweet chocolate fudge glaze.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$1.65</span>
+        </article>
+
+        <article class="card" data-g="g1">
+          <div class="tag">Old Fashioned</div>
+          <h3>Blueberry Glazed Cake</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Spiced cake donut loaded with real blueberries and coated in our traditional honey glaze.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$1.65</span>
+        </article>
+
+        <!-- Filled -->
+        <article class="card" data-g="g2">
+          <div class="tag">Jelly &amp; Custard</div>
+          <h3>Boston Cream</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Yeast donut stuffed with rich Bavarian vanilla custard and topped with a glossy chocolate glaze.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$1.85</span>
+        </article>
+
+        <!-- Mixed Boxes -->
+        <article class="card" data-g="g3">
+          <div class="tag">Crowd Share</div>
+          <h3>Baker's Dozen Assortment</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">A hand-picked selection of 13 of our most popular glazed, cake, and filled donuts.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$18.00</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <article class="card">
+          <h3>Baked Fresh Daily</h3>
+          <p style="color: var(--text-muted);">We make all yeast and cake batters in-house every single morning — never frozen.</p>
+        </article>
+        <article class="card">
+          <h3>Custom Assortments</h3>
+          <p style="color: var(--text-muted);">Build your own combination of flavors for tailgates, schools, or morning corporate meetings.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 MJ Donuts. Unofficial concept presentation — not operated by the restaurant.</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
