@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/laurel-market/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Story — Laurel Market &amp; Deli | Charlotte, NC</title>
   <meta name="description" content="The Laurel Market story — a family-owned neighborhood market and deli in Charlotte's Myers Park, serving the community since the 1950s.">
   <link rel="stylesheet" href="../site-core.css">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-
   <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <div class="disclosure-banner">
-    <strong>Unofficial concept presentation</strong> — not operated by the restaurant
-  </div>
+  <div class="disclosure-banner">Unofficial concept presentation — not operated by the restaurant</div>
 
   <header class="site-header" role="banner">
-    <div class="header-inner">
+    <div class="header-inner container">
       <div class="logo">
         <a href="index.html">Laurel Market</a>
         <span>Neighborhood Market &amp; Deli</span>
@@ -29,7 +29,8 @@
           <li><a href="story.html" aria-current="page">Our Story</a></li>
           <li><a href="catering.html">Catering</a></li>
           <li><a href="contact.html">Contact</a></li>
-        <li><a href="signature-experience.html">Signature Experience</a></li></ul>
+          <li><a href="signature-experience.html">Signature Experience</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -37,24 +38,24 @@
   <main id="main-content" role="main">
 
     <section class="hero" style="padding:60px 20px;">
-      <p class="subtitle">Since the 1950s</p>
+      <p class="hero-subtitle">Since the 1950s</p>
       <h1>Our Story</h1>
-      <p>A Charlotte institution rooted in the Myers Park neighborhood.</p>
+      <p style="color: var(--medium-gray); max-width: 640px; margin: 0 auto;">A Charlotte institution rooted in the Myers Park neighborhood.</p>
     </section>
 
     <section class="section" aria-labelledby="history-heading">
       <div class="container">
-        <div class="two-col">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
           <div>
-            <h2 id="history-heading">A Family-Owned Tradition</h2>
-            <p>Laurel Market began as a small corner store in Charlotte's tree-lined Myers Park neighborhood. What started as a place to pick up milk and bread gradually became so much more &mdash; a gathering place, a lunch destination, and a beloved community landmark.</p>
-            <p>For generations, the same family has run the market with a simple philosophy: treat every customer like a neighbor, stock the best products you can, and make sandwiches that people will remember.</p>
-            <p>Over the years, the deli counter grew from a small cooler of pre-made sandwiches to a full-service operation where everything is made to order. Our Chicken Torta, The Traveler, and Special #9 have developed near-legendary status among Charlotte locals.</p>
+            <h2 id="history-heading" style="margin-bottom: 1.5rem;">A Family-Owned Tradition</h2>
+            <p style="color: var(--medium-gray); margin-bottom: 1rem;">Laurel Market began as a small corner store in Charlotte's tree-lined Myers Park neighborhood. What started as a place to pick up milk and bread gradually became so much more &mdash; a gathering place, a lunch destination, and a beloved community landmark.</p>
+            <p style="color: var(--medium-gray); margin-bottom: 1rem;">For generations, the same family has run the market with a simple philosophy: treat every customer like a neighbor, stock the best products you can, and make sandwiches that people will remember.</p>
+            <p style="color: var(--medium-gray);">Over the years, the deli counter grew from a small cooler of pre-made sandwiches to a full-service operation where everything is made to order. Our Chicken Torta, The Traveler, and Special #9 have developed near-legendary status among Charlotte locals.</p>
           </div>
           <div>
-            <div class="map-placeholder" style="height:350px;flex-direction:column;gap:8px;">
-              <span style="font-size:2.5rem;">&#127963;</span>
-              <span>114 Cherokee Rd &mdash; Myers Park</span>
+            <div class="map-placeholder" style="height:350px;flex-direction:column;gap:8px; display: flex; align-items: center; justify-content: center; text-align: center;">
+              <span style="font-size:2.5rem;" aria-hidden="true">🏡</span>
+              <span style="font-weight: 700; color: #ffffff;">1914 Selwyn Ave &mdash; Myers Park</span>
             </div>
           </div>
         </div>
@@ -63,24 +64,24 @@
 
     <section class="section section-alt" aria-labelledby="community-heading">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
           <h2 id="community-heading">Rooted in the Community</h2>
-          <p>Myers Park is more than a neighborhood &mdash; it's home.</p>
+          <p style="color: var(--medium-gray);">Myers Park is more than a neighborhood &mdash; it's home.</p>
         </div>
-        <div class="grid">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
           <article class="card" style="text-align:center;">
-            <span class="card-icon">&#128200;</span>
-            <h3>Generations Served</h3>
+            <span class="card-icon" style="font-size: 2rem;">📈</span>
+            <h3 style="margin-top: 1rem;">Generations Served</h3>
             <p>From grandparents stopping by for morning coffee to kids grabbing lunch after school, Laurel Market has been a constant through decades of change.</p>
           </article>
           <article class="card" style="text-align:center;">
-            <span class="card-icon">&#127968;</span>
-            <h3>Myers Park Neighbor</h3>
-            <p>Nestled on Cherokee Road, we've watched this beautiful neighborhood grow while keeping the same warm, familiar feel that regulars have always loved.</p>
+            <span class="card-icon" style="font-size: 2rem;">🌳</span>
+            <h3 style="margin-top: 1rem;">Myers Park Neighbor</h3>
+            <p>Nestled on Selwyn Ave, we've watched this beautiful neighborhood grow while keeping the same warm, familiar feel that regulars have always loved.</p>
           </article>
           <article class="card" style="text-align:center;">
-            <span class="card-icon">&#127774;</span>
-            <h3>Open 365 Days</h3>
+            <span class="card-icon" style="font-size: 2rem;">☀️</span>
+            <h3 style="margin-top: 1rem;">Open 365 Days</h3>
             <p>Thanksgiving, Christmas, New Year's Day &mdash; if you need us, we're here. Being open every single day of the year is our commitment to this community.</p>
           </article>
         </div>
@@ -89,51 +90,45 @@
 
     <section class="section" aria-labelledby="today-heading">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
           <h2 id="today-heading">Laurel Market Today</h2>
         </div>
-        <div class="grid" style="max-width:800px;margin:0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width:800px;margin:0 auto;">
           <article class="card">
             <h3>Deli Counter</h3>
             <p>Our made-to-order sandwiches draw crowds from across Charlotte. Each sandwich is crafted with premium ingredients, generous portions, and the care that only comes from decades of practice.</p>
           </article>
           <article class="card">
-            <h3>Market Provisions</h3>
-            <p>Beyond the deli, we're still the neighborhood market we've always been. From craft beer and local wine to pantry staples, we stock the shelves with care.</p>
-          </article>
-          <article class="card">
-            <h3>Catering</h3>
-            <p>We bring the Laurel Market experience to your events &mdash; from boxed lunches to party trays. Perfect for office meetings, family gatherings, and celebrations.</p>
-          </article>
-          <article class="card">
-            <h3>Looking Ahead</h3>
-            <p>While we honor our history, we're always evolving &mdash; new specials, fresh ideas, and the same commitment to quality that has defined us since day one.</p>
+            <h3>Provisions</h3>
+            <p>Beyond our fresh menu, we offer a curated selection of fine wines, craft beers, local cheeses, and specialty foods — ideal for picking up dinner ingredients or packing a picnic.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" aria-labelledby="visit-heading">
-      <div class="container" style="text-align:center;">
-        <h2 id="visit-heading" style="color:var(--white);">Come See Us</h2>
-        <p style="max-width:500px;margin:12px auto 24px;opacity:0.9;">Stop by 114 Cherokee Rd and see why we've been a Charlotte favorite for generations.</p>
-        <a href="contact.html" class="btn">Hours &amp; Location</a>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p><strong>Laurel Market</strong> &mdash; 114 Cherokee Rd, Charlotte, NC 28207</p>
-      <p>Store: (704) 347-4989 &nbsp;|&nbsp; Deli: (704) 347-0464</p>
-      <p><a href="https://laurelmarketdeli.com" target="_blank" rel="noopener">laurelmarketdeli.com</a> &nbsp;|&nbsp; <a href="https://instagram.com/laurelmarketdeli" target="_blank" rel="noopener">@laurelmarketdeli</a></p>
-      <div class="footer-disclosure">
-        <span class="disclosure-badge">Unofficial concept presentation — not operated by the restaurant</span>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left; padding-bottom: 2rem;">
+      <div>
+        <h4 style="color: var(--amber); margin-bottom: 1rem;">Laurel Market</h4>
+        <p style="color: var(--medium-gray);">Neighborhood gourmet market &amp; sandwich deli located in historic Myers Park, Charlotte.</p>
       </div>
+      <div>
+        <h4 style="color: var(--amber); margin-bottom: 1rem;">Hours</h4>
+        <p style="color: var(--medium-gray);">Deli Counter: Daily 7:00 AM – 3:00 PM<br>Market Store: Daily 7:00 AM – 9:00 PM</p>
+      </div>
+      <div>
+        <h4 style="color: var(--amber); margin-bottom: 1rem;">Contact</h4>
+        <p style="color: var(--medium-gray);">1914 Selwyn Ave<br>Charlotte, NC 28207</p>
+        <p style="color: var(--medium-gray); margin-top: 0.5rem;">Phone: <a href="tel:+17043336068" style="color: var(--amber); font-weight: 700;">(704) 333-6068</a></p>
+      </div>
+    </div>
+    <div class="disclosure container" style="text-align: center;">
+      <p>&copy; 2026 Laurel Market. Unofficial concept presentation — not operated by the restaurant.</p>
     </div>
   </footer>
 
-  <script src="../site-core.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
