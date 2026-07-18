@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/miguels-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel's Mexican & American Restaurant - Charlotte, NC | About Us</title>
+  <meta name="description" content="Read about the founding history and two-worlds-one-kitchen philosophy of Miguel's Restaurant in Charlotte, NC.">
+  <title>Miguel's Mexican &amp; American Restaurant - Charlotte, NC | About Us</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #060c09; color: var(--color-terracotta); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">M</div>
         <h1 class="brand-name">
           Miguel's
-          <span>Mexican & American</span>
+          <span>Mexican &amp; American</span>
         </h1>
       </div>
 
@@ -31,55 +34,46 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flavor-table.html">Flavor Table</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
   <header class="page-header container">
     <h2 class="page-title">Charlotte's Hidden Oasis</h2>
     <p class="page-subtitle">Serving dual comfort food traditions to travelers and locals near the airport since 1998.</p>
   </header>
 
-  <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
-      <!-- Landmark Gem Card -->
       <div class="premium-card">
         <h3 class="menu-category-title">Established in 1998</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Miguel's Mexican & American Restaurant was founded in 1998 off Business Center Drive. Hidden away near Charlotte Douglas International Airport and adjacent to corporate industrial centers, we quickly grew from a quiet local secret into a bustling airport landmark. 
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+          Miguel's Mexican &amp; American Restaurant was founded in 1998 off Business Center Drive. Hidden away near Charlotte Douglas International Airport and adjacent to corporate industrial centers, we quickly grew from a quiet local secret into a bustling airport landmark. 
         </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+        <p style="line-height: 1.8; color: var(--color-text-muted);">
           Pilots, flight crews, warehouse workers, and neighborhood regulars all gather here daily to enjoy a relaxing, authentic, and affordable escape.
         </p>
       </div>
 
-      <!-- The Menu philosophy Card -->
       <div class="premium-card">
         <h3 class="menu-category-title">Two Worlds, One Kitchen</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-muted);">
           Why choose between Mexican street comfort and classic American dining? Our kitchen was built to honor both. We prepare authentic Mexican specialties, from slow-baked beans and scratch-made red sauce to sizzling grilled fajitas, right alongside seared cheeseburgers and crispy basket chicken tenders.
         </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+        <p style="line-height: 1.8; color: var(--color-text-muted);">
           This dual-culinary focus ensures that every member of the family finds their favorite dish, served hot, fresh, and styled to perfection.
         </p>
       </div>
 
-      <!-- Simple Values Card -->
       <div class="premium-card">
         <h3 class="menu-category-title">Honest Hospitality</h3>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+        <p style="line-height: 1.8; color: var(--color-text-muted);">
           At Miguel's, we have remained committed to our core values: massive portions, affordable pricing, and fast, warm service. We believe in providing an unpretentious space where the community can share a meal, travelers can grab a satisfying bite before a flight, and everyone is welcomed like family.
         </p>
       </div>
-
     </div>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -96,9 +90,10 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Miguel's Mexican & American Restaurant. Charlotte landmark since 1998.</p>
+      <p>© 2026 Miguel's Mexican &amp; American Restaurant. Charlotte landmark since 1998.</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

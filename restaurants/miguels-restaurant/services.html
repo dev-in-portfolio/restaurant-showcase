@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/miguels-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel's Mexican & American Restaurant - Charlotte, NC | Catering & Services</title>
+  <meta name="description" content="Fiesta catering trays, taco buffet bars, and corporate lunch box services by Miguel's Restaurant in Charlotte, NC.">
+  <title>Miguel's Mexican &amp; American Restaurant - Charlotte, NC | Catering &amp; Services</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #060c09; color: var(--color-terracotta); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">M</div>
         <h1 class="brand-name">
           Miguel's
-          <span>Mexican & American</span>
+          <span>Mexican &amp; American</span>
         </h1>
       </div>
 
@@ -31,21 +34,17 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flavor-table.html">Flavor Table</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Fiesta Catering & To-Go</h2>
+    <h2 class="page-title">Fiesta Catering &amp; To-Go</h2>
     <p class="page-subtitle">Feed your corporate meeting, airport shift crew, or weekend tailgate party with Miguel's massive portion trays.</p>
   </header>
 
-  <!-- Services Offerings -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
       
-      <!-- Service 1 -->
       <div class="premium-card">
         <h3 class="menu-category-title">Fajita Party Trays</h3>
         <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
@@ -53,7 +52,6 @@
         </p>
       </div>
 
-      <!-- Service 2 -->
       <div class="premium-card">
         <h3 class="menu-category-title">Corporate Lunch Boxes</h3>
         <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
@@ -61,42 +59,39 @@
         </p>
       </div>
 
-      <!-- Service 3 -->
       <div class="premium-card">
         <h3 class="menu-category-title">Taco Buffet Stations</h3>
         <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
           Set up a build-your-own taco station. Large bowls of seasoned beef or chicken, crispy and soft taco shells, shredded cheese, lettuce, tomatoes, and containers of our signature red sauce and sour cream.
         </p>
       </div>
-
     </div>
 
-    <!-- Inquiry Form -->
     <section class="form-wrapper">
-      <div class="form-container">
-        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Inquiry</h2>
+      <div class="form-container" style="max-width: 600px; margin: 0 auto; background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 32px;">
+        <h2 class="section-title" style="margin-bottom: 1rem; text-align: center;">Catering Inquiry</h2>
         
         <form id="catering-form">
           <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your catering details below. Please note that all catering orders are pickup-only at our Business Center Drive location.</p>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="name">Contact Name</label>
-              <input type="text" id="name" required placeholder="John Doe">
+          <div class="form-grid" style="display: grid; gap: 16px;">
+            <div class="form-group" style="display: grid; gap: 4px;">
+              <label for="name" style="font-size: 0.85rem; font-weight: 700; color: var(--color-terracotta);">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe" style="background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 6px; padding: 10px; color: #fff;">
             </div>
             
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            <div class="form-group" style="display: grid; gap: 4px;">
+              <label for="phone" style="font-size: 0.85rem; font-weight: 700; color: var(--color-terracotta);">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199" style="background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 6px; padding: 10px; color: #fff;">
             </div>
 
-            <div class="form-group">
-              <label for="pickup-date">Requested Pickup Date</label>
-              <input type="date" id="pickup-date" required>
+            <div class="form-group" style="display: grid; gap: 4px;">
+              <label for="pickup-date" style="font-size: 0.85rem; font-weight: 700; color: var(--color-terracotta);">Requested Pickup Date</label>
+              <input type="date" id="pickup-date" required style="background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 6px; padding: 10px; color: #fff; cursor: pointer;">
             </div>
 
-            <div class="form-group">
-              <label for="package">Select Catering Package</label>
-              <select id="package" required>
+            <div class="form-group" style="display: grid; gap: 4px;">
+              <label for="package" style="font-size: 0.85rem; font-weight: 700; color: var(--color-terracotta);">Select Catering Package</label>
+              <select id="package" required style="background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 6px; padding: 10px; color: #fff; cursor: pointer;">
                 <option value="fajita">Fajita Party Trays</option>
                 <option value="taco">Taco Buffet Stations</option>
                 <option value="boxes">Corporate Lunch Boxes</option>
@@ -104,26 +99,24 @@
               </select>
             </div>
 
-            <div class="form-group" style="grid-column: 1 / -1;">
-              <label for="notes">Details of your request (Guest count, specific menu selections, salsa heat levels)</label>
-              <textarea id="notes" placeholder="e.g. Fajita trays for 15 people, 10 steak burritos de luxe, and extra salsa chips..."></textarea>
+            <div class="form-group" style="display: grid; gap: 4px;">
+              <label for="notes" style="font-size: 0.85rem; font-weight: 700; color: var(--color-terracotta);">Request Details</label>
+              <textarea id="notes" placeholder="e.g. Fajita trays for 15 people, 10 steak burritos de luxe..." style="min-height: 100px; background: rgba(0,0,0,0.4); border: 1px solid var(--color-border); border-radius: 6px; padding: 10px; color: #fff;"></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Submit Catering Inquiry</button>
+            <button type="submit" class="submit-btn" style="background: var(--color-terracotta); border: none; color: #fff; padding: 12px; font-weight: 800; border-radius: 6px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;">Submit Catering Inquiry</button>
           </div>
         </form>
 
-        <div class="success-panel" id="success-panel">
-          <div class="success-icon">🌮</div>
+        <div class="success-panel" id="success-panel" style="display: none; text-align: center; padding: 2rem 0;">
+          <div class="success-icon" style="font-size: 3rem; color: var(--color-lime); margin-bottom: 1rem;">🌮</div>
           <h3 class="success-title">Order Request Logged!</h3>
-          <p class="success-msg" id="success-message">Thank you. Miguel's catering staff will review your request and call your phone to verify details and arrange pickup timing.</p>
+          <p class="success-msg" id="success-message" style="color: var(--color-text-muted); margin-top: 0.5rem;">Thank you. Miguel's catering staff will review your request and call your phone to verify details and arrange pickup timing.</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -140,24 +133,10 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Miguel's Mexican & American Restaurant. Charlotte landmark since 1998.</p>
+      <p>© 2026 Miguel's Mexican &amp; American Restaurant. Charlotte landmark since 1998.</p>
     </div>
   </footer>
 
-  <script>
-    // Handle catering submissions
-    const form = document.getElementById('catering-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your catering request has been sent to the kitchen. We will call you at <strong>${phone}</strong> shortly to confirm your order details.`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/miguels-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel's Mexican & American Restaurant - Charlotte, NC | Home</title>
+  <title>Miguel's Mexican &amp; American Restaurant - Charlotte, NC | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #060c09; color: var(--color-terracotta); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">M</div>
         <h1 class="brand-name">
           Miguel's
-          <span>Mexican & American</span>
+          <span>Mexican &amp; American</span>
         </h1>
       </div>
 
@@ -31,10 +33,9 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flavor-table.html">Flavor Table</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Hero Banner Section -->
   <header class="hero-section" style="background-image: url('hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -46,28 +47,23 @@
     </div>
   </header>
 
-  <!-- To-Go Pickup Notice -->
   <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
-    <div class="notice-banner">
-      <span>📞 To-Go Orders are Pick-Up Only: (704) 393-3890. No Delivery.</span>
+    <div class="notice-banner" style="text-align: center; background: var(--color-terracotta-dim); border: 1px solid var(--color-border); padding: 0.8rem 1rem; border-radius: 8px; font-weight: 600; color: var(--color-terracotta);">
+      <span>To-Go Orders are Pick-Up Only: (704) 393-3890. No Delivery.</span>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">Authentic & Affordable</h2>
+  <main id="main" class="container">
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+      <h2 class="section-title">Authentic &amp; Affordable</h2>
       <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
-        Conveniently located off I-85 and Little Rock Road, Miguel's Mexican & American Restaurant serves up massive, flavorful portions of traditional Mexican fare alongside classic American comfort food. Whether you are catching a flight, working nearby, or looking for a casual family lunch, we offer exceptional meals at honest prices.
+        Conveniently located off I-85 and Little Rock Road, Miguel's Mexican &amp; American Restaurant serves up massive, flavorful portions of traditional Mexican fare alongside classic American comfort food. Whether you are catching a flight, working nearby, or looking for a casual family lunch, we offer exceptional meals at honest prices.
       </p>
       <a href="about.html" style="color: var(--color-terracotta); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-terracotta); padding-bottom: 4px; transition: var(--transition-fast);">
-        Read Our Story ➔
+        Read Our Story &rarr;
       </a>
     </section>
 
-    <!-- Featured Exhibition Grid -->
     <section style="margin-bottom: 6.5rem;">
       <h2 class="section-title">Fiesta Specialties</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem;">
@@ -97,20 +93,17 @@
       </div>
     </section>
 
-    <!-- Quick Call to Action -->
-    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem; padding: 40px;">
       <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Check the Menu Board</h2>
       <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
         From beef burritos de luxe and crispy tacos to grilled ribeyes and chicken tenders, click below to view our complete lunch and dinner menu.
       </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem; background: var(--color-terracotta); border: none; color: #fff; font-weight: 800; border-radius: 6px; text-decoration: none;">
         View Our Menu Board
       </a>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -127,9 +120,10 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Miguel's Mexican & American Restaurant. Charlotte landmark since 1998.</p>
+      <p>© 2026 Miguel's Mexican &amp; American Restaurant. Charlotte landmark since 1998.</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

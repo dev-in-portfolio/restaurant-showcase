@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/miguels-restaurant/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel's Mexican & American Restaurant - Charlotte, NC | Menu</title>
+  <title>Miguel's Mexican &amp; American Restaurant - Charlotte, NC | Menu</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #060c09; color: var(--color-terracotta); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">M</div>
         <h1 class="brand-name">
           Miguel's
-          <span>Mexican & American</span>
+          <span>Mexican &amp; American</span>
         </h1>
       </div>
 
@@ -31,20 +33,17 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flavor-table.html">Flavor Table</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
   <header class="page-header container">
     <h2 class="page-title">The Restaurant Menu Board</h2>
     <p class="page-subtitle">A balanced fusion of traditional Mexican street eats and classic American tavern comfort foods.</p>
   </header>
 
-  <!-- Menu Board Layout -->
-  <main class="container">
+  <main id="main" class="container">
     <div class="menu-grid">
       
-      <!-- Mexican Specialties -->
       <div class="premium-card">
         <h3 class="menu-category-title">Antojitos Mexicanos</h3>
         
@@ -81,7 +80,6 @@
         </div>
       </div>
 
-      <!-- American Classics -->
       <div class="premium-card">
         <h3 class="menu-category-title">American Favorites</h3>
 
@@ -109,11 +107,9 @@
           <p class="menu-item-desc">Four crispy golden-fried chicken tenders served with seasoned crinkle-cut fries, coleslaw, and a side of sweet honey mustard dipping sauce.</p>
         </div>
       </div>
-
     </div>
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -130,9 +126,10 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Miguel's Mexican & American Restaurant. Charlotte landmark since 1998.</p>
+      <p>© 2026 Miguel's Mexican &amp; American Restaurant. Charlotte landmark since 1998.</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>
