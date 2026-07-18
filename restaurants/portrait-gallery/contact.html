@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/portrait-gallery/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Portrait Gallery - Historic Matthews | Contact & Reservations</title>
+  <meta name="description" content="Reserve a table or contact The Portrait Gallery Restaurant &amp; Bar in Matthews, NC.">
+  <title>Visit &amp; Parlor Reservations | The Portrait Gallery</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #121214; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid rgba(212, 175, 55, 0.2); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Portrait Gallery Logo" class="brand-logo">
@@ -31,21 +34,23 @@
         <a href="contact.html" class="active">Contact</a>
       </div>
       <a href="flight-planner.html">Flight Planner</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
   <header class="page-header container">
     <h2 class="page-title">Connect With The Gallery</h2>
-    <p class="page-subtitle">Reserve a table or send us a message. We look forward to curating your evening.</p>
+    <p class="page-subtitle">Reserve a parlor table or send us a message. We look forward to curating your evening.</p>
   </header>
 
-  <!-- Content Containers -->
-  <main class="container">
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="text-align: center; border: 1px solid rgba(212, 175, 55, 0.3); padding: 0.8rem 1rem; font-weight: 600; color: var(--color-gold); background-color: rgba(212,175,55,0.05);">
+      <span>🛎️ Parlor Seating is Limited. Reservations Highly Recommended.</span>
+    </div>
+  </div>
 
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
       
-      <!-- Info and Hours Card -->
       <div class="gallery-frame-card">
         <h3 class="exhibition-title">Lounge Details</h3>
         
@@ -74,7 +79,6 @@
         </div>
       </div>
 
-      <!-- Quick Message Form Card -->
       <div class="gallery-frame-card">
         <h3 class="exhibition-title">Send A Message</h3>
         <form id="contact-form">
@@ -98,16 +102,14 @@
           </div>
         </form>
 
-        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+        <div class="success-panel" id="contact-success" style="display: none; padding: 2rem 0; text-align: center;">
           <div class="success-icon">✉</div>
           <h3 class="success-title">Message Sent!</h3>
           <p class="success-msg">Thank you. We have received your query and will follow up shortly.</p>
         </div>
       </div>
-
     </div>
 
-    <!-- Booking Form Section -->
     <section id="reserve-table" class="form-frame-wrapper">
       <div class="form-frame">
         <h2 class="section-title" style="margin-bottom: 1.5rem;">Acquire Table Reservation</h2>
@@ -133,11 +135,11 @@
             <div class="form-group">
               <label for="time">Arrival Time</label>
               <select id="time" required>
-                <option value="17:00">5:00 PM</option>
-                <option value="18:00">6:00 PM</option>
-                <option value="19:00">7:00 PM</option>
-                <option value="20:00">8:00 PM</option>
-                <option value="21:00">9:00 PM</option>
+                <option value="5:00 PM">5:00 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="8:00 PM">8:00 PM</option>
+                <option value="9:00 PM">9:00 PM</option>
               </select>
             </div>
 
@@ -147,7 +149,7 @@
                 <option value="2">2 Guests</option>
                 <option value="3">3 Guests</option>
                 <option value="4">4 Guests</option>
-                <option value="5">5+ Guests</option>
+                <option value="5+">5+ Guests</option>
               </select>
             </div>
 
@@ -155,50 +157,21 @@
           </div>
         </form>
 
-        <div class="success-panel" id="success-panel">
+        <div class="success-panel" id="success-panel" style="display: none; padding: 2rem 0; text-align: center;">
           <div class="success-icon">🖼</div>
           <h3 class="success-title">Reservation Curated!</h3>
           <p class="success-msg" id="success-message">Thank you. An invitation detail has been dispatched to your email address.</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 3rem;">
-      <p>© 2026 The Portrait Gallery Restaurant & Bar. All rights reserved.</p>
+      <p>© 2026 The Portrait Gallery Restaurant &amp; Bar. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Handle message form submissions
-    const contactForm = document.getElementById('contact-form');
-    const contactSuccess = document.getElementById('contact-success');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      contactForm.style.display = 'none';
-      contactSuccess.style.display = 'block';
-    });
-
-    // Handle reservation submissions
-    const form = document.getElementById('reservation-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const date = document.getElementById('date').value;
-      const time = document.getElementById('time').value;
-      const guests = document.getElementById('guests').value;
-
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Salutations, <strong>${name}</strong>. Your requested table for <strong>${guests} guests</strong> on <strong>${date}</strong> at <strong>${time}</strong> has been logged. Check <strong>${email}</strong> for your invitation details shortly.`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

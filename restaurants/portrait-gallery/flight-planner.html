@@ -1,113 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/portrait-gallery/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Portrait Gallery interactive concept experience.">
+  <meta name="description" content="Design a tasting flight at The Portrait Gallery. Select light, hoppy, sour, or dark beers to construct your ideal paddle progression.">
   <title>Design a Tasting Flight | The Portrait Gallery</title>
-  <link rel="stylesheet" href="../site-core.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root{--ink:hsl(42 45% 10%);--accent:hsl(147 68% 52%);--paper:hsl(232 38% 86%);--muted:color-mix(in srgb,var(--paper) 62%,transparent)}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 34%),var(--ink);color:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}
-    .site-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;padding:1rem clamp(1rem,4vw,3.5rem);background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
-    .brand{font-weight:900;letter-spacing:.02em;text-decoration:none}
-    .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.85rem}
-    .nav-links a{font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;opacity:.72}
-    .nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1;color:var(--accent)}
-    main{max-width:1120px;margin:0 auto;padding:clamp(3.5rem,8vw,7rem) clamp(1rem,4vw,3rem)}
-    .eyebrow{color:var(--accent);font-size:.76rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
-    h1{max-width:820px;margin:.7rem 0 1rem;font-size:clamp(2.7rem,7vw,6.7rem);line-height:.92;letter-spacing:-.055em}
-    .lede{max-width:720px;color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);line-height:1.75}
-    .planner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.25rem;margin-top:3rem}
-    .panel{border:1px solid color-mix(in srgb,var(--paper) 16%,transparent);border-radius:1.5rem;background:color-mix(in srgb,var(--paper) 6%,transparent);box-shadow:0 26px 80px rgba(0,0,0,.25);padding:clamp(1.2rem,3vw,2rem)}
-    .controls{display:grid;gap:1rem}
-    label span{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
-    select{width:100%;border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:.85rem;background:color-mix(in srgb,var(--ink) 72%,black);color:var(--paper);padding:.95rem 1rem;font:inherit}
-    button{margin-top:.35rem;border:0;border-radius:999px;background:var(--accent);color:#080808;padding:.9rem 1.25rem;font-weight:900;cursor:pointer}
-    .result{display:flex;min-height:100%;flex-direction:column;justify-content:space-between}
-    .result-icon{font-size:3rem}
-    .result h2{margin:.8rem 0 .4rem;font-size:clamp(1.7rem,3vw,2.7rem)}
-    #summary{color:var(--muted);line-height:1.7}
-    .note{margin-top:1.5rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--paper) 12%,transparent);color:color-mix(in srgb,var(--paper) 48%,transparent);font-size:.8rem;line-height:1.55}
-    @media(max-width:760px){.site-nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.planner{grid-template-columns:1fr}}
+    .planner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .panel {
+      border: 4px solid #1c1917;
+      outline: 1px solid var(--color-gold);
+      border-radius: 2px;
+      background: var(--color-bg-alt);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      padding: 32px;
+      position: relative;
+    }
+    .panel::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      pointer-events: none;
+    }
+    .controls {
+      display: grid;
+      gap: 20px;
+    }
+    .controls label {
+      display: block;
+    }
+    .controls label span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--color-gold);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--font-sans);
+    }
+    select {
+      width: 100%;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: var(--color-bg);
+      color: #ffffff;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+    }
+    .build-btn {
+      width: 100%;
+      border: none;
+      background: var(--color-gold);
+      color: var(--color-bg);
+      padding: 14px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      margin-top: 8px;
+      font-family: var(--font-sans);
+    }
+    .build-btn:hover {
+      background-color: transparent;
+      color: var(--color-gold);
+      outline: 1px solid var(--color-gold);
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.25);
+    }
+    .result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      min-height: 440px;
+    }
+    .result h2 {
+      margin: 16px 0 8px 0;
+      font-size: 1.8rem;
+      color: var(--color-gold);
+    }
+    #summary {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      max-width: 320px;
+      margin: 0 auto;
+      font-family: var(--font-sans);
+    }
+    .note {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+      font-family: var(--font-sans);
+    }
+    @media (max-width: 768px) {
+      .planner {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="index.html">The Portrait Gallery</a>
-    <div class="nav-links">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #121214; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid rgba(212, 175, 55, 0.2); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
+      
+      <div class="brand-wrapper">
+        <img src="logo.png" alt="The Portrait Gallery Logo" class="brand-logo">
+        <h1 class="brand-name">
+          The Portrait Gallery
+          <span>Matthews, NC</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Find Us</a>
         <a href="menu.html">Menu</a>
-        <a href="services.html">Services</a>
-      <a href="flight-planner.html" aria-current="page">Flight Planner</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a href="flight-planner.html" class="active" style="color: var(--color-gold); font-weight: 700;">Flight Planner</a>
     </div>
   </nav>
-  <main id="main">
-    <p class="eyebrow">POUR-BY-POUR PLANNING</p>
-    <h1>Design a Tasting Flight</h1>
-    <p class="lede">Map a demonstration tasting progression from familiar to adventurous, then use the live menu for actual availability.</p>
-    <section class="planner" aria-label="Design a Tasting Flight interactive planner">
+
+  <main id="main" class="container" style="padding-top: 40px; padding-bottom: 60px;">
+    <p class="eyebrow" style="color: var(--color-gold); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-sans);">Pour-by-Pour Planning</p>
+    <h1 style="margin-top: 8px; margin-bottom: 16px;">Design a Tasting Flight</h1>
+    <p style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7; max-width: 720px;">Map a demonstration tasting progression from familiar to adventurous, then use the live menu for actual availability.</p>
+    
+    <section class="planner" aria-label="Design a Tasting Flight interactive planner" style="padding: 0;">
+      
+      <!-- Left: Controls -->
       <div class="panel controls">
-          <label>
-            <span>Opening pour</span>
-            <select id="choice-1">
-              <option>Crisp</option>
-              <option>Mellow</option>
-              <option>Fruit-forward</option>
-            </select>
-          </label>
-          <label>
-            <span>Middle pour</span>
-            <select id="choice-2">
-              <option>Roasty</option>
-              <option>Hoppy</option>
-              <option>Spiced</option>
-            </select>
-          </label>
-          <label>
-            <span>Final pour</span>
-            <select id="choice-3">
-              <option>Bold</option>
-              <option>Rare</option>
-              <option>Dessert-like</option>
-            </select>
-          </label>
-        <button type="button" id="build-plan">Build My Demonstration Plan</button>
+        <label for="choice-1">
+          <span>Opening Pour (Glass 1)</span>
+          <select id="choice-1">
+            <option value="Crisp" selected>Crisp (Effervescent Champagne Cocktail)</option>
+            <option value="Mellow">Mellow (Light Botanical Dry Vermouth)</option>
+            <option value="Fruit-forward">Fruit-Forward (Wild Raspberry Rose Gin)</option>
+          </select>
+        </label>
+        
+        <label for="choice-2">
+          <span>Middle Pour (Glass 2)</span>
+          <select id="choice-2">
+            <option value="Roasty" selected>Roasty (Smoked Mescal &amp; Bitter Orange)</option>
+            <option value="Hoppy">Hoppy (Citrus Infused Bourbon Tonic)</option>
+            <option value="Spiced">Spiced (Clove &amp; Cinnamon Rum Warmth)</option>
+          </select>
+        </label>
+        
+        <label for="choice-3">
+          <span>Final Pour (Glass 3)</span>
+          <select id="choice-3">
+            <option value="Bold" selected>Bold (Imperial Bourbon Wood Stout)</option>
+            <option value="Rare">Rare (Double-Aged Vintage Plum Sherry)</option>
+            <option value="Dessert-like">Dessert-Like (Espresso Velvet Liqueur)</option>
+          </select>
+        </label>
+        
+        <button type="button" class="build-btn" id="build-plan">Build My Tasting Flight</button>
       </div>
+
+      <!-- Right: SVG Visualizer -->
       <div class="panel result" aria-live="polite">
         <div>
-          <div class="result-icon" aria-hidden="true">🍺</div>
-          <h2>Your Flight Planner</h2>
+          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 240px; height: auto;">
+            <!-- Hanging cords -->
+            <line x1="80" y1="5" x2="80" y2="40" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1.5" aria-hidden="true"/>
+            <line x1="160" y1="5" x2="160" y2="40" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1.5" aria-hidden="true"/>
+            <line x1="240" y1="5" x2="240" y2="40" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1.5" aria-hidden="true"/>
+
+            <!-- Hanging frames -->
+            <!-- Frame 1 (Left) -->
+            <rect x="50" y="40" width="60" height="90" fill="#18181b" stroke="#d4af37" stroke-width="2.5" aria-hidden="true"/>
+            <rect x="54" y="44" width="52" height="82" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" aria-hidden="true"/>
+            
+            <!-- Frame 2 (Center) -->
+            <rect x="130" y="40" width="60" height="90" fill="#18181b" stroke="#d4af37" stroke-width="2.5" aria-hidden="true"/>
+            <rect x="134" y="44" width="52" height="82" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" aria-hidden="true"/>
+
+            <!-- Frame 3 (Right) -->
+            <rect x="210" y="40" width="60" height="90" fill="#18181b" stroke="#d4af37" stroke-width="2.5" aria-hidden="true"/>
+            <rect x="214" y="44" width="52" height="82" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" aria-hidden="true"/>
+
+            <!-- Glasses inside frames -->
+            <!-- Glass 1 inside Frame 1 (Champagne Flute) -->
+            <path d="M 75,70 L 85,70 L 83,115 L 77,115 Z" fill="none" stroke="#cbd5e1" stroke-width="1" aria-hidden="true"/>
+            <line x1="80" y1="115" x2="80" y2="125" stroke="#cbd5e1" stroke-width="1.5" aria-hidden="true"/>
+            <ellipse cx="80" cy="125" rx="8" ry="2" fill="#cbd5e1" opacity="0.4" aria-hidden="true"/>
+            <!-- Fluids -->
+            <path id="svg-pour1-crisp" class="flavor-layer" d="M 76,82 L 84,82 L 83,114 L 77,114 Z" fill="#fef08a" opacity="0.8"/>
+            <path id="svg-pour1-mellow" class="flavor-layer" d="M 76,82 L 84,82 L 83,114 L 77,114 Z" fill="#ca8a04" opacity="0.85"/>
+            <path id="svg-pour1-fruit-forward" class="flavor-layer" d="M 76,82 L 84,82 L 83,114 L 77,114 Z" fill="#ec4899" opacity="0.85"/>
+
+            <!-- Glass 2 inside Frame 2 (Coupe Glass) -->
+            <path d="M 148,70 Q 160,88 172,70 Z" fill="none" stroke="#cbd5e1" stroke-width="1" aria-hidden="true"/>
+            <line x1="160" y1="84" x2="160" y2="122" stroke="#cbd5e1" stroke-width="1.5" aria-hidden="true"/>
+            <ellipse cx="160" cy="122" rx="10" ry="2.5" fill="#cbd5e1" opacity="0.4" aria-hidden="true"/>
+            <!-- Fluids -->
+            <path id="svg-pour2-roasty" class="flavor-layer" d="M 152,75 Q 160,86 168,75 Z" fill="#78350f" opacity="0.95"/>
+            <path id="svg-pour2-hoppy" class="flavor-layer" d="M 152,75 Q 160,86 168,75 Z" fill="#fbbf24" opacity="0.9"/>
+            <path id="svg-pour2-spiced" class="flavor-layer" d="M 152,75 Q 160,86 168,75 Z" fill="#b91c1c" opacity="0.85"/>
+
+            <!-- Glass 3 inside Frame 3 (Highball/Wine Glass) -->
+            <path d="M 222,70 L 258,70 L 250,118 L 230,118 Z" fill="none" stroke="#cbd5e1" stroke-width="1" aria-hidden="true"/>
+            <ellipse cx="240" cy="70" rx="18" ry="4" fill="none" stroke="#cbd5e1" stroke-width="1" aria-hidden="true"/>
+            <line x1="240" y1="118" x2="240" y2="125" stroke="#cbd5e1" stroke-width="1.5" aria-hidden="true"/>
+            <ellipse cx="240" cy="125" rx="8" ry="2" fill="#cbd5e1" opacity="0.4" aria-hidden="true"/>
+            <!-- Fluids -->
+            <path id="svg-pour3-bold" class="flavor-layer" d="M 224,84 L 256,84 L 250,117 L 230,117 Z" fill="#1c1917" opacity="0.98"/>
+            <path id="svg-pour3-rare" class="flavor-layer" d="M 224,84 L 256,84 L 250,117 L 230,117 Z" fill="#dc2626" opacity="0.85"/>
+            <path id="svg-pour3-dessert-like" class="flavor-layer" d="M 224,84 L 256,84 L 250,117 L 230,117 Z" fill="#4c1d95" opacity="0.95"/>
+
+            <!-- Wooden gallery shelf baseline -->
+            <rect x="20" y="180" width="280" height="8" rx="2" fill="#a16207" stroke="#78350f" stroke-width="1.5" aria-hidden="true"/>
+          </svg>
+          <h2>Your Curated Exhibition</h2>
           <p id="summary">Choose one option from each field, then build a demonstration plan.</p>
         </div>
         <p class="note">Concept demonstration only. This tool does not submit an order, reservation, or personal information. Confirm current menu items, pricing, hours, and availability directly with the restaurant.</p>
       </div>
+
     </section>
-  
-<!-- PHASE2-CONTENT-EXPANSION -->
-<section class="phase2-expanded-content" aria-labelledby="phase2-theportraitgalleryflightplannerhtml" style="max-width:72rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.25rem,4vw,2.5rem);border:1px solid rgba(127,127,127,.28);border-radius:1rem;line-height:1.75;">
-  <p style="font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin:0 0 .55rem;">Plan with confidence</p>
-  <h2 id="phase2-theportraitgalleryflightplannerhtml" style="margin:.1rem 0 1rem;">Taste with a clear progression</h2>
-  <p>A tasting flight at The Portrait Gallery works best when each selection has a purpose. Begin with an approachable option, move toward fuller aroma or body, and save the most intense choice for later. That order gives every pour enough room to be noticed and makes it easier for a group to compare preferences without rushing through the experience.</p>
-  <h3 style="margin-top:1.5rem;">A simple way to decide</h3>
-  <ul><li>Move from lighter or cleaner profiles toward stronger or sweeter selections.</li><li>Use water and food between tastes to reset the palate.</li><li>Compare aroma, body, finish, and personal preference rather than looking for one correct winner.</li></ul>
-  <p>This page is organized around a cocktail-and-lounge tasting sequence designed for conversation and comparison. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
-</section>
-</main>
-  <script>
-    (() => {
-      const button = document.getElementById('build-plan');
-      const fields = [...document.querySelectorAll('select')];
-      const summary = document.getElementById('summary');
-      button.addEventListener('click', () => {
-        const values = fields.map(field => field.value);
-        summary.textContent = `Start with ${values[0]}; keep the experience ${values[1].toLowerCase()}; finish with ${values[2].toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
-      });
-    })();
-  </script>
+
+    <!-- Phase 2 Expanded Educational Content -->
+    <section class="phase2-expanded-content" style="margin-top: 48px; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 48px; line-height: 1.8;">
+      <span class="tag" style="color: var(--color-gold);">Plan with confidence</span>
+      <h2 style="margin-bottom: 16px; font-family: 'Cinzel';">Taste with a clear progression</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 16px;">A tasting flight at The Portrait Gallery works best when each selection has a purpose. Begin with an approachable option, move toward fuller aroma or body, and save the most intense choice for later. That order gives every pour enough room to be noticed and makes it easier for a group to compare preferences without rushing through the experience.</p>
+      
+      <h3 style="font-size: 1.2rem; font-family: 'Cinzel'; margin-bottom: 8px; color: var(--color-gold);">A simple way to decide</h3>
+      <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-muted); display: grid; gap: 8px; margin-bottom: 24px;">
+        <li>Move from lighter or cleaner profiles toward stronger or sweeter selections.</li>
+        <li>Use water and food between tastes to reset the palate.</li>
+        <li>Compare aroma, body, finish, and personal preference rather than looking for one correct winner.</li>
+      </ul>
+      <p style="color: var(--color-text-muted);">This page is organized around a cocktail-and-lounge tasting sequence designed for conversation and comparison. It is meant to make the choice clearer, not to replace a conversation with the restaurant. Specific dishes, ingredients, prices, hours, availability, service options, and policies can change. Confirm time-sensitive details through the restaurant’s current official channel, especially for allergies, large groups, events, or a visit built around one particular item.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Location</h3>
+        <p>118 E. Charles St.<br>Matthews, NC 28105</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Tuesday - Thursday: 5:00 PM - 9:00 PM<br>Friday - Saturday: 5:00 PM - 10:00 PM<br>Sunday - Monday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Contact</h3>
+        <p>Phone: (704) 369-9982<br>Email: info@pgmatthews.com</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 The Portrait Gallery Restaurant &amp; Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>

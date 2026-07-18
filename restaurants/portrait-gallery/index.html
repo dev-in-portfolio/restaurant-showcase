@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/portrait-gallery/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Portrait Gallery - Historic Matthews | Home</title>
+  <title>The Portrait Gallery Restaurant &amp; Bar - Historic Matthews, NC | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #121214; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid rgba(212, 175, 55, 0.2); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Portrait Gallery Logo" class="brand-logo">
@@ -31,83 +33,71 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flight-planner.html">Flight Planner</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Hero Banner Section -->
   <header class="hero-section" style="background-image: url('hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-frame">
-        <span class="hero-subtitle">Welcome to Matthews' Premier Lounge</span>
-        <h2 class="hero-title">Culinary Artistry Meets Intimate Luxury</h2>
-        <p class="hero-desc">"Step inside our historic, art-filled sanctuary where custom craft cocktails and locally-sourced small plates curate an unforgettable evening."</p>
+        <span class="hero-subtitle">Historic Downtown Matthews</span>
+        <h2 class="hero-title">A Symphony of Small Plates &amp; Mixology</h2>
+        <p class="hero-desc">"Immerse yourself in our intimate historic lounge, enjoying curated tapas, fine vintage wines, and artisanal craft cocktails."</p>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">The Gallery Experience</h2>
-      <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem;">
-        Housed within the walls of a beautifully restored early-1900s historic landmark in downtown Matthews, The Portrait Gallery represents a new canvas for dining. We combine rotating works of local artists with the fluid creativity of our culinary and mixology teams.
+  <main id="main" class="container">
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+      <h2 class="section-title">Bespoke Curation</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Housed in a restored historic brick building in downtown Matthews, The Portrait Gallery combines upscale artistic aesthetics with casual lounge warmth. We invite you to explore our creative culinary gallery of shareable plates and craft cocktails.
       </p>
-      <a href="about.html" style="font-family: var(--font-sans); color: var(--color-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--color-gold); padding-bottom: 3px;">
-        Discover Our Story ➔
+      <a href="about.html" style="color: var(--color-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast);">
+        Enter The Parlor &rarr;
       </a>
     </section>
 
-    <!-- Featured Exhibition Grid -->
-    <section style="margin-bottom: 6rem;">
-      <h2 class="section-title">Featured Tonight</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
+    <section style="margin-bottom: 6.5rem;">
+      <h2 class="section-title">Current Exhibition Specialties</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem;">
         
         <div class="gallery-frame-card">
-          <h3 class="exhibition-title">Signature Plate</h3>
-          <div class="dish-item" style="margin-bottom: 0;">
-            <div class="dish-header">
-              <span class="dish-name" style="font-size: 1.4rem;">Char-Grilled Shrimp & Grits</span>
-              <span class="dish-price">$24</span>
-            </div>
-            <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem;">
-              Creamy yellow stone-ground grits sourced from local Carolina mills, loaded with fresh char-grilled jumbo shrimp and finished with our velvety smoky Tasso ham aioli.
-            </p>
+          <span class="tag" style="margin-bottom: 1.2rem; display: block;">Tapas Masterpiece</span>
+          <div class="dish-header">
+            <span class="dish-name" style="font-size: 1.3rem;">Balsamic Lamb Lollipops</span>
+            <span class="dish-price">$18.00</span>
           </div>
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem;">
+            Three pan-seared grass-fed lamb chops drizzled with rosemary-infused aged balsamic reduction. Served over a bed of mint pea puree.
+          </p>
         </div>
 
         <div class="gallery-frame-card">
-          <h3 class="exhibition-title">Craft Masterpiece</h3>
-          <div class="dish-item" style="margin-bottom: 0;">
-            <div class="dish-header">
-              <span class="dish-name" style="font-size: 1.4rem;">The Mona Lisa</span>
-              <span class="dish-price">$16</span>
-            </div>
-            <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem;">
-              Botanical-infused local gin, aromatic elderflower liqueur, rosemary-infused simple syrup, freshly squeezed lemon juice, crowned with a sparkling Prosecco float.
-            </p>
+          <span class="tag" style="margin-bottom: 1.2rem; display: block;">Mixology Masterpiece</span>
+          <div class="dish-header">
+            <span class="dish-name" style="font-size: 1.3rem;">The Smoked Gallery Old Fashioned</span>
+            <span class="dish-price">$15.00</span>
           </div>
+          <p class="dish-desc" style="font-size: 0.95rem; margin-top: 0.5rem;">
+            Double-wood bourbon, house botanical bitters, and orange peel oils, cold-smoked tableside under glass with hickory wood chips.
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- Quick Reserve -->
-    <section style="text-align: center; background-color: var(--color-bg-alt); padding: 4rem 2rem; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Join Us For An Evening</h2>
-      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem auto;">
-        Enjoy private lounge booths, brick fireplace seating, or our string-lit outdoor garden patio. We look forward to hosting you.
+    <section class="gallery-frame-card" style="text-align: center; margin-bottom: 5rem; padding: 40px;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-gold);">Behold The Menu</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        From charred octopus and charcuterie boards to botanical cocktails and global wine reserves, explore our complete gallery.
       </p>
-      <a href="contact.html#reserve-table" class="gallery-reserve-btn" style="display: inline-block;">
-        Request A Reservation
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem; text-decoration: none;">
+        View Culinary Exhibition
       </a>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -124,9 +114,10 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 The Portrait Gallery Restaurant & Bar. All rights reserved.</p>
+      <p>© 2026 The Portrait Gallery Restaurant &amp; Bar. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

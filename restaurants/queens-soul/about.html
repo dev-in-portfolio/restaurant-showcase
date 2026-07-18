@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/queens-soul/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Queen's Soul Food - Charlotte, NC | About Us</title>
+  <meta name="description" content="Learn about Queen's Soul Food's roots, kitchen traditions, and comfort recipes in Charlotte, NC.">
+  <title>About Our Southern Kitchen | Queen's Soul Food</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #090510; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--color-border); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <div class="brand-logo-css">Q</div>
@@ -31,55 +34,39 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Our Southern Legacy</h2>
-    <p class="page-subtitle">Serving Charlotte families authentic Southern soul dinners with a royal standard of excellence since 2012.</p>
+    <h2 class="page-title">Comfort Cooking With Heart</h2>
+    <p class="page-subtitle">A Charlotte landmark since 2012, serving authentic Southern soul food classics to East Independence visitors.</p>
   </header>
 
-  <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
-      <!-- Roots Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">Independence Boulevard Landmark</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          Queen's Soul Food opened its doors in 2012 at 7308 E Independence Blvd, Charlotte. From day one, our mission was to provide East Charlotte with comforting, slow-cooked Southern cuisine that makes everyone feel at home.
+      <div class="premium-card" style="padding: 2.5rem; border-radius: 16px;">
+        <h3 class="section-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1rem;">Family Kitchen Traditions</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+          At Queen's, our menu highlights Southern staples made from scratch daily. We use premium pork, slow-simmered beef oxtails, and fresh greens seasoned using traditional techniques.
         </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          Our dining rooms have welcomed generations of local families for Sunday bakes, corporate lunches, and takeout meals, serving as a neighborhood gathering point.
-        </p>
-      </div>
-
-      <!-- Cooking Standard Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">The Royal Standard of Seasoning</h3>
-        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
-          We call it the "Royal Standard" because we believe soul food should never be rushed or half-cooked. We hand-select our beef oxtails, double-dredge our chicken wings in seasoned flour, and slow-cook our collard greens with smoked turkey wing broth for rich savory depth.
-        </p>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          All our sides, including our four-cheese baked macaroni and sweetened candied yams, are baked fresh every single morning.
+        <p style="line-height: 1.8; color: var(--color-text-muted);">
+          We avoid short-cuts, slow cooking our stocks and pan gravy to extract the deepest flavors. This careful, slow-cooking philosophy makes every plate feel like home.
         </p>
       </div>
 
-      <!-- Cakes Card -->
-      <div class="premium-card">
-        <h3 class="menu-category-title">Double-Layer Baking Traditions</h3>
-        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
-          No dinner plate is complete without a slice of homemade cake. Our bakers keep Southern dessert traditions alive, preparing double-layered strawberry, coconut, and fudge chocolate cakes from scratch. One slice is massive, moist, and cooked with love.
+      <div class="premium-card" style="padding: 2.5rem; border-radius: 16px;">
+        <h3 class="section-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 1rem;">Our Charlotte Landmark</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+          Since opening on East Independence Boulevard, we have been proud to serve families, workers, and travelers coming through the Matthews and East Charlotte areas.
+        </p>
+        <p style="line-height: 1.8; color: var(--color-text-muted);">
+          We offer a clean, family-friendly dine-in booth space and a fast takeout counter for those picking up dinner pans on their commute home.
         </p>
       </div>
-
     </div>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -92,7 +79,7 @@
       </div>
       <div class="info-block">
         <h3>Details</h3>
-        <p>Phone: (704) 563-1106<br>Dine-In Booths & Takeout Counter</p>
+        <p>Phone: (704) 563-1106<br>Dine-In Booths &amp; Takeout Counter</p>
       </div>
     </div>
     <div class="copyright-footer">
@@ -100,5 +87,6 @@
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

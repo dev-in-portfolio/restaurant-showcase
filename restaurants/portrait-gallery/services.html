@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/portrait-gallery/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Portrait Gallery - Historic Matthews | Catering & Services</title>
+  <meta name="description" content="Historic brick parlor buyouts, corporate tapas catering, and mixology classes by The Portrait Gallery in Matthews, NC.">
+  <title>Historic Matthews Curation | The Portrait Gallery</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="disclosure-banner" style="text-align: center; background-color: #121214; color: var(--color-gold); padding: 0.5rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid rgba(212, 175, 55, 0.2); position: relative; z-index: 10;">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
   <nav class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
-      </a>
+      <a href="../index.html" class="back-to-directory">← Directory Portal</a>
       
       <div class="brand-wrapper">
         <img src="logo.png" alt="The Portrait Gallery Logo" class="brand-logo">
@@ -31,21 +34,17 @@
         <a href="contact.html">Contact</a>
       </div>
       <a href="flight-planner.html">Flight Planner</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-  <!-- Page Header -->
   <header class="page-header container">
-    <h2 class="page-title">Catering & Private Events</h2>
+    <h2 class="page-title">Catering &amp; Private Events</h2>
     <p class="page-subtitle">Elevate your next gathering with bespoke culinary curation and artisan cocktail service.</p>
   </header>
 
-  <!-- Services Offerings -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
       
-      <!-- Service 1 -->
       <div class="gallery-frame-card">
         <h3 class="exhibition-title">Lounge Venue Buyouts</h3>
         <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
@@ -53,7 +52,6 @@
         </p>
       </div>
 
-      <!-- Service 2 -->
       <div class="gallery-frame-card">
         <h3 class="exhibition-title">Artisan Off-Site Catering</h3>
         <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
@@ -61,17 +59,14 @@
         </p>
       </div>
 
-      <!-- Service 3 -->
       <div class="gallery-frame-card">
         <h3 class="exhibition-title">Private Mixology Exhibition</h3>
         <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
           Perfect for birthdays or team building. Rent our main bar area for an afternoon and let our head mixologists teach your party the science of craft infusions, syrups, and the technique behind shaking three of our legendary cocktails.
         </p>
       </div>
-
     </div>
 
-    <!-- Inquiry Form -->
     <section class="form-frame-wrapper">
       <div class="form-frame">
         <h2 class="section-title" style="margin-bottom: 1rem;">Service Inquiry</h2>
@@ -91,7 +86,7 @@
 
             <div class="form-group">
               <label for="service-type">Service Required</label>
-              <select id="service-type" required>
+              <select id="service-type" required style="color: #fff; cursor: pointer;">
                 <option value="buyout">Lounge Venue Buyout</option>
                 <option value="catering">Off-Site Small Plates Catering</option>
                 <option value="mixology">Private Mixology Exhibition</option>
@@ -100,7 +95,7 @@
 
             <div class="form-group">
               <label for="date">Estimated Date</label>
-              <input type="date" id="date" required>
+              <input type="date" id="date" required style="color: #fff; cursor: pointer;">
             </div>
 
             <div class="form-group" style="grid-column: 1 / -1;">
@@ -112,17 +107,15 @@
           </div>
         </form>
 
-        <div class="success-panel" id="success-panel">
+        <div class="success-panel" id="success-panel" style="display: none; padding: 2rem 0; text-align: center;">
           <div class="success-icon">⚜</div>
           <h3 class="success-title">Inquiry Dispatched!</h3>
           <p class="success-msg" id="success-message">We have received your event details and will review it shortly. Thank you.</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
@@ -139,24 +132,10 @@
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 The Portrait Gallery Restaurant & Bar. All rights reserved.</p>
+      <p>© 2026 The Portrait Gallery Restaurant &amp; Bar. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Handle inquiry submissions
-    const form = document.getElementById('inquiry-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Thank you, <strong>${name}</strong>. Your inquiry has been routed to our event planner. We will contact you at <strong>${email}</strong> soon.`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
