@@ -1,2 +1,116 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Unofficial five-page demo for Matthews Social House"><title>Food &amp; Drinks | Matthews Social House</title><link rel="stylesheet" href="site.css"></head><body data-v="4"><a class="skip" href="#main">Skip to content</a><div class="notice">Unofficial full five-page redesign demo • premium visual QA pending • forms do not submit</div><nav><a href="index.html">Matthews Social House</a><button class="toggle" aria-expanded="false">Menu</button><div class="links"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Food &amp; Drinks</a><a href="about.html">The House</a><a href="events.html">Events</a><a href="contact.html">Visit</a></div>  <a href="flight-planner.html">Flight Planner</a>
-</nav><main id="main"><header class="head"><div class="tag">Food • Drinks • Social Events</div><h1>Food &amp; Drinks</h1><p>A dedicated mobile-readable menu page with a functional category finder. Representative directions are labeled until current menu data is verified.</p></header><section><div class="tag">Interactive menu finder</div><div class="filter"><button class="on" data-f="all">All</button><button data-f="g0">Dinner first</button><button data-f="g1">Drinks first</button><button data-f="g2">Game night</button><button data-f="g3">Celebration</button></div><div class="grid g2"><article class="card menu-card" data-g="g0"><div class="tag">Menu direction</div><h3>Dinner first</h3><p>Shareables and full-meal directions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g1"><div class="tag">Menu direction</div><h3>Drinks first</h3><p>Cocktails, beer and casual gathering choices.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g2"><div class="tag">Menu direction</div><h3>Game night</h3><p>Fast food, group tables and screens.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article><article class="card menu-card" data-g="g3"><div class="tag">Menu direction</div><h3>Celebration</h3><p>Packages and larger occasions.</p><p><strong>Final items, pricing and availability must come from the current owner-approved menu.</strong></p></article></div></section><section class="alt"><div class="grid g3"><article class="card"><h3>Readable HTML</h3><p>No PDF-only dependency.</p></article><article class="card"><h3>Qualified content</h3><p>No invented prices or availability.</p></article><article class="card"><h3>Correct handoff</h3><p>Menu choices lead to the relevant conversion page.</p></article></div></section></main><footer>Concept only — not affiliated with or operated by Matthews Social House. Current operational details require owner confirmation.</footer><div class="toast" role="status"></div><script src="site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/matthews-social-house/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View the food, craft beer, and cocktail menu at Matthews Social House. Shareable plates, flatbreads, and beer flights.">
+  <title>Food &amp; Drinks | Matthews Social House</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-v="4">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="notice">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="index.html">Matthews Social House</a>
+    <button class="toggle" aria-expanded="false">Menu</button>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Food &amp; Drinks</a>
+      <a href="about.html">The House</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Visit</a>
+      <a href="flight-planner.html">Flight Planner</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="head" style="background-color: var(--white); color: var(--charcoal); border-bottom: 1px solid var(--light-gray); padding: 5rem 5vw 3rem;">
+      <div class="tag">Food • Drinks • Social Events</div>
+      <h1 style="color: var(--p);">Food &amp; Drinks</h1>
+      <p style="color: var(--text-muted); margin-top: 10px;">Select a style below to view our curated beer taps, signature cocktails, and social plates.</p>
+    </header>
+
+    <section>
+      <div class="tag">Interactive Menu Finder</div>
+      <div class="filter">
+        <button class="on" data-f="all">All</button>
+        <button data-f="g0">Dinner First</button>
+        <button data-f="g1">Drinks First</button>
+        <button data-f="g2">Game Night</button>
+        <button data-f="g3">Celebration</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <!-- Dinner First -->
+        <article class="card" data-g="g0">
+          <div class="tag">Shareables &amp; Meals</div>
+          <h3>Matthews Flatbread</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Crisp flatbread topped with prosciutto, fresh figs, goat cheese, arugula, and balsamic reduction.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$14.50</span>
+        </article>
+
+        <article class="card" data-g="g0">
+          <div class="tag">Shareables &amp; Meals</div>
+          <h3>Social Cheese &amp; Charcuterie</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Curated board of local artisan cheeses, cured meats, house pickles, whole grain mustard, and crackers.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$22.00</span>
+        </article>
+
+        <!-- Drinks First -->
+        <article class="card" data-g="g1">
+          <div class="tag">Craft Taps &amp; Shaken</div>
+          <h3>Local Craft Flight (4 Pours)</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Select four 5oz pours of our rotating craft draft selections from NC/SC breweries.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$12.00</span>
+        </article>
+
+        <article class="card" data-g="g1">
+          <div class="tag">Craft Taps &amp; Shaken</div>
+          <h3>Matthews Mule</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Local NC vodka, fresh lime juice, and spicy craft ginger beer served in copper cups.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$11.00</span>
+        </article>
+
+        <!-- Game Night -->
+        <article class="card" data-g="g2">
+          <div class="tag">Pub Classics</div>
+          <h3>Warm Bavarian Pretzels</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Two salted pretzels served with house-made stout beer cheese and honey mustard.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$9.50</span>
+        </article>
+
+        <!-- Celebration -->
+        <article class="card" data-g="g3">
+          <div class="tag">Occasions</div>
+          <h3>Social Pitcher &amp; Platter Combo</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1rem;">Perfect for groups: choice of house draft beer pitcher or sangria pitcher paired with a double flatbread platter.</p>
+          <span style="font-weight: 700; color: var(--p); font-size: 1.1rem;">$45.00</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <article class="card">
+          <h3>Readable HTML Menu</h3>
+          <p style="color: var(--text-muted);">Responsive design that loads instantly on smartphones — no slow PDFs or zoom required.</p>
+        </article>
+        <article class="card">
+          <h3>Sourced Locally</h3>
+          <p style="color: var(--text-muted);">We swap draft lines weekly to highlight independent North &amp; South Carolina brewers.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Matthews Social House. Unofficial concept presentation — not operated by the restaurant.</p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
