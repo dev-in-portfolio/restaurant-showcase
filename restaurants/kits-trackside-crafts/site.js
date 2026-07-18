@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // 1. Mobile navigation menu toggle
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.main-nav');
   if (toggle && nav) {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // 2. Smooth scroll anchors
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var target = document.querySelector(this.getAttribute('href'));
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // 3. FAQ answer accordion toggle
   document.querySelectorAll('.faq-question').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var expanded = this.getAttribute('aria-expanded') === 'true';
@@ -36,6 +39,53 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // 4. Tasting Flight Planner SVG Layer updates (flight-planner.html)
+  const button = document.getElementById('build-plan');
+  const pour1 = document.getElementById('choice-1');
+  const pour2 = document.getElementById('choice-2');
+  const pour3 = document.getElementById('choice-3');
+  const summary = document.getElementById('summary');
+
+  if (button && pour1 && pour2 && pour3 && summary) {
+    function updateTastingFlight() {
+      const p1 = pour1.value;
+      const p2 = pour2.value;
+      const p3 = pour3.value;
+
+      summary.textContent = `Start with ${p1}; keep the experience ${p2.toLowerCase()}; finish with ${p3.toLowerCase()}. Use this as a conversation starter, then confirm the restaurant's current offerings.`;
+
+      // Hide all layers
+      const layers = [
+        'svg-flight-crisp', 'svg-flight-mellow', 'svg-flight-fruit-forward',
+        'svg-flight-roasty', 'svg-flight-hoppy', 'svg-flight-spiced',
+        'svg-flight-bold', 'svg-flight-rare', 'svg-flight-dessert-like'
+      ];
+      layers.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('show');
+      });
+
+      // Match values to element IDs
+      const firstId = `svg-flight-${p1.toLowerCase().replace(/\s+/g, '-')}`;
+      const secondId = `svg-flight-${p2.toLowerCase().replace(/\s+/g, '-')}`;
+      const thirdId = `svg-flight-${p3.toLowerCase().replace(/\s+/g, '-')}`;
+
+      // Show matching layers
+      const el1 = document.getElementById(firstId);
+      if (el1) el1.classList.add('show');
+
+      const el2 = document.getElementById(secondId);
+      if (el2) el2.classList.add('show');
+
+      const el3 = document.getElementById(thirdId);
+      if (el3) el3.classList.add('show');
+    }
+
+    button.addEventListener('click', updateTastingFlight);
+    updateTastingFlight();
+  }
+
+  // 5. Beer Mood recommendation engine (beer.html)
   var moodForm = document.getElementById('beerMoodForm');
   var moodResult = document.getElementById('moodResult');
   if (moodForm && moodResult) {
