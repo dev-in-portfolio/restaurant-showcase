@@ -1,25 +1,26 @@
 /* 
    Hathaway's Fried Chicken - Custom Stylesheet
-   Warm Country Biscuit House Theme
+   Crispy Gold & Buttermilk Cream Brand System
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap');
 
 :root {
-  --color-bg: #fffdf5; /* Warm creamy yellow */
-  --color-bg-card: #ffffff;
-  --color-orange: #d97706; /* Golden amber */
-  --color-orange-dark: #b45309;
-  --color-brown: #78350f; /* Deep biscuit brown */
-  --color-brown-light: #fef3c7;
-  --color-dark: #451a03; /* Dark mahogany */
-  --color-text-muted: #78716c;
+  --color-bg: #0c0a08;           /* Cast iron charcoal */
+  --color-bg-card: rgba(24, 20, 16, 0.75); /* Buttermilk wood glass */
+  --color-orange: #f59e0b;       /* Crispy gold accent */
+  --color-orange-dark: #d97706;  /* Golden honey */
+  --color-brown: #fbbf24;        /* Honey gold heading */
+  --color-brown-light: rgba(245, 158, 11, 0.12); /* Leaf gold highlight */
+  --color-dark: #fcfaf7;         /* Buttermilk cream text */
+  --color-text-muted: #a3907d;   /* Warm flour dust */
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
   --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --transition-fast: all 0.15s ease;
-  --card-border: 1px solid rgba(180, 83, 9, 0.12);
-  --shadow-warm: 0 4px 20px rgba(120, 53, 15, 0.05);
+  --card-border: 1px solid rgba(245, 158, 11, 0.18);
+  --shadow-warm: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --accent-glow: rgba(245, 158, 11, 0.15);
 }
 
 /* Base Styles */
@@ -29,11 +30,49 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+}
+
 body {
   background-color: var(--color-bg);
+  background-image: radial-gradient(circle at top, #1e150d 0%, #0c0a08 60%);
   color: var(--color-dark);
   font-family: var(--font-sans);
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--color-orange);
+  color: var(--color-bg);
+  padding: 10px 20px;
+  border-radius: 6px;
+  z-index: 1000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.2s ease;
+}
+.skip-link:focus {
+  top: 20px;
+}
+
+.notice-bar {
+  background-color: #1e150d;
+  color: var(--color-brown);
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--card-border);
 }
 
 /* Typography */
@@ -43,6 +82,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   color: var(--color-brown);
 }
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
 
 a {
   text-decoration: none;
@@ -58,12 +101,14 @@ a {
 
 /* Navigation Bar */
 .nav-header {
-  border-bottom: 4px solid var(--color-orange);
-  background-color: #ffffff;
+  border-bottom: 1px solid var(--card-border);
+  background-color: rgba(12, 10, 8, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
 
 .nav-container {
@@ -107,7 +152,7 @@ a {
 
 .brand-name {
   font-size: 1.45rem;
-  color: var(--color-orange-dark);
+  color: var(--color-brown);
   font-weight: 900;
   display: flex;
   flex-direction: column;
@@ -116,7 +161,7 @@ a {
 
 .brand-name span {
   font-size: 0.65rem;
-  color: var(--color-brown);
+  color: var(--color-text-muted);
   letter-spacing: 0.18em;
   margin-top: 0.25rem;
   font-weight: 700;
@@ -140,19 +185,19 @@ a {
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: var(--color-orange-dark);
+  color: var(--color-dark);
   background-color: var(--color-brown-light);
 }
 
 /* Hero Section */
 .hero-section {
   position: relative;
-  padding: 9rem 0;
+  padding: 8rem 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 5rem;
-  border-bottom: 4px solid var(--color-orange);
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .hero-overlay {
@@ -161,7 +206,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, var(--color-bg) 5%, rgba(69, 26, 3, 0.65) 100%);
+  background: linear-gradient(0deg, var(--color-bg) 5%, rgba(12, 10, 8, 0.75) 100%);
   z-index: 1;
 }
 
@@ -174,16 +219,19 @@ a {
 }
 
 .hero-frame {
-  background-color: rgba(255, 255, 255, 0.97);
+  background-color: var(--color-bg-card);
   border-radius: 16px;
-  border: 1px solid rgba(180, 83, 9, 0.15);
-  box-shadow: 0 15px 35px rgba(120, 53, 15, 0.08);
+  border: var(--card-border);
+  box-shadow: var(--shadow-warm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 3rem 2.5rem;
 }
 
 .hero-badge {
   background-color: var(--color-brown-light);
   color: var(--color-brown);
+  border: 1px solid var(--card-border);
   padding: 0.3rem 0.9rem;
   font-size: 0.75rem;
   font-weight: 800;
@@ -195,9 +243,9 @@ a {
 }
 
 .hero-title {
-  font-size: 2.7rem;
+  font-size: clamp(2rem, 5vw, 2.7rem);
   margin-bottom: 1rem;
-  color: var(--color-brown);
+  color: #ffffff;
   text-transform: uppercase;
 }
 
@@ -205,7 +253,7 @@ a {
   font-size: 1.05rem;
   color: var(--color-dark);
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Page Headers */
@@ -237,6 +285,7 @@ a {
   margin-bottom: 3.5rem;
   position: relative;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .section-title::after {
@@ -256,13 +305,15 @@ a {
   border-radius: 16px;
   padding: 2.5rem;
   box-shadow: var(--shadow-warm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: var(--transition-smooth);
 }
 
 .country-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(120, 53, 15, 0.08);
-  border-color: rgba(180, 83, 9, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  border-color: var(--color-orange);
 }
 
 /* Menu Grid */
@@ -276,7 +327,7 @@ a {
 .menu-category-title {
   font-size: 1.55rem;
   color: var(--color-brown);
-  border-bottom: 2px solid rgba(180, 83, 9, 0.15);
+  border-bottom: 2px solid var(--card-border);
   padding-bottom: 0.6rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -296,12 +347,12 @@ a {
 .menu-item-name {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: #ffffff;
 }
 
 .menu-item-price {
   font-weight: 800;
-  color: var(--color-orange-dark);
+  color: var(--color-orange);
   font-size: 1.15rem;
 }
 
@@ -316,6 +367,7 @@ a {
   font-size: 0.7rem;
   background: var(--color-brown-light);
   color: var(--color-brown);
+  border: 1px solid var(--card-border);
   padding: 0.15rem 0.5rem;
   font-weight: 700;
   border-radius: 4px;
@@ -331,10 +383,12 @@ a {
 }
 
 .form-container {
-  background-color: #ffffff;
+  background-color: var(--color-bg-card);
   border: var(--card-border);
   border-radius: 16px;
   box-shadow: var(--shadow-warm);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 4rem 3rem;
   width: 100%;
   max-width: 800px;
@@ -361,8 +415,8 @@ a {
 }
 
 .form-group input, .form-group select, .form-group textarea {
-  background: var(--color-bg);
-  border: 1px solid rgba(180, 83, 9, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   padding: 0.85rem;
   color: var(--color-dark);
@@ -377,16 +431,15 @@ a {
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  background-color: #ffffff;
   border-color: var(--color-orange);
-  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1);
+  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .submit-btn {
   grid-column: 1 / -1;
   margin-top: 1.5rem;
   background-color: var(--color-orange-dark);
-  color: #ffffff;
+  color: var(--color-bg);
   border: none;
   padding: 1.1rem 2rem;
   border-radius: 8px;
@@ -399,8 +452,8 @@ a {
 }
 
 .submit-btn:hover {
-  background-color: var(--color-brown);
-  box-shadow: 0 5px 20px rgba(120, 53, 15, 0.2);
+  background-color: var(--color-orange);
+  box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
 }
 
 /* Success Panel */
@@ -427,6 +480,15 @@ a {
   color: var(--color-text-muted);
 }
 
+/* Interactive Comfort Plate Classes */
+.plate-layer {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+.plate-layer.show {
+  opacity: 1;
+}
+
 /* Footer Section */
 .footer-info {
   display: grid;
@@ -445,7 +507,7 @@ a {
 .info-block h3 {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
-  color: var(--color-orange-dark);
+  color: var(--color-orange);
   text-transform: uppercase;
 }
 
@@ -458,7 +520,7 @@ a {
 .copyright-footer {
   text-align: center;
   padding-bottom: 3rem;
-  color: #a8a29e;
+  color: #78716c;
   font-size: 0.85rem;
 }
 

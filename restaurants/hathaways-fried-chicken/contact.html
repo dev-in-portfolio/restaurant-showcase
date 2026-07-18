@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/hathaways-fried-chicken/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hathaway's Chicken n' Biscuits - Monroe, NC | Contact & Bookings</title>
+  <title>Contact &amp; Pickup Orders | Hathaway's Fried Chicken</title>
+  <meta name="description" content="Get directions, operating hours, phone numbers, and submit hot pickup orders for Hathaway's Fried Chicken in Monroe.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        &larr; Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <img src="logo.png" alt="Hathaway's Logo" class="brand-logo">
+        <img src="logo.png" alt="" class="brand-logo">
         <h1 class="brand-name">
           Hathaway's
           <span>Chicken n' Biscuits</span>
@@ -29,10 +34,10 @@
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html" class="active">Contact</a>
+        <a href="comfort-plate.html">Comfort Plate</a>
       </div>
-      <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
@@ -41,7 +46,7 @@
   </header>
 
   <!-- Content Sections -->
-  <main class="container">
+  <main id="main" class="container">
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
       
@@ -50,24 +55,24 @@
         <h3 class="menu-category-title">Chicken Shop Details</h3>
         
         <div style="margin-bottom: 2rem;">
-          <h4 style="font-size: 1rem; color: var(--color-orange-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Address</h4>
+          <h4 style="font-size: 1rem; color: var(--color-orange); text-transform: uppercase; margin-bottom: 0.5rem;">Address</h4>
           <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-muted);">
-            1310 W. Roosevelt Blvd.<br>Monroe, NC 28110
+            121 Roosevelt Blvd<br>Monroe, NC 28112
           </p>
         </div>
 
         <div style="margin-bottom: 2rem;">
-          <h4 style="font-size: 1rem; color: var(--color-orange-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Opening Hours</h4>
+          <h4 style="font-size: 1rem; color: var(--color-orange); text-transform: uppercase; margin-bottom: 0.5rem;">Opening Hours</h4>
           <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-muted); line-height: 1.7;">
-            <strong>Monday - Saturday:</strong> 10:30 AM - 9:00 PM<br>
+            <strong>Monday – Saturday:</strong> 10:00 AM – 9:00 PM<br>
             <strong>Sunday:</strong> Closed
           </p>
         </div>
 
         <div>
-          <h4 style="font-size: 1rem; color: var(--color-orange-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Shop Phone</h4>
+          <h4 style="font-size: 1rem; color: var(--color-orange); text-transform: uppercase; margin-bottom: 0.5rem;">Shop Phone</h4>
           <p style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-muted); line-height: 1.7;">
-            <strong>Phone:</strong> (704) 283-5187<br>
+            <strong>Phone:</strong> (704) 283-8521<br>
             <span style="display: block; margin-top: 0.5rem; font-size: 0.85rem; font-style: italic; color: var(--color-brown);">
               *Note: We do not take table bookings. Seating in our country dining lobby is open for walk-ins!
             </span>
@@ -100,7 +105,7 @@
         </form>
 
         <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
-          <div class="success-icon">✉</div>
+          <div class="success-icon" aria-hidden="true">✉</div>
           <h3 class="success-title">Message Sent!</h3>
           <p class="success-msg">Thank you. We will read your message and reply via phone if necessary.</p>
         </div>
@@ -147,7 +152,7 @@
         </form>
 
         <div class="success-panel" id="success-panel">
-          <div class="success-icon">🍗</div>
+          <div class="success-icon" aria-hidden="true">🍗</div>
           <h3 class="success-title">Order Curated!</h3>
           <p class="success-msg" id="success-message">Thank you. We have received your pickup request. Pull through the drive-thru or grab it inside!</p>
         </div>
@@ -159,35 +164,10 @@
   <!-- Info Footer -->
   <footer class="container">
     <div class="copyright-footer" style="margin-top: 5rem; border-top: var(--card-border); padding-top: 3rem;">
-      <p>© 2026 Hathaway's Chicken n' Biscuits. Serving Monroe since 1982.</p>
+      <p>&copy; 2026 Hathaway's Chicken n' Biscuits. Serving Monroe since 1982.</p>
     </div>
   </footer>
 
-  <script>
-    // Handle message submissions
-    const contactForm = document.getElementById('contact-form');
-    const contactSuccess = document.getElementById('contact-success');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      contactForm.style.display = 'none';
-      contactSuccess.style.display = 'block';
-    });
-
-    // Handle order submissions
-    const form = document.getElementById('reservation-form');
-    const successPanel = document.getElementById('success-panel');
-    const successMsg = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const time = document.getElementById('pickup-time').value;
-
-      form.style.display = 'none';
-      successPanel.style.display = 'block';
-      successMsg.innerHTML = `Welcome to the family, <strong>${name}</strong>! We have received your request for pickup at <strong>${time}</strong>. If there are any delays, we will contact you at <strong>${phone}</strong>. Grab it hot at the drive-thru or lobby counter!`;
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

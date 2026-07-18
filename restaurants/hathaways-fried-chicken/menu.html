@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/hathaways-fried-chicken/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hathaway's Chicken n' Biscuits - Monroe, NC | Menu</title>
+  <title>The Chicken Board Menu | Hathaway's Fried Chicken</title>
+  <meta name="description" content="View the menu board for Hathaway's Fried Chicken. Combos, family boxes, homemade Southern sides, and biscuits.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        &larr; Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <img src="logo.png" alt="Hathaway's Logo" class="brand-logo">
+        <img src="logo.png" alt="" class="brand-logo">
         <h1 class="brand-name">
           Hathaway's
           <span>Chicken n' Biscuits</span>
@@ -29,10 +34,10 @@
         <a href="about.html">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
+        <a href="comfort-plate.html">Comfort Plate</a>
       </div>
-      <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
@@ -41,20 +46,20 @@
   </header>
 
   <!-- Menu Board Layout -->
-  <main class="container">
+  <main id="main" class="container">
     <div class="menu-grid">
       
       <!-- Combos Board -->
       <div class="country-card">
         <h3 class="menu-category-title">Chicken Combo Dinners</h3>
-        <p style="font-size: 0.85rem; color: var(--color-orange-dark); font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.05em;">*All dinners include 1 side and 1 buttermilk biscuit</p>
+        <p style="font-size: 0.85rem; color: var(--color-orange); font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 0.05em;">*All dinners include 1 side and 1 buttermilk biscuit</p>
         
         <div class="menu-item">
           <div class="menu-item-header">
             <span class="menu-item-name">The "Business Man" Dinner<span class="menu-item-badge">Lunch Favorite</span></span>
             <span class="menu-item-price">$8.50</span>
           </div>
-          <p class="menu-item-desc">Our primary quick combo: 2 pieces of golden, crispy Southern fried chicken (breast & wing, or thigh & leg).</p>
+          <p class="menu-item-desc">Our primary quick combo: 2 pieces of golden, crispy Southern fried chicken (breast &amp; wing, or thigh &amp; leg).</p>
         </div>
 
         <div class="menu-item">
@@ -84,7 +89,7 @@
 
       <!-- Picnic & Family Boxes -->
       <div class="country-card">
-        <h3 class="menu-category-title">Picnic & Family Boxes</h3>
+        <h3 class="menu-category-title">Picnic &amp; Family Boxes</h3>
         
         <div class="menu-item">
           <div class="menu-item-header">
@@ -110,7 +115,7 @@
           <p class="menu-item-desc">A massive family pack: 20 pieces of mixed fried chicken, 4 large sides, and 10 warm buttermilk biscuits.</p>
         </div>
 
-        <h3 class="menu-category-title" style="margin-top: 3rem; margin-bottom: 1.5rem;">Sides & Biscuits</h3>
+        <h3 class="menu-category-title" style="margin-top: 3rem; margin-bottom: 1.5rem;">Sides &amp; Biscuits</h3>
 
         <div class="menu-item">
           <div class="menu-item-header">
@@ -122,7 +127,7 @@
 
         <div class="menu-item">
           <div class="menu-item-header">
-            <span class="menu-item-name">Macaroni & Cheese</span>
+            <span class="menu-item-name">Macaroni &amp; Cheese</span>
             <span class="menu-item-price">$3.50</span>
           </div>
           <p class="menu-item-desc">Creamy, rich Southern style cheddar macaroni baked hot.</p>
@@ -140,26 +145,26 @@
     </div>
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
-        <p>1310 W. Roosevelt Blvd.<br>Monroe, NC 28110</p>
+        <h3>Location</h3>
+        <p>121 Roosevelt Blvd<br>Monroe, NC 28112</p>
       </div>
       <div class="info-block">
         <h3>Hours</h3>
-        <p>Monday - Saturday: 10:30 AM - 9:00 PM<br>Sunday: Closed</p>
+        <p>Monday – Saturday: 10:00 AM – 9:00 PM<br>Sunday: Closed</p>
       </div>
       <div class="info-block">
-        <h3>Details</h3>
-        <p>Phone: (704) 283-5187<br>Drive-Thru & Dine-In Pickup</p>
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17042838521" style="color: var(--color-orange); font-weight: 700;">(704) 283-8521</a></p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Hathaway's Chicken n' Biscuits. Serving Monroe since 1982.</p>
+      <p>Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>

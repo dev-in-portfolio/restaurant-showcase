@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/hathaways-fried-chicken/">');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hathaway's Chicken n' Biscuits - Monroe, NC | About Us</title>
+  <title>About Us | Hathaway's Fried Chicken</title>
+  <meta name="description" content="Serving Monroe and Union County since 1982. Read our story and discover the secret behind our famous crispy crunch.">
   <link rel="stylesheet" href="styles.css">
-
-<style data-phase4-mobile-overflow-fix>
-@media (max-width: 600px) {
-  html, body { max-width: 100%; overflow-x: clip; }
-  .nav-container { width: 100%; max-width: 100%; min-width: 0; height: auto; flex-wrap: wrap; gap: .65rem; padding: .75rem 1rem; }
-  .back-to-directory { width: 100%; min-width: 0; }
-  .brand-wrapper { max-width: 100%; min-width: 0; flex: 1 1 12rem; }
-  .brand-name { min-width: 0; max-width: 100%; font-size: 1.05rem; overflow-wrap: anywhere; }
-  .brand-name span { letter-spacing: .08em; }
-  .nav-links { width: 100%; max-width: 100%; min-width: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
-  .nav-links a { padding: .3rem .45rem; }
-  .nav-container > a:last-child { max-width: 100%; }
-  img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
-}
-</style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="notice-bar">Unofficial concept presentation — not operated by the restaurant</div>
 
-  <!-- Navigation Header -->
-  <nav class="nav-header">
+  <nav class="nav-header" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+        &larr; Directory Portal
       </a>
       
       <div class="brand-wrapper">
-        <img src="logo.png" alt="Hathaway's Logo" class="brand-logo">
+        <img src="logo.png" alt="" class="brand-logo">
         <h1 class="brand-name">
           Hathaway's
           <span>Chicken n' Biscuits</span>
@@ -44,10 +34,10 @@
         <a href="about.html" class="active">About</a>
         <a href="services.html">Catering</a>
         <a href="contact.html">Contact</a>
+        <a href="comfort-plate.html">Comfort Plate</a>
       </div>
-      <a href="comfort-plate.html">Comfort Plate</a>
-  </div>
-</nav>
+    </div>
+  </nav>
 
   <!-- Page Header -->
   <header class="page-header container">
@@ -56,8 +46,7 @@
   </header>
 
   <!-- Main Narrative -->
-  <main class="container">
-    
+  <main id="main" class="container">
     <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; max-width: 800px; margin: 0 auto 5rem auto;">
       
       <!-- The Beginning Card -->
@@ -91,29 +80,28 @@
       </div>
 
     </div>
-
   </main>
 
-  <!-- Info Footer -->
   <footer class="container">
     <div class="footer-info">
       <div class="info-block">
-        <h3>Address</h3>
-        <p>1310 W. Roosevelt Blvd.<br>Monroe, NC 28110</p>
+        <h3>Location</h3>
+        <p>121 Roosevelt Blvd<br>Monroe, NC 28112</p>
       </div>
       <div class="info-block">
         <h3>Hours</h3>
-        <p>Monday - Saturday: 10:30 AM - 9:00 PM<br>Sunday: Closed</p>
+        <p>Monday – Saturday: 10:00 AM – 9:00 PM<br>Sunday: Closed</p>
       </div>
       <div class="info-block">
-        <h3>Details</h3>
-        <p>Phone: (704) 283-5187<br>Drive-Thru & Dine-In Pickup</p>
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+17042838521" style="color: var(--color-orange); font-weight: 700;">(704) 283-8521</a></p>
       </div>
     </div>
     <div class="copyright-footer">
-      <p>© 2026 Hathaway's Chicken n' Biscuits. Serving Monroe since 1982.</p>
+      <p>Unofficial concept presentation — not operated by the restaurant</p>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>
