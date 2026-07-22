@@ -257,6 +257,15 @@
       overflow: hidden;
     }
 
+    .card.double-wide {
+      grid-column: span 2;
+    }
+    @media (max-width: 768px) {
+      .card.double-wide {
+        grid-column: span 1;
+      }
+    }
+
     .card::before {
       content: '';
       position: absolute;
@@ -929,6 +938,13 @@
         // Sort deterministically by name
         restaurants.sort((a, b) => a.name.localeCompare(b.name));
 
+        // Pin orbit-ember to the very top as the centerpiece double-wide tile
+        const orbitIndex = restaurants.findIndex(r => r.id === 'orbit-ember');
+        if (orbitIndex > -1) {
+          const [orbitItem] = restaurants.splice(orbitIndex, 1);
+          restaurants.unshift(orbitItem);
+        }
+
         // Update dashboard counters
         document.getElementById('count-approved').textContent = restaurants.length;
         
@@ -1089,7 +1105,7 @@
         const tagsHtml = r.tags.map(t => `<span class="card-tag">${t}</span>`).join('');
         
         return `
-          <article class="card">
+          <article class="card ${r.doubleWide ? 'double-wide' : ''}">
             <div class="card-top">
               <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <span class="card-number">#${index + 1}</span>
@@ -1111,12 +1127,18 @@
             <div class="card-location">${r.neighborhood}, ${r.state}</div>
             <p class="card-description">${r.description}</p>
             <div class="card-tags">${tagsHtml}</div>
-            <a href="${r.slug}/index.html" class="card-action" target="_blank" rel="noopener">
-              <span>View Final Build</span>
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-              </svg>
-            </a>
+            <div class="card-action-group" style="display: flex; gap: 0.6rem; margin-top: auto; width: 100%;">
+              <a href="${r.slug}/index.html" class="card-action" target="_blank" rel="noopener" style="flex: 1; margin-top: 0; padding: 0.7rem 0.8rem; font-size: 0.9rem;">
+                <span>View Redesign</span>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 0.95rem; height: 0.95rem;">
+                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+              </a>
+              ${r.currentWebsiteUrl ? `
+              <a href="${r.currentWebsiteUrl}" class="card-action current-site-action" target="_blank" rel="noopener" style="flex: 1; margin-top: 0; padding: 0.7rem 0.8rem; font-size: 0.9rem; background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.08); color: var(--text-muted);">
+                <span>Original Site</span>
+              </a>` : ''}
+            </div>
           </article>
         `;
       }).join('');
