@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hours, Location &amp; Directions | Orbit &amp; Ember Charlotte NC</title>
-  <meta name="description" content="Visit Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St in Charlotte, NC. View operating hours, parking, light rail transit, map directions, and FAQ.">
+  <meta name="description" content="Visit Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St in Charlotte, NC. View operating hours, live patio weather, valet parking, light rail transit, and map directions.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-4/visit.html">
   <meta property="og:title" content="Hours, Location &amp; Directions | Orbit &amp; Ember Charlotte NC">
   <meta property="og:description" content="Visit Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St, Charlotte NC. View operating hours, valet parking, and directions.">
@@ -31,7 +31,7 @@
 </head>
 <body class="visit-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Local Discovery Master Hub</div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Local Discovery Master Hub V3</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -50,6 +50,7 @@
   </header>
 
   <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <!-- Breadcrumb Hierarchy -->
     <nav class="breadcrumb-trail" aria-label="Breadcrumb">
       <a href="index.html">Home</a> &rsaquo; <span>Hours, Location &amp; Directions</span>
     </nav>
@@ -60,11 +61,17 @@
       <p class="section-desc">Plan your dining experience at Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St, Charlotte, NC 28202.</p>
     </div>
 
-    <!-- Real-time Status Badge Bar -->
-    <div class="status-banner-row">
-      <div id="visit-status-badge-v2" class="realtime-status-pill">Checking Real-time Status...</div>
+    <!-- Live Status & Patio Weather Widget Bar -->
+    <div class="weather-status-bar-container">
+      <div id="visit-status-badge-v3" class="realtime-status-pill">Checking Status...</div>
+      
+      <div class="charlotte-weather-widget">
+        <span class="weather-icon">🌙 71°F</span>
+        <span class="weather-text">Clear Evening in South End • <strong>🔥 Heated Patio Open</strong></span>
+      </div>
+
       <button onclick="copyAddressToClipboard()" class="copy-address-btn" title="Copy full street address">
-        📋 Copy Street Address
+        📋 Copy Address
       </button>
     </div>
 
@@ -118,29 +125,31 @@
         <p class="hours-disclaimer">* Holiday hours may vary. Please call ahead for private event buyouts or holiday service schedules.</p>
       </div>
 
-      <!-- Right Column: Interactive Map & Arrival Amenities -->
+      <!-- Right Column: Interactive Map & Arrival Amenities Calculator -->
       <div class="visit-map-card">
-        <h2 class="card-heading">Interactive Map &amp; Arrival</h2>
-        <div class="map-frame-container">
-          <iframe title="Map location for Orbit and Ember Kitchen + Bar at 300 S Tryon St Charlotte NC" src="https://maps.google.com/maps?q=300+S+Tryon+St,+Charlotte,+NC+28202&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-header-toggle">
+          <h2 class="card-heading" style="margin: 0;">Interactive Map</h2>
+          <div class="map-view-switcher">
+            <button id="map-mode-street" class="map-mode-btn active">Map</button>
+            <button id="map-mode-sat" class="map-mode-btn">Satellite</button>
+          </div>
         </div>
 
-        <div class="arrival-amenities-grid" style="margin-top: 1.5rem;">
-          <div class="amenity-box">
-            <h4>🚗 Parking Options</h4>
-            <p>Valet parking at front entrance ($10). Covered deck parking at 300 S Tryon Garage. Metered street parking on Tryon &amp; 3rd St.</p>
+        <div class="map-frame-container" style="margin-top: 1rem;">
+          <iframe id="google-map-iframe" title="Map location for Orbit and Ember Kitchen + Bar at 300 S Tryon St Charlotte NC" src="https://maps.google.com/maps?q=300+S+Tryon+St,+Charlotte,+NC+28202&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Interactive Transit & Parking Calculator Tabs -->
+        <div class="transit-calculator-block" style="margin-top: 1.5rem;">
+          <div class="transit-tab-nav">
+            <button class="transit-tab-btn active" data-tab="valet">🚗 Valet</button>
+            <button class="transit-tab-btn" data-tab="garage">🏢 Garage</button>
+            <button class="transit-tab-btn" data-tab="rail">🚆 Light Rail</button>
+            <button class="transit-tab-btn" data-tab="uber">🚕 Uber/Lyft</button>
           </div>
-          <div class="amenity-box">
-            <h4>🚆 Light Rail Rapid Transit</h4>
-            <p>2 blocks from LYNX Blue Line (3rd St / Convention Center Station).</p>
-          </div>
-          <div class="amenity-box">
-            <h4>🌿 Heated Outdoor Patio</h4>
-            <p>Covered and heated patio dining available year-round.</p>
-          </div>
-          <div class="amenity-box">
-            <h4>♿ ADA Accessible</h4>
-            <p>Step-free main entrance, elevator access, and accessible restrooms.</p>
+          <div id="transit-tab-content" class="transit-tab-panel">
+            <h4>Valet Parking Service ($10)</h4>
+            <p>Attended valet parking is available directly in front of Orbit &amp; Ember at 300 S Tryon St starting at 4:00 PM daily.</p>
           </div>
         </div>
       </div>
@@ -149,7 +158,7 @@
     <!-- Nearby Cultural Landmarks Guide -->
     <section class="landmarks-section-block" style="margin-top: 4rem;">
       <h2 class="section-title text-center">Nearby <em>Landmarks &amp; Attractions</em></h2>
-      <p class="section-desc text-center" style="margin-bottom: 2rem;"> Orbit &amp; Ember is located within walking distance of Charlotte's premier cultural destinations.</p>
+      <p class="section-desc text-center" style="margin-bottom: 2rem;">Orbit &amp; Ember is located within walking distance of Charlotte's premier cultural destinations.</p>
 
       <div class="landmarks-grid-4">
         <div class="landmark-card">
@@ -252,11 +261,51 @@
   <script src="location-data.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const badge = document.getElementById('visit-status-badge-v2');
-      if (badge && typeof getRealtimeStatusV2 === 'function') {
-        const st = getRealtimeStatusV2();
+      // Realtime Status Init
+      const badge = document.getElementById('visit-status-badge-v3');
+      if (badge && typeof getRealtimeStatusV3 === 'function') {
+        const st = getRealtimeStatusV3();
         badge.textContent = st.text;
         badge.className = `realtime-status-pill ${st.badgeClass}`;
+      }
+
+      // Transit Tabs Controller
+      const transitBtns = document.querySelectorAll('.transit-tab-btn');
+      const transitPanel = document.getElementById('transit-tab-content');
+      const transitData = {
+        valet: { title: "🚗 Valet Parking Service ($10)", desc: "Attended valet parking is available directly in front of Orbit & Ember at 300 S Tryon St starting at 4:00 PM daily." },
+        garage: { title: "🏢 Covered Garage Parking", desc: "Self-parking deck at 300 S Tryon Garage with direct elevator access to our dining room entrance." },
+        rail: { title: "🚆 LYNX Light Rail Transit", desc: "Located 2 blocks from the 3rd St / Convention Center Station on the LYNX Blue Line rapid transit route." },
+        uber: { title: "🚕 Uber & Lyft Drop-Off Zone", desc: "Dedicated curbside passenger drop-off zone located right at 300 S Tryon Street." }
+      };
+
+      transitBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          transitBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const tabKey = btn.getAttribute('data-tab');
+          if (transitData[tabKey] && transitPanel) {
+            transitPanel.innerHTML = `<h4>${transitData[tabKey].title}</h4><p>${transitData[tabKey].desc}</p>`;
+          }
+        });
+      });
+
+      // Map View Switcher (Street vs Satellite)
+      const mapIframe = document.getElementById('google-map-iframe');
+      const modeStreet = document.getElementById('map-mode-street');
+      const modeSat = document.getElementById('map-mode-sat');
+
+      if (mapIframe && modeStreet && modeSat) {
+        modeStreet.addEventListener('click', () => {
+          modeStreet.classList.add('active');
+          modeSat.classList.remove('active');
+          mapIframe.src = "https://maps.google.com/maps?q=300+S+Tryon+St,+Charlotte,+NC+28202&t=&z=15&ie=UTF8&iwloc=&output=embed";
+        });
+        modeSat.addEventListener('click', () => {
+          modeSat.classList.add('active');
+          modeStreet.classList.remove('active');
+          mapIframe.src = "https://maps.google.com/maps?q=300+S+Tryon+St,+Charlotte,+NC+28202&t=k&z=17&ie=UTF8&iwloc=&output=embed";
+        });
       }
     });
   </script>

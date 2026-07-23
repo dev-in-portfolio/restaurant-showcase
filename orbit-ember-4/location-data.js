@@ -1,4 +1,4 @@
-// Master Business Information & Real-Time Engine V2 for Orbit & Ember Kitchen + Bar
+// Master Business Information & Real-Time Local Engine V3 for Orbit & Ember Kitchen + Bar
 
 const BUSINESS_INFO = {
   name: "Orbit & Ember Kitchen + Bar",
@@ -38,7 +38,7 @@ const BUSINESS_INFO = {
     { day: "Sunday", hours: "10:00 AM - 2:30 PM, 4:30 PM - 9:30 PM", openHour: 10.0, closeHour: 21.5, service: "Weekend Brunch & Dinner" }
   ],
   landmarks: [
-    { name: "Knight Theater", distance: "2 Min Walk", desc: "Perfect for pre-theater wood-fired dinner & cocktails." },
+    { name: "Knight Theater", distance: "2 Min Walk", desc: "Perfect for pre-theater wood-fired dinner & craft cocktails." },
     { name: "Mint Museum Uptown", distance: "3 Min Walk", desc: "Located directly across Tryon Street." },
     { name: "Bank of America Stadium", distance: "8 Min Walk", desc: "Ideal for game-day dining & post-match drinks." },
     { name: "3rd St / Convention Center Light Rail", distance: "2 Blocks", desc: "LYNX Blue Line rapid transit access." }
@@ -46,7 +46,7 @@ const BUSINESS_INFO = {
 };
 
 // Calculate real-time status with countdown
-function getRealtimeStatusV2() {
+function getRealtimeStatusV3() {
   const now = new Date();
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const currentDayName = dayNames[now.getDay()];
@@ -73,7 +73,7 @@ function getRealtimeStatusV2() {
   }
 }
 
-// Copy Address to Clipboard Helper
+// Copy Address Helper
 function copyAddressToClipboard() {
   const addr = BUSINESS_INFO.address.formatted;
   navigator.clipboard.writeText(addr).then(() => {
