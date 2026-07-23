@@ -20,9 +20,23 @@ const server = http.createServer((req, res) => {
 
   console.log(`[Request] ${req.method} ${pathname}`);
 
+  // Handle duplicate /restaurants/restaurants/ prefix gracefully
+  while (pathname.startsWith('/restaurants/restaurants/')) {
+    pathname = '/restaurants/' + pathname.substring('/restaurants/restaurants/'.length);
+  }
+
+  // Helper to resolve files either in root or in restaurants/ subfolder
+  const resolveFile = (relPath) => {
+    const p1 = path.join(__dirname, relPath);
+    if (fs.existsSync(p1)) return p1;
+    const p2 = path.join(__dirname, 'restaurants', relPath);
+    if (fs.existsSync(p2)) return p2;
+    return p1;
+  };
+
   // Handle root and main paths (serve the single-tile landing page)
   if (pathname === '/' || pathname === '/index.html' || pathname === '/restaurants' || pathname === '/restaurants/' || pathname === '/restaurants/index.html') {
-    const indexPath = path.join(__dirname, 'index.html');
+    const indexPath = resolveFile('index.html');
     fs.readFile(indexPath, (err, content) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -37,7 +51,7 @@ const server = http.createServer((req, res) => {
 
   // Handle compare-presence.js
   if (pathname === '/restaurants/compare-presence.js' || pathname === '/compare-presence.js') {
-    const comparePresencePath = path.join(__dirname, 'compare-presence.js');
+    const comparePresencePath = resolveFile('compare-presence.js');
     fs.readFile(comparePresencePath, (err, content) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -57,18 +71,19 @@ const server = http.createServer((req, res) => {
   const sandboxMatch = pathname.match(/^\/restaurants\/orbit-ember-(\d+)(?:\/(.*))?$/);
 
   if (pathname.startsWith('/restaurants/orbit-ember-before/')) {
-    filePath = path.join(__dirname, 'orbit-ember-before', pathname.substring('/restaurants/orbit-ember-before/'.length));
+    filePath = resolveFile(path.join('orbit-ember-before', pathname.substring('/restaurants/orbit-ember-before/'.length)));
   } else if (sandboxMatch) {
     const sandboxNum = sandboxMatch[1];
     const subPath = sandboxMatch[2] || '';
-    filePath = path.join(__dirname, `orbit-ember-${sandboxNum}`, subPath);
+    filePath = resolveFile(path.join(`orbit-ember-${sandboxNum}`, subPath));
   } else if (pathname.startsWith('/restaurants/orbit-ember/')) {
-    filePath = path.join(__dirname, 'orbit-ember', pathname.substring('/restaurants/orbit-ember/'.length));
+    filePath = resolveFile(path.join('orbit-ember', pathname.substring('/restaurants/orbit-ember/'.length)));
   } else if (pathname.startsWith('/scripts/shared/')) {
-    filePath = path.join(__dirname, 'scripts', 'shared', pathname.substring('/scripts/shared/'.length));
+    filePath = resolveFile(path.join('scripts', 'shared', pathname.substring('/scripts/shared/'.length)));
   } else {
-    // Fallback: serve relative to root folder
-    filePath = path.join(__dirname, pathname);
+    // Fallback: serve relative to root folder or restaurants/
+    let reqPath = pathname.startsWith('/') ? pathname.substring(1) : pathname;
+    filePath = resolveFile(reqPath);
   }
 
   // If path is a directory, append index.html
