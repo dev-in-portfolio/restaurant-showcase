@@ -3,12 +3,12 @@ const MENU_DATA = {
   disclaimer: "Consuming raw or undercooked meat, poultry, seafood, shellfish, or eggs may increase the risk of foodborne illness. Please inform your server of allergies or dietary restrictions. Menu items, ingredients, prices, and availability are subject to change. Our kitchen handles common allergens and cannot guarantee an allergen-free environment.",
   
   dietaryLegend: [
-    { code: "V", label: "Vegetarian", desc: "Contains no meat or seafood" },
-    { code: "VG", label: "Vegan", desc: "Contains no animal products" },
+    { code: "CF", label: "Chef Favorite", desc: "Signature wood-fired culinary creation" },
+    { code: "V", label: "Vegetarian", desc: "Prepared without meat or seafood" },
+    { code: "VG", label: "Vegan", desc: "Contains no animal-derived products" },
     { code: "GF", label: "Gluten-Free", desc: "Prepared without gluten-containing ingredients" },
-    { code: "SP", label: "Spicy", desc: "Contains chili or spice heat" },
-    { code: "CF", label: "Chef Favorite", desc: "Signature restaurant dish" },
-    { code: "SE", label: "Seasonal", desc: "Limited seasonal availability" }
+    { code: "SP", label: "Spicy", desc: "Prepared with fresh chili or spice heat" },
+    { code: "SE", label: "Seasonal", desc: "Peak seasonal availability" }
   ],
 
   addons: {
@@ -36,111 +36,112 @@ const MENU_DATA = {
     dinner: {
       id: "dinner",
       title: "Dinner Menu",
-      tagline: "Oak wood-fired hearth cooking & nightly culinary creations.",
+      tagline: "Live-fire oak hearth cooking, dry-aged steaks & nocturnal culinary craft.",
       hours: "Tuesday–Thursday 5:00 PM–10:00 PM | Friday–Saturday 5:00 PM–11:00 PM | Sunday 5:00 PM–9:00 PM",
+      themeColor: "#c27a4a",
       sections: [
         {
           name: "Bread & Snacks",
           items: [
-            { name: "Ember Bread", price: "$8", desc: "Wood-fired sourdough, smoked sea salt, whipped honey butter.", markers: ["V"] },
-            { name: "Marinated Olives", price: "$7", desc: "Citrus, herbs, chile.", markers: ["VG", "GF"] },
+            { name: "Ember Bread", price: "$8", desc: "Wood-fired sourdough, smoked sea salt, whipped honey butter.", markers: ["V"], image: "images/flatbread.jpg" },
+            { name: "Marinated Olives", price: "$7", desc: "Citrus peel, fresh herbs, charred chile.", markers: ["VG", "GF"] },
             { name: "Deviled Eggs", price: "$10", desc: "Smoked paprika, crispy shallot, chive.", markers: ["GF"] },
-            { name: "Crispy Chickpeas", price: "$7", desc: "Ember spice, lemon.", markers: ["VG", "GF"] },
-            { name: "Oysters on the Half Shell", price: "$18 half / $34 dozen", desc: "Mignonette, hot sauce, lemon.", markers: ["GF"] }
+            { name: "Crispy Chickpeas", price: "$7", desc: "Ember spice blend, lemon zest.", markers: ["VG", "GF"] },
+            { name: "Oysters on the Half Shell", price: "$18 half / $34 dozen", desc: "Mignonette, house hot sauce, grilled lemon.", markers: ["GF"] }
           ]
         },
         {
           name: "Small Plates",
           items: [
-            { name: "Charred Shishito Peppers", price: "$11", desc: "Citrus salt, sesame, ember aioli.", markers: ["V", "GF"] },
+            { name: "Charred Shishito Peppers", price: "$11", desc: "Citrus salt, toasted sesame, ember garlic aioli.", markers: ["V", "GF"] },
             { name: "Crispy Calamari", price: "$15", desc: "Cherry peppers, preserved lemon, roasted garlic sauce.", markers: [] },
-            { name: "Orbit Meatballs", price: "$16", desc: "Beef and pork, smoked tomato sauce, parmesan, grilled bread.", markers: [] },
-            { name: "Coal-Roasted Carrots", price: "$13", desc: "Harissa yogurt, pistachio, herbs.", markers: ["V", "GF"] },
-            { name: "Wood-Fired Octopus", price: "$19", desc: "White bean, roasted pepper, olive, charred lemon.", markers: ["GF"] },
-            { name: "Burrata", price: "$17", desc: "Seasonal fruit, toasted pistachio, basil, grilled bread.", markers: ["V", "SE"] },
-            { name: "Smoked Trout Dip", price: "$15", desc: "Pickled onion, herbs, grilled sourdough.", markers: [] },
-            { name: "Crispy Brussels Sprouts", price: "$13", desc: "Hot honey, bacon, apple, pecan. Available vegetarian upon request.", markers: ["GF"] },
-            { name: "Seared Scallops", price: "$21", desc: "Cauliflower purée, brown butter, caper, raisin.", markers: ["GF"] },
-            { name: "Roasted Bone Marrow", price: "$18", desc: "Herb salad, onion jam, grilled bread.", markers: [] }
+            { name: "Orbit Meatballs", price: "$16", desc: "Prime beef & heirloom pork, smoked tomato ragù, parmesan, sourdough.", markers: ["CF"] },
+            { name: "Coal-Roasted Carrots", price: "$13", desc: "Harissa yogurt, roasted pistachio, mint.", markers: ["V", "GF"] },
+            { name: "Wood-Fired Octopus", price: "$19", desc: "White bean purée, roasted pepper, charred lemon, parsley oil.", markers: ["GF"] },
+            { name: "Burrata & Peach", price: "$17", desc: "Wood-fired peach, fresh burrata, toasted pistachio, basil, crostini.", markers: ["V", "SE"], pairing: "First Light Spritz" },
+            { name: "Smoked Trout Dip", price: "$15", desc: "Pickled red onion, dill, grilled sourdough.", markers: [] },
+            { name: "Crispy Brussels Sprouts", price: "$13", desc: "Hot honey, smoked bacon, crisp apple, candied pecan.", markers: ["GF"] },
+            { name: "Seared Scallops", price: "$21", desc: "Cauliflower purée, brown butter, caper, golden raisin.", markers: ["GF"], pairing: "Chardonnay" },
+            { name: "Roasted Bone Marrow", price: "$18", desc: "Herb salad, red onion jam, grilled sourdough.", markers: ["CF"] }
           ]
         },
         {
           name: "Soups & Salads",
           items: [
-            { name: "Smoked Tomato Soup", price: "$11", desc: "Cream, basil oil.", markers: ["V"] },
-            { name: "Seasonal Soup", price: "$12", desc: "Chef’s daily preparation.", markers: ["SE"] },
-            { name: "House Greens", price: "$11", desc: "Cucumber, tomato, pickled onion, sunflower seed, herb vinaigrette.", markers: ["VG", "GF"] },
-            { name: "Ember Caesar", price: "$13", desc: "Romaine, parmesan, sourdough crumb, smoked Caesar dressing.", markers: [] },
-            { name: "Roasted Beet Salad", price: "$15", desc: "Goat cheese, orange, pistachio, greens, balsamic.", markers: ["V", "GF"] },
-            { name: "Charred Little Gem Salad", price: "$16", desc: "Little gem lettuce, avocado, radish, herbs, green goddess.", markers: ["V", "GF"] }
+            { name: "Smoked Tomato Soup", price: "$11", desc: "Slow-roasted tomato, heavy cream, basil oil.", markers: ["V"] },
+            { name: "Seasonal Soup", price: "$12", desc: "Daily chef preparation featuring seasonal local produce.", markers: ["SE"] },
+            { name: "House Greens", price: "$11", desc: "Mixed greens, cucumber, heirloom tomato, pickled onion, sunflower seed, herb vinaigrette.", markers: ["VG", "GF"] },
+            { name: "Ember Caesar", price: "$13", desc: "Crisp romaine, parmesan reggiano, sourdough crumb, smoked Caesar dressing.", markers: [] },
+            { name: "Roasted Beet Salad", price: "$15", desc: "Roasted beets, goat cheese, blood orange, pistachio, balsamic glaze.", markers: ["V", "GF"] },
+            { name: "Charred Little Gem Salad", price: "$16", desc: "Little gem lettuce, avocado, radish, chives, green goddess dressing.", markers: ["V", "GF"] }
           ]
         },
         {
           name: "Mains",
           items: [
-            { name: "Wood-Fired Half Chicken", price: "$27", desc: "Herb jus, crispy potatoes, roasted seasonal vegetables.", markers: ["CF", "GF"], featured: true },
-            { name: "Ember Burger", price: "$18", desc: "Two beef patties, smoked cheddar, onion jam, ember sauce, fries.", markers: ["CF"], featured: true },
-            { name: "Cedar-Plank Salmon", price: "$29", desc: "Farro, blistered tomato, lemon-herb butter.", markers: ["CF"], featured: true },
-            { name: "Black Garlic Short Rib", price: "$34", desc: "Parsnip purée, charred broccolini, red-wine reduction.", markers: ["CF", "GF"], featured: true },
-            { name: "Fire-Roasted Cauliflower", price: "$23", desc: "White bean purée, salsa verde, toasted almonds.", markers: ["VG", "GF"], featured: true },
-            { name: "House-Made Pappardelle", price: "$25", desc: "Wild mushrooms, brown butter, parmesan, herbs.", markers: ["V"] },
-            { name: "Seared Duck Breast", price: "$33", desc: "Sweet potato, braised greens, cherry jus.", markers: ["GF"] },
-            { name: "Wood-Fired Pork Chop", price: "$33", desc: "Apple mostarda, smoked cabbage, cider jus.", markers: ["GF"] },
-            { name: "Pan-Roasted Sea Bass", price: "$36", desc: "Fennel, potato, tomato broth, herbs.", markers: ["GF"] },
-            { name: "Shrimp and Grits", price: "$26", desc: "Creole shrimp, smoked tomato, stone-ground grits, scallion.", markers: ["SP"] },
-            { name: "Ember-Roasted Lamb", price: "$38", desc: "Lamb loin, roasted eggplant, chickpea, herb yogurt.", markers: ["GF"] },
-            { name: "Seasonal Risotto", price: "$27", desc: "Chef’s seasonal preparation.", markers: ["V", "GF", "SE"] }
+            { name: "Wood-Fired Half Chicken", price: "$27", desc: "Herb jus, crispy potatoes, roasted seasonal vegetables.", markers: ["CF", "GF"], featured: true, image: "images/hearth.jpg", pairing: "Pinot Noir" },
+            { name: "Ember Burger", price: "$18", desc: "Two Angus patties, smoked cheddar, caramelized onion jam, ember sauce, fries.", markers: ["CF"], featured: true, pairing: "Ember Old Fashioned" },
+            { name: "Cedar-Plank Salmon", price: "$29", desc: "Wild salmon, farro pilaf, blistered cherry tomato, lemon-herb butter.", markers: ["CF"], featured: true, pairing: "Sauvignon Blanc" },
+            { name: "Black Garlic Short Rib", price: "$34", desc: "Slow-braised short rib, parsnip purée, charred broccolini, red-wine reduction.", markers: ["CF", "GF"], featured: true, pairing: "Cabernet Sauvignon" },
+            { name: "Fire-Roasted Cauliflower", price: "$23", desc: "Whole roasted cauliflower, white bean purée, salsa verde, toasted almonds.", markers: ["VG", "GF"], featured: true, pairing: "Copper Moon" },
+            { name: "House-Made Pappardelle", price: "$25", desc: "Fresh pappardelle, wild mushrooms, brown butter, parmesan, thyme.", markers: ["V"] },
+            { name: "Seared Duck Breast", price: "$33", desc: "Spiced sweet potato, braised greens, tart cherry jus.", markers: ["GF"] },
+            { name: "Wood-Fired Pork Chop", price: "$33", desc: "Heritage pork chop, apple mostarda, smoked cabbage, cider jus.", markers: ["GF"] },
+            { name: "Pan-Roasted Sea Bass", price: "$36", desc: "Chilean sea bass, braised fennel, fingerling potato, saffron tomato broth.", markers: ["GF"] },
+            { name: "Shrimp and Grits", price: "$26", desc: "Creole shrimp, smoked tomato gravy, stone-ground cheddar grits, scallion.", markers: ["SP"] },
+            { name: "Ember-Roasted Lamb", price: "$38", desc: "Colorado lamb loin, roasted eggplant, spiced chickpea, mint herb yogurt.", markers: ["GF"] },
+            { name: "Seasonal Risotto", price: "$27", desc: "Arborio rice, seasonal harvest vegetables, parmesan, truffle oil.", markers: ["V", "GF", "SE"] }
           ]
         },
         {
           name: "From the Grill",
           items: [
-            { name: "Eight-Ounce Hanger Steak", price: "$31", desc: "Oak wood-grilled. Served with choice of one side and one sauce.", markers: [] },
-            { name: "Eight-Ounce Filet", price: "$44", desc: "Oak wood-grilled. Served with choice of one side and one sauce.", markers: [] },
-            { name: "Twelve-Ounce New York Strip", price: "$43", desc: "Oak wood-grilled. Served with choice of one side and one sauce.", markers: [] },
-            { name: "Fourteen-Ounce Ribeye", price: "$48", desc: "Oak wood-grilled. Served with choice of one side and one sauce.", markers: [] },
-            { name: "Double-Cut Pork Chop", price: "$33", desc: "Oak wood-grilled. Served with choice of one side and one sauce.", markers: [] },
-            { name: "Grilled Swordfish", price: "$35", desc: "Oak wood-grilled. Served with choice of one side and one sauce.", markers: [] },
-            { name: "Mixed Grill for Two", price: "$79", desc: "Hanger steak, pork chop, chicken, sausages, two sides, two sauces.", markers: ["CF"] }
+            { name: "Eight-Ounce Hanger Steak", price: "$31", desc: "Oak wood-grilled Angus hanger steak. Includes choice of 1 side and 1 sauce.", markers: ["GF"], image: "images/steak.jpg", pairing: "Dark Matter Manhattan" },
+            { name: "Eight-Ounce Filet Mignon", price: "$44", desc: "Center-cut beef filet, oak wood-grilled. Includes choice of 1 side and 1 sauce.", markers: ["GF"], pairing: "Cabernet Sauvignon" },
+            { name: "Twelve-Ounce New York Strip", price: "$43", desc: "Prime USDA NY Strip, oak wood-grilled. Includes choice of 1 side and 1 sauce.", markers: ["GF"] },
+            { name: "Fourteen-Ounce Ribeye", price: "$48", desc: "Hand-cut ribeye steak, oak wood-grilled. Includes choice of 1 side and 1 sauce.", markers: ["GF"] },
+            { name: "Double-Cut Pork Chop", price: "$33", desc: "Oak wood-grilled thick pork chop. Includes choice of 1 side and 1 sauce.", markers: ["GF"] },
+            { name: "Grilled Swordfish", price: "$35", desc: "Wild swordfish steak, oak wood-grilled. Includes choice of 1 side and 1 sauce.", markers: ["GF"] },
+            { name: "Mixed Grill for Two", price: "$79", desc: "Hanger steak, pork chop, half chicken, smoked sausages, 2 sides, 2 sauces.", markers: ["CF"], featured: true }
           ]
         },
         {
           name: "Grill Sides",
           items: [
-            { name: "Crispy Potatoes", price: "$7", desc: "Herb salt, ember garlic dip.", markers: [] },
-            { name: "Charred Broccolini", price: "$7", desc: "Lemon, garlic oil.", markers: ["VG", "GF"] },
-            { name: "Roasted Mushrooms", price: "$7", desc: "Thyme, brown butter.", markers: ["V", "GF"] },
-            { name: "Seasonal Vegetables", price: "$7", desc: "Wood-grilled seasonal selection.", markers: ["VG", "GF"] },
-            { name: "Smoked Cabbage", price: "$7", desc: "Cider butter, herbs.", markers: ["GF"] },
-            { name: "Creamed Greens", price: "$7", desc: "Parmesan, nutmeg.", markers: ["V"] },
-            { name: "Parmesan Fries", price: "$7", desc: "Truffle salt, chive aioli.", markers: ["V"] },
-            { name: "White Bean Purée", price: "$7", desc: "Garlic, rosemary.", markers: ["VG", "GF"] },
+            { name: "Crispy Potatoes", price: "$7", desc: "Herb salt, garlic aioli.", markers: ["V"] },
+            { name: "Charred Broccolini", price: "$7", desc: "Lemon, smoked garlic oil.", markers: ["VG", "GF"] },
+            { name: "Roasted Mushrooms", price: "$7", desc: "Thyme, brown butter sauce.", markers: ["V", "GF"] },
+            { name: "Seasonal Vegetables", price: "$7", desc: "Wood-grilled market greens & squash.", markers: ["VG", "GF"] },
+            { name: "Smoked Cabbage", price: "$7", desc: "Cider butter, fresh chives.", markers: ["GF"] },
+            { name: "Creamed Greens", price: "$7", desc: "Spinach, parmesan, nutmeg.", markers: ["V"] },
+            { name: "Parmesan Fries", price: "$7", desc: "Truffle salt, chive dip.", markers: ["V"] },
+            { name: "White Bean Purée", price: "$7", desc: "Garlic, rosemary oil.", markers: ["VG", "GF"] },
             { name: "Stone-Ground Grits", price: "$7", desc: "Smoked cheddar, scallion.", markers: ["V", "GF"] }
           ]
         },
         {
           name: "Sauces",
           items: [
-            { name: "Chimichurri", price: "$2", desc: "Parsley, oregano, red wine vinegar, olive oil.", markers: ["VG", "GF"] },
-            { name: "Peppercorn Jus", price: "$2", desc: "Green peppercorn, cognac, cream.", markers: [] },
-            { name: "Smoked Garlic Butter", price: "$2", desc: "Roasted garlic, sea salt, chive.", markers: ["V", "GF"] },
+            { name: "Chimichurri", price: "$2", desc: "Fresh parsley, garlic, red wine vinegar, olive oil.", markers: ["VG", "GF"] },
+            { name: "Peppercorn Jus", price: "$2", desc: "Green peppercorns, cognac, heavy cream.", markers: [] },
+            { name: "Smoked Garlic Butter", price: "$2", desc: "Roasted garlic, sea salt, chives.", markers: ["V", "GF"] },
             { name: "Red-Wine Reduction", price: "$2", desc: "Shallot, thyme, dark beef reduction.", markers: ["GF"] },
             { name: "Ember Barbecue", price: "$2", desc: "Smoked molasses, bourbon, spice blend.", markers: ["VG"] },
             { name: "Horseradish Cream", price: "$2", desc: "Fresh horseradish, creme fraiche, chive.", markers: ["V", "GF"] },
-            { name: "Salsa Verde", price: "$2", desc: "Capers, herbs, charred poblano.", markers: ["VG", "GF"] }
+            { name: "Salsa Verde", price: "$2", desc: "Capers, herbs, charred poblano pepper.", markers: ["VG", "GF"] }
           ]
         },
         {
           name: "Desserts",
           items: [
-            { name: "Burnt Honey Cheesecake", price: "$10", desc: "Honey caramel, sea salt, oat crumble.", markers: ["CF"], featured: true },
-            { name: "Dark Chocolate Torte", price: "$11", desc: "Chocolate ganache, espresso cream.", markers: ["GF"] },
-            { name: "Wood-Fired Peach Cobbler", price: "$12", desc: "Vanilla ice cream, pecan crumble.", markers: ["SE"] },
-            { name: "Espresso Affogato", price: "$9", desc: "Vanilla ice cream, espresso.", markers: ["V"] },
-            { name: "Ember Crème Brûlée", price: "$10", desc: "Vanilla custard, burnt sugar.", markers: ["GF"] },
-            { name: "Seasonal Sorbet", price: "$8", desc: "Chef’s seasonal selection.", markers: ["VG", "GF"] },
-            { name: "Brown Butter Bread Pudding", price: "$11", desc: "Bourbon caramel, whipped cream.", markers: [] },
-            { name: "Dessert Board", price: "$24", desc: "Chef’s selection of three desserts.", markers: ["CF"] }
+            { name: "Burnt Honey Cheesecake", price: "$10", desc: "Burnt honey caramel, smoked sea salt, toasted oat crumble.", markers: ["CF"], featured: true, pairing: "Espresso Affogato" },
+            { name: "Dark Chocolate Torte", price: "$11", desc: "Rich chocolate ganache, espresso cream, cocoa nibs.", markers: ["GF"] },
+            { name: "Wood-Fired Peach Cobbler", price: "$12", desc: "Warm roasted peaches, vanilla bean ice cream, pecan crumble.", markers: ["SE"] },
+            { name: "Espresso Affogato", price: "$9", desc: "Vanilla bean gelato drowned in hot house espresso.", markers: ["V"] },
+            { name: "Ember Crème Brûlée", price: "$10", desc: "Vanilla custard, caramelized sugar crust.", markers: ["GF"] },
+            { name: "Seasonal Sorbet", price: "$8", desc: "Chef’s daily seasonal fruit sorbet.", markers: ["VG", "GF"] },
+            { name: "Brown Butter Bread Pudding", price: "$11", desc: "Bourbon caramel sauce, whipped cream.", markers: [] },
+            { name: "Dessert Board", price: "$24", desc: "Chef’s selection of three house desserts.", markers: ["CF"] }
           ]
         }
       ]
@@ -149,23 +150,24 @@ const MENU_DATA = {
     breakfast: {
       id: "breakfast",
       title: "Breakfast Menu",
-      tagline: "Artisan morning favorites, wood-fired pastries & fresh espresso.",
+      tagline: "Morning wood-fired pastries, artisan egg plates & fresh roast coffee.",
       hours: "Monday–Friday 7:00 AM–11:00 AM",
+      themeColor: "#d97706",
       sections: [
         {
           name: "Breakfast Starters",
           items: [
-            { name: "Ember Cinnamon Roll", price: "$8", desc: "Warm house-made cinnamon roll, burnt honey glaze, toasted pecans.", markers: ["V"] },
+            { name: "Ember Cinnamon Roll", price: "$8", desc: "Warm house cinnamon roll, burnt honey glaze, toasted pecans.", markers: ["V"] },
             { name: "Seasonal Fruit Plate", price: "$10", desc: "Fresh seasonal fruit, mint, citrus syrup.", markers: ["VG", "GF"] },
-            { name: "Greek Yogurt Parfait", price: "$11", desc: "Vanilla Greek yogurt, maple granola, berries, orange blossom honey.", markers: ["V"] },
-            { name: "Wood-Fired Banana Bread", price: "$9", desc: "Grilled banana bread, whipped brown-butter cream, sea salt.", markers: ["V"] },
-            { name: "Morning Pastry Basket", price: "$14", desc: "Chef’s selection of croissant, biscuit, seasonal muffin, preserves.", markers: ["V"] }
+            { name: "Greek Yogurt Parfait", price: "$11", desc: "Vanilla Greek yogurt, maple granola, fresh berries, orange blossom honey.", markers: ["V"] },
+            { name: "Wood-Fired Banana Bread", price: "$9", desc: "Grilled banana bread slice, whipped brown-butter cream, sea salt.", markers: ["V"] },
+            { name: "Morning Pastry Basket", price: "$14", desc: "Croissant, biscuit, seasonal muffin, house fruit preserves.", markers: ["V"] }
           ]
         },
         {
-          name: "Eggs and Breakfast Plates",
+          name: "Eggs & Breakfast Plates",
           items: [
-            { name: "Two-Egg Breakfast", price: "$14", desc: "Two eggs any style, breakfast potatoes, choice of bacon, sausage, or tomato, sourdough toast.", markers: [] },
+            { name: "Two-Egg Breakfast", price: "$14", desc: "Two eggs any style, breakfast potatoes, choice of bacon or sausage, sourdough toast.", markers: [] },
             { name: "Ember Breakfast Plate", price: "$17", desc: "Two eggs, smoked bacon, maple sausage, breakfast potatoes, charred tomato, biscuit.", markers: [] },
             { name: "Short Rib Hash", price: "$19", desc: "Braised short rib, crispy potatoes, peppers, onions, two eggs, horseradish cream.", markers: ["CF", "GF"], featured: true },
             { name: "Wood-Fired Shakshuka", price: "$17", desc: "Eggs baked in smoked tomato pepper sauce, feta, herbs, grilled sourdough.", markers: ["V", "SP"] },
@@ -231,8 +233,9 @@ const MENU_DATA = {
     brunch: {
       id: "brunch",
       title: "Weekend Brunch",
-      tagline: "Social weekend dining, wood-fired morning plates & mimosa flights.",
+      tagline: "Vibrant weekend social dining, wood-fired morning plates & mimosa flights.",
       hours: "Saturday & Sunday 10:00 AM–2:30 PM",
+      themeColor: "#eab308",
       sections: [
         {
           name: "Brunch Shareables",
@@ -278,7 +281,7 @@ const MENU_DATA = {
           items: [
             { name: "Classic Mimosa", price: "$10", desc: "Sparkling wine, fresh orange juice.", markers: [] },
             { name: "Blood Orange Mimosa", price: "$12", desc: "Sparkling wine, blood orange, citrus.", markers: [] },
-            { name: "Mimosa Flight", price: "$22", desc: "Orange, blood orange, peach, and seasonal fruit mimosas.", markers: ["CF"] },
+            { name: "Mimosa Flight", price: "$22", desc: "Orange, blood orange, peach, and seasonal fruit mimosas.", markers: ["CF"], image: "images/cocktail.jpg" },
             { name: "Ember Bloody Mary", price: "$13", desc: "Vodka, smoked tomato, house spice blend, pickled vegetables.", markers: ["SP"] },
             { name: "Morning Star", price: "$14", desc: "Gin, grapefruit, elderflower, sparkling wine.", markers: [] },
             { name: "Brunch Old Fashioned", price: "$14", desc: "Bourbon, maple, orange bitters.", markers: [] },
@@ -294,6 +297,7 @@ const MENU_DATA = {
       title: "Lunch Menu",
       tagline: "Approachable midday plates, wood-fired combos & fresh grain bowls.",
       hours: "Monday–Friday 11:00 AM–3:00 PM",
+      themeColor: "#84cc16",
       sections: [
         {
           name: "Lunch Starters",
@@ -348,13 +352,14 @@ const MENU_DATA = {
       title: "Specialty & Chef's Table",
       tagline: "Exclusive multi-course live-fire tasting experiences & seasonal highlights.",
       hours: "Available During Dinner Service | Late-Night Available Friday & Saturday 10 PM–12 AM",
+      themeColor: "#ef4444",
       sections: [
         {
           name: "Chef’s Featured Experiences",
           items: [
-            { name: "Chef’s Fire Table", price: "$85 per guest", desc: "Five-course seasonal tasting menu centered on live-fire wood cooking. Optional wine pairing $45.", markers: ["CF"], featured: true },
+            { name: "Chef’s Fire Table", price: "$85 per guest", desc: "Five-course seasonal tasting menu centered on live-fire wood cooking. Optional wine pairing $45.", markers: ["CF"], featured: true, image: "images/hearth.jpg" },
             { name: "Vegetarian Fire Table", price: "$72 per guest", desc: "Five-course vegetarian live-fire tasting menu.", markers: ["V", "CF"] },
-            { name: "Dry-Aged Ribeye for Two", price: "$98", desc: "Twenty-eight-ounce dry-aged ribeye, two sides, two sauces.", markers: ["CF"], featured: true },
+            { name: "Dry-Aged Ribeye for Two", price: "$98", desc: "Twenty-eight-ounce dry-aged ribeye, two sides, two sauces.", markers: ["CF"], featured: true, image: "images/steak.jpg" },
             { name: "Whole Wood-Fired Fish", price: "Market Price", desc: "Whole seasonal fish, charred lemon, herbs, roasted vegetables. Serves two.", featured: true },
             { name: "Ember Tasting Board", price: "$38", desc: "Chef’s selection of three small plates and two signature sauces.", markers: ["CF"] }
           ]
@@ -390,11 +395,12 @@ const MENU_DATA = {
       title: "Drinks & Cellar",
       tagline: "Celestial mixology, craft drafts & curated wines.",
       hours: "Available Daily During Dining Hours",
+      themeColor: "#6366f1",
       sections: [
         {
           name: "Specialty Cocktails",
           items: [
-            { name: "Solar Flare", price: "$14", desc: "Tequila, blood orange, lime, chile, smoked salt.", markers: ["SP", "CF"], featured: true },
+            { name: "Solar Flare", price: "$14", desc: "Tequila, blood orange, lime, chile, smoked salt.", markers: ["SP", "CF"], featured: true, image: "images/cocktail.jpg" },
             { name: "Event Horizon Espresso Martini", price: "$15", desc: "Vodka, espresso, coffee liqueur, vanilla.", markers: ["CF"], featured: true },
             { name: "Dark Matter Manhattan", price: "$15", desc: "Rye, amaro, sweet vermouth, black walnut bitters.", markers: [] },
             { name: "Copper Moon", price: "$14", desc: "Bourbon, peach, lemon, ginger, bitters.", markers: [] },
@@ -466,6 +472,7 @@ const MENU_DATA = {
       title: "Happy Hour",
       tagline: "After-work drinks & fire-grilled bites.",
       hours: "Tuesday–Friday 4:30 PM–6:30 PM | Bar & Patio Only",
+      themeColor: "#ec4899",
       sections: [
         {
           name: "Happy Hour Drinks",
@@ -499,6 +506,7 @@ const MENU_DATA = {
       title: "Kids Menu",
       tagline: "For guests 12 and younger. Includes choice of fruit, fries, or vegetables.",
       hours: "Available Daily During Dining Hours",
+      themeColor: "#14b8a6",
       sections: [
         {
           name: "Kids Favorites",

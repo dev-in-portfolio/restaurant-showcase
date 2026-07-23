@@ -1,9 +1,10 @@
-// Enhanced Menu Controller JavaScript for Orbit & Ember Kitchen + Bar (Level 0 + Menu Experience)
+// Master Menu Controller JavaScript V3 for Orbit & Ember Kitchen + Bar
 
 document.addEventListener('DOMContentLoaded', () => {
   let currentMenuKey = 'dinner';
   let activeDietaryFilter = 'ALL';
   let searchQuery = '';
+  let viewMode = 'grid'; // 'grid' or 'list'
 
   const menuSelectorNav = document.getElementById('primary-menu-tabs');
   const secondaryNav = document.getElementById('secondary-section-nav');
@@ -12,12 +13,100 @@ document.addEventListener('DOMContentLoaded', () => {
   const dietaryFilterContainer = document.getElementById('dietary-filter-pills');
   const searchInput = document.getElementById('menu-search-input');
 
+  const viewGridBtn = document.getElementById('view-grid-btn');
+  const viewListBtn = document.getElementById('view-list-btn');
+
+  const dishModal = document.getElementById('dish-detail-modal');
+  const closeDishModalBtn = document.getElementById('close-dish-modal-btn');
+  const dishModalBody = document.getElementById('dish-modal-body');
+
   const qrModal = document.getElementById('qr-modal');
   const openQrBtn = document.getElementById('open-qr-btn');
   const closeQrBtn = document.getElementById('close-qr-btn');
   const printMenuBtn = document.getElementById('print-menu-btn');
+  const backToTopBtn = document.getElementById('back-to-top-btn');
 
-  // Initialize QR Modal
+  // View Mode Switching (Grid / List)
+  if (viewGridBtn && viewListBtn) {
+    viewGridBtn.addEventListener('click', () => {
+      viewMode = 'grid';
+      viewGridBtn.classList.add('active');
+      viewListBtn.classList.remove('active');
+      if (menuContentContainer) {
+        menuContentContainer.classList.remove('list-mode');
+        menuContentContainer.classList.add('grid-mode');
+      }
+      renderActiveMenu();
+    });
+
+    viewListBtn.addEventListener('click', () => {
+      viewMode = 'list';
+      viewListBtn.classList.add('active');
+      viewGridBtn.classList.remove('active');
+      if (menuContentContainer) {
+        menuContentContainer.classList.remove('grid-mode');
+        menuContentContainer.classList.add('list-mode');
+      }
+      renderActiveMenu();
+    });
+  }
+
+  // Floating Back to Top Button Listener
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Dish Detail Modal Toggle
+  function openDishModal(item) {
+    if (!dishModal || !dishModalBody) return;
+    const markersHtml = renderItemMarkers(item.markers);
+
+    dishModalBody.innerHTML = `
+      ${item.image ? `<div class="dish-modal-image"><img src="${item.image}" alt="${item.name}"></div>` : ''}
+      <div class="dish-modal-header">
+        <h3 class="dish-modal-name">${item.name}</h3>
+        <span class="dish-modal-price">${item.price}</span>
+      </div>
+      <p class="dish-modal-desc">${item.desc}</p>
+      ${item.pairing ? `
+        <div class="dish-modal-pairing">
+          <strong>🍷 Suggested Pairing:</strong> ${item.pairing}
+        </div>
+      ` : ''}
+      <div class="dish-modal-tags">
+        ${markersHtml}
+      </div>
+    `;
+
+    dishModal.classList.add('active');
+    dishModal.setAttribute('aria-hidden', 'false');
+  }
+
+  if (closeDishModalBtn && dishModal) {
+    closeDishModalBtn.addEventListener('click', () => {
+      dishModal.classList.remove('active');
+      dishModal.setAttribute('aria-hidden', 'true');
+    });
+
+    dishModal.addEventListener('click', (e) => {
+      if (e.target === dishModal) {
+        dishModal.classList.remove('active');
+        dishModal.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  // QR Modal Toggle
   if (openQrBtn && qrModal && closeQrBtn) {
     openQrBtn.addEventListener('click', () => {
       qrModal.classList.add('active');
@@ -42,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Live Search Input Listener
+  // Live Search Input
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
@@ -61,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'brunch', label: 'Brunch', badge: 'Weekend' },
       { key: 'lunch', label: 'Lunch', badge: '11am-3pm' },
       { key: 'specialty', label: 'Specialty', badge: 'Chef Table' },
-      { key: 'drinks', label: 'Drinks', badge: 'Cocktails' },
+      { key: 'drinks', label: 'Drinks', badge: 'Craft Cocktails' },
       { key: 'happyhour', label: 'Happy Hour', badge: '4:30-6:30' },
       { key: 'kids', label: 'Kids', badge: 'Under 12' }
     ];
@@ -165,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (serviceNotice) {
       serviceNotice.innerHTML = `
         <div class="service-notice-inner">
-          <div class="notice-clock-badge">🕒 Service Availability</div>
+          <div class="notice-clock-badge">🕒 Service Hours</div>
           <div class="notice-hours-text">${menuObj.hours}</div>
         </div>
       `;
@@ -180,7 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Filter by dietary marker & search query
       let filteredItems = sec.items.filter(item => {
-        // Dietary filter
         let passesDietary = true;
         if (activeDietaryFilter !== 'ALL') {
           if (activeDietaryFilter === 'CF') {
@@ -190,12 +278,12 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
 
-        // Search query filter
         let passesSearch = true;
         if (searchQuery) {
           const matchName = item.name.toLowerCase().includes(searchQuery);
           const matchDesc = item.desc.toLowerCase().includes(searchQuery);
-          passesSearch = matchName || matchDesc;
+          const matchPairing = item.pairing && item.pairing.toLowerCase().includes(searchQuery);
+          passesSearch = matchName || matchDesc || matchPairing;
         }
 
         return passesDietary && passesSearch;
@@ -209,21 +297,36 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2 class="category-name">${sec.name}</h2>
             <div class="category-divider-line"></div>
           </div>
-          <div class="menu-cards-grid">
+          <div class="menu-cards-grid ${viewMode === 'list' ? 'list-layout' : 'grid-layout'}">
       `;
 
       filteredItems.forEach(item => {
         const isFeatured = item.featured;
+        const itemJson = JSON.stringify(item).replace(/"/g, '&quot;');
+        
         html += `
-          <article class="menu-item-card ${isFeatured ? 'featured-chef-card' : ''}">
-            ${isFeatured ? '<div class="chef-featured-label">✨ Chef’s Featured Dish</div>' : ''}
-            <div class="card-item-top">
-              <h3 class="card-item-title">${item.name}</h3>
-              <div class="card-item-price">${item.price}</div>
-            </div>
-            <p class="card-item-desc">${item.desc}</p>
-            <div class="card-item-tags">
-              ${renderItemMarkers(item.markers)}
+          <article class="menu-item-card ${isFeatured ? 'featured-chef-card' : ''}" data-item="${itemJson}">
+            ${item.image ? `
+              <div class="card-item-image-wrapper">
+                <img src="${item.image}" alt="${item.name}" loading="lazy">
+                ${isFeatured ? '<span class="image-featured-badge">⭐ Chef’s Signature</span>' : ''}
+              </div>
+            ` : ''}
+            <div class="card-item-content">
+              ${isFeatured && !item.image ? '<div class="chef-featured-label">✨ Chef’s Signature Dish</div>' : ''}
+              <div class="card-item-top">
+                <h3 class="card-item-title">${item.name}</h3>
+                <div class="card-item-price">${item.price}</div>
+              </div>
+              <p class="card-item-desc">${item.desc}</p>
+              ${item.pairing ? `
+                <div class="card-pairing-note">
+                  <span>🍷 Pairing Suggestion:</span> ${item.pairing}
+                </div>
+              ` : ''}
+              <div class="card-item-tags">
+                ${renderItemMarkers(item.markers)}
+              </div>
             </div>
           </article>
         `;
@@ -239,12 +342,12 @@ document.addEventListener('DOMContentLoaded', () => {
       html = `
         <div class="no-results-box">
           <h3>No matching menu items found</h3>
-          <p>Try searching for a different dish name or clearing your dietary filters.</p>
+          <p>Try searching for a different term or selecting "Show All" on dietary filters.</p>
         </div>
       `;
     }
 
-    // Add Add-ons & Substitutions container for food menus
+    // Add Add-ons Section for food menus
     if (['dinner', 'breakfast', 'brunch', 'lunch'].includes(currentMenuKey)) {
       html += `
         <section class="addons-section-block">
@@ -272,6 +375,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuContentContainer) {
       menuContentContainer.innerHTML = html;
+
+      // Attach click listeners to cards to open Dish Detail Modal
+      const cards = menuContentContainer.querySelectorAll('.menu-item-card');
+      cards.forEach(c => {
+        c.addEventListener('click', () => {
+          const jsonStr = c.getAttribute('data-item');
+          if (jsonStr) {
+            try {
+              const itemData = JSON.parse(jsonStr.replace(/&quot;/g, '"'));
+              openDishModal(itemData);
+            } catch(e) {}
+          }
+        });
+      });
     }
   }
 

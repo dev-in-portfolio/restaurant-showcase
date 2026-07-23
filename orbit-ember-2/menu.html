@@ -39,9 +39,9 @@
       <div class="menu-hero-content">
         <div class="hero-eyebrow">🔥 Live-Fire Hearth &amp; Craft Spirits</div>
         <h1 class="menu-hero-title">The Culinary <em>Menu</em></h1>
-        <p class="menu-hero-subtitle">Wood-fired oak cooking, seasonal local ingredients, and artisanal mixology in South End, Charlotte.</p>
+        <p class="menu-hero-subtitle">Wood-fired oak cooking, seasonal local ingredients, and nocturnal craft spirits in Charlotte's South End.</p>
         
-        <!-- Utility Actions -->
+        <!-- Utility Actions Bar -->
         <div class="menu-utility-bar">
           <button id="print-menu-btn" class="utility-btn" title="Print ink-friendly menu">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
@@ -70,14 +70,24 @@
         <!-- Dynamically Populated -->
       </div>
 
-      <!-- Controls Row: Search & Dietary Filter -->
+      <!-- Controls Row: Search, Dietary Filter & View Layout Toggle -->
       <div class="menu-controls-row">
         <div class="search-box-wrapper">
           <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="menu-search-input" placeholder="Search dishes or ingredients..." aria-label="Search menu items">
+          <input type="text" id="menu-search-input" placeholder="Search dishes, ingredients, or pairings..." aria-label="Search menu items">
         </div>
+
         <div id="dietary-filter-pills" class="dietary-filter-pills">
           <!-- Dynamically Populated -->
+        </div>
+
+        <div class="view-mode-toggle">
+          <button id="view-grid-btn" class="view-btn active" title="Cards Grid View">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+          </button>
+          <button id="view-list-btn" class="view-btn" title="Classic List View">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="5" width="18" height="3" rx="1"/><rect x="3" y="11" width="18" height="3" rx="1"/><rect x="3" y="17" width="18" height="3" rx="1"/></svg>
+          </button>
         </div>
       </div>
 
@@ -90,7 +100,7 @@
       </div>
 
       <!-- Main Dynamic Content Container -->
-      <div id="menu-content-container" class="menu-sections-grid">
+      <div id="menu-content-container" class="menu-sections-grid grid-mode">
         <!-- Dynamically Populated -->
       </div>
 
@@ -113,6 +123,16 @@
       </div>
     </div>
   </main>
+
+  <!-- Interactive Dish Detail Modal -->
+  <div id="dish-detail-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card dish-modal-card">
+      <button id="close-dish-modal-btn" class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div id="dish-modal-body" class="dish-modal-content">
+        <!-- Dynamically Populated via JS -->
+      </div>
+    </div>
+  </div>
 
   <!-- Mobile QR Code Modal -->
   <div id="qr-modal" class="modal-overlay" aria-hidden="true">
@@ -176,6 +196,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top-btn" class="back-to-top-fab" aria-label="Back to Top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
 
   <footer class="main-footer">
     <div class="footer-content">
