@@ -7,30 +7,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hours, Location &amp; Directions | Orbit &amp; Ember Charlotte NC</title>
-  <meta name="description" content="View address, hours, directions, parking, and transit info for Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St in Charlotte, NC.">
+  <meta name="description" content="Visit Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St in Charlotte, NC. View operating hours, parking, light rail transit, map directions, and FAQ.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-4/visit.html">
-  <meta property="og:title" content="Hours &amp; Location | Orbit &amp; Ember Charlotte NC">
+  <meta property="og:title" content="Hours, Location &amp; Directions | Orbit &amp; Ember Charlotte NC">
   <meta property="og:description" content="Visit Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St, Charlotte NC. View operating hours, valet parking, and directions.">
   <meta property="og:image" content="images/exterior-dusk.jpg">
 
-  <!-- Breadcrumb Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "http://localhost:8082/restaurants/orbit-ember-4/index.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Visit & Directions",
-        "item": "http://localhost:8082/restaurants/orbit-ember-4/visit.html"
-      }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "http://localhost:8082/restaurants/orbit-ember-4/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Hours & Directions", "item": "http://localhost:8082/restaurants/orbit-ember-4/visit.html" }
     ]
   }
   </script>
@@ -42,7 +31,7 @@
 </head>
 <body class="visit-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Local Discovery Hub</div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Local Discovery Master Hub</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -61,43 +50,53 @@
   </header>
 
   <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
-    <!-- Breadcrumb Hierarchy -->
     <nav class="breadcrumb-trail" aria-label="Breadcrumb">
-      <a href="index.html">Home</a> &rsaquo; <span>Visit &amp; Directions</span>
+      <a href="index.html">Home</a> &rsaquo; <span>Hours, Location &amp; Directions</span>
     </nav>
 
     <div class="section-header-center">
       <span class="subhead-tag">South End / Uptown Charlotte</span>
-      <h1 class="section-title">Hours, Location &amp; <em>Arrival</em></h1>
-      <p class="section-desc">Plan your visit to Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St in Charlotte, NC.</p>
+      <h1 class="section-title">Hours, Location &amp; <em>Directions</em></h1>
+      <p class="section-desc">Plan your dining experience at Orbit &amp; Ember Kitchen + Bar at 300 S Tryon St, Charlotte, NC 28202.</p>
     </div>
 
-    <!-- Main Local Grid -->
-    <div class="visit-hub-grid">
-      <!-- Left Column: NAP & Hours Table -->
-      <div class="visit-info-card">
-        <div id="visit-status-badge" class="realtime-status-pill">Checking Status...</div>
+    <!-- Real-time Status Badge Bar -->
+    <div class="status-banner-row">
+      <div id="visit-status-badge-v2" class="realtime-status-pill">Checking Real-time Status...</div>
+      <button onclick="copyAddressToClipboard()" class="copy-address-btn" title="Copy full street address">
+        📋 Copy Street Address
+      </button>
+    </div>
 
-        <h2 class="card-heading">Contact &amp; Location</h2>
+    <!-- Main Local Hub Grid -->
+    <div class="visit-hub-grid">
+      <!-- Left Column: Address, Phone & Weekly Hours Schedule -->
+      <div class="visit-info-card">
+        <h2 class="card-heading">Location &amp; Contact</h2>
         <address class="visit-address-block">
           <strong>Orbit &amp; Ember Kitchen + Bar</strong><br>
           300 S Tryon St<br>
           Charlotte, NC 28202<br>
-          Neighborhood: <em>South End / Uptown</em><br>
+          Neighborhood: <em>South End / Uptown Charlotte</em><br>
           Phone: <a href="tel:+17045550198" class="nap-phone-link">(704) 555-0198</a><br>
-          Email: <a href="mailto:hospitality@orbitandember.com">hospitality@orbitandember.com</a>
+          Email: <a href="mailto:hospitality@orbitandember.com" style="color: #c27a4a;">hospitality@orbitandember.com</a>
         </address>
 
-        <div class="action-buttons-group">
-          <a href="https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202" target="_blank" rel="noopener noreferrer" class="btn-primary">
-            🗺️ Get Google Directions
+        <!-- Navigation App Directions Switcher -->
+        <h3 class="card-subheading" style="margin-top: 1.5rem;">Open Directions In</h3>
+        <div class="map-app-buttons-row">
+          <a href="https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202" target="_blank" rel="noopener noreferrer" class="app-nav-btn btn-google">
+            📍 Google Maps
           </a>
-          <a href="reserve.html" class="btn-secondary">
-            📅 Reserve a Table
+          <a href="https://maps.apple.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202" target="_blank" rel="noopener noreferrer" class="app-nav-btn btn-apple">
+            🍎 Apple Maps
+          </a>
+          <a href="https://waze.com/ul?q=300+S+Tryon+St+Charlotte+NC" target="_blank" rel="noopener noreferrer" class="app-nav-btn btn-waze">
+            🚗 Waze Navigation
           </a>
         </div>
 
-        <h3 class="card-subheading" style="margin-top: 2rem;">Weekly Operating Hours</h3>
+        <h3 class="card-subheading" style="margin-top: 2rem;">Weekly Service Hours</h3>
         <table class="hours-schedule-table">
           <thead>
             <tr>
@@ -119,49 +118,104 @@
         <p class="hours-disclaimer">* Holiday hours may vary. Please call ahead for private event buyouts or holiday service schedules.</p>
       </div>
 
-      <!-- Right Column: Map Embed & Arrival Info -->
+      <!-- Right Column: Interactive Map & Arrival Amenities -->
       <div class="visit-map-card">
-        <h2 class="card-heading">Interactive Map</h2>
+        <h2 class="card-heading">Interactive Map &amp; Arrival</h2>
         <div class="map-frame-container">
           <iframe title="Map location for Orbit and Ember Kitchen + Bar at 300 S Tryon St Charlotte NC" src="https://maps.google.com/maps?q=300+S+Tryon+St,+Charlotte,+NC+28202&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <div class="arrival-amenities-grid" style="margin-top: 1.5rem;">
           <div class="amenity-box">
-            <h4>🚗 Parking Information</h4>
-            <p>Valet parking is available at the front entrance ($10). Covered deck parking is located at the 300 S Tryon Garage. Metered street parking is available on Tryon St &amp; 3rd St.</p>
+            <h4>🚗 Parking Options</h4>
+            <p>Valet parking at front entrance ($10). Covered deck parking at 300 S Tryon Garage. Metered street parking on Tryon &amp; 3rd St.</p>
           </div>
           <div class="amenity-box">
-            <h4>🚆 Public Transit</h4>
-            <p>Located 2 blocks from the LYNX Blue Line (3rd St / Convention Center Station).</p>
+            <h4>🚆 Light Rail Rapid Transit</h4>
+            <p>2 blocks from LYNX Blue Line (3rd St / Convention Center Station).</p>
           </div>
           <div class="amenity-box">
-            <h4>🌿 Outdoor Patio</h4>
-            <p>Heated outdoor patio dining available weather permitting.</p>
+            <h4>🌿 Heated Outdoor Patio</h4>
+            <p>Covered and heated patio dining available year-round.</p>
           </div>
           <div class="amenity-box">
-            <h4>♿ Accessibility</h4>
-            <p>Fully ADA compliant with step-free entrance, elevator access, and accessible restrooms.</p>
+            <h4>♿ ADA Accessible</h4>
+            <p>Step-free main entrance, elevator access, and accessible restrooms.</p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Nearby Cultural Landmarks Guide -->
+    <section class="landmarks-section-block" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">Nearby <em>Landmarks &amp; Attractions</em></h2>
+      <p class="section-desc text-center" style="margin-bottom: 2rem;"> Orbit &amp; Ember is located within walking distance of Charlotte's premier cultural destinations.</p>
+
+      <div class="landmarks-grid-4">
+        <div class="landmark-card">
+          <span class="landmark-badge">2 Min Walk</span>
+          <h3>Knight Theater</h3>
+          <p>Ideal for pre-show dinner and craft drinks before evening performances.</p>
+        </div>
+        <div class="landmark-card">
+          <span class="landmark-badge">3 Min Walk</span>
+          <h3>Mint Museum Uptown</h3>
+          <p>Located directly across Tryon Street in the Levine Center for the Arts.</p>
+        </div>
+        <div class="landmark-card">
+          <span class="landmark-badge">8 Min Walk</span>
+          <h3>Bank of America Stadium</h3>
+          <p>Perfect for Panthers game-day dining and pre-match cocktail gatherings.</p>
+        </div>
+        <div class="landmark-card">
+          <span class="landmark-badge">2 Blocks</span>
+          <h3>Convention Center</h3>
+          <p>Convenient dining location for convention attendees and business travelers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Local FAQ Accordion -->
+    <section class="local-faq-section" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">Frequently Asked <em>Questions</em></h2>
+      <div class="faq-accordion-container" style="margin-top: 2rem;">
+        <details class="faq-item">
+          <summary class="faq-question">Do I need reservations for dinner or weekend brunch?</summary>
+          <div class="faq-answer">
+            <p>Reservations are strongly recommended for Friday &amp; Saturday dinner service as well as Weekend Brunch. Walk-in seating is available at our walnut bar and lounge on a first-come, first-served basis. You can reserve online via our <a href="reserve.html" style="color: #c27a4a;">Reservations Page</a> or call us at <a href="tel:+17045550198" style="color: #c27a4a;">(704) 555-0198</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What are the parking options at 300 S Tryon St?</summary>
+          <div class="faq-answer">
+            <p>We offer valet parking directly at our main entrance on Tryon Street for $10. Self-parking is available in the covered 300 S Tryon parking garage, and metered street parking is available on surrounding blocks.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is outdoor patio seating available?</summary>
+          <div class="faq-answer">
+            <p>Yes, our outdoor patio features covered seating with radiant heaters for year-round dining. Patio tables are seated on a first-come basis or by special reservation request.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Are private dining rooms available for corporate or group events?</summary>
+          <div class="faq-answer">
+            <p>Yes, our private dining room accommodates groups of up to 16 guests with custom wood-fired tasting menus. Please visit our <a href="experience.html" style="color: #c27a4a;">Experience Page</a> or contact us directly to inquire about date availability.</p>
+          </div>
+        </details>
+      </div>
+    </section>
   </main>
 
   <!-- Mobile Quick Action Bar -->
   <div class="mobile-action-bar" role="navigation" aria-label="Quick Local Actions">
-    <a href="tel:+17045550198" class="bar-action-item">
-      <span>📞 Call</span>
-    </a>
-    <a href="https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202" target="_blank" rel="noopener noreferrer" class="bar-action-item">
-      <span>🗺️ Map</span>
-    </a>
-    <a href="reserve.html" class="bar-action-item highlight">
-      <span>📅 Reserve</span>
-    </a>
-    <a href="menu.html" class="bar-action-item">
-      <span>🍽️ Menu</span>
-    </a>
+    <a href="tel:+17045550198" class="bar-action-item"><span>📞 Call</span></a>
+    <a href="https://maps.google.com/?q=300+S+Tryon+St,+Charlotte,+NC+28202" target="_blank" rel="noopener noreferrer" class="bar-action-item"><span>🗺️ Map</span></a>
+    <a href="reserve.html" class="bar-action-item highlight"><span>📅 Reserve</span></a>
+    <a href="menu.html" class="bar-action-item"><span>🍽️ Menu</span></a>
   </div>
 
   <footer class="site-footer">
@@ -198,11 +252,11 @@
   <script src="location-data.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const badge = document.getElementById('visit-status-badge');
-      if (badge && typeof getRealtimeStatus === 'function') {
-        const st = getRealtimeStatus();
+      const badge = document.getElementById('visit-status-badge-v2');
+      if (badge && typeof getRealtimeStatusV2 === 'function') {
+        const st = getRealtimeStatusV2();
         badge.textContent = st.text;
-        badge.className = `realtime-status-pill ${st.isOpen ? 'is-open' : 'is-closed'}`;
+        badge.className = `realtime-status-pill ${st.badgeClass}`;
       }
     });
   </script>
