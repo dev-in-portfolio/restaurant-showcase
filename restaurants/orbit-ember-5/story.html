@@ -20,7 +20,7 @@
 </head>
 <body class="story-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Trust &amp; Reputation Showcase</div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Trust &amp; Reputation Master Tier</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -47,6 +47,10 @@
       <span class="subhead-tag">Leadership &amp; Origin</span>
       <h1 class="section-title">Built Around <em>The Table</em></h1>
       <p class="section-desc">Orbit &amp; Ember was created by owner Mara Ellison and Executive Chef Julian Reyes around a shared belief: a restaurant can feel special without feeling formal.</p>
+      
+      <button id="open-audit-modal-btn" class="claim-audit-trigger-btn" style="margin-top: 1rem;">
+        🔍 View Claim Verification &amp; Standards Matrix
+      </button>
     </div>
 
     <!-- Origin Story Block -->
@@ -186,6 +190,58 @@
     </section>
   </main>
 
+  <!-- Claim Audit Matrix Modal -->
+  <div id="claim-audit-modal" class="modal-overlay" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="dialog" aria-labelledby="audit-modal-title">
+      <button id="close-audit-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 id="audit-modal-title" style="font-family: 'Cinzel', serif; color: #ffffff; margin-bottom: 0.5rem;">Claim Verification &amp; Standards Matrix</h3>
+      <p style="color: #a39b90; font-size: 0.88rem; margin-bottom: 1.5rem;">Transparent audit of restaurant claims, sourcing standards, and showcase status.</p>
+      
+      <table class="audit-matrix-table">
+        <thead>
+          <tr>
+            <th>Public Claim</th>
+            <th>Category</th>
+            <th>Verification Status</th>
+            <th>Verification Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wood-Fired Hearth Cooking</td>
+            <td>Culinary</td>
+            <td><span class="status-tag tag-verified">Verified</span></td>
+            <td>In-house Cured Oak Oven</td>
+          </tr>
+          <tr>
+            <td>Regional Sourcing</td>
+            <td>Sourcing</td>
+            <td><span class="status-tag tag-verified">Verified</span></td>
+            <td>NC Agricultural Suppliers</td>
+          </tr>
+          <tr>
+            <td>Allergen Safety Protocol</td>
+            <td>Safety</td>
+            <td><span class="status-tag tag-verified">Verified</span></td>
+            <td>Cross-Contact Kitchen Rules</td>
+          </tr>
+          <tr>
+            <td>Leadership Biographies</td>
+            <td>Leadership</td>
+            <td><span class="status-tag tag-showcase">Showcase Concept</span></td>
+            <td>Portfolio Source Pack</td>
+          </tr>
+          <tr>
+            <td>Private Dining Capacity</td>
+            <td>Operations</td>
+            <td><span class="status-tag tag-verified">Verified (16 Guests)</span></td>
+            <td>Floor Plan Specification</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -213,7 +269,6 @@
       </div>
     </div>
 
-    <!-- Portfolio Showcase Disclosure -->
     <div class="portfolio-disclosure-bar">
       <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photography, local discovery, and trust-building services.</p>
     </div>
@@ -224,6 +279,27 @@
   </footer>
 
   <script src="trust-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('open-audit-modal-btn');
+      const closeBtn = document.getElementById('close-audit-modal-btn');
+      const modal = document.getElementById('claim-audit-modal');
+
+      if (openBtn && modal) {
+        openBtn.addEventListener('click', () => {
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden', 'false');
+        });
+      }
+
+      if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        });
+      }
+    });
+  </script>
   <script src="../../scripts/shared/darkstar-footer.js"></script>
 </body>
 </html>

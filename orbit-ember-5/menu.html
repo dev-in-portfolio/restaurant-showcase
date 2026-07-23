@@ -6,8 +6,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu &amp; Dietary Options | Orbit &amp; Ember Kitchen + Bar</title>
-  <meta name="description" content="View the wood-fired dinner &amp; brunch menu at Orbit &amp; Ember. Includes dietary markers for vegetarian, vegan, and gluten-free items.">
+  <title>Menu &amp; Culinary Stories | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="View the wood-fired dinner &amp; brunch menu at Orbit &amp; Ember. Includes dietary markers for vegetarian, vegan, and gluten-free items plus culinary origin stories.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-5/menu.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Trust &amp; Reputation Showcase</div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Trust &amp; Reputation Master Tier</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -62,6 +62,7 @@
               <span class="item-price-tag">$42</span>
             </div>
             <p class="item-desc-text">Braised boneless beef short rib, parsnip purée, charred broccolini, dark red-wine reduction.</p>
+            <button class="open-dish-story-btn" data-dish="short-rib">📖 Read Culinary Origin Story</button>
           </div>
         </div>
 
@@ -72,6 +73,7 @@
               <span class="item-price-tag">$36</span>
             </div>
             <p class="item-desc-text">Farro pilaf, blistered cherry tomatoes, lemon-herb butter, charred lemon half.</p>
+            <button class="open-dish-story-btn" data-dish="salmon">📖 Read Culinary Origin Story</button>
           </div>
         </div>
 
@@ -82,11 +84,22 @@
               <span class="item-price-tag">$24</span>
             </div>
             <p class="item-desc-text">Roasted whole cauliflower, white bean purée, salsa verde, toasted almond crunch.</p>
+            <button class="open-dish-story-btn" data-dish="cauliflower">📖 Read Culinary Origin Story</button>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Dish Origin Story Modal -->
+  <div id="dish-story-modal" class="modal-overlay" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="dialog" aria-labelledby="dish-modal-title">
+      <button id="close-dish-modal-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 id="dish-modal-title" style="font-family: 'Cinzel', serif; color: #ffffff; margin-bottom: 0.5rem;">Dish Origin Story</h3>
+      <p id="dish-modal-body" style="color: #b8b0a6; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;"></p>
+      <blockquote id="dish-modal-chef-note" class="leader-quote" style="margin: 0;"></blockquote >
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-container">
@@ -115,6 +128,40 @@
     </div>
   </footer>
 
+  <script src="trust-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('dish-story-modal');
+      const closeBtn = document.getElementById('close-dish-modal-btn');
+      const titleEl = document.getElementById('dish-modal-title');
+      const bodyEl = document.getElementById('dish-modal-body');
+      const chefNoteEl = document.getElementById('dish-modal-chef-note');
+      const btns = document.querySelectorAll('.open-dish-story-btn');
+
+      if (btns && modal && typeof TRUST_DATA_V2 !== 'undefined') {
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const dishId = btn.getAttribute('data-dish');
+            const d = TRUST_DATA_V2.dishStories.find(item => item.id === dishId);
+            if (d) {
+              titleEl.textContent = d.name;
+              bodyEl.textContent = d.story;
+              chefNoteEl.textContent = `Chef's Note: "${d.chefNote}"`;
+              modal.style.display = 'flex';
+              modal.setAttribute('aria-hidden', 'false');
+            }
+          });
+        });
+      }
+
+      if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        });
+      }
+    });
+  </script>
   <script src="../../scripts/shared/darkstar-footer.js"></script>
 </body>
 </html>
