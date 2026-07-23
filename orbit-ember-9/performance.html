@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/orbit-ember-9/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance &amp; Insights Dashboard | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Executive analytics, conversion metrics, channel attribution, Web Vitals, and technical health for Orbit &amp; Ember in Charlotte, NC.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-9/performance.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="performance-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Performance &amp; Insights Showcase</div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="performance.html" class="active">Insights</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+        <a href="reserve.html" class="cta-btn">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>Performance &amp; Insights Dashboard</span>
+    </nav>
+
+    <div class="section-header-center">
+      <span class="subhead-tag">Data-Driven Restaurant Intelligence</span>
+      <h1 class="section-title">Performance &amp; <em>Insights</em></h1>
+      <p class="section-desc">Converting raw guest interactions into clear operational decisions and business outcomes.</p>
+    </div>
+
+    <!-- Executive Overview KPI Summary Grid -->
+    <div class="kpi-summary-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Website Sessions</span>
+        <div class="kpi-value">12,450</div>
+        <span class="kpi-trend positive">↑ +14.2% MoM</span>
+      </div>
+      <div class="kpi-card highlight-kpi">
+        <span class="kpi-label">Primary Conversions</span>
+        <div class="kpi-value">746</div>
+        <span class="kpi-trend positive">5.99% Conversion Rate</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Table Reservations</span>
+        <div class="kpi-value">510</div>
+        <span class="kpi-trend neutral">Resy Provider Sync</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Takeout &amp; Delivery</span>
+        <div class="kpi-value">142</div>
+        <span class="kpi-trend positive">Toast &amp; DoorDash</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Private Dining Inquiries</span>
+        <div class="kpi-value">18</div>
+        <span class="kpi-trend positive">The Ember Room</span>
+      </div>
+    </div>
+
+    <!-- Interactive Multi-Dashboard Switcher -->
+    <section class="dashboard-switcher-section" style="margin-top: 4rem;">
+      <div class="dashboard-tab-nav">
+        <button class="dash-btn active" data-dash="exec">📊 Executive Summary</button>
+        <button class="dash-btn" data-dash="mktg">📢 Marketing &amp; Channels</button>
+        <button class="dash-btn" data-dash="ops">⚡ Operations &amp; Link Health</button>
+        <button class="dash-btn" data-dash="events">💼 Events &amp; Funnels</button>
+      </div>
+
+      <div id="dashboard-display-panel" class="dashboard-display-card">
+        <h3>Executive Business Overview</h3>
+        <p style="color: #b8b0a6; font-size: 0.95rem; margin-bottom: 1.5rem;">Overall conversion performance across reservations, online ordering, private dining, and gift cards.</p>
+        
+        <div class="funnel-metrics-table">
+          <div class="funnel-row">
+            <span>1. Total Website Visitors (Sessions)</span>
+            <strong>12,450 Sessions</strong>
+            <span class="funnel-pct">100%</span>
+          </div>
+          <div class="funnel-row">
+            <span>2. High-Intent Actions (CTA Clicks)</span>
+            <strong>2,490 Actions</strong>
+            <span class="funnel-pct">20.0%</span>
+          </div>
+          <div class="funnel-row">
+            <span>3. External Provider Opens (Resy / Toast / Forms)</span>
+            <strong>1,245 Opens</strong>
+            <span class="funnel-pct">10.0%</span>
+          </div>
+          <div class="funnel-row highlight-row">
+            <span>4. Confirmed Primary Conversions</span>
+            <strong>746 Conversions</strong>
+            <span class="funnel-pct">5.99%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Live Data Layer Event Simulator -->
+    <section class="event-simulator-section" style="margin-top: 4rem;">
+      <div class="section-header-center" style="margin-bottom: 1.5rem;">
+        <span class="subhead-tag">Interactive Analytics Engine</span>
+        <h2 class="section-title">Live Data Layer <em>Simulator</em></h2>
+        <p class="section-desc">Click test buttons to simulate guest actions and inspect structured data events in real-time.</p>
+      </div>
+
+      <div class="simulator-card">
+        <div class="sim-actions-row">
+          <button id="sim-resy-btn" class="cta-btn" style="font-size: 0.82rem; cursor: pointer;">Simulate Reservation Click</button>
+          <button id="sim-order-btn" class="cta-btn" style="font-size: 0.82rem; cursor: pointer;">Simulate Takeout Order</button>
+          <button id="sim-event-btn" class="cta-btn" style="font-size: 0.82rem; cursor: pointer;">Simulate Private Dining Inquiry</button>
+          <button id="sim-signup-btn" class="cta-btn" style="font-size: 0.82rem; cursor: pointer;">Simulate Email Signup</button>
+        </div>
+
+        <div class="event-log-terminal" style="margin-top: 1.5rem;">
+          <div class="terminal-header">🔴 Live Analytics Event Feed (Data Layer)</div>
+          <pre id="event-feed-code" class="terminal-body">// Ready. Click buttons above to trigger structured analytics payload...</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Web Vitals & Accessibility Scorecard -->
+    <section class="vitals-scorecard-section" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">Core Web Vitals &amp; <em>Health</em></h2>
+      <p class="section-desc text-center" style="margin-bottom: 2.5rem;">Ensuring technical performance and accessibility directly support conversion goals.</p>
+
+      <div class="vitals-grid-4">
+        <div class="vital-box good">
+          <span class="vital-label">Largest Contentful Paint</span>
+          <div class="vital-val">1.8s</div>
+          <span class="vital-status">Good (&lt; 2.5s)</span>
+        </div>
+        <div class="vital-box good">
+          <span class="vital-label">Interaction to Next Paint</span>
+          <div class="vital-val">85ms</div>
+          <span class="vital-status">Good (&lt; 200ms)</span>
+        </div>
+        <div class="vital-box good">
+          <span class="vital-label">Cumulative Layout Shift</span>
+          <div class="vital-val">0.02</div>
+          <span class="vital-status">Good (&lt; 0.1)</span>
+        </div>
+        <div class="vital-box good">
+          <span class="vital-label">Accessibility Compliance</span>
+          <div class="vital-val">100%</div>
+          <span class="vital-status">WCAG 2.1 AA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operational Action Matrix -->
+    <section class="action-matrix-section" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">Monthly Decision <em>Summary</em></h2>
+      <p class="section-desc text-center" style="margin-bottom: 2rem;">Converting data into actionable owner recommendations.</p>
+
+      <div class="matrix-grid-2">
+        <div class="matrix-card">
+          <h4 style="color: #22c55e;">🟢 CONTINUE</h4>
+          <p>Maintain Resy booking widget placement on mobile header. 5.99% overall conversion rate exceeds baseline.</p>
+        </div>
+        <div class="matrix-card">
+          <h4 style="color: #eab308;">🟡 IMPROVE</h4>
+          <p>Mobile Private Dining form starts abandon at 35%. Reduce optional text fields on initial step.</p>
+        </div>
+        <div class="matrix-card">
+          <h4 style="color: #3b82f6;">🔵 TEST</h4>
+          <p>A/B test "Book Table" vs "Reserve Your Table" CTA text on high-traffic menu landing pages.</p>
+        </div>
+        <div class="matrix-card">
+          <h4 style="color: #ef4444;">🔴 STOP</h4>
+          <p>Discontinue un-tracked third-party social ad campaigns that fail to supply proper UTM parameters.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="performance.html">Performance Insights</a></li>
+          <li><a href="visit.html">Visit &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="portfolio-disclosure-bar">
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, ordering, private dining, guest follow-up, loyalty, and performance-reporting services.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="performance-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dashboard Tab Switcher
+      const dashBtns = document.querySelectorAll('.dash-btn');
+      const dashPanel = document.getElementById('dashboard-display-panel');
+
+      const dashData = {
+        exec: `<h3>Executive Business Overview</h3><p style="color: #b8b0a6; font-size: 0.95rem; margin-bottom: 1.5rem;">Overall conversion performance across reservations, online ordering, private dining, and gift cards.</p><div class="funnel-metrics-table"><div class="funnel-row"><span>1. Total Website Visitors (Sessions)</span><strong>12,450 Sessions</strong><span class="funnel-pct">100%</span></div><div class="funnel-row"><span>2. High-Intent Actions (CTA Clicks)</span><strong>2,490 Actions</strong><span class="funnel-pct">20.0%</span></div><div class="funnel-row"><span>3. External Provider Opens</span><strong>1,245 Opens</strong><span class="funnel-pct">10.0%</span></div><div class="funnel-row highlight-row"><span>4. Confirmed Primary Conversions</span><strong>746 Conversions</strong><span class="funnel-pct">5.99%</span></div></div>`,
+        mktg: `<h3>Marketing &amp; Channel Attribution</h3><p style="color: #b8b0a6; font-size: 0.95rem; margin-bottom: 1.5rem;">Traffic breakdown by channel source and campaign conversions.</p><div class="funnel-metrics-table"><div class="funnel-row"><span>🔍 Organic Search (Google / Bing)</span><strong>5,229 Sessions (42%)</strong><span class="funnel-pct">313 Conversions</span></div><div class="funnel-row"><span>🔗 Direct Traffic</span><strong>3,486 Sessions (28%)</strong><span class="funnel-pct">224 Conversions</span></div><div class="funnel-row"><span>📱 Social Media (Instagram / FB)</span><strong>1,992 Sessions (16%)</strong><span class="funnel-pct">112 Conversions</span></div><div class="funnel-row"><span>✉️ Email &amp; SMS (The Ember List)</span><strong>1,743 Sessions (14%)</strong><span class="funnel-pct">97 Conversions</span></div></div>`,
+        ops: `<h3>Operational Health &amp; Provider Monitoring</h3><p style="color: #b8b0a6; font-size: 0.95rem; margin-bottom: 1.5rem;">Real-time integration status and link error tracking.</p><div class="funnel-metrics-table"><div class="funnel-row"><span>📅 Resy Table Booking Widget</span><strong style="color: #22c55e;">100% Operational</strong><span class="funnel-pct">0.00% Error Rate</span></div><div class="funnel-row"><span>🛍️ Toast Takeout Pickup Hub</span><strong style="color: #22c55e;">100% Operational</strong><span class="funnel-pct">0.00% Error Rate</span></div><div class="funnel-row"><span>🚗 DoorDash Delivery Handoff</span><strong style="color: #22c55e;">100% Operational</strong><span class="funnel-pct">0.00% Error Rate</span></div><div class="funnel-row"><span>💼 Private Dining Form Backend</span><strong style="color: #22c55e;">100% Operational</strong><span class="funnel-pct">0.00% Error Rate</span></div></div>`,
+        events: `<h3>Private Dining Funnel Analytics</h3><p style="color: #b8b0a6; font-size: 0.95rem; margin-bottom: 1.5rem;">The Ember Room lead qualification and conversion progression.</p><div class="funnel-metrics-table"><div class="funnel-row"><span>1. Private Dining Landing Views</span><strong>1,200 Views</strong><span class="funnel-pct">100%</span></div><div class="funnel-row"><span>2. Inquiry Form Starts</span><strong>48 Starts</strong><span class="funnel-pct">4.0%</span></div><div class="funnel-row"><span>3. Qualified Inquiries Submitted</span><strong>18 Inquiries</strong><span class="funnel-pct">37.5%</span></div><div class="funnel-row highlight-row"><span>4. Confirmed Event Proposals Signed</span><strong>9 Confirmed</strong><span class="funnel-pct">50.0%</span></div></div>`
+      };
+
+      dashBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          dashBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const key = btn.getAttribute('data-dash');
+          if (dashData[key] && dashPanel) {
+            dashPanel.innerHTML = dashData[key];
+          }
+        });
+      });
+
+      # Event Simulator Code
+      const codeFeed = document.getElementById('event-feed-code');
+
+      function updateFeedDisplay() {
+        if (codeFeed && window.OrbitAnalytics.eventLog.length > 0) {
+          codeFeed.textContent = JSON.stringify(window.OrbitAnalytics.eventLog, null, 2);
+        }
+      }
+
+      document.getElementById('sim-resy-btn')?.addEventListener('click', () => {
+        window.OrbitAnalytics.track('reservation_click', { provider: 'Resy', party_size: 4, date: '2026-07-25' });
+        updateFeedDisplay();
+      });
+
+      document.getElementById('sim-order-btn')?.addEventListener('click', () => {
+        window.OrbitAnalytics.track('order_takeout_click', { provider: 'Toast', order_type: 'pickup' });
+        updateFeedDisplay();
+      });
+
+      document.getElementById('sim-event-btn')?.addEventListener('click', () => {
+        window.OrbitAnalytics.track('private_dining_submit', { room: 'The Ember Room', guests: 14, event_type: 'birthday' });
+        updateFeedDisplay();
+      });
+
+      document.getElementById('sim-signup-btn')?.addEventListener('click', () => {
+        window.OrbitAnalytics.track('email_signup_success', { program: 'The Ember List', source: 'footer_form' });
+        updateFeedDisplay();
+      });
+
+      // Initial track on page load
+      window.OrbitAnalytics.track('page_view', { page: 'performance.html', title: 'Performance & Insights Dashboard' });
+      updateFeedDisplay();
+    });
+  </script>
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>
