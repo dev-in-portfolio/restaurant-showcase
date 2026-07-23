@@ -929,3 +929,109 @@ main {
   color: #787066;
   font-size: 0.85rem;
 }
+
+
+/* ==========================================================================
+   MASTER ORDER & RESERVE V2 ENHANCEMENTS & STRICT EDGE PADDING FIX
+   ========================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container, main.container, div.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .container, main.container, div.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+}
+
+.breadcrumb-trail {
+  font-size: 0.85rem;
+  color: #a39b90;
+  margin-bottom: 1.8rem;
+  padding-top: 0.5rem;
+}
+
+/* Seating Area Switcher Tabs on Reservation Hub */
+.seating-area-selector {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.seating-tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a39b90;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.seating-tab-btn.active {
+  background: #c27a4a;
+  color: #ffffff;
+  border-color: #e09663;
+}
+
+.seating-info-display {
+  background: rgba(13, 12, 11, 0.6);
+  border: 1px solid rgba(194, 122, 74, 0.3);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  color: #d1c8bd;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Kitchen Pace Indicator on Order Hub */
+.kitchen-pace-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.pace-dot {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}

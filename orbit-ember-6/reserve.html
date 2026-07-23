@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserve a Table | Orbit &amp; Ember Kitchen + Bar</title>
-  <meta name="description" content="Reserve a table online via Resy for wood-fired dinner or weekend brunch at Orbit &amp; Ember in Charlotte, NC. View walk-in policies and party size rules.">
+  <meta name="description" content="Reserve a table online via Resy for wood-fired dinner or weekend brunch at Orbit &amp; Ember in Charlotte, NC. View seating options and policies.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-6/reserve.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 </head>
 <body class="reserve-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Order &amp; Reserve Showcase</div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Order &amp; Reserve Master Tier</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -51,6 +51,18 @@
       <div class="resy-booking-form-box">
         <h2 class="card-heading">Find a Table</h2>
         
+        <!-- Seating Area Preference Switcher -->
+        <label style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #c27a4a; display: block; margin-top: 1rem;">Select Seating Preference</label>
+        <div class="seating-area-selector">
+          <button class="seating-tab-btn active" data-area="main">🔥 Main Dining Room</button>
+          <button class="seating-tab-btn" data-area="bar">🍸 Walnut Bar &amp; Lounge</button>
+          <button class="seating-tab-btn" data-area="patio">🌿 Heated Outdoor Patio</button>
+        </div>
+        
+        <div id="seating-info-panel" class="seating-info-display">
+          <strong>Main Dining Room:</strong> Prime seating with full views of our open oak wood-fired hearth and open kitchen.
+        </div>
+
         <form id="resy-booking-form" action="https://resy.com/cities/clt/orbit-and-ember" method="GET" target="_blank" rel="noopener noreferrer">
           <div class="form-grid-3">
             <div class="form-group">
@@ -122,7 +134,6 @@
     </div>
   </main>
 
-  <!-- Mobile Action Bar -->
   <div class="mobile-action-bar" role="navigation" aria-label="Quick Local Actions">
     <a href="reserve.html" class="bar-action-item highlight"><span>📅 Reserve</span></a>
     <a href="menu.html" class="bar-action-item"><span>🍽️ Menu</span></a>
@@ -166,6 +177,26 @@
         dateInput.value = today;
         dateInput.min = today;
       }
+
+      // Seating Area Selector Logic
+      const seatingBtns = document.querySelectorAll('.seating-tab-btn');
+      const infoPanel = document.getElementById('seating-info-panel');
+      const seatingText = {
+        main: "<strong>Main Dining Room:</strong> Prime seating with full views of our open oak wood-fired hearth and open kitchen.",
+        bar: "<strong>Walnut Bar & Lounge:</strong> High-top and bar seating suitable for casual dining, cocktails, and walk-in seating.",
+        patio: "<strong>Heated Outdoor Patio:</strong> Covered terrace with radiant heaters. Subject to weather and availability."
+      };
+
+      seatingBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          seatingBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const area = btn.getAttribute('data-area');
+          if (seatingText[area] && infoPanel) {
+            infoPanel.innerHTML = seatingText[area];
+          }
+        });
+      });
     });
   </script>
   <script src="../../scripts/shared/darkstar-footer.js"></script>
