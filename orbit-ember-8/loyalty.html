@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/orbit-ember-8/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Loyalty &amp; The Ember List | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Join The Ember List &amp; Ember Rewards at Orbit &amp; Ember in Charlotte, NC. Receive seasonal menu previews, birthday gifts, and earn rewards for returning to the table.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-8/loyalty.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="loyalty-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Guest Follow-Up &amp; Loyalty Showcase</div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="loyalty.html" class="active">Loyalty</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+        <a href="reserve.html" class="cta-btn">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>Guest Follow-Up &amp; Loyalty</span>
+    </nav>
+
+    <div class="section-header-center">
+      <span class="subhead-tag">Permission-Based Guest Connection</span>
+      <h1 class="section-title">Stay Close to <em>The Table</em></h1>
+      <p class="section-desc">Useful updates, thoughtful invitations, and recognition for returning to Orbit &amp; Ember in Charlotte's South End.</p>
+    </div>
+
+    <!-- Dual Program Overview Cards -->
+    <div class="program-grid-2">
+      <div class="program-card">
+        <span class="program-badge">Email Updates</span>
+        <h2>The Ember <em>List</em></h2>
+        <p>Join our primary guest list for seasonal menu previews, weekend brunch features, private event announcements, and occasional invitations from Chef Julian &amp; Mara.</p>
+        <ul class="program-perks-list">
+          <li>✨ First notice of seasonal menu changes</li>
+          <li>🍷 Early access to winemaker &amp; tasting dinners</li>
+          <li>🎂 Birthday cheesecake benefit during your birth month</li>
+          <li>🚫 Zero daily promotions or unnecessary noise</li>
+        </ul>
+        <a href="#enrollment-form-section" class="cta-btn" style="margin-top: 1rem;">Join The Ember List</a>
+      </div>
+
+      <div class="program-card highlight-program">
+        <span class="program-badge gold-badge">Guest Recognition</span>
+        <h2>Ember <em>Rewards</em></h2>
+        <p>Recognition for returning to the table. Earn progress toward dining rewards with every qualifying visit to Orbit &amp; Ember.</p>
+        <ul class="program-perks-list">
+          <li>🔥 1 Qualifying Visit = 1 Ember</li>
+          <li>🎁 6 Embers = $20 Dining Reward</li>
+          <li>🥂 Exclusive anniversary &amp; celebration perks</li>
+          <li>📲 Instant mobile dashboard tracking</li>
+        </ul>
+        <a href="#loyalty-dashboard-section" class="cta-btn" style="margin-top: 1rem;">View Member Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Interactive Loyalty Member Dashboard Simulator -->
+    <section id="loyalty-dashboard-section" class="loyalty-dashboard-card" style="margin-top: 4rem;">
+      <div class="section-header-center" style="margin-bottom: 1.5rem;">
+        <span class="subhead-tag">Interactive Demo</span>
+        <h2 class="section-title">Ember Rewards <em>Member Portal</em></h2>
+        <p class="section-desc">Simulate a guest visit and see how progress toward a $20 dining reward is tracked.</p>
+      </div>
+
+      <div class="member-status-box">
+        <div class="member-info-row">
+          <div>
+            <span class="member-id">Member #EMBER-84920</span>
+            <h3>Welcome Back, Eleanor</h3>
+          </div>
+          <div class="member-tier-tag">🔥 Gold Tier Guest</div>
+        </div>
+
+        <div class="progress-container" style="margin-top: 1.5rem;">
+          <div class="progress-labels">
+            <span>Progress to Next Reward: <strong id="current-embers-count">4</strong> / 6 Embers</span>
+            <span id="progress-percent-label">67% Complete</span>
+          </div>
+          <div class="progress-bar-track">
+            <div id="embers-progress-bar" class="progress-bar-fill" style="width: 67%;"></div>
+          </div>
+        </div>
+
+        <div class="rewards-earned-row" style="margin-top: 1.5rem;">
+          <div class="reward-box">
+            <span>Available Rewards:</span>
+            <strong>🎂 Birthday Month Dessert ($12 Value)</strong>
+          </div>
+          <div class="reward-box">
+            <span>Visits to Next Reward:</span>
+            <strong id="visits-needed-text">2 Visits Remaining</strong>
+          </div>
+        </div>
+
+        <div class="dashboard-actions" style="margin-top: 2rem; text-align: center;">
+          <button id="simulate-visit-btn" class="cta-btn" style="padding: 0.9rem 2rem; cursor: pointer;">
+            <span>🔥 Simulate Qualifying Visit (+1 Ember)</span>
+          </button>
+          <button id="reset-visit-btn" class="btn-secondary" style="margin-left: 0.5rem; cursor: pointer;">
+            🔄 Reset Demo
+          </button>
+        </div>
+
+        <div id="reward-unlocked-banner" class="reward-alert-box" style="display: none; margin-top: 1.5rem;">
+          🎉 <strong>CONGRATULATIONS!</strong> You reached 6 Embers! A <strong>$20 Dining Reward</strong> has been added to your account (Code: <code>EMBER20-REWARD</code>).
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Enrollment & Preference Center Section -->
+    <section id="enrollment-form-section" class="enrollment-form-card" style="margin-top: 5rem;">
+      <div class="section-header-center" style="margin-bottom: 2rem;">
+        <span class="subhead-tag">Signup &amp; Preference Center</span>
+        <h2 class="section-title">Join <em>The Ember List</em></h2>
+        <p class="section-desc">Customize your communication preferences so you only receive updates that matter to you.</p>
+      </div>
+
+      <form id="loyalty-signup-form">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="loyalty-email">Email Address *</label>
+            <input type="email" id="loyalty-email" class="form-input" placeholder="eleanor@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="loyalty-name">First Name</label>
+            <input type="text" id="loyalty-name" class="form-input" placeholder="Eleanor">
+          </div>
+        </div>
+
+        <div class="form-grid-3" style="margin-top: 1rem;">
+          <div class="form-group">
+            <label for="loyalty-phone">Mobile Phone (Optional for SMS)</label>
+            <input type="tel" id="loyalty-phone" class="form-input" placeholder="(704) 555-0198">
+          </div>
+          <div class="form-group">
+            <label for="loyalty-bday">Birth Month &amp; Day (Optional)</label>
+            <input type="text" id="loyalty-bday" class="form-input" placeholder="e.g. October 14">
+          </div>
+          <div class="form-group">
+            <label for="loyalty-anniv">Anniversary Month &amp; Day (Optional)</label>
+            <input type="text" id="loyalty-anniv" class="form-input" placeholder="e.g. May 22">
+          </div>
+        </div>
+
+        <!-- Content Preference Toggles -->
+        <div style="margin-top: 1.5rem;">
+          <label style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: #c27a4a; display: block; margin-bottom: 0.8rem;">Select Topics You Wish to Receive</label>
+          <div class="preference-checkboxes-grid">
+            <label class="checkbox-label"><input type="checkbox" checked> 🍷 Seasonal Menu Previews</label>
+            <label class="checkbox-label"><input type="checkbox" checked> 🍳 Weekend Brunch Updates</label>
+            <label class="checkbox-label"><input type="checkbox" checked> 🍸 Craft Cocktail Features</label>
+            <label class="checkbox-label"><input type="checkbox" checked> 🌿 Zero-Proof Drink Spotlight</label>
+            <label class="checkbox-label"><input type="checkbox"> 💼 Private Dining &amp; Event News</label>
+            <label class="checkbox-label"><input type="checkbox" checked> 🎂 Birthday &amp; Celebration Perks</label>
+          </div>
+        </div>
+
+        <!-- Consent Checkboxes -->
+        <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+          <label class="checkbox-label" style="font-size: 0.85rem; color: #d1c8bd;">
+            <input type="checkbox" required checked> I agree to receive occasional marketing emails from Orbit &amp; Ember Kitchen + Bar. I may unsubscribe at any time.
+          </label>
+          <label class="checkbox-label" style="font-size: 0.85rem; color: #a39b90;">
+            <input type="checkbox"> Optional: I agree to receive promotional text messages from Orbit &amp; Ember. Msg &amp; data rates may apply. Reply STOP to opt out.
+          </label>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <button type="submit" class="cta-btn" style="padding: 0.95rem 2.5rem; cursor: pointer;">
+            <span>Join The Ember List &amp; Save Preferences</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="loyalty-success-box" class="status-success-box" style="display: none; margin-top: 1.5rem;">
+        <h4>✅ Welcome to The Ember List!</h4>
+        <p>Your email and preferences have been saved. You will receive a confirmation welcome email shortly with details on seasonal menu updates and birthday perks.</p>
+      </div>
+    </section>
+
+    <!-- Campaign Preview Showcase -->
+    <section class="campaign-showcase-section" style="margin-top: 4rem;">
+      <h2 class="section-title text-center">Sample Guest <em>Communications</em></h2>
+      <p class="section-desc text-center" style="margin-bottom: 2rem;">Preview how Orbit &amp; Ember communicates with guests across different milestones.</p>
+
+      <div class="campaign-preview-tabs">
+        <button class="camp-btn active" data-camp="welcome">📩 Welcome Note</button>
+        <button class="camp-btn" data-camp="seasonal">🍂 Seasonal Menu</button>
+        <button class="camp-btn" data-camp="birthday">🎂 Birthday Invitation</button>
+        <button class="camp-btn" data-camp="lapsed">🔥 Re-engagement</button>
+      </div>
+
+      <div id="campaign-display-box" class="campaign-email-mockup">
+        <div class="email-header-line"><strong>Subject:</strong> Welcome to The Ember List</div>
+        <div class="email-body-text">
+          <p>Welcome to The Ember List.</p>
+          <p>Orbit &amp; Ember was created around wood-fired cooking, seasonal menus, thoughtful drinks, and hospitality that respects your time. As a subscriber, you will receive occasional notes regarding new dishes, weekend brunch, and special chef dinners.</p>
+          <p>We look forward to welcoming you around the table.</p>
+          <p><em>— Chef Julian Reyes &amp; Mara Ellison</em></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="loyalty.html">Loyalty &amp; Signup</a></li>
+          <li><a href="visit.html">Visit &amp; FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Ember List</h4>
+        <p style="color: #a39b90; font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem;">Join for seasonal menu previews, birthday perks, and invitations.</p>
+        <a href="loyalty.html" class="cta-btn" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Join The Ember List</a>
+      </div>
+    </div>
+
+    <div class="portfolio-disclosure-bar">
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, ordering, private dining, guest follow-up, and loyalty services.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="loyalty-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Interactive Dashboard Simulator
+      let embers = 4;
+      const embersCountEl = document.getElementById('current-embers-count');
+      const percentEl = document.getElementById('progress-percent-label');
+      const progressBar = document.getElementById('embers-progress-bar');
+      const visitsText = document.getElementById('visits-needed-text');
+      const rewardBanner = document.getElementById('reward-unlocked-banner');
+
+      const simBtn = document.getElementById('simulate-visit-btn');
+      const resetBtn = document.getElementById('reset-visit-btn');
+
+      function updateDashboard() {
+        if (embersCountEl) embersCountEl.textContent = embers;
+        const pct = Math.min(100, Math.round((embers / 6) * 100));
+        if (percentEl) percentEl.textContent = pct + '% Complete';
+        if (progressBar) progressBar.style.width = pct + '%';
+
+        const needed = Math.max(0, 6 - embers);
+        if (visitsText) {
+          visitsText.textContent = needed === 0 ? "Reward Ready to Redeem!" : needed + " Visit" + (needed > 1 ? "s" : "") + " Remaining";
+        }
+
+        if (embers >= 6 && rewardBanner) {
+          rewardBanner.style.display = 'block';
+        } else if (rewardBanner) {
+          rewardBanner.style.display = 'none';
+        }
+      }
+
+      if (simBtn) {
+        simBtn.addEventListener('click', () => {
+          if (embers < 6) {
+            embers++;
+            updateDashboard();
+          }
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          embers = 4;
+          updateDashboard();
+        });
+      }
+
+      // Campaign Showcase Switcher
+      const campBtns = document.querySelectorAll('.camp-btn');
+      const campBox = document.getElementById('campaign-display-box');
+
+      const campData = {
+        welcome: `<div class="email-header-line"><strong>Subject:</strong> Welcome to The Ember List</div><div class="email-body-text"><p>Welcome to The Ember List.</p><p>Orbit &amp; Ember was created around wood-fired cooking, seasonal menus, thoughtful drinks, and hospitality that respects your time. As a subscriber, you will receive occasional notes regarding new dishes, weekend brunch, and special chef dinners.</p><p>We look forward to welcoming you around the table.</p><p><em>— Chef Julian Reyes &amp; Mara Ellison</em></p></div>`,
+        seasonal: `<div class="email-header-line"><strong>Subject:</strong> A New Season at Orbit &amp; Ember</div><div class="email-body-text"><p>A new season has reached the Orbit &amp; Ember menu.</p><p>Chef Julian Reyes and the kitchen team have introduced dishes shaped by current harvest ingredients and live-fire oak cooking. Features include Coal-Roasted Carrots with Harissa Yogurt and Cedar-Plank Salmon.</p><p><a href="menu.html" style="color: #c27a4a; font-weight: 700;">View New Seasonal Menu &rsaquo;</a></p></div>`,
+        birthday: `<div class="email-header-line"><strong>Subject:</strong> A Birthday Note from Orbit &amp; Ember</div><div class="email-body-text"><p>Happy Birthday Month from Orbit &amp; Ember!</p><p>Some occasions deserve time around the table. As an Ember List member, enjoy a <strong>Complimentary Burnt Honey Cheesecake</strong> with the purchase of two dinner entrées during your birthday month.</p><p>Show code <code>BDAY-CHEESECAKE</code> to your server.</p></div>`,
+        lapsed: `<div class="email-header-line"><strong>Subject:</strong> It Has Been a While — Return to the Fire</div><div class="email-body-text"><p>It has been a while since we last welcomed you to Orbit &amp; Ember.</p><p>The menu has continued to move with the season, with new hearth dishes alongside signature favorites like our Black Garlic Short Rib. We would love to welcome you back.</p><p><a href="reserve.html" style="color: #c27a4a; font-weight: 700;">Reserve Your Table &rsaquo;</a></p></div>`
+      };
+
+      campBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          campBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const key = btn.getAttribute('data-camp');
+          if (campData[key] && campBox) {
+            campBox.innerHTML = campData[key];
+          }
+        });
+      });
+
+      // Enrollment Form Submit
+      const form = document.getElementById('loyalty-signup-form');
+      const successBox = document.getElementById('loyalty-success-box');
+      if (form && successBox) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          form.style.display = 'none';
+          successBox.style.display = 'block';
+        });
+      }
+    });
+  </script>
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>
