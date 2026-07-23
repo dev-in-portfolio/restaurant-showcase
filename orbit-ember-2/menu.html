@@ -6,24 +6,33 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Orbit & Ember Kitchen + Bar</title>
+  <title>Menu Experience | Orbit & Ember Kitchen + Bar</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Unofficial full six-page redesign demo • premium visual QA pending • forms do not submit</div>
+  <div class="notice-bar">Orbit & Ember Kitchen + Bar • Wood-Fired Hearth & Celestial Mixology</div>
 
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="logo">ORBIT <span>& EMBER</span></a>
+      <a href="index.html" class="logo">
+        <img src="brand_icon.png" alt="Orbit & Ember Monogram" class="nav-logo-icon">
+        <div class="logo-text-block">
+          <span class="logo-main">ORBIT <span class="accent">&amp;</span> EMBER</span>
+          <span class="logo-sub">KITCHEN + BAR</span>
+        </div>
+      </a>
       <nav class="main-nav">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-<li><a href="menu.html" class="active">Menu</a></li>
-<li><a href="story.html">Story</a></li>
-<li><a href="experience.html">Experience</a></li>
-<li><a href="visit.html">Visit</a></li>
-
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="visit.html">Visit</a></li>
         </ul>
         <a href="reserve.html" class="cta-btn">Book Table</a>
       </nav>
@@ -33,74 +42,182 @@
   <main id="main-content">
     <div class="glow-field-orange"></div>
     <div class="glow-field-purple"></div>
-    
-<div class="section">
-  <div class="hero-block">
-    <span class="hero-tag">The Fire Kitchen</span>
-    <h1>The Wood-Fired <em>Menu</em></h1>
-    <p>Taste the oak firewood finish in our signature entrees, shareables, and botanical cocktails.</p>
-  </div>
-  
-  <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 3.5rem;">
-    <div>
-      <h2 class="menu-category-title">Signature Entrees</h2>
-      <div class="menu-list">
-        <div class="menu-item-row">
-          <div class="item-left">
-            <div class="item-title-row">
-              <h3>Ember-Charred Ribeye</h3>
-              <span class="item-price-tag">$38.00</span>
-            </div>
-            <p class="item-desc-text">14oz hand-cut Angus beef, oak wood-grilled, served with smoked bone marrow butter and crispy celeriac fries.</p>
-          </div>
-        </div>
-        <div class="menu-item-row">
-          <div class="item-left">
-            <div class="item-title-row">
-              <h3>Smoked Applewood Burger</h3>
-              <span class="item-price-tag">$18.00</span>
-            </div>
-            <p class="item-desc-text">Custom brisket blend, smoked gouda, charred sweet onions, truffle garlic aioli, served on house-baked brioche.</p>
-          </div>
+
+    <div class="menu-hero-block">
+      <span class="hero-tag">Live-Fire Culinary &amp; Spirits</span>
+      <h1 id="menu-display-title">The Wood-Fired <em>Menu</em></h1>
+      <p id="menu-display-tagline" class="menu-hero-tagline">Oak wood-fired hearth cooking &amp; nightly culinary creations.</p>
+
+      <!-- Action Utility Buttons (Print & QR Code) -->
+      <div class="menu-actions-bar">
+        <button id="print-menu-btn" class="menu-util-btn" title="Print a clean, ink-friendly copy of the current menu">
+          <span>🖨️ Print Menu</span>
+        </button>
+        <button id="open-qr-btn" class="menu-util-btn" title="Scan to open menu on mobile phone">
+          <span>📱 Mobile QR Code</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sticky Primary Menu Selector (Dinner, Breakfast, Brunch, Lunch, Specialty, Drinks, Happy Hour, Kids) -->
+    <div class="sticky-menu-selector-wrapper">
+      <div class="menu-selector-container">
+        <div id="primary-menu-tabs" class="primary-tabs-nav" role="tablist" aria-label="Restaurant Service Period Menus">
+          <!-- Dynamically populated via menu-controller.js -->
         </div>
       </div>
     </div>
 
-    <div>
-      <h2 class="menu-category-title">Craft &amp; Smoke</h2>
-      <div class="menu-list">
-        <div class="menu-item-row">
-          <div class="item-left">
-            <div class="item-title-row">
-              <h3>Charred Shishito Peppers</h3>
-              <span class="item-price-tag">$11.00</span>
-            </div>
-            <p class="item-desc-text">Blistered shishitos, sea salt flakes, key lime oil emulsion.</p>
-          </div>
-        </div>
-        <div class="menu-item-row">
-          <div class="item-left">
-            <div class="item-title-row">
-              <h3>Smoked Ember Fashioned</h3>
-              <span class="item-price-tag">$15.00</span>
-            </div>
-            <p class="item-desc-text">Kentucky straight bourbon, charred orange peel, sweet maple syrup, smoked hickory water.</p>
-          </div>
+    <!-- Active Menu Service Hours & Notice -->
+    <div class="section-container">
+      <div id="menu-service-notice" class="service-notice-wrapper">
+        <!-- Dynamically populated via menu-controller.js -->
+      </div>
+
+      <!-- Secondary Section Anchor Navigation Bar -->
+      <div class="secondary-nav-wrapper">
+        <span class="sec-nav-label">Jump to Section:</span>
+        <nav id="secondary-section-nav" class="secondary-tabs-nav">
+          <!-- Dynamically populated via menu-controller.js -->
+        </nav>
+      </div>
+
+      <!-- Dietary Marker Filter Pills -->
+      <div class="dietary-filter-wrapper">
+        <span class="dietary-filter-label">Filter by Preference:</span>
+        <div id="dietary-filter-pills" class="dietary-pills-nav">
+          <!-- Dynamically populated via menu-controller.js -->
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
+      <!-- Menu Category Sections Container -->
+      <div id="menu-content-container" class="menu-sections-wrapper">
+        <!-- Dynamically populated via menu-controller.js -->
+      </div>
+
+      <!-- Dietary Legend Module -->
+      <div class="dietary-legend-card">
+        <h3>Dietary Marker Guide</h3>
+        <div class="legend-grid">
+          <div class="legend-item"><span class="item-tag tag-cf">CF</span> <strong>Chef Favorite:</strong> House signature creation</div>
+          <div class="legend-item"><span class="item-tag tag-v">V</span> <strong>Vegetarian:</strong> Contains no meat or seafood</div>
+          <div class="legend-item"><span class="item-tag tag-vg">VG</span> <strong>Vegan:</strong> Contains no animal products</div>
+          <div class="legend-item"><span class="item-tag tag-gf">GF</span> <strong>Gluten-Free:</strong> Prepared without gluten-containing ingredients</div>
+          <div class="legend-item"><span class="item-tag tag-sp">SP</span> <strong>Spicy:</strong> Contains chili or spice heat</div>
+          <div class="legend-item"><span class="item-tag tag-se">SE</span> <strong>Seasonal:</strong> Limited seasonal availability</div>
+        </div>
+      </div>
+
+      <!-- Required Disclaimer -->
+      <div class="menu-disclaimer-box">
+        <p><strong>Required Health Disclaimer:</strong> Consuming raw or undercooked meat, poultry, seafood, shellfish, or eggs may increase the risk of foodborne illness. Please inform your server of allergies or dietary restrictions. Menu items, ingredients, prices, and availability are subject to change. Our kitchen handles common allergens and cannot guarantee an allergen-free environment.</p>
+      </div>
+    </div>
   </main>
 
-  <footer class="main-footer">
-    <p>&copy; 2026 Orbit & Ember Kitchen + Bar. Redesigned concepts by Dark Star Consulting.</p>
+  <!-- Mobile QR Code Modal -->
+  <div id="qr-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button id="close-qr-btn" class="modal-close" aria-label="Close QR Code Modal">&times;</button>
+      <div class="qr-content">
+        <h3>Scan for Mobile Menu</h3>
+        <p>Scan with your mobile camera to open the Orbit &amp; Ember Kitchen + Bar menu directly on your phone.</p>
+        <div class="qr-code-box">
+          <svg viewBox="0 0 200 200" width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#ffffff" rx="12"/>
+            <!-- Outer Corners Finder Patterns -->
+            <path d="M 20 20 h 40 v 40 h -40 z M 25 25 h 30 v 30 h -30 z M 32 32 h 16 v 16 h -16 z" fill="#1c1c1e"/>
+            <path d="M 140 20 h 40 v 40 h -40 z M 145 25 h 30 v 30 h -30 z M 152 32 h 16 v 16 h -16 z" fill="#1c1c1e"/>
+            <path d="M 20 140 h 40 v 40 h -40 z M 25 145 h 30 v 30 h -30 z M 32 152 h 16 v 16 h -16 z" fill="#1c1c1e"/>
+            <!-- Data Modules -->
+            <rect x="70" y="20" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="90" y="20" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="110" y="20" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="70" y="40" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="100" y="40" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="20" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="40" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="60" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="80" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="110" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="130" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="150" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="170" y="70" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="30" y="90" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="50" y="90" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="70" y="90" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="120" y="90" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="140" y="90" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="160" y="90" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="20" y="110" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="60" y="110" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="90" y="110" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="110" y="110" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="150" y="110" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="170" y="110" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="70" y="130" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="100" y="130" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="130" y="130" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="160" y="130" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="70" y="150" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="90" y="150" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="120" y="150" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="140" y="150" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="170" y="150" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="80" y="170" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="110" y="170" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="140" y="170" width="12" height="12" fill="#1c1c1e"/>
+            <rect x="160" y="170" width="12" height="12" fill="#1c1c1e"/>
+            <!-- Center Brand Monogram -->
+            <rect x="85" y="85" width="30" height="30" fill="#c27a4a" rx="4"/>
+            <text x="100" y="105" font-family="Cinzel, serif" font-weight="700" font-size="14" fill="#ffffff" text-anchor="middle">O&amp;E</text>
+          </svg>
+        </div>
+        <div class="qr-url-text">http://localhost:8082/restaurants/orbit-ember-2/menu.html</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p class="footer-tagline">Contemporary American, wood-fired hearth cooking, and craft cocktails in Charlotte's South End.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="experience.html">The Experience</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+          <li><a href="reserve.html">Reservations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <p><strong>Address:</strong><br>300 S Tryon St, Charlotte, NC 28202</p>
+        <p><strong>Phone:</strong><br>(704) 555-0198</p>
+        <p><strong>Dinner Hours:</strong><br>Tue-Thu: 5pm - 10pm<br>Fri-Sat: 5pm - 11pm<br>Sun: 5pm - 9pm</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>Join our newsletter for seasonal menu announcements &amp; special chef fire table reservations.</p>
+        <div class="footer-socials">
+          <span>Instagram</span> • <span>Facebook</span> • <span>OpenTable</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
   </footer>
 
+  <!-- Menu Data & Controller Scripts -->
+  <script src="menu-data.js"></script>
+  <script src="menu-controller.js"></script>
   <!-- Dark Star Consulting Footer Badge -->
-  <script src="../../scripts/shared/darkstar-footer.js"></script>
-  <script src="site.js"></script>
+  <script src="../scripts/shared/darkstar-footer.js"></script>
 </body>
 </html>
-
