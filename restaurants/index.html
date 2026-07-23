@@ -3,93 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Final Restaurant Showcase | Showcase Portal</title>
+  <title>Final Restaurant Showcase</title>
+  <meta name="description" content="Presentation-ready restaurant website showcase portal.">
+  <meta http-equiv="refresh" content="0; url=restaurants/">
+  <link rel="canonical" href="restaurants/">
   <style>
-    html, body { margin: 0; min-height: 100%; background: #0d0c0b; color: #f7f3ea; }
-    body { display: grid; place-items: center; font-family: system-ui, sans-serif; }
-    .loading { color: #e8bd72; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .error { max-width: 42rem; padding: 2rem; line-height: 1.6; color: #fecaca; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background: radial-gradient(circle at top, #2b2520, #11100f 55%);
+      color: #f7f3ea;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-align: center;
+    }
+    main { max-width: 42rem; }
+    .eyebrow {
+      color: #e8bd72;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 { margin: .5rem 0 1rem; font-size: clamp(2rem, 7vw, 4rem); }
+    p { color: #c9c1b6; line-height: 1.6; }
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .85rem 1rem;
+      border-radius: .65rem;
+      background: #f0c477;
+      color: #21180b;
+      text-decoration: none;
+      font-weight: 800;
+    }
   </style>
+  <script>
+    window.location.replace('restaurants/');
+  </script>
 </head>
 <body>
-  <div class="loading">Opening polished showroom…</div>
-  <script>
-    (async () => {
-      const response = await fetch('showcase-portal.html', { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Could not load showroom source (HTTP ${response.status})`);
-
-      let html = await response.text();
-      html = html.replace(/\r\n/g, '\n');
-
-      const oldCss = `    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto 3.5rem;
-    }`;
-
-      const newCss = `    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-      max-width: 1100px;
-      margin: 0 auto 3.5rem;
-    }`;
-
-      if (!html.includes(oldCss)) throw new Error('The expected showroom metric layout was not found.');
-      html = html.replace(oldCss, newCss);
-
-      const metricsPattern = /    <div class="metrics">[\s\S]*?    <\/div>\n  <\/header>/;
-      const fixedMetrics = `    <div class="metrics" aria-label="Restaurant website pipeline totals">
-      <div class="metric-card">
-        <div class="metric-value">650</div>
-        <div class="metric-label">Unique Restaurants</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">501</div>
-        <div class="metric-label">Active Queue</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">55</div>
-        <div class="metric-label">At a Later Time</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">94</div>
-        <div class="metric-label">Ready for Polish</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">57</div>
-        <div class="metric-label">Approved Builds</div>
-      </div>
-    </div>
-  </header>`;
-
-      if (!metricsPattern.test(html)) throw new Error('The expected showroom metric cards were not found.');
-      html = html.replace(metricsPattern, fixedMetrics);
-
-      const dynamicCounters = `        // Update dashboard counters
-        document.getElementById('count-approved').textContent = restaurants.length;
-        
-        const neighborhoods = [...new Set(restaurants.map(r => r.neighborhood))].filter(Boolean).sort();
-        document.getElementById('count-neighborhoods').textContent = neighborhoods.length;`;
-
-      const fixedCounterCode = `        // Header pipeline metrics are intentionally hard-coded.
-        const neighborhoods = [...new Set(restaurants.map(r => r.neighborhood))].filter(Boolean).sort();`;
-
-      if (!html.includes(dynamicCounters)) throw new Error('The dynamic showroom counters were not found.');
-      html = html.replace(dynamicCounters, fixedCounterCode);
-
-      document.open();
-      document.write(html);
-      document.close();
-    })().catch(error => {
-      document.body.innerHTML = `<div class="error"><strong>The showroom could not open.</strong><br>${error.message}</div>`;
-      console.error(error);
-    });
-  </script>
+  <main>
+    <div class="eyebrow">Polished Showroom</div>
+    <h1>Final Restaurant Showcase</h1>
+    <p>Opening the presentation-ready restaurant portal.</p>
+    <a href="restaurants/">Open Showcase Portal</a>
+  </main>
 
   <!-- Dark Star Consulting Footer Badge -->
-  <script src="../scripts/shared/darkstar-footer.js"></script>
+  <script src="scripts/shared/darkstar-footer.js"></script>
 </body>
 </html>
