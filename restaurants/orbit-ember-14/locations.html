@@ -6,7 +6,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Your Location | Orbit &amp; Ember Kitchen + Bar</title>
+  <title>Locations &amp; Future Growth | Orbit &amp; Ember Kitchen + Bar</title>
   <meta name="description" content="Explore current and future Orbit &amp; Ember locations in Charlotte, NC. View hours, menus, reservations, and opening updates.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-14/locations.html">
 
@@ -15,9 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="locations-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Multi-Location</div>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Multi-Location Growth</div>
 
   <header class="site-header">
     <div class="nav-container">
@@ -30,6 +30,7 @@
           <li><a href="story.html">Story</a></li>
           <li><a href="visit.html">Visit</a></li>
         </ul>
+        <button id="header-loc-switcher-btn" class="btn-secondary" style="font-size: 0.82rem; padding: 0.5rem 1.1rem; border-color: rgba(224, 168, 104, 0.6);">📍 <span id="current-loc-name">South End (Flagship)</span></button>
         <a href="reserve.html" class="cta-btn">Book Table</a>
       </nav>
     </div>
@@ -40,28 +41,51 @@
       <a href="index.html">Home</a> &rsaquo; <span>Locations</span>
     </nav>
 
+    <!-- Hero Header -->
     <header class="section-header-center" style="margin-bottom: 3rem;">
       <span class="subhead-tag">Multi-Location Growth Showcase</span>
-      <h1 class="hero-title" style="font-size: 3.5rem;">Find Your <em>Orbit</em></h1>
-      <p style="color: #e6dfd5; font-size: 1.15rem; max-width: 750px; margin: 0.8rem auto 0; line-height: 1.6;">Explore current and future Orbit &amp; Ember locations, then choose the menu, reservations, ordering, events, and private-dining information for the restaurant you plan to visit.</p>
+      <h1 class="hero-title" style="font-size: 3.8rem;">Find Your <em>Orbit</em></h1>
+      <p style="color: #e6dfd5; font-size: 1.18rem; max-width: 760px; margin: 0.8rem auto 0; line-height: 1.6;">Explore current flagship and future Orbit &amp; Ember locations. Choose the menu, reservations, ordering, events, and private-dining information for your preferred restaurant.</p>
     </header>
 
-    <!-- Location Finder Bar -->
-    <section class="concierge-nl-section" style="margin-bottom: 3.5rem;">
-      <label for="loc-search-input">Search Locations by City, Neighborhood, or ZIP:</label>
+    <!-- Location Finder & Nearest Location Search Bar -->
+    <section class="concierge-nl-section">
+      <label for="loc-search-input">Search Locations by City, Neighborhood, or ZIP Code:</label>
       <div class="concierge-nl-box">
         <input type="text" id="loc-search-input" placeholder="e.g. 'South End', 'Ballantyne', '28203'...">
-        <button id="loc-search-btn" class="cta-btn">Find Location</button>
+        <button id="loc-search-btn" class="cta-btn">Find Nearest</button>
         <button id="use-my-loc-btn" class="btn-secondary">📍 Use My Location</button>
       </div>
-      <p id="loc-search-result-note" style="font-size: 0.88rem; color: #e0a868; margin-top: 0.9rem; display: none;"></p>
+      <p id="loc-search-result-note" style="font-size: 0.95rem; color: #e0a868; margin-top: 1rem; display: none; font-weight: 600;"></p>
+    </section>
+
+    <!-- Interactive Interactive Map Visualization Box -->
+    <section class="interactive-map-box" style="margin-bottom: 4rem;">
+      <div class="map-header">
+        <span class="subhead-tag">Regional Coverage</span>
+        <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.2rem; color: #fff;">Greater Charlotte Market Explorer</h2>
+      </div>
+      <div class="map-visual-canvas">
+        <div class="map-pin pin-south-end" data-target="south-end">
+          <span class="pin-pulse green"></span>
+          <span class="pin-label">🔥 South End (Open Flagship)</span>
+        </div>
+        <div class="map-pin pin-ballantyne" data-target="ballantyne">
+          <span class="pin-pulse yellow"></span>
+          <span class="pin-label">⏳ Ballantyne (Opening 2027)</span>
+        </div>
+        <div class="map-pin pin-lake-norman" data-target="lake-norman">
+          <span class="pin-pulse blue"></span>
+          <span class="pin-label">✨ Lake Norman (Planned)</span>
+        </div>
+      </div>
     </section>
 
     <!-- Location Cards Grid -->
     <section class="locations-grid-container">
       
       <!-- Card 1: South End (Open Flagship) -->
-      <article class="loc-hub-card status-open">
+      <article id="card-south-end" class="loc-hub-card status-open">
         <div class="loc-card-media">
           <img src="images/featured-steak.jpg" alt="Orbit & Ember South End Flagship">
           <span class="status-badge badge-open">● OPEN FLAGSHIP</span>
@@ -78,7 +102,7 @@
           </div>
 
           <div class="loc-card-actions">
-            <a href="locations/south-end.html" class="cta-btn" style="flex: 1;">View South End</a>
+            <a href="locations/south-end.html" class="cta-btn" style="flex: 1;">View South End Page</a>
             <a href="reserve.html" class="btn-secondary">Reserve</a>
             <a href="menu.html" class="btn-secondary">Menu</a>
           </div>
@@ -90,7 +114,7 @@
       </article>
 
       <!-- Card 2: Ballantyne (Opening Soon) -->
-      <article class="loc-hub-card status-opening-soon">
+      <article id="card-ballantyne" class="loc-hub-card status-opening-soon">
         <div class="loc-card-media">
           <img src="images/wood-fired-hearth.jpg" alt="Orbit & Ember Ballantyne Opening Soon">
           <span class="status-badge badge-opening-soon">⏳ OPENING SOON</span>
@@ -113,7 +137,7 @@
       </article>
 
       <!-- Card 3: Lake Norman (Planned Market) -->
-      <article class="loc-hub-card status-planned">
+      <article id="card-lake-norman" class="loc-hub-card status-planned">
         <div class="loc-card-media">
           <img src="images/lounge-ambiance.jpg" alt="Orbit & Ember Lake Norman Concept">
           <span class="status-badge badge-planned">✨ PLANNED MARKET</span>
@@ -201,6 +225,38 @@
     </div>
   </main>
 
+  <!-- Location Switcher Modal Drawer -->
+  <div id="loc-switcher-modal" class="dish-inspector-overlay" style="display: none;">
+    <div class="dish-inspector-modal">
+      <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.4rem; color: #fff; margin-bottom: 0.5rem; text-align: center;">Select Dining Location</h2>
+      <p style="color: #e6dfd5; text-align: center; margin-bottom: 2rem;">Choose your active location to customize menus, reservations, and hours.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <button class="c-option-card select-loc-option" data-id="location-south-end" style="border-color: var(--color-primary-brand);">
+          <span class="status-badge badge-open" style="position: static; display: inline-block; width: fit-content; margin-bottom: 0.4rem;">● OPEN FLAGSHIP</span>
+          <h3>Orbit &amp; Ember South End</h3>
+          <p>2250 Camden Ember Way, Charlotte, NC • Full Menu &amp; Reservations</p>
+        </button>
+
+        <button class="c-option-card select-loc-option" data-id="location-ballantyne">
+          <span class="status-badge badge-opening-soon" style="position: static; display: inline-block; width: fit-content; margin-bottom: 0.4rem;">⏳ OPENING SOON</span>
+          <h3>Orbit &amp; Ember Ballantyne</h3>
+          <p>Ballantyne, Charlotte, NC • Opening Updates Available</p>
+        </button>
+
+        <button class="c-option-card select-loc-option" data-id="location-lake-norman">
+          <span class="status-badge badge-planned" style="position: static; display: inline-block; width: fit-content; margin-bottom: 0.4rem;">✨ PLANNED MARKET</span>
+          <h3>Orbit &amp; Ember Lake Norman</h3>
+          <p>Lake Norman Region, NC • Future Concept Teaser</p>
+        </button>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <button id="close-loc-modal" class="btn-secondary">Close Switcher</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -223,6 +279,30 @@
       const searchBtn = document.getElementById('loc-search-btn');
       const useMyLocBtn = document.getElementById('use-my-loc-btn');
       const note = document.getElementById('loc-search-result-note');
+      const modal = document.getElementById('loc-switcher-modal');
+      const switcherBtn = document.getElementById('header-loc-switcher-btn');
+      const closeBtn = document.getElementById('close-loc-modal');
+      const currentLocLbl = document.getElementById('current-loc-name');
+
+      switcherBtn?.addEventListener('click', () => {
+        if (modal) modal.style.display = 'flex';
+      });
+
+      closeBtn?.addEventListener('click', () => {
+        if (modal) modal.style.display = 'none';
+      });
+
+      document.querySelectorAll('.select-loc-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-id');
+          if (window.orbitMultiLocation) {
+            window.orbitMultiLocation.setPreferredLocation(id);
+            const loc = window.orbitMultiLocation.getLocationById(id);
+            if (currentLocLbl) currentLocLbl.textContent = `${loc.shortName} (${loc.statusLabel})`;
+            if (modal) modal.style.display = 'none';
+          }
+        });
+      });
 
       function executeSearch() {
         const val = searchInput?.value;
