@@ -1,10 +1,10 @@
-/* Orbit & Ember - Michelin-Grade Luxury 3D Experience Stylesheet */
+/* Orbit & Ember - Cinematic Ambient Storytelling Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-dark: #060504;
-  --color-primary-brand: #f5b975;
-  --color-brand-glow: rgba(245, 185, 117, 0.4);
+  --bg-dark: #080706;
+  --color-primary-brand: #e0a868;
+  --color-brand-glow: rgba(224, 168, 104, 0.4);
   --color-text-main: #ffffff;
   --color-text-muted: #e6dfd5;
   --font-heading: 'Cormorant Garamond', Georgia, serif;
@@ -27,13 +27,26 @@ html, body {
   width: 100%;
 }
 
-.orbit-webgl-canvas {
+/* Full-Bleed Ambient Background Layer */
+.cinematic-bg-layer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.65) 0%, rgba(8, 7, 6, 0.92) 100%), url('images/lounge-ambiance.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transition: background-image 1.2s ease-in-out;
   z-index: 1;
+}
+
+.cinematic-ember-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -49,7 +62,7 @@ html, body {
 }
 .skip-link:focus { top: 16px; }
 
-/* Minimal High-Contrast Header */
+/* Minimal Transparent Header */
 .minimal-experience-header {
   position: fixed;
   top: 0;
@@ -60,7 +73,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(6, 5, 4, 0.95) 0%, rgba(6, 5, 4, 0.6) 80%, transparent 100%);
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.95) 0%, rgba(8, 7, 6, 0.6) 80%, transparent 100%);
 }
 
 .logo {
@@ -89,22 +102,10 @@ html, body {
   gap: 1.2rem;
 }
 
-.exp-phase-badge {
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-primary-brand);
-  background: rgba(245, 185, 117, 0.15);
-  border: 1px solid rgba(245, 185, 117, 0.35);
-  padding: 0.35rem 0.9rem;
-  border-radius: 14px;
-  letter-spacing: 0.1em;
-}
-
 /* Buttons */
 .cta-btn {
-  background: linear-gradient(135deg, #f5b975 0%, #c98845 100%);
-  color: #080605;
+  background: linear-gradient(135deg, #e0a868 0%, #b87b3e 100%);
+  color: #080706;
   padding: 0.85rem 2rem;
   border-radius: 30px;
   font-weight: 700;
@@ -117,17 +118,17 @@ html, body {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(245, 185, 117, 0.35);
+  box-shadow: 0 4px 20px rgba(224, 168, 104, 0.35);
 }
 
 .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(245, 185, 117, 0.5);
+  box-shadow: 0 8px 25px rgba(224, 168, 104, 0.5);
 }
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(245, 185, 117, 0.4);
+  border: 1px solid rgba(224, 168, 104, 0.4);
   color: #ffffff;
   padding: 0.8rem 1.8rem;
   border-radius: 30px;
@@ -141,12 +142,12 @@ html, body {
 }
 
 .btn-secondary:hover {
-  background: rgba(245, 185, 117, 0.22);
+  background: rgba(224, 168, 104, 0.22);
   border-color: var(--color-primary-brand);
   transform: translateY(-2px);
 }
 
-/* Floating Experience Viewport */
+/* Floating Viewport */
 .floating-experience-viewport {
   position: relative;
   z-index: 10;
@@ -164,8 +165,8 @@ html, body {
 }
 
 .editorial-card-panel {
-  background: rgba(10, 8, 7, 0.90);
-  border: 1px solid rgba(245, 185, 117, 0.4);
+  background: rgba(10, 8, 7, 0.88);
+  border: 1px solid rgba(224, 168, 104, 0.4);
   border-radius: 22px;
   padding: 3.2rem;
   backdrop-filter: blur(24px);
@@ -174,13 +175,13 @@ html, body {
 
 .floating-flow-container {
   width: 100%;
-  max-width: 540px;
+  max-width: 560px;
   pointer-events: auto;
 }
 
 .floating-step-panel {
-  background: rgba(10, 8, 7, 0.88);
-  border: 1px solid rgba(245, 185, 117, 0.38);
+  background: rgba(10, 8, 7, 0.86);
+  border: 1px solid rgba(224, 168, 104, 0.38);
   border-radius: 22px;
   padding: 2.5rem;
   backdrop-filter: blur(24px);
@@ -207,11 +208,10 @@ html, body {
   font-size: 2.4rem;
   margin-bottom: 0.4rem;
   line-height: 1.15;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
 
 .step-meta p {
-  color: #f0e8dd;
+  color: #e6dfd5;
   font-size: 1.05rem;
 }
 
@@ -239,7 +239,7 @@ html, body {
 }
 
 .hero-desc {
-  color: #f0e8dd;
+  color: #e6dfd5;
   font-size: 1.15rem;
   line-height: 1.65;
 }
@@ -265,17 +265,10 @@ html, body {
 }
 
 .rail-option-btn:hover, .rail-option-btn.active {
-  background: rgba(245, 185, 117, 0.25);
+  background: rgba(224, 168, 104, 0.25);
   border-color: var(--color-primary-brand);
   transform: translateX(8px);
-  box-shadow: 0 8px 25px rgba(245, 185, 117, 0.3);
-}
-
-.rail-icon {
-  width: 24px;
-  height: 24px;
-  color: var(--color-primary-brand);
-  flex-shrink: 0;
+  box-shadow: 0 8px 25px rgba(224, 168, 104, 0.3);
 }
 
 .rail-option-text h3 {
@@ -301,7 +294,7 @@ html, body {
 /* Result Modal Overlay */
 .editorial-result-modal {
   background: rgba(10, 8, 7, 0.92);
-  border: 1px solid rgba(245, 185, 117, 0.5);
+  border: 1px solid rgba(224, 168, 104, 0.5);
   border-radius: 26px;
   padding: 3.2rem;
   max-width: 820px;
@@ -318,7 +311,7 @@ html, body {
 }
 
 .result-intro {
-  color: #f0e8dd;
+  color: #e6dfd5;
   font-size: 1.15rem;
   margin-bottom: 2.2rem;
 }
@@ -337,8 +330,8 @@ html, body {
 }
 
 .res-path-box.highlight-zp {
-  border-color: rgba(245, 185, 117, 0.5);
-  background: rgba(245, 185, 117, 0.15);
+  border-color: rgba(224, 168, 104, 0.5);
+  background: rgba(224, 168, 104, 0.15);
 }
 
 .res-path-label {

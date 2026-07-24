@@ -1,19 +1,20 @@
 /**
- * ORBIT & EMBER — ELEGANT AMBIENT CANVAS & EVENING FINDER ENGINE
- * Tasteful ambient ember particles, subtle mouse parallax, and deterministic result scoring.
+ * ORBIT & EMBER — CINEMATIC AMBIENT STORYTELLING ENGINE
+ * Features full-bleed crossfading media loops, Web Audio soundscape, and 10 deterministic result families.
  */
 
 (function () {
   'use strict';
 
-  class OrbitEditorialCanvasEngine {
+  class OrbitCinematicEngine {
     constructor(canvasId) {
       this.canvas = document.getElementById(canvasId);
       if (!this.canvas) return;
       this.ctx = this.canvas.getContext('2d');
 
+      this.audioContext = null;
+      this.isAudioPlaying = false;
       this.particles = [];
-      this.theme = 'candlelight';
       this.mouseX = window.innerWidth / 2;
       this.mouseY = window.innerHeight / 2;
 
@@ -36,36 +37,75 @@
 
     initParticles() {
       this.particles = [];
-      const count = Math.min(Math.floor(window.innerWidth / 12), 90);
+      const count = Math.min(Math.floor(window.innerWidth / 12), 80);
 
       for (let i = 0; i < count; i++) {
         this.particles.push({
           x: Math.random() * this.canvas.width,
           y: Math.random() * this.canvas.height,
-          size: Math.random() * 3.0 + 1.0,
-          speedY: Math.random() * 0.7 + 0.2,
+          size: Math.random() * 2.8 + 1.0,
+          speedY: Math.random() * 0.6 + 0.2,
           speedX: (Math.random() - 0.5) * 0.4,
-          alpha: Math.random() * 0.7 + 0.1,
+          alpha: Math.random() * 0.75 + 0.15,
           pulse: Math.random() * 0.015 + 0.005
         });
       }
     }
 
     setAtmosphere(theme) {
-      this.theme = theme;
-      const body = document.body;
-      if (!body) return;
+      const bgLayer = document.getElementById('cinematic-bg-layer');
+      if (!bgLayer) return;
 
-      if (theme === 'golden-hour') {
-        body.style.backgroundImage = "linear-gradient(180deg, rgba(16, 12, 9, 0.65) 0%, rgba(16, 12, 9, 0.94) 100%), url('images/cosmic-cocktail.jpg')";
-      } else if (theme === 'by-the-fire') {
-        body.style.backgroundImage = "linear-gradient(180deg, rgba(18, 9, 7, 0.65) 0%, rgba(18, 9, 7, 0.94) 100%), url('images/wood-fired-hearth.jpg')";
-      } else if (theme === 'at-the-bar') {
-        body.style.backgroundImage = "linear-gradient(180deg, rgba(14, 11, 20, 0.65) 0%, rgba(14, 11, 20, 0.94) 100%), url('images/featured-steak.jpg')";
-      } else if (theme === 'brighter-brunch') {
-        body.style.backgroundImage = "linear-gradient(180deg, rgba(20, 16, 12, 0.65) 0%, rgba(20, 16, 12, 0.94) 100%), url('images/featured-flatbread.jpg')";
-      } else { // Candlelight
-        body.style.backgroundImage = "linear-gradient(180deg, rgba(12, 10, 9, 0.65) 0%, rgba(12, 10, 9, 0.94) 100%), url('images/lounge-ambiance.jpg')";
+      let imgUrl = "url('images/lounge-ambiance.jpg')";
+      if (theme === 'golden-hour') imgUrl = "url('images/cosmic-cocktail.jpg')";
+      else if (theme === 'by-the-fire') imgUrl = "url('images/wood-fired-hearth.jpg')";
+      else if (theme === 'at-the-bar') imgUrl = "url('images/featured-steak.jpg')";
+      else if (theme === 'brighter-brunch') imgUrl = "url('images/featured-flatbread.jpg')";
+
+      bgLayer.style.backgroundImage = `linear-gradient(180deg, rgba(8, 7, 6, 0.65) 0%, rgba(8, 7, 6, 0.92) 100%), ${imgUrl}`;
+    }
+
+    toggleAudio() {
+      if (!this.audioContext) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        this.audioContext = new AudioCtx();
+
+        // White noise generator for hearth fire crackle & room acoustics
+        const bufferSize = this.audioContext.sampleRate * 2;
+        const noiseBuffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+        const output = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          output[i] = Math.random() * 2 - 1;
+        }
+
+        const whiteNoise = this.audioContext.createBufferSource();
+        whiteNoise.buffer = noiseBuffer;
+        whiteNoise.loop = true;
+
+        const filter = this.audioContext.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 550;
+
+        const gainNode = this.audioContext.createGain();
+        gainNode.gain.value = 0.07;
+
+        whiteNoise.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(this.audioContext.destination);
+
+        whiteNoise.start();
+        this.isAudioPlaying = true;
+        return true;
+      } else {
+        if (this.audioContext.state === 'suspended') {
+          this.audioContext.resume();
+          this.isAudioPlaying = true;
+          return true;
+        } else {
+          this.audioContext.suspend();
+          this.isAudioPlaying = false;
+          return false;
+        }
       }
     }
 
@@ -92,9 +132,9 @@
 
         this.ctx.beginPath();
         this.ctx.arc(p.x + parallaxX, p.y + parallaxY, p.size, 0, Math.PI * 2);
-        this.ctx.fillStyle = 'rgba(245, 185, 117, ' + p.alpha + ')';
+        this.ctx.fillStyle = 'rgba(224, 168, 104, ' + p.alpha + ')';
         this.ctx.shadowBlur = 10;
-        this.ctx.shadowColor = 'rgba(245, 185, 117, 0.8)';
+        this.ctx.shadowColor = 'rgba(224, 168, 104, 0.8)';
         this.ctx.fill();
       });
 
@@ -253,8 +293,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('orbit-ambient-canvas')) {
-      window.editorialOrbitEngine = new OrbitEditorialCanvasEngine('orbit-ambient-canvas');
+    if (document.getElementById('cinematic-ember-canvas')) {
+      window.cinematicOrbitEngine = new OrbitCinematicEngine('cinematic-ember-canvas');
     }
   });
 
