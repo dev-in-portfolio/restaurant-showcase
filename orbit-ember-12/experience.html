@@ -15,13 +15,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   
-  <!-- Three.js 3D Graphics Library -->
+  <!-- Three.js Graphics Engine Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="experience-interactive-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Fullscreen Photorealistic 3D WebGL Canvas Layer -->
+  <!-- Fullscreen 3D WebGL Canvas Layer -->
   <canvas id="orbit-webgl-canvas" class="orbit-webgl-canvas"></canvas>
 
   <!-- Toast Notification Banner -->
@@ -328,7 +328,7 @@
           else if (stepNum === 4) sceneFocusTag.textContent = '3D Focus: Modular Table System';
         }
 
-        if (window.photorealOrbitEngine) window.photorealOrbitEngine.setCameraStep(`step${stepNum}`);
+        if (window.orbitEngine) window.orbitEngine.setCameraStep(`step${stepNum}`);
 
         for (let i = 1; i <= 4; i++) {
           const panel = document.getElementById(`step-${i}`);
@@ -340,8 +340,8 @@
         btn.addEventListener('mouseenter', () => {
           const step = parseInt(btn.getAttribute('data-step'));
           const val = btn.getAttribute('data-val');
-          if (step === 1 && window.photorealOrbitEngine) window.photorealOrbitEngine.setAtmosphere(val);
-          else if (step === 4 && window.photorealOrbitEngine) window.photorealOrbitEngine.updateTableSettings(val);
+          if (step === 1 && window.orbitEngine) window.orbitEngine.setAtmosphere(val);
+          else if (step === 4 && window.orbitEngine) window.orbitEngine.updateTableSettings(val);
         });
 
         btn.addEventListener('click', () => {
@@ -353,14 +353,14 @@
 
           if (step === 1) {
             userChoices.atmosphere = val;
-            if (window.photorealOrbitEngine) window.photorealOrbitEngine.setAtmosphere(val);
+            if (window.orbitEngine) window.orbitEngine.setAtmosphere(val);
           } else if (step === 2) {
             userChoices.pace = val;
           } else if (step === 3) {
             userChoices.flavor = val;
           } else if (step === 4) {
             userChoices.table = val;
-            if (window.photorealOrbitEngine) window.photorealOrbitEngine.updateTableSettings(val);
+            if (window.orbitEngine) window.orbitEngine.updateTableSettings(val);
           }
 
           if (step < 4) {
@@ -368,7 +368,7 @@
           } else {
             flowWrapper.style.display = 'none';
             if (sceneFocusTag) sceneFocusTag.textContent = '3D Focus: Your Orbit Evening';
-            if (window.photorealOrbitEngine) window.photorealOrbitEngine.setCameraStep('result');
+            if (window.orbitEngine) window.orbitEngine.setCameraStep('result');
             renderResult();
             resultScreen.style.display = 'block';
           }
