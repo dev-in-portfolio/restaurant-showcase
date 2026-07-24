@@ -1,19 +1,29 @@
-// The Orbit Experience — Immersive Canvas 3D Environment, Particle Shader & Scoring Engine
+// The Orbit Experience — Award-Winning 3D Particle & Shader Canvas Engine
 
 class OrbitCanvas3DEngine {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
+
     this.particles = [];
     this.tableScale = 1.0;
-    this.cameraZoom = 1.0;
     this.lightingTheme = 'candlelight';
-    this.flavorShimmer = 'none';
-    this.animId = null;
+    this.mouseX = window.innerWidth / 2;
+    this.mouseY = window.innerHeight / 2;
+    this.targetMouseX = this.mouseX;
+    this.targetMouseY = this.mouseY;
+
+    this.heatWaves = [];
+    this.time = 0;
 
     this.resize();
     window.addEventListener('resize', () => this.resize());
+    window.addEventListener('mousemove', (e) => {
+      this.targetMouseX = e.clientX;
+      this.targetMouseY = e.clientY;
+    });
+
     this.initScene();
     this.animate();
   }
@@ -26,27 +36,32 @@ class OrbitCanvas3DEngine {
 
   initScene() {
     this.particles = [];
-    const count = Math.min(Math.floor(window.innerWidth / 12), 90);
+    const count = Math.min(Math.floor(window.innerWidth / 10), 110);
+
     for (let i = 0; i < count; i++) {
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
-        z: Math.random() * 500 + 50,
-        size: Math.random() * 3 + 1,
-        speedY: Math.random() * 0.8 + 0.3,
-        speedX: (Math.random() - 0.5) * 0.5,
-        alpha: Math.random() * 0.8 + 0.2,
-        pulse: Math.random() * 0.02 + 0.005
+        z: Math.random() * 600 + 40,
+        size: Math.random() * 3.5 + 1.0,
+        speedY: Math.random() * 0.9 + 0.3,
+        speedX: (Math.random() - 0.5) * 0.6,
+        alpha: Math.random() * 0.85 + 0.15,
+        pulse: Math.random() * 0.02 + 0.008,
+        colorType: Math.random() > 0.3 ? 'brand' : (Math.random() > 0.5 ? 'gold' : 'amber')
       });
     }
+
+    // Heat distortion pulse rings
+    this.heatWaves = [
+      { r: 20, maxR: 280, alpha: 0.5, speed: 1.5 },
+      { r: 100, maxR: 280, alpha: 0.35, speed: 1.5 },
+      { r: 180, maxR: 280, alpha: 0.2, speed: 1.5 }
+    ];
   }
 
   setAtmosphere(theme) {
     this.lightingTheme = theme;
-  }
-
-  setFlavor(flavor) {
-    this.flavorShimmer = flavor;
   }
 
   setTableScale(scale) {
@@ -57,102 +72,126 @@ class OrbitCanvas3DEngine {
     switch (this.lightingTheme) {
       case 'golden-hour':
         return {
-          glow: 'rgba(234, 179, 8, 0.25)',
-          particles: 'rgba(250, 204, 21, ',
-          bgGrad: ['#1c140e', '#2e2016', '#0d0c0b']
+          glow: 'rgba(234, 179, 8, 0.35)',
+          particles: { brand: 'rgba(234, 179, 8, ', gold: 'rgba(253, 224, 71, ', amber: 'rgba(245, 158, 11, ' },
+          bgGrad: ['#1e140d', '#2c1e13', '#0a0908']
         };
       case 'by-the-fire':
         return {
-          glow: 'rgba(239, 68, 68, 0.35)',
-          particles: 'rgba(248, 113, 113, ',
-          bgGrad: ['#280d09', '#3e130c', '#0d0c0b']
+          glow: 'rgba(239, 68, 68, 0.45)',
+          particles: { brand: 'rgba(239, 68, 68, ', gold: 'rgba(252, 165, 165, ', amber: 'rgba(220, 38, 38, ' },
+          bgGrad: ['#2e0c08', '#42120b', '#0a0908']
         };
       case 'at-the-bar':
         return {
-          glow: 'rgba(168, 85, 247, 0.25)',
-          particles: 'rgba(192, 132, 252, ',
-          bgGrad: ['#120e24', '#1e163a', '#0d0c0b']
+          glow: 'rgba(168, 85, 247, 0.35)',
+          particles: { brand: 'rgba(168, 85, 247, ', gold: 'rgba(216, 180, 254, ', amber: 'rgba(147, 51, 234, ' },
+          bgGrad: ['#130f24', '#1f173b', '#0a0908']
         };
       case 'brighter-brunch':
         return {
-          glow: 'rgba(251, 191, 36, 0.25)',
-          particles: 'rgba(253, 224, 71, ',
-          bgGrad: ['#241f17', '#383023', '#0d0c0b']
+          glow: 'rgba(251, 191, 36, 0.35)',
+          particles: { brand: 'rgba(251, 191, 36, ', gold: 'rgba(254, 240, 138, ', amber: 'rgba(217, 119, 6, ' },
+          bgGrad: ['#261e16', '#3b2f21', '#0a0908']
         };
       case 'candlelight':
       default:
         return {
-          glow: 'rgba(194, 122, 74, 0.3)',
-          particles: 'rgba(224, 150, 99, ',
-          bgGrad: ['#181412', '#28201a', '#0d0c0b']
+          glow: 'rgba(194, 122, 74, 0.4)',
+          particles: { brand: 'rgba(194, 122, 74, ', gold: 'rgba(240, 186, 149, ', amber: 'rgba(180, 83, 9, ' },
+          bgGrad: ['#1a1411', '#2c201a', '#0a0908']
         };
     }
   }
 
   animate() {
     if (!this.canvas || !this.ctx) return;
+    this.time += 0.015;
+
+    // Smooth Mouse Easing Parallax
+    this.mouseX += (this.targetMouseX - this.mouseX) * 0.05;
+    this.mouseY += (this.targetMouseY - this.mouseY) * 0.05;
+
     const width = this.canvas.width;
     const height = this.canvas.height;
     const theme = this.getThemeColors();
 
-    // 1. Draw Atmospheric Radial Background Gradient
-    const bgGrad = this.ctx.createRadialGradient(width / 2, height / 2 - 100, 100, width / 2, height / 2, width);
+    const parallaxX = (this.mouseX - width / 2) * 0.04;
+    const parallaxY = (this.mouseY - height / 2) * 0.04;
+
+    // 1. Draw Radial Environmental Background Gradient
+    const bgGrad = this.ctx.createRadialGradient(width / 2 + parallaxX, height / 2 - 120 + parallaxY, 100, width / 2, height / 2, width);
     bgGrad.addColorStop(0, theme.bgGrad[1]);
-    bgGrad.addColorStop(0.5, theme.bgGrad[0]);
+    bgGrad.addColorStop(0.55, theme.bgGrad[0]);
     bgGrad.addColorStop(1, theme.bgGrad[2]);
     this.ctx.fillStyle = bgGrad;
     this.ctx.fillRect(0, 0, width, height);
 
-    // 2. Draw Simulated 3D Central Wood-Fired Hearth & Table Glow
-    const cx = width / 2;
-    const cy = height * 0.65;
-    const tableRadius = Math.min(width, height) * 0.28 * this.tableScale;
+    // 2. Animated Heat Distortion Waves
+    const cx = width / 2 + parallaxX;
+    const cy = height * 0.62 + parallaxY;
+    const baseR = Math.min(width, height) * 0.28 * this.tableScale;
 
-    // Outer Hearth Radial Glow
-    const hearthGlow = this.ctx.createRadialGradient(cx, cy, 10, cx, cy, tableRadius * 1.8);
+    this.heatWaves.forEach(w => {
+      w.r += w.speed;
+      if (w.r > w.maxR) w.r = 10;
+      const alpha = Math.max(0, (1 - w.r / w.maxR) * 0.3);
+
+      this.ctx.beginPath();
+      this.ctx.arc(cx, cy, w.r, 0, Math.PI * 2);
+      this.ctx.strokeStyle = theme.glow.replace(/[\d\.]+\)$/, alpha + ')');
+      this.ctx.lineWidth = 2;
+      this.ctx.stroke();
+    });
+
+    // 3. Central Wood-Fired Hearth & 3D Table Surface
+    const hearthGlow = this.ctx.createRadialGradient(cx, cy, 10, cx, cy, baseR * 1.9);
     hearthGlow.addColorStop(0, theme.glow);
     hearthGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
     this.ctx.fillStyle = hearthGlow;
     this.ctx.beginPath();
-    this.ctx.arc(cx, cy, tableRadius * 1.8, 0, Math.PI * 2);
+    this.ctx.arc(cx, cy, baseR * 1.9, 0, Math.PI * 2);
     this.ctx.fill();
 
     // Perspective Elliptical Table Surface
     this.ctx.beginPath();
-    this.ctx.ellipse(cx, cy, tableRadius * 1.4, tableRadius * 0.55, 0, 0, Math.PI * 2);
-    this.ctx.fillStyle = 'rgba(25, 20, 17, 0.85)';
-    this.ctx.strokeStyle = 'rgba(194, 122, 74, 0.4)';
-    this.ctx.lineWidth = 3;
+    this.ctx.ellipse(cx, cy, baseR * 1.45, baseR * 0.58, 0, 0, Math.PI * 2);
+    this.ctx.fillStyle = 'rgba(22, 18, 15, 0.88)';
+    this.ctx.strokeStyle = 'rgba(194, 122, 74, 0.45)';
+    this.ctx.lineWidth = 3.5;
     this.ctx.fill();
     this.ctx.stroke();
 
     // Table Rim Copper Accent Ring
     this.ctx.beginPath();
-    this.ctx.ellipse(cx, cy, tableRadius * 1.25, tableRadius * 0.48, 0, 0, Math.PI * 2);
-    this.ctx.strokeStyle = 'rgba(224, 150, 99, 0.3)';
+    this.ctx.ellipse(cx, cy, baseR * 1.3, baseR * 0.5, 0, 0, Math.PI * 2);
+    this.ctx.strokeStyle = 'rgba(240, 186, 149, 0.35)';
     this.ctx.lineWidth = 1.5;
     this.ctx.stroke();
 
-    // 3. Render Floating Ember Particles with 3D Depth Shift
+    // 4. Render 3D Ember Particles with Orbital Drift & Mouse Response
     this.particles.forEach(p => {
       p.y -= p.speedY;
-      p.x += p.speedX;
+      p.x += p.speedX + Math.sin(this.time + p.z) * 0.3;
       p.alpha += p.pulse;
-      if (p.alpha > 0.95 || p.alpha < 0.2) p.pulse = -p.pulse;
+      if (p.alpha > 0.95 || p.alpha < 0.15) p.pulse = -p.pulse;
 
       if (p.y < -10) {
         p.y = height + 10;
         p.x = Math.random() * width;
       }
 
-      const perspectiveScale = 300 / p.z;
-      const drawSize = p.size * perspectiveScale;
+      const pScale = 320 / p.z;
+      const drawX = p.x + parallaxX * (pScale * 0.2);
+      const drawY = p.y + parallaxY * (pScale * 0.2);
+      const drawSize = p.size * pScale;
+      const colorStr = theme.particles[p.colorType] || theme.particles.brand;
 
       this.ctx.beginPath();
-      this.ctx.arc(p.x, p.y, Math.max(drawSize, 1), 0, Math.PI * 2);
-      this.ctx.fillStyle = theme.particles + p.alpha + ')';
-      this.ctx.shadowBlur = 10;
-      this.ctx.shadowColor = theme.particles + '0.9)';
+      this.ctx.arc(drawX, drawY, Math.max(drawSize, 1.2), 0, Math.PI * 2);
+      this.ctx.fillStyle = colorStr + p.alpha + ')';
+      this.ctx.shadowBlur = 12;
+      this.ctx.shadowColor = colorStr + '0.95)';
       this.ctx.fill();
     });
 
@@ -160,7 +199,7 @@ class OrbitCanvas3DEngine {
   }
 }
 
-// 10 Deterministic Result Families & Scoring System
+// 10 Deterministic Result Families
 const ORBIT_RESULTS = {
   candlelit: {
     id: "candlelit",

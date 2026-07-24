@@ -552,3 +552,10 @@ html, body {
   color: #787066;
   font-size: 0.85rem;
 }
+
+/* Choice Card Glow Ripple */
+.choice-card.selected-glow {
+  border-color: var(--color-primary-brand) !important;
+  background: rgba(194, 122, 74, 0.25) !important;
+  box-shadow: 0 0 30px rgba(194, 122, 74, 0.5) !important;
+}
