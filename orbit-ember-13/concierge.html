@@ -48,7 +48,7 @@
     <!-- Hero Header -->
     <header class="section-header-center" style="margin-bottom: 2.8rem;">
       <span class="subhead-tag">Practical Menu Discovery</span>
-      <h1 class="hero-title" style="font-size: 3.6rem;">What Sounds <em>Good?</em></h1>
+      <h1 class="hero-title">What Sounds <em>Good?</em></h1>
       <p style="color: #e6dfd5; font-size: 1.18rem; max-width: 720px; margin: 0.8rem auto 1.2rem; line-height: 1.6;">Choose the meal, flavor, and kind of table you have in mind, and explore a few tailored places to begin.</p>
       <p style="font-size: 0.85rem; color: #e0a868;">💡 <em>This guide provides editorial guidance and does not guarantee current availability or allergy-safe preparation.</em></p>
     </header>
@@ -115,7 +115,7 @@
             <div class="card-img-wrapper"><img src="images/lounge-ambiance.jpg" alt="Dessert and After Dinner"></div>
             <div class="card-text-body">
               <h3>Dessert &amp; After Dinner</h3>
-              <p>Burnt honey cheesecake, dark chocolate, espresso, and digestifs.</p>
+              <p>Burnt honey cheesecake, dark chocolate, espresso, digestifs.</p>
             </div>
           </button>
 
@@ -137,26 +137,32 @@
 
         <div class="concierge-options-grid">
           <button class="c-option-card" data-stage="2" data-val="focused">
+            <span class="card-badge-icon">🎯</span>
             <h3>One Focused Plate</h3>
             <p>A direct path to one outstanding main dish.</p>
           </button>
           <button class="c-option-card" data-stage="2" data-val="sharing">
+            <span class="card-badge-icon">🥂</span>
             <h3>A Few Things to Share</h3>
             <p>Several starters or smaller plates passed across the table.</p>
           </button>
           <button class="c-option-card" data-stage="2" data-val="full-evening">
+            <span class="card-badge-icon">✨</span>
             <h3>A Full Evening</h3>
             <p>A starter, main dish, drink pairing, and sweet finish.</p>
           </button>
           <button class="c-option-card" data-stage="2" data-val="lighter">
+            <span class="card-badge-icon">🌿</span>
             <h3>Something Lighter</h3>
             <p>Brighter flavors, fresh herbs, and a restrained menu path.</p>
           </button>
           <button class="c-option-card" data-stage="2" data-val="comforting">
+            <span class="card-badge-icon">🔥</span>
             <h3>Comforting &amp; Familiar</h3>
             <p>Warm butter, roasted potatoes, braised rib, and oak fire.</p>
           </button>
           <button class="c-option-card" data-stage="2" data-val="drinks-led">
+            <span class="card-badge-icon">🍸</span>
             <h3>Mostly Here for Drinks</h3>
             <p>Begin with cocktails or zero-proof drinks and add small bites.</p>
           </button>
@@ -211,7 +217,7 @@
           </button>
 
           <button class="c-option-card img-card" data-stage="3" data-val="sweet-bittersweet">
-            <div class="card-img-wrapper"><img src="images/featured-flatbread.jpg" alt="Sweet and Bittersweet"></div>
+            <div class="card-img-wrapper"><img src="images/lounge-ambiance.jpg" alt="Sweet and Bittersweet"></div>
             <div class="card-text-body">
               <h3>Sweet &amp; Bittersweet</h3>
               <p>Dark chocolate torte, burnt honey, espresso crema, caramel.</p>
@@ -224,16 +230,49 @@
       <div id="c-stage-4" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 4 of 6 • Food Priority</span>
         <h2>What are you most interested in?</h2>
+        <p class="stage-desc">Select your top preference for the course.</p>
 
         <div class="concierge-options-grid">
-          <button class="c-option-card" data-stage="4" data-val="starter"><h3>Starter</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="shared"><h3>Shared Plate</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="main"><h3>Main Dish</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="brunch"><h3>Brunch Plate</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="dessert"><h3>Dessert</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="cocktail"><h3>Cocktail</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="zero-proof"><h3>Zero-Proof Drink</h3></button>
-          <button class="c-option-card" data-stage="4" data-val="flexible"><h3>Surprise Me</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="starter">
+            <span class="card-badge-icon">🥗</span>
+            <h3>Starter</h3>
+            <p>Hearth bread, roasted carrots, oysters.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="shared">
+            <span class="card-badge-icon">🥖</span>
+            <h3>Shared Plate</h3>
+            <p>Small plates for the table.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="main">
+            <span class="card-badge-icon">🥩</span>
+            <h3>Main Dish</h3>
+            <p>Short rib, ember chicken, vegetable plate.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="brunch">
+            <span class="card-badge-icon">🍳</span>
+            <h3>Brunch Plate</h3>
+            <p>Daytime benedict, French toast, hash.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="dessert">
+            <span class="card-badge-icon">🍮</span>
+            <h3>Dessert</h3>
+            <p>Burnt honey cheesecake, chocolate torte.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="cocktail">
+            <span class="card-badge-icon">🍸</span>
+            <h3>Cocktail</h3>
+            <p>Copper Moon, Solar Flare, Ash &amp; Orchard.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="zero-proof">
+            <span class="card-badge-icon">🌙</span>
+            <h3>Zero-Proof Drink</h3>
+            <p>Lunar Bloom, Ember Tonic, Garden Orbit.</p>
+          </button>
+          <button class="c-option-card" data-stage="4" data-val="flexible">
+            <span class="card-badge-icon">✨</span>
+            <h3>Surprise Me</h3>
+            <p>Open recommendations based on your profile.</p>
+          </button>
         </div>
       </div>
 
@@ -241,21 +280,26 @@
       <div id="c-stage-5" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 5 of 6 • Drink Preference</span>
         <h2>Should drinks be included?</h2>
+        <p class="stage-desc">Specify your beverage pairing preference.</p>
 
         <div class="concierge-options-grid">
           <button class="c-option-card" data-stage="5" data-val="alcohol-allowed">
+            <span class="card-badge-icon">🍸</span>
             <h3>Cocktails Are Welcome</h3>
             <p>Include craft spirit pairings.</p>
           </button>
           <button class="c-option-card" data-stage="5" data-val="zero-proof-only">
+            <span class="card-badge-icon">🌿</span>
             <h3>Zero-Proof Only</h3>
             <p>Show only spirit-free botanical drinks.</p>
           </button>
           <button class="c-option-card" data-stage="5" data-val="both">
+            <span class="card-badge-icon">🥂</span>
             <h3>Show Both</h3>
             <p>Display both cocktails and zero-proof pairings.</p>
           </button>
           <button class="c-option-card" data-stage="5" data-val="none">
+            <span class="card-badge-icon">🍽️</span>
             <h3>No Drink Suggestions</h3>
             <p>Focus purely on food plates.</p>
           </button>
@@ -266,19 +310,45 @@
       <div id="c-stage-6" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 6 of 6 • Dietary Guidance</span>
         <h2>Would general menu guidance help?</h2>
+        <p class="stage-desc">Select any dietary filters you prefer.</p>
 
         <div class="concierge-options-grid">
-          <button class="c-option-card" data-stage="6" data-val="none"><h3>No Dietary Filter</h3></button>
-          <button class="c-option-card" data-stage="6" data-val="vegetarian"><h3>Vegetarian</h3></button>
-          <button class="c-option-card" data-stage="6" data-val="vegan"><h3>Vegan</h3></button>
-          <button class="c-option-card" data-stage="6" data-val="gluten-conscious"><h3>Gluten-Conscious</h3></button>
-          <button class="c-option-card" data-stage="6" data-val="no-pork"><h3>No Pork</h3></button>
-          <button class="c-option-card" data-stage="6" data-val="no-shellfish"><h3>No Shellfish</h3></button>
-          <button id="allergy-modal-btn" type="button" class="btn-secondary" style="grid-column: 1 / -1; border-color: rgba(239, 68, 68, 0.5); padding: 1.2rem; margin-top: 0.5rem; text-align: center;">
-            <h3 style="color: #fca5a5; font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.2rem;">I Need Allergy Assistance</h3>
-            <p style="color: #e6dfd5; font-size: 0.88rem;">Click for mandatory safety disclaimer &amp; contact information.</p>
+          <button class="c-option-card" data-stage="6" data-val="none">
+            <span class="card-badge-icon">✔️</span>
+            <h3>No Dietary Filter</h3>
+            <p>Show all menu items.</p>
+          </button>
+          <button class="c-option-card" data-stage="6" data-val="vegetarian">
+            <span class="card-badge-icon">🌱</span>
+            <h3>Vegetarian</h3>
+            <p>Plant-focused plates.</p>
+          </button>
+          <button class="c-option-card" data-stage="6" data-val="vegan">
+            <span class="card-badge-icon">🥬</span>
+            <h3>Vegan</h3>
+            <p>Strictly plant-based.</p>
+          </button>
+          <button class="c-option-card" data-stage="6" data-val="gluten-conscious">
+            <span class="card-badge-icon">🌾</span>
+            <h3>Gluten-Conscious</h3>
+            <p>Made without wheat ingredients.</p>
+          </button>
+          <button class="c-option-card" data-stage="6" data-val="no-pork">
+            <span class="card-badge-icon">🚫</span>
+            <h3>No Pork</h3>
+            <p>Exclude pork dishes.</p>
+          </button>
+          <button class="c-option-card" data-stage="6" data-val="no-shellfish">
+            <span class="card-badge-icon">🦐</span>
+            <h3>No Shellfish</h3>
+            <p>Exclude shellfish options.</p>
           </button>
         </div>
+
+        <button id="allergy-modal-btn" type="button" class="btn-secondary" style="width: 100%; border-color: rgba(239, 68, 68, 0.5); padding: 1.2rem; margin-top: 1.5rem; text-align: center;">
+          <h3 style="color: #fca5a5; font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.2rem;">I Need Allergy Assistance</h3>
+          <p style="color: #e6dfd5; font-size: 0.88rem;">Click for mandatory safety disclaimer &amp; contact information.</p>
+        </button>
       </div>
 
       <!-- Navigation Actions -->
