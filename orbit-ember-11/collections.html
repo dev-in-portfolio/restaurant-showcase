@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/orbit-ember-11/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Collections — Curated Dining | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Explore signature dishes, wood-fired hearth items, brunch favorites, zero-proof drinks, and food-and-drink pairings at Orbit &amp; Ember in Charlotte, NC.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-11/collections.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="collections-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Menu Collections Showcase</div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="collections.html" class="active">Collections</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+        <a href="reserve.html" class="cta-btn">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>Menu Collections</span>
+    </nav>
+
+    <div class="section-header-center">
+      <span class="subhead-tag">Curated Culinary Storytelling</span>
+      <h1 class="section-title">Explore the Table <em>Differently</em></h1>
+      <p class="section-desc">More ways to explore the Orbit &amp; Ember menu — through signature dishes, live-fire hearth plates, brunch selections, zero-proof drinks, and pairings.</p>
+    </div>
+
+    <!-- Featured Collection Hero Card -->
+    <section class="featured-collection-banner">
+      <div class="feat-card-inner">
+        <div class="feat-card-badge">★ Featured Collection</div>
+        <h2 class="feat-card-title">Signature Orbit &amp; Ember</h2>
+        <p class="feat-card-desc">The plates, cocktails, and desserts that most clearly express the restaurant's approach to live fire, patient cooking, and relaxed hospitality.</p>
+        
+        <div class="feat-items-grid" style="margin-top: 1.5rem;">
+          <div class="feat-item-chip">🥩 Black Garlic Short Rib ($34)</div>
+          <div class="feat-item-chip">🍗 Ember-Roasted Chicken ($29)</div>
+          <div class="feat-item-chip">🥕 Charred Carrots &amp; Whipped Feta ($14)</div>
+          <div class="feat-item-chip">🍸 Copper Moon Cocktail ($15)</div>
+          <div class="feat-item-chip">🌿 Lunar Bloom Zero-Proof ($10)</div>
+          <div class="feat-item-chip">🍯 Burnt Honey Cheesecake ($12)</div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="menu.html" class="cta-btn">View Full Menu</a>
+          <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Category Filter Tabs -->
+    <section class="collections-filter-section" style="margin-top: 4rem;">
+      <div class="filter-tabs-row">
+        <button class="filter-tab-btn active" data-filter="all">All Collections</button>
+        <button class="filter-tab-btn" data-filter="Dinner">Dinner</button>
+        <button class="filter-tab-btn" data-filter="Shared">Shared</button>
+        <button class="filter-tab-btn" data-filter="Brunch">Brunch</button>
+        <button class="filter-tab-btn" data-filter="Drinks">Drinks</button>
+        <button class="filter-tab-btn" data-filter="Zero-Proof">Zero-Proof</button>
+        <button class="filter-tab-btn" data-filter="Desserts">Desserts</button>
+      </div>
+
+      <!-- Collections Grid -->
+      <div id="collections-grid-container" class="collections-grid">
+        <!-- Rendered dynamically via collections-data.js script -->
+      </div>
+    </section>
+
+    <!-- Food & Drink Pairings Showcase -->
+    <section class="pairings-showcase-section" style="margin-top: 4rem;">
+      <div class="section-header-center" style="margin-bottom: 2rem;">
+        <span class="subhead-tag">Sommelier &amp; Bar Guidance</span>
+        <h2 class="section-title">Food &amp; Drink <em>Pairings</em></h2>
+        <p class="section-desc">Thoughtful culinary pairings designed to enhance hearth flavors across craft cocktails and zero-proof drinks.</p>
+      </div>
+
+      <div class="pairings-grid-3">
+        <div class="pairing-card">
+          <span class="pairing-type-tag">Signature Pairing</span>
+          <h3>Short Rib + Copper Moon</h3>
+          <p class="pairing-dish">🥩 <strong>Dish:</strong> Black Garlic Short Rib</p>
+          <p class="pairing-drink">🍸 <strong>Drink:</strong> Copper Moon (Bourbon &amp; Amaro)</p>
+          <p class="pairing-note">"The drink's orange &amp; amaro bitterness cuts through the braised rib's deep richness."</p>
+        </div>
+
+        <div class="pairing-card">
+          <span class="pairing-type-tag">Hearth Classic</span>
+          <h3>Half Chicken + Solar Flare</h3>
+          <p class="pairing-dish">🍗 <strong>Dish:</strong> Ember-Roasted Chicken</p>
+          <p class="pairing-drink">🍹 <strong>Drink:</strong> Solar Flare (Tequila &amp; Grapefruit)</p>
+          <p class="pairing-note">"Smoked chile and bright grapefruit highlight the lemon-marinated chicken skin."</p>
+        </div>
+
+        <div class="pairing-card">
+          <span class="pairing-type-tag">Zero-Proof Match</span>
+          <h3>Charred Carrots + Lunar Bloom</h3>
+          <p class="pairing-dish">🥕 <strong>Dish:</strong> Charred Carrots with Feta</p>
+          <p class="pairing-drink">🌿 <strong>Drink:</strong> Lunar Bloom (Hibiscus Soda)</p>
+          <p class="pairing-note">"Tart berry and lime provide a crisp, refreshing contrast to warm-spice honey."</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="collections.html">Menu Collections</a></li>
+          <li><a href="visit.html">Visit &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="portfolio-disclosure-bar">
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's restaurant branding, menu, photo storytelling, local discovery, trust-building, reservation, ordering, private dining, guest follow-up, loyalty, performance-reporting, operations, guest-engagement, and menu-collection services.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="collections-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gridContainer = document.getElementById('collections-grid-container');
+      const filterBtns = document.querySelectorAll('.filter-tab-btn');
+
+      function renderCollections(filterType = 'all') {
+        if (!gridContainer || !window.COLLECTIONS_CONFIG) return;
+        gridContainer.innerHTML = '';
+
+        const collections = window.COLLECTIONS_CONFIG.collections.filter(c => {
+          if (filterType === 'all') return true;
+          return c.type.toLowerCase() === filterType.toLowerCase();
+        });
+
+        collections.forEach(col => {
+          const card = document.createElement('div');
+          card.className = 'collection-card';
+          
+          let itemsHtml = col.items.map(i => `
+            <div class="col-item-row">
+              <span><strong>${i.name}</strong> — <em>${i.price}</em></span>
+              <span style="font-size: 0.82rem; color: #a39b90;">${i.note}</span>
+            </div>
+          `).join('');
+
+          card.innerHTML = `
+            <span class="col-card-eyebrow">${col.eyebrow}</span>
+            <h3>${col.name}</h3>
+            <p style="font-size: 0.9rem; color: #a39b90; margin-bottom: 1rem;">${col.desc}</p>
+            <div class="col-items-list">${itemsHtml}</div>
+          `;
+          gridContainer.appendChild(card);
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          renderCollections(filter);
+        });
+      });
+
+      // Initial Render
+      renderCollections('all');
+    });
+  </script>
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>
