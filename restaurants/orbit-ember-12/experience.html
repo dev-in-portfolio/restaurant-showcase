@@ -19,7 +19,7 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Signature Interactive Experience Showcase</div>
 
-  <!-- Background Particle Shader Canvas -->
+  <!-- Fullscreen 3D Canvas Background -->
   <canvas id="orbit-bg-canvas" class="orbit-bg-canvas"></canvas>
 
   <!-- Interactive Toast Notification Banner -->
@@ -43,37 +43,42 @@
     </div>
   </header>
 
-  <main id="main-content" class="container" style="padding-top: 2rem; padding-bottom: 5rem; position: relative; z-index: 10;">
-    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
-      <a href="index.html">Home</a> &rsaquo; <span>The Orbit Experience</span>
-    </nav>
-
-    <!-- Entry Screen -->
+  <main id="main-content" class="immersive-experience-container">
+    <!-- Entry Screen (Full Screen Viewport) -->
     <section id="exp-entry-screen" class="exp-screen active">
       <div class="section-header-center">
         <span class="subhead-tag">Signature Digital Experience</span>
         <h1 class="hero-title">Find Your <em>Orbit</em></h1>
         <p class="hero-desc">Every evening begins a little differently. Choose the atmosphere, pace, flavors, and kind of table you have in mind, then explore one possible way the night could unfold.</p>
-        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <button id="begin-exp-btn" class="cta-btn" style="padding: 0.9rem 2.5rem; font-size: 1rem; cursor: pointer;">Begin the Experience</button>
-          <a href="menu.html" class="btn-secondary" style="padding: 0.9rem 2rem;">View Full Menu</a>
+        
+        <div style="margin-top: 2.2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <button id="begin-exp-btn" class="cta-btn" style="padding: 1rem 2.8rem; font-size: 1.05rem; cursor: pointer;">Begin the Experience</button>
+          <a href="menu.html" class="btn-secondary" style="padding: 1rem 2.2rem;">View Full Menu</a>
         </div>
-        <p style="font-size: 0.8rem; color: #a39b90; margin-top: 1.5rem;">💡 <em>This is an editorial exploration, not a reservation, order, or guarantee of menu availability.</em></p>
+        <p style="font-size: 0.82rem; color: #a39b90; margin-top: 1.8rem;">💡 <em>This is an editorial exploration, not a reservation, order, or guarantee of menu availability.</em></p>
       </div>
     </section>
 
-    <!-- Decision Flow Container -->
+    <!-- Interactive 4-Step Flow Section -->
     <section id="exp-flow-section" class="exp-flow-wrapper" style="display: none;">
-      <!-- Progress Bar -->
-      <div class="exp-progress-bar">
-        <div id="progress-indicator" class="progress-fill" style="width: 25%;"></div>
+      <!-- Progress Indicator Header -->
+      <div class="exp-progress-header">
+        <div class="progress-labels">
+          <span id="prog-label-1" class="prog-label active">1. Atmosphere</span>
+          <span id="prog-label-2" class="prog-label">2. Pace</span>
+          <span id="prog-label-3" class="prog-label">3. Flavor</span>
+          <span id="prog-label-4" class="prog-label">4. Table</span>
+        </div>
+        <div class="exp-progress-bar">
+          <div id="progress-indicator" class="progress-fill" style="width: 25%;"></div>
+        </div>
       </div>
 
       <!-- Step 1: Atmosphere -->
       <div id="step-1" class="step-card active">
         <span class="step-badge">Step 1 of 4 • Atmosphere</span>
         <h2>Where Does the Evening Begin?</h2>
-        <p class="step-desc">Choose the atmosphere that feels closest to the night you have in mind.</p>
+        <p class="step-desc">Select an atmosphere below to see the environment shift in real-time.</p>
 
         <div class="choice-cards-grid">
           <button class="choice-card" data-step="1" data-val="candlelight">
@@ -220,9 +225,9 @@
       </div>
 
       <!-- Navigation Actions -->
-      <div class="exp-nav-actions" style="margin-top: 2rem; display: flex; justify-content: space-between;">
-        <button id="prev-step-btn" class="btn-secondary" style="display: none;">&larr; Back</button>
-        <button id="restart-flow-btn" class="btn-secondary" style="margin-left: auto;">Restart</button>
+      <div class="exp-nav-actions" style="margin-top: 2.2rem; display: flex; justify-content: space-between;">
+        <button id="prev-step-btn" class="btn-secondary" style="display: none; cursor: pointer;">&larr; Back</button>
+        <button id="restart-flow-btn" class="btn-secondary" style="margin-left: auto; cursor: pointer;">Restart</button>
       </div>
     </section>
 
@@ -232,7 +237,7 @@
         <span class="subhead-tag">Setting the Table</span>
         <h2 class="section-title">Gathering Your <em>Evening...</em></h2>
         <p style="color: #a39b90;">Bringing atmosphere, hearth fire, and flavor pairings together.</p>
-        <div class="spinner-loader" style="margin: 2rem auto;"></div>
+        <div class="spinner-loader" style="margin: 2.5rem auto;"></div>
       </div>
     </section>
 
@@ -273,6 +278,7 @@
     </section>
   </main>
 
+  <!-- Main Footer Positioned Outside the Interactive Viewport -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -304,8 +310,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let canvasEngine = null;
-      if (window.OrbitParticleCanvas) {
-        canvasEngine = new window.OrbitParticleCanvas('orbit-bg-canvas');
+      if (window.OrbitCanvas3DEngine) {
+        canvasEngine = new window.OrbitCanvas3DEngine('orbit-bg-canvas');
       }
 
       const toast = document.getElementById('toast-notification');
@@ -345,6 +351,15 @@
         if (progressBar) progressBar.style.width = (stepNum * 25) + '%';
         if (prevBtn) prevBtn.style.display = stepNum > 1 ? 'inline-flex' : 'none';
 
+        // Update progress labels glow
+        for (let i = 1; i <= 4; i++) {
+          const lbl = document.getElementById(`prog-label-${i}`);
+          if (lbl) {
+            if (i === stepNum) lbl.classList.add('active');
+            else lbl.classList.remove('active');
+          }
+        }
+
         for (let i = 1; i <= 4; i++) {
           const card = document.getElementById(`step-${i}`);
           if (card) card.style.display = i === stepNum ? 'block' : 'none';
@@ -359,13 +374,20 @@
 
           if (step === 1) {
             userChoices.atmosphere = val;
-            if (canvasEngine) canvasEngine.setTheme(val);
+            if (canvasEngine) canvasEngine.setAtmosphere(val);
           } else if (step === 2) {
             userChoices.pace = val;
           } else if (step === 3) {
             userChoices.flavor = val;
+            if (canvasEngine) canvasEngine.setFlavor(val);
           } else if (step === 4) {
             userChoices.table = val;
+            let scale = 1.0;
+            if (val === 'solo') scale = 0.7;
+            else if (val === 'two') scale = 0.9;
+            else if (val === 'friends') scale = 1.1;
+            else if (val === 'group' || val === 'celebration') scale = 1.35;
+            if (canvasEngine) canvasEngine.setTableScale(scale);
           }
 
           if (step < 4) {
@@ -379,7 +401,7 @@
               loaderScreen.style.display = 'none';
               renderResult();
               resultScreen.style.display = 'block';
-            }, 1200);
+            }, 1250);
           }
         });
       });
