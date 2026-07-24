@@ -65,7 +65,7 @@
 
 /* Floating Editorial Card Panel */
 .editorial-card-panel {
-  background: rgba(12, 10, 9, 0.65);
+  background: rgba(10, 8, 7, 0.90); box-shadow: 0 30px 80px rgba(0,0,0,0.95); text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   border: 1px solid rgba(224, 168, 104, 0.35);
   border-radius: 20px;
   padding: 3rem;
@@ -82,7 +82,7 @@
 }
 
 .floating-step-panel {
-  background: rgba(12, 10, 9, 0.62);
+  background: rgba(10, 8, 7, 0.88); box-shadow: 0 30px 80px rgba(0,0,0,0.95); text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   border: 1px solid rgba(224, 168, 104, 0.3);
   border-radius: 20px;
   padding: 2.2rem;
@@ -114,7 +114,7 @@
 }
 
 .step-meta p {
-  color: #c4bbb0;
+  color: #e6dfd5; font-weight: 500;
   font-size: 0.95rem;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .rail-option-btn {
-  background: rgba(18, 15, 13, 0.6);
+  background: rgba(18, 15, 13, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 1rem 1.4rem;
@@ -161,7 +161,7 @@
 }
 
 .rail-option-text span {
-  color: #b0a69a;
+  color: #e6dfd5; font-weight: 500;
   font-size: 0.85rem;
   display: block;
 }
@@ -192,4 +192,46 @@
   .editorial-card-panel, .floating-step-panel, .editorial-result-modal {
     padding: 1.8rem;
   }
+}
+
+
+/* High-Contrast Legibility & Readability Overrides */
+.floating-step-panel h2, .editorial-card-panel h1, .editorial-result-modal h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.step-meta p, .hero-desc, .result-intro {
+  color: #f0e8dd !important;
+  font-size: 1.08rem !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.rail-option-text h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.rail-option-text span {
+  color: #e6dfd5 !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+
+.subhead-tag, .step-num-badge, .res-path-label {
+  color: #f5b975 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.res-path-box p {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+}
+
+.minimal-experience-header {
+  background: linear-gradient(180deg, rgba(7, 6, 5, 0.95) 0%, rgba(7, 6, 5, 0.6) 80%, transparent 100%) !important;
 }
