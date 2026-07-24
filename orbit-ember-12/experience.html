@@ -6,7 +6,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Orbit Experience — Ultra-Polished 3D WebGL Installation | Orbit &amp; Ember</title>
+  <title>The Orbit Experience — Native 3D WebGL Installation | Orbit &amp; Ember</title>
   <meta name="description" content="Build the kind of evening you want to step into. Flagship 3D WebGL culinary experience at Orbit &amp; Ember in Charlotte, NC.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-12/experience.html">
 
@@ -14,14 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
-  
-  <!-- Three.js Engine Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="experience-interactive-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Fullscreen 3D WebGL Canvas Layer -->
+  <!-- Fullscreen Native 3D WebGL Canvas Layer -->
   <canvas id="orbit-webgl-canvas" class="orbit-webgl-canvas"></canvas>
 
   <!-- Interactive Toast Notification Banner -->
@@ -33,8 +30,7 @@
   <header class="minimal-experience-header">
     <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
     <div class="header-right-actions">
-      <button id="audio-toggle-btn" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.82rem; cursor: pointer;">🔊 Audio Ambience: Off</button>
-      <span class="exp-phase-badge">AAA 3D Installation</span>
+      <span class="exp-phase-badge">Native 3D WebGL</span>
       <a href="menu.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.82rem;">Exit to Full Menu</a>
     </div>
   </header>
@@ -45,7 +41,7 @@
     <!-- Entry Screen Floating Card -->
     <div id="exp-entry-screen" class="floating-screen active">
       <div class="editorial-card-panel">
-        <span class="subhead-tag">Signature WebGL Experience</span>
+        <span class="subhead-tag">Signature 3D Experience</span>
         <h1 class="hero-title">Find Your <em>Orbit</em></h1>
         <p class="hero-desc">Step into Orbit &amp; Ember. Choose your atmosphere, pace, flavors, and table size while the 3D restaurant environment transforms around you in real-time.</p>
         <button id="begin-exp-btn" class="cta-btn" style="margin-top: 1.8rem; padding: 1rem 2.8rem; font-size: 1.02rem; cursor: pointer;">Begin 3D Experience</button>
@@ -289,19 +285,6 @@
   <script src="orbit-interactive-engine.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      let webglScene = null;
-      if (window.OrbitMasterWebGLScene) {
-        webglScene = new window.OrbitMasterWebGLScene('orbit-webgl-canvas');
-      }
-
-      const audioBtn = document.getElementById('audio-toggle-btn');
-      audioBtn?.addEventListener('click', () => {
-        if (webglScene) {
-          const isPlaying = webglScene.toggleAudio();
-          audioBtn.textContent = isPlaying ? '🔊 Audio Ambience: On' : '🔇 Audio Ambience: Off';
-        }
-      });
-
       const toast = document.getElementById('toast-notification');
       const toastMsg = document.getElementById('toast-message');
 
@@ -333,7 +316,7 @@
       function showStep(stepNum) {
         currentStep = stepNum;
         if (prevBtn) prevBtn.style.display = stepNum > 1 ? 'inline-flex' : 'none';
-        if (webglScene) webglScene.setCameraStep(`step${stepNum}`);
+        if (window.nativeOrbitEngine) window.nativeOrbitEngine.setCameraStep(`step${stepNum}`);
 
         for (let i = 1; i <= 4; i++) {
           const panel = document.getElementById(`step-${i}`);
@@ -345,8 +328,8 @@
         btn.addEventListener('mouseenter', () => {
           const step = parseInt(btn.getAttribute('data-step'));
           const val = btn.getAttribute('data-val');
-          if (step === 1 && webglScene) webglScene.setAtmosphere(val);
-          else if (step === 4 && webglScene) webglScene.updateTableSettings(val);
+          if (step === 1 && window.nativeOrbitEngine) window.nativeOrbitEngine.setAtmosphere(val);
+          else if (step === 4 && window.nativeOrbitEngine) window.nativeOrbitEngine.updateTableSettings(val);
         });
 
         btn.addEventListener('click', () => {
@@ -358,21 +341,21 @@
 
           if (step === 1) {
             userChoices.atmosphere = val;
-            if (webglScene) webglScene.setAtmosphere(val);
+            if (window.nativeOrbitEngine) window.nativeOrbitEngine.setAtmosphere(val);
           } else if (step === 2) {
             userChoices.pace = val;
           } else if (step === 3) {
             userChoices.flavor = val;
           } else if (step === 4) {
             userChoices.table = val;
-            if (webglScene) webglScene.updateTableSettings(val);
+            if (window.nativeOrbitEngine) window.nativeOrbitEngine.updateTableSettings(val);
           }
 
           if (step < 4) {
             showStep(step + 1);
           } else {
             flowWrapper.style.display = 'none';
-            if (webglScene) webglScene.setCameraStep('result');
+            if (window.nativeOrbitEngine) window.nativeOrbitEngine.setCameraStep('result');
             renderResult();
             resultScreen.style.display = 'block';
           }
