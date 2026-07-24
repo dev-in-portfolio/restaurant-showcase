@@ -1,15 +1,15 @@
 /* ==========================================================================
-   ORBIT & EMBER - LEVEL 0 + MENU COLLECTIONS CSS SYSTEM
+   ORBIT & EMBER - LEVEL 0 + MENU COLLECTIONS LUXURY CSS SYSTEM
    ========================================================================== */
 
 :root {
   --color-dark-bg: #0d0c0b;
-  --color-card-bg: rgba(22, 20, 18, 0.85);
+  --color-card-bg: rgba(22, 20, 18, 0.92);
   --color-primary-brand: #c27a4a;
   --color-brand-hover: #e09663;
   --color-text-main: #f0eae1;
   --color-text-muted: #a39b90;
-  --font-heading: 'Cinzel', serif;
+  --font-heading: 'Cormorant Garamond', 'Cinzel', serif;
   --font-body: 'Outfit', sans-serif;
 }
 
@@ -72,7 +72,7 @@ html, body {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
@@ -83,7 +83,7 @@ html, body {
 .logo span {
   color: var(--color-primary-brand);
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding-left: 0.5rem;
 }
@@ -114,7 +114,7 @@ html, body {
 .cta-btn {
   background: var(--color-primary-brand);
   color: #fff;
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
@@ -122,19 +122,20 @@ html, body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.25s;
+  transition: background 0.25s, transform 0.2s;
   border: none;
   cursor: pointer;
 }
 .cta-btn:hover {
   background: var(--color-brand-hover);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
@@ -178,7 +179,7 @@ html, body {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   color: #fff;
   margin-bottom: 0.8rem;
 }
@@ -210,69 +211,133 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
-/* Featured Banner */
-.featured-collection-banner {
-  background: radial-gradient(circle at top right, rgba(194, 122, 74, 0.2), rgba(18, 16, 14, 0.95));
+/* Hero Banner */
+.collections-hero-banner {
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  padding: 4rem 3rem;
+  border: 1px solid rgba(194, 122, 74, 0.35);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  line-height: 1.15;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--color-primary-brand);
+}
+
+.hero-desc {
+  color: #d1c8bd;
+  font-size: 1.15rem;
+  max-width: 680px;
+}
+
+/* Featured Collection Card */
+.featured-collection-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-card-bg);
   border: 1px solid rgba(194, 122, 74, 0.4);
   border-radius: 16px;
-  padding: 2.5rem;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-.feat-card-badge {
-  font-size: 0.72rem;
+@media (max-width: 850px) {
+  .featured-collection-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feat-media-box {
+  position: relative;
+  min-height: 320px;
+}
+
+.feat-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feat-badge-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(13, 12, 11, 0.85);
+  color: var(--color-primary-brand);
+  border: 1px solid rgba(194, 122, 74, 0.4);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary-brand);
-  background: rgba(194, 122, 74, 0.15);
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
-  display: inline-block;
-  margin-bottom: 0.8rem;
 }
 
-.feat-card-title {
+.feat-info-box {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feat-title {
   font-family: var(--font-heading);
-  color: #ffffff;
   font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
 }
 
-.feat-card-desc {
+.feat-desc {
   color: var(--color-text-muted);
-  font-size: 1.05rem;
-  max-width: 750px;
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
-.feat-items-grid {
+.feat-item-chips-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  margin-top: 1.2rem;
 }
 
-.feat-item-chip {
+.feat-chip {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #d1c8bd;
+  color: #f0eae1;
   padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 0.82rem;
 }
+.feat-chip em {
+  color: var(--color-primary-brand);
+  font-style: normal;
+  font-weight: 600;
+}
 
-/* Collection Filters */
+/* Category Filter Tabs */
 .filter-tabs-row {
   display: flex;
   justify-content: center;
   gap: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
 }
 
 .filter-tab-btn {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--color-text-muted);
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
+  padding: 0.65rem 1.4rem;
+  border-radius: 25px;
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -285,20 +350,61 @@ html, body {
   border-color: #e09663;
 }
 
-/* Collections Grid */
-.collections-grid {
+/* Visual Collections Grid */
+.visual-collections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
 }
 
-.collection-card {
+.visual-col-card {
   background: var(--color-card-bg);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.visual-col-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 122, 74, 0.5);
+}
+
+.col-card-media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.col-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.visual-col-card:hover .col-card-img {
+  transform: scale(1.04);
+}
+
+.col-card-tag {
+  position: absolute;
+  bottom: 0.8rem;
+  right: 0.8rem;
+  background: rgba(13, 12, 11, 0.85);
+  color: var(--color-primary-brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(194, 122, 74, 0.3);
+}
+
+.col-card-body {
   padding: 1.8rem;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .col-card-eyebrow {
@@ -306,77 +412,161 @@ html, body {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-primary-brand);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
-.collection-card h3 {
+.col-card-body h3 {
   font-family: var(--font-heading);
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 0.4rem;
 }
 
-.col-items-list {
+.col-card-desc {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.col-card-items {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-top: 1rem;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
   padding-top: 1rem;
 }
 
 .col-item-row {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
 }
 
-/* Pairings Grid */
+.col-item-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.col-item-price {
+  color: var(--color-primary-brand);
+  font-weight: 700;
+  margin-left: 0.4rem;
+}
+
+.col-item-note {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* Pairings Showcase Grid */
 .pairings-grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
 }
 
 .pairing-card {
   background: var(--color-card-bg);
-  border: 1px solid rgba(194, 122, 74, 0.3);
-  border-radius: 12px;
-  padding: 1.8rem;
+  border: 1px solid rgba(194, 122, 74, 0.35);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.pairing-type-tag {
+.pairing-img-wrapper {
+  position: relative;
+  height: 180px;
+}
+
+.pairing-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pairing-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background: rgba(13, 12, 11, 0.85);
+  color: var(--color-primary-brand);
   font-size: 0.72rem;
   font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-primary-brand);
-  background: rgba(194, 122, 74, 0.15);
-  padding: 0.2rem 0.5rem;
-  border-radius: 8px;
-  display: inline-block;
-  margin-bottom: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(194, 122, 74, 0.3);
 }
 
-.pairing-card h3 {
+.pairing-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pairing-body h3 {
   font-family: var(--font-heading);
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 0.8rem;
 }
 
-.pairing-dish, .pairing-drink {
+.pairing-meta p {
   font-size: 0.9rem;
   color: #d1c8bd;
   margin-bottom: 0.3rem;
 }
 
 .pairing-note {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--color-text-muted);
   font-style: italic;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
   border-top: 1px dashed rgba(255, 255, 255, 0.08);
   padding-top: 0.8rem;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-content-card {
+  background: #141210;
+  border: 1px solid rgba(194, 122, 74, 0.4);
+  border-radius: 16px;
+  max-width: 650px;
+  width: 100%;
+  padding: 2.2rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
 }
 
 .portfolio-disclosure-bar {
