@@ -437,6 +437,18 @@
           if (step === 1) {
             userChoices.atmosphere = val;
             if (canvasEngine) canvasEngine.setAtmosphere(val);
+            
+            // Dynamic Body Background Image Transition
+            const bgImages = {
+              'candlelight': "url('images/lounge-ambiance.jpg')",
+              'golden-hour': "url('images/cosmic-cocktail.jpg')",
+              'by-the-fire': "url('images/wood-fired-hearth.jpg')",
+              'at-the-bar': "url('images/cosmic-cocktail.jpg')",
+              'brighter-brunch': "url('images/featured-flatbread.jpg')"
+            };
+            if (bgImages[val]) {
+              document.body.style.backgroundImage = `linear-gradient(180deg, rgba(13, 12, 11, 0.55) 0%, rgba(13, 12, 11, 0.88) 100%), ${bgImages[val]}`;
+            }
           } else if (step === 2) {
             userChoices.pace = val;
           } else if (step === 3) {
