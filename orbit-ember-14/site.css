@@ -485,3 +485,165 @@ main {
   font-size: 0.88rem;
   color: var(--text-secondary);
 }
+
+
+/* Multi-Location Hub Styles */
+.locations-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.loc-hub-card {
+  background: rgba(14, 11, 9, 0.94);
+  border: 1px solid rgba(224, 168, 104, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-card-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.loc-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(10px);
+}
+
+.badge-open {
+  background: rgba(16, 185, 129, 0.9);
+  color: #ffffff;
+}
+
+.badge-opening-soon {
+  background: rgba(245, 158, 11, 0.9);
+  color: #000000;
+}
+
+.badge-planned {
+  background: rgba(59, 130, 246, 0.9);
+  color: #ffffff;
+}
+
+.loc-card-body {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.1rem;
+  color: #ffffff;
+  margin: 0.4rem 0;
+}
+
+.loc-card-address {
+  font-size: 0.92rem;
+  color: var(--color-primary-brand);
+  margin-bottom: 0.4rem;
+}
+
+.loc-card-phone {
+  font-size: 0.9rem;
+  color: #e6dfd5;
+  margin-bottom: 1rem;
+}
+
+.loc-card-desc {
+  color: #e6dfd5;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.loc-hours-preview, .loc-notice-box {
+  background: rgba(0,0,0,0.6);
+  border-left: 3px solid var(--color-primary-brand);
+  padding: 0.8rem 1rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.88rem;
+  color: #ffffff;
+  margin-bottom: 1.8rem;
+}
+
+.loc-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.pref-loc-footer {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.set-pref-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary-brand);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  background: rgba(14, 11, 9, 0.94);
+  border: 1px solid rgba(224, 168, 104, 0.4);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.loc-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  color: #ffffff;
+}
+
+.loc-comparison-table th, .loc-comparison-table td {
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.loc-comparison-table th {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  color: var(--color-primary-brand);
+}
+
+.loc-detail-card {
+  background: rgba(14, 11, 9, 0.94);
+  border: 1px solid rgba(224, 168, 104, 0.45);
+  border-radius: 24px;
+  padding: 3rem;
+}
+
+.loc-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}

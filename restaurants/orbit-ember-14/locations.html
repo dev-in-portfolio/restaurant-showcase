@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    document.write('<base href="' + window.location.protocol + '//' + window.location.host + '/restaurants/orbit-ember-14/">');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Location | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Explore current and future Orbit &amp; Ember locations in Charlotte, NC. View hours, menus, reservations, and opening updates.">
+  <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-14/locations.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Multi-Location</div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="locations.html" class="active">Locations</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+        <a href="reserve.html" class="cta-btn">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 6rem;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>Locations</span>
+    </nav>
+
+    <header class="section-header-center" style="margin-bottom: 3rem;">
+      <span class="subhead-tag">Multi-Location Growth Showcase</span>
+      <h1 class="hero-title" style="font-size: 3.5rem;">Find Your <em>Orbit</em></h1>
+      <p style="color: #e6dfd5; font-size: 1.15rem; max-width: 750px; margin: 0.8rem auto 0; line-height: 1.6;">Explore current and future Orbit &amp; Ember locations, then choose the menu, reservations, ordering, events, and private-dining information for the restaurant you plan to visit.</p>
+    </header>
+
+    <!-- Location Finder Bar -->
+    <section class="concierge-nl-section" style="margin-bottom: 3.5rem;">
+      <label for="loc-search-input">Search Locations by City, Neighborhood, or ZIP:</label>
+      <div class="concierge-nl-box">
+        <input type="text" id="loc-search-input" placeholder="e.g. 'South End', 'Ballantyne', '28203'...">
+        <button id="loc-search-btn" class="cta-btn">Find Location</button>
+        <button id="use-my-loc-btn" class="btn-secondary">📍 Use My Location</button>
+      </div>
+      <p id="loc-search-result-note" style="font-size: 0.88rem; color: #e0a868; margin-top: 0.9rem; display: none;"></p>
+    </section>
+
+    <!-- Location Cards Grid -->
+    <section class="locations-grid-container">
+      
+      <!-- Card 1: South End (Open Flagship) -->
+      <article class="loc-hub-card status-open">
+        <div class="loc-card-media">
+          <img src="images/featured-steak.jpg" alt="Orbit & Ember South End Flagship">
+          <span class="status-badge badge-open">● OPEN FLAGSHIP</span>
+        </div>
+        <div class="loc-card-body">
+          <span class="subhead-tag">Charlotte • South End</span>
+          <h2 class="loc-card-title">Orbit &amp; Ember South End</h2>
+          <p class="loc-card-address">📍 2250 Camden Ember Way, Charlotte, NC 28203</p>
+          <p class="loc-card-phone">📞 704-555-0148</p>
+          <p class="loc-card-desc">The original Orbit &amp; Ember experience featuring open wood-fired hearth cooking, craft mixology, weekend brunch, and The Ember Room.</p>
+          
+          <div class="loc-hours-preview">
+            <strong>Today's Hours:</strong> Dinner 5:00 PM – 10:00 PM | Weekend Brunch 10:00 AM – 2:30 PM
+          </div>
+
+          <div class="loc-card-actions">
+            <a href="locations/south-end.html" class="cta-btn" style="flex: 1;">View South End</a>
+            <a href="reserve.html" class="btn-secondary">Reserve</a>
+            <a href="menu.html" class="btn-secondary">Menu</a>
+          </div>
+
+          <div class="pref-loc-footer">
+            <button class="set-pref-btn" data-id="location-south-end">⭐ Set as Preferred Location</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Ballantyne (Opening Soon) -->
+      <article class="loc-hub-card status-opening-soon">
+        <div class="loc-card-media">
+          <img src="images/wood-fired-hearth.jpg" alt="Orbit & Ember Ballantyne Opening Soon">
+          <span class="status-badge badge-opening-soon">⏳ OPENING SOON</span>
+        </div>
+        <div class="loc-card-body">
+          <span class="subhead-tag">Charlotte • Ballantyne</span>
+          <h2 class="loc-card-title">Orbit &amp; Ember Ballantyne</h2>
+          <p class="loc-card-address">📍 Ballantyne, Charlotte, NC (Expected 2027)</p>
+          <p class="loc-card-desc">A new Orbit &amp; Ember location being developed for Ballantyne, bringing wood-fired cooking, seasonal mixology, and a spacious patio to South Charlotte.</p>
+          
+          <div class="loc-notice-box">
+            💡 <em>Opening plans and details are subject to change. No active reservations or takeout available yet.</em>
+          </div>
+
+          <div class="loc-card-actions">
+            <a href="locations/ballantyne.html" class="cta-btn" style="flex: 1;">Get Opening Updates</a>
+            <a href="locations/south-end.html" class="btn-secondary">Visit South End</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Lake Norman (Planned Market) -->
+      <article class="loc-hub-card status-planned">
+        <div class="loc-card-media">
+          <img src="images/lounge-ambiance.jpg" alt="Orbit & Ember Lake Norman Concept">
+          <span class="status-badge badge-planned">✨ PLANNED MARKET</span>
+        </div>
+        <div class="loc-card-body">
+          <span class="subhead-tag">Lake Norman Region</span>
+          <h2 class="loc-card-title">Orbit &amp; Ember Lake Norman</h2>
+          <p class="loc-card-address">📍 Lake Norman Area, North Carolina</p>
+          <p class="loc-card-desc">Exploring future market expansion in the Lake Norman region. No site, opening date, or operating details are confirmed.</p>
+          
+          <div class="loc-notice-box">
+            💡 <em>Preannouncement market concept only.</em>
+          </div>
+
+          <div class="loc-card-actions">
+            <a href="locations/lake-norman.html" class="btn-secondary" style="flex: 1;">Learn More</a>
+            <a href="locations/south-end.html" class="btn-secondary">Visit South End</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Location Comparison Table -->
+    <section style="margin-top: 5rem;">
+      <div class="section-header-center" style="margin-bottom: 2rem;">
+        <span class="subhead-tag">At a Glance</span>
+        <h2 class="hero-title" style="font-size: 2.8rem;">Location <em>Comparison</em></h2>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="loc-comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>South End (Flagship)</th>
+              <th>Ballantyne (Opening Soon)</th>
+              <th>Lake Norman (Planned)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Status</strong></td>
+              <td><span style="color: #4ade80;">● Open</span></td>
+              <td><span style="color: #facc15;">⏳ Opening Soon</span></td>
+              <td><span style="color: #93c5fd;">✨ Planned Market</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dinner Service</strong></td>
+              <td>✅ Daily</td>
+              <td>Planned</td>
+              <td>Under Evaluation</td>
+            </tr>
+            <tr>
+              <td><strong>Weekend Brunch</strong></td>
+              <td>✅ Sat &amp; Sun</td>
+              <td>Planned</td>
+              <td>Under Evaluation</td>
+            </tr>
+            <tr>
+              <td><strong>Craft Bar &amp; Zero-Proof</strong></td>
+              <td>✅ Open Daily</td>
+              <td>Planned Expanded Bar</td>
+              <td>Under Evaluation</td>
+            </tr>
+            <tr>
+              <td><strong>Private Dining Room</strong></td>
+              <td>✅ The Ember Room</td>
+              <td>Planned Private Suite</td>
+              <td>Under Evaluation</td>
+            </tr>
+            <tr>
+              <td><strong>Reservations &amp; Takeout</strong></td>
+              <td>✅ Active</td>
+              <td>❌ Not Active Yet</td>
+              <td>❌ Not Active Yet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="concierge-disclaimer-card" style="margin-top: 4rem;">
+      <p>💡 <strong>Showcase Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional restaurant showcase. South End is the primary active demonstration location. Ballantyne and Lake Norman demonstrate multi-location growth architecture.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">ORBIT <span>&amp; EMBER</span></a>
+        <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
+      </div>
+    </div>
+    <div class="portfolio-disclosure-bar">
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase concept demonstrating Dark Star Consulting's multi-location growth services.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="locations-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('loc-search-input');
+      const searchBtn = document.getElementById('loc-search-btn');
+      const useMyLocBtn = document.getElementById('use-my-loc-btn');
+      const note = document.getElementById('loc-search-result-note');
+
+      function executeSearch() {
+        const val = searchInput?.value;
+        if (window.orbitMultiLocation) {
+          const loc = window.orbitMultiLocation.calculateNearestLocation(val);
+          if (note) {
+            note.style.display = 'block';
+            note.textContent = `📍 Recommendation: ${loc.publicName} (${loc.statusLabel}) appears to be your best match.`;
+          }
+        }
+      }
+
+      searchBtn?.addEventListener('click', executeSearch);
+      useMyLocBtn?.addEventListener('click', () => {
+        if (note) {
+          note.style.display = 'block';
+          note.textContent = "📍 Geolocation suggestion: Orbit & Ember South End is your nearest open flagship location.";
+        }
+      });
+
+      document.querySelectorAll('.set-pref-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-id');
+          if (window.orbitMultiLocation) {
+            window.orbitMultiLocation.setPreferredLocation(id);
+            alert("✅ South End set as your preferred location!");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
