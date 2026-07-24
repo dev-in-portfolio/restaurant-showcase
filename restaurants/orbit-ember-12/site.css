@@ -368,3 +368,53 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* Ken Burns Background Motion Effect */
+.cinematic-bg-layer.ken-burns-active {
+  animation: kenBurnsZoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurnsZoom {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+
+/* Dish Inspector Modal Overlay */
+.dish-inspector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(6, 5, 4, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.dish-inspector-modal {
+  background: rgba(14, 11, 9, 0.94);
+  border: 1px solid var(--color-primary-brand);
+  border-radius: 24px;
+  max-width: 680px;
+  width: 100%;
+  padding: 2.8rem;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.95);
+  position: relative;
+}
+
+.dish-inspector-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-primary-brand);
+  font-size: 1.8rem;
+  cursor: pointer;
+}

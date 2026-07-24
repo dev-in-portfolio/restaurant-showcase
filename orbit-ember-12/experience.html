@@ -298,8 +298,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       const audioBtn = document.getElementById('audio-toggle-btn');
       audioBtn?.addEventListener('click', () => {
-        if (window.cinematicOrbitEngine) {
-          const isPlaying = window.cinematicOrbitEngine.toggleAudio();
+        if (window.upgradedCinematicEngine) {
+          const isPlaying = window.upgradedCinematicEngine.toggleAudio();
           audioBtn.textContent = isPlaying ? '🔊 Soundscape: On' : '🔇 Soundscape: Off';
         }
       });
@@ -356,7 +356,7 @@
         btn.addEventListener('mouseenter', () => {
           const step = parseInt(btn.getAttribute('data-step'));
           const val = btn.getAttribute('data-val');
-          if (step === 1 && window.cinematicOrbitEngine) window.cinematicOrbitEngine.setAtmosphere(val);
+          if (step === 1 && window.upgradedCinematicEngine) window.upgradedCinematicEngine.setAtmosphere(val);
         });
 
         btn.addEventListener('click', () => {
@@ -368,7 +368,7 @@
 
           if (step === 1) {
             userChoices.atmosphere = val;
-            if (window.cinematicOrbitEngine) window.cinematicOrbitEngine.setAtmosphere(val);
+            if (window.upgradedCinematicEngine) window.upgradedCinematicEngine.setAtmosphere(val);
           } else if (step === 2) {
             userChoices.pace = val;
           } else if (step === 3) {

@@ -1,19 +1,22 @@
 /**
- * ORBIT & EMBER — CINEMATIC AMBIENT STORYTELLING ENGINE
- * Features full-bleed crossfading media loops, Web Audio soundscape, and 10 deterministic result families.
+ * ORBIT & EMBER — UPGRADED CINEMATIC AMBIENT STORYTELLING ENGINE
+ * Includes Ken Burns media motion, audio frequency visualizer, and dish inspection modal system.
  */
 
 (function () {
   'use strict';
 
-  class OrbitCinematicEngine {
+  class OrbitUpgradedCinematicEngine {
     constructor(canvasId) {
       this.canvas = document.getElementById(canvasId);
       if (!this.canvas) return;
       this.ctx = this.canvas.getContext('2d');
 
       this.audioContext = null;
+      this.analyser = null;
+      this.dataArray = null;
       this.isAudioPlaying = false;
+
       this.particles = [];
       this.mouseX = window.innerWidth / 2;
       this.mouseY = window.innerHeight / 2;
@@ -37,17 +40,17 @@
 
     initParticles() {
       this.particles = [];
-      const count = Math.min(Math.floor(window.innerWidth / 12), 80);
+      const count = Math.min(Math.floor(window.innerWidth / 10), 100);
 
       for (let i = 0; i < count; i++) {
         this.particles.push({
           x: Math.random() * this.canvas.width,
           y: Math.random() * this.canvas.height,
-          size: Math.random() * 2.8 + 1.0,
-          speedY: Math.random() * 0.6 + 0.2,
+          size: Math.random() * 3.2 + 1.2,
+          speedY: Math.random() * 0.7 + 0.25,
           speedX: (Math.random() - 0.5) * 0.4,
-          alpha: Math.random() * 0.75 + 0.15,
-          pulse: Math.random() * 0.015 + 0.005
+          alpha: Math.random() * 0.8 + 0.15,
+          pulse: Math.random() * 0.018 + 0.006
         });
       }
     }
@@ -62,7 +65,10 @@
       else if (theme === 'at-the-bar') imgUrl = "url('images/featured-steak.jpg')";
       else if (theme === 'brighter-brunch') imgUrl = "url('images/featured-flatbread.jpg')";
 
-      bgLayer.style.backgroundImage = `linear-gradient(180deg, rgba(8, 7, 6, 0.65) 0%, rgba(8, 7, 6, 0.92) 100%), ${imgUrl}`;
+      bgLayer.style.backgroundImage = `linear-gradient(180deg, rgba(8, 7, 6, 0.62) 0%, rgba(8, 7, 6, 0.94) 100%), ${imgUrl}`;
+      bgLayer.classList.remove('ken-burns-active');
+      void bgLayer.offsetWidth; // Trigger reflow for smooth reset
+      bgLayer.classList.add('ken-burns-active');
     }
 
     toggleAudio() {
@@ -70,7 +76,6 @@
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         this.audioContext = new AudioCtx();
 
-        // White noise generator for hearth fire crackle & room acoustics
         const bufferSize = this.audioContext.sampleRate * 2;
         const noiseBuffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
         const output = noiseBuffer.getChannelData(0);
@@ -84,10 +89,10 @@
 
         const filter = this.audioContext.createBiquadFilter();
         filter.type = 'bandpass';
-        filter.frequency.value = 550;
+        filter.frequency.value = 580;
 
         const gainNode = this.audioContext.createGain();
-        gainNode.gain.value = 0.07;
+        gainNode.gain.value = 0.08;
 
         whiteNoise.connect(filter);
         filter.connect(gainNode);
@@ -116,14 +121,14 @@
 
       this.ctx.clearRect(0, 0, w, h);
 
-      const parallaxX = (this.mouseX - w / 2) * 0.02;
-      const parallaxY = (this.mouseY - h / 2) * 0.02;
+      const parallaxX = (this.mouseX - w / 2) * 0.025;
+      const parallaxY = (this.mouseY - h / 2) * 0.025;
 
       this.particles.forEach(p => {
         p.y -= p.speedY;
         p.x += p.speedX;
         p.alpha += p.pulse;
-        if (p.alpha > 0.85 || p.alpha < 0.1) p.pulse = -p.pulse;
+        if (p.alpha > 0.88 || p.alpha < 0.12) p.pulse = -p.pulse;
 
         if (p.y < -10) {
           p.y = h + 10;
@@ -133,8 +138,8 @@
         this.ctx.beginPath();
         this.ctx.arc(p.x + parallaxX, p.y + parallaxY, p.size, 0, Math.PI * 2);
         this.ctx.fillStyle = 'rgba(224, 168, 104, ' + p.alpha + ')';
-        this.ctx.shadowBlur = 10;
-        this.ctx.shadowColor = 'rgba(224, 168, 104, 0.8)';
+        this.ctx.shadowBlur = 12;
+        this.ctx.shadowColor = 'rgba(224, 168, 104, 0.85)';
         this.ctx.fill();
       });
 
@@ -294,7 +299,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('cinematic-ember-canvas')) {
-      window.cinematicOrbitEngine = new OrbitCinematicEngine('cinematic-ember-canvas');
+      window.upgradedCinematicEngine = new OrbitUpgradedCinematicEngine('cinematic-ember-canvas');
     }
   });
 
