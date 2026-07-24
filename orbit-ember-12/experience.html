@@ -19,7 +19,7 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="notice-bar">Orbit &amp; Ember Kitchen + Bar • Level 0 + Signature Interactive Experience Showcase</div>
 
-  <!-- Fullscreen 3D Canvas Background -->
+  <!-- Ambient Animated Particle Background -->
   <canvas id="orbit-bg-canvas" class="orbit-bg-canvas"></canvas>
 
   <!-- Interactive Toast Notification Banner -->
@@ -43,19 +43,25 @@
     </div>
   </header>
 
-  <main id="main-content" class="immersive-experience-container">
-    <!-- Entry Screen (Full Screen Viewport) -->
+  <main id="main-content" class="container" style="padding-top: 2rem; padding-bottom: 5rem; position: relative; z-index: 10;">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; <span>The Orbit Experience</span>
+    </nav>
+
+    <!-- Entry Screen with Hero Imagery -->
     <section id="exp-entry-screen" class="exp-screen active">
-      <div class="section-header-center">
-        <span class="subhead-tag">Signature Digital Experience</span>
-        <h1 class="hero-title">Find Your <em>Orbit</em></h1>
-        <p class="hero-desc">Every evening begins a little differently. Choose the atmosphere, pace, flavors, and kind of table you have in mind, then explore one possible way the night could unfold.</p>
-        
-        <div style="margin-top: 2.2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <button id="begin-exp-btn" class="cta-btn" style="padding: 1rem 2.8rem; font-size: 1.05rem; cursor: pointer;">Begin the Experience</button>
-          <a href="menu.html" class="btn-secondary" style="padding: 1rem 2.2rem;">View Full Menu</a>
+      <div class="exp-hero-card" style="background-image: linear-gradient(180deg, rgba(13,12,11,0.3) 0%, rgba(13,12,11,0.92) 100%), url('images/wood-fired-hearth.jpg');">
+        <div class="section-header-center" style="margin-bottom: 0;">
+          <span class="subhead-tag">Signature Digital Experience</span>
+          <h1 class="hero-title">Find Your <em>Orbit</em></h1>
+          <p class="hero-desc">Every evening begins a little differently. Choose the atmosphere, pace, flavors, and kind of table you have in mind, then explore one possible way the night could unfold.</p>
+          
+          <div style="margin-top: 2.2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button id="begin-exp-btn" class="cta-btn" style="padding: 1rem 2.8rem; font-size: 1.05rem; cursor: pointer;">Begin the Experience</button>
+            <a href="menu.html" class="btn-secondary" style="padding: 1rem 2.2rem;">View Full Menu</a>
+          </div>
+          <p style="font-size: 0.82rem; color: #a39b90; margin-top: 1.8rem;">💡 <em>This is an editorial exploration, not a reservation, order, or guarantee of menu availability.</em></p>
         </div>
-        <p style="font-size: 0.82rem; color: #a39b90; margin-top: 1.8rem;">💡 <em>This is an editorial exploration, not a reservation, order, or guarantee of menu availability.</em></p>
       </div>
     </section>
 
@@ -74,37 +80,61 @@
         </div>
       </div>
 
-      <!-- Step 1: Atmosphere -->
+      <!-- Step 1: Atmosphere (Rich Image Cards) -->
       <div id="step-1" class="step-card active">
         <span class="step-badge">Step 1 of 4 • Atmosphere</span>
         <h2>Where Does the Evening Begin?</h2>
-        <p class="step-desc">Select an atmosphere below to see the environment shift in real-time.</p>
+        <p class="step-desc">Choose the atmosphere that feels closest to the night you have in mind.</p>
 
-        <div class="choice-cards-grid">
-          <button class="choice-card" data-step="1" data-val="candlelight">
-            <span class="choice-icon">🕯️</span>
-            <h3>Candlelight</h3>
-            <p>Warm light, dark wood, a slower table, and room to stay awhile.</p>
+        <div class="choice-cards-grid visual-image-grid">
+          <button class="choice-card img-card" data-step="1" data-val="candlelight">
+            <div class="card-img-wrapper">
+              <img src="images/lounge-ambiance.jpg" alt="Candlelight atmosphere">
+            </div>
+            <div class="card-text-body">
+              <h3>🕯️ Candlelight</h3>
+              <p>Warm light, dark wood, a slower table, and room to stay awhile.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="1" data-val="golden-hour">
-            <span class="choice-icon">🌅</span>
-            <h3>Golden Hour</h3>
-            <p>Soft daylight, cocktails, and the transition into evening.</p>
+
+          <button class="choice-card img-card" data-step="1" data-val="golden-hour">
+            <div class="card-img-wrapper">
+              <img src="images/cosmic-cocktail.jpg" alt="Golden Hour atmosphere">
+            </div>
+            <div class="card-text-body">
+              <h3>🌅 Golden Hour</h3>
+              <p>Soft daylight, cocktails, and the transition into evening.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="1" data-val="by-the-fire">
-            <span class="choice-icon">🔥</span>
-            <h3>By the Fire</h3>
-            <p>Live flame, deeper flavors, and a seat near the hearth kitchen.</p>
+
+          <button class="choice-card img-card" data-step="1" data-val="by-the-fire">
+            <div class="card-img-wrapper">
+              <img src="images/wood-fired-hearth.jpg" alt="By the Fire atmosphere">
+            </div>
+            <div class="card-text-body">
+              <h3>🔥 By the Fire</h3>
+              <p>Live flame, deeper flavors, and a seat near the hearth kitchen.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="1" data-val="at-the-bar">
-            <span class="choice-icon">🍸</span>
-            <h3>At the Bar</h3>
-            <p>Cocktails, zero-proof drinks, and small hearth plates.</p>
+
+          <button class="choice-card img-card" data-step="1" data-val="at-the-bar">
+            <div class="card-img-wrapper">
+              <img src="images/cosmic-cocktail.jpg" alt="At the Bar atmosphere">
+            </div>
+            <div class="card-text-body">
+              <h3>🍸 At the Bar</h3>
+              <p>Cocktails, zero-proof drinks, and small hearth plates.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="1" data-val="brighter-brunch">
-            <span class="choice-icon">🍳</span>
-            <h3>Brighter Brunch</h3>
-            <p>Specialty coffee, morning light, and daytime dishes.</p>
+
+          <button class="choice-card img-card" data-step="1" data-val="brighter-brunch">
+            <div class="card-img-wrapper">
+              <img src="images/featured-flatbread.jpg" alt="Brighter Brunch atmosphere">
+            </div>
+            <div class="card-text-body">
+              <h3>🍳 Brighter Brunch</h3>
+              <p>Specialty coffee, morning light, and daytime dishes.</p>
+            </div>
           </button>
         </div>
       </div>
@@ -144,42 +174,71 @@
         </div>
       </div>
 
-      <!-- Step 3: Flavor -->
+      <!-- Step 3: Flavor (Rich Food & Drink Images) -->
       <div id="step-3" class="step-card" style="display: none;">
         <span class="step-badge">Step 3 of 4 • Flavor Direction</span>
         <h2>What Sounds Good Right Now?</h2>
         <p class="step-desc">Choose a flavor direction rather than a specific dish.</p>
 
-        <div class="choice-cards-grid">
-          <button class="choice-card" data-step="3" data-val="deep-savory">
-            <span class="choice-icon">🥩</span>
-            <h3>Deep &amp; Savory</h3>
-            <p>Black garlic, braised rib, red wine, and roasted roots.</p>
+        <div class="choice-cards-grid visual-image-grid">
+          <button class="choice-card img-card" data-step="3" data-val="deep-savory">
+            <div class="card-img-wrapper">
+              <img src="images/featured-steak.jpg" alt="Deep & Savory">
+            </div>
+            <div class="card-text-body">
+              <h3>🥩 Deep &amp; Savory</h3>
+              <p>Black garlic, braised rib, red wine, and roasted roots.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="3" data-val="bright-herbal">
-            <span class="choice-icon">🌿</span>
-            <h3>Bright &amp; Herbal</h3>
-            <p>Citrus, fresh herbs, acidity, and a cleaner finish.</p>
+
+          <button class="choice-card img-card" data-step="3" data-val="bright-herbal">
+            <div class="card-img-wrapper">
+              <img src="images/cosmic-cocktail.jpg" alt="Bright & Herbal">
+            </div>
+            <div class="card-text-body">
+              <h3>🌿 Bright &amp; Herbal</h3>
+              <p>Citrus, fresh herbs, acidity, and a cleaner finish.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="3" data-val="smoky-charred">
-            <span class="choice-icon">🔥</span>
-            <h3>Smoky &amp; Charred</h3>
-            <p>Live fire, roasted oysters, pepper, and direct embers.</p>
+
+          <button class="choice-card img-card" data-step="3" data-val="smoky-charred">
+            <div class="card-img-wrapper">
+              <img src="images/wood-fired-hearth.jpg" alt="Smoky & Charred">
+            </div>
+            <div class="card-text-body">
+              <h3>🔥 Smoky &amp; Charred</h3>
+              <p>Live fire, roasted oysters, pepper, and direct embers.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="3" data-val="rich-comforting">
-            <span class="choice-icon">🧈</span>
-            <h3>Rich &amp; Comforting</h3>
-            <p>Brown butter, potatoes, cultured dairy, and pastry warmth.</p>
+
+          <button class="choice-card img-card" data-step="3" data-val="rich-comforting">
+            <div class="card-img-wrapper">
+              <img src="images/featured-flatbread.jpg" alt="Rich & Comforting">
+            </div>
+            <div class="card-text-body">
+              <h3>🧈 Rich &amp; Comforting</h3>
+              <p>Brown butter, potatoes, cultured dairy, and pastry warmth.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="3" data-val="fresh-zero-proof">
-            <span class="choice-icon">🍃</span>
-            <h3>Fresh &amp; Spirit-Free</h3>
-            <p>Wild blackberry, tea, rosemary, and zero-proof balance.</p>
+
+          <button class="choice-card img-card" data-step="3" data-val="fresh-zero-proof">
+            <div class="card-img-wrapper">
+              <img src="images/cosmic-cocktail.jpg" alt="Fresh & Spirit-Free">
+            </div>
+            <div class="card-text-body">
+              <h3>🍃 Fresh &amp; Spirit-Free</h3>
+              <p>Wild blackberry, tea, rosemary, and zero-proof balance.</p>
+            </div>
           </button>
-          <button class="choice-card" data-step="3" data-val="sweet-finish">
-            <span class="choice-icon">🍯</span>
-            <h3>Sweet Finish</h3>
-            <p>Dark chocolate, burnt honey, espresso, and warm spice.</p>
+
+          <button class="choice-card img-card" data-step="3" data-val="sweet-finish">
+            <div class="card-img-wrapper">
+              <img src="images/featured-flatbread.jpg" alt="Sweet Finish">
+            </div>
+            <div class="card-text-body">
+              <h3>🍯 Sweet Finish</h3>
+              <p>Dark chocolate, burnt honey, espresso, and warm spice.</p>
+            </div>
           </button>
         </div>
       </div>
@@ -241,44 +300,49 @@
       </div>
     </section>
 
-    <!-- Result Reveal Screen -->
+    <!-- Result Reveal Screen with Featured Dish Cover Image -->
     <section id="exp-result-screen" class="exp-screen" style="display: none;">
       <div class="result-card-container">
-        <span class="subhead-tag" id="res-eyebrow">Your Orbit &amp; Ember Evening</span>
-        <h1 class="result-title" id="res-title">The Candlelit Orbit</h1>
-        <p class="result-intro" id="res-intro">Warm light, a measured pace, and a dinner that leaves room for one more course around the hearth.</p>
-
-        <div class="result-menu-path">
-          <div class="res-path-box">
-            <span class="res-path-label">🍸 Begin With</span>
-            <p id="res-begin">Copper Moon (Cocktail) &amp; Hearth Bread</p>
-          </div>
-          <div class="res-path-box">
-            <span class="res-path-label">🥩 Bring to the Table</span>
-            <p id="res-table">Charred Carrots &amp; Black Garlic Short Rib</p>
-          </div>
-          <div class="res-path-box">
-            <span class="res-path-label">🍯 Finish With</span>
-            <p id="res-finish">Burnt Honey Cheesecake</p>
-          </div>
-          <div class="res-path-box highlight-zp">
-            <span class="res-path-label">🌿 Zero-Proof Alternative</span>
-            <p id="res-zp">Lunar Bloom (Wild Blackberry &amp; Lime)</p>
-          </div>
+        <div class="result-media-header">
+          <img src="images/featured-steak.jpg" alt="Featured Orbit & Ember Dish" class="result-cover-img">
+          <span class="result-badge-overlay" id="res-eyebrow">Your Orbit &amp; Ember Evening</span>
         </div>
 
-        <div class="res-actions-group" style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a id="res-primary-cta" href="reserve.html" class="cta-btn" style="padding: 0.9rem 2rem;">Reserve a Table for Two</a>
-          <a href="menu.html" class="btn-secondary" style="padding: 0.9rem 1.8rem;">View Full Menu</a>
-          <button id="save-exp-btn" class="btn-secondary" style="cursor: pointer;">🔖 Save This Evening</button>
-          <button id="share-exp-btn" class="btn-secondary" style="cursor: pointer;">🔗 Share Result Link</button>
-          <button id="revise-exp-btn" class="btn-secondary" style="cursor: pointer;">🔄 Change Answers</button>
+        <div style="padding: 2.5rem 2rem 2rem 2rem;">
+          <h1 class="result-title" id="res-title">The Candlelit Orbit</h1>
+          <p class="result-intro" id="res-intro">Warm light, a measured pace, and a dinner that leaves room for one more course around the hearth.</p>
+
+          <div class="result-menu-path">
+            <div class="res-path-box">
+              <span class="res-path-label">🍸 Begin With</span>
+              <p id="res-begin">Copper Moon (Cocktail) &amp; Hearth Bread</p>
+            </div>
+            <div class="res-path-box">
+              <span class="res-path-label">🥩 Bring to the Table</span>
+              <p id="res-table">Charred Carrots &amp; Black Garlic Short Rib</p>
+            </div>
+            <div class="res-path-box">
+              <span class="res-path-label">🍯 Finish With</span>
+              <p id="res-finish">Burnt Honey Cheesecake</p>
+            </div>
+            <div class="res-path-box highlight-zp">
+              <span class="res-path-label">🌿 Zero-Proof Alternative</span>
+              <p id="res-zp">Lunar Bloom (Wild Blackberry &amp; Lime)</p>
+            </div>
+          </div>
+
+          <div class="res-actions-group" style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a id="res-primary-cta" href="reserve.html" class="cta-btn" style="padding: 0.9rem 2rem;">Reserve a Table for Two</a>
+            <a href="menu.html" class="btn-secondary" style="padding: 0.9rem 1.8rem;">View Full Menu</a>
+            <button id="save-exp-btn" class="btn-secondary" style="cursor: pointer;">🔖 Save This Evening</button>
+            <button id="share-exp-btn" class="btn-secondary" style="cursor: pointer;">🔗 Share Result Link</button>
+            <button id="revise-exp-btn" class="btn-secondary" style="cursor: pointer;">🔄 Change Answers</button>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Main Footer Positioned Outside the Interactive Viewport -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -328,7 +392,6 @@
         }, 3000);
       }
 
-      // State Management
       let currentStep = 1;
       const userChoices = { atmosphere: '', pace: '', flavor: '', table: '' };
 
@@ -351,7 +414,6 @@
         if (progressBar) progressBar.style.width = (stepNum * 25) + '%';
         if (prevBtn) prevBtn.style.display = stepNum > 1 ? 'inline-flex' : 'none';
 
-        // Update progress labels glow
         for (let i = 1; i <= 4; i++) {
           const lbl = document.getElementById(`prog-label-${i}`);
           if (lbl) {
@@ -366,7 +428,7 @@
         }
       }
 
-      // Card Selection Listeners
+      // Choice Card Listeners
       document.querySelectorAll('.choice-card').forEach(btn => {
         btn.addEventListener('click', () => {
           const step = parseInt(btn.getAttribute('data-step'));
@@ -379,7 +441,6 @@
             userChoices.pace = val;
           } else if (step === 3) {
             userChoices.flavor = val;
-            if (canvasEngine) canvasEngine.setFlavor(val);
           } else if (step === 4) {
             userChoices.table = val;
             let scale = 1.0;
@@ -393,7 +454,6 @@
           if (step < 4) {
             showStep(step + 1);
           } else {
-            // Trigger Transition Loader then Result
             flowWrapper.style.display = 'none';
             loaderScreen.style.display = 'block';
 
@@ -425,30 +485,25 @@
         }
       }
 
-      // Prev Button
       prevBtn?.addEventListener('click', () => {
         if (currentStep > 1) showStep(currentStep - 1);
       });
 
-      // Restart Flow
       document.getElementById('restart-flow-btn')?.addEventListener('click', () => {
         showStep(1);
       });
 
-      // Revise Answers from Result
       document.getElementById('revise-exp-btn')?.addEventListener('click', () => {
         resultScreen.style.display = 'none';
         flowWrapper.style.display = 'block';
         showStep(1);
       });
 
-      // Save Evening Button
       document.getElementById('save-exp-btn')?.addEventListener('click', () => {
         const title = document.getElementById('res-title').textContent;
         showToast(`🔖 Saved "${title}" on this device!`);
       });
 
-      // Share Result Button
       document.getElementById('share-exp-btn')?.addEventListener('click', () => {
         const title = document.getElementById('res-title').textContent;
         navigator.clipboard?.writeText(window.location.href);
