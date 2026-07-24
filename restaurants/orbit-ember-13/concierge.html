@@ -6,8 +6,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Concierge — Digital Menu Finder | Orbit &amp; Ember Kitchen + Bar</title>
-  <meta name="description" content="Choose the meal, flavor, and kind of table you have in mind, and explore a few places to begin. Fictional showcase digital menu concierge.">
+  <title>Menu Concierge — Digital Culinary Finder | Orbit &amp; Ember Kitchen + Bar</title>
+  <meta name="description" content="Choose your service, meal style, flavor direction, and drink preferences for a tailored culinary recommendation at Orbit &amp; Ember in Charlotte, NC.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-13/concierge.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 
   <!-- Toast Notification Banner -->
   <div id="toast-notification" class="toast-notification" style="display: none;">
-    <span id="toast-message">✅ Saved to this device!</span>
+    <span id="toast-message">✅ Saved to your device!</span>
   </div>
 
   <header class="site-header">
@@ -40,54 +40,91 @@
     </div>
   </header>
 
-  <main id="main-content" class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
+  <main id="main-content" class="container" style="padding-top: 2.5rem; padding-bottom: 6rem;">
     <nav class="breadcrumb-trail" aria-label="Breadcrumb">
       <a href="index.html">Home</a> &rsaquo; <span>Menu Concierge</span>
     </nav>
 
-    <!-- Header Banner -->
-    <header class="section-header-center" style="margin-bottom: 2.5rem;">
+    <!-- Hero Header -->
+    <header class="section-header-center" style="margin-bottom: 2.8rem;">
       <span class="subhead-tag">Practical Menu Discovery</span>
-      <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3.2rem; color: #ffffff;">What Sounds Good?</h1>
-      <p style="color: #e6dfd5; font-size: 1.15rem; max-width: 680px; margin: 0 auto 0.8rem;">Choose the meal, flavor, and kind of table you have in mind, and explore a few places to begin.</p>
-      <p style="font-size: 0.85rem; color: #e0a868;">💡 <em>This guide does not confirm current availability or allergy-safe preparation.</em></p>
+      <h1 class="hero-title" style="font-size: 3.6rem;">What Sounds <em>Good?</em></h1>
+      <p style="color: #e6dfd5; font-size: 1.18rem; max-width: 720px; margin: 0.8rem auto 1.2rem; line-height: 1.6;">Choose the meal, flavor, and kind of table you have in mind, and explore a few tailored places to begin.</p>
+      <p style="font-size: 0.85rem; color: #e0a868;">💡 <em>This guide provides editorial guidance and does not guarantee current availability or allergy-safe preparation.</em></p>
     </header>
 
-    <!-- Natural Language Input Box -->
-    <section class="concierge-nl-section" style="background: rgba(18, 15, 13, 0.85); border: 1px solid rgba(224, 168, 104, 0.35); border-radius: 18px; padding: 1.8rem 2.2rem; margin-bottom: 2.8rem; text-align: center;">
-      <label for="nl-search-input" style="display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;">Or describe what sounds good:</label>
-      <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; max-width: 620px; margin: 0 auto;">
-        <input type="text" id="nl-search-input" maxlength="160" placeholder="e.g. 'Something smoky to share', 'A bright zero-proof drink'..." style="flex: 1; min-width: 280px; background: rgba(0,0,0,0.65); border: 1px solid rgba(224, 168, 104, 0.5); border-radius: 30px; padding: 0.8rem 1.4rem; color: #fff; font-size: 0.95rem;">
-        <button id="nl-submit-btn" class="cta-btn" style="padding: 0.8rem 1.8rem;">Find Items</button>
+    <!-- Natural Language Concierge Search Bar -->
+    <section class="concierge-nl-section">
+      <label for="nl-search-input">Or describe what sounds good to you:</label>
+      <div class="concierge-nl-box">
+        <input type="text" id="nl-search-input" maxlength="160" placeholder="e.g. 'Something smoky to share with a zero-proof drink'...">
+        <button id="nl-submit-btn" class="cta-btn">Explore Menu</button>
       </div>
     </section>
 
     <!-- Guided 6-Stage Form Container -->
     <section id="concierge-form-container" class="concierge-card-panel">
+      
+      <!-- Progress Bar Indicator -->
+      <div class="exp-progress-header">
+        <div class="progress-labels">
+          <span id="prog-lbl-1" class="prog-label active">1. Service</span>
+          <span id="prog-lbl-2" class="prog-label">2. Style</span>
+          <span id="prog-lbl-3" class="prog-label">3. Flavor</span>
+          <span id="prog-lbl-4" class="prog-label">4. Priority</span>
+          <span id="prog-lbl-5" class="prog-label">5. Drinks</span>
+          <span id="prog-lbl-6" class="prog-label">6. Dietary</span>
+        </div>
+        <div class="exp-progress-bar">
+          <div id="c-progress-fill" class="progress-fill" style="width: 16.6%;"></div>
+        </div>
+      </div>
+
       <!-- Stage 1: Service -->
       <div id="c-stage-1" class="concierge-stage active">
-        <span class="stage-num-badge">Stage 1 of 6 • Service</span>
+        <span class="stage-num-badge">Stage 1 of 6 • Service Period</span>
         <h2>When are you joining us?</h2>
-        <div class="concierge-options-grid">
-          <button class="c-option-btn" data-stage="1" data-val="dinner">
-            <h3>Dinner</h3>
-            <p>Starters, shared plates, main dishes, drinks, and dessert.</p>
+        <p class="stage-desc">Select your dining time or service period.</p>
+
+        <div class="concierge-options-grid visual-grid">
+          <button class="c-option-card img-card" data-stage="1" data-val="dinner">
+            <div class="card-img-wrapper"><img src="images/featured-steak.jpg" alt="Dinner at Orbit & Ember"></div>
+            <div class="card-text-body">
+              <h3>Dinner</h3>
+              <p>Starters, shared plates, main dishes, cocktails, and dessert.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="1" data-val="brunch">
-            <h3>Brunch</h3>
-            <p>Savory and sweet daytime plates, coffee, cocktails, and zero-proof drinks.</p>
+
+          <button class="c-option-card img-card" data-stage="1" data-val="brunch">
+            <div class="card-img-wrapper"><img src="images/featured-flatbread.jpg" alt="Brunch at Orbit & Ember"></div>
+            <div class="card-text-body">
+              <h3>Brunch</h3>
+              <p>Savory and sweet daytime plates, specialty coffee, spritzes.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="1" data-val="drinks-small-plates">
-            <h3>Drinks and Small Plates</h3>
-            <p>Cocktails, zero-proof drinks, and smaller plates.</p>
+
+          <button class="c-option-card img-card" data-stage="1" data-val="drinks-small-plates">
+            <div class="card-img-wrapper"><img src="images/cosmic-cocktail.jpg" alt="Drinks and Small Plates"></div>
+            <div class="card-text-body">
+              <h3>Drinks &amp; Small Plates</h3>
+              <p>Craft cocktails, zero-proof drinks, and hearth starters.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="1" data-val="dessert-after-dinner">
-            <h3>Dessert and After Dinner</h3>
-            <p>Dessert, coffee, cocktails, and zero-proof finishes.</p>
+
+          <button class="c-option-card img-card" data-stage="1" data-val="dessert-after-dinner">
+            <div class="card-img-wrapper"><img src="images/lounge-ambiance.jpg" alt="Dessert and After Dinner"></div>
+            <div class="card-text-body">
+              <h3>Dessert &amp; After Dinner</h3>
+              <p>Burnt honey cheesecake, dark chocolate, espresso, and digestifs.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="1" data-val="all">
-            <h3>Just Exploring</h3>
-            <p>Browse without selecting one service.</p>
+
+          <button class="c-option-card img-card" data-stage="1" data-val="all">
+            <div class="card-img-wrapper"><img src="images/wood-fired-hearth.jpg" alt="Just Exploring"></div>
+            <div class="card-text-body">
+              <h3>Just Exploring</h3>
+              <p>Browse recommendations across all service periods.</p>
+            </div>
           </button>
         </div>
       </div>
@@ -96,30 +133,32 @@
       <div id="c-stage-2" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 2 of 6 • Meal Style</span>
         <h2>How do you want to approach the table?</h2>
+        <p class="stage-desc">Choose the pace and format of your meal.</p>
+
         <div class="concierge-options-grid">
-          <button class="c-option-btn" data-stage="2" data-val="focused">
+          <button class="c-option-card" data-stage="2" data-val="focused">
             <h3>One Focused Plate</h3>
-            <p>A direct path to one main dish.</p>
+            <p>A direct path to one outstanding main dish.</p>
           </button>
-          <button class="c-option-btn" data-stage="2" data-val="sharing">
+          <button class="c-option-card" data-stage="2" data-val="sharing">
             <h3>A Few Things to Share</h3>
-            <p>Several starters or smaller plates for the table.</p>
+            <p>Several starters or smaller plates passed across the table.</p>
           </button>
-          <button class="c-option-btn" data-stage="2" data-val="full-evening">
+          <button class="c-option-card" data-stage="2" data-val="full-evening">
             <h3>A Full Evening</h3>
-            <p>A beginning, main dish, drink, and finish.</p>
+            <p>A starter, main dish, drink pairing, and sweet finish.</p>
           </button>
-          <button class="c-option-btn" data-stage="2" data-val="lighter">
+          <button class="c-option-card" data-stage="2" data-val="lighter">
             <h3>Something Lighter</h3>
-            <p>Brighter flavors and a more restrained menu path.</p>
+            <p>Brighter flavors, fresh herbs, and a restrained menu path.</p>
           </button>
-          <button class="c-option-btn" data-stage="2" data-val="comforting">
-            <h3>Comforting and Familiar</h3>
-            <p>Warm, rich, roasted, or slowly cooked.</p>
+          <button class="c-option-card" data-stage="2" data-val="comforting">
+            <h3>Comforting &amp; Familiar</h3>
+            <p>Warm butter, roasted potatoes, braised rib, and oak fire.</p>
           </button>
-          <button class="c-option-btn" data-stage="2" data-val="drinks-led">
-            <h3>Mostly Here for the Drinks</h3>
-            <p>Start with cocktails or zero-proof drinks and add smaller plates.</p>
+          <button class="c-option-card" data-stage="2" data-val="drinks-led">
+            <h3>Mostly Here for Drinks</h3>
+            <p>Begin with cocktails or zero-proof drinks and add small bites.</p>
           </button>
         </div>
       </div>
@@ -128,34 +167,55 @@
       <div id="c-stage-3" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 3 of 6 • Flavor Direction</span>
         <h2>Which flavor direction sounds closest?</h2>
-        <div class="concierge-options-grid">
-          <button class="c-option-btn" data-stage="3" data-val="deep-savory">
-            <h3>Deep and Savory</h3>
-            <p>Black garlic, mushroom, red wine, roasted flavors.</p>
+        <p class="stage-desc">Select a primary taste profile.</p>
+
+        <div class="concierge-options-grid visual-grid">
+          <button class="c-option-card img-card" data-stage="3" data-val="deep-savory">
+            <div class="card-img-wrapper"><img src="images/featured-steak.jpg" alt="Deep and Savory"></div>
+            <div class="card-text-body">
+              <h3>Deep &amp; Savory</h3>
+              <p>Black garlic, wild mushroom, braised short rib, red wine.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="3" data-val="bright-herbal">
-            <h3>Bright and Herbal</h3>
-            <p>Citrus, herbs, green flavors, acidity.</p>
+
+          <button class="c-option-card img-card" data-stage="3" data-val="bright-herbal">
+            <div class="card-img-wrapper"><img src="images/cosmic-cocktail.jpg" alt="Bright and Herbal"></div>
+            <div class="card-text-body">
+              <h3>Bright &amp; Herbal</h3>
+              <p>Citrus, garden herbs, fresh greens, clean acidity.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="3" data-val="smoky-charred">
-            <h3>Smoky and Charred</h3>
-            <p>Live fire, toasted edges, smoked pepper, char.</p>
+
+          <button class="c-option-card img-card" data-stage="3" data-val="smoky-charred">
+            <div class="card-img-wrapper"><img src="images/wood-fired-hearth.jpg" alt="Smoky and Charred"></div>
+            <div class="card-text-body">
+              <h3>Smoky &amp; Charred</h3>
+              <p>Live oak flame, toasted edges, roasted oysters, chile char.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="3" data-val="rich-comforting">
-            <h3>Rich and Comforting</h3>
-            <p>Brown butter, potato, pastry, cultured dairy.</p>
+
+          <button class="c-option-card img-card" data-stage="3" data-val="rich-comforting">
+            <div class="card-img-wrapper"><img src="images/featured-flatbread.jpg" alt="Rich and Comforting"></div>
+            <div class="card-text-body">
+              <h3>Rich &amp; Comforting</h3>
+              <p>Brown butter, crisp potato, cultured cream, brioche pastry.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="3" data-val="fresh-zero-proof">
-            <h3>Fresh and Spirit-Free</h3>
-            <p>Tea, fruit, herbs, bitterness, bubbles.</p>
+
+          <button class="c-option-card img-card" data-stage="3" data-val="fresh-zero-proof">
+            <div class="card-img-wrapper"><img src="images/cosmic-cocktail.jpg" alt="Fresh and Spirit-Free"></div>
+            <div class="card-text-body">
+              <h3>Fresh &amp; Spirit-Free</h3>
+              <p>Green tea, wild blackberry, rosemary, botanical sparkle.</p>
+            </div>
           </button>
-          <button class="c-option-btn" data-stage="3" data-val="sweet-bittersweet">
-            <h3>Sweet and Bittersweet</h3>
-            <p>Dark chocolate, burnt honey, coffee, fruit, caramel.</p>
-          </button>
-          <button class="c-option-btn" data-stage="3" data-val="open">
-            <h3>No Strong Preference</h3>
-            <p>Open to all flavor directions.</p>
+
+          <button class="c-option-card img-card" data-stage="3" data-val="sweet-bittersweet">
+            <div class="card-img-wrapper"><img src="images/featured-flatbread.jpg" alt="Sweet and Bittersweet"></div>
+            <div class="card-text-body">
+              <h3>Sweet &amp; Bittersweet</h3>
+              <p>Dark chocolate torte, burnt honey, espresso crema, caramel.</p>
+            </div>
           </button>
         </div>
       </div>
@@ -164,31 +224,16 @@
       <div id="c-stage-4" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 4 of 6 • Food Priority</span>
         <h2>What are you most interested in?</h2>
+
         <div class="concierge-options-grid">
-          <button class="c-option-btn" data-stage="4" data-val="starter">
-            <h3>Starter</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="shared">
-            <h3>Shared Plate</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="main">
-            <h3>Main Dish</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="brunch">
-            <h3>Brunch Plate</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="dessert">
-            <h3>Dessert</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="cocktail">
-            <h3>Cocktail</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="zero-proof">
-            <h3>Zero-Proof Drink</h3>
-          </button>
-          <button class="c-option-btn" data-stage="4" data-val="flexible">
-            <h3>Surprise Me</h3>
-          </button>
+          <button class="c-option-card" data-stage="4" data-val="starter"><h3>Starter</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="shared"><h3>Shared Plate</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="main"><h3>Main Dish</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="brunch"><h3>Brunch Plate</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="dessert"><h3>Dessert</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="cocktail"><h3>Cocktail</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="zero-proof"><h3>Zero-Proof Drink</h3></button>
+          <button class="c-option-card" data-stage="4" data-val="flexible"><h3>Surprise Me</h3></button>
         </div>
       </div>
 
@@ -196,77 +241,71 @@
       <div id="c-stage-5" class="concierge-stage" style="display: none;">
         <span class="stage-num-badge">Stage 5 of 6 • Drink Preference</span>
         <h2>Should drinks be included?</h2>
+
         <div class="concierge-options-grid">
-          <button class="c-option-btn" data-stage="5" data-val="alcohol-allowed">
+          <button class="c-option-card" data-stage="5" data-val="alcohol-allowed">
             <h3>Cocktails Are Welcome</h3>
+            <p>Include craft spirit pairings.</p>
           </button>
-          <button class="c-option-btn" data-stage="5" data-val="zero-proof-only">
+          <button class="c-option-card" data-stage="5" data-val="zero-proof-only">
             <h3>Zero-Proof Only</h3>
+            <p>Show only spirit-free botanical drinks.</p>
           </button>
-          <button class="c-option-btn" data-stage="5" data-val="both">
+          <button class="c-option-card" data-stage="5" data-val="both">
             <h3>Show Both</h3>
+            <p>Display both cocktails and zero-proof pairings.</p>
           </button>
-          <button class="c-option-btn" data-stage="5" data-val="none">
+          <button class="c-option-card" data-stage="5" data-val="none">
             <h3>No Drink Suggestions</h3>
+            <p>Focus purely on food plates.</p>
           </button>
         </div>
       </div>
 
       <!-- Stage 6: Dietary Guidance -->
       <div id="c-stage-6" class="concierge-stage" style="display: none;">
-        <span class="stage-num-badge">Stage 6 of 6 • General Dietary Guidance</span>
+        <span class="stage-num-badge">Stage 6 of 6 • Dietary Guidance</span>
         <h2>Would general menu guidance help?</h2>
+
         <div class="concierge-options-grid">
-          <button class="c-option-btn" data-stage="6" data-val="none">
-            <h3>No Dietary Filter</h3>
-          </button>
-          <button class="c-option-btn" data-stage="6" data-val="vegetarian">
-            <h3>Vegetarian</h3>
-          </button>
-          <button class="c-option-btn" data-stage="6" data-val="vegan">
-            <h3>Vegan</h3>
-          </button>
-          <button class="c-option-btn" data-stage="6" data-val="gluten-conscious">
-            <h3>Gluten-Conscious</h3>
-          </button>
-          <button class="c-option-btn" data-stage="6" data-val="no-pork">
-            <h3>No Pork</h3>
-          </button>
-          <button class="c-option-btn" data-stage="6" data-val="no-shellfish">
-            <h3>No Shellfish</h3>
-          </button>
-          <button id="allergy-modal-btn" class="c-option-btn" style="border-color: rgba(239, 68, 68, 0.5);">
+          <button class="c-option-card" data-stage="6" data-val="none"><h3>No Dietary Filter</h3></button>
+          <button class="c-option-card" data-stage="6" data-val="vegetarian"><h3>Vegetarian</h3></button>
+          <button class="c-option-card" data-stage="6" data-val="vegan"><h3>Vegan</h3></button>
+          <button class="c-option-card" data-stage="6" data-val="gluten-conscious"><h3>Gluten-Conscious</h3></button>
+          <button class="c-option-card" data-stage="6" data-val="no-pork"><h3>No Pork</h3></button>
+          <button class="c-option-card" data-stage="6" data-val="no-shellfish"><h3>No Shellfish</h3></button>
+          <button id="allergy-modal-btn" class="c-option-card" style="border-color: rgba(239, 68, 68, 0.5);">
             <h3 style="color: #fca5a5;">I Need Allergy Assistance</h3>
-            <p>Click for mandatory safety disclosure.</p>
+            <p>Click for safety disclaimer &amp; contact.</p>
           </button>
         </div>
       </div>
 
       <!-- Navigation Actions -->
-      <div class="concierge-nav-bar" style="margin-top: 2rem; display: flex; justify-content: space-between;">
+      <div class="concierge-nav-bar">
         <button id="c-prev-btn" class="btn-secondary" style="display: none;">&larr; Back</button>
         <button id="c-reset-btn" class="btn-secondary" style="margin-left: auto;">Restart Concierge</button>
       </div>
     </section>
 
     <!-- Results Reveal Section -->
-    <section id="concierge-results-section" style="display: none; margin-top: 2.5rem;">
-      <div class="section-header-center" style="margin-bottom: 2rem;">
-        <span class="subhead-tag">Recommended Places to Begin</span>
-        <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; color: #fff;">A Few Places to Begin</h2>
-        <p style="color: #e6dfd5;">Recommendations are editorial guidance based on your selected dining style.</p>
+    <section id="concierge-results-section" style="display: none; margin-top: 3rem;">
+      <div class="section-header-center" style="margin-bottom: 2.5rem;">
+        <span class="subhead-tag">Tailored Recommendations</span>
+        <h2 class="hero-title" style="font-size: 3.2rem;">A Few Places to <em>Begin</em></h2>
+        <p style="color: #e6dfd5; font-size: 1.1rem;">These recommendations reflect your selections from our authoritative hearth menu.</p>
       </div>
 
       <div id="results-cards-grid" class="concierge-results-grid">
-        <!-- Injected via JavaScript -->
+        <!-- Injected dynamically -->
       </div>
 
-      <div style="margin-top: 2.8rem; text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="menu.html" class="cta-btn">View Full Menu</a>
-        <button id="c-revise-btn" class="btn-secondary">🔄 Change Preferences</button>
+      <div style="margin-top: 3rem; text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="menu.html" class="cta-btn" style="padding: 1rem 2.5rem;">View Full Menu</a>
+        <button id="c-revise-btn" class="btn-secondary" style="padding: 1rem 2rem;">🔄 Change Preferences</button>
       </div>
 
-      <div style="margin-top: 2rem; padding: 1.2rem 1.8rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 0.85rem; color: #aba296; text-align: center;">
+      <div class="concierge-disclaimer-card">
         <p>💡 <strong>Required Notice:</strong> Recommendations are editorial guidance. Menu items, pricing, ingredients, service periods, and availability may change. General dietary markers do not guarantee allergen-free preparation.</p>
       </div>
     </section>
@@ -275,8 +314,8 @@
   <!-- Allergy Modal -->
   <div id="allergy-modal" class="dish-inspector-overlay" style="display: none;">
     <div class="dish-inspector-modal" style="text-align: center;">
-      <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.2rem; color: #fff; margin-bottom: 0.8rem;">Allergy &amp; Dietary Safety</h2>
-      <p style="color: #e6dfd5; font-size: 1.05rem; margin-bottom: 1.8rem; line-height: 1.6;">For allergies or medical dietary needs, please contact the restaurant directly. The kitchen handles common allergens, and cross-contact may occur. The Menu Concierge cannot determine whether a dish is safe for a specific allergy.</p>
+      <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.4rem; color: #fff; margin-bottom: 0.8rem;">Allergy &amp; Dietary Safety</h2>
+      <p style="color: #e6dfd5; font-size: 1.08rem; margin-bottom: 1.8rem; line-height: 1.6;">For allergies or medical dietary needs, please contact the restaurant directly. The kitchen handles common allergens, and cross-contact may occur. The Menu Concierge cannot determine whether a dish is safe for a specific allergy.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="visit.html" class="cta-btn">Contact Orbit &amp; Ember</a>
         <button id="close-allergy-modal" class="btn-secondary">Return to Concierge</button>
@@ -291,11 +330,9 @@
         <p>Contemporary American wood-fired hearth cooking &amp; craft mixology in Charlotte's South End.</p>
       </div>
     </div>
-
     <div class="portfolio-disclosure-bar">
-      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase restaurant concept created to demonstrate Dark Star Consulting's digital menu concierge services.</p>
+      <p>💡 <strong>Showcase Concept Disclosure:</strong> Orbit &amp; Ember Kitchen + Bar is a fictional showcase concept demonstrating Dark Star Consulting's digital menu concierge services.</p>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2026 Orbit &amp; Ember Kitchen + Bar. All rights reserved.</p>
     </div>
@@ -320,6 +357,7 @@
       const formContainer = document.getElementById('concierge-form-container');
       const resultsSection = document.getElementById('concierge-results-section');
       const resultsGrid = document.getElementById('results-cards-grid');
+      const progressFill = document.getElementById('c-progress-fill');
 
       const allergyModal = document.getElementById('allergy-modal');
       document.getElementById('allergy-modal-btn')?.addEventListener('click', (e) => {
@@ -332,7 +370,16 @@
 
       function showStage(stageNum) {
         currentStage = stageNum;
+        if (progressFill) progressFill.style.width = (stageNum * 16.6) + '%';
         if (prevBtn) prevBtn.style.display = stageNum > 1 ? 'inline-flex' : 'none';
+
+        for (let i = 1; i <= 6; i++) {
+          const lbl = document.getElementById(`prog-lbl-${i}`);
+          if (lbl) {
+            if (i === stageNum) lbl.classList.add('active');
+            else lbl.classList.remove('active');
+          }
+        }
 
         for (let i = 1; i <= 6; i++) {
           const stage = document.getElementById(`c-stage-${i}`);
@@ -340,7 +387,7 @@
         }
       }
 
-      document.querySelectorAll('.c-option-btn').forEach(btn => {
+      document.querySelectorAll('.c-option-card').forEach(btn => {
         btn.addEventListener('click', () => {
           const stage = parseInt(btn.getAttribute('data-stage'));
           const val = btn.getAttribute('data-val');
@@ -360,7 +407,6 @@
         });
       });
 
-      // Natural Language Input Event
       document.getElementById('nl-submit-btn')?.addEventListener('click', () => {
         const input = document.getElementById('nl-search-input')?.value;
         if (input && window.menuConciergeEngine) {
@@ -397,19 +443,22 @@
               <span class="res-card-cat">${item.category.toUpperCase()} • ${item.servicePeriod.join(', ').toUpperCase()}</span>
               <h3 class="res-card-title">${item.name}</h3>
               <p class="res-card-desc">${item.shortDescription}</p>
+              
               <div class="res-why-box">
-                <span class="res-why-label">💡 Why It Fits:</span>
+                <span class="res-why-label">💡 Why It Fits Your Selections:</span>
                 <p>${whyFits}</p>
               </div>
+
               ${item.approvedPairings && item.approvedPairings.length > 0 ? `
-                <div class="res-pairing-box" style="margin-top: 0.8rem; padding: 0.75rem 1rem; background: rgba(224,168,104,0.12); border: 1px solid rgba(224,168,104,0.3); border-radius: 8px; font-size: 0.88rem;">
-                  <span style="color: #e0a868; font-weight: 700;">🍸 Approved Pairing:</span>
-                  <p style="color: #fff; margin-top: 0.2rem;">${item.approvedPairings[0].note}</p>
+                <div class="res-pairing-box">
+                  <span class="res-pairing-label">🍸 Sommelier Pairing Note:</span>
+                  <p>${item.approvedPairings[0].note}</p>
                 </div>
               ` : ''}
-              <div style="margin-top: 1.2rem; display: flex; gap: 0.6rem;">
-                <a href="menu.html" class="btn-secondary" style="font-size: 0.82rem; padding: 0.5rem 1rem;">View on Menu</a>
-                <button class="btn-secondary save-item-btn" data-id="${item.id}" style="font-size: 0.82rem; padding: 0.5rem 1rem;">🔖 Save</button>
+
+              <div class="res-card-actions">
+                <a href="menu.html" class="btn-secondary" style="font-size: 0.85rem; padding: 0.6rem 1.1rem;">View on Menu</a>
+                <button class="btn-secondary save-item-btn" data-id="${item.id}" style="font-size: 0.85rem; padding: 0.6rem 1.1rem;">🔖 Save Dish</button>
               </div>
             </div>
           `;
