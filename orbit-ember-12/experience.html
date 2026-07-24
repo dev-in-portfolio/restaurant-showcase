@@ -6,7 +6,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Orbit Experience — Flagship Interactive WebGL Installation | Orbit &amp; Ember</title>
+  <title>The Orbit Experience — Ultra-Polished 3D WebGL Installation | Orbit &amp; Ember</title>
   <meta name="description" content="Build the kind of evening you want to step into. Flagship 3D WebGL culinary experience at Orbit &amp; Ember in Charlotte, NC.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-12/experience.html">
 
@@ -33,7 +33,8 @@
   <header class="minimal-experience-header">
     <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
     <div class="header-right-actions">
-      <span class="exp-phase-badge">Flagship 3D Installation</span>
+      <button id="audio-toggle-btn" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.82rem; cursor: pointer;">🔊 Audio Ambience: Off</button>
+      <span class="exp-phase-badge">AAA 3D Installation</span>
       <a href="menu.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.82rem;">Exit to Full Menu</a>
     </div>
   </header>
@@ -289,9 +290,17 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let webglScene = null;
-      if (window.OrbitWebGLScene) {
-        webglScene = new window.OrbitWebGLScene('orbit-webgl-canvas');
+      if (window.OrbitMasterWebGLScene) {
+        webglScene = new window.OrbitMasterWebGLScene('orbit-webgl-canvas');
       }
+
+      const audioBtn = document.getElementById('audio-toggle-btn');
+      audioBtn?.addEventListener('click', () => {
+        if (webglScene) {
+          const isPlaying = webglScene.toggleAudio();
+          audioBtn.textContent = isPlaying ? '🔊 Audio Ambience: On' : '🔇 Audio Ambience: Off';
+        }
+      });
 
       const toast = document.getElementById('toast-notification');
       const toastMsg = document.getElementById('toast-message');
@@ -344,7 +353,6 @@
           const step = parseInt(btn.getAttribute('data-step'));
           const val = btn.getAttribute('data-val');
 
-          // Highlight selected option
           btn.parentElement.querySelectorAll('.rail-option-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
 
