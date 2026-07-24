@@ -1,4 +1,4 @@
-// The Orbit Experience — Award-Winning 3D Particle & Shader Canvas Engine
+// The Orbit Experience — Ultra-Premium 3D Canvas & Scoring Engine
 
 class OrbitCanvas3DEngine {
   constructor(canvasId) {
@@ -36,14 +36,14 @@ class OrbitCanvas3DEngine {
 
   initScene() {
     this.particles = [];
-    const count = Math.min(Math.floor(window.innerWidth / 10), 110);
+    const count = Math.min(Math.floor(window.innerWidth / 9), 120);
 
     for (let i = 0; i < count; i++) {
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
         z: Math.random() * 600 + 40,
-        size: Math.random() * 3.5 + 1.0,
+        size: Math.random() * 3.8 + 1.2,
         speedY: Math.random() * 0.9 + 0.3,
         speedX: (Math.random() - 0.5) * 0.6,
         alpha: Math.random() * 0.85 + 0.15,
@@ -52,11 +52,10 @@ class OrbitCanvas3DEngine {
       });
     }
 
-    // Heat distortion pulse rings
     this.heatWaves = [
-      { r: 20, maxR: 280, alpha: 0.5, speed: 1.5 },
-      { r: 100, maxR: 280, alpha: 0.35, speed: 1.5 },
-      { r: 180, maxR: 280, alpha: 0.2, speed: 1.5 }
+      { r: 20, maxR: 300, alpha: 0.5, speed: 1.6 },
+      { r: 110, maxR: 300, alpha: 0.35, speed: 1.6 },
+      { r: 200, maxR: 300, alpha: 0.2, speed: 1.6 }
     ];
   }
 
@@ -72,34 +71,34 @@ class OrbitCanvas3DEngine {
     switch (this.lightingTheme) {
       case 'golden-hour':
         return {
-          glow: 'rgba(234, 179, 8, 0.35)',
+          glow: 'rgba(234, 179, 8, 0.4)',
           particles: { brand: 'rgba(234, 179, 8, ', gold: 'rgba(253, 224, 71, ', amber: 'rgba(245, 158, 11, ' },
-          bgGrad: ['#1e140d', '#2c1e13', '#0a0908']
+          bgGrad: ['#22170f', '#332316', '#090807']
         };
       case 'by-the-fire':
         return {
-          glow: 'rgba(239, 68, 68, 0.45)',
+          glow: 'rgba(239, 68, 68, 0.5)',
           particles: { brand: 'rgba(239, 68, 68, ', gold: 'rgba(252, 165, 165, ', amber: 'rgba(220, 38, 38, ' },
-          bgGrad: ['#2e0c08', '#42120b', '#0a0908']
+          bgGrad: ['#320e09', '#4a140d', '#090807']
         };
       case 'at-the-bar':
         return {
-          glow: 'rgba(168, 85, 247, 0.35)',
+          glow: 'rgba(168, 85, 247, 0.4)',
           particles: { brand: 'rgba(168, 85, 247, ', gold: 'rgba(216, 180, 254, ', amber: 'rgba(147, 51, 234, ' },
-          bgGrad: ['#130f24', '#1f173b', '#0a0908']
+          bgGrad: ['#161129', '#241a45', '#090807']
         };
       case 'brighter-brunch':
         return {
-          glow: 'rgba(251, 191, 36, 0.35)',
+          glow: 'rgba(251, 191, 36, 0.4)',
           particles: { brand: 'rgba(251, 191, 36, ', gold: 'rgba(254, 240, 138, ', amber: 'rgba(217, 119, 6, ' },
-          bgGrad: ['#261e16', '#3b2f21', '#0a0908']
+          bgGrad: ['#2b2218', '#423424', '#090807']
         };
       case 'candlelight':
       default:
         return {
-          glow: 'rgba(194, 122, 74, 0.4)',
+          glow: 'rgba(194, 122, 74, 0.45)',
           particles: { brand: 'rgba(194, 122, 74, ', gold: 'rgba(240, 186, 149, ', amber: 'rgba(180, 83, 9, ' },
-          bgGrad: ['#1a1411', '#2c201a', '#0a0908']
+          bgGrad: ['#1d1613', '#31231c', '#090807']
         };
     }
   }
@@ -108,7 +107,6 @@ class OrbitCanvas3DEngine {
     if (!this.canvas || !this.ctx) return;
     this.time += 0.015;
 
-    // Smooth Mouse Easing Parallax
     this.mouseX += (this.targetMouseX - this.mouseX) * 0.05;
     this.mouseY += (this.targetMouseY - this.mouseY) * 0.05;
 
@@ -116,10 +114,10 @@ class OrbitCanvas3DEngine {
     const height = this.canvas.height;
     const theme = this.getThemeColors();
 
-    const parallaxX = (this.mouseX - width / 2) * 0.04;
-    const parallaxY = (this.mouseY - height / 2) * 0.04;
+    const parallaxX = (this.mouseX - width / 2) * 0.045;
+    const parallaxY = (this.mouseY - height / 2) * 0.045;
 
-    // 1. Draw Radial Environmental Background Gradient
+    // Background Radial Gradient
     const bgGrad = this.ctx.createRadialGradient(width / 2 + parallaxX, height / 2 - 120 + parallaxY, 100, width / 2, height / 2, width);
     bgGrad.addColorStop(0, theme.bgGrad[1]);
     bgGrad.addColorStop(0.55, theme.bgGrad[0]);
@@ -127,7 +125,7 @@ class OrbitCanvas3DEngine {
     this.ctx.fillStyle = bgGrad;
     this.ctx.fillRect(0, 0, width, height);
 
-    // 2. Animated Heat Distortion Waves
+    // Heat Waves
     const cx = width / 2 + parallaxX;
     const cy = height * 0.62 + parallaxY;
     const baseR = Math.min(width, height) * 0.28 * this.tableScale;
@@ -135,44 +133,42 @@ class OrbitCanvas3DEngine {
     this.heatWaves.forEach(w => {
       w.r += w.speed;
       if (w.r > w.maxR) w.r = 10;
-      const alpha = Math.max(0, (1 - w.r / w.maxR) * 0.3);
+      const alpha = Math.max(0, (1 - w.r / w.maxR) * 0.35);
 
       this.ctx.beginPath();
       this.ctx.arc(cx, cy, w.r, 0, Math.PI * 2);
       this.ctx.strokeStyle = theme.glow.replace(/[\d\.]+\)$/, alpha + ')');
-      this.ctx.lineWidth = 2;
+      this.ctx.lineWidth = 2.5;
       this.ctx.stroke();
     });
 
-    // 3. Central Wood-Fired Hearth & 3D Table Surface
-    const hearthGlow = this.ctx.createRadialGradient(cx, cy, 10, cx, cy, baseR * 1.9);
+    // 3D Table Surface
+    const hearthGlow = this.ctx.createRadialGradient(cx, cy, 10, cx, cy, baseR * 2.0);
     hearthGlow.addColorStop(0, theme.glow);
     hearthGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
     this.ctx.fillStyle = hearthGlow;
     this.ctx.beginPath();
-    this.ctx.arc(cx, cy, baseR * 1.9, 0, Math.PI * 2);
+    this.ctx.arc(cx, cy, baseR * 2.0, 0, Math.PI * 2);
     this.ctx.fill();
 
-    // Perspective Elliptical Table Surface
     this.ctx.beginPath();
     this.ctx.ellipse(cx, cy, baseR * 1.45, baseR * 0.58, 0, 0, Math.PI * 2);
-    this.ctx.fillStyle = 'rgba(22, 18, 15, 0.88)';
-    this.ctx.strokeStyle = 'rgba(194, 122, 74, 0.45)';
+    this.ctx.fillStyle = 'rgba(24, 19, 16, 0.9)';
+    this.ctx.strokeStyle = 'rgba(194, 122, 74, 0.5)';
     this.ctx.lineWidth = 3.5;
     this.ctx.fill();
     this.ctx.stroke();
 
-    // Table Rim Copper Accent Ring
     this.ctx.beginPath();
     this.ctx.ellipse(cx, cy, baseR * 1.3, baseR * 0.5, 0, 0, Math.PI * 2);
-    this.ctx.strokeStyle = 'rgba(240, 186, 149, 0.35)';
+    this.ctx.strokeStyle = 'rgba(240, 186, 149, 0.4)';
     this.ctx.lineWidth = 1.5;
     this.ctx.stroke();
 
-    // 4. Render 3D Ember Particles with Orbital Drift & Mouse Response
+    // Floating Ember Particles
     this.particles.forEach(p => {
       p.y -= p.speedY;
-      p.x += p.speedX + Math.sin(this.time + p.z) * 0.3;
+      p.x += p.speedX + Math.sin(this.time + p.z) * 0.35;
       p.alpha += p.pulse;
       if (p.alpha > 0.95 || p.alpha < 0.15) p.pulse = -p.pulse;
 
@@ -199,7 +195,6 @@ class OrbitCanvas3DEngine {
   }
 }
 
-// 10 Deterministic Result Families
 const ORBIT_RESULTS = {
   candlelit: {
     id: "candlelit",
