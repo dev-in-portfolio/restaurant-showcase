@@ -526,3 +526,13 @@ h1 em, .hero-title em {
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+
+/* Global Uncropped Logo Styling */
+.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
+  object-fit: contain !important;
+  max-height: 70px !important;
+  width: auto !important;
+  padding: 4px !important;
+  display: inline-block !important;
+}

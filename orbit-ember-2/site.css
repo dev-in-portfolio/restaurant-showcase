@@ -1945,3 +1945,13 @@ main {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 12px 30px rgba(194, 122, 74, 0.4);
 }
+
+
+/* Global Uncropped Logo Styling */
+.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
+  object-fit: contain !important;
+  max-height: 70px !important;
+  width: auto !important;
+  padding: 4px !important;
+  display: inline-block !important;
+}

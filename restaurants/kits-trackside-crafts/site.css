@@ -445,3 +445,13 @@ h1, h2, h3, h4 {
   .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 24px; }
 }
+
+
+/* Global Uncropped Logo Styling */
+.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
+  object-fit: contain !important;
+  max-height: 70px !important;
+  width: auto !important;
+  padding: 4px !important;
+  display: inline-block !important;
+}

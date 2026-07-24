@@ -1035,3 +1035,13 @@ html, body {
   50% { transform: scale(1.2); opacity: 1; }
   100% { transform: scale(0.95); opacity: 0.8; }
 }
+
+
+/* Global Uncropped Logo Styling */
+.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
+  object-fit: contain !important;
+  max-height: 70px !important;
+  width: auto !important;
+  padding: 4px !important;
+  display: inline-block !important;
+}
