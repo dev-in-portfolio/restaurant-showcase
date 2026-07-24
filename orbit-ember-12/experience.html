@@ -6,7 +6,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Orbit Experience — Native 3D WebGL Installation | Orbit &amp; Ember</title>
+  <title>The Orbit Experience — 3D WebGL Restaurant Experience | Orbit &amp; Ember</title>
   <meta name="description" content="Build the kind of evening you want to step into. Flagship 3D WebGL culinary experience at Orbit &amp; Ember in Charlotte, NC.">
   <link rel="canonical" href="http://localhost:8082/restaurants/orbit-ember-12/experience.html">
 
@@ -14,14 +14,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
+  
+  <!-- Three.js 3D Graphics Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body class="experience-interactive-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Fullscreen Native 3D WebGL Canvas Layer -->
+  <!-- Fullscreen Photorealistic 3D WebGL Canvas Layer -->
   <canvas id="orbit-webgl-canvas" class="orbit-webgl-canvas"></canvas>
 
-  <!-- Interactive Toast Notification Banner -->
+  <!-- Toast Notification Banner -->
   <div id="toast-notification" class="toast-notification" style="display: none;">
     <span id="toast-message">✅ Action completed!</span>
   </div>
@@ -30,7 +33,7 @@
   <header class="minimal-experience-header">
     <a href="index.html" class="logo">ORBIT <span>&amp; EMBER</span></a>
     <div class="header-right-actions">
-      <span class="exp-phase-badge">Native 3D WebGL</span>
+      <span id="scene-focus-tag" class="exp-phase-badge">3D Focus: Hearth &amp; Dining Room</span>
       <a href="menu.html" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.82rem;">Exit to Full Menu</a>
     </div>
   </header>
@@ -53,9 +56,9 @@
       <!-- Step 1: Atmosphere -->
       <div id="step-1" class="floating-step-panel active">
         <div class="step-meta">
-          <span class="step-num-badge">Step 1 of 4</span>
+          <span class="step-num-badge">Step 1 of 4 • Atmosphere</span>
           <h2>Where Does the Evening Begin?</h2>
-          <p>Hover or select an atmosphere to transition the 3D lighting, hearth fire, and ambient room depth.</p>
+          <p>Select an atmosphere to transition the 3D lighting, hearth fire, and ambient room depth in real-time.</p>
         </div>
 
         <div class="option-selector-rail">
@@ -104,9 +107,9 @@
       <!-- Step 2: Pace -->
       <div id="step-2" class="floating-step-panel" style="display: none;">
         <div class="step-meta">
-          <span class="step-num-badge">Step 2 of 4</span>
+          <span class="step-num-badge">Step 2 of 4 • Pace</span>
           <h2>How Should the Night Move?</h2>
-          <p>Camera framing and movement speed adapt to the tempo of your evening.</p>
+          <p>Camera framing and 3D movement speed adapt to the tempo of your evening.</p>
         </div>
 
         <div class="option-selector-rail">
@@ -146,9 +149,9 @@
       <!-- Step 3: Flavor -->
       <div id="step-3" class="floating-step-panel" style="display: none;">
         <div class="step-meta">
-          <span class="step-num-badge">Step 3 of 4</span>
+          <span class="step-num-badge">Step 3 of 4 • Flavor Direction</span>
           <h2>What Sounds Good Right Now?</h2>
-          <p>Macro 3D camera positioning brings table materials and culinary textures into focus.</p>
+          <p>Macro 3D camera positioning brings table materials and ceramics into focus.</p>
         </div>
 
         <div class="option-selector-rail">
@@ -194,9 +197,9 @@
       <!-- Step 4: Table -->
       <div id="step-4" class="floating-step-panel" style="display: none;">
         <div class="step-meta">
-          <span class="step-num-badge">Step 4 of 4</span>
+          <span class="step-num-badge">Step 4 of 4 • Table &amp; Gathering</span>
           <h2>Who Is the Table For?</h2>
-          <p>The 3D table system dynamically transforms dimensions, plates, and place settings.</p>
+          <p>The 3D table mesh dynamically transforms dimensions, plates, and place settings.</p>
         </div>
 
         <div class="option-selector-rail">
@@ -306,6 +309,7 @@
       const flowWrapper = document.getElementById('exp-flow-section');
       const resultScreen = document.getElementById('exp-result-screen');
       const prevBtn = document.getElementById('prev-step-btn');
+      const sceneFocusTag = document.getElementById('scene-focus-tag');
 
       document.getElementById('begin-exp-btn')?.addEventListener('click', () => {
         entryScreen.style.display = 'none';
@@ -316,7 +320,15 @@
       function showStep(stepNum) {
         currentStep = stepNum;
         if (prevBtn) prevBtn.style.display = stepNum > 1 ? 'inline-flex' : 'none';
-        if (window.nativeOrbitEngine) window.nativeOrbitEngine.setCameraStep(`step${stepNum}`);
+        
+        if (sceneFocusTag) {
+          if (stepNum === 1) sceneFocusTag.textContent = '3D Focus: Hearth & Atmosphere';
+          else if (stepNum === 2) sceneFocusTag.textContent = '3D Focus: Dining Room Tempo';
+          else if (stepNum === 3) sceneFocusTag.textContent = '3D Focus: Table Ceramics & Materials';
+          else if (stepNum === 4) sceneFocusTag.textContent = '3D Focus: Modular Table System';
+        }
+
+        if (window.photorealOrbitEngine) window.photorealOrbitEngine.setCameraStep(`step${stepNum}`);
 
         for (let i = 1; i <= 4; i++) {
           const panel = document.getElementById(`step-${i}`);
@@ -328,8 +340,8 @@
         btn.addEventListener('mouseenter', () => {
           const step = parseInt(btn.getAttribute('data-step'));
           const val = btn.getAttribute('data-val');
-          if (step === 1 && window.nativeOrbitEngine) window.nativeOrbitEngine.setAtmosphere(val);
-          else if (step === 4 && window.nativeOrbitEngine) window.nativeOrbitEngine.updateTableSettings(val);
+          if (step === 1 && window.photorealOrbitEngine) window.photorealOrbitEngine.setAtmosphere(val);
+          else if (step === 4 && window.photorealOrbitEngine) window.photorealOrbitEngine.updateTableSettings(val);
         });
 
         btn.addEventListener('click', () => {
@@ -341,21 +353,22 @@
 
           if (step === 1) {
             userChoices.atmosphere = val;
-            if (window.nativeOrbitEngine) window.nativeOrbitEngine.setAtmosphere(val);
+            if (window.photorealOrbitEngine) window.photorealOrbitEngine.setAtmosphere(val);
           } else if (step === 2) {
             userChoices.pace = val;
           } else if (step === 3) {
             userChoices.flavor = val;
           } else if (step === 4) {
             userChoices.table = val;
-            if (window.nativeOrbitEngine) window.nativeOrbitEngine.updateTableSettings(val);
+            if (window.photorealOrbitEngine) window.photorealOrbitEngine.updateTableSettings(val);
           }
 
           if (step < 4) {
             showStep(step + 1);
           } else {
             flowWrapper.style.display = 'none';
-            if (window.nativeOrbitEngine) window.nativeOrbitEngine.setCameraStep('result');
+            if (sceneFocusTag) sceneFocusTag.textContent = '3D Focus: Your Orbit Evening';
+            if (window.photorealOrbitEngine) window.photorealOrbitEngine.setCameraStep('result');
             renderResult();
             resultScreen.style.display = 'block';
           }
