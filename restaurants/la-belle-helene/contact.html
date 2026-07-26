@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — La Belle Helene | French Brasserie Charlotte</title>
+  <meta name="description" content="Contact La Belle Helene in Uptown Charlotte. Hours, location, parking, reservations, and social links.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-core.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="./" class="site-logo" aria-label="La Belle Helene home">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="8" fill="#c9a84c"/>
+          <text x="18" y="24" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#0a1628">LBH</text>
+        </svg>
+        <span class="logo-text">La Belle Hélène<small class="logo-sub">Charlotte</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="./">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="private-dining.html">Private Dining</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="contact.html#reservations" class="btn btn-nav">Reservations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section" style="padding-top:48px">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:56px">
+          <span class="hero-tag">Contactez-Nous</span>
+          <h1>Contact</h1>
+          <p style="max-width:600px;margin:0 auto">Find us in Uptown Charlotte, make a reservation, or get in touch with our team.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <div class="contact-info-item">
+              <h4>📍 Address</h4>
+              <p>300 S Tryon St, Suite 100<br>Charlotte, NC 28202</p>
+              <p style="font-size:.85rem;color:var(--text-muted)">Located in the Bank of America Corporate Center, Uptown Charlotte</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h4>📞 Phone</h4>
+              <p><a href="tel:+17044454611">(704) 445-4611</a></p>
+            </div>
+
+            <div class="contact-info-item">
+              <h4>🕐 Hours</h4>
+              <table class="hours-table">
+                <tr><td>Monday – Thursday</td><td>11:00am – 10:00pm</td></tr>
+                <tr><td>Friday</td><td>11:00am – 11:00pm</td></tr>
+                <tr><td>Saturday</td><td>10:00am – 11:00pm</td></tr>
+                <tr><td>Sunday</td><td>10:00am – 10:00pm</td></tr>
+              </table>
+            </div>
+
+            <div class="contact-info-item">
+              <h4>🚗 Parking</h4>
+              <p>Validated parking available in the Bank of America Corporate Center garage. Street parking and nearby lots also available. We recommend rideshare for evening visits.</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h4>📷 Social</h4>
+              <div class="social-links">
+                <a href="https://instagram.com/labellehelenecharlotte" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Twitter / X">X</a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div id="reservations" class="contact-info-item" style="margin-bottom:32px">
+              <h4>Make a Reservation</h4>
+              <p style="margin-bottom:16px">Book your table at La Belle Hélène. We look forward to welcoming you.</p>
+              <div class="demo-form">
+                <div class="form-success">
+                  <h3>Merci!</h3>
+                  <p>Your reservation request has been received. We will confirm within 24 hours.</p>
+                </div>
+                <form data-demo-form novalidate>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="resFirstName">First Name</label>
+                      <input type="text" id="resFirstName" name="firstName" required placeholder="Jane">
+                    </div>
+                    <div class="form-group">
+                      <label for="resLastName">Last Name</label>
+                      <input type="text" id="resLastName" name="lastName" required placeholder="Doe">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="resEmail">Email</label>
+                    <input type="email" id="resEmail" name="email" required placeholder="jane@example.com">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="resDate">Date</label>
+                      <input type="date" id="resDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="resTime">Time</label>
+                      <select id="resTime" name="time">
+                        <option value="1100">11:00am</option>
+                        <option value="1130">11:30am</option>
+                        <option value="1200">12:00pm</option>
+                        <option value="1230">12:30pm</option>
+                        <option value="1300">1:00pm</option>
+                        <option value="1730">5:30pm</option>
+                        <option value="1800">6:00pm</option>
+                        <option value="1830">6:30pm</option>
+                        <option value="1900">7:00pm</option>
+                        <option value="1930">7:30pm</option>
+                        <option value="2000">8:00pm</option>
+                        <option value="2030">8:30pm</option>
+                        <option value="2100">9:00pm</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="resGuests">Number of Guests</label>
+                      <select id="resGuests" name="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6 Guests</option>
+                        <option value="7">7 Guests</option>
+                        <option value="8">8+ Guests</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="resOccasion">Occasion</label>
+                      <select id="resOccasion" name="occasion">
+                        <option value="none">None specified</option>
+                        <option value="birthday">Birthday</option>
+                        <option value="anniversary">Anniversary</option>
+                        <option value="business">Business Dinner</option>
+                        <option value="date">Date Night</option>
+                        <option value="celebration">Celebration</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="resNotes">Special Requests</label>
+                    <textarea id="resNotes" name="notes" rows="3" placeholder="Allergies, seating preferences, dietary restrictions..."></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width:100%">Request Reservation</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <h4>General Inquiries</h4>
+              <p>For general questions, partnerships, or press inquiries, please use the form below.</p>
+              <div class="demo-form" style="margin-top:16px">
+                <div class="form-success">
+                  <h3>Merci!</h3>
+                  <p>Thank you for your message. We'll respond as soon as possible.</p>
+                </div>
+                <form data-demo-form novalidate>
+                  <div class="form-group">
+                    <label for="contactName">Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="Your name">
+                  </div>
+                  <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="your@email.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" id="contactSubject" name="subject" placeholder="How can we help?">
+                  </div>
+                  <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message" rows="4" required placeholder="Your message..."></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>La Belle Hélène</h4>
+          <p>300 S Tryon St, Suite 100<br>Charlotte, NC 28202<br>(704) 445-4611</p>
+          <p><em>Profitez de l'instant</em> — Enjoy the Moment.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon–Thu: 11am–10pm</li>
+            <li>Fri: 11am–11pm</li>
+            <li>Sat: 10am–11pm</li>
+            <li>Sun: 10am–10pm</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="private-dining.html">Private Dining</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://instagram.com/labellehelenecharlotte" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="contact.html#reservations">Reservations</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 5th Street Group. &nbsp;|&nbsp; <strong>Unofficial concept presentation</strong> — not operated by the restaurant.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="disclosure-banner" role="note">
+    <strong>Unofficial concept presentation</strong> — not operated by La Belle Hélène or 5th Street Group. &nbsp;|&nbsp; <a href="https://labellehelene.com" target="_blank" rel="noopener">Visit the official website</a>
+  </div>
+
+  <script src="../site-core.js"></script>
+</body>
+</html>

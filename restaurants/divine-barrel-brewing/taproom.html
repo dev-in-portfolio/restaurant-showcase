@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taproom · Divine Barrel Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --indigo: #2d1b4e;
+  --gold: #d4a847;
+  --teal: #1a7a7a;
+  --charcoal: #1a1a1a;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--indigo); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--indigo), #1a0d2e); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+@media (max-width:640px) { .info-grid { grid-template-columns: 1fr; } }
+.info-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.1); border-radius: 8px; padding: 1.5rem; }
+.info-card h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .75rem; }
+.hours-grid { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1.25rem; font-size: .88rem; }
+.hours-grid .day { font-weight: 600; opacity: .7; }
+.hours-grid .time { opacity: .6; }
+.info-card p { font-size: .88rem; line-height: 1.6; opacity: .65; margin: 0; }
+.info-card a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.amenities { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.amenity { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.06); border-radius: 6px; padding: 1rem; text-align: center; }
+.amenity .icon { font-size: 1.5rem; display: block; margin-bottom: .35rem; }
+.amenity span { font-size: .82rem; opacity: .6; }
+.special-day { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.08); border-radius: 8px; padding: 1.25rem; margin-bottom: .75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.special-day .dow { font-weight: 600; color: var(--teal); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
+.special-day .deal { font-size: .9rem; opacity: .8; }
+.special-day .extra { font-size: .82rem; opacity: .5; font-style: italic; }
+.map-placeholder { background: rgba(255,255,255,.03); border: 2px dashed rgba(212,168,71,.15); border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; opacity: .4; font-style: italic; font-size: .85rem; }
+.demo-form { max-width: 600px; margin: 3rem auto 0; background: rgba(255,255,255,.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(212,168,71,.1); }
+.demo-form h3 { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; opacity: .7; }
+.form-group input, .form-group select { width: 100%; padding: .65rem .75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,.05); color: var(--cream); }
+.form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--charcoal); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; }
+.btn:hover { background: #c39130; }
+.toast { background: var(--gold); color: var(--charcoal); padding: 1rem 2rem; border-radius: 6px; text-align: center; margin-top: 1rem; display: none; font-weight: 600; }
+.toast.show { display: block; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,168,71,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Divine Barrel</a>
+  <div class="nav-links">
+    <a href="beers.html">Beers</a>
+    <a href="cellar.html">Sour Program</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Taproom</h1>
+  <p>Modern industrial farmhouse — welcoming all in the heart of NoDa</p>
+</header>
+
+<section class="section">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Location</h3>
+      <p>3701 N Davidson St Suite #203<br>Charlotte, NC 28205</p>
+      <p style="margin-top:.5rem">NoDa neighborhood — entrance on the side of the building</p>
+      <p style="margin-top:.5rem"><a href="#">Get Directions →</a></p>
+    </div>
+    <div class="info-card">
+      <h3>Hours</h3>
+      <div class="hours-grid">
+        <span class="day">Monday–Wednesday</span><span class="time">4:00 PM – 10:00 PM</span>
+        <span class="day">Thursday–Saturday</span><span class="time">12:00 PM – 10:00 PM</span>
+        <span class="day">Sunday</span><span class="time">12:00 PM – 7:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-placeholder">Map coming soon</div>
+
+  <h2 style="margin-top:3rem">Amenities</h2>
+  <p class="subtitle">Everything you need for a great visit</p>
+  <div class="amenities">
+    <div class="amenity"><span class="icon" aria-hidden="true">🐕</span><span>Pet-Friendly</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">👶</span><span>Child-Friendly</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">🌳</span><span>Outdoor Patio</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">🚚</span><span>Food Trucks</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">🅿️</span><span>Street Parking</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">♿</span><span>Wheelchair Accessible</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">🍺</span><span>Growlers &amp; Crowlers</span></div>
+    <div class="amenity"><span class="icon" aria-hidden="true">🥃</span><span>Cocktails &amp; Wine</span></div>
+  </div>
+
+  <h2>Weekly Specials</h2>
+  <p class="subtitle">Something happening every day</p>
+  <div class="special-day">
+    <span class="dow">Monday</span>
+    <span class="deal">$10 Flights</span>
+    <span class="extra">Trivia at 7pm</span>
+  </div>
+  <div class="special-day">
+    <span class="dow">Tuesday</span>
+    <span class="deal">BYO Vinyl &amp; Open Arts</span>
+    <span class="extra">Bring your own records</span>
+  </div>
+  <div class="special-day">
+    <span class="dow">Wednesday</span>
+    <span class="deal">Game Night</span>
+    <span class="extra">Potions &amp; Pixels + Queen City Crokinole</span>
+  </div>
+  <div class="special-day">
+    <span class="dow">Thursday</span>
+    <span class="deal">Run Club</span>
+    <span class="extra">6:30pm · all paces welcome</span>
+  </div>
+  <div class="special-day">
+    <span class="dow">Sunday</span>
+    <span class="deal">$5 Wine Pours</span>
+    <span class="extra">All day</span>
+  </div>
+
+  <form class="demo-form" data-demo-form>
+    <h3>Contact the Taproom</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="msg">Message</label>
+      <textarea id="msg" rows="3" style="width:100%;padding:.65rem .75rem;border:1px solid rgba(255,255,255,.15);border-radius:4px;font-size:.9rem;font-family:'DM Sans',sans-serif;background:rgba(255,255,255,.05);color:var(--cream);resize:vertical"></textarea>
+    </div>
+    <button class="btn" type="submit" style="width:100%">Send Message</button>
+    <div class="toast" role="alert">Thanks! We'll get back to you soon.</div>
+  </form>
+</section>
+
+<footer>
+  <p>Divine Barrel Brewing · 3701 N Davidson St Suite #203 · Charlotte, NC 28205 · (980) 237-1803</p>
+  <p><a href="beers.html">Beers</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="about.html">About</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

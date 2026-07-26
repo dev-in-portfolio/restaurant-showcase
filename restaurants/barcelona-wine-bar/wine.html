@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcelona Wine Bar - Charlotte, NC | Wine Program</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the sommelier wine box visualizer */
+    .sommelier-box {
+      background: radial-gradient(circle, #221512 0%, #0d0807 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Barcelona
+          <span>Wine Bar South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html" class="active">Wine Program</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">The Wine Program</h2>
+    <p class="page-subtitle">One of the largest Spanish wine programs in the United States, highlighting the diverse soil and grape varieties of Spain and South America.</p>
+  </header>
+
+  <!-- Interactive Sommelier Pairing Finder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Tapas & Wine Pairing Finder</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a signature small plate to see our sommelier's recommended Spanish or South American wine pairing.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Sommelier wine details -->
+        <div class="sommelier-box" id="sommelier-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="pairing-tapa-tag">For Jamón Serrano</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="pairing-wine-name">La Rioja Alta Alberdi Reserva</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;" id="pairing-wine-price">$14 Glass / $56 Bottle</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="pairing-wine-desc">"Rioja, Spain. 100% Tempranillo. Rich dark cherry, vanilla, and sweet tobacco notes. The smooth oak tannins provide a velvety finish that elevates the savory richness of our cured Jamón Serrano."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Tapas Dish</label>
+          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;">
+            <button class="option-btn active" onclick="selectPairing('jamon', this)">Jamón Serrano (Cured Ham)</button>
+            <button class="option-btn" onclick="selectPairing('bravas', this)">Patatas Bravas (Crispy Potatoes)</button>
+            <button class="option-btn" onclick="selectPairing('octopus', this)">Grilled Octopus (Pulpo)</button>
+            <button class="option-btn" onclick="selectPairing('albondigas', this)">Albóndigas (Meatballs)</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Wine Menu Listings -->
+    <h3 class="section-title">Cellar Reserve Highlights</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Red Cellars (Tintos)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Numanthia Tempranillo</span>
+            <span class="menu-item-price">$88 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Toro, Spain. Intensely rich and concentrated black fruit flavors, with complex notes of cedar, leather, and smoke.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">La Rioja Alta Alberdi Reserva</span>
+            <span class="menu-item-price">$14 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Rioja, Spain. Classic Tempranillo with ripe red berries, sweet baking spices, and toasted vanilla oak accents.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Alto Limay Pinot Noir</span>
+            <span class="menu-item-price">$12 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Patagonia, Argentina. Light-bodied, bright cherry, and earth tones with a crisp, refreshing mineral acidity.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">White Cellars (Blancos)</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Nortico Alvarinho</span>
+            <span class="menu-item-price">$11 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Minho, Portugal. Crisp and clean with white peach, citrus blossom, and a refreshing salty mineral finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Bodegas Avancia Godello</span>
+            <span class="menu-item-price">$62 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Valdeorras, Spain. Barrel-fermented white with green apple, pear, and rich, round honeyed texture.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Barbadillo Manzanilla Sherry</span>
+            <span class="menu-item-price">$9 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Jerez, Spain. Bone-dry, salty, and yeasty with green apple and chamomile accents. Served chilled.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Camden Road Stand</h3>
+        <p>3101 Camden Rd<br>Charlotte, NC 28203<br>Phone: (704) 923-0909</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 4:00 PM - 10:00 PM<br>Fri - Sat: 4:00 PM - 11:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Wine Inquiries</h3>
+        <p>Private cellar reservations and group wine tastings are available by contacting our events coordinator.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Barcelona Wine Bar. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairingData = {
+      jamon: {
+        tapa: "For Jamón Serrano",
+        wine: "La Rioja Alta Alberdi Reserva",
+        price: "$14 Glass / $56 Bottle",
+        desc: "\"Rioja, Spain. 100% Tempranillo. Rich dark cherry, vanilla, and sweet tobacco notes. The smooth oak tannins provide a velvety finish that elevates the savory richness of our cured Jamón Serrano.\""
+      },
+      bravas: {
+        tapa: "For Patatas Bravas",
+        wine: "Barbadillo Manzanilla Sherry",
+        price: "$9 Glass / $36 Bottle",
+        desc: "\"Jerez, Spain. Bone-dry, nutty, and salty. Its extreme crispness and yeasty chamomile notes cut through the rich spicy bravas oil and garlic aioli beautifully.\""
+      },
+      octopus: {
+        tapa: "For Grilled Octopus (Pulpo)",
+        wine: "Nortico Alvarinho",
+        price: "$11 Glass / $44 Bottle",
+        desc: "\"Minho, Portugal. Vibrant peach, citrus, and saline notes. The clean, crisp mineral acidity highlights the charred, smoky tenderness of the wood-grilled octopus.\""
+      },
+      albondigas: {
+        tapa: "For Albóndigas (Meatballs)",
+        wine: "La Cartuja Priorat",
+        price: "$13 Glass / $52 Bottle",
+        desc: "\"Priorat, Spain. Grenache & Carignan blend. Bold blackberry, licorice, and dark slate minerality. A heavy, structured red that matches the spiced beef and pork meatballs in tomato sauce.\""
+      }
+    };
+
+    function selectPairing(key, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const display = document.getElementById('sommelier-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = pairingData[key];
+        document.getElementById('pairing-tapa-tag').innerText = data.tapa;
+        document.getElementById('pairing-wine-name').innerText = data.wine;
+        document.getElementById('pairing-wine-price').innerText = data.price;
+        document.getElementById('pairing-wine-desc').innerText = data.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

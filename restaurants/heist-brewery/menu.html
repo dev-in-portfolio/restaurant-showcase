@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Heist Brewery NoDa</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --amber:#c87a2c; --charcoal:#1a1a1a; --cream:#f5f0e8; --copper:#b86b3a; --navy:#1e2a3a; --gold:#d4a017; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:var(--charcoal); background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--amber); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--charcoal); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--charcoal); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.6rem; color:var(--amber); text-decoration:none; font-weight:700; letter-spacing:-0.5px; }
+  nav .logo span { color:#fff; }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--amber); }
+  .page-header { background:linear-gradient(135deg,#1a1a1a,#2d1f0e); color:#fff; padding:4rem 2rem; text-align:center; }
+  .page-header h1 { font-size:2.8rem; }
+  .page-header h1 span { color:var(--amber); }
+  .page-header p { color:#bbb; margin-top:0.5rem; }
+  .section { padding:4rem 2rem; max-width:1100px; margin:0 auto; }
+  .section-title { font-size:1.8rem; margin-bottom:2rem; text-align:center; }
+  .section-title span { color:var(--amber); }
+  .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; }
+  .menu-category { background:#fff; border-radius:12px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .menu-category h3 { font-size:1.4rem; color:var(--amber); margin-bottom:1rem; border-bottom:2px solid var(--cream); padding-bottom:0.5rem; }
+  .menu-item { padding:0.75rem 0; border-bottom:1px solid #f0e8dc; }
+  .menu-item:last-child { border-bottom:none; }
+  .menu-item .name { font-weight:600; display:flex; justify-content:space-between; }
+  .menu-item .price { color:var(--amber); font-weight:600; }
+  .menu-item .desc { color:#666; font-size:0.9rem; margin-top:0.2rem; }
+  .beer-finder { background:var(--charcoal); color:#fff; padding:4rem 2rem; text-align:center; }
+  .beer-finder h2 { font-size:2rem; margin-bottom:1rem; }
+  .beer-finder h2 span { color:var(--amber); }
+  .beer-finder p { color:#aaa; margin-bottom:2rem; }
+  .finder-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:900px; margin:0 auto; }
+  .finder-btn { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.15); color:#fff; padding:1.5rem; border-radius:8px; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; font-size:1rem; }
+  .finder-btn:hover { background:var(--amber); border-color:var(--amber); transform:translateY(-2px); }
+  .finder-btn.selected { background:var(--amber); border-color:var(--amber); }
+  .finder-result { margin-top:2rem; padding:2rem; background:rgba(255,255,255,0.05); border-radius:8px; display:none; max-width:500px; margin-left:auto; margin-right:auto; }
+  .finder-result h4 { color:var(--gold); font-size:1.3rem; margin-bottom:0.5rem; }
+  .finder-result p { color:#ccc; }
+  footer { background:var(--charcoal); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; }
+  footer .social a:hover { color:var(--amber); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { .menu-grid { grid-template-columns:1fr; } .finder-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Heist<span>Brewery</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-header" id="main">
+  <h1>Heist <span>Menu</span></h1>
+  <p>NoDa location — Wood-fired specialties, craft beer, and craft cocktails</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Food <span>Menu</span></h2>
+  <div class="menu-grid">
+    <div class="menu-category">
+      <h3>Wood-Fired Flatbreads</h3>
+      <div class="menu-item"><div class="name"><span>Truffle Mushroom</span><span class="price">16</span></div><div class="desc">Wild mushrooms, truffle oil, fontina, arugula</div></div>
+      <div class="menu-item"><div class="name"><span>Spicy Soppressata</span><span class="price">17</span></div><div class="desc">Soppressata, hot honey, mozzarella, basil</div></div>
+      <div class="menu-item"><div class="name"><span>Classic Margherita</span><span class="price">14</span></div><div class="desc">San Marzano tomato, fresh mozz, basil</div></div>
+      <div class="menu-item"><div class="name"><span>BBQ Chicken</span><span class="price">16</span></div><div class="desc">Smoked chicken, caramelized onion, gouda</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Burgers &amp; Sandwiches</h3>
+      <div class="menu-item"><div class="name"><span>Heist Burger</span><span class="price">18</span></div><div class="desc">Proprietary blend, aged cheddar, house pickles, special sauce</div></div>
+      <div class="menu-item"><div class="name"><span>Smash Burger</span></div><div class="desc">Double smash, American cheese, onion, comeback sauce</div></div>
+      <div class="menu-item"><div class="name"><span>Heist Chicken Sandwich</span><span class="price">16</span></div><div class="desc">Buttermilk brined, fried, slaw, Alabama white sauce</div></div>
+      <div class="menu-item"><div class="name"><span>French Dip</span><span class="price">17</span></div><div class="desc">Shaved ribeye, provolone, caramelized onion, au jus</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Dips &amp; Shares</h3>
+      <div class="menu-item"><div class="name"><span>Beer Cheese Dip</span><span class="price">12</span></div><div class="desc">Heist pilsner cheese, soft pretzel, house mustard</div></div>
+      <div class="menu-item"><div class="name"><span>Smoked Wings</span><span class="price">15</span></div><div class="desc">Half-dozen, choice of buffalo or bourbon glaze</div></div>
+      <div class="menu-item"><div class="name"><span>Truffle Fries</span><span class="price">10</span></div><div class="desc">Parmesan, truffle oil, herb aioli</div></div>
+      <div class="menu-item"><div class="name"><span>Heist Nachos</span><span class="price">14</span></div><div class="desc">House chips, beer cheese, pico, jalapeno, crema</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Salads &amp; Greens</h3>
+      <div class="menu-item"><div class="name"><span>Caesar</span><span class="price">12</span></div><div class="desc">Romaine, parmesan, house croutons, white anchovy</div></div>
+      <div class="menu-item"><div class="name"><span>Heist Wedge</span><span class="price">14</span></div><div class="desc">Iceberg, bacon, blue cheese, pickled onion, balsamic</div></div>
+      <div class="menu-item"><div class="name"><span>Harvest Bowl</span><span class="price">15</span></div><div class="desc">Farro, roasted squash, kale, cranberry, goat cheese</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="beer-finder">
+  <h2>Find Your <span>Brew</span></h2>
+  <p>Not sure what to drink? Pick your vibe and we'll find the perfect pour.</p>
+  <div class="finder-grid" id="beerFinder">
+    <button class="finder-btn" data-beer="CitraQuench'l - Hazy IPA" data-desc="Juicy, citrus-forward, smooth finish. The original NC hazy IPA at 6.5% ABV.">
+      &#x1F34B; Citrus &amp; Hoppy
+    </button>
+    <button class="finder-btn" data-beer="Barrel-Aged Imperial Stout" data-desc="Rich, decadent, bourbon barrel, vanilla. A sipper at 11% ABV.">
+      &#x1F976; Dark &amp; Bold
+    </button>
+    <button class="finder-btn" data-beer="Seasonal Fruited Sour" data-desc="Tart, refreshing, fruit-forward. Easy drinking at 5.2% ABV.">
+      &#x1F352; Tart &amp; Fruity
+    </button>
+    <button class="finder-btn" data-beer="German Pilsner" data-desc="Crisp, clean, classic. Perfect session beer at 5.0% ABV.">
+      &#x1F37A; Crisp &amp; Clean
+    </button>
+    <button class="finder-btn" data-beer="Heist Craft Cocktail" data-desc="Spirit-forward, house-made syrups, fresh citrus. Ask your server for today's selection.">
+      &#x1F378; Cocktail Mood
+    </button>
+    <button class="finder-btn" data-beer="Small Batch Experimental" data-desc="Unique, limited-release, only at the brewery. Ask what's pouring today!">
+      &#x1F300; Surprise Me
+    </button>
+  </div>
+  <div class="finder-result" id="beerResult">
+    <h4 id="resultName"></h4>
+    <p id="resultDesc"></p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Craft <span>Cocktails</span></h2>
+  <p class="section-sub" style="text-align:center;color:#666;max-width:600px;margin:0 auto 2rem;">Evolving seasonal cocktails using house-made syrups, fresh citrus, and Heist's own spirits.</p>
+  <div class="menu-grid">
+    <div class="menu-category">
+      <h3>Signature Cocktails</h3>
+      <div class="menu-item"><div class="name"><span>Heist Old Fashioned</span><span class="price">14</span></div><div class="desc">Bourbon, demerara, angostura, orange</div></div>
+      <div class="menu-item"><div class="name"><span>CitraQuench'l Mule</span><span class="price">13</span></div><div class="desc">Heist CitraQuench'l, ginger, lime, mint</div></div>
+      <div class="menu-item"><div class="name"><span>Barrel-Aged Negroni</span><span class="price">15</span></div><div class="desc">Barrel-aged gin, campari, sweet vermouth</div></div>
+      <div class="menu-item"><div class="name"><span>Smoked Maple Sour</span><span class="price">13</span></div><div class="desc">Bourbon, smoked maple, lemon, egg white</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Draft Beer</h3>
+      <div class="menu-item"><div class="name"><span>CitraQuench'l</span><span class="price">7</span></div><div class="desc">Hazy IPA — 6.5% ABV</div></div>
+      <div class="menu-item"><div class="name"><span>Heist Pils</span><span class="price">6</span></div><div class="desc">German Pilsner — 5.0% ABV</div></div>
+      <div class="menu-item"><div class="name"><span>Midnight Heist</span><span class="price">8</span></div><div class="desc">Irish Dry Stout — 4.8% ABV</div></div>
+      <div class="menu-item"><div class="name"><span>Hop Heist</span><span class="price">7</span></div><div class="desc">West Coast IPA — 7.0% ABV</div></div>
+      <div class="menu-item"><div class="name"><span>Rotating Sour</span><span class="price">8</span></div><div class="desc">Seasonal Fruited Sour — 5.2% ABV</div></div>
+      <div class="menu-item"><div class="name"><span>Barrel-Aged Stout</span><span class="price">10</span></div><div class="desc">Limited Release — 11% ABV</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/heistbrewery/" target="_blank">&#x1F4F7;</a>
+    <a href="https://www.facebook.com/HeistBrewery" target="_blank">&#x1F4AC;</a>
+    <a href="https://x.com/HeistBrewery" target="_blank">&#x1D54F;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Heist Brewery Concept &bull; Charlotte, NC</p>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  var btns = document.querySelectorAll('.finder-btn');
+  var result = document.getElementById('beerResult');
+  var nameEl = document.getElementById('resultName');
+  var descEl = document.getElementById('resultDesc');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('selected'); });
+      this.classList.add('selected');
+      nameEl.textContent = '\uD83C\uDF7A ' + this.getAttribute('data-beer');
+      descEl.textContent = this.getAttribute('data-desc');
+      result.style.display = 'block';
+    });
+  });
+})();
+</script>
+</body>
+</html>

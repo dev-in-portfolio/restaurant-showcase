@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Hello, Sailor Lake Norman Cornelius</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --coral:#e8685a; --teal:#3a9b9e; --cream:#fdf8f2; --gold:#d4a843; --navy:#1a2a4a; --white:#fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:#333; background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--coral); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--navy); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--navy); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.5rem; color:var(--white); text-decoration:none; font-weight:700; letter-spacing:1px; }
+  nav .logo span { color:var(--coral); }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--coral); }
+  .page-header { background:linear-gradient(135deg,#1a2a4a,#3a9b9e); color:#fff; padding:4rem 2rem; text-align:center; }
+  .page-header h1 { font-size:2.8rem; }
+  .page-header h1 span { color:var(--gold); }
+  .page-header p { color:rgba(255,255,255,0.8); margin-top:0.5rem; }
+  .section { padding:5rem 2rem; max-width:1100px; margin:0 auto; }
+  .section-title { font-size:2rem; margin-bottom:1rem; text-align:center; }
+  .section-title span { color:var(--coral); }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  .info-card { background:#fff; border-radius:16px; padding:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .info-card h3 { font-size:1.4rem; color:var(--teal); margin-bottom:1.5rem; }
+  .info-row { display:flex; gap:1rem; margin-bottom:1rem; align-items:flex-start; }
+  .info-row .icon { font-size:1.3rem; min-width:28px; }
+  .info-row .text { color:#444; }
+  .info-row .text strong { display:block; color:var(--navy); }
+  .hours-table { width:100%; border-collapse:collapse; margin-top:1.5rem; }
+  .hours-table td { padding:8px 0; border-bottom:1px solid #f0e8dc; font-size:0.9rem; }
+  .hours-table td:last-child { text-align:right; color:#555; }
+  .hours-table .closed { color:var(--coral); font-weight:600; }
+  .reserve-card { background:var(--navy); color:#fff; border-radius:16px; padding:2.5rem; text-align:center; }
+  .reserve-card h3 { font-size:1.5rem; margin-bottom:1rem; color:var(--gold); }
+  .reserve-card p { color:rgba(255,255,255,0.8); margin-bottom:1.5rem; }
+  .reserve-card .btn { background:var(--coral); }
+  .reserve-card .btn:hover { background:#d04a3a; }
+  .map-placeholder { background:#e0f0f0; border-radius:16px; padding:3rem; text-align:center; margin-top:2rem; }
+  .map-placeholder .icon { font-size:3rem; margin-bottom:0.5rem; }
+  .map-placeholder p { color:#555; }
+  .contact-form-wrap { max-width:600px; margin:3rem auto 0; background:#fff; padding:2.5rem; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .contact-form-wrap .form-group { margin-bottom:1.5rem; }
+  .contact-form-wrap label { display:block; font-weight:600; margin-bottom:0.3rem; color:var(--navy); }
+  .contact-form-wrap input,.contact-form-wrap textarea { width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:0.95rem; }
+  .contact-form-wrap textarea { resize:vertical; min-height:120px; }
+  footer { background:var(--navy); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; }
+  footer .social a:hover { color:var(--coral); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { .contact-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Hello, <span>Sailor</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-header" id="main">
+  <h1>Find Us on <span>the Lake</span></h1>
+  <p>20210 Henderson Road, Cornelius, NC — boat slips available</p>
+</section>
+
+<section class="section">
+  <div class="contact-grid">
+    <div class="info-card">
+      <h3>&#x1F4CD; Location &amp; Contact</h3>
+      <div class="info-row"><span class="icon">&#x1F4CD;</span><span class="text"><strong>Address</strong>20210 Henderson Rd, Cornelius, NC 28031</span></div>
+      <div class="info-row"><span class="icon">&#x1F4DE;</span><span class="text"><strong>Phone</strong>(704) 997-5365</span></div>
+      <div class="info-row"><span class="icon">&#x2709;&#xFE0F;</span><span class="text"><strong>Email</strong>hello@hellosailornc.com</span></div>
+      <div class="info-row"><span class="icon">&#x26F5;</span><span class="text"><strong>Boat Slips</strong>20 complimentary boat slips available — arrive by water!</span></div>
+      <div class="info-row"><span class="icon">&#x1F436;</span><span class="text"><strong>Pets</strong>Dogs welcome on the patio</span></div>
+
+      <table class="hours-table">
+        <tr><td>Monday</td><td class="closed">Closed</td></tr>
+        <tr><td>Tuesday</td><td class="closed">Closed</td></tr>
+        <tr><td>Wednesday</td><td>11:00 am — 9:00 pm</td></tr>
+        <tr><td>Thursday</td><td>11:00 am — 9:00 pm</td></tr>
+        <tr><td>Friday</td><td>11:00 am — 9:00 pm</td></tr>
+        <tr><td>Saturday</td><td>11:00 am — 9:00 pm</td></tr>
+        <tr><td>Sunday</td><td>11:00 am — 9:00 pm</td></tr>
+      </table>
+    </div>
+    <div class="reserve-card">
+      <h3>&#x1F355; Ready to Dine?</h3>
+      <p>Reservations are highly recommended, especially for dinner and weekends. Walk-ins welcome at the bar and patio.</p>
+      <a href="#" class="btn" style="display:block;margin-bottom:1rem;">Book a Table via Resy</a>
+      <a href="#" class="btn btn-outline" style="display:block;border-color:var(--gold);color:var(--gold);">Order Online</a>
+    </div>
+  </div>
+
+  <div class="map-placeholder">
+    <div class="icon">&#x1F5FA;&#xFE0F;</div>
+    <p><strong>20210 Henderson Rd, Cornelius, NC 28031</strong></p>
+    <p>Located at Holiday Marina on Lake Norman — follow Henderson Road to the water.</p>
+    <p style="margin-top:0.5rem;font-size:0.85rem;">Look for the retro Hello, Sailor signage and the three-tiered deck overlooking the lake.</p>
+  </div>
+
+  <div class="contact-form-wrap">
+    <h3 style="font-family:'Fraunces',Georgia,serif;font-size:1.5rem;margin-bottom:0.5rem;text-align:center;">Drop Us a <span style="color:var(--coral);">Line</span></h3>
+    <p style="text-align:center;color:#666;margin-bottom:2rem;font-size:0.9rem;">Questions, feedback, or just saying hey.</p>
+    <form class="demo-form" data-demo-form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Reservations, catering, general inquiry...">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Tell us what's on your mind..."></textarea>
+      </div>
+      <button type="submit" class="btn" style="border:none;cursor:pointer;width:100%;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/hellosailornc" target="_blank">&#x1F4F7;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Hello, Sailor Concept &bull; Cornelius, NC</p>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

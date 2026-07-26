@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events · Divine Barrel Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --indigo: #2d1b4e;
+  --gold: #d4a847;
+  --teal: #1a7a7a;
+  --charcoal: #1a1a1a;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--indigo); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--indigo), #1a0d2e); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.event-tabs { display: flex; gap: .25rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.event-tab { background: rgba(255,255,255,.03); border: none; padding: .65rem 1.25rem; border-radius: 4px 4px 0 0; font-size: .85rem; font-weight: 600; cursor: pointer; color: var(--muted); font-family: 'DM Sans', sans-serif; transition: all .2s; }
+.event-tab:hover { color: var(--cream); }
+.event-tab.active { background: rgba(212,168,71,.12); color: var(--gold); }
+.event-panel { display: none; }
+.event-panel.active { display: block; }
+.event-list { display: grid; gap: .75rem; }
+.event-item { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.06); border-radius: 6px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.event-item .date { font-weight: 600; color: var(--gold); font-size: .85rem; min-width: 80px; }
+.event-item .ename { opacity: .85; font-size: .9rem; }
+.event-item .desc { opacity: .55; font-size: .82rem; width: 100%; }
+.event-item .link { color: var(--teal); text-decoration: none; font-weight: 600; font-size: .82rem; }
+.private-events { background: #111; padding: 3rem 2rem; margin-top: 2rem; }
+.private-events .inner { max-width: 1000px; margin: 0 auto; }
+.private-events h2 { border-left-color: var(--teal); }
+.pkg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.pkg-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.08); border-radius: 8px; padding: 1.5rem; }
+.pkg-card h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .5rem; }
+.pkg-card p { font-size: .85rem; opacity: .65; line-height: 1.5; }
+.pkg-card .price { font-size: .82rem; color: var(--teal); font-weight: 600; display: block; margin-top: .5rem; }
+.demo-form { max-width: 600px; margin: 2rem auto 0; background: rgba(255,255,255,.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(212,168,71,.1); }
+.demo-form h3 { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; opacity: .7; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,.05); color: var(--cream); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--charcoal); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; }
+.btn:hover { background: #c39130; }
+.toast { background: var(--gold); color: var(--charcoal); padding: 1rem 2rem; border-radius: 6px; text-align: center; margin-top: 1rem; display: none; font-weight: 600; }
+.toast.show { display: block; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,168,71,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Divine Barrel</a>
+  <div class="nav-links">
+    <a href="beers.html">Beers</a>
+    <a href="cellar.html">Sour Program</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Events</h1>
+  <p>Trivia, vinyl nights, run club, and more — there's always something happening</p>
+</header>
+
+<section class="section">
+  <h2>Upcoming Events</h2>
+  <p class="subtitle">This month at Divine Barrel</p>
+
+  <div class="event-tabs">
+    <button class="event-tab active" data-tab="all">All</button>
+    <button class="event-tab" data-tab="weekly">Weekly</button>
+    <button class="event-tab" data-tab="special">Special</button>
+    <button class="event-tab" data-tab="live">Live Music</button>
+  </div>
+
+  <div class="event-lists">
+    <div class="event-panel active" data-panel="all">
+      <div class="event-list">
+        <div class="event-item"><span class="date">Every Mon</span><span class="ename">Trivia Night</span><span class="desc">Quiz-style trivia with prizes · 7pm</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Every Tue</span><span class="ename">BYO Vinyl &amp; Open Arts</span><span class="desc">Bring your own records and share creative space</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Every Wed</span><span class="ename">Game Night</span><span class="desc">Potions &amp; Pixels + Queen City Crokinole</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Every Thu</span><span class="ename">Run Club</span><span class="desc">6:30pm · all paces welcome · post-run beer</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Jul 18</span><span class="ename">Cider + Chocolate Pairing</span><span class="desc">Limited seating · tickets required</span><span class="link">Get Tickets</span></div>
+        <div class="event-item"><span class="date">Jul 25</span><span class="ename">Live Jazz Night</span><span class="desc">Solo jazz trio + featured seasonal release</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Aug 8</span><span class="ename">Can Release: Fruit Fetish Vol. 3</span><span class="desc">Our mixed berry sour returns with a twist</span><span class="link">Set Reminder</span></div>
+        <div class="event-item"><span class="date">Aug 22</span><span class="ename">Tap Takeover: Divine Barrel x Resident Culture</span><span class="desc">Collaboration beers and special releases</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Sep 5</span><span class="ename">Oktoberfest Celebration</span><span class="desc">Seasonal lagers, German food, and stein holding</span><span class="link">RSVP</span></div>
+      </div>
+    </div>
+    <div class="event-panel" data-panel="weekly">
+      <div class="event-list">
+        <div class="event-item"><span class="date">Every Mon</span><span class="ename">Trivia Night</span><span class="desc">Quiz-style trivia with prizes · 7pm</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Every Tue</span><span class="ename">BYO Vinyl &amp; Open Arts</span><span class="desc">Bring your own records and share creative space</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Every Wed</span><span class="ename">Game Night</span><span class="desc">Potions &amp; Pixels + Queen City Crokinole</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Every Thu</span><span class="ename">Run Club</span><span class="desc">6:30pm · all paces welcome · post-run beer</span><span class="link">More Info</span></div>
+      </div>
+    </div>
+    <div class="event-panel" data-panel="special">
+      <div class="event-list">
+        <div class="event-item"><span class="date">Jul 18</span><span class="ename">Cider + Chocolate Pairing</span><span class="desc">Limited seating · tickets required</span><span class="link">Get Tickets</span></div>
+        <div class="event-item"><span class="date">Aug 8</span><span class="ename">Can Release: Fruit Fetish Vol. 3</span><span class="desc">Our mixed berry sour returns with a twist</span><span class="link">Set Reminder</span></div>
+        <div class="event-item"><span class="date">Aug 22</span><span class="ename">Tap Takeover: Divine Barrel x Resident Culture</span><span class="desc">Collaboration beers and special releases</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">Sep 5</span><span class="ename">Oktoberfest Celebration</span><span class="desc">Seasonal lagers, German food, and stein holding</span><span class="link">RSVP</span></div>
+      </div>
+    </div>
+    <div class="event-panel" data-panel="live">
+      <div class="event-list">
+        <div class="event-item"><span class="date">Jul 25</span><span class="ename">Live Jazz Night</span><span class="desc">Solo jazz trio + featured seasonal release</span><span class="link">More Info</span></div>
+        <div class="event-item"><span class="date">TBD</span><span class="ename">Acoustic Open Mic</span><span class="desc">Sign up at the taproom · monthly</span><span class="link">More Info</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="private-events">
+  <div class="inner">
+    <h2>Private Events</h2>
+    <p class="subtitle">Host your next gathering with us</p>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <h3>Partial Buyout</h3>
+        <p>Reserve the lounge area for up to 40 guests. Includes dedicated bartender and customizable tap list.</p>
+        <span class="price">Starting at $500</span>
+      </div>
+      <div class="pkg-card">
+        <h3>Full Buyout</h3>
+        <p>Take over the entire taproom. Up to 120 guests, full bar access, food truck coordination, and AV support.</p>
+        <span class="price">Starting at $1,500</span>
+      </div>
+      <div class="pkg-card">
+        <h3>Brewery Tour + Tasting</h3>
+        <p>Guided tour of our production facility followed by a curated tasting flight. Perfect for small groups.</p>
+        <span class="price">$25/person · min 8</span>
+      </div>
+    </div>
+
+    <form class="demo-form" data-demo-form>
+      <h3>Inquire About an Event</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Name</label>
+          <input id="fullName" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="emailAddr">Email</label>
+          <input id="emailAddr" type="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="eventType">Event Type</label>
+          <select id="eventType" required>
+            <option value="">Select...</option>
+            <option>Birthday</option>
+            <option>Corporate</option>
+            <option>Wedding After-Party</option>
+            <option>Fundraiser</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guestCount">Estimated Guests</label>
+          <select id="guestCount" required>
+            <option value="">Select...</option>
+            <option>1–20</option>
+            <option>21–40</option>
+            <option>41–80</option>
+            <option>80+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="notes">Additional Details</label>
+        <textarea id="notes" rows="3" placeholder="Desired date, special requests, etc."></textarea>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Send Inquiry</button>
+      <div class="toast" role="alert">Thanks! We'll follow up within 48 hours.</div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>Divine Barrel Brewing · 3701 N Davidson St Suite #203 · Charlotte, NC 28205 · (980) 237-1803</p>
+  <p><a href="beers.html">Beers</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="about.html">About</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const tabs = document.querySelectorAll('[data-tab]');
+  const panels = document.querySelectorAll('[data-panel]');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      panels.forEach(p => {
+        p.classList.toggle('active', p.dataset.panel === this.dataset.tab);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

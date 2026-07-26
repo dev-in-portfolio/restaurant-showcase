@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bossy Beulah's Chicken Shack - Charlotte, NC | Our Shacks</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive location card */
+    .location-box {
+      background: #ffffff;
+      border: 1.5px solid var(--color-border);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: var(--color-text-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bossy Beulah's
+          <span>Chicken Shack Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="locations.html" class="active">Our Shacks</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Find Your Nearest Shack</h2>
+    <p class="page-subtitle">From Freedom Drive to Fort Mill, we are frying up fresh Beaut chicken sandwiches in four neighborhood spots.</p>
+  </header>
+
+  <!-- Interactive Location Finder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Shack Finder & Seating Guide</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a neighborhood and your visit style to see our matching chicken shack and specific patio details.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Location details display -->
+        <div class="location-box" id="loc-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-red); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="loc-area-tag">OG Freedom Drive</span>
+          <h4 style="font-size: 2.2rem; color: var(--color-text-dark); line-height: 1.15; margin-bottom: 0.8rem;" id="loc-address-title">2200 W. Morehead St.</h4>
+          <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-green); margin-bottom: 1.2rem;" id="loc-patio-details">Lively Outdoor Patio & Bar Area</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="loc-hours-desc">"Open Daily: 11:00 AM - 9:00 PM. Dine-in, walk-up window, and dog-friendly picnic tables available. Our flagship Charlotte location next to Noble Smoke."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-red); letter-spacing: 0.08em; margin-bottom: 0.5rem;">1. Select Neighborhood Shack</label>
+            <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.5rem;">
+              <button class="option-btn active" onclick="setLocation('freedom', this)">Freedom Drive (Morehead St.)</button>
+              <button class="option-btn" onclick="setLocation('southend', this)">South End (South Blvd.)</button>
+              <button class="option-btn" onclick="setLocation('providence', this)">Providence Road (Myers Park)</button>
+              <button class="option-btn" onclick="setLocation('fortmill', this)">Fort Mill (Kingsley)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-red); letter-spacing: 0.08em; margin-bottom: 0.5rem;">2. Visit Style Preference</label>
+            <div class="option-grid" style="display: flex; gap: 0.55rem;">
+              <button class="option-btn active" onclick="setPreference('dinein', this)">Dine-In / Patio</button>
+              <button class="option-btn" onclick="setPreference('pickup', this)">Pickup / Window</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Shack List Details -->
+    <h3 class="section-title">All Neighborhood Shacks</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Charlotte Locations</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Freedom Drive (Flagship)</span>
+            <span class="menu-item-price">Open Daily</span>
+          </div>
+          <p class="menu-item-desc">2200 W. Morehead St., Charlotte, NC 28208. Flagship location featuring a dog-friendly deck, outdoor picnic seating, and direct walk-up order windows.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">South End Shack</span>
+            <span class="menu-item-price">Open Daily</span>
+          </div>
+          <p class="menu-item-desc">3120 South Blvd, Charlotte, NC 28209. Modern counter service in the heart of South End, steps away from the light rail station. Indoor bar tables available.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Providence Road (Myers Park)</span>
+            <span class="menu-item-price">Open Daily</span>
+          </div>
+          <p class="menu-item-desc">2900 Providence Rd, Charlotte, NC 28211. Cozy neighborhood spot with family-style indoor dining tables and dedicated curbside pickup parking spots.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Regional Shacks</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Fort Mill (Kingsley)</span>
+            <span class="menu-item-price">Open Daily</span>
+          </div>
+          <p class="menu-item-desc">1300 Broadcloth St, Fort Mill, SC 29715. Located inside the Kingsley Town Center. Features a beautiful covered porch and outdoor lawn games for children.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Winston-Salem Shack</span>
+            <span class="menu-item-price">Coming Soon</span>
+          </div>
+          <p class="menu-item-desc">Expanding our signature chicken recipe to the Triad. Stay tuned to our social feeds for official grand opening dates!</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Shack Support</h3>
+        <p>Email: info@bossybeulahs.com<br>Phone Support: (704) 375-8300</p>
+      </div>
+      <div class="info-block">
+        <h3>General Hours</h3>
+        <p>Dine-In: 11:00 AM - 9:00 PM<br>Online Order Pickup: 11:00 AM - 9:00 PM<br>Holidays: Closed Thanksgiving & Christmas</p>
+      </div>
+      <div class="info-block">
+        <h3>Menu Quality</h3>
+        <p>We source only pasture-raised chickens from regional family farms, prepared free of artificial colors, preservatives, and MSG.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bossy Beulah's Chicken Shack. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLoc = 'freedom';
+    let currentPref = 'dinein';
+
+    const locationData = {
+      freedom: {
+        area: "OG Freedom Drive",
+        address: "2200 W. Morehead St.",
+        dinein: {
+          patio: "Lively Outdoor Patio & Deck",
+          desc: "\"Open Daily: 11:00 AM - 9:00 PM. Dog-friendly picnic deck, walk-up window, and outdoor seating under our shade umbrellas next to Noble Smoke.\""
+        },
+        pickup: {
+          patio: "Walk-up Window & Curbside",
+          desc: "\"Fast pickup at our walk-up window. Standard 10-minute turnaround for online orders. Short-term parking spaces available.\""
+        }
+      },
+      southend: {
+        area: "South End",
+        address: "3120 South Blvd.",
+        dinein: {
+          patio: "Modern Indoor Diner Stalls",
+          desc: "\"Open Daily: 11:00 AM - 9:00 PM. High-energy dining tables inside. Perfect spot to grab a chicken sandwich before heading out in South End.\""
+        },
+        pickup: {
+          patio: "In-Store Order Counter",
+          desc: "\"Grab and go inside at our designated pickup counter. 1-minute walk from the South End light rail station.\""
+        }
+      },
+      providence: {
+        area: "Providence Road",
+        address: "2900 Providence Rd.",
+        dinein: {
+          patio: "Family Dining Area",
+          desc: "\"Open Daily: 11:00 AM - 9:00 PM. Family-friendly tables, kid booster seats, and quiet atmosphere tucked into Myers Park.\""
+        },
+        pickup: {
+          patio: "Curbside Parking Pickup",
+          desc: "\"Dedicated curbside parking spots. Call when you arrive, and our staff will deliver hot sandwiches directly to your car window.\""
+        }
+      },
+      fortmill: {
+        area: "Fort Mill Kingsley",
+        address: "1300 Broadcloth St.",
+        dinein: {
+          patio: "Covered Porch & Lawn Games",
+          desc: "\"Open Daily: 11:00 AM - 9:00 PM. Huge covered porch, outdoor lawn games for children, and vibrant Kingsley square community vibes.\""
+        },
+        pickup: {
+          patio: "Porch Window Pickup",
+          desc: "\"Pick up at our designated porch transaction counter. Fast checkout and easy return to broad Kingsley parking areas.\""
+        }
+      }
+    };
+
+    function setLocation(locKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentLoc = locKey;
+      updateDisplay();
+    }
+
+    function setPreference(prefKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentPref = prefKey;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const display = document.getElementById('loc-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const areaData = locationData[currentLoc];
+        const prefData = areaData[currentPref];
+
+        document.getElementById('loc-area-tag').innerText = areaData.area;
+        document.getElementById('loc-address-title').innerText = areaData.address;
+        document.getElementById('loc-patio-details').innerText = prefData.patio;
+        document.getElementById('loc-hours-desc').innerText = prefData.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

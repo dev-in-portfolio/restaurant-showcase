@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burial Beer Co. - Charlotte, NC | House of Relics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">✝</div>
+        <h1 class="brand-name">
+          Burial Beer Co.
+          <span>House of Relics Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="visuals.html">Visuals Wine</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Rooftop</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte Taproom • Plaza Midwood</span>
+        <h2 class="hero-title">House of Relics</h2>
+        <p class="hero-desc">"A monument to the cycle of life, death, and decay, serving 36 draft lines of Burial beer, cocktails, and VISUALS wine."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>👁️ Uncle's Southeast Asian Comfort Food Trailer Active on Thomas Ave Patio Deck.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">The Sanctuary of Plaza Midwood</h2>
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--color-text-muted); margin-bottom: 2rem; font-family: var(--font-heading); font-style: italic;">
+        Step off Thomas Avenue and into our House of Relics. Nestled in the heart of Plaza Midwood, our Charlotte sanctuary features an immersive indoor bar, a secluded gravel beer garden, and an expansive rooftop deck. We curate an ever-evolving tap list of dense hazy double IPAs, oak-aged stouts, and vibrant fruited wild ales.
+      </p>
+      <a href="about.html" style="color: var(--color-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1.5px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast);">
+        Explore the Burial Philosophy ➔
+      </a>
+    </section>
+
+    <!-- Interactive Draft Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">The Relic Pint Pourer</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a gothic draft style and mystical glass garnishes to visually pour your draft relic.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Crypt Glass visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="crypt-glass-wrapper">
+            <div class="crypt-liquid-fill" id="beer-liquid">
+              <div class="crypt-foam-head" id="beer-foam"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Draft Style</label>
+            <div class="option-grid" id="style-options">
+              <button class="option-btn active" onclick="setBeer('ipa', 'Shadows of Our Ancestors Hazy DIPA', 7.50, 'linear-gradient(0deg, #b45309 0%, #f59e0b 100%)', '80%')">Hazy DIPA ($7.50)</button>
+              <button class="option-btn" onclick="setBeer('stout', 'Portal of Infinite Nothingness Imperial Stout', 8.50, 'linear-gradient(0deg, #090503 0%, #1c0f0a 100%)', '90%')">Imperial Stout ($8.50)</button>
+              <button class="option-btn" onclick="setBeer('sour', 'Thorns of Eternal Regret Wild Ale', 8.00, 'linear-gradient(0deg, #7f1d1d 0%, #dc2626 100%)', '75%')">Fruited Sour ($8.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Glass Relic Addition</label>
+            <div class="option-grid" id="addition-options">
+              <button class="option-btn active" onclick="setAddition('none', 'Standard Pour', 0.00)">Standard Pour</button>
+              <button class="option-btn" onclick="setAddition('smoke', 'Oak-Aged Woodsmoke Garnish', 1.00)">Woodsmoke (+$1.00)</button>
+              <button class="option-btn" onclick="setAddition('rim', 'Cryptic Salt Rim Garnish', 0.50)">Salt Rim (+$0.50)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Crypt Draft Selection</span>
+        <h4 class="builder-display-title" id="display-beer-name">Shadows of Our Ancestors Hazy DIPA</h4>
+        <p id="display-beer-garnish" style="color: var(--color-gold); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Standard Pour</p>
+        <div class="builder-display-price" id="display-beer-price">$7.50</div>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); font-family: var(--font-heading); font-style: italic;" id="display-beer-desc">"A glowing haze of tropical mosaic and citra hops, carrying notes of crushed stone and fresh cut grass, poured as a standard pint."</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch Uncle's Feast Pairing Guide</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Match Uncle's Thai-style comfort food (Khao Man Gai, braised pork belly) with our dense hazy IPA flights. Click below to view the planner.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Feast Planner
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1214 Thomas Ave<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 12:00 PM - 11:00 PM<br>Fri - Sat: 12:00 PM - 12:00 AM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>House of Relics taproom | Uncle's Food Trailer | Visuals Wine program</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Burial Beer Co. Plaza Midwood Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBeer = { key: 'ipa', name: 'Shadows of Our Ancestors Hazy DIPA', price: 7.50, color: 'linear-gradient(0deg, #b45309 0%, #f59e0b 100%)', height: '80%' };
+    let selectedAddition = { key: 'none', name: 'Standard Pour', price: 0.00 };
+
+    function setBeer(key, name, price, color, height) {
+      const buttons = document.getElementById('style-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBeer = { key, name, price, color, height };
+      updateDisplay();
+    }
+
+    function setAddition(key, name, price) {
+      const buttons = document.getElementById('addition-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedAddition = { key, name, price };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedBeer.price + selectedAddition.price;
+      document.getElementById('display-beer-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-beer-name').innerText = selectedBeer.name;
+      document.getElementById('display-beer-garnish').innerText = selectedAddition.name;
+
+      // Update liquid graphic
+      const liquid = document.getElementById('beer-liquid');
+      liquid.style.height = selectedBeer.height;
+      liquid.style.background = selectedBeer.color;
+
+      // Update descriptors
+      let desc = '';
+      if (selectedBeer.key === 'ipa') {
+        desc = `"A glowing haze of tropical mosaic and citra hops, carrying notes of crushed stone and fresh cut grass, finished with ${selectedAddition.name.toLowerCase()}."`;
+      } else if (selectedBeer.key === 'stout') {
+        desc = `"A dark expanse of chocolate malt, charred oak staves, and vanilla pods, bringing a heavy roast warmth, finished with ${selectedAddition.name.toLowerCase()}."`;
+      } else {
+        desc = `"A vibrant, blood-red sour ale aged in oak with fresh raspberries and plums, providing sharp acidity, finished with ${selectedAddition.name.toLowerCase()}."`;
+      }
+      document.getElementById('display-beer-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

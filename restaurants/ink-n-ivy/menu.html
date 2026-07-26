@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Ink N Ivy | Game Day Specials &amp; Eclectic American Fare</title>
+<meta name="description" content="Explore Ink N Ivy's menu: Blackened Chicken Pasta, Mac N Cheese, Sweet &amp; Spicy Shrimp, brunch, late night, and game day specials in Uptown Charlotte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="nav-brand">Ink N Ivy</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="hero" style="padding:3.5rem 0 3rem">
+    <div class="container">
+      <h1>Our Menu</h1>
+      <p class="tagline">Eclectic American fare with a creative twist</p>
+      <div class="hero-actions">
+        <a href="#gameday" class="btn btn-primary">Game Day Specials</a>
+        <a href="#brunch" class="btn btn-outline">Brunch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game Day Configurator -->
+  <section class="section section-dark" id="gameday">
+    <div class="container">
+      <span class="section-bar"></span>
+      <h2>Game Day Specials</h2>
+      <p style="margin-bottom:1.5rem;max-width:650px">Pick your sport and we&rsquo;ll show you the plays &mdash; specials curated for your game day experience.</p>
+
+      <div class="configurator" id="gameday-config">
+        <label for="sport-select" style="font-weight:700;display:block;margin-bottom:0.5rem;color:var(--ink)">Choose your sport:</label>
+        <select id="sport-select" aria-label="Select a sport to see game day specials">
+          <option value="panthers">Carolina Panthers</option>
+          <option value="hornets">Charlotte Hornets</option>
+          <option value="football">Football Sunday</option>
+          <option value="default">Just Browsing</option>
+        </select>
+        <div class="config-results"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lunch & Dinner -->
+  <section class="section">
+    <div class="container">
+      <span class="section-bar"></span>
+      <h2>Lunch &amp; Dinner</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Starters</h3>
+          <ul style="list-style:none">
+            <li style="padding:0.75rem 0;border-bottom:1px solid #eee"><strong>Sweet &amp; Spicy Shrimp</strong> <span style="float:right;font-weight:700">$15</span><br><span style="font-size:0.9rem;color:#555">Flash-fried, tossed in sweet chili glaze</span></li>
+            <li style="padding:0.75rem 0;border-bottom:1px solid #eee"><strong>Brussels Sprouts</strong> <span style="float:right;font-weight:700">$11</span><br><span style="font-size:0.9rem;color:#555">Crispy, balsamic glaze, shaved parmesan</span></li>
+            <li style="padding:0.75rem 0;border-bottom:1px solid #eee"><strong>Buffalo Chicken Dip</strong> <span style="float:right;font-weight:700">$11</span><br><span style="font-size:0.9rem;color:#555">Housemade tortilla chips</span></li>
+            <li style="padding:0.75rem 0"><strong>Popcorn Shrimp Basket</strong> <span style="float:right;font-weight:700">$12</span><br><span style="font-size:0.9rem;color:#555">Flash-fried, house ranch</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Mains</h3>
+          <ul style="list-style:none">
+            <li style="padding:0.75rem 0;border-bottom:1px solid #eee"><strong>Blackened Chicken Pasta</strong> <span style="float:right;font-weight:700">$18</span><br><span style="font-size:0.9rem;color:#555">Cajun-spiced chicken, creamy alfredo, bell peppers</span></li>
+            <li style="padding:0.75rem 0;border-bottom:1px solid #eee"><strong>Church Street Chicken</strong> <span style="float:right;font-weight:700">$17</span><br><span style="font-size:0.9rem;color:#555">Pan-seared, seasonal vegetables, herb butter</span></li>
+            <li style="padding:0.75rem 0;border-bottom:1px solid #eee"><strong>Chicken and Waffles</strong> <span style="float:right;font-weight:700">$16</span><br><span style="font-size:0.9rem;color:#555">Buttermilk fried chicken, Belgium waffle, maple drizzle</span></li>
+            <li style="padding:0.75rem 0"><strong>Mac N Cheese</strong> <span style="float:right;font-weight:700">$14</span><br><span style="font-size:0.9rem;color:#555">Five-cheese blend, breadcrumb topping</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brunch -->
+  <section class="section section-ivy" id="brunch">
+    <div class="container">
+      <span class="section-bar" style="background:var(--white)"></span>
+      <h2>Weekend Brunch</h2>
+      <p style="margin-bottom:2rem">Saturday &amp; Sunday &bull; Mimosas &amp; Bloody Mary bar</p>
+      <div class="specials-grid">
+        <div class="special-card" style="background:rgba(255,255,255,0.12);color:var(--white)">
+          <h4 style="color:var(--white)">Classic Benedict</h4>
+          <p>Poached eggs, Canadian bacon, hollandaise, home fries</p>
+          <span class="price" style="color:var(--gold)">$14</span>
+        </div>
+        <div class="special-card" style="background:rgba(255,255,255,0.12);color:var(--white)">
+          <h4 style="color:var(--white)">Southern Breakfast Bowl</h4>
+          <p>Grits, scrambled eggs, bacon, cheddar, chives</p>
+          <span class="price" style="color:var(--gold)">$13</span>
+        </div>
+        <div class="special-card" style="background:rgba(255,255,255,0.12);color:var(--white)">
+          <h4 style="color:var(--white)">French Toast</h4>
+          <p>Brioche, seasonal berries, whipped mascarpone</p>
+          <span class="price" style="color:var(--gold)">$13</span>
+        </div>
+        <div class="special-card" style="background:rgba(255,255,255,0.12);color:var(--white)">
+          <h4 style="color:var(--white)">Mimosa Pitcher</h4>
+          <p>Choose from orange, grapefruit, or peach</p>
+          <span class="price" style="color:var(--gold)">$18</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Late Night -->
+  <section class="section">
+    <div class="container">
+      <span class="section-bar"></span>
+      <h2>Late Night</h2>
+      <p>Available until close &bull; Fri&ndash;Sat kitchen open till 1am</p>
+      <div class="grid-3 mt-2">
+        <div class="card"><h3>Loaded Tater Tots</h3><p>Bacon, cheese, sour cream, chives</p><p><strong>$10</strong></p></div>
+        <div class="card"><h3>Mini Sliders (3)</h3><p>Angus beef, cheddar, pickles, special sauce</p><p><strong>$12</strong></p></div>
+        <div class="card"><h3>Quesadilla</h3><p>Three-cheese, pico, jalape&ntilde;o crema</p><p><strong>$10</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drinks -->
+  <section class="section section-dark">
+    <div class="container">
+      <span class="section-bar"></span>
+      <h2>Drinks</h2>
+      <div class="grid-3">
+        <div>
+          <h3 style="color:var(--gold)">Craft Cocktails</h3>
+          <ul style="list-style:none;color:var(--warm-gray)">
+            <li style="padding:0.5rem 0">Ivy Mule &mdash; $12</li>
+            <li style="padding:0.5rem 0">Church Street Old Fashioned &mdash; $14</li>
+            <li style="padding:0.5rem 0">Ink Margarita &mdash; $11</li>
+            <li style="padding:0.5rem 0">Teal Lemonade &mdash; $10</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold)">Beer</h3>
+          <ul style="list-style:none;color:var(--warm-gray)">
+            <li style="padding:0.5rem 0">Domestic Draft &mdash; $6</li>
+            <li style="padding:0.5rem 0">Craft Selection &mdash; $7&ndash;$9</li>
+            <li style="padding:0.5rem 0">Pitcher (Domestic) &mdash; $14</li>
+            <li style="padding:0.5rem 0">Bucket of 6 &mdash; $20</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold)">Wine &amp; More</h3>
+          <ul style="list-style:none;color:var(--warm-gray)">
+            <li style="padding:0.5rem 0">House Red/White &mdash; $9</li>
+            <li style="padding:0.5rem 0">Sparkling &mdash; $10</li>
+            <li style="padding:0.5rem 0">Bottomless Mimosas (Brunch) &mdash; $16</li>
+            <li style="padding:0.5rem 0">Bloody Mary Bar &mdash; $12</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="grid-3" style="margin-bottom:2rem">
+      <div>
+        <h4 style="color:var(--gold);font-family:var(--font-heading);margin-bottom:0.75rem">Ink N Ivy</h4>
+        <p>222 S Church St, Charlotte, NC 28202<br>
+        <a href="tel:+17043325424">(704) 332-5424</a></p>
+      </div>
+      <div>
+        <h4 style="color:var(--gold);font-family:var(--font-heading);margin-bottom:0.75rem">Hours</h4>
+        <p>Mon&ndash;Thu 11am&ndash;12am<br>Fri&ndash;Sat 11am&ndash;2am<br>Sun 10am&ndash;10pm</p>
+      </div>
+      <div>
+        <h4 style="color:var(--gold);font-family:var(--font-heading);margin-bottom:0.75rem">Follow</h4>
+        <p><a href="https://instagram.com/inknivyclt" target="_blank">@inknivyclt</a></p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;margin-bottom:0">
+      &copy; 2026 Bottlecap Group &bull; <em>Written in Ink. Still Growing like Ivy.</em>
+    </p>
+  </div>
+</footer>
+
+<div class="disclosure disclosure-fixed" role="note">
+  <div class="container">
+    Unofficial concept presentation &mdash; not operated by the restaurant.
+  </div>
+</div>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

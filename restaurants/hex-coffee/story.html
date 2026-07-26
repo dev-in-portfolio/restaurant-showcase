@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Story — HEX Coffee Roasters</title>
+<meta name="description" content="The story of HEX Coffee Roasters — John Michael Cord, Plaza Midwood roots, and the Camp North End expansion.">
+<link rel="stylesheet" href="../site-core.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&amp;display=swap">
+<style>
+:root{--coral:#e86a5f;--teal:#2a9d8f;--gold:#d4a747;--cream:#fdf8f0;--dark:#1a1614;--light:#fffaf5}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--dark);background:var(--light);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.container{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;max-width:72rem;margin:0 auto}
+.logo{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.55rem;letter-spacing:-.04em;text-decoration:none;color:var(--dark)}
+.logo span{color:var(--coral)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dark);transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--dark)}
+
+.hero-story{text-align:center;padding:5rem 1.5rem 3rem;background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)}
+.hero-story h1{font-size:clamp(2rem,4.5vw,3.2rem);margin:0 0 .5rem}
+.hero-story .estd{font-family:'Fraunces',Georgia,serif;color:var(--teal);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+
+.content-section{max-width:44rem;margin:0 auto;padding:3rem 1.5rem}
+.content-section p{font-size:1rem;color:#2a2520;margin:0 0 1.2rem}
+.content-section h2{font-size:clamp(1.3rem,2.8vw,1.8rem);margin:2.5rem 0 .6rem}
+
+.quote-block{margin:2.5rem 0;padding:2rem 2.2rem;background:var(--cream);border-radius:1.5rem;border-left:5px solid var(--coral)}
+.quote-block p{margin:0 0 .5rem;font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:600;font-style:italic;color:var(--dark)}
+.quote-block cite{font-style:normal;font-size:.82rem;color:#5a524b}
+
+.timeline{max-width:36rem;margin:2rem auto;padding:0}
+.timeline-item{position:relative;padding:0 0 1.8rem 2rem;border-left:3px solid var(--gold)}
+.timeline-item::before{content:'';position:absolute;left:-.45rem;top:.2rem;width:.85rem;height:.85rem;border-radius:50%;background:var(--gold)}
+.timeline-item .year{font-family:'Fraunces',Georgia,serif;font-weight:700;color:var(--coral);font-size:.9rem}
+.timeline-item p{margin:.2rem 0 0;font-size:.9rem}
+
+footer{background:var(--dark);color:rgba(255,255,255,.7);padding:3rem 1.5rem;text-align:center;font-size:.85rem}
+footer a{color:rgba(255,255,255,.9);text-decoration:none}
+footer .footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;padding:0;margin:0 0 1rem}
+
+@media(max-width:700px){
+nav{flex-wrap:wrap}
+.nav-links{display:none;flex-direction:column;width:100%;gap:.5rem;padding:1rem 0}
+.nav-links.open{display:flex}
+.nav-toggle{display:block}
+.hero-story{padding:3rem 1.5rem 2rem}
+.content-section{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+<a href="index.html" class="logo">HEX<span>.</span></a>
+<button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="story.html">Story</a></li>
+<li><a href="brew.html">Brew</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<main id="main">
+
+<div class="hero-story">
+<div class="estd">Est. 20-15</div>
+<h1>Pointed Toward Provenance</h1>
+<p style="color:#5a524b;max-width:30rem;margin:.5rem auto 0">The story of HEX Coffee Roasters, from Plaza Midwood to Camp North End.</p>
+</div>
+
+<div class="content-section">
+
+<h2>Bright by Design</h2>
+<p>HEX Coffee Roasters was founded in 2015 by John Michael Cord with a singular conviction: coffee should be unashamedly bright. In a landscape of dark roasts and obscuring blends, HEX chose the opposite path — light roasting that celebrates acidity, clarity, and the distinct taste of place.</p>
+
+<div class="quote-block">
+<p>"We don&rsquo;t roast to a flavor profile. We roast to reveal the flavor that&rsquo;s already there."</p>
+<cite>— John Michael Cord, Owner</cite>
+</div>
+
+<h2>The Philosophy</h2>
+<p>HEX is a terroir-first roastery. Every lot is sourced through direct relationships with producers who prioritize quality, sustainability, and transparency. The roasting approach is architecturally minded: subtract heat, add precision, and let the bean speak. The result is a cup that points back to where it was grown — not how it was processed in the drum.</p>
+<p>Sourcing partners span four origin countries — Colombia, Kenya, Ethiopia, and Myanmar — each chosen for their potential to produce vibrant, clean, and memorable lots at light roast development.</p>
+
+<h2>Plaza Midwood Roots</h2>
+<p>The original HEX cafe opened at 1616 Central Ave in Charlotte&rsquo;s historic Plaza Midwood neighborhood. A minimalist space with a custom bar, poured concrete counters, and a focused menu, it quickly became a destination for drinkers seeking something beyond the conventional third wave.</p>
+<p>The cafe operates as a tasting room for the roastery — every drink is made with the same single-origin beans sold in bag, so customers can taste before they buy.</p>
+
+<h2>Camp North End Expansion</h2>
+<p>In 2022, HEX expanded to Camp North End — Charlotte&rsquo;s sprawling creative campus — with HEX Coffee, Kitchen &amp; Natural Wines. This second location brings together all three of the company&rsquo;s passions: exceptional coffee, seasonal food, and low-intervention natural wines.</p>
+
+<h2>Timeline</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="year">2015</div>
+<p>HEX Coffee Roasters founded by John Michael Cord. Plaza Midwood cafe opens at 1616 Central Ave.</p>
+</div>
+<div class="timeline-item">
+<div class="year">2017</div>
+<p>First direct-trade sourcing trip to Colombia. Light-roast philosophy formalized.</p>
+</div>
+<div class="timeline-item">
+<div class="year">2020</div>
+<p>Expanded online retail at hex.coffee. National shipping launched.</p>
+</div>
+<div class="timeline-item">
+<div class="year">2022</div>
+<p>HEX Coffee, Kitchen &amp; Natural Wines opens at Camp North End (201 Camp Rd).</p>
+</div>
+<div class="timeline-item">
+<div class="year">2025</div>
+<p>Celebrating 10 years of unashamedly bright coffees in Charlotte.</p>
+</div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="brew.html">Brew Guides</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://hex.coffee" target="_blank" rel="noopener">hex.coffee</a></li>
+</ul>
+<p>&copy; Concept design — HEX Coffee Roasters, Charlotte NC. ESTD.2015</p>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

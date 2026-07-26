@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservations — L'Ostrica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--inky:#0f0b0a;--oyster:#e8ddd0;--coral:#c45a4a;--sage:#8a9a7a;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#1a1a1a}.page-hero{background:linear-gradient(135deg,var(--inky),#1a1210);color:var(--oyster);padding:5rem 24px;text-align:center}.page-hero h1{color:var(--oyster)}.page-hero h1 span{color:var(--coral);font-style:italic}.page-hero p{opacity:.7;max-width:600px;margin:0 auto}.reserve-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}@media(max-width:768px){.reserve-layout{grid-template-columns:1fr}}.reserve-form{padding:2rem;background:var(--cream);border-radius:8px}.reserve-form h2{color:var(--inky);margin-bottom:1.25rem}.reserve-form label{display:block;font-weight:600;margin-bottom:.35rem;font-size:.9rem}.reserve-form input,.reserve-form select{width:100%;padding:12px;margin-bottom:1.25rem;border:1px solid #d4d0c8;border-radius:4px;font-family:var(--font-body);font-size:1rem}.reserve-form input:focus,.reserve-form select:focus{outline:2px solid var(--coral);outline-offset:2px;border-color:transparent}.sidebar{display:flex;flex-direction:column;gap:1.5rem}.info-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:var(--shadow);border-left:4px solid var(--coral)}.info-card h3{color:var(--inky);margin-bottom:.5rem}.info-card .exp-type{font-size:.85rem;color:var(--coral);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem}.info-card p{font-size:.9rem;color:var(--medium-gray);margin-bottom:.25rem}.info-card .price{font-weight:700;color:var(--gold);font-size:1.05rem}.hours-card{background:var(--cream);border-radius:8px;padding:1.5rem}.hours-card h3{color:var(--inky);margin-bottom:.75rem}.hours-table{width:100%}.hours-table td{padding:.35rem .5rem;font-size:.9rem}.hours-table .day{font-weight:600}.hours-table .time{color:var(--medium-gray)}.hours-table .closed{opacity:.5}.disclosure{border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo" style="letter-spacing:.04em">L'Ostrica</a>
+<nav class="nav-links">
+<a href="menu.html">Menu</a>
+<a href="story.html">Our Story</a>
+<a href="reservations.html">Reservations</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Reserve Your <span>Experience</span></h1>
+<p>Tasting menus, Sunday Supper, or bar seating — book your table through Tock.</p>
+</section>
+
+<section class="section container">
+<div class="reserve-layout">
+<div>
+<form class="demo-form reserve-form">
+<h2>Request a Reservation</h2>
+<label for="res-experience">Experience</label>
+<select id="res-experience" required>
+<option value="">Select experience</option>
+<option>Signature Tasting (10+ courses · $195)</option>
+<option>Tasting Menu (5–7 courses · $120)</option>
+<option>Sunday Supper ($85–90)</option>
+<option>Bar Seating (a la carte)</option>
+</select>
+<label for="res-name">Name</label>
+<input type="text" id="res-name" placeholder="Full name" required>
+<label for="res-email">Email</label>
+<input type="email" id="res-email" placeholder="you@example.com" required>
+<label for="res-date">Date</label>
+<input type="date" id="res-date" required>
+<label for="res-time">Time</label>
+<select id="res-time" required>
+<option value="">Select time</option>
+<option>5:00 PM</option>
+<option>5:30 PM</option>
+<option>6:00 PM</option>
+<option>6:30 PM</option>
+<option>7:00 PM</option>
+<option>7:30 PM</option>
+<option>8:00 PM</option>
+<option>8:30 PM</option>
+</select>
+<label for="res-party">Party Size</label>
+<select id="res-party" required>
+<option value="">Select size</option>
+<option>1 guest</option>
+<option>2 guests</option>
+<option>3 guests</option>
+<option>4 guests</option>
+<option>5 guests</option>
+<option>6 guests</option>
+</select>
+<label for="res-dietary">Dietary Restrictions</label>
+<input type="text" id="res-dietary" placeholder="Allergies, preferences, celebrations...">
+<button type="submit" class="btn" style="width:100%;background:var(--coral);color:var(--white);font-weight:700">Request Reservation (Demo)</button>
+</form>
+</div>
+
+<div class="sidebar">
+<div class="info-card">
+<div class="exp-type">Signature Tasting</div>
+<h3>10+ Courses</h3>
+<p>A memorable exploration of seasonal ingredients and global techniques.</p>
+<p class="price">$195 per person</p>
+</div>
+<div class="info-card">
+<div class="exp-type">Tasting Menu</div>
+<h3>5–7 Courses</h3>
+<p>An abbreviated progression of the Signature experience.</p>
+<p class="price">$120 per person</p>
+</div>
+<div class="info-card">
+<div class="exp-type">Sunday Supper</div>
+<h3>Rotating Themes</h3>
+<p>Weekly pop-up-inspired menus — Korean, Mediterranean, Provençal, and more.</p>
+<p class="price">$85–90 per person</p>
+</div>
+<div class="hours-card">
+<h3>Hours</h3>
+<table class="hours-table">
+<tr><td class="day closed">Monday</td><td class="time closed">Closed</td></tr>
+<tr><td class="day closed">Tuesday</td><td class="time closed">Closed</td></tr>
+<tr><td class="day">Wednesday</td><td class="time">5:00 – 10:00 PM</td></tr>
+<tr><td class="day">Thursday</td><td class="time">5:00 – 10:00 PM</td></tr>
+<tr><td class="day">Friday</td><td class="time">5:00 – 10:00 PM</td></tr>
+<tr><td class="day">Saturday</td><td class="time">5:00 – 10:00 PM</td></tr>
+<tr><td class="day">Sunday</td><td class="time">Sunday Supper 5:30 PM</td></tr>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:var(--inky);color:var(--oyster);text-align:center">
+<div class="container">
+<p style="opacity:.6;font-size:.85rem">&copy; 2026 Pink Moon Restaurant, LLC — Charlotte, NC</p>
+<p style="font-size:.82rem;opacity:.5;margin-top:.5rem">
+<a href="https://instagram.com/lostrica_clt" style="color:var(--coral)">@lostrica_clt</a> &middot;
+<a href="tel:7045167283" style="color:var(--coral)">(704) 516-7283</a> &middot;
+<a href="https://lostricaclt.com" style="color:var(--coral)">lostricaclt.com</a>
+</p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.25)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

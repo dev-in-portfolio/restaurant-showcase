@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bossy Beulah's Chicken Shack - Charlotte, NC | Catering</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bossy Beulah's
+          <span>Chicken Shack Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="locations.html">Our Shacks</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Picnic Box Lunch Catering</h2>
+    <p class="page-subtitle">Feed your office crew, tailgate party, or family picnic with our convenient, individually packaged chicken sandwich box lunches.</p>
+  </header>
+
+  <!-- Interactive Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Picnic Box Estimator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Select your guest count and box lunch tier to calculate estimated catering subtotals.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-red); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-sans);">Expected Guests: <span id="guests-val" style="font-size: 1.8rem; color: var(--color-text-dark);">25</span> people</label>
+        <input type="range" id="guests-count" min="15" max="100" value="25" step="5" style="width: 100%; accent-color: var(--color-red); cursor: pointer;" oninput="calculateEvent(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--color-text-dark);">Service Type</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <select id="event-hours" style="background: #fff; border: 1px solid var(--color-border); color: var(--color-text-dark); padding: 0.5rem 1rem; border-radius: 4px;" onchange="updateService(this.value)">
+              <option value="pickup">Shack Pickup (Free)</option>
+              <option value="delivery" selected>Local Delivery</option>
+            </select>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);" id="delivery-fee-label">Delivery Fee: $25.00</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--color-text-dark);">Box Lunch Tier</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <button class="option-btn" id="btn-pkg-base" onclick="selectPkg(12, 'Beaut Box Lunch')">Beaut ($12)</button>
+            <button class="option-btn active" id="btn-pkg-double" onclick="selectPkg(15, 'Double Beaut Box')">Double ($15)</button>
+            <button class="option-btn" id="btn-pkg-feast" onclick="selectPkg(22, 'Bossy Feast Box')">Feast ($22)</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Includes sandwich, fries, and treats.</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(220, 38, 38, 0.02) 0%, rgba(255, 255, 255, 0.95) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
+        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; font-family: var(--font-sans);">Estimated Catering Subtotal</span>
+        <h4 style="font-size: 3.2rem; color: var(--color-text-dark); margin: 0.5rem 0;" id="event-cost">$400.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="event-summary">Based on 25 guests with Double Beaut Box ($375 boxes + $25 delivery fee).</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Inquiry Form</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. Please order at least 24 hours in advance for groups larger than 15.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Catering Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Boxes Required</label>
+              <input type="number" id="guests-count-input" value="25" readonly style="background: rgba(0,0,0,0.02); border-color: rgba(220, 38, 38, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details & Requests (Specify sandwich mix, sweet cookie needs, or special timing constraints)</label>
+              <textarea id="notes" placeholder="e.g. We would like 15 classic Beaut boxes and 10 spicy breast boxes. Deliver to the 3rd floor conference room by 11:45 AM..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Catering Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🐔</div>
+          <h3 class="success-title">Catering Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Bossy Beulah's crew will check the kitchen schedule and call you shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>OG Address</h3>
+        <p>2200 Freedom Drive<br>Charlotte, NC 28208</p>
+      </div>
+      <div class="info-block">
+        <h3>OG Hours</h3>
+        <p>Sun - Thu: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Other Shops</h3>
+        <p>Park Road Shopping Center (Brandywine Rd)<br>Ballantyne Bowl (Bowl Street)</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bossy Beulah's. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentGuests = 25;
+    let serviceMode = 'delivery';
+    let pkgCost = 15;
+    let pkgName = 'Double Beaut Box';
+
+    function updateService(val) {
+      serviceMode = val;
+      calculateEvent(currentGuests);
+    }
+
+    function selectPkg(cost, name) {
+      pkgCost = cost;
+      pkgName = name;
+
+      document.getElementById('btn-pkg-base').classList.remove('active');
+      document.getElementById('btn-pkg-double').classList.remove('active');
+      document.getElementById('btn-pkg-feast').classList.remove('active');
+      
+      if (cost === 12) {
+        document.getElementById('btn-pkg-base').classList.add('active');
+      } else if (cost === 15) {
+        document.getElementById('btn-pkg-double').classList.add('active');
+      } else {
+        document.getElementById('btn-pkg-feast').classList.add('active');
+      }
+
+      calculateEvent(currentGuests);
+    }
+
+    function calculateEvent(guests) {
+      currentGuests = parseInt(guests);
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      // Delivery fee: flat rate $25 for < 30 guests, $50 for 30 to 60, $75 for > 60. Pickup is free.
+      let deliveryFee = 0;
+      if (serviceMode === 'delivery') {
+        if (currentGuests > 60) {
+          deliveryFee = 75;
+        } else if (currentGuests >= 30) {
+          deliveryFee = 50;
+        } else {
+          deliveryFee = 25;
+        }
+      }
+
+      document.getElementById('delivery-fee-label').innerText = serviceMode === 'pickup' ? 'Shack Pickup: Free' : `Delivery Fee: $${deliveryFee.toFixed(2)}`;
+
+      const boxesCost = currentGuests * pkgCost;
+      const totalCost = boxesCost + deliveryFee;
+
+      document.getElementById('event-cost').innerText = `$${totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('event-summary').innerText = `Based on ${currentGuests} guests with ${pkgName} ($${boxesCost} boxes + $${deliveryFee} service fee).`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to coordinate delivery options.`;
+    });
+  </script>
+</body>
+</html>

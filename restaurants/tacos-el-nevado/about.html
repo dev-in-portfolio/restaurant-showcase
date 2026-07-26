@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tacos El Nevado - Charlotte, NC | About Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">N</div>
+        <h1 class="brand-name">
+          El Nevado
+          <span>Tacos & Oaxacan Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Ancestral Oaxacan Heritage</h2>
+    <p class="page-subtitle">Charlotte's favorite family-run street taco kitchen, preserving ancient Oaxacan stone-grinding arts since 2010.</p>
+  </header>
+
+  <!-- Interactive Spice Guide Section -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Basalt Stone Flavor Guide</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select an ingredient to discover how Oaxacan volcanic stone mills and seasoning arts shape our street tacos.</p>
+      
+      <div class="option-grid" style="justify-content: center; margin-bottom: 3rem;" id="spice-options">
+        <button class="option-btn active" onclick="selectSpice('achiote', this)">Achiote Seeds</button>
+        <button class="option-btn" onclick="selectSpice('chiles', this)">Guajillo & Ancho</button>
+        <button class="option-btn" onclick="selectSpice('epazote', this)">Epazote Herb</button>
+        <button class="option-btn" onclick="selectSpice('masa', this)">Volcanic Stone Masa</button>
+      </div>
+
+      <!-- Recommendation Display Card -->
+      <div class="result-card" id="spice-display" style="background: rgba(0, 0, 0, 0.5); border: 1px solid var(--color-border); border-radius: 16px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; transition: all 0.3s ease-in-out;">
+        <h4 style="font-size: 1.5rem; color: var(--color-gold); margin-bottom: 0.8rem;" id="spice-title">Achiote Seeds</h4>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-muted);" id="spice-desc">
+          Rusty-red seeds harvested from the Bixa orellana tree, ground with cumin and garlic on our basalt metate stones. Provides the deep orange marinade, citrus aroma, and earthy depth of our spit-roasted Al Pastor pork.
+        </p>
+      </div>
+    </section>
+
+    <!-- Narrative Section -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem; max-width: 800px; margin: 0 auto 5rem auto;">
+      
+      <!-- Roots Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Founded in Charlotte 2010</h3>
+        <p style="line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; color: var(--color-text-muted);">
+          Tacos El Nevado was founded in 2010 by a Oaxacan family. Combining Oaxacan seasoning profiles with street taco speed, we grew from a small neighborhood register counter into two busy locations on Central Ave and South Blvd.
+        </p>
+        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+          Every morning, we boil dried corn in slaked lime water (nixtamalization) and grind it on volcanic basalt stone mills to hand-press fresh tortillas for every street taco ordered.
+        </p>
+      </div>
+
+      <!-- Oaxaca concept Expansion Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Sabores de Oaxaca Expansion</h3>
+        <p style="line-height: 1.8; text-align: justify; color: var(--color-text-muted);">
+          Rooted in our success serving street tacos, the family expanded our culinary footprint in Charlotte by opening a new specialized concept, <strong>Sabores de Oaxaca</strong>. This new endeavor focuses on slow-cooked black moles, grilled tlayuda clay tortillas, and artisanal mezcals, celebrating the culinary heart of southern Mexico.
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Locations</h3>
+        <p>4715 Central Ave, Charlotte, NC 28205<br>4640 South Blvd, Charlotte, NC 28209</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 10:00 AM - 10:00 PM<br>Fri - Sat: 10:00 AM - 11:00 PM<br>Sun: 10:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 567-8889 (Central) | (704) 525-4475 (South)<br>Dine-In | Counter Takeout | Weekend Menudo</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Tacos El Nevado. Charlotte landmark since 2010.</p>
+    </div>
+  </footer>
+
+  <script>
+    const spices = {
+      achiote: {
+        title: "Achiote Seeds",
+        desc: "Rusty-red seeds harvested from the Bixa orellana tree, ground with cumin and garlic on our basalt metate stones. Provides the deep orange marinade, citrus aroma, and earthy depth of our spit-roasted Al Pastor pork."
+      },
+      chiles: {
+        title: "Guajillo & Ancho Chilies",
+        desc: "Guajillo and Ancho dried chili pods, toasted on hot griddles before being simmered and blended into a smooth paste. Imparts smoky, rich red pigments and medium warming heat to our beef stews and menudo."
+      },
+      epazote: {
+        title: "Epazote Herb",
+        desc: "A wild Mexican aromatic herb with a pungent, skunky oregano-citrus aroma. Simmered fresh inside our black bean pots to provide Oaxacan digestive properties and deep traditional herbal undertones."
+      },
+      masa: {
+        title: "Volcanic Stone Masa",
+        desc: "Whole corn kernels boiled with mineral lime water and ground on volcanic basalt stone mills. Yields a moist, elastic, naturally scented masa dough used to press our fresh corn tortillas for every order."
+      }
+    };
+
+    function selectSpice(key, btnElement) {
+      const buttons = document.getElementById('spice-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const displayCard = document.getElementById('spice-display');
+      displayCard.style.opacity = '0';
+      displayCard.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = spices[key];
+        document.getElementById('spice-title').innerText = data.title;
+        document.getElementById('spice-desc').innerText = data.desc;
+        
+        displayCard.style.opacity = '1';
+        displayCard.style.transform = 'translateY(0)';
+      }, 200);
+    }
+  </script>
+</body>
+</html>

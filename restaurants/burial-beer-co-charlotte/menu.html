@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burial Beer Co. - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling feast display card */
+    .feast-display-card {
+      background: radial-gradient(circle, #100b09 0%, #060608 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .feast-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-gold);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .feast-title {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .feast-meta {
+      font-size: 0.9rem;
+      color: var(--color-gold);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .feast-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-heading);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">✝</div>
+        <h1 class="brand-name">
+          Burial Beer Co.
+          <span>House of Relics Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="visuals.html">Visuals Wine</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Rooftop</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Relic Taps & Asian Feasts</h2>
+    <p class="page-subtitle">Savor comfort bowls from Uncle's food trailer. Select a dish below to pair it with the perfect Burial draft.</p>
+  </header>
+
+  <!-- Interactive Feast Builder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Uncle's Feast Pairing Guide</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Feast Card -->
+        <div class="feast-display-card" id="feast-card-box">
+          <div class="feast-badge">Uncle's comfort Pairing</div>
+          <h4 class="feast-title" id="feast-dish-title">Khao Ka Moo Pork Belly</h4>
+          <div class="feast-meta" id="feast-beer-meta">Paired with Portal of Infinite Nothingness Stout • Combo: $22.50</div>
+          <p class="feast-desc" id="feast-desc-text">"Rich braised pork belly spiced with star anise and soy, served with sour cabbage and poached egg. The deep coffee roasts of our imperial stout slice clean through the belly's sweet fat."</p>
+        </div>
+
+        <!-- Right Side: Dish Options -->
+        <div style="display: flex; flex-direction: column; gap: 0.70rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select comfort Bowl</label>
+          <button class="option-btn" onclick="showFeast('poached', this)">Khao Man Gai Poached</button>
+          <button class="option-btn" onclick="showFeast('fried', this)">Khao Man Gai Fried</button>
+          <button class="option-btn active" onclick="showFeast('pork', this)">Khao Ka Moo Pork Belly</button>
+          <button class="option-btn" onclick="showFeast('tofu', this)">Crispy Tofu & Peanut bowl</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Thomas Ave Taproom Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">On Draft (Burial Relics)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Shadows of Our Ancestors<span class="menu-item-badge">Hazy DIPA</span></span>
+            <span class="menu-item-price">$7.50</span>
+          </div>
+          <p class="menu-item-desc">Double dry-hopped hazy IPA with heavy doses of mosaic and citra. Tropical notes of passionfruit and crushed stone.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Portal of Infinite Nothingness<span class="menu-item-badge">Stout</span></span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Imperial stout aged on espresso beans, charred oak chips, and raw cocoa nibs. Rich, creamy, roasted chocolate profile.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Thorns of Eternal Regret<span class="menu-item-badge">Sour</span></span>
+            <span class="menu-item-price">$8.00</span>
+          </div>
+          <p class="menu-item-desc">Oak-aged wild ale fermented with fresh raspberries, cherries, and plums. Sharp berry acidity with a clean tannic finish.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Uncle's Southeast Asian comfort</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Khao Man Gai (Poached)</span>
+            <span class="menu-item-price">$13.00</span>
+          </div>
+          <p class="menu-item-desc">Thai-style poached chicken sliced over fragrant jasmine rice simmered in chicken broth. Served with ginger garlic chili dipping sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Khao Ka Moo</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Slow-braised tender pork belly in five-spice soy sauce broth, served with jasmine rice, pickled mustard greens, and a soft egg.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Charred Cabbage</span>
+            <span class="menu-item-price">$7.00</span>
+          </div>
+          <p class="menu-item-desc">Taiwanese cabbage charred over open griddle flames, seasoned with sweet fish sauce caramel, chili paste, and peanuts.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1214 Thomas Ave<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 12:00 PM - 11:00 PM<br>Fri - Sat: 12:00 PM - 12:00 AM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>House of Relics taproom | Uncle's Food Trailer | Visuals Wine program</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Burial Beer Co. Plaza Midwood Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairings = {
+      poached: {
+        badge: "Uncle's comfort Pairing",
+        dish: "Khao Man Gai Poached",
+        beer: "Shadows of Our Ancestors DIPA",
+        price: "$20.50",
+        desc: "\"Gently poached tender chicken over seasoned jasmine rice. The bright, juicy tropical dry-hops of our double IPA slice clean through the rich chicken oils.\""
+      },
+      fried: {
+        badge: "Uncle's comfort Pairing",
+        dish: "Khao Man Gai Fried",
+        beer: "Patio Session Pilsner",
+        price: "$20.00",
+        desc: "\"Crispy battered chicken cutlet served over chicken-fat rice. Paired with our crisp lager draft to balance the heavy crunch with clean effervescence.\""
+      },
+      pork: {
+        badge: "Uncle's comfort Pairing",
+        dish: "Khao Ka Moo Pork Belly",
+        beer: "Portal of Infinite Nothingness Stout",
+        price: "$22.50",
+        desc: "\"Rich braised pork belly spiced with star anise and soy, served with sour cabbage and poached egg. The deep coffee roasts of our imperial stout slice clean through the belly's sweet fat.\""
+      },
+      tofu: {
+        badge: "Uncle's comfort Pairing",
+        dish: "Crispy Tofu & Peanut bowl",
+        beer: "Thorns of Eternal Regret Sour",
+        price: "$20.00",
+        desc: "\"Wood-grilled crispy tofu blocks over ginger rice, drizzled with sweet chili peanut sauce. Paired with our fruited wild ale to cut the creamy peanut weight with berry acidity.\""
+      }
+    };
+
+    function showFeast(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const card = document.getElementById('feast-card-box');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = pairings[key];
+        document.getElementById('feast-dish-title').innerText = data.dish;
+        document.getElementById('feast-beer-meta').innerText = `Paired with ${data.beer} • Combo: ${data.price}`;
+        document.getElementById('feast-desc-text').innerText = data.desc;
+        card.querySelector('.feast-badge').innerText = data.badge;
+        
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

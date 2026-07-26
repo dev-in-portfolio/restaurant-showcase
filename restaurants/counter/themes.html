@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>counter- | Sensory Dining Themes & Pairings</title>
+  <meta name="description" content="Explore quarterly immersive themes and sensory course pairings at counter- Charlotte. Michelin starred.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the sensory projection card */
+    .projection-box {
+      background: radial-gradient(circle, #181124 0%, #06040a 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.4s;
+      color: #fff;
+    }
+    .projection-screen {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #7c3aed; /* Violet default */
+      margin: 0 auto 1.5rem auto;
+      box-shadow: 0 0 35px #7c3aed;
+      transition: all 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="counter- home">
+        <span class="logo-text">counter-</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="themes.html" class="active">Sensory Themes</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="reserve.html" class="header-cta">Reserve</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="page-header text-center" style="padding: 60px 0 30px;">
+      <div class="wrap">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; letter-spacing: -0.02em; color: #fff;">Sensory Themes</h2>
+        <p style="color: var(--tx2); max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; font-style: italic;">Immersive quarterly concepts. Where lighting projections, acoustic soundtracks, and custom scent diffusers unite with 10–14 seasonal courses.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Sensory Planner -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r); border: 1px solid rgba(255,255,255,0.05);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px; color: #fff;">Sensory Pairing Assistant</h3>
+        <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select a dining theme and course level to preview the sensory projection and musical score.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Projection Screen -->
+          <div class="projection-box" id="glass-box">
+            <div class="projection-screen" id="light-orb"></div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="pairing-display-title">Course Name</h4>
+            <p style="font-size: 1.1rem; font-style: italic; color: #a78bfa; margin: 0.5rem 0;" id="pairing-display-music">Soundtrack Track</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #fff; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">1. Select Dining Theme</label>
+              <select id="theme-select" onchange="updatePairing()" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: #0c0a0f; color:#fff; border-radius: 6px;">
+                <option value="dahl" selected>Pure Imagination (Summer 2026)</option>
+                <option value="modern">Modernism (Autumn 2026)</option>
+                <option value="cinema">Cinema Sensory (Winter 2026)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.82rem; text-transform: uppercase; font-weight: 700; color: #fff; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block;">2. Select Course Level</label>
+              <select id="course-select" onchange="updatePairing()" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: #0c0a0f; color:#fff; border-radius: 6px;">
+                <option value="starter" selected>Aperture (First Bite)</option>
+                <option value="main">Main Movement (Middle Course)</option>
+                <option value="finale">Finale (Sweet Ending)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; color: #fff;">
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;" id="display-pairing-name">Dish Title</h4>
+          <p style="font-size: 0.9rem; color: var(--tx2); max-width: 600px; margin: 0 auto;" id="display-pairing-desc">Dish description and culinary presentation detail.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curator Notes -->
+    <section class="section-dark">
+      <div class="wrap">
+        <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Philosophy of Sensory Pairing</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item" style="border-color: rgba(255,255,255,0.08); background: #0c0d10;">
+            <h4 style="color:#fff;">Acoustic Waveforms</h4>
+            <p>We match the frequency and pitch of the room's soundtrack to the primary tasting profiles of each dish. High pitch enhances sweetness, while bass notes accentuate umami and salt.</p>
+          </div>
+
+          <div class="menu-item" style="border-color: rgba(255,255,255,0.08); background: #0c0d10;">
+            <h4 style="color:#fff;">Chroma Projection</h4>
+            <p>Overhead projection maps custom animations onto the dinner plates. The colors of the projection (e.g. violet, warm amber, emerald green) are calibrated to visually support tasting notes.</p>
+          </div>
+
+          <div class="menu-item" style="border-color: rgba(255,255,255,0.08); background: #0c0d10;">
+            <h4 style="color:#fff;">Olfactory Diffusers</h4>
+            <p>Our custom ventilation system releases subtle scent profiles (forest pine, burnt sugarcane, ozone breeze) to match course backdrops without overpowering the kitchen's aromas.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3 style="color:#fff;">counter-</h3>
+        <p>A story-driven, fully immersive dining experience by Chef Sam Hart inside Charlotte's Wesley Heights. Sixteen seats, quarterly themes, and local farm ingredients.</p>
+      </div>
+      <div class="footer-col">
+        <h4 style="color:#fff;">Location</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          2001 W Morehead St<br>
+          Charlotte, NC 28208<br>
+          Phone: (980) 299-0090
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 style="color:#fff;">Dining Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Wednesday - Saturday<br>
+          Seatings: 5:45 PM & 8:15 PM<br>
+          Reservations Required via Tock
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 counter-. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairingData = {
+      dahl: {
+        starter: { title: "Golden Ticket", music: "Pure Imagination - Gene Wilder", color: "#fbbf24", desc: "Golden caramelized white chocolate shell, filled with passionfruit foam and popping sugar." },
+        main: { title: "Wonka Gobstopper", music: "Oompa Loompa Loop - Acoustic Remix", color: "#ec4899", desc: "Seared local duck breast glazed in tart raspberry vinegar, wrapped in red cabbage and wild mustard." },
+        finale: { title: "The Chocolate River", music: "Wondrous Boat Ride - Psychedelic Mix", color: "#7c2d12", desc: "Decadent dark chocolate mousse served with smoked mushroom earth and marshmallow clouds." }
+      },
+      modern: {
+        starter: { title: "Geometric Plate", music: "Gymnopedie No.1 - Erik Satie", color: "#f3f4f6", desc: "Deconstructed local root vegetables sliced into perfect squares, served with sea salt and garlic aioli." },
+        main: { title: "Asymmetry", music: "Music for 18 Musicians - Steve Reich", color: "#1e3a8a", desc: "Pan-roasted sea bass served off-center with blue potato purée and squid ink reduction." },
+        finale: { title: "Primary Colors", music: "Abstract Expression - Ambient Sound", color: "#dc2626", desc: "Three spheres of raspberry, lemon, and blueberry sorbet, plated to resemble Mondrian paintings." }
+      },
+      cinema: {
+        starter: { title: "The Projectionist", music: "Cinema Paradiso Theme - Ennio Morricone", color: "#fef08a", desc: "Truffle popcorn foam served inside a retro film canister with brown butter crumbs." },
+        main: { title: "Spaghetti Western", music: "The Good, the Bad and the Ugly - Morricone", color: "#b91c1c", desc: "Hand-rolled tajarin pasta tossed in slow-simmered wild boar ragu and smoked pecorino cheese." },
+        finale: { title: "Noir", music: "Sunset Boulevard - Jazz Quartet", color: "#111827", desc: "Black sesame ice cream, charcoal cake crumbles, and tart blackberry jam. Plated in deep shadows." }
+      }
+    };
+
+    function updatePairing() {
+      const theme = document.getElementById('theme-select').value;
+      const course = document.getElementById('course-select').value;
+
+      const p = pairingData[theme][course];
+
+      // Update screen visual
+      document.getElementById('light-orb').style.backgroundColor = p.color;
+      document.getElementById('light-orb').style.boxShadow = `0 0 35px ${p.color}`;
+
+      // Update text displays
+      document.getElementById('pairing-display-title').innerText = p.title;
+      document.getElementById('pairing-display-music').innerText = `🎵 ${p.music}`;
+
+      document.getElementById('display-pairing-name').innerText = p.title;
+      document.getElementById('display-pairing-desc').innerText = `${p.desc}`;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updatePairing();
+    });
+  </script>
+</body>
+</html>

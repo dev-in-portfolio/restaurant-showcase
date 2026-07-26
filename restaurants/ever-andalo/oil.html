@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olive Oil Flights · Ever Andalo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match Ever Andalo's style */
+.oil-mat {
+  background: radial-gradient(circle, #2c3e2d 0%, #101610 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.oil-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .oil-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--a);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--p);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Ever <span>Andalo</span></a>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="oil.html" class="active">Olive Oil Flights</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="visit.html">Visit</a></li>
+      <li><a href="reserve.html">Reserve</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding: 4rem 2rem; min-height: 35vh;">
+  <h1>Olive Oil Flights</h1>
+  <p class="subtitle">Warm, daily-baked rosemary focaccia served with a curated flight of cold-pressed regional Italian olive oils</p>
+</header>
+
+<section class="section" style="padding: 4rem 0;">
+  <div class="section-inner" style="max-width:1100px; margin:0 auto; padding:0 20px;">
+    <h2 style="font-family: 'DM Serif Display', serif; font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Artisan Flight Customizer</h2>
+    
+    <div class="oil-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+      
+      <!-- Left: Platter Visualizer -->
+      <div class="oil-mat">
+        <span style="font-size: 0.78rem; font-weight: 600; color: #dfd8cf; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="oil-tag-display">REGIONAL FLIGHT</span>
+        <h3 style="font-size: 2.2rem; color: #fff; font-family: 'DM Serif Display', serif; margin: 0 0 0.8rem 0;" id="oil-title-display">Central Italian Balanced</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: #dfd8cf; margin: 0 0 1.2rem 0;" id="oil-price-display">$12.00</p>
+        <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="oil-desc-display">Curated flight of herbaceous, balanced olive oils from Tuscany and Umbria, paired with a small basket of warm focaccia.</p>
+      </div>
+
+      <!-- Right: Controls -->
+      <div>
+        <div style="margin-bottom: 1.5rem;">
+          <label class="control-label">1. Choose Olive Oil Flight</label>
+          <select id="oil-flight" onchange="updateFlight()">
+            <option value="northern">Northern Italian Mild ($11.00)</option>
+            <option value="central" selected>Central Italian Balanced ($12.00)</option>
+            <option value="southern">Southern Italian Peppery ($13.00)</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label class="control-label">2. Select Focaccia Serving</label>
+          <select id="oil-bread" onchange="updateFlight()">
+            <option value="small" selected>Small Basket (+$4.00)</option>
+            <option value="large">Large Table Basket (+$7.00)</option>
+            <option value="none">No Bread (+$0.00)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="control-label">3. Select Italian Wine Pairing</label>
+          <select id="oil-wine" onchange="updateFlight()">
+            <option value="none" selected>No Wine Pairing (+$0.00)</option>
+            <option value="chianti">Tuscan Chianti Classico (Red - +$12.00)</option>
+            <option value="grigio">Trentino Pinot Grigio (White - +$10.00)</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border); font-size:0.85rem; color:var(--muted);">
+  <div class="section-inner">
+    <p>Ever Andalo · 3116 N Davidson St · Charlotte, NC 28205 · (704) 376-1781</p>
+    <p class="disclosure" style="margin-top:0.5rem; opacity:0.5; font-style:italic;">Unofficial concept presentation — not operated by the restaurant</p>
+  </div>
+</footer>
+
+<script>
+  const flightData = {
+    northern: { tag: "NORTHERN REGIONAL FLIGHT", name: "Northern Italian Mild", basePrice: 11.00, label: "flight of light, buttery, and golden olive oils from Liguria and Lake Garda" },
+    central: { tag: "CENTRAL REGIONAL FLIGHT", name: "Central Italian Balanced", basePrice: 12.00, label: "herbaceous and aromatic olive oil flight with notes of freshly cut grass from Tuscany and Umbria" },
+    southern: { tag: "SOUTHERN REGIONAL FLIGHT", name: "Southern Italian Peppery", basePrice: 13.00, label: "peppery, robust, and intense olive oil flight showing bright green tomato notes from Sicily and Puglia" }
+  };
+
+  const breadData = {
+    small: { name: "Small Focaccia", label: "paired with a small basket of warm house rosemary focaccia", charge: 4.00 },
+    large: { name: "Large Focaccia", label: "paired with a large table sharing basket of house rosemary focaccia", charge: 7.00 },
+    none: { name: "No Bread", label: "without bread", charge: 0.00 }
+  };
+
+  const wineData = {
+    none: { name: "", label: "", charge: 0.00 },
+    chianti: { name: "Chianti", label: ", accompanied by a glass of earthy red Chianti Classico wine", charge: 12.00 },
+    grigio: { name: "Pinot Grigio", label: ", accompanied by a glass of crisp, mineral Pinot Grigio white wine", charge: 10.00 }
+  };
+
+  function updateFlight() {
+    const flightKey = document.getElementById('oil-flight').value;
+    const breadKey = document.getElementById('oil-bread').value;
+    const wineKey = document.getElementById('oil-wine').value;
+
+    const flight = flightData[flightKey];
+    const bread = breadData[breadKey];
+    const wine = wineData[wineKey];
+
+    const totalPrice = flight.basePrice + bread.charge + wine.charge;
+
+    document.getElementById('oil-tag-display').innerText = flight.tag;
+    document.getElementById('oil-title-display').innerText = flight.name;
+    document.getElementById('oil-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+    let desc = `A curated ${flight.label}, ${bread.label}${wine.label}.`;
+    
+    document.getElementById('oil-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updateFlight();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

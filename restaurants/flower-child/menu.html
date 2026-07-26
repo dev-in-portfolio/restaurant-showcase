@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Flower Child</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">Flower Child</a>
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="catering.html">Catering</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Menu</h1>
+      <p>Everything made from scratch with fresh, wholesome ingredients</p>
+    </div>
+  </header>
+
+  <section class="menu-section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="menu-search">
+          <input type="text" id="menuSearch" placeholder="Search dishes..." aria-label="Search menu">
+        </div>
+        <div class="menu-filters" id="menuFilters">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="to-start">To Start</button>
+          <button class="filter-btn" data-category="salads">Salads</button>
+          <button class="filter-btn" data-category="bowls">Bowls</button>
+          <button class="filter-btn" data-category="wraps">Wraps</button>
+          <button class="filter-btn" data-category="sides">Sides</button>
+          <button class="filter-btn" data-category="desserts">Desserts</button>
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- TO START -->
+        <div class="menu-item" data-category="to-start" data-name="daily soup">
+          <div class="menu-item-header">
+            <h3>Daily Soup</h3>
+            <span class="menu-price">$7.45</span>
+          </div>
+          <p>Ask your server about today's fresh-made soup</p>
+          <div class="menu-badges">
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="to-start" data-name="green chile queso">
+          <div class="menu-item-header">
+            <h3>Green Chile Queso</h3>
+            <span class="menu-price">$8.95</span>
+          </div>
+          <p>Chickpea chorizo, white cheddar, corn chips</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="to-start" data-name="avocado toast">
+          <div class="menu-item-header">
+            <h3>Avocado Toast</h3>
+            <span class="menu-price">$8.25</span>
+          </div>
+          <p>Smashed avocado, everything bagel seasoning, microgreens</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+            <span class="badge badge-vg">VG</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="to-start" data-name="classic hummus">
+          <div class="menu-item-header">
+            <h3>Classic Hummus</h3>
+            <span class="menu-price">$7.25</span>
+          </div>
+          <p>House-made hummus, warm pita, fresh vegetables</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+            <span class="badge badge-vg">VG</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="to-start" data-name="avocado hummus">
+          <div class="menu-item-header">
+            <h3>Avocado Hummus</h3>
+            <span class="menu-price">$8.25</span>
+          </div>
+          <p>Creamy avocado hummus, warm pita, fresh vegetables</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+            <span class="badge badge-vg">VG</span>
+          </div>
+        </div>
+
+        <!-- SALADS -->
+        <div class="menu-item" data-category="salads" data-name="turkey avocado cobb">
+          <div class="menu-item-header">
+            <h3>Turkey & Avocado Cobb</h3>
+            <span class="menu-price">$14.45</span>
+          </div>
+          <p>Fresh greens, roasted turkey, avocado, bacon, egg, blue cheese</p>
+          <div class="menu-badges">
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="avocado caesar">
+          <div class="menu-item-header">
+            <h3>Avocado Caesar</h3>
+            <span class="menu-price">$11.25</span>
+          </div>
+          <p>Romaine, avocado, parmesan, house-made Caesar dressing</p>
+          <div class="menu-badges">
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="brussels sprouts kale">
+          <div class="menu-item-header">
+            <h3>Brussels Sprouts & Organic Kale</h3>
+            <span class="menu-price">$10.75</span>
+          </div>
+          <p>Crispy Brussels sprouts, organic kale, dried cranberries, vinaigrette</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+            <span class="badge badge-vg">VG</span>
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="chopped vegetable">
+          <div class="menu-item-header">
+            <h3>Chopped Vegetable</h3>
+            <span class="menu-price">$11.25</span>
+          </div>
+          <p>Seasonal vegetables, chickpeas, feta, herb vinaigrette</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="salads" data-name="ginger miso crunch">
+          <div class="menu-item-header">
+            <h3>Ginger Miso Crunch</h3>
+            <span class="menu-price">$10.75</span>
+          </div>
+          <p>Mixed greens, edamame, mandarin, crispy wontons, ginger miso dressing</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+          </div>
+        </div>
+
+        <!-- BOWLS -->
+        <div class="menu-item" data-category="bowls" data-name="glow bowl">
+          <div class="menu-item-header">
+            <h3>Glow Bowl</h3>
+            <span class="menu-price">$11.95</span>
+          </div>
+          <p>Sweet potato noodle, shiitake mushroom, sunflower sauce, fresh vegetables</p>
+          <div class="menu-badges">
+            <span class="badge badge-vg">VG</span>
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="bowls" data-name="chicken yakisoba noodles">
+          <div class="menu-item-header">
+            <h3>Chicken Yakisoba Noodles</h3>
+            <span class="menu-price">$16.25</span>
+          </div>
+          <p>Grilled chicken, yakisoba noodles, vegetables, house-made sauce</p>
+          <div class="menu-badges"></div>
+        </div>
+
+        <div class="menu-item" data-category="bowls" data-name="mediterranean chicken kabob">
+          <div class="menu-item-header">
+            <h3>Mediterranean Chicken Kabob</h3>
+            <span class="menu-price">$16.25</span>
+          </div>
+          <p>Grilled chicken kabob, rice, roasted vegetables, tzatziki</p>
+          <div class="menu-badges">
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <!-- WRAPS -->
+        <div class="menu-item" data-category="wraps" data-name="carolina bbq chicken wrap">
+          <div class="menu-item-header">
+            <h3>Carolina BBQ Chicken Wrap</h3>
+            <span class="menu-price">$12.95</span>
+          </div>
+          <p>Carolina-style BBQ sauce, grilled chicken, house-made slaw</p>
+          <div class="menu-badges"></div>
+        </div>
+
+        <div class="menu-item" data-category="wraps" data-name="flying avocado wrap">
+          <div class="menu-item-header">
+            <h3>Flying Avocado Wrap</h3>
+            <span class="menu-price">$12.45</span>
+          </div>
+          <p>Avocado, black beans, rice, roasted vegetables, chipotle ranch</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+            <span class="badge badge-vg">VG</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="wraps" data-name="rebel french dip wrap">
+          <div class="menu-item-header">
+            <h3>Rebel "French Dip" Wrap</h3>
+            <span class="menu-price">$13.75</span>
+          </div>
+          <p>Grass-fed steak, caramelized onions, provolone, au jus</p>
+          <div class="menu-badges"></div>
+        </div>
+
+        <!-- SIDES -->
+        <div class="menu-item" data-category="sides" data-name="side of queso">
+          <div class="menu-item-header">
+            <h3>Side of Green Chile Queso</h3>
+            <span class="menu-price">$4.50</span>
+          </div>
+          <p>Our signature queso with corn chips</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="sides" data-name="side avocado">
+          <div class="menu-item-header">
+            <h3>Side of Avocado</h3>
+            <span class="menu-price">$2.50</span>
+          </div>
+          <p>Fresh sliced avocado</p>
+          <div class="menu-badges">
+            <span class="badge badge-vg">VG</span>
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="sides" data-name="sweet potato fries">
+          <div class="menu-item-header">
+            <h3>Sweet Potato Fries</h3>
+            <span class="menu-price">$4.50</span>
+          </div>
+          <p>Crispy sweet potato fries with house-made dipping sauce</p>
+          <div class="menu-badges">
+            <span class="badge badge-vg">VG</span>
+            <span class="badge badge-gf">GF</span>
+          </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-item" data-category="desserts" data-name="lemon olive oil cake">
+          <div class="menu-item-header">
+            <h3>Lemon Olive Oil Cake</h3>
+            <span class="menu-price">$3.75</span>
+          </div>
+          <p>Moist lemon cake made with olive oil, light and refreshing</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+          </div>
+        </div>
+
+        <div class="menu-item" data-category="desserts" data-name="double chocolate almond brownie">
+          <div class="menu-item-header">
+            <h3>Double Chocolate Almond Brownie</h3>
+            <span class="menu-price">$4.75</span>
+          </div>
+          <p>Rich double chocolate brownie with almonds</p>
+          <div class="menu-badges">
+            <span class="badge badge-v">V</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="menu-no-results" id="noResults" style="display:none;">
+        <p>No dishes found. Try a different search term.</p>
+      </div>
+
+      <div class="protein-add-ons">
+        <h2>Add Protein</h2>
+        <div class="protein-grid">
+          <div class="protein-item">
+            <span class="protein-name">Chicken</span>
+            <span class="menu-price">$5.95</span>
+          </div>
+          <div class="protein-item">
+            <span class="protein-name">Steak</span>
+            <span class="menu-price">$7.45</span>
+          </div>
+          <div class="protein-item">
+            <span class="protein-name">Salmon</span>
+            <span class="menu-price">$7.45</span>
+          </div>
+          <div class="protein-item">
+            <span class="protein-name">Shrimp</span>
+            <span class="menu-price">$7.25</span>
+          </div>
+          <div class="protein-item">
+            <span class="protein-name">Tofu</span>
+            <span class="menu-price">$4.45</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-legend">
+        <span class="badge badge-vg">VG</span> Vegan
+        <span class="badge badge-v">V</span> Vegetarian
+        <span class="badge badge-gf">GF</span> Gluten-Free
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Flower Child</h3>
+          <p>Healthy Food for a Happy World</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visit.html">Visit</a></li>
+            <li><a href="catering.html">Catering</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="visit.html">Order Online</a></li>
+            <li><a href="#">Download the App</a></li>
+            <li><a href="#">Happy Rewards</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Locations</h4>
+          <ul>
+            <li>1537 Camden Rd, Charlotte, NC 28203</li>
+            <li>15210 Bowl St, Charlotte, NC 28277</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Flower Child. Part of Fox Restaurant Concepts.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

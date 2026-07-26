@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burial Beer Co. - Charlotte, NC | Rooftop Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">✝</div>
+        <h1 class="brand-name">
+          Burial Beer Co.
+          <span>House of Relics Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="visuals.html">Visuals Wine</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Rooftop</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Rooftop Deck Reserves</h2>
+    <p class="page-subtitle">Reserve our Plaza Midwood rooftop deck or secluded gravel beer garden for a private gathering, birthday watch, or corporate happy hour.</p>
+  </header>
+
+  <!-- Interactive Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Rooftop Event Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Select your guest count, duration, and event tier to calculate estimated deck reserves.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-gold); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-sans);">Expected Guests: <span id="guests-val" style="font-size: 1.8rem; color: #ffffff;">20</span> people</label>
+        <input type="range" id="guests-count" min="15" max="50" value="20" step="5" style="width: 100%; accent-color: var(--color-gold); cursor: pointer;" oninput="calculateEvent(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Deck Duration</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <select id="event-hours" style="background: rgba(0,0,0,0.5); border: 1px solid var(--color-border); color: #fff; padding: 0.5rem 1rem; border-radius: 4px;" onchange="updateHours(this.value)">
+              <option value="2">2 Hours</option>
+              <option value="3" selected>3 Hours</option>
+              <option value="4">4 Hours</option>
+            </select>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Rooftop Space Rental: $150/hour</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Feast & Drink Package</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <button class="option-btn" id="btn-pkg-cinder" onclick="selectPkg(20, 'Cinder Package')">Cinder ($20)</button>
+            <button class="option-btn active" id="btn-pkg-relic" onclick="selectPkg(35, 'Relic Package')">Relic ($35)</button>
+            <button class="option-btn" id="btn-pkg-ancestral" onclick="selectPkg(60, 'Ancestral Feast')">Ancestral ($60)</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Includes drafts and Uncle's Asian sides.</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(197, 160, 89, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
+        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; font-family: var(--font-sans);">Estimated Reservation Subtotal</span>
+        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="event-cost">$1,150.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="event-summary">Based on 20 guests for 3 hours with Relic Package ($450 deck rental + $700 drinks & catering).</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Rooftop Booking Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit details. Private rooftop deck bookings require at least 72 hours notice to coordinate draft taps.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Requested Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="20" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(197, 160, 89, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details & Requests (Specify beer style wishes, birthday/happy hour needs, or music setups)</label>
+              <textarea id="notes" placeholder="e.g. This is a corporate mixer. We would like to request double taps of Shadows of Our Ancestors Hazy DIPA on the rooftop bar..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Rooftop Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">👁️</div>
+          <h3 class="success-title">Rooftop Requested!</h3>
+          <p class="success-msg" id="success-message">Thank you. Burial's host crew will check taproom schedules and call you shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1214 Thomas Ave<br>Charlotte, NC 28205</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 12:00 PM - 11:00 PM<br>Fri - Sat: 12:00 PM - 12:00 AM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>House of Relics taproom | Uncle's Food Trailer | Visuals Wine program</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Burial Beer Co. Plaza Midwood Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentGuests = 20;
+    let selectedHours = 3;
+    let pkgCost = 35;
+    let pkgName = 'Relic Package';
+
+    function updateHours(val) {
+      selectedHours = parseInt(val);
+      calculateEvent(currentGuests);
+    }
+
+    function selectPkg(cost, name) {
+      pkgCost = cost;
+      pkgName = name;
+
+      document.getElementById('btn-pkg-cinder').classList.remove('active');
+      document.getElementById('btn-pkg-relic').classList.remove('active');
+      document.getElementById('btn-pkg-ancestral').classList.remove('active');
+      
+      if (cost === 20) {
+        document.getElementById('btn-pkg-cinder').classList.add('active');
+      } else if (cost === 35) {
+        document.getElementById('btn-pkg-relic').classList.add('active');
+      } else {
+        document.getElementById('btn-pkg-ancestral').classList.add('active');
+      }
+
+      calculateEvent(currentGuests);
+    }
+
+    function calculateEvent(guests) {
+      currentGuests = parseInt(guests);
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      const roomFee = 150 * selectedHours;
+      const foodFee = currentGuests * pkgCost;
+      const totalCost = roomFee + foodFee;
+
+      document.getElementById('event-cost').innerText = `$${totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('event-summary').innerText = `Based on ${currentGuests} guests for ${selectedHours} hours with ${pkgName} ($${roomFee} deck rental + $${foodFee} drinks & catering).`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your rental request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to coordinate draft schedules.`;
+    });
+  </script>
+</body>
+</html>

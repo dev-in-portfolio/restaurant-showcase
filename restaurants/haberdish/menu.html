@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Haberdish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--indigo:#2a3b5c;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--copper:#c9742e;--muted:#8a7a6a;--denim:#4a6a8a}
+body{margin:0;background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(42,59,92,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--copper)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--copper)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a2030);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--copper)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--copper);margin:0 0 .1rem;border-left:3px solid var(--denim);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.menu-item{background:rgba(255,255,255,.03);border:1px solid rgba(201,116,46,.06);border-radius:10px;padding:1.25rem 1.5rem}
+.menu-item .name{font-weight:700;color:var(--copper);font-size:.92rem;display:flex;justify-content:space-between}
+.menu-item .name .price{color:var(--cream);opacity:.5;font-weight:400}
+.menu-item .desc{font-size:.8rem;opacity:.45;line-height:1.5;margin-top:.3rem}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(42,59,92,.06)}
+footer a{color:var(--copper);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+.tab-bar{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab-bar button{background:rgba(255,255,255,.03);border:1px solid rgba(201,116,46,.1);color:var(--cream);padding:.5rem 1.2rem;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+.tab-bar button.active,.tab-bar button:hover{background:var(--copper);color:#fff;border-color:var(--copper)}
+.finder{background:rgba(201,116,46,.06);border:1px solid rgba(201,116,46,.15);border-radius:12px;padding:2rem;margin-top:1.5rem}
+.finder h3{color:var(--copper);margin:0 0 .75rem;font-size:1.1rem}
+.finder .finder-form{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}@media(max-width:600px){.finder .finder-form{grid-template-columns:1fr}}
+.finder label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
+.finder select,.finder button{width:100%;padding:.8rem 1rem;border-radius:8px;font-size:.85rem}
+.finder select{border:1px solid rgba(201,116,46,.2);background:rgba(0,0,0,.3);color:var(--cream)}
+.finder button{background:var(--copper);color:#fff;border:none;font-weight:700;cursor:pointer;transition:.2s}
+.finder button:hover{background:#b0601e}
+.finder-result{background:rgba(255,255,255,.03);border-radius:8px;padding:1rem;margin-top:1rem;display:none;border:1px solid var(--copper)}
+.finder-result.show{display:block}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Haberdish</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Find Us</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Our Menu</h1>
+  <p>Carolina-inspired cuisine made from scratch — ingredients from local farming partners</p>
+</div>
+<section class="section">
+  <div class="tab-bar" data-toggle-group>
+    <button data-toggle="dinner" class="active">Dinner</button>
+    <button data-toggle="lunch">Lunch</button>
+    <button data-toggle="brunch">Brunch</button>
+    <button data-toggle="drinks">Drinks</button>
+  </div>
+  <div data-panel="dinner">
+    <h2>Dinner</h2>
+    <p class="note">A jumble of plates — meats, vegetables, and sides served together</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Fried Chicken</span> <span class="price">24</span></div>
+        <div class="desc">Buttermilk-brined, seasoned to perfection — the best in town, second only to your grandmother's</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>NC Mountain Trout</span> <span class="price">27</span></div>
+        <div class="desc">Pan-seared, brown butter, capers, lemon, field peas, benne seed</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Flat Iron Steak</span> <span class="price">32</span></div>
+        <div class="desc">Shipley Farms 10oz flat iron, pickled green garlic, preserved chili butter, chives</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Seared Scallops</span> <span class="price">29</span></div>
+        <div class="desc">Grilled peaches, peach mostarda, pickled blackberries, fresh herbs</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Hush Puppies</span> <span class="price">8</span></div>
+        <div class="desc">Crispy cornmeal, served with honey butter</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Fried Okra</span> <span class="price">7</span></div>
+        <div class="desc">Cornmeal dusted, comeback sauce</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="lunch" hidden>
+    <h2>Weekday Lunch</h2>
+    <p class="note">Tuesday–Friday 11AM–3PM</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Chicken Biscuit</span> <span class="price">13</span></div>
+        <div class="desc">Buttermilk fried chicken, house biscuit, honey butter, pickles</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Trout Sandwich</span> <span class="price">15</span></div>
+        <div class="desc">NC trout, tartar sauce, lettuce, tomato on toasted brioche</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Tomato Pie</span> <span class="price">12</span></div>
+        <div class="desc">Heirloom tomatoes, pimento cheese, house pie crust, side salad</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Lunch Salads</span> <span class="price">12</span></div>
+        <div class="desc">Seasonal greens, pickled vegetables, buttermilk dressing, choice of protein</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="brunch" hidden>
+    <h2>Weekend Brunch</h2>
+    <p class="note">Saturday & Sunday 11AM–3PM</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Cinnamon Roll</span> <span class="price">9</span></div>
+        <div class="desc">House-made, cream cheese icing, warm and gooey</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Nashville Hot Chicken</span> <span class="price">16</span></div>
+        <div class="desc">Crispy chicken, cayenne honey, white bread, pickles</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Shrimp & Grits</span> <span class="price">18</span></div>
+        <div class="desc">Stone-ground grits, local shrimp, tasso gravy, scallions</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Biscuits & Gravy</span> <span class="price">14</span></div>
+        <div class="desc">House buttermilk biscuits, sage sausage gravy, two eggs any style</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="drinks" hidden>
+    <h2>Apothecary Cocktails</h2>
+    <p class="note">Seasonal creations from our 1950s soda fountain bar</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Happy Go Lucky Punch</span> <span class="price">13</span></div>
+        <div class="desc">Champagne, gin, vodka, lime, grapefruit, blood orange tea syrup, soda</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Bittersweet Blueberry</span> <span class="price">15</span></div>
+        <div class="desc">Blueberry amaro, blueberry gin, rojo sherry vermouth, montenegro, chocolate bitters</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Tipsy Tequila Punch</span> <span class="price">14</span></div>
+        <div class="desc">Blanco tequila, cointreau, hibiscus-vanilla-anise cordial, lemon, soda</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Local Brews</span> <span class="price">6</span></div>
+        <div class="desc">Rotating selection of NoDa, Heist, and other local craft beers on draft</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section">
+  <div class="finder" data-demo-form>
+    <h3>Find Your Southern Fix</h3>
+    <p style="font-size:.85rem;opacity:.5;margin:0 0 1rem">Tell us what you're craving and we'll suggest the perfect dish</p>
+    <form class="finder-form" data-demo-form>
+      <label>What sounds good?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="chicken">Crispy fried chicken</option>
+          <option value="seafood">Fresh NC seafood</option>
+          <option value="veggie">Southern vegetables</option>
+          <option value="cocktail">Craft cocktails</option>
+          <option value="brunch">Weekend brunch</option>
+        </select>
+      </label>
+      <label>How hungry are you?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="light">Light bite</option>
+          <option value="hearty">Hearty meal</option>
+          <option value="feast">The whole jumble</option>
+        </select>
+      </label>
+      <div style="grid-column:1/-1">
+        <button type="submit">Find My Dish</button>
+      </div>
+    </form>
+    <div class="finder-result" id="finder-result">
+      <p style="margin:0;color:var(--copper);font-weight:700">Come on in! Reserve a table on Tock or just walk in — our kitchen serves up daily specials using local ingredients from our farming partners.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p><strong style="color:var(--copper);font-size:.9rem">Haberdish</strong><br>3106 North Davidson Street, Charlotte, NC 28205 · (704) 817-1084</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

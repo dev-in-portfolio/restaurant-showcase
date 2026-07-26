@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACE No. 3 catering — Sliders, full-size burgers, fries and housemade sauces for your next event in Charlotte.">
+  <title>Catering — ACE No. 3</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+
+    :root {
+      --ace-black: #1a1a1a;
+      --ace-dark: #2d2d2d;
+      --ace-cream: #f5f0e8;
+      --ace-warm: #e8ddd0;
+      --ace-sage: #9eb5a0;
+      --ace-sage-dark: #7a937c;
+      --ace-cognac: #8b6040;
+      --ace-gold: #c4a46c;
+      --ace-font: 'DM Sans', system-ui, sans-serif;
+      --ace-serif: 'Fraunces', Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--ace-font);
+      background: var(--ace-cream); color: var(--ace-black);
+      line-height: 1.6; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .concept-bar { background: var(--ace-gold); color: var(--ace-black); }
+
+    .nav-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+      background: rgba(26,26,26,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-logo { font-weight: 900; font-size: 1.15rem; letter-spacing: .12em; color: var(--ace-cream); display: flex; align-items: center; gap: .5rem; }
+    .nav-logo span { color: var(--ace-gold); }
+    .nav-links { display: flex; gap: .25rem; }
+    .nav-links a {
+      padding: .5rem .9rem; border-radius: .4rem;
+      font-size: .82rem; font-weight: 600; letter-spacing: .04em;
+      color: rgba(245,240,232,.75); transition: .2s;
+    }
+    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,.08); color: var(--ace-cream); }
+    .nav-order {
+      background: var(--ace-gold); color: var(--ace-black) !important;
+      border-radius: 2rem !important; padding: .5rem 1.2rem !important; font-weight: 700 !important;
+    }
+    .nav-order:hover { background: #d4b47c !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ace-cream); border-radius: 2px; transition: .2s; }
+    @media (max-width:720px) {
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(26,26,26,.97); padding: .5rem 1rem 1rem; gap: .15rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .7rem .9rem; }
+      .nav-bar { padding: .75rem 1rem; }
+    }
+
+    .page-header {
+      padding: 7rem 2rem 3rem;
+      background: var(--ace-black); color: var(--ace-cream);
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: var(--ace-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 .5rem;
+    }
+    .page-header p { color: rgba(245,240,232,.6); max-width: 520px; margin: 0 auto; font-size: 1.05rem; }
+
+    .catering-intro { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 2rem; text-align: center; }
+    .catering-intro h2 { font-family: var(--ace-serif); font-size: 1.6rem; font-weight: 700; margin-bottom: .75rem; }
+    .catering-intro p { color: rgba(26,26,26,.62); font-size: 1rem; max-width: 580px; margin: 0 auto; }
+
+    .estimator {
+      max-width: 640px; margin: 0 auto; padding: 2rem 2rem 4rem;
+    }
+    .estimator-card {
+      background: #fff; border-radius: 1.2rem; padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+    .estimator-card h3 {
+      font-family: var(--ace-serif);
+      font-size: 1.3rem; font-weight: 700; margin: 0 0 .5rem;
+    }
+    .estimator-card > p { font-size: .9rem; color: rgba(26,26,26,.55); margin-bottom: 1.5rem; }
+
+    .estimator-group { margin-bottom: 1.5rem; }
+    .estimator-group label {
+      display: block; font-weight: 700; font-size: .85rem; margin-bottom: .4rem;
+    }
+    .estimator-group label span { font-weight: 400; color: rgba(26,26,26,.5); }
+    .estimator-group input[type="range"] {
+      width: 100%; height: 6px;
+      -webkit-appearance: none; appearance: none;
+      background: var(--ace-warm); border-radius: 3px; outline: none;
+    }
+    .estimator-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--ace-cognac); cursor: pointer; border: none;
+    }
+    .estimator-group input[type="range"]::-moz-range-thumb {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--ace-cognac); cursor: pointer; border: none;
+    }
+    .estimator-value {
+      font-family: var(--ace-serif);
+      font-size: 1.8rem; font-weight: 700; color: var(--ace-cognac);
+      margin-top: .25rem;
+    }
+
+    .estimator-results {
+      background: var(--ace-warm); border-radius: 1rem; padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .estimator-results h4 { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--ace-cognac); margin: 0 0 .75rem; }
+    .result-row { display: flex; justify-content: space-between; padding: .5rem 0; border-bottom: 1px solid rgba(26,26,26,.06); font-size: .95rem; }
+    .result-row:last-child { border-bottom: none; font-weight: 700; font-size: 1.05rem; }
+    .result-row .label { color: rgba(26,26,26,.65); }
+    .result-row .value { font-weight: 600; }
+    .result-row.total .value { color: var(--ace-cognac); }
+
+    .catering-details { max-width: 760px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .catering-details h2 { font-family: var(--ace-serif); font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    .detail-card {
+      background: #fff; border-radius: 1rem; padding: 1.5rem;
+      text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,.04);
+    }
+    .detail-card .icon { font-size: 2rem; margin-bottom: .5rem; }
+    .detail-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .35rem; }
+    .detail-card p { font-size: .85rem; color: rgba(26,26,26,.55); line-height: 1.5; }
+
+    .cta-actions {
+      text-align: center; margin-top: 2rem;
+      display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center;
+    }
+    .btn-primary, .btn-outline {
+      padding: .9rem 2rem; border-radius: 2.5rem;
+      font-weight: 700; font-size: .95rem;
+      letter-spacing: .03em; transition: .2s; display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-primary { background: var(--ace-gold); color: var(--ace-black); }
+    .btn-primary:hover { background: #d4b47c; transform: translateY(-2px); }
+    .btn-outline { border: 2px solid rgba(26,26,26,.2); color: var(--ace-black); }
+    .btn-outline:hover { border-color: var(--ace-black); background: rgba(0,0,0,.03); transform: translateY(-2px); }
+
+    .faq-section { max-width: 760px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .faq-section h2 { font-family: var(--ace-serif); font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
+    .faq-item { border-bottom: 1px solid rgba(26,26,26,.08); padding: 1rem 0; }
+    .faq-question { font-weight: 700; font-size: .95rem; margin-bottom: .25rem; display: flex; align-items: center; gap: .5rem; }
+    .faq-question::before { content: 'Q:'; font-weight: 800; color: var(--ace-cognac); }
+    .faq-answer { font-size: .9rem; color: rgba(26,26,26,.6); padding-left: 1.6rem; }
+
+    .footer {
+      background: var(--ace-black); border-top: 1px solid rgba(255,255,255,.06);
+      padding: 3rem 2rem 2rem; color: rgba(245,240,232,.5); font-size: .82rem;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer h4 { color: var(--ace-cream); font-size: .85rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+    .footer a { color: rgba(245,240,232,.5); transition: .2s; }
+    .footer a:hover { color: var(--ace-gold); }
+    .footer-col p { margin-bottom: .35rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: .5rem; }
+    .footer-social a { font-size: 1.2rem; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; font-size: .75rem; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/ace-no-3/" class="nav-logo">ACE <span>No. 3</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/ace-no-3/">Home</a>
+      <a href="/ace-no-3/menu.html">Menu</a>
+      <a href="/ace-no-3/story.html">Story</a>
+      <a href="/ace-no-3/catering.html">Catering</a>
+      <a href="/ace-no-3/locations.html">Locations</a>
+      <a href="https://order.toasttab.com/online/ace-belmontvillage" class="nav-order" target="_blank" rel="noopener">Order Now</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Catering</h1>
+      <p>Business lunch, family gathering, game day. You name it, we can grill it.</p>
+    </div>
+
+    <div class="catering-intro">
+      <h2>Bring the smash to your next event.</h2>
+      <p>Whether you&#8217;re feeding a small crew or a full team, ACE No. 3 has the grill ready. Sliders or full-sized burgers, premium Schweid &amp; Sons beef, and all the fixings.</p>
+    </div>
+
+    <div class="estimator">
+      <div class="estimator-card">
+        <h3>Catering Estimator</h3>
+        <p>Tell us how many people you&#8217;re feeding and we&#8217;ll suggest what to order.</p>
+
+        <div class="estimator-group">
+          <label for="guests">Number of guests <span>(drag to adjust)</span></label>
+          <input type="range" id="guests" min="4" max="100" value="20" step="1">
+          <div class="estimator-value" id="guestCount">20</div>
+        </div>
+
+        <div class="estimator-group">
+          <label for="appetite">Appetite level</label>
+          <input type="range" id="appetite" min="1" max="3" value="2" step="1">
+          <div class="estimator-value" id="appetiteLabel">Standard</div>
+        </div>
+
+        <div class="estimator-group" style="margin-bottom:0">
+          <label>Include fries &amp; tots?</label>
+          <div style="display:flex;gap:.75rem;margin-top:.4rem">
+            <label style="display:flex;align-items:center;gap:.35rem;font-weight:500;cursor:pointer">
+              <input type="checkbox" id="includeSides" checked> Yes, add sides
+            </label>
+          </div>
+        </div>
+
+        <div class="estimator-results" id="results">
+          <h4>Suggested order</h4>
+          <div class="result-row"><span class="label">Sliders</span><span class="value" id="resultSliders">30 sliders</span></div>
+          <div class="result-row"><span class="label">Full-size burgers</span><span class="value" id="resultBurgers">10 burgers</span></div>
+          <div class="result-row" id="resultSidesRow"><span class="label">Fries / tots trays</span><span class="value" id="resultSides">3 trays</span></div>
+          <div class="result-row total"><span class="label">Recommended total</span><span class="value" id="resultTotal">40 pieces</span></div>
+        </div>
+
+        <p style="text-align:center;font-size:.82rem;color:rgba(26,26,26,.45);margin-top:1rem">This is a demonstration tool. Actual catering needs may vary. Contact ACE No. 3 for a custom quote.</p>
+      </div>
+    </div>
+
+    <div class="catering-details">
+      <h2>What&#8217;s included</h2>
+      <div class="detail-grid">
+        <div class="detail-card">
+          <div class="icon">&#127828;</div>
+          <h3>Premium Beef</h3>
+          <p>Schweid &amp; Sons chuck blend. Sliders or full-size. Grilled to order.</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">&#129365;</div>
+          <h3>Complimentary Toppings</h3>
+          <p>Lettuce, tomato, onion, housemade pickles, jalape&ntilde;os. Tongs included.</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">&#127789;</div>
+          <h3>Signature Sauces</h3>
+          <p>Comeback Sauce, Garlic Mayo, Spicy Dijonnaise. Bottles for easy serving.</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">&#127839;</div>
+          <h3>Hot Sides</h3>
+          <p>Fries, sweet potato tots, beer-battered onion rings. Pillowy and crispy.</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">&#128230;</div>
+          <h3>Delivery Available</h3>
+          <p>Within 5 miles: $25. 5&#8211;8 miles: $35. Order what you&#8217;re craving.</p>
+        </div>
+        <div class="detail-card">
+          <div class="icon">&#127859;</div>
+          <h3>Custom Boxed Meals</h3>
+          <p>Individual boxed lunches available for meetings and teams.</p>
+        </div>
+      </div>
+
+      <div class="cta-actions">
+        <a href="https://www.toasttab.com/catering/locations/a74ab88a-102d-41ad-b93f-1d9562a8693c" class="btn-primary" target="_blank" rel="noopener">Place Catering Order</a>
+        <a href="mailto:catering@eat704.com" class="btn-outline">Email catering@eat704.com</a>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>Catering FAQs</h2>
+      <div class="faq-item">
+        <div class="faq-question">Is there an order minimum?</div>
+        <div class="faq-answer">Nope! Order what you are craving and we will make it happen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer delivery?</div>
+        <div class="faq-answer">Yes, each store offers delivery within a 5-mile radius for $25, and 5&#8211;8 miles for $35.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can you accommodate dietary needs?</div>
+        <div class="faq-answer">Yes, we have several gluten-free and veggie options available.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How far in advance should I order?</div>
+        <div class="faq-answer">We recommend at least 24 hours&#8217; notice for catering orders, but we&#8217;ll do our best to accommodate shorter notice.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>ACE No. 3</h4>
+        <p>Smash burgers, shakes &amp; beer.</p>
+        <p>Charlotte, NC</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/aceno.3" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/aceno.3burgers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p><a href="/ace-no-3/locations.html#belmont">Belmont Village</a></p>
+        <p><a href="/ace-no-3/locations.html#center-city">Center City</a></p>
+        <p><a href="/ace-no-3/locations.html#concord">Concord Mills</a></p>
+        <p><a href="/ace-no-3/locations.html#myers">Myers Park</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <p><a href="/ace-no-3/menu.html">Menu</a></p>
+        <p><a href="/ace-no-3/story.html">Our Story</a></p>
+        <p><a href="/ace-no-3/catering.html">Catering</a></p>
+        <p><a href="/ace-no-3/locations.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Part of</h4>
+        <p><a href="https://www.eat704.com" target="_blank" rel="noopener">High Tide Hospitality Group</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>This is an unofficial concept presentation and is not affiliated with or operated by ACE No. 3 or High Tide Hospitality Group.</p>
+    </div>
+  </footer>
+  <div class="demo-toast" role="status"></div>
+  <script src="../site-core.js"></script>
+  <script>
+    (function() {
+      var guestsInput = document.getElementById('guests');
+      var appetiteInput = document.getElementById('appetite');
+      var guestCount = document.getElementById('guestCount');
+      var appetiteLabel = document.getElementById('appetiteLabel');
+      var includeSides = document.getElementById('includeSides');
+      var resultSliders = document.getElementById('resultSliders');
+      var resultBurgers = document.getElementById('resultBurgers');
+      var resultSides = document.getElementById('resultSides');
+      var resultSidesRow = document.getElementById('resultSidesRow');
+      var resultTotal = document.getElementById('resultTotal');
+
+      var appetiteNames = ['Light', 'Standard', 'Hungry'];
+
+      function update() {
+        var guests = parseInt(guestsInput.value, 10);
+        var appetite = parseInt(appetiteInput.value, 10);
+        var sides = includeSides.checked;
+
+        guestCount.textContent = guests;
+        appetiteLabel.textContent = appetiteNames[appetite - 1];
+
+        var multiplier = appetite === 1 ? 1.5 : appetite === 2 ? 1 : 0.5;
+        var sliders = Math.round(guests * multiplier * 0.6);
+        var burgers = Math.round(guests * multiplier * 0.4);
+        var trays = Math.ceil(guests / 8);
+
+        resultSliders.textContent = sliders + ' sliders';
+        resultBurgers.textContent = burgers + ' burgers';
+        resultSidesRow.style.display = sides ? 'flex' : 'none';
+        resultSides.textContent = trays + ' tray' + (trays > 1 ? 's' : '');
+        resultTotal.textContent = (sliders + burgers + (sides ? trays * 8 : 0)) + ' pieces';
+      }
+
+      guestsInput.addEventListener('input', update);
+      appetiteInput.addEventListener('input', update);
+      includeSides.addEventListener('change', update);
+      update();
+    })();
+  </script>
+</body>
+</html>

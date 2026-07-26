@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>131 MAIN Restaurant - Charlotte, NC | Wine Reserve</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .sommelier-box {
+      background: radial-gradient(circle, #251e18 0%, #0d0907 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">M</div>
+        <h1 class="brand-name">
+          131 MAIN
+          <span>Scrill Kitchen Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html" class="active">Wine Reserve</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">The Wine Reserve</h2>
+    <p class="page-subtitle">A curated cellar of Napa Valley Cabs, Oregon Pinot Noirs, and imported whites. Discover the perfect pairing below.</p>
+  </header>
+
+  <!-- Interactive Sommelier Widget -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Sommelier Pairing Assistant</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select an entree below to see our sommelier-recommended wine pairings, vintage details, and glass/bottle prices.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Wine Details Display -->
+        <div class="sommelier-box" id="sommelier-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-amber); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="pairing-entree-tag">For Cedar Plank Salmon</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="pairing-wine-name">La Crema Pinot Noir</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-amber); margin-bottom: 1.2rem;" id="pairing-wine-price">$14 Glass / $52 Bottle</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="pairing-wine-desc">"Bright cherry and red plum notes with hints of spice. The light-to-medium body cuts perfectly through the rich cedar smoke of our salmon."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-amber); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Entree</label>
+          <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.70rem;">
+            <button class="option-btn active" onclick="selectPairing('salmon', this)">Cedar Plank Salmon</button>
+            <button class="option-btn" onclick="selectPairing('primerib', this)">Slow-Roasted Prime Rib</button>
+            <button class="option-btn" onclick="selectPairing('ribeye', this)">Hickory Grilled Ribeye</button>
+            <button class="option-btn" onclick="selectPairing('chicken', this)">Roasted Half Chicken</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Reserve Wine List -->
+    <h3 class="section-title">Cellar Reserve Highlights</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Red Reserves</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Caymus Cabernet Sauvignon</span>
+            <span class="menu-item-price">$120 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Napa Valley. Rich and smooth with dark berries, chocolate, and oak tones.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Belle Glos Pinot Noir</span>
+            <span class="menu-item-price">$72 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Monterey County. Robust flavors of black cherry, pie crust, and warm spice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Duckhorn Merlot</span>
+            <span class="menu-item-price">$85 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Napa Valley. Layers of cherry, plum, and cedar, finished with refined tannins.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">White Reserves</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Rombauer Chardonnay</span>
+            <span class="menu-item-price">$75 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Carneros. Peach and tropical fruit notes with a signature rich, buttery finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Santa Margherita Pinot Grigio</span>
+            <span class="menu-item-price">$62 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Alto Adige, Italy. Clean, dry, and crisp with golden apple tones.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Kim Crawford Sauvignon Blanc</span>
+            <span class="menu-item-price">$48 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Marlborough, NZ. Citrusy aromas of grapefruit and tropical melon with vibrant acidity.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>SouthPark Shop</h3>
+        <p>5970 Fairview Rd<br>Charlotte, NC 28211<br>Phone: (704) 552-6467</p>
+      </div>
+      <div class="info-block">
+        <h3>Blakeney Shop</h3>
+        <p>9886 Rea Rd<br>Charlotte, NC 28277<br>Phone: (704) 544-0131</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:30 PM<br>Fri - Sat: 11:00 AM - 10:30 PM<br>Sunday: 11:00 AM - 9:00 PM</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 131 MAIN Restaurant. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairingData = {
+      salmon: {
+        entree: "For Cedar Plank Salmon",
+        wine: "La Crema Pinot Noir",
+        price: "$14 Glass / $52 Bottle",
+        desc: "\"Bright cherry and red plum notes with hints of spice. The light-to-medium body cuts perfectly through the rich cedar smoke of our salmon.\""
+      },
+      primerib: {
+        entree: "For Slow-Roasted Prime Rib",
+        wine: "Stags' Leap Cabernet Sauvignon",
+        price: "$18 Glass / $68 Bottle",
+        desc: "\"A classic Napa Cabernet featuring bold flavors of blackberry, black currant, and cocoa. Its firm tannins balance the rich marbled cuts of our prime rib.\""
+      },
+      ribeye: {
+        entree: "For Hickory Grilled Ribeye",
+        wine: "Caymus Cabernet Sauvignon",
+        price: "$28 Glass / $120 Bottle",
+        desc: "\"Vanilla, sweet tobacco, and ripe dark fruits. The smoky hickory log flame-kissed crust of our 14oz ribeye demands a wine of this massive stature.\""
+      },
+      chicken: {
+        entree: "For Roasted Half Chicken",
+        wine: "Sonoma-Cutrer Chardonnay",
+        price: "$13 Glass / $48 Bottle",
+        desc: "\"Vibrant apple and pear crispness with soft toasted oak. Complements the savory herb-rubbed roasted skin and juicy wood-oven chicken beautifully.\""
+      }
+    };
+
+    function selectPairing(key, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const display = document.getElementById('sommelier-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = pairingData[key];
+        document.getElementById('pairing-entree-tag').innerText = data.entree;
+        document.getElementById('pairing-wine-name').innerText = data.wine;
+        document.getElementById('pairing-wine-price').innerText = data.price;
+        document.getElementById('pairing-wine-desc').innerText = data.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

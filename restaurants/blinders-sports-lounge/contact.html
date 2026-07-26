@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinders Sports Lounge - Charlotte, NC | Visit & Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Blinders
+          <span>Sports Lounge South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="schedule.html">Watch Schedule</a>
+        <a href="about.html">About</a>
+        <a href="services.html">VIP Planner</a>
+        <a href="contact.html" class="active">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Tremont Ave Lounge</h2>
+    <p class="page-subtitle">Grab a leather booth, view live sports betting tickers, and check live wait times below.</p>
+  </header>
+
+  <!-- Live dining room status banner -->
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <span style="font-weight: 800;">📍 Live Table Availability:</span>
+      <span class="wait-badge wait-low" id="live-wait-badge">Walk-ins Welcome</span>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Details Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Visit Us</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-emerald); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Address</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">
+            225 W Tremont Ave<br>Charlotte, NC 28203
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-emerald); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Lounge Hours</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Monday - Tuesday:</strong> Closed<br>
+            <strong>Wednesday:</strong> 5:00 PM - 11:00 PM<br>
+            <strong>Thursday:</strong> 5:00 PM - 12:00 AM<br>
+            <strong>Friday:</strong> 5:00 PM - 1:00 AM<br>
+            <strong>Saturday:</strong> 11:00 AM - 1:00 AM<br>
+            <strong>Sunday:</strong> 11:00 AM - 12:00 AM
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-emerald); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Parking & Deck Access</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            Employee parking only in front. Public validated parking available at the Design Center Garage or The Line Parking Deck off Hawkins St.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Lounge Policies</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+          <strong>21+ Age Policy:</strong> Blinders operates strictly as an adult lounge. Valid government photo ID is required for entry at all times after 5:00 PM.
+        </p>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+          <strong>Viewing & Audio:</strong> Individual booth table speakers can be customized to play audio for any active game feed on our displays.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Table watch pre-order Section -->
+    <section id="reserve-table" class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Request Watch Table</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit watch details below. We will hold tables for up to 15 minutes after kickoff. 21+ only.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Watch Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Guests Count</label>
+              <select id="guests" required>
+                <option value="2">2 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="8">8 Guests (Requires Booth)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="details">Target Game/Broadcast (e.g. Panthers vs Bucs, UFC Fight Night)</label>
+              <textarea id="details" required placeholder="Specify target broadcast game details..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Request Watch Table</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🏈</div>
+          <h3 class="success-title">Watch Table Requested!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have logged your request. We will text/email confirmation details shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Blinders Sports Lounge. South End Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live Crowd calculation based on hour of the day
+    function updateWaitTime() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const badge = document.getElementById('live-wait-badge');
+
+      // Closed Monday (1) & Tuesday (2)
+      if (day === 1 || day === 2) {
+        badge.innerText = "CLOSED - Lounge is closed";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Check open hours: 5 PM - 11 PM Wed, 5 PM - 12 AM Thu, 5 PM - 1 AM Fri, 11 AM - 1 AM Sat, 11 AM - 12 AM Sun
+      let openHour = 17;
+      let closeHour = 23;
+
+      if (day === 0) { // Sun
+        openHour = 11;
+        closeHour = 24;
+      } else if (day === 6) { // Sat
+        openHour = 11;
+        closeHour = 25; // 1 AM
+      } else if (day === 5) { // Fri
+        openHour = 17;
+        closeHour = 25; // 1 AM
+      } else if (day === 4) { // Thu
+        openHour = 17;
+        closeHour = 24; // 12 AM
+      }
+
+      // Adjust close hour calculations for early mornings (e.g. 12 AM - 1 AM Fri/Sat)
+      const adjustedHour = (hour < 5) ? (hour + 24) : hour;
+
+      if (adjustedHour < openHour || adjustedHour >= closeHour) {
+        badge.innerText = "CLOSED - Lounge is closed";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Sunday afternoon (1 PM to 7 PM): NFL Sunday Ticket
+      const isSundayNFL = (day === 0 && hour >= 13 && hour < 19);
+      // Saturday night (6 PM to 10 PM): UFC main card watch
+      const isSaturdayUFC = (day === 6 && hour >= 18 && hour < 22);
+
+      if (isSundayNFL) {
+        badge.innerText = "NFL SUNDAY TICKET: Highly busy. 40-50 min wait for tables.";
+        badge.className = "wait-badge wait-high";
+      } else if (isSaturdayUFC) {
+        badge.innerText = "UFC FIGHT NIGHT: Highly busy. 35-45 min wait for tables.";
+        badge.className = "wait-badge wait-high";
+      } else {
+        badge.innerText = "LIGHT CROWD: Walk-ins welcome. Tables available immediately.";
+        badge.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTime();
+
+    // Handle order submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const dateVal = document.getElementById('pickup-date').value;
+      const sizeVal = document.getElementById('guests').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Order logged, <strong>${name}</strong>! We will reserve a watch table for <strong>${sizeVal} guests</strong> on <strong>${dateVal}</strong>. We'll text you to coordinate!`;
+    });
+  </script>
+</body>
+</html>

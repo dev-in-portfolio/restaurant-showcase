@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Dining · Dressler's</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0f172a;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#1a1a1a;--muted:#8899aa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0f172a,#1a1a2e);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.55;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section p{font-size:.92rem;line-height:1.7;opacity:.65}
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.08);border-radius:8px;padding:1.25rem;text-align:center}
+.feature-card .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold);display:block}
+.feature-card .label{font-size:.82rem;opacity:.5}
+.feature-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:.5rem 0 0}
+.demo-form{max-width:500px;margin:2rem auto 0}
+.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.6}
+.demo-form input,.demo-form textarea,.demo-form select{width:100%;padding:.7rem;border:1px solid rgba(201,168,76,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.demo-form textarea{min-height:100px;resize:vertical}
+.demo-form button{background:var(--gold);color:var(--navy);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
+.demo-form button:hover{background:#b8973a}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,168,76,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dressler's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="wine.html">Wine Program</a>
+    <a href="story.html">Our Story</a>
+    <a href="private-dining.html">Private Dining</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Private Dining</h1>
+  <p>Celebrate at Dressler's — with skyline views and exceptional cuisine</p>
+</header>
+<section class="section">
+  <h2>Host Your Event</h2>
+  <p>Dressler's at The Metropolitan offers two private dining spaces, providing capacity for up to 75 guests for a seated event and up to 100 guests for a cocktail-style reception. With access to our expansive patio nestled along the Little Sugar Creek Greenway, your guests will enjoy one of the best skyline views Charlotte has to offer while they mingle and dine.</p>
+  <div class="features">
+    <div class="feature-card"><span class="num">75</span><span class="label">Seated Guests</span><p>Private dining room for sit-down dinners</p></div>
+    <div class="feature-card"><span class="num">100</span><span class="label">Cocktail Reception</span><p>Standing reception with passed hors d'oeuvres</p></div>
+    <div class="feature-card"><span class="num">2</span><span class="label">Private Spaces</span><p>Flexible configurations for any event</p></div>
+    <div class="feature-card"><span class="num">Full Patio</span><span class="label">Skyline View</span><p>Outdoor access with Uptown Charlotte views</p></div>
+  </div>
+  <h2>Request Event Information</h2>
+  <p style="font-size:.9rem;opacity:.5;margin:-.5rem 0 1rem">Interested in hosting your next event with us? Fill out the form below and our events team will be in touch.</p>
+  <form class="demo-form" data-demo-form>
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" required>
+    <label for="event-type">Event Type</label>
+    <select id="event-type"><option>Birthday</option><option>Corporate Dinner</option><option>Wedding Reception</option><option>Anniversary</option><option>Fundraiser</option><option>Other</option></select>
+    <label for="guests">Estimated Guests</label>
+    <input type="number" id="guests" required>
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date">
+    <label for="details">Additional Details</label>
+    <textarea id="details"></textarea>
+    <button type="submit">Send Request</button>
+  </form>
+</section>
+<footer>
+  <p>Dressler's · 1100 Metropolitan Ave #125 · Charlotte, NC 28204 · (704) 909-6295</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="private-dining.html">Private Dining</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

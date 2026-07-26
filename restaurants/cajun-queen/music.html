@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Jazz | Cajun Queen</title>
+  <meta name="description" content="Live Dixieland jazz every night at Cajun Queen. Music schedule, the upstairs room, and special event nights.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Cajun Queen Home">
+        <div class="logo-icon" aria-hidden="true">&#9834;</div>
+        <div>
+          <span class="logo-text">Cajun Queen</span>
+          <span class="logo-sub">Est. 1985 | Elizabeth, Charlotte</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="bar.html">Hurricane Bar</a></li>
+          <li><a href="music.html" class="active">Live Jazz</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="visit.html#reserve" class="header-cta">Reserve a Table</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-music">
+      <div class="wrap">
+        <span class="page-hero-badge">&#127926; Nightly Performances</span>
+        <h1>Live Jazz</h1>
+        <p>Our Dixieland band plays every night on the second floor. Intimate room, big sound, unforgettable evenings.</p>
+      </div>
+    </section>
+
+    <!-- Night Selector -->
+    <section class="section-music-intro">
+      <div class="wrap">
+        <div class="music-intro">
+          <h2>Plan Your Night Out</h2>
+          <p>Choose your night, pick your party size, and we'll help you find the perfect table.</p>
+        </div>
+        <div class="night-selector">
+          <div class="night-grid">
+            <button class="night-btn active" data-night="monday">
+              <span class="night-day">Mon</span>
+              <span class="night-act">Piano</span>
+            </button>
+            <button class="night-btn" data-night="tuesday">
+              <span class="night-day">Tue</span>
+              <span class="night-act">Jazz Trio</span>
+            </button>
+            <button class="night-btn" data-night="wednesday">
+              <span class="night-day">Wed</span>
+              <span class="night-act">Jazz Trio</span>
+            </button>
+            <button class="night-btn" data-night="thursday">
+              <span class="night-day">Thu</span>
+              <span class="night-act">Full Band</span>
+            </button>
+            <button class="night-btn" data-night="friday">
+              <span class="night-day">Fri</span>
+              <span class="night-act">Full Band</span>
+            </button>
+            <button class="night-btn" data-night="saturday">
+              <span class="night-day">Sat</span>
+              <span class="night-act">Full Band</span>
+            </button>
+            <button class="night-btn" data-night="sunday">
+              <span class="night-day">Sun</span>
+              <span class="night-act">Jazz Brunch</span>
+            </button>
+          </div>
+          <div class="night-details" id="night-details">
+            <div class="night-detail-card">
+              <h3 id="night-title">Monday Night</h3>
+              <p id="night-desc">Solo piano in the upstairs room. Intimate, relaxed, perfect for a quiet dinner and conversation.</p>
+              <div class="night-meta">
+                <span id="night-time">&#128337; 5:00 PM &ndash; 8:00 PM</span>
+                <span id="night-vibe">&#127796; Intimate &amp; Relaxed</span>
+              </div>
+              <div class="night-party">
+                <label for="party-size">Party Size</label>
+                <select id="party-size">
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4" selected>4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                </select>
+              </div>
+              <a href="visit.html#reserve" class="btn btn-p">Reserve for This Night</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Room -->
+    <section>
+      <div class="wrap">
+        <div class="section-header">
+          <h2>The Jazz Room</h2>
+          <p>An intimate second-floor space designed for music</p>
+        </div>
+        <div class="room-grid">
+          <div class="room-card">
+            <div class="room-icon" aria-hidden="true">&#127926;</div>
+            <h3>Upstairs</h3>
+            <p>The dedicated jazz room. Limited seating, close to the band, perfect for music lovers who want to feel every note.</p>
+          </div>
+          <div class="room-card">
+            <div class="room-icon" aria-hidden="true">&#127860;</div>
+            <h3>Main Floor</h3>
+            <p>Lively dining room with views of the kitchen. Music drifts down from above, but conversation is easy.</p>
+          </div>
+          <div class="room-card">
+            <div class="room-icon" aria-hidden="true">&#9728;</div>
+            <h3>Rooftop Patio</h3>
+            <p>Open-air dining with skyline views. Weather permitting, a beautiful spot for a cocktail and dinner.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Events -->
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Special Event Nights</h2>
+          <p>Occasional performances and celebrations beyond our regular schedule</p>
+        </div>
+        <div class="events-list">
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-month">Feb</span>
+              <span class="event-day-num">14</span>
+            </div>
+            <div class="event-info">
+              <h3>Valentine's Day Jazz</h3>
+              <p>Special extended set with the full band. Prix fixe dinner available. Reserve early&mdash;this night sells out.</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-month">Mar</span>
+              <span class="event-day-num">1</span>
+            </div>
+            <div class="event-info">
+              <h3>Mardi Gras Celebration</h3>
+              <p>Live jazz, special Cajun menu, and a party that lasts until close. Beads encouraged.</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-month">Jul</span>
+              <span class="event-day-num">4</span>
+            </div>
+            <div class="event-info">
+              <h3>Independence Day Rooftop</h3>
+              <p>Jazz on the rooftop patio. Watch the city fireworks from the best seat in Elizabeth.</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-month">Dec</span>
+              <span class="event-day-num">31</span>
+            </div>
+            <div class="event-info">
+              <h3>New Year's Eve Gala</h3>
+              <p>Full band, champagne toast, and a four-course dinner to ring in the new year. Reservations required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta-banner">
+          <h2>Every Night is Music Night</h2>
+          <p>No cover charge. No minimum. Just great jazz and great food, every night of the week.</p>
+          <div class="btn-row">
+            <a href="visit.html#reserve" class="btn btn-p">Reserve a Table</a>
+            <a href="menu.html" class="btn btn-o">See the Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Cajun Queen</h3>
+          <p>Authentic Cajun and Creole cuisine in Charlotte's historic Elizabeth neighborhood since 1985. Live jazz nightly.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="music.html">Live Jazz</a></li>
+            <li><a href="visit.html">Visit Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="tel:7043779017">(704) 377-9017</a></li>
+            <li><a href="mailto:info@cajunqueen.com">Email</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cajun Queen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

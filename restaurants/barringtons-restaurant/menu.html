@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barrington's Restaurant - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Sommelier board custom styles */
+    .sommelier-board {
+      background: radial-gradient(circle, #1a1410 0%, #0d0a08 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .wine-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-gold);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .wine-title {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-serif);
+    }
+    .wine-region {
+      font-size: 0.9rem;
+      color: var(--color-gold);
+      font-family: var(--font-serif);
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+    .wine-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .wine-pricing {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      border-top: 1px dashed var(--color-border);
+      padding-top: 1rem;
+      font-family: var(--font-serif);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Barrington's
+          <span>New American Bistro</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="wine.html">Wine Cellar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Events</a>
+        <a href="contact.html">Reservations</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Seasonal Fine Menu</h2>
+    <p class="page-subtitle">Handmade pasta, wild-caught seafood, and premium chops. Discover recommended cellar matches on the pairing board below.</p>
+  </header>
+
+  <!-- Interactive Sommelier pairing -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Sommelier Wine Pairing Guide</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Board -->
+        <div class="sommelier-board" id="sommelier-card-box">
+          <div class="wine-badge">Sommelier Recommendation</div>
+          <h4 class="wine-title" id="pair-wine-name">Patz & Hall Chardonnay</h4>
+          <div class="wine-region" id="pair-wine-region">Sonoma Coast, California</div>
+          <p class="wine-desc" id="pair-desc">"Rich notes of golden apples, vanilla bean, and toasted hazelnut. Its vibrant acidity cuts elegantly through the rich lobster cream and highlights the delicate gnocchi."</p>
+          <div class="wine-pricing" id="pair-pricing">Glass: $18.00 / Bottle: $70.00</div>
+        </div>
+
+        <!-- Right Side: Dish options list -->
+        <div style="display: flex; flex-direction: column; gap: 0.80rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select your Entree</label>
+          <button class="option-btn active" onclick="showWine('gnocchi', this)">Maine Lobster Gnocchi</button>
+          <button class="option-btn" onclick="showWine('halibut', this)">Pan-Seared NC Halibut</button>
+          <button class="option-btn" onclick="showWine('duck', this)">Crispy Heritage Duck Breast</button>
+          <button class="option-btn" onclick="showWine('filet', this)">Center Cut Grilled Filet</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Barrington's Specialties</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">First Courses & Pasta</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Maine Lobster Gnocchi<span class="menu-item-badge">Signature</span></span>
+            <span class="menu-item-price">$21.00</span>
+          </div>
+          <p class="menu-item-desc">Hand-rolled potato gnocchi tossed with sweet Maine lobster claw meat, wild wood mushrooms, and a light white truffle cream sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Truffle Mushroom Tart</span>
+            <span class="menu-item-price">$16.00</span>
+          </div>
+          <p class="menu-item-desc">Flaky puff pastry tart crust filled with roasted forest chanterelles, caramelized sweet shallots, melted goat cheese, and fresh thyme herbs.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Goat Cheese Cavatelli</span>
+            <span class="menu-item-price">$22.00</span>
+          </div>
+          <p class="menu-item-desc">Freshly rolled cavatelli pasta served in a rich San Marzano tomato reduction, finished with creamy local whipped goat cheese.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Main Entrees & Desserts</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Crispy Heritage Duck Breast</span>
+            <span class="menu-item-price">$38.00</span>
+          </div>
+          <p class="menu-item-desc">Pan-seared duck breast cooked to medium-rare, served with sweet caramelized fig glaze, smooth parsnip purée, and honey-roasted baby carrots.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Pan-Seared NC Halibut</span>
+            <span class="menu-item-price">$40.00</span>
+          </div>
+          <p class="menu-item-desc">Fresh caught coastal halibut pan-seared and basted in lemon-chive butter, served over a bed of sautéed spinach and organic wild rice.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Warm Flourless Chocolate Torte</span>
+            <span class="menu-item-price">$12.00</span>
+          </div>
+          <p class="menu-item-desc">A rich, dense flourless Belgian dark chocolate torte cake served warm with fresh blackberries and a scoop of vanilla bean gelato.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>7822 Fairview Road<br>Charlotte, NC 28262</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Sat: 5:00 PM - 10:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 364-5755<br>New American Fine Dining | Private Events Available</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Barrington's Restaurant. Moffett Restaurant Group.</p>
+    </div>
+  </footer>
+
+  <script>
+    const winePairings = {
+      gnocchi: {
+        wine: "Patz & Hall Chardonnay",
+        region: "Sonoma Coast, California",
+        desc: '"Rich notes of golden apples, vanilla bean, and toasted hazelnut. Its vibrant acidity cuts elegantly through the rich lobster cream and highlights the delicate gnocchi."',
+        pricing: "Glass: $18.00 / Bottle: $70.00"
+      },
+      halibut: {
+        wine: "Adelsheim Pinot Gris",
+        region: "Willamette Valley, Oregon",
+        desc: '"Light-bodied, crisp, and extremely dry with notes of yellow pear, lime zest, and wet slate. It highlights the clean, delicate nature of our fresh Atlantic halibut."',
+        pricing: "Glass: $15.00 / Bottle: $58.00"
+      },
+      duck: {
+        wine: "Belle Glos Pinot Noir",
+        region: "Santa Lucia Highlands, California",
+        desc: '"A dark red pour boasting aromas of sweet wild cherries, baking spices, and dark cocoa. The rich red fruit flavors pair beautifully with the sweet fig reduction."',
+        pricing: "Glass: $20.00 / Bottle: $78.00"
+      },
+      filet: {
+        wine: "Jordan Cabernet Sauvignon",
+        region: "Alexander Valley, California",
+        desc: '"Bold structure, smooth tannins, and deep flavors of blackberry, black currant, and cedar wood. It provides a luxurious complement to our grilled filet tenderloin."',
+        pricing: "Glass: $26.00 / Bottle: $100.00"
+      }
+    };
+
+    function showWine(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const board = document.getElementById('sommelier-card-box');
+      board.style.opacity = '0';
+      board.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = winePairings[key];
+        document.getElementById('pair-wine-name').innerText = data.wine;
+        document.getElementById('pair-wine-region').innerText = data.region;
+        document.getElementById('pair-desc').innerText = data.desc;
+        document.getElementById('pair-pricing').innerText = data.pricing;
+        
+        board.style.opacity = '1';
+        board.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

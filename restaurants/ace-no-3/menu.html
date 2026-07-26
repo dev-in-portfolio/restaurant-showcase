@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACE No. 3 menu — smash burgers, sides, hand-spun shakes and craft beer. Build your own or pick a favorite.">
+  <title>Menu — ACE No. 3</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+
+    :root {
+      --ace-black: #1a1a1a;
+      --ace-dark: #2d2d2d;
+      --ace-cream: #f5f0e8;
+      --ace-warm: #e8ddd0;
+      --ace-sage: #9eb5a0;
+      --ace-sage-dark: #7a937c;
+      --ace-cognac: #8b6040;
+      --ace-gold: #c4a46c;
+      --ace-font: 'DM Sans', system-ui, sans-serif;
+      --ace-serif: 'Fraunces', Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--ace-font);
+      background: var(--ace-cream); color: var(--ace-black);
+      line-height: 1.6; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .concept-bar { background: var(--ace-gold); color: var(--ace-black); }
+
+    .nav-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+      background: rgba(26,26,26,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-logo { font-weight: 900; font-size: 1.15rem; letter-spacing: .12em; color: var(--ace-cream); display: flex; align-items: center; gap: .5rem; }
+    .nav-logo span { color: var(--ace-gold); }
+    .nav-links { display: flex; gap: .25rem; }
+    .nav-links a {
+      padding: .5rem .9rem; border-radius: .4rem;
+      font-size: .82rem; font-weight: 600; letter-spacing: .04em;
+      color: rgba(245,240,232,.75); transition: .2s;
+    }
+    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,.08); color: var(--ace-cream); }
+    .nav-order {
+      background: var(--ace-gold); color: var(--ace-black) !important;
+      border-radius: 2rem !important; padding: .5rem 1.2rem !important; font-weight: 700 !important;
+    }
+    .nav-order:hover { background: #d4b47c !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ace-cream); border-radius: 2px; transition: .2s; }
+    @media (max-width:720px) {
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(26,26,26,.97); padding: .5rem 1rem 1rem; gap: .15rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .7rem .9rem; }
+      .nav-bar { padding: .75rem 1rem; }
+    }
+
+    .page-header {
+      padding: 7rem 2rem 3rem;
+      background: var(--ace-black); color: var(--ace-cream);
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: var(--ace-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 .5rem;
+    }
+    .page-header p { color: rgba(245,240,232,.6); max-width: 480px; margin: 0 auto; font-size: 1.05rem; }
+    .page-header .award { margin-top: 1rem; font-size: .82rem; color: var(--ace-gold); font-weight: 600; letter-spacing: .06em; }
+
+    .menu-section { max-width: 860px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+
+    .filter-bar {
+      display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center;
+      margin-bottom: 2.5rem;
+      position: sticky; top: 60px; z-index: 10;
+      background: var(--ace-cream); padding: 1rem 0;
+    }
+    .filter-btn {
+      padding: .5rem 1.2rem; border-radius: 2rem;
+      border: 2px solid rgba(26,26,26,.12);
+      background: transparent;
+      font-weight: 600; font-size: .85rem;
+      cursor: pointer; transition: .2s;
+      font-family: var(--ace-font);
+    }
+    .filter-btn:hover { border-color: var(--ace-sage); }
+    .filter-btn.active { background: var(--ace-black); color: var(--ace-cream); border-color: var(--ace-black); }
+
+    .menu-category { margin-bottom: 2.5rem; }
+    .menu-category.hidden { display: none; }
+    .menu-category h2 {
+      font-family: var(--ace-serif);
+      font-size: 1.6rem; font-weight: 700;
+      margin: 0 0 .2rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .menu-category h2 .note {
+      font-family: var(--ace-font);
+      font-size: .75rem; font-weight: 600; color: var(--ace-cognac);
+      letter-spacing: .04em;
+    }
+    .menu-category > p { color: rgba(26,26,26,.55); font-size: .9rem; margin-bottom: 1.25rem; }
+
+    .menu-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 1rem 0; border-bottom: 1px solid rgba(26,26,26,.06);
+      gap: 1rem;
+    }
+    .menu-item.hidden { display: none; }
+    .menu-item .info { flex: 1; }
+    .menu-item .name {
+      font-weight: 700; font-size: 1rem;
+      display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+    }
+    .menu-item .name .badge {
+      font-size: .6rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+      padding: .15rem .5rem; border-radius: 2rem;
+      background: var(--ace-sage); color: #fff;
+    }
+    .menu-item .name .badge.gold { background: var(--ace-gold); color: var(--ace-black); }
+    .menu-item .name .badge.red { background: var(--ace-cognac); color: #fff; }
+    .menu-item .desc { font-size: .85rem; color: rgba(26,26,26,.55); margin-top: .2rem; max-width: 520px; }
+    .menu-item .price {
+      font-weight: 700; font-size: .95rem;
+      color: var(--ace-cognac); white-space: nowrap;
+    }
+
+    .menu-note {
+      background: var(--ace-warm); border-radius: 1rem; padding: 1.5rem 2rem;
+      margin-top: 2rem; text-align: center;
+    }
+    .menu-note h3 { font-family: var(--ace-serif); font-size: 1.2rem; margin-bottom: .5rem; }
+    .menu-note p { font-size: .88rem; color: rgba(26,26,26,.6); }
+    .menu-note a { color: var(--ace-cognac); font-weight: 600; }
+
+    .footer {
+      background: var(--ace-black); border-top: 1px solid rgba(255,255,255,.06);
+      padding: 3rem 2rem 2rem; color: rgba(245,240,232,.5); font-size: .82rem;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer h4 { color: var(--ace-cream); font-size: .85rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+    .footer a { color: rgba(245,240,232,.5); transition: .2s; }
+    .footer a:hover { color: var(--ace-gold); }
+    .footer-col p { margin-bottom: .35rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: .5rem; }
+    .footer-social a { font-size: 1.2rem; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; font-size: .75rem; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/ace-no-3/" class="nav-logo">ACE <span>No. 3</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/ace-no-3/">Home</a>
+      <a href="/ace-no-3/menu.html">Menu</a>
+      <a href="/ace-no-3/story.html">Story</a>
+      <a href="/ace-no-3/catering.html">Catering</a>
+      <a href="/ace-no-3/locations.html">Locations</a>
+      <a href="https://order.toasttab.com/online/ace-belmontvillage" class="nav-order" target="_blank" rel="noopener">Order Now</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Menu</h1>
+      <p>Burgers, shakes, beer. Less is more, but there&#8217;s plenty to choose from.</p>
+      <div class="award">&#9733; Best Burger — Charlotte Magazine, four years running</div>
+    </div>
+
+    <div class="menu-section">
+      <div class="filter-bar" role="tablist" aria-label="Filter menu by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="favorites" role="tab" aria-selected="false">Favorites</button>
+        <button class="filter-btn" data-filter="build" role="tab" aria-selected="false">Build It</button>
+        <button class="filter-btn" data-filter="sides" role="tab" aria-selected="false">Sides</button>
+        <button class="filter-btn" data-filter="shakes" role="tab" aria-selected="false">Shakes &amp; Drinks</button>
+      </div>
+
+      <div id="favorites" class="menu-category" data-category="favorites">
+        <h2>Favorites <span class="note">Our signatures</span></h2>
+        <p>The burgers that built the reputation.</p>
+        <div class="menu-item" data-tags="beef">
+          <div class="info">
+            <div class="name">The ACE</div>
+            <div class="desc">Two 1/4 lb chuck blend patties, two slices American cheese, grilled onions, house pickles, Comeback sauce</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="beef">
+          <div class="info">
+            <div class="name">The Hangover</div>
+            <div class="desc">One 1/4 lb patty, three slices bacon, fried egg, lettuce, tomato, garlic mayo</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="beef">
+          <div class="info">
+            <div class="name">No. 3</div>
+            <div class="desc">Three 1/4 lb patties, three slices American cheese, choice of toppings</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="turkey">
+          <div class="info">
+            <div class="name">Turkey Avo <span class="badge gold">New</span></div>
+            <div class="desc">House turkey patty, Pepper Jack cheese, avocado, lettuce, tomato, garlic mayo</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="other">
+          <div class="info">
+            <div class="name">Smash Taco <span class="badge">Limited</span></div>
+            <div class="desc">Fresh patty, flour tortilla, avocado creme, cheddar, lettuce, tomato, pickled jalape&ntilde;os, taj&iacute;n &amp; taco seasoning</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="veggie">
+          <div class="info">
+            <div class="name">The Garden Bowl <span class="badge gold">New</span></div>
+            <div class="desc">Lettuce, tomato, cucumber, cheddar cheese. Choice of protein and dressing.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="build" class="menu-category" data-category="build">
+        <h2>Build It <span class="note">Choose your own adventure</span></h2>
+        <p>Single or double. Beef, turkey or veggie. Load it up.</p>
+        <div class="menu-item" data-tags="beef">
+          <div class="info">
+            <div class="name">Cheeseburger</div>
+            <div class="desc">Single or double, all-beef chuck blend patty, American cheese, choice of toppings</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="beef">
+          <div class="info">
+            <div class="name">Hamburger</div>
+            <div class="desc">Single or double, all-beef chuck blend patty, choice of toppings</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="turkey">
+          <div class="info">
+            <div class="name">Turkey Burger</div>
+            <div class="desc">Single or double, fresh made turkey patty, choice of toppings</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="veggie">
+          <div class="info">
+            <div class="name">Veggie Burger</div>
+            <div class="desc">Housemade vegan patty with brown rice, red beans, yellow onion, carrots, peppers, chickpeas and spices</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="other">
+          <div class="info">
+            <div class="name">Jumbo Hot Dog</div>
+            <div class="desc">All-beef hot dog on a toasted potato roll</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="toppings">
+          <div class="info">
+            <div class="name">Toppings</div>
+            <div class="desc">Egg, bacon, cole slaw, onion straws, lettuce, tomato, onion, house pickles, pickled jalape&ntilde;os</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sides" class="menu-category" data-category="sides">
+        <h2>Sides <span class="note">Share or don&rsquo;t</span></h2>
+        <p>All served with housemade Comeback sauce, Garlic Mayo or Spicy Dijonnaise.</p>
+        <div class="menu-item" data-tags="sides">
+          <div class="info">
+            <div class="name">French Fries</div>
+            <div class="desc">Classic, crispy, shoestring cut</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="sides">
+          <div class="info">
+            <div class="name">Onion Rings</div>
+            <div class="desc">Beer-battered, golden fried</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="sides">
+          <div class="info">
+            <div class="name">Sweet Potato Tots</div>
+            <div class="desc">Crispy outside, tender inside</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="sides">
+          <div class="info">
+            <div class="name">Tater Tots</div>
+            <div class="desc">Classic golden tots</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="sides">
+          <div class="info">
+            <div class="name">Cole Slaw</div>
+            <div class="desc">Creamy, crunchy, housemade</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="shakes" class="menu-category" data-category="shakes">
+        <h2>Shakes &amp; Drinks <span class="note">Something to wash it down</span></h2>
+        <p>Hand-spun shakes, boozy options, and local craft beer.</p>
+        <div class="menu-item" data-tags="shakes">
+          <div class="info">
+            <div class="name">Cookies &amp; Cream Shake</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="shakes">
+          <div class="info">
+            <div class="name">Confetti Cake Shake</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="shakes">
+          <div class="info">
+            <div class="name">Seasonal Shake</div>
+            <div class="desc">Rotating flavor &#8212; ask your server</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="shakes">
+          <div class="info">
+            <div class="name">Boozy Shakes <span class="badge red">21+</span></div>
+            <div class="desc">Adult milkshakes available on site</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="beer">
+          <div class="info">
+            <div class="name">Local Craft Beer</div>
+            <div class="desc">Rotating selection of Charlotte-area drafts and cans</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tags="other">
+          <div class="info">
+            <div class="name">Soft Drinks, Tea &amp; Sparkling Water</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-note">
+        <h3>Half-Priced Milkshakes</h3>
+        <p>Monday &#8211; Friday, 2 &#8211; 4 PM. Because everyone deserves a shake break.<br>
+        <a href="https://www.aceno3.com/shake-break" target="_blank" rel="noopener">Learn more &rarr;</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>ACE No. 3</h4>
+        <p>Smash burgers, shakes &amp; beer.</p>
+        <p>Charlotte, NC</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/aceno.3" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/aceno.3burgers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p><a href="/ace-no-3/locations.html#belmont">Belmont Village</a></p>
+        <p><a href="/ace-no-3/locations.html#center-city">Center City</a></p>
+        <p><a href="/ace-no-3/locations.html#concord">Concord Mills</a></p>
+        <p><a href="/ace-no-3/locations.html#myers">Myers Park</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <p><a href="/ace-no-3/menu.html">Menu</a></p>
+        <p><a href="/ace-no-3/story.html">Our Story</a></p>
+        <p><a href="/ace-no-3/catering.html">Catering</a></p>
+        <p><a href="/ace-no-3/locations.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Part of</h4>
+        <p><a href="https://www.eat704.com" target="_blank" rel="noopener">High Tide Hospitality Group</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>This is an unofficial concept presentation and is not affiliated with or operated by ACE No. 3 or High Tide Hospitality Group.</p>
+    </div>
+  </footer>
+  <div class="demo-toast" role="status"></div>
+
+  <script src="../site-core.js"></script>
+  <script>
+    (function() {
+      var filters = document.querySelectorAll('.filter-btn');
+      var categories = document.querySelectorAll('.menu-category');
+
+      filters.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = this.getAttribute('data-filter');
+
+          filters.forEach(function(f) { f.classList.remove('active'); f.setAttribute('aria-selected', 'false'); });
+          this.classList.add('active'); this.setAttribute('aria-selected', 'true');
+
+          categories.forEach(function(cat) {
+            if (filter === 'all') {
+              cat.classList.remove('hidden');
+            } else {
+              cat.classList.toggle('hidden', cat.getAttribute('data-category') !== filter);
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

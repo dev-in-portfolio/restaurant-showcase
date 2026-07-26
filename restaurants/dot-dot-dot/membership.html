@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership · Dot Dot Dot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --black: #0d0d0d;
+  --charcoal: #1a1a1a;
+  --gold: #c9a84c;
+  --amber: #d4a047;
+  --burgundy: #6b2c3a;
+  --merlot: #4a1a2e;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #888;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,168,76,.15); }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .8; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .15em; text-transform: uppercase; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--black), var(--charcoal)); padding: 3rem 2rem; text-align: center; border-bottom: 1px solid rgba(201,168,76,.1); }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .6; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+.section-wide { max-width: 1100px; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; text-align: center; }
+.section .subtitle { text-align: center; color: var(--muted); font-style: italic; margin-bottom: 2.5rem; font-size: .95rem; }
+.quiz-box { background: var(--charcoal); border: 1px solid rgba(201,168,76,.12); border-radius: 12px; padding: 2.5rem; margin-bottom: 3rem; }
+.quiz-box h3 { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.quiz-step { display: none; }
+.quiz-step.active { display: block; }
+.quiz-question { font-size: 1.05rem; margin-bottom: 1.25rem; color: var(--warm-white); text-align: center; }
+.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; max-width: 500px; margin: 0 auto; }
+.quiz-opt { background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.15); padding: 1rem; border-radius: 6px; cursor: pointer; text-align: center; transition: all .2s; font-family: 'DM Sans', sans-serif; font-size: .88rem; color: var(--cream); }
+.quiz-opt:hover { border-color: var(--gold); background: rgba(201,168,76,.08); }
+.quiz-opt.selected { border-color: var(--gold); background: rgba(201,168,76,.12); color: var(--gold); }
+.quiz-result { display: none; text-align: center; padding: 2rem; }
+.quiz-result.show { display: block; }
+.quiz-result h4 { color: var(--gold); font-size: 1.2rem; margin: 0 0 .75rem; }
+.quiz-result p { opacity: .7; line-height: 1.6; max-width: 450px; margin: 0 auto 1rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--black); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; transition: all .2s; }
+.btn:hover { background: var(--amber); transform: translateY(-1px); }
+.btn-outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.btn-sm { padding: .5rem 1.5rem; font-size: .8rem; }
+.member-info { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
+@media (max-width:640px) { .member-info { grid-template-columns: 1fr; } }
+.member-card { background: var(--charcoal); border: 1px solid rgba(201,168,76,.1); border-radius: 8px; padding: 2rem; text-align: center; }
+.member-card h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .5rem; }
+.member-card .price { font-size: 1.75rem; color: var(--warm-white); font-family: 'Fraunces', serif; margin-bottom: .75rem; }
+.member-card .price span { font-size: .9rem; color: var(--muted); }
+.member-card ul { list-style: none; padding: 0; margin: 0 0 1.25rem; }
+.member-card li { font-size: .85rem; padding: .35rem 0; opacity: .7; border-bottom: 1px solid rgba(255,255,255,.04); }
+.member-card li:last-child { border-bottom: none; }
+.rules { background: var(--charcoal); border-radius: 8px; padding: 2rem; border: 1px solid rgba(201,168,76,.08); margin: 2rem 0; }
+.rules h3 { color: var(--gold); font-size: 1rem; margin: 0 0 1rem; }
+.rules ul { margin: 0; padding: 0 0 0 1.25rem; }
+.rules li { font-size: .88rem; line-height: 1.7; opacity: .65; margin-bottom: .25rem; }
+.demo-form { max-width: 600px; margin: 3rem auto 0; background: var(--charcoal); padding: 2rem; border-radius: 8px; border: 1px solid rgba(201,168,76,.1); }
+.demo-form h3 { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; opacity: .7; }
+.form-group input, .form-group select { width: 100%; padding: .65rem .75rem; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,.05); color: var(--cream); }
+.form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.toast { background: var(--gold); color: var(--black); padding: 1rem 2rem; border-radius: 6px; text-align: center; margin-top: 1rem; display: none; font-weight: 600; }
+.toast.show { display: block; }
+footer { background: var(--black); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dot Dot Dot</a>
+  <div class="nav-links">
+    <a href="membership.html">Membership</a>
+    <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a>
+    <a href="cocktails.html">Cocktail Lab</a>
+    <a href="visit.html">Visit</a>
+    <a href="events.html">Events</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Membership</h1>
+  <p>Charlotte's most exclusive cocktail lounge is open to those who join the club</p>
+</header>
+
+<section class="section section-wide">
+  <h2>Find Your Membership</h2>
+  <p class="subtitle">Answer a few questions and we'll recommend the right fit</p>
+
+  <div class="quiz-box" id="membershipQuiz">
+    <h3>What brings you to Dot Dot Dot?</h3>
+
+    <div class="quiz-step active" data-step="1">
+      <p class="quiz-question">How often do you plan to visit?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-answer="frequent" data-next="2">A few times a month</button>
+        <button class="quiz-opt" data-answer="occasional" data-next="2">Once a month or less</button>
+        <button class="quiz-opt" data-answer="special" data-next="2">Just for special occasions</button>
+        <button class="quiz-opt" data-answer="first" data-next="2">This would be my first visit</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="2">
+      <p class="quiz-question">What matters most to you?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-answer="whiskey" data-next="3">Rare whiskey &amp; bourbon</button>
+        <button class="quiz-opt" data-answer="cocktails" data-next="3">Creative classic cocktails</button>
+        <button class="quiz-opt" data-answer="food" data-next="3">Small plates &amp; shared dining</button>
+        <button class="quiz-opt" data-answer="vibes" data-next="3">Ambiance &amp; conversation</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="3">
+      <p class="quiz-question">Will you bring guests?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-answer="yes" data-next="done">Yes, regularly</button>
+        <button class="quiz-opt" data-answer="sometimes" data-next="done">Occasionally</button>
+        <button class="quiz-opt" data-answer="no" data-next="done">Just myself</button>
+      </div>
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+      <h4>You're a Perfect Fit</h4>
+      <p>Our standard annual membership is exactly what you need. $10/year grants access to the lounge for you and up to three guests per visit. Join online or at the door.</p>
+      <a href="#" class="btn btn-sm">Become a Member — $10/yr</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-wide">
+  <div class="member-info">
+    <div class="member-card">
+      <h3>Annual Membership</h3>
+      <div class="price">$10 <span>/ year</span></div>
+      <ul>
+        <li>Unlimited access to the lounge</li>
+        <li>Bring up to 3 guests per visit</li>
+        <li>Access to members-only events</li>
+        <li>Priority reservations Fri &amp; Sat</li>
+        <li>Exclusive tasting invitations</li>
+      </ul>
+      <a href="#" class="btn btn-sm">Join Now</a>
+    </div>
+    <div class="member-card">
+      <h3>At the Door</h3>
+      <div class="price">$10 <span>/ year</span></div>
+      <ul>
+        <li>Limited memberships available walk-in</li>
+        <li>Same benefits as annual membership</li>
+        <li>Subject to availability</li>
+        <li>Online signup recommended</li>
+        <li>Valid ID required</li>
+      </ul>
+      <a href="#" class="btn btn-sm btn-outline">More Info</a>
+    </div>
+  </div>
+
+  <div class="rules">
+    <h3>Membership Etiquette</h3>
+    <ul>
+      <li>Members must be 21+ with a valid ID or driver's license</li>
+      <li>Membership is required for entry — each member may bring up to three guests</li>
+      <li>Dress code enforced: upscale casual — no athletic wear, gym shoes, or excessively casual attire</li>
+      <li>Inside voices, please — our space is designed for conversation</li>
+      <li>Our cocktails are crafted to order — patience is appreciated</li>
+      <li>Memberships renew automatically on a yearly basis unless cancelled</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <form class="demo-form" data-demo-form>
+    <h3>Reserve Your Membership</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pref">Membership Type</label>
+      <select id="pref">
+        <option>Annual — $10/yr</option>
+        <option>At the Door</option>
+        <option>Gift Membership</option>
+      </select>
+    </div>
+    <button class="btn" type="submit" style="width:100%">Submit Application</button>
+    <div class="toast" role="alert">Welcome to the club. We'll send your credentials shortly.</div>
+  </form>
+</section>
+
+<footer>
+  <p>Dot Dot Dot · 4237 Park Rd Unit B · Charlotte, NC 28209</p>
+  <p><a href="membership.html">Membership</a> · <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a> · <a href="visit.html">Visit</a> · <a href="events.html">Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const quiz = document.getElementById('membershipQuiz');
+  const steps = quiz.querySelectorAll('.quiz-step');
+  const result = document.getElementById('quizResult');
+  const opts = quiz.querySelectorAll('.quiz-opt');
+
+  opts.forEach(opt => {
+    opt.addEventListener('click', function() {
+      const parentStep = this.closest('.quiz-step');
+      const next = this.dataset.next;
+      const siblings = parentStep.querySelectorAll('.quiz-opt');
+      siblings.forEach(s => s.classList.remove('selected'));
+      this.classList.add('selected');
+
+      if (next === 'done') {
+        parentStep.classList.remove('active');
+        result.classList.add('show');
+      } else {
+        setTimeout(() => {
+          parentStep.classList.remove('active');
+          const nextStep = quiz.querySelector(`[data-step="${next}"]`);
+          if (nextStep) nextStep.classList.add('active');
+        }, 300);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

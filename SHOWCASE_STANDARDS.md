@@ -1,40 +1,15 @@
 # Showcase Standards
 
-The Polished Showcase is the final stage in the restaurant website pipeline. Restaurants promoted here must meet the highest quality bar.
+This document establishes the strict quality requirements for websites in the showcase.
 
-## Mandatory Requirements
+## Visual and Typographic Excellence
+* **Typography**: Default fonts are replaced with premium Web Fonts (e.g., Outfit, Inter, Playfair Display) styled consistently.
+* **Layouts**: Grid/Flexbox layouts are responsive, pixel-perfect, and free of structural errors (clipping, text overlapping, layout shifts).
+* **Color Schemes**: Professional, high-contrast, harmonized palettes (no pure `#f00` red or `#0f0` green unless contextually appropriate).
 
-### Metadata Requirements
-- `restaurant.json` must exist and be valid JSON
-- `status` must be `"approved"`
-- All boolean review flags must be `true`:
-  - `desktopReviewed`
-  - `tabletReviewed`
-  - `mobileReviewed`
-  - `linksVerified`
-  - `contentVerified`
-  - `performanceReviewed`
-  - `accessibilityReviewed`
-  - `productionBuildPassed`
-  - `approvedForPresentation`
-- Either `comparisonButtonAdded` or `comparisonButtonNotApplicable` must be `true`
-
-### Content Requirements
-- No placeholder text (Lorem Ipsum, TODO, FIXME, etc.)
-- No broken local references (images, scripts, stylesheets)
-- No temporary or development-only files
-- `index.html` must exist
-
-### Showroom Index
-- Every promoted restaurant must have an entry in `data/restaurants.json`
-- No duplicate IDs or slugs
-- Entries must be sorted deterministically
-
-## What Is Excluded
-- Competing concepts or rejected versions
-- Research dumps and temporary screenshots
-- Generator output and placeholder copy
-- Incomplete review metadata
-- Broken local assets
-- Development-only controls
-- Abandoned or unrelated files
+## Technical Requirements
+1. **Performance**: Media files are compressed. Images are scaled correctly. Page speed is fast.
+2. **Accessibility**: Clear semantic HTML5 structures (`<header>`, `<nav>`, `<main>`, `<footer>`). Accessible input labels and aria roles for interactive elements. High-contrast colors.
+3. **No Broken Links**: Every link works. Static assets must be self-contained in the folder (no absolute file URLs or broken imports).
+4. **Current-Site Comparison**: The floating comparison button is included on every page.
+5. **No Development Controls**: Remove draft notes, template instructions, or QA override buttons.

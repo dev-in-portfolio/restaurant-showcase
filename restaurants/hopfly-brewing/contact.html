@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — HopFly Brewing Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<link rel="stylesheet" href="css/hopfly.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">H</span>
+      <span class="logo-text">HopFly Brewing Co.</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="story.html" class="nav-link">Our Story</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="section page-header">
+    <div class="container narrow text-center">
+      <h1>Find Us</h1>
+      <p>Two locations. Two vibes. One brewery.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="location-toggle" id="location-toggle" role="tablist" aria-label="Select a taproom location">
+        <button class="loc-btn active" id="loc-clt" role="tab" aria-selected="true" aria-controls="panel-clt" data-location="clt">Charlotte</button>
+        <button class="loc-btn" id="loc-rm" role="tab" aria-selected="false" aria-controls="panel-rm" data-location="rm">Rocky Mount</button>
+      </div>
+
+      <div class="location-panel active" id="panel-clt" role="tabpanel" aria-labelledby="loc-clt">
+        <div class="location-detail">
+          <div class="location-map" style="background:#2c3e50;">
+            <div class="map-placeholder">
+              <span class="map-pin">&#128205;</span>
+              <p>1327 S Mint St<br>Charlotte, NC 28203</p>
+            </div>
+          </div>
+          <div class="location-info">
+            <h2>Charlotte Taproom</h2>
+            <p class="loc-neighborhood">South End — Gold District</p>
+            <p class="loc-address">1327 S Mint St, Charlotte, NC 28203</p>
+            <p class="loc-features">The Loft Rooftop &bull; Dog-Friendly Patio &bull; Food Trucks &bull; Pool Table</p>
+            <h3>Hours</h3>
+            <table class="hours-table">
+              <tr><td>Monday</td><td>Closed</td></tr>
+              <tr><td>Tuesday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+              <tr><td>Wednesday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+              <tr><td>Thursday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+              <tr><td>Friday</td><td>1:00 PM &ndash; 11:00 PM</td></tr>
+              <tr><td>Saturday</td><td>12:00 PM &ndash; 11:00 PM</td></tr>
+              <tr><td>Sunday</td><td>12:00 PM &ndash; 7:00 PM</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-panel" id="panel-rm" role="tabpanel" aria-labelledby="loc-rm">
+        <div class="location-detail">
+          <div class="location-map" style="background:#3d5a6c;">
+            <div class="map-placeholder">
+              <span class="map-pin">&#128205;</span>
+              <p>1151 Falls Rd, Ste. 2035<br>Rocky Mount, NC 27804</p>
+            </div>
+          </div>
+          <div class="location-info">
+            <h2>Rocky Mount Taproom</h2>
+            <p class="loc-neighborhood">Falls Road</p>
+            <p class="loc-address">1151 Falls Rd, Ste. 2035, Rocky Mount, NC 27804</p>
+            <h3>Hours</h3>
+            <table class="hours-table">
+              <tr><td>Monday</td><td>Closed</td></tr>
+              <tr><td>Tuesday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+              <tr><td>Wednesday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+              <tr><td>Thursday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+              <tr><td>Friday</td><td>1:00 PM &ndash; 11:00 PM</td></tr>
+              <tr><td>Saturday</td><td>12:00 PM &ndash; 11:00 PM</td></tr>
+              <tr><td>Sunday</td><td>12:00 PM &ndash; 7:00 PM</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container narrow">
+      <h2 class="section-title">Get in Touch</h2>
+      <form class="demo-form" data-demo-form="contact" novalidate>
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <select id="contact-subject" name="subject">
+            <option value="general">General Question</option>
+            <option value="events">Private Event</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" disabled>Send Message (Demo)</button>
+        <p class="form-note">This is a demo form. No data will be submitted.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow text-center">
+      <h2 class="section-title">Connect With Us</h2>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+        <a href="#" class="social-link" aria-label="Untappd">Untappd</a>
+      </div>
+      <p class="contact-email"><a href="mailto:info@hopflybrewing.com">info@hopflybrewing.com</a></p>
+      <p class="contact-email"><a href="mailto:events@hopflybrewing.com">events@hopflybrewing.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>HopFly Brewing Company</h4>
+      <p>Charlotte &amp; Rocky Mount, NC</p>
+      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:info@hopflybrewing.com">info@hopflybrewing.com</a>
+      <a href="mailto:events@hopflybrewing.com">events@hopflybrewing.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="menu.html">Beer Menu</a>
+      <a href="events.html">Events</a>
+      <a href="story.html">Our Story</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+<script src="js/hopfly.js"></script>
+</body>
+</html>

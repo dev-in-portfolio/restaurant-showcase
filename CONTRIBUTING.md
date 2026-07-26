@@ -1,17 +1,14 @@
-# Contributing Guidelines — Polished Showcase
+# Contributing to the Showcase (Showroom)
 
-This repository holds only presentation-ready restaurant website demonstrations. No incomplete, broken, or placeholder content is permitted.
+This repository contains our production-quality showcase websites. Direct edits or manual modifications of website files in this repository are **strictly discouraged**. 
 
-## General Guidelines
+## Workflow
+All website edits must take place in the previous pipeline stages:
+1. Make structural changes or test concepts in the **Thunderdome**.
+2. Clean up and run reviews in **Staging**.
+3. Re-run `npm run promote:showcase -- --restaurant <restaurant-slug> --update` from the showcase repository to import the updated site.
 
-1. **Only Approved Projects**: Every restaurant must pass all review gates before promotion.
-2. **No Placeholders**: Text like "Lorem Ipsum", "TODO", or "Insert Details Here" is strictly prohibited.
-3. **No Temporary Files**: Development artifacts, screenshots, generator output, and abandoned files must not be present.
-4. **No Broken Assets**: All local references (images, scripts, stylesheets) must resolve correctly.
-5. **Metadata Accuracy**: Every restaurant must have a valid `restaurant.json` with accurate approval state.
-
-## Promotion Process
-
-Promotion is always a **copy-forward** operation. The source restaurant in staging is never deleted or modified by the promotion script.
-
-Use `--update` to intentionally replace an existing showcase entry.
+## Pull Requests
+* Showcase PRs are only for promoting new, fully verified websites.
+* When submitting a PR, ensure the restaurant metadata file (`restaurant.json`) is complete and all checks are marked `true`.
+* The automated validation check will run on the PR and must pass before merging.

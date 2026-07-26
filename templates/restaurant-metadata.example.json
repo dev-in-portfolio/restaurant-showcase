@@ -3,30 +3,30 @@
   "name": "Restaurant Name",
   "slug": "restaurant-slug",
   "location": {
-    "city": "",
-    "state": "",
-    "address": ""
+    "city": "Charlotte",
+    "state": "NC",
+    "address": "123 Main Street, Charlotte, NC 28202"
   },
   "stage": "showcase",
   "status": "presentation-ready",
   "sourceRepository": "dev-in-portfolio/restaurant-staging",
   "sourcePath": "restaurants/restaurant-slug",
-  "currentWebsiteUrl": "",
+  "currentWebsiteUrl": "https://www.example-restaurant.com",
   "currentPublicPresenceType": "website",
   "demoRoute": "restaurants/restaurant-slug/index.html",
-  "informationVerifiedAt": null,
-  "promotedToStagingAt": null,
-  "promotedToShowcaseAt": null,
+  "informationVerifiedAt": "2026-07-15T15:30:00Z",
+  "promotedToStagingAt": "2026-07-15T15:30:00Z",
+  "promotedToShowcaseAt": "2026-07-15T15:40:00Z",
   "desktopReviewed": true,
-  "tabletReviewed": true,
   "mobileReviewed": true,
   "linksVerified": true,
   "contentVerified": true,
   "performanceReviewed": true,
   "accessibilityReviewed": true,
   "comparisonButtonAdded": true,
-  "comparisonButtonNotApplicable": false,
   "productionBuildPassed": true,
   "approvedForPresentation": true,
-  "notes": []
+  "notes": [
+    "Promoted to showroom following staging checklist sign-off."
+  ]
 }

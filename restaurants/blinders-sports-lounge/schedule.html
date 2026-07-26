@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinders Sports Lounge - Charlotte, NC | Watch Schedule</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive viewing planner */
+    .stadium-box {
+      background: radial-gradient(circle, #0d1e16 0%, #030806 100%);
+      border: 1.5px solid var(--color-emerald);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Blinders
+          <span>Sports Lounge South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="schedule.html" class="active">Watch Schedule</a>
+        <a href="about.html">About</a>
+        <a href="services.html">VIP Planner</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Watch Live Stadium Sports</h2>
+    <p class="page-subtitle">20+ Calibrated UHD Screens, active sports betting feeds, premium audio zones, and stadium-level game-day packages.</p>
+  </header>
+
+  <!-- Interactive Seating Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Viewing Seating Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select an upcoming sports event type and viewing lounge style to outline a custom group booking package.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Viewing options display -->
+        <div class="stadium-box" id="seat-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="seat-game-tag">NFL Sunday Watch Ticket</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="seat-tier-title">Main Arena Booth</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 1.2rem;" id="seat-package-price">Min. Spend: $100 / Table</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="seat-package-desc">"Comfortable booth seating up to 6 guests right in front of our main projector. Includes 2 baskets of gourmet duck fat wings and 1 domestic draft bucket."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-emerald); letter-spacing: 0.08em; margin-bottom: 0.5rem;">1. Select Sports Event</label>
+            <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.5rem;">
+              <button class="option-btn active" onclick="setEvent('nfl', this)">NFL Sunday Watch Ticket</button>
+              <button class="option-btn" onclick="setEvent('ufc', this)">UFC PPV Main Card Fight</button>
+              <button class="option-btn" onclick="setEvent('soccer', this)">Premier League Morning Match</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-emerald); letter-spacing: 0.08em; margin-bottom: 0.5rem;">2. Choose Seating Area</label>
+            <div class="option-grid" style="display: flex; gap: 0.55rem;">
+              <button class="option-btn active" onclick="setLounge('arena', this)">Main Arena</button>
+              <button class="option-btn" onclick="setLounge('skybox', this)">VIP Skybox</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Schedule Details -->
+    <h3 class="section-title">Televised Event Highlights</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">NFL & Gridiron</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">NFL Sunday Ticket</span>
+            <span class="menu-item-price">Every Sunday</span>
+          </div>
+          <p class="menu-item-desc">We stream every regional and national game across our screens. Sound active for key regional games.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">College Football Saturdays</span>
+            <span class="menu-item-price">Every Saturday</span>
+          </div>
+          <p class="menu-item-desc">Watch key SEC, ACC, and national games live. Tailgate-style sliders and pitcher specials available.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Global Matchups</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Premier League Saturday</span>
+            <span class="menu-item-price">Saturdays at 7:30 AM</span>
+          </div>
+          <p class="menu-item-desc">Doors open early for morning matches. Full Irish breakfast plates and draft Guinness pours served.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">UFC PPV Fight Nights</span>
+            <span class="menu-item-price">Saturdays at 10:00 PM</span>
+          </div>
+          <p class="menu-item-desc">Main cards screened on our giant projector screen. No cover charge. Sound on for all fights.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>South End Stadium</h3>
+        <p>225 W Tremont Ave<br>Charlotte, NC 28203<br>Phone: (704) 939-0909</p>
+      </div>
+      <div class="info-block">
+        <h3>Watch Hours</h3>
+        <p>Mon - Thu: 4:00 PM - 12:00 AM<br>Fri - Sat: 11:30 AM - 2:00 AM<br>Sunday: 11:30 AM - 11:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Lounge Details</h3>
+        <p>Strictly 21+ only after 8:00 PM daily. Reservations for VIP Skybox lounge require 48-hour advance online planner submissions.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Blinders Sports Lounge. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentEvent = 'nfl';
+    let currentLounge = 'arena';
+
+    const calcData = {
+      nfl: {
+        eventName: "NFL Sunday Watch Ticket",
+        arena: {
+          title: "Main Arena Booth",
+          price: "Min. Spend: $100 / Table",
+          desc: "\"Comfortable booth seating up to 6 guests right in front of our main projector. Includes 2 baskets of gourmet duck fat wings and 1 domestic draft beer bucket.\""
+        },
+        skybox: {
+          title: "VIP Skybox Lounge",
+          price: "Min. Spend: $250 / Table",
+          desc: "\"Smoked-glass semi-private lounge with personal audio controls, seating up to 10 guests. Includes 3 duck fat wing platters, sliders, and a craft draft pitcher.\""
+        }
+      },
+      ufc: {
+        eventName: "UFC PPV Main Card Fight",
+        arena: {
+          title: "Main Arena Table",
+          price: "Min. Spend: $75 / Table",
+          desc: "\"Table for up to 4 guests with full view of our primary projector display and dedicated game sound. Includes 1 wing sampler and 1 import bottle bucket.\""
+        },
+        skybox: {
+          title: "VIP Skybox Suites",
+          price: "Min. Spend: $300 / Table",
+          desc: "\"Premium lounge space overlooking the main bar area. Comfortably seats 12. Includes a dedicated server, 4 wing platters, and 2 premium craft pitchers.\""
+        }
+      },
+      soccer: {
+        eventName: "Premier League Morning Match",
+        arena: {
+          title: "Main Arena Seating",
+          price: "Min. Spend: $40 / Table",
+          desc: "\"Early access tables for up to 4 guests. Includes hot Irish breakfast plates, fresh French press coffee, and 2 draft Guinness pints.\""
+        },
+        skybox: {
+          title: "VIP Skybox Suite",
+          price: "Min. Spend: $150 / Table",
+          desc: "\"Comfortable couch seating with independent volume controls to watch the early morning match. Seats up to 8. Includes breakfast sliders and blood orange mimosas.\""
+        }
+      }
+    };
+
+    function setEvent(eKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentEvent = eKey;
+      updateDisplay();
+    }
+
+    function setLounge(lKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentLounge = lKey;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const display = document.getElementById('seat-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const eventData = calcData[currentEvent];
+        const loungeData = eventData[currentLounge];
+
+        document.getElementById('seat-game-tag').innerText = eventData.eventName;
+        document.getElementById('seat-tier-title').innerText = loungeData.title;
+        document.getElementById('seat-package-price').innerText = loungeData.price;
+        document.getElementById('seat-package-desc').innerText = loungeData.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

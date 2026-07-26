@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Good Food on Montford</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Good Food on Montford</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="tapas.html">Tapas Builder</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="reserve.html">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <p class="section-label">Small Plates &amp; Shared Bites</p>
+      <h1>Our Menu</h1>
+      <p class="muted">Menu changes seasonally. Ask your server about tonight's specials.</p>
+    </div>
+  </header>
+
+  <section class="section menu-section">
+    <div class="container">
+      <div class="menu-controls">
+        <div class="category-pills" id="categoryPills">
+          <button class="pill active" data-category="all">All</button>
+          <button class="pill" data-category="chilled">Chilled</button>
+          <button class="pill" data-category="warm">Warm</button>
+          <button class="pill" data-category="pasta">Pasta</button>
+          <button class="pill" data-category="pasture">Pasture</button>
+          <button class="pill" data-category="sea">Sea</button>
+        </div>
+        <div class="menu-search">
+          <input type="text" id="menuSearch" placeholder="Search dishes..." aria-label="Search dishes">
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+
+        <div class="menu-item" data-category="chilled" data-name="southern farmhouse cheeses">
+          <div class="menu-item-header">
+            <h4>Southern Farmhouse Cheeses</h4>
+            <span class="price">$12</span>
+          </div>
+          <p>Truffled chutney, bourbon fig compote</p>
+        </div>
+
+        <div class="menu-item" data-category="chilled" data-name="tega hills greens">
+          <div class="menu-item-header">
+            <h4>Tega Hills Greens</h4>
+            <span class="price">$7</span>
+          </div>
+          <p>Seasonal greens, vinaigrette</p>
+        </div>
+
+        <div class="menu-item" data-category="chilled" data-name="charcuterie">
+          <div class="menu-item-header">
+            <h4>Charcuterie</h4>
+            <span class="price">$11</span>
+          </div>
+          <p>Foie gras &amp; chicken liver mousse, speck</p>
+        </div>
+
+        <div class="menu-item" data-category="chilled" data-name="beef carpaccio">
+          <div class="menu-item-header">
+            <h4>Beef Carpaccio</h4>
+            <span class="price">$10</span>
+          </div>
+          <p>Sliced beef, arugula, capers</p>
+        </div>
+
+        <div class="menu-item" data-category="warm" data-name="falafel">
+          <div class="menu-item-header">
+            <h4>Falafel</h4>
+            <span class="price">$6</span>
+          </div>
+          <p>Crispy chickpea, tahini</p>
+        </div>
+
+        <div class="menu-item" data-category="warm" data-name="pommes frites">
+          <div class="menu-item-header">
+            <h4>Pommes Frites</h4>
+            <span class="price">$6</span>
+          </div>
+          <p>Truffle oil, parmesan</p>
+        </div>
+
+        <div class="menu-item" data-category="warm" data-name="brussels sprouts">
+          <div class="menu-item-header">
+            <h4>Brussels Sprouts</h4>
+            <span class="price">$7</span>
+          </div>
+          <p>Shallots, pecan brown butter</p>
+        </div>
+
+        <div class="menu-item" data-category="warm" data-name="mushrooms">
+          <div class="menu-item-header">
+            <h4>Mushrooms</h4>
+            <span class="price">$6</span>
+          </div>
+          <p>Sautéed wild mushrooms</p>
+        </div>
+
+        <div class="menu-item" data-category="warm" data-name="creamy risotto">
+          <div class="menu-item-header">
+            <h4>Creamy Risotto</h4>
+            <span class="price">$16</span>
+          </div>
+          <p>Shaved winter truffles</p>
+        </div>
+
+        <div class="menu-item" data-category="pasta" data-name="garganelli">
+          <div class="menu-item-header">
+            <h4>Garganelli</h4>
+            <span class="price">$10</span>
+          </div>
+          <p>House-made Italian sausage, tomato</p>
+        </div>
+
+        <div class="menu-item" data-category="pasta" data-name="wild mushroom ravioli">
+          <div class="menu-item-header">
+            <h4>Wild Mushroom Ravioli</h4>
+            <span class="price">$11</span>
+          </div>
+          <p>Crushed peas, mushroom demi</p>
+        </div>
+
+        <div class="menu-item" data-category="pasta" data-name="parmesan gnocchi">
+          <div class="menu-item-header">
+            <h4>Parmesan Gnocchi</h4>
+            <span class="price">$13</span>
+          </div>
+          <p>Slow braised rabbit, marsala, arugula</p>
+        </div>
+
+        <div class="menu-item" data-category="pasture" data-name="steamed bun">
+          <div class="menu-item-header">
+            <h4>Steamed Bun</h4>
+            <span class="price">$10</span>
+          </div>
+          <p>Five spice pork belly, hoisin, pickled vegetables</p>
+        </div>
+
+        <div class="menu-item" data-category="pasture" data-name="southern fried quail">
+          <div class="menu-item-header">
+            <h4>Southern Fried Quail</h4>
+            <span class="price">$13</span>
+          </div>
+          <p>Buttermilk blue cheese, hot sauce</p>
+        </div>
+
+        <div class="menu-item" data-category="pasture" data-name="pork tenderloin">
+          <div class="menu-item-header">
+            <h4>Pork Tenderloin</h4>
+            <span class="price">$13</span>
+          </div>
+          <p>Glazed, seasonal accompaniment</p>
+        </div>
+
+        <div class="menu-item" data-category="pasture" data-name="korean beef">
+          <div class="menu-item-header">
+            <h4>Korean Beef</h4>
+            <span class="price">$11</span>
+          </div>
+          <p>Crispy rice, scallion kimchi</p>
+        </div>
+
+        <div class="menu-item" data-category="pasture" data-name="tagine of lamb">
+          <div class="menu-item-header">
+            <h4>Tagine of Lamb</h4>
+            <span class="price">$15</span>
+          </div>
+          <p>Slow-braised lamb, warm spices</p>
+        </div>
+
+        <div class="menu-item" data-category="sea" data-name="mussels">
+          <div class="menu-item-header">
+            <h4>Mussels</h4>
+            <span class="price">$10</span>
+          </div>
+          <p>Green curry, coconut milk, cilantro</p>
+        </div>
+
+        <div class="menu-item" data-category="sea" data-name="seared scallops">
+          <div class="menu-item-header">
+            <h4>Seared Scallops</h4>
+            <span class="price">$11</span>
+          </div>
+          <p>Creamy grits, braised endive</p>
+        </div>
+
+        <div class="menu-item" data-category="sea" data-name="salmon">
+          <div class="menu-item-header">
+            <h4>Salmon</h4>
+            <span class="price">$13</span>
+          </div>
+          <p>Tasso ham, crawfish gumbo, rice</p>
+        </div>
+
+        <div class="menu-item" data-category="sea" data-name="calamari">
+          <div class="menu-item-header">
+            <h4>Calamari</h4>
+            <span class="price">$11</span>
+          </div>
+          <p>Crispy fried calamari, marinara</p>
+        </div>
+
+        <div class="menu-item" data-category="sea" data-name="shrimp arepas">
+          <div class="menu-item-header">
+            <h4>Shrimp Arepas</h4>
+            <span class="price">$11</span>
+          </div>
+          <p>Seasoned shrimp, corn cakes</p>
+        </div>
+
+      </div>
+
+      <p class="menu-note" id="menuNote" style="display:none;">No dishes match your search.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Good Food on Montford</h4>
+          <p>Creative American small plates on Montford Drive in South Charlotte.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visit.html">Visit</a></li>
+            <li><a href="reserve.html">Reserve</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>1701 Montford Dr<br>Charlotte, NC 28209</p>
+          <p><a href="tel:7045250881">(704) 525-0881</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Good Food on Montford. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

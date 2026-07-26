@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dot Dot Dot · Charlotte's Hidden Speakeasy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --black: #0d0d0d;
+  --charcoal: #1a1a1a;
+  --gold: #c9a84c;
+  --amber: #d4a047;
+  --burgundy: #6b2c3a;
+  --merlot: #4a1a2e;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #888;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,168,76,.15); }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .8; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .15em; text-transform: uppercase; opacity: 1 !important; }
+.hero { min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 40%, #1a1a2e 0%, var(--black) 70%); }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E"); }
+.hero-content { position: relative; z-index: 1; }
+.hero .dots { font-size: 1.2rem; letter-spacing: .6em; color: var(--gold); margin-bottom: 1rem; opacity: .7; }
+.hero h1 { font-size: 4rem; margin: 0 0 .25rem; color: var(--warm-white); letter-spacing: .08em; text-transform: uppercase; }
+.hero .subtitle { font-size: 1.1rem; color: var(--gold); font-style: italic; font-family: 'Fraunces', serif; margin-bottom: 1.5rem; }
+.hero p { font-size: .95rem; line-height: 1.7; max-width: 480px; margin: 0 auto 2rem; opacity: .7; }
+.btn { display: inline-block; background: var(--gold); color: var(--black); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; transition: all .2s; }
+.btn:hover { background: var(--amber); transform: translateY(-1px); }
+.btn-outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--black); }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section-dark { background: var(--charcoal); }
+.section h2 { text-align: center; font-size: 1.75rem; margin: 0 0 .25rem; color: var(--warm-white); }
+.section .subtitle { text-align: center; color: var(--muted); font-style: italic; margin-bottom: 3rem; font-size: .95rem; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+.feature-card { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.1); border-radius: 8px; padding: 2rem; text-align: center; transition: border-color .2s; }
+.feature-card:hover { border-color: rgba(201,168,76,.3); }
+.feature-card .icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.feature-card h3 { font-size: 1rem; margin: 0 0 .5rem; color: var(--gold); }
+.feature-card p { font-size: .88rem; line-height: 1.6; margin: 0; opacity: .65; }
+.mystery-section { text-align: center; padding: 5rem 2rem; background: linear-gradient(180deg, var(--black), var(--charcoal)); }
+.mystery-section h2 { color: var(--gold); margin-bottom: 1rem; }
+.mystery-section p { max-width: 560px; margin: 0 auto 2rem; opacity: .7; line-height: 1.7; }
+.signature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.sig-item { text-align: center; padding: 1.5rem; border: 1px solid rgba(201,168,76,.08); border-radius: 8px; background: rgba(255,255,255,.02); }
+.sig-item .name { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold); margin-bottom: .35rem; }
+.sig-item .desc { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0; }
+.cta-section { text-align: center; padding: 5rem 2rem; background: linear-gradient(135deg, var(--burgundy), var(--merlot)); }
+.cta-section h2 { font-size: 1.75rem; margin: 0 0 .5rem; color: var(--warm-white); }
+.cta-section p { font-size: 1rem; margin-bottom: 1.5rem; opacity: .8; }
+footer { background: var(--black); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dot Dot Dot</a>
+  <div class="nav-links">
+    <a href="membership.html">Membership</a>
+    <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a>
+    <a href="cocktails.html">Cocktail Lab</a>
+    <a href="visit.html">Visit</a>
+    <a href="events.html">Events</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="dots">• • •</div>
+    <h1>Dot Dot Dot</h1>
+    <p class="subtitle">Charlotte's Hidden Speakeasy</p>
+    <p>A private membership club behind an unmarked door. Classic cocktails, rare whiskey, and New American small plates — shared in confidence.</p>
+    <div class="hero-actions">
+      <a href="membership.html" class="btn">Become a Member</a>
+      <a href="visit.html" class="btn btn-outline">Find the Door</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>The Club</h2>
+  <p class="subtitle">An intimate retreat for those in the know</p>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍸</span>
+      <h3>Classic Cocktails</h3>
+      <p>Expertly crafted drinks from a back bar lined with rare bourbon, rye, and whiskey.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🥩</span>
+      <h3>New American Kitchen</h3>
+      <p>Seasonal small plates designed for sharing, sourced from Carolina farms and purveyors.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🔑</span>
+      <h3>Private Membership</h3>
+      <p>$10 annual membership grants access to our hidden lounge. Members bring up to three guests.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🎭</span>
+      <h3>Secret Entrance</h3>
+      <p>Tucked behind the Park Road Shopping Center. Look for our logo above the door.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <h2>Behind the Bar</h2>
+  <p class="subtitle">A few of our signatures</p>
+  <div class="signature-grid">
+    <div class="sig-item">
+      <div class="name">The Last Word</div>
+      <p class="desc">Gin, green chartreuse, maraschino, lime</p>
+    </div>
+    <div class="sig-item">
+      <div class="name">Old Fashioned</div>
+      <p class="desc">Bourbon, demerara, bitters, expressed citrus</p>
+    </div>
+    <div class="sig-item">
+      <div class="name">Sazerac</div>
+      <p class="desc">Rye, absinthe rinse, peychaud's, lemon</p>
+    </div>
+    <div class="sig-item">
+      <div class="name">French 75</div>
+      <p class="desc">Gin, champagne, lemon, simple syrup</p>
+    </div>
+    <div class="sig-item">
+      <div class="name">Smoked Old Fashioned</div>
+      <p class="desc">Aged bourbon, smoked cherrywood, orange</p>
+    </div>
+    <div class="sig-item">
+      <div class="name">Whiskey Flight</div>
+      <p class="desc">Three rotating rare pours, curated weekly</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem">
+    <a href="cocktails-kitchen.html" class="btn btn-outline">View Full Menu</a>
+  </div>
+</section>
+
+<section class="mystery-section">
+  <h2>The Door is Hidden</h2>
+  <p>Behind the Park Road Shopping Center, past Blackhawk Hardware, down a quiet corridor — a small brass logo marks the entrance. No sign. No street number. Just three dots.</p>
+  <a href="visit.html" class="btn btn-outline">How to Find Us</a>
+</section>
+
+<section class="cta-section">
+  <h2>Claim Your Membership</h2>
+  <p>$10/year · Access to Charlotte's most exclusive cocktail lounge · Bring up to three guests</p>
+  <a href="membership.html" class="btn">Join Now</a>
+</section>
+
+<footer>
+  <p>Dot Dot Dot · 4237 Park Rd Unit B · Charlotte, NC 28209</p>
+  <p><a href="membership.html">Membership</a> · <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a> · <a href="visit.html">Visit</a> · <a href="events.html">Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

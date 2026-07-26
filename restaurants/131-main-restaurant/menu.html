@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>131 MAIN Restaurant - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling location panel */
+    .location-details-box {
+      background: radial-gradient(circle, #221a16 0%, #111113 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .loc-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-amber);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-amber);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .loc-title {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .loc-meta {
+      font-size: 0.9rem;
+      color: var(--color-amber);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .loc-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        <!-- Omit backtick format for file link inside nav -->
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">M</div>
+        <h1 class="brand-name">
+          131 MAIN
+          <span>Scrill Kitchen Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="wine.html">Wine Reserve</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Wood-Fire Grill Menu</h2>
+    <p class="page-subtitle">Savor prime steaks, cedar plank salmon, and handcrafted salads. Select your location below to see localized menus and specials.</p>
+  </header>
+
+  <!-- Interactive Location Selector -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Location Menu Switcher</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Location Details -->
+        <div class="location-details-box" id="location-box">
+          <div class="loc-badge">SouthPark Location</div>
+          <h4 class="loc-title" id="loc-display-name">5970 Fairview Road</h4>
+          <div class="loc-meta" id="loc-display-spec">Chef Special: Hickory Wood-Fire Grilled Lamb Chops</div>
+          <p class="loc-desc" id="loc-display-desc">"Our SouthPark kitchen sits in the heart of Foxcroft, offering direct boat-to-table seafood highlights and a specialty wine reserve list tailored to our SouthPark neighborhood."</p>
+        </div>
+
+        <!-- Right Side: Location Buttons -->
+        <div style="display: flex; flex-direction: column; gap: 0.70rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-amber); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Location Menu</label>
+          <button class="option-btn active" onclick="switchLocation('southpark', this)">SouthPark Location</button>
+          <button class="option-btn" onclick="switchLocation('blakeney', this)">Blakeney Location</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu Grid -->
+    <h3 class="section-title">Scratch Menu Items</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Appetizers & Salads</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Cast Iron Cornbread</span>
+            <span class="menu-item-price" id="price-cornbread">$8.00</span>
+          </div>
+          <p class="menu-item-desc">Fresh-baked sweet cornbread served hot in a seasoned iron skillet, topped with whipped honey butter.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Maryland-Style Crab Cakes</span>
+            <span class="menu-item-price" id="price-crabcakes">$16.00</span>
+          </div>
+          <p class="menu-item-desc">Two jumbo lump crab cakes baked golden brown, served with mustard sauce and coleslaw.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The Top Chop Salad</span>
+            <span class="menu-item-price" id="price-salad">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Chopped greens, roasted chicken, bacon, tomatoes, avocado, corn, and honey-lime vinaigrette dressing.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Hickory Entrees</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Cedar Plank Salmon</span>
+            <span class="menu-item-price" id="price-salmon">$29.00</span>
+          </div>
+          <p class="menu-item-desc">Fresh Atlantic salmon roasted on an organic cedar wood plank, glazed with brown sugar and served with seasonal vegetables.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Slow-Roasted Prime Rib</span>
+            <span class="menu-item-price" id="price-primerib">$34.00</span>
+          </div>
+          <p class="menu-item-desc">Aged prime rib slow-roasted to medium rare, served with homemade au jus, mashed potatoes, and green beans.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Hickory Grilled Ribeye</span>
+            <span class="menu-item-price" id="price-ribeye">$38.00</span>
+          </div>
+          <p class="menu-item-desc">14oz Center-cut ribeye steak grilled over dry hickory logs, topped with garlic herb butter, served with waffle fries.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>SouthPark Shop</h3>
+        <p>5970 Fairview Rd<br>Charlotte, NC 28211<br>Phone: (704) 552-6467</p>
+      </div>
+      <div class="info-block">
+        <h3>Blakeney Shop</h3>
+        <p>9886 Rea Rd<br>Charlotte, NC 28277<br>Phone: (704) 544-0131</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:30 PM<br>Fri - Sat: 11:00 AM - 10:30 PM<br>Sunday: 11:00 AM - 9:00 PM</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 131 MAIN Restaurant. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const locationData = {
+      southpark: {
+        badge: "SouthPark Location",
+        name: "5970 Fairview Road",
+        spec: "Chef Special: Hickory Wood-Fire Grilled Lamb Chops ($38.00)",
+        desc: "\"Our SouthPark kitchen sits in the heart of Foxcroft, offering direct boat-to-table seafood highlights and a specialty wine reserve list tailored to our SouthPark neighborhood.\"",
+        prices: {
+          cornbread: "$8.00",
+          crabcakes: "$16.00",
+          salad: "$14.00",
+          salmon: "$29.00",
+          primerib: "$34.00",
+          ribeye: "$38.00"
+        }
+      },
+      blakeney: {
+        badge: "Blakeney Location",
+        name: "9886 Rea Road",
+        spec: "Chef Special: Lump Crab Cakes with Mustard Sauce ($36.00)",
+        desc: "\"Our Blakeney kitchen features an expansive patio lounge in Blakeney Town Center, specializing in dry-aged steak shares and summer wood-grilled vegetables.\"",
+        prices: {
+          cornbread: "$8.50",
+          crabcakes: "$16.50",
+          salad: "$14.50",
+          salmon: "$30.00",
+          primerib: "$35.00",
+          ribeye: "$39.00"
+        }
+      }
+    };
+
+    function switchLocation(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const box = document.getElementById('location-box');
+      box.style.opacity = '0';
+      box.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = locationData[key];
+        document.getElementById('loc-display-name').innerText = data.name;
+        document.getElementById('loc-display-spec').innerText = data.spec;
+        document.getElementById('loc-display-desc').innerText = data.desc;
+        box.querySelector('.loc-badge').innerText = data.badge;
+
+        // Update pricing items
+        document.getElementById('price-cornbread').innerText = data.prices.cornbread;
+        document.getElementById('price-crabcakes').innerText = data.prices.crabcakes;
+        document.getElementById('price-salad').innerText = data.prices.salad;
+        document.getElementById('price-salmon').innerText = data.prices.salmon;
+        document.getElementById('price-primerib').innerText = data.prices.primerib;
+        document.getElementById('price-ribeye').innerText = data.prices.ribeye;
+        
+        box.style.opacity = '1';
+        box.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

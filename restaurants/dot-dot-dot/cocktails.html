@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocktail Program · Dot Dot Dot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --black: #0d0d0d;
+  --charcoal: #1a1a1a;
+  --gold: #c9a84c;
+  --amber: #d4a047;
+  --burgundy: #6b2c3a;
+  --merlot: #4a1a2e;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #888;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,168,76,.15); }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .8; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .15em; text-transform: uppercase; opacity: 1 !important; }
+.hero { min-height: 40vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 40%, #1a1a2e 0%, var(--black) 70%); }
+.hero h1 { font-size: 2.5rem; margin: 0; color: var(--warm-white); }
+.hero .tagline { font-size: 1.1rem; opacity: .5; font-style: italic; margin: .5rem 0 1.5rem; color: var(--gold); }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+
+/* Interactive Cocktail Lab Styling */
+.cocktail-mat {
+  background: radial-gradient(circle, #2d1810 0%, #0d0604 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+.cocktail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .cocktail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--cream);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer { background: var(--black); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dot Dot Dot</a>
+  <div class="nav-links">
+    <a href="membership.html">Membership</a>
+    <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a>
+    <a href="cocktails.html" style="color: var(--gold);">Cocktail Lab</a>
+    <a href="visit.html">Visit</a>
+    <a href="events.html">Events</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>The Cocktail Lab</h1>
+    <p class="tagline">Explore artisanal flavor structures, rare spirits, and custom bitters pairings</p>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Bespoke Cocktail Planner</h2>
+  <p class="subtitle">Select your base barrel spirit, flavor orientation, and garden botanical modifier in real-time.</p>
+  
+  <div class="cocktail-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(201,168,76, 0.05);">
+    
+    <!-- Left: Visual Drink -->
+    <div class="cocktail-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="drink-tag-display">SPIRIT-FORWARD BOLD</span>
+      <h3 style="font-size: 2.2rem; color: var(--warm-white); margin: 0 0 0.8rem 0;" id="drink-title-display">Bourbon Old Fashioned</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="drink-price-display">$18.00</p>
+      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="drink-desc-display">Small-batch Kentucky bourbon whiskey stirred over house aromatic bitters, finished with a fresh burnt orange peel oil spritz, served in a heavy crystal rocks glass.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label>1. Select Base Spirit</label>
+        <select id="drink-spirit" onchange="updateDrink()">
+          <option value="bourbon" selected>Small-Batch Bourbon ($18.00)</option>
+          <option value="gin">Botanical London Dry Gin ($16.00)</option>
+          <option value="tequila">Añejo Weber Blue Tequila ($17.00)</option>
+          <option value="rum">Aged Demerara Rum ($16.00)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>2. Select Flavor Profile</label>
+        <select id="drink-flavor" onchange="updateDrink()">
+          <option value="bold" selected>Spirit-Forward &amp; Bold</option>
+          <option value="citrus">Citrusy &amp; Refreshing</option>
+          <option value="herbal">Herbal &amp; Complex</option>
+        </select>
+      </div>
+
+      <div>
+        <label>3. Select Garden Modifier</label>
+        <select id="drink-modifier" onchange="updateDrink()">
+          <option value="orange" selected>Burnt Orange Peel Oil</option>
+          <option value="mint">Fresh Garden Mint Bouquet</option>
+          <option value="rosemary">Smoked Rosemary Sprig</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201, 168, 76,.06)">
+  <h2>Our Mixology Philosophy</h2>
+  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <div class="feature-card">
+      <h3>Hand-Cut Ice</h3>
+      <p>We press and freeze custom 2x2 clear ice blocks daily. This ensures minimal dilution, preserving the complex tasting architecture of your spirit.</p>
+    </div>
+    <div class="feature-card">
+      <h3>House Bitters</h3>
+      <p>Our mixology team infuses small-batch aromatic, chocolate, and walnut bitters on-site using organic botanicals, barks, and roots.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dot Dot Dot · 4201-A Park Rd · Charlotte, NC 28209 · (704) 900-5068</p>
+  <p><a href="membership.html">Membership</a> · <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a> · <a href="cocktails.html">Cocktail Lab</a> · <a href="visit.html">Visit</a> · <a href="events.html">Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const spiritData = {
+    bourbon: { name: "Bourbon", price: 18.00, label: "small-batch Kentucky bourbon whiskey" },
+    gin: { name: "Gin", price: 16.00, label: "hand-distilled botanical London Dry gin" },
+    tequila: { name: "Tequila", price: 17.00, label: "100% blue weber agave aged añejo tequila" },
+    rum: { name: "Demerara Rum", price: 16.00, label: "aged Demerara dark rum" }
+  };
+
+  const flavorData = {
+    bold: { tag: "SPIRIT-FORWARD BOLD", name: "Old Fashioned", label: "stirred over house aromatic bitters", glass: "heavy crystal rocks glass" },
+    citrus: { tag: "CITRUS REFRESHING", name: "Sour Blend", label: "shaken with fresh organic lime juice and simple syrup", glass: "chilled coupe glass" },
+    herbal: { tag: "HERBAL COMPLEX", name: "Botanical Stirred", label: "stirred with sweet vermouth and Chartreuse herb liqueur", glass: "classic Nick & Nora glass" }
+  };
+
+  const modData = {
+    orange: "finished with a fresh burnt orange peel oil spritz",
+    mint: "garnished with a fresh slap of garden mint leaves",
+    rosemary: "infused with a table-side smoked rosemary sprig"
+  };
+
+  function updateDrink() {
+    const spKey = document.getElementById('drink-spirit').value;
+    const flKey = document.getElementById('drink-flavor').value;
+    const modKey = document.getElementById('drink-modifier').value;
+
+    const sp = spiritData[spKey];
+    const fl = flavorData[flKey];
+    const mod = modData[modKey];
+
+    const totalPrice = sp.price;
+
+    document.getElementById('drink-tag-display').innerText = fl.tag;
+    document.getElementById('drink-title-display').innerText = `${sp.name} ${fl.name}`;
+    document.getElementById('drink-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+    let desc = `${sp.label} ${fl.label}, ${mod}, served in a ${fl.glass}.`;
+    
+    document.getElementById('drink-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updateDrink();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

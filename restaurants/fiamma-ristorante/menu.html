@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Fiamma Ristorante</title>
+  <meta name="description" content="Explore the menu at Fiamma Ristorante — handmade pasta, wood-fired pizza, classic Italian entrees, and desserts. Chef Fernando Campoverde's authentic Italian cuisine in Dilworth, Charlotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Fiamma</a>
+      <button class="nav__toggle" aria-label="Toggle menu" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="reserve.html" class="btn btn--accent nav__cta">Reserve</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero page-hero--menu">
+      <div class="container">
+        <h1 class="page-hero__title">Our Menu</h1>
+        <p class="page-hero__subtitle">Crafted with love, served with pride</p>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <div class="container">
+        <div class="menu-controls">
+          <div class="menu-filters" id="menu-filters">
+            <button class="menu-filter active" data-category="all">All</button>
+            <button class="menu-filter" data-category="antipasti">Antipasti</button>
+            <button class="menu-filter" data-category="pizza">Pizza</button>
+            <button class="menu-filter" data-category="pasta">Pasta</button>
+            <button class="menu-filter" data-category="entrees">Entrées</button>
+            <button class="menu-filter" data-category="desserts">Desserts</button>
+          </div>
+          <div class="menu-search">
+            <input type="text" id="menu-search" placeholder="Search dishes..." class="menu-search__input">
+          </div>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+
+          <!-- Antipasti -->
+          <div class="menu-item" data-category="antipasti" data-name="Fritto Misto">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Fritto Misto</h3>
+              <p class="menu-item__desc">Lightly fried calamari, shrimp, and seasonal vegetables with lemon aioli and marinara sauce.</p>
+            </div>
+            <span class="menu-item__price">$18.50</span>
+          </div>
+
+          <div class="menu-item" data-category="antipasti" data-name="Burrata">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Burrata</h3>
+              <p class="menu-item__desc">Creamy burrata cheese served with heirloom tomatoes, fresh basil, aged balsamic, and extra virgin olive oil.</p>
+            </div>
+            <span class="menu-item__price">$19.99</span>
+          </div>
+
+          <div class="menu-item" data-category="antipasti" data-name="Beef Carpaccio">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Beef Carpaccio</h3>
+              <p class="menu-item__desc">Thinly sliced prime beef with arugula, shaved Parmigiano-Reggiano, capers, and a drizzle of truffle oil.</p>
+            </div>
+            <span class="menu-item__price">$16.75</span>
+          </div>
+
+          <!-- Pizza -->
+          <div class="menu-item" data-category="pizza" data-name="Margherita">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Margherita</h3>
+              <p class="menu-item__desc">San Marzano tomato sauce, fresh mozzarella, basil, and extra virgin olive oil on our house-made dough.</p>
+            </div>
+            <span class="menu-item__price">$18.75</span>
+          </div>
+
+          <div class="menu-item" data-category="pizza" data-name="Campania Nduja">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Campania Nduja</h3>
+              <p class="menu-item__desc">Spicy Calabrian 'nduja, fresh mozzarella, roasted peppers, red onion, and a drizzle of local honey.</p>
+            </div>
+            <span class="menu-item__price">$21.50</span>
+          </div>
+
+          <div class="menu-item" data-category="pizza" data-name="Quattro Formaggi">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Quattro Formaggi</h3>
+              <p class="menu-item__desc">Mozzarella, Gorgonzola, Fontina, and Parmigiano-Reggiano with a touch of honey and fresh thyme.</p>
+            </div>
+            <span class="menu-item__price">$20.00</span>
+          </div>
+
+          <!-- Pasta -->
+          <div class="menu-item" data-category="pasta" data-name="Pappardelle Bolognese">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Pappardelle Bolognese</h3>
+              <p class="menu-item__desc">Wide ribbons of handmade pappardelle in a slow-simmered beef and pork ragù, finished with Parmigiano-Reggiano.</p>
+            </div>
+            <span class="menu-item__price">$23.00</span>
+          </div>
+
+          <div class="menu-item" data-category="pasta" data-name="Tagliolini Allo Scoglio">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Tagliolini Allo Scoglio</h3>
+              <p class="menu-item__desc">Thin house-made tagliolini with shrimp, mussels, clams, cherry tomatoes, white wine, and garlic.</p>
+            </div>
+            <span class="menu-item__price">$26.50</span>
+          </div>
+
+          <div class="menu-item" data-category="pasta" data-name="Gnocchi Con Salsiccia">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Gnocchi Con Salsiccia</h3>
+              <p class="menu-item__desc">Pillowy potato gnocchi with house-made Italian sausage, tomato cream sauce, and fresh basil.</p>
+            </div>
+            <span class="menu-item__price">$22.50</span>
+          </div>
+
+          <!-- Entrées -->
+          <div class="menu-item" data-category="entrees" data-name="Lamb Chops Scottadito">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Lamb Chops Scottadito</h3>
+              <p class="menu-item__desc">Grilled herb-crusted lamb chops served with roasted rosemary potatoes, sautéed spinach, and balsamic reduction.</p>
+            </div>
+            <span class="menu-item__price">$38.00</span>
+          </div>
+
+          <div class="menu-item" data-category="entrees" data-name="Bronzino">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Bronzino</h3>
+              <p class="menu-item__desc">Pan-seared whole Mediterranean sea bass with lemon, capers, cherry tomatoes, and herb-infused olive oil.</p>
+            </div>
+            <span class="menu-item__price">$34.00</span>
+          </div>
+
+          <!-- Desserts -->
+          <div class="menu-item" data-category="desserts" data-name="Tiramisu">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Tiramisù</h3>
+              <p class="menu-item__desc">Classic Italian dessert with espresso-soaked ladyfingers, mascarpone cream, and a dusting of cocoa.</p>
+            </div>
+            <span class="menu-item__price">$12.00</span>
+          </div>
+
+          <div class="menu-item" data-category="desserts" data-name="Panna Cotta">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Panna Cotta</h3>
+              <p class="menu-item__desc">Silky vanilla bean panna cotta with a seasonal berry compote and fresh mint.</p>
+            </div>
+            <span class="menu-item__price">$11.00</span>
+          </div>
+
+          <div class="menu-item" data-category="desserts" data-name="Cannoli">
+            <div class="menu-item__content">
+              <h3 class="menu-item__name">Cannoli Siciliani</h3>
+              <p class="menu-item__desc">Crispy Sicilian shells filled with sweet ricotta, chocolate chips, and candied orange peel.</p>
+            </div>
+            <span class="menu-item__price">$10.00</span>
+          </div>
+
+        </div>
+
+        <div class="menu-no-results" id="menu-no-results" style="display:none;">
+          <p>No dishes found. Try a different search term.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-note">
+      <div class="container">
+        <div class="menu-note__inner">
+          <p>Menu items and prices are subject to change. Please inform your server of any allergies or dietary restrictions. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3 class="footer__logo">Fiamma</h3>
+          <p>Authentic Italian dining in the heart of Dilworth, Charlotte. A Zagat highest-rated Italian restaurant since 2008.</p>
+        </div>
+        <div class="footer__nav">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visit.html">Visit</a></li>
+            <li><a href="reserve.html">Reservations</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Contact</h4>
+          <p>2418 Park Rd<br>Charlotte, NC 28203</p>
+          <p><a href="tel:7043333062">(704) 333-3062</a></p>
+          <p>Dilworth, Charlotte NC</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Fiamma Ristorante. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

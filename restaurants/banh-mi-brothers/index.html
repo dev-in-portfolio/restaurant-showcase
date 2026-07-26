@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banh Mi Brothers - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Absolute Positioning for Banh Mi Baguette Ingredients */
+    #food-pork { top: 20px; left: 30px; }
+    #food-chicken { top: 20px; left: 30px; }
+    #food-beef { top: 20px; left: 35px; }
+    #food-tofu { top: 20px; left: 30px; }
+    
+    #food-mayo { top: 60px; left: 40px; }
+    #food-pate { top: 60px; left: 160px; }
+    #food-cucumber { bottom: 25px; left: 20px; }
+    #food-pickles { bottom: 25px; left: 80px; }
+    #food-jalapenos { bottom: 25px; left: 180px; }
+    #food-cilantro { bottom: 25px; left: 210px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Banh Mi Bros
+          <span>Street Food & Boba</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="boba.html">Boba Tea Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Modern Banh Mi Shop</span>
+        <h2 class="hero-title">Banh Mi Brothers</h2>
+        <p class="hero-desc">"Savor the perfect crunch of freshly baked French baguettes stuffed with savory grilled meats, house mayo, pâté, and crispy pickled vegetables."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📞 Order Counter: (980) 237-7756. 230 E W.T. Harris Blvd, Suite A7, Charlotte, NC 28262.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Fresh Vietnamese Street Food</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Banh Mi Brothers in Charlotte, NC. Located right near UNC Charlotte on W.T. Harris Boulevard, we specialize in authentic, vibrant Vietnamese street food. From our traditional pork, beef, and lemongrass chicken banh mi sandwiches to our noodle bowls and custom boba teas, we prepare every dish with scratch-made ingredients and crispy family heritage.
+      </p>
+      <a href="about.html" style="color: var(--color-green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-green); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Our Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Baguette Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Banh Mi Builder</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Custom-craft your signature Vietnamese sandwich. Select your protein filling and toggle fresh toppings.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Baguette -->
+        <div class="plate-canvas">
+          <div class="plate-wireframe" style="border-radius: 40px;">
+            <div class="plate-gold-rim" style="border-radius: 30px;"></div>
+            <!-- Banh Mi Layers (text + emoji representations for fast rendering) -->
+            <div class="plate-food-item" id="food-pork">🥓 Grilled Pork</div>
+            <div class="plate-food-item" id="food-chicken">🍗 Grilled Chicken</div>
+            <div class="plate-food-item" id="food-beef">🥩 Honey Soy Beef</div>
+            <div class="plate-food-item" id="food-tofu">🥦 Crispy Tofu</div>
+            
+            <div class="plate-food-item" id="food-mayo">🧈 House Mayo</div>
+            <div class="plate-food-item" id="food-pate">🧈 Savory Pâté</div>
+            <div class="plate-food-item" id="food-cucumber">🥒 Cucumber</div>
+            <div class="plate-food-item" id="food-pickles">🥕 Pickles</div>
+            <div class="plate-food-item" id="food-jalapenos">🌶️ Jalapeños</div>
+            <div class="plate-food-item" id="food-cilantro">🌿 Cilantro</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label>1. Select Protein</label>
+            <div class="option-grid" id="protein-options">
+              <button class="option-btn active" onclick="setProtein('pork', 7.50, 'Grilled Pork')">Grilled Pork ($7.50)</button>
+              <button class="option-btn" onclick="setProtein('chicken', 7.50, 'Lemongrass Chicken')">Chicken ($7.50)</button>
+              <button class="option-btn" onclick="setProtein('beef', 8.50, 'Honey Soy Beef')">Honey Beef ($8.50)</button>
+              <button class="option-btn" onclick="setProtein('tofu', 7.00, 'Crispy Tofu')">Crispy Tofu ($7.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Spreads & Toppings</label>
+            <div class="option-grid">
+              <button class="option-btn active" id="btn-mayo" onclick="toggleTopping('mayo')">House Mayo</button>
+              <button class="option-btn active" id="btn-pate" onclick="toggleTopping('pate')">Savory Pâté</button>
+              <button class="option-btn active" id="btn-cucumber" onclick="toggleTopping('cucumber')">Cucumber</button>
+              <button class="option-btn active" id="btn-pickles" onclick="toggleTopping('pickles')">Pickled Carrots & Daikon</button>
+              <button class="option-btn active" id="btn-jalapenos" onclick="toggleTopping('jalapenos')">Jalapeños</button>
+              <button class="option-btn active" id="btn-cilantro" onclick="toggleTopping('cilantro')">Cilantro</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Baguette Platter</span>
+        <h4 class="builder-display-title" id="display-sandwich-name">Grilled Pork Banh Mi</h4>
+        <p id="display-sandwich-toppings" style="color: var(--color-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Mayo, Pâté, Cucumber, Pickled Carrots & Daikon, Jalapeños, Cilantro</p>
+        <div class="builder-display-price" id="display-sandwich-price">$7.50</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-sandwich-desc">Freshly baked French baguette spread with house mayo, savory pâté, stuffed with Grilled Pork and topped with fresh cucumber, pickled carrots & daikon, jalapeños, and cilantro.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Boba Tea Mixer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Choose your tea base, set sweetness levels, and add tapioca boba pearls, lychee jellies, or egg puddings. Click below to view the interactive mixer.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Boba Mixer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>230 E W.T. Harris Blvd, Suite A7<br>Charlotte, NC 28262</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 10:30 AM - 7:00 PM<br>Fri - Sat: 10:30 AM - 8:00 PM<br>Sunday: 11:00 AM - 7:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (980) 237-7756<br>Vietnamese Street Food & Boba | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Banh Mi Brothers. Fresh baguettes rolled daily.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedProtein = { key: 'pork', price: 7.50, name: 'Grilled Pork Banh Mi' };
+    const toppings = {
+      mayo: { active: true, name: 'House Mayo' },
+      pate: { active: true, name: 'Savory Pâté' },
+      cucumber: { active: true, name: 'Cucumber' },
+      pickles: { active: true, name: 'Pickled Carrots & Daikon' },
+      jalapenos: { active: true, name: 'Jalapeños' },
+      cilantro: { active: true, name: 'Cilantro' }
+    };
+
+    function setProtein(key, price, name) {
+      const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedProtein = { key, price, name: `${name} Banh Mi` };
+      updateDisplay();
+    }
+
+    function toggleTopping(key) {
+      toppings[key].active = !toppings[key].active;
+      const btn = document.getElementById(`btn-${key}`);
+      if (toppings[key].active) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate Total Cost
+      document.getElementById('display-sandwich-price').innerText = `$${selectedProtein.price.toFixed(2)}`;
+      document.getElementById('display-sandwich-name').innerText = selectedProtein.name;
+
+      // Compile toppings list
+      const activeToppings = [];
+      for (const k in toppings) {
+        if (toppings[k].active) {
+          activeToppings.push(toppings[k].name);
+        }
+      }
+      document.getElementById('display-sandwich-toppings').innerText = activeToppings.length > 0 ? activeToppings.join(', ') : 'No Spreads or Toppings';
+
+      // Pair description
+      const toppingDesc = activeToppings.length > 0 ? `spread with ${activeToppings.slice(0,2).join(' & ')} and topped with fresh ${activeToppings.slice(2).join(', ')}` : 'served plain';
+      document.getElementById('display-sandwich-desc').innerText = `Freshly baked French baguette ${toppingDesc}, loaded with savory ${selectedProtein.name.replace(' Banh Mi', '')}.`;
+
+      // Animate graphics on virtual Baguette
+      const allFoodItems = document.querySelectorAll('.plate-food-item');
+      allFoodItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.5)';
+      });
+
+      // Show selected protein
+      const proteinEl = document.getElementById(`food-${selectedProtein.key}`);
+      if (proteinEl) {
+        proteinEl.style.opacity = '1';
+        proteinEl.style.transform = 'scale(1)';
+      }
+
+      // Show active toppings
+      for (const k in toppings) {
+        if (toppings[k].active) {
+          const el = document.getElementById(`food-${k}`);
+          if (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'scale(1)';
+          }
+        }
+      }
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

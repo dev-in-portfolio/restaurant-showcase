@@ -1,16 +1,24 @@
-// === CURRY GATE: Site JavaScript ===
-(function(){
-  // Mobile nav toggle
-  const toggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if(toggle && navLinks){
-    toggle.addEventListener('click',()=>{
+/* Curry Gate — site.js */
+(function () {
+  'use strict';
+
+  /* Mobile nav toggle */
+  const toggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', function () {
       const open = navLinks.classList.toggle('open');
-      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
-  // Location tabs (locations.html)
+  /* Location tabs (locations.html) */
   const locTabs = document.querySelectorAll('.loc-tab');
   if (locTabs.length) {
     locTabs.forEach(function (tab) {
@@ -29,7 +37,7 @@
     });
   }
 
-  // Menu filter + search (menu.html)
+  /* Menu filter + search (menu.html) */
   const menuBtns = document.querySelectorAll('.menu-controls button');
   const menuSections = document.querySelectorAll('.menu-section');
   const menuSearch = document.getElementById('menu-search-input');
@@ -58,10 +66,10 @@
         items.forEach(function (row) {
           var text = row.textContent.toLowerCase();
           var show = catMatch && (!q || text.indexOf(q) !== -1);
-          row.style.display = show ? 'flex' : 'none';
+          row.style.display = show ? '' : 'none';
           if (show) secVisible = true;
         });
-        sec.style.display = secVisible ? 'block' : 'none';
+        sec.style.display = secVisible ? '' : 'none';
         if (secVisible) anyVisible = true;
       });
       if (menuEmpty) menuEmpty.hidden = anyVisible;

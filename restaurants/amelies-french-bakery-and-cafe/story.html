@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · Amélie's French Bakery & Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --navy: #1a1a2e;
+  --blush: #d4a5b5;
+  --gold: #c9a84c;
+  --cream: #faf3e0;
+  --rose: #e8a0bf;
+  --deep-rose: #c26a8a;
+  --charcoal: #2d2d3f;
+  --warm-white: #fff9f0;
+}
+body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.nav a:hover { color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--gold) !important; letter-spacing: 0; text-transform: none; }
+.page-header { background: linear-gradient(135deg, var(--navy) 0%, #16213e 100%); color: var(--cream); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { color: var(--blush); font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+.section-wide { max-width: 1100px; }
+.section h2 { font-size: 1.5rem; color: var(--navy); margin: 0 0 1rem; }
+.section p { font-size: .95rem; line-height: 1.8; margin: 0 0 1.25rem; color: #444; }
+.story-hero { position: relative; padding: 5rem 2rem; text-align: center; background: var(--navy); color: var(--cream); overflow: hidden; }
+.story-hero::after { content: '"'; position: absolute; bottom: -20px; right: 40px; font-size: 15rem; color: rgba(212,165,181,.08); font-family: 'Fraunces', serif; line-height: 1; }
+.story-hero blockquote { font-size: 1.4rem; font-style: italic; max-width: 600px; margin: 0 auto; line-height: 1.6; color: var(--gold); font-family: 'Fraunces', serif; }
+.story-hero cite { display: block; margin-top: 1rem; font-size: .9rem; color: var(--blush); font-style: normal; }
+.timeline { position: relative; padding: 0 0 0 2rem; margin: 2rem 0; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold); border-radius: 2px; }
+.timeline-item { position: relative; padding: 0 0 2rem 1.5rem; }
+.timeline-item::before { content: ''; position: absolute; left: -2.15rem; top: .35rem; width: 14px; height: 14px; background: var(--navy); border: 3px solid var(--gold); border-radius: 50%; }
+.timeline-item .year { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: .25rem; }
+.timeline-item p { margin: 0; }
+.philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin: 2rem 0; }
+.phil-card { background: var(--warm-white); padding: 2rem; border-radius: 8px; border: 1px solid rgba(0,0,0,.06); text-align: center; }
+.phil-card .icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.phil-card h3 { font-size: 1rem; color: var(--navy); margin: 0 0 .5rem; }
+.phil-card p { font-size: .88rem; line-height: 1.6; margin: 0; color: #666; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0; }
+.team-card { text-align: center; }
+.team-card .avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--blush); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #fff; }
+.team-card h3 { font-size: 1rem; margin: 0; color: var(--navy); }
+.team-card .role { font-size: .85rem; color: #888; margin: .25rem 0 0; }
+footer { background: var(--navy); color: rgba(255,255,255,.6); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.45); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Amélie's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="locations.html">Locations</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>From a dream of Paris to Charlotte's beloved French bakery</p>
+</header>
+
+<div class="story-hero">
+  <blockquote>
+    "We wanted to create a place where every detail feels like a happy discovery — like wandering into a Parisian attic full of treasures."
+    <cite>— The Amélie's Team</cite>
+  </blockquote>
+</div>
+
+<section class="section">
+  <h2>How It Began</h2>
+  <p>Amélie's French Bakery &amp; Café opened its first doors in Charlotte's NoDa neighborhood with a simple belief: that great food and beautiful surroundings can transport you. Inspired by the sidewalk cafés, flea markets, and patisseries of Paris, the founders set out to build a space that felt both elegant and wonderfully eclectic.</p>
+  <p>What started as a single bakery grew through word of mouth — and through the love of Charlotte locals who craved authentic croissants, colorful macarons, and a place to linger. Today, Amélie's spans four locations across the city, each one filled with mismatched vintage chairs, local artwork, and the aroma of butter and coffee.</p>
+</section>
+
+<section class="section">
+  <h2>Our Journey</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">2005</div>
+      <p>The first Amélie's opens in NoDa — a tiny bakery with big dreams and a line out the door.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2010</div>
+      <p>A second location arrives on Park Road, bringing French pastries to south Charlotte.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2016</div>
+      <p>Carmel Commons opens, featuring an expanded kitchen and catering operation.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2019</div>
+      <p>The Uptown location debuts in the heart of Charlotte's financial district.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">Today</div>
+      <p>Four locations, dozens of pastries, and one enduring commitment to quality and whimsy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-wide">
+  <h2 style="text-align:center">Flea Market Meets Left Bank</h2>
+  <p style="text-align:center;max-width:640px;margin:0 auto 2rem">Our design philosophy is simple: make every visit feel like an exploration.</p>
+  <div class="philosophy-grid">
+    <div class="phil-card">
+      <span class="icon" aria-hidden="true">🪞</span>
+      <h3>Curated Spaces</h3>
+      <p>Antique mirrors, vintage chandeliers, and one-of-a-kind furniture pieces create a setting that is constantly evolving and never boring.</p>
+    </div>
+    <div class="phil-card">
+      <span class="icon" aria-hidden="true">🖼️</span>
+      <h3>Art on Every Wall</h3>
+      <p>We rotate local artists' work through our cafés, giving Charlotte creators a gallery-like platform and guests something new to see.</p>
+    </div>
+    <div class="phil-card">
+      <span class="icon" aria-hidden="true">🌿</span>
+      <h3>Warm &amp; Inviting</h3>
+      <p>Every nook is designed for lingering — cozy armchairs, soft lighting, and tables that invite conversation over coffee.</p>
+    </div>
+    <div class="phil-card">
+      <span class="icon" aria-hidden="true">👩‍🍳</span>
+      <h3>Women-Owned</h3>
+      <p>Amélie's is proudly women-owned and operated, with a team committed to hospitality that feels personal and genuine.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Community &amp; Craft</h2>
+  <p>Amélie's believes in supporting the community that supports us. We partner with local bakeries and farms, source ingredients thoughtfully, and donate day-old pastries to neighborhood organizations. Our cafés serve as gathering spaces for local meetups, art openings, and fundraisers.</p>
+  <p>Every pastry is made from scratch using traditional French techniques. Our bakers arrive before dawn to laminate dough, whip pastry cream, and bake baguettes. It is labor-intensive and absolutely worth it — because we believe that the best food comes from care, not shortcuts.</p>
+</section>
+
+<footer>
+  <p>Amélie's French Bakery &amp; Café · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Story</a> · <a href="catering.html">Catering</a> · <a href="locations.html">Locations</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

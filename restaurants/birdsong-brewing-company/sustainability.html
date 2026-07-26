@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdsong Brewing Co. - Charlotte, NC | Sustainability</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive sustainability calculator box */
+    .calculator-box {
+      background: radial-gradient(circle, #0e1e13 0%, #040806 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Birdsong
+          <span>Brewing Company</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Tap List</a>
+        <a href="sustainability.html" class="active">Sustainability</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Rentals</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Brewing with a Conscience</h2>
+    <p class="page-subtitle">From our 100% solar-powered array to composting spent grains at local farms, we strive to brew great beer with minimal footprint.</p>
+  </header>
+
+  <!-- Interactive Sustainability Calculator -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Solar & Waste Impact Calculator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your visit scale and an environmental initiative to calculate your carbon offset and agricultural contribution.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Calculator results -->
+        <div class="calculator-box" id="calc-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-amber); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="calc-initiative-tag">Solar Offset Program</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="calc-result-title">180 Wh Clean Energy</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-yellow); margin-bottom: 1.2rem;" id="calc-result-badge">Carbon Equivalent: 0.13 lbs CO₂</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="calc-result-desc">"By drinking 1 pint, you help support our rooftop solar panel array, offsetting the grid energy needed to brew, chill, and serve your glass."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-amber); letter-spacing: 0.08em; margin-bottom: 0.5rem;">1. Choose Visit / Purchase Size</label>
+            <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.5rem;">
+              <button class="option-btn active" onclick="setVolume('pint', this)">Enjoy 1 Draft Pint</button>
+              <button class="option-btn" onclick="setVolume('flight', this)">Enjoy a 4-Pour Tasting Flight</button>
+              <button class="option-btn" onclick="setVolume('growler', this)">Take Home 1 Growler (64 oz)</button>
+              <button class="option-btn" onclick="setVolume('sixpack', this)">Pick Up a 6-Pack of Cans</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-amber); letter-spacing: 0.08em; margin-bottom: 0.5rem;">2. Choose Initiative Area</label>
+            <div class="option-grid" style="display: flex; gap: 0.55rem;">
+              <button class="option-btn active" onclick="setEffort('solar', this)">Solar Power</button>
+              <button class="option-btn" onclick="setEffort('grain', this)">Spent Grain</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Initiative Details -->
+    <h3 class="section-title">Our Green Brewhouse Initiatives</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Energy & Water</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Rooftop Solar Array</span>
+          </div>
+          <p class="menu-item-desc">Our 220 rooftop solar panels generate approximately 75,000 kWh of clean electricity annually, offsetting 100% of our brewhouse requirements during peak hours.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Water Reclamation Program</span>
+          </div>
+          <p class="menu-item-desc">We use custom heat exchangers to capture and reclaim hot water from the brewing process, recycling it directly for subsequent washes and batches.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Agriculture & Waste</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Spent Grain Composting</span>
+          </div>
+          <p class="menu-item-desc">100% of our spent brewing grains (barley, wheat, oats) are donated to local Charlotte farms. This feeds livestock and fertilizes soils instead of entering landfills.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Eco-Friendly PakTechs</span>
+          </div>
+          <p class="menu-item-desc">We package our 6-packs using only 100% recycled plastic PakTech carriers. Bring them back to the taproom to be recycled again in our closed-loop bin.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>NoDa Boundary Stand</h3>
+        <p>1016 N Davidson St<br>Charlotte, NC 28206<br>Phone: (704) 332-1810</p>
+      </div>
+      <div class="info-block">
+        <h3>Taproom Hours</h3>
+        <p>Mon - Thu: 3:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 12:00 PM - 8:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Community Focus</h3>
+        <p>A portion of our monthly taproom sales are donated to regional environmental preservation and clean-water charities.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Birdsong Brewing Company. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let volume = 'pint';
+    let effort = 'solar';
+
+    const calcData = {
+      pint: {
+        solar: {
+          title: "180 Wh Clean Energy",
+          badge: "Carbon Offset: 0.13 lbs CO₂",
+          desc: "By drinking 1 pint, you help support our rooftop solar panel array, offsetting the grid energy needed to brew, chill, and serve your glass."
+        },
+        grain: {
+          title: "0.45 lbs Organic Feed",
+          badge: "Repurposed: Spent Barley & Wheat",
+          desc: "The organic spent grains remaining after brewing 1 pint of beer are sent to local farmers to feed livestock, avoiding landfill methane emissions."
+        }
+      },
+      flight: {
+        solar: {
+          title: "190 Wh Clean Energy",
+          badge: "Carbon Offset: 0.14 lbs CO₂",
+          desc: "Tasting flights use minor extra cooling power. Your choice is fully offset by our solar array generating clean power throughout the day."
+        },
+        grain: {
+          title: "0.48 lbs Organic Feed",
+          badge: "Repurposed: Spent Grains",
+          desc: "The spent malt leftovers from our four-pour selection are redirected to livestock feed programs in the Carolinas."
+        }
+      },
+      growler: {
+        solar: {
+          title: "720 Wh Clean Energy",
+          badge: "Carbon Offset: 0.52 lbs CO₂",
+          desc: "Filling a 64 oz growler is highly efficient. The carbon offset matches the clean solar power generated by one panels over three hours."
+        },
+        grain: {
+          title: "1.8 lbs Organic Feed",
+          badge: "Repurposed: Spent Grains",
+          desc: "Taking home a growler repurposes nearly two pounds of grain, which is recycled back into the local soil and livestock farming lifecycle."
+        }
+      },
+      sixpack: {
+        solar: {
+          title: "810 Wh Clean Energy",
+          badge: "Carbon Offset: 0.58 lbs CO₂",
+          desc: "Brewing and canning a six-pack is backed by our solar cells, offsetting grid energy and using 100% recycled PakTech plastic tops."
+        },
+        grain: {
+          title: "2.0 lbs Organic Feed",
+          badge: "Repurposed: Spent Grains",
+          desc: "A full six-pack volume results in two pounds of high-quality livestock feed provided directly to Carolina farming families."
+        }
+      }
+    };
+
+    function setVolume(vKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      volume = vKey;
+      updateDisplay();
+    }
+
+    function setEffort(eKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      effort = eKey;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const display = document.getElementById('calc-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const itemData = calcData[volume][effort];
+
+        document.getElementById('calc-initiative-tag').innerText = effort === 'solar' ? 'Solar Offset Program' : 'Spent Grain Composting Program';
+        document.getElementById('calc-result-title').innerText = itemData.title;
+        document.getElementById('calc-result-badge').innerText = itemData.badge;
+        document.getElementById('calc-result-desc').innerText = `"${itemData.desc}"`;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

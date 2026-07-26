@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Dressler's</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0f172a;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#1a1a1a;--muted:#8899aa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0f172a,#1a1a2e);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.55;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
+.contact-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.08);border-radius:8px;padding:1.5rem}
+.contact-card .icon{font-size:1.3rem;margin-bottom:.5rem;display:block}
+.contact-card h3{font-size:1rem;color:var(--gold);margin:0 0 .35rem}
+.contact-card p{font-size:.85rem;opacity:.6;margin:0;line-height:1.5}
+.demo-form{max-width:500px;margin:2rem auto 0}
+.demo-form label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .35rem;opacity:.6}
+.demo-form input,.demo-form textarea{width:100%;padding:.7rem;border:1px solid rgba(201,168,76,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif}
+.demo-form textarea{min-height:100px;resize:vertical}
+.demo-form button{background:var(--gold);color:var(--navy);border:none;padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;margin-top:1rem;width:100%}
+.demo-form button:hover{background:#b8973a}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,168,76,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dressler's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="wine.html">Wine Program</a>
+    <a href="story.html">Our Story</a>
+    <a href="private-dining.html">Private Dining</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Contact</h1>
+  <p>Reservations, inquiries, or just to say hello</p>
+</header>
+<section class="section">
+  <h2>Visit Us</h2>
+  <div class="contact-grid">
+    <div class="contact-card"><span class="icon" aria-hidden="true">📍</span><h3>Location</h3><p>1100 Metropolitan Ave #125<br>Charlotte, NC 28204<br>Midtown · The Metropolitan</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">📞</span><h3>Phone</h3><p>(704) 909-6295</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">🕐</span><h3>Hours</h3><p>Mon–Thu: 5:00–9:00 PM<br>Fri–Sat: 5:00–10:00 PM<br>Sunday: Closed</p></div>
+    <div class="contact-card"><span class="icon" aria-hidden="true">🍷</span><h3>Wine Tastings</h3><p>$25 table-side tastings every Monday–Wednesday</p></div>
+  </div>
+  <h2>Send a Message</h2>
+  <form class="demo-form" data-demo-form>
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    <label for="subject">Subject</label>
+    <select id="subject" style="width:100%;padding:.7rem;border:1px solid rgba(201,168,76,.2);border-radius:4px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem;font-family:'DM Sans',sans-serif">
+      <option>General Inquiry</option><option>Reservations</option><option>Private Dining</option><option>Wine Tasting</option><option>Feedback</option>
+    </select>
+    <label for="message">Message</label>
+    <textarea id="message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+<footer>
+  <p>Dressler's · 1100 Metropolitan Ave #125 · Charlotte, NC 28204 · (704) 909-6295</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="private-dining.html">Private Dining</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservations — Link & Pin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--rail-gray:#2c3539;--coupler-red:#b22222;--warm-wood:#6b4226;--cream:#f5efe6;--gold:#c9a84c;--charcoal:#1a1a1a;--steel:#d4d0c8;--signal-green:#2e8b57}.page-hero{background:linear-gradient(135deg,var(--rail-gray),#1a1a1a);color:var(--cream);padding:5rem 24px;text-align:center}.page-hero h1{color:var(--cream)}.page-hero h1 span{color:var(--coupler-red)}.page-hero p{opacity:.8;max-width:600px;margin:0 auto}.reserve-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}@media(max-width:768px){.reserve-layout{grid-template-columns:1fr}}.reserve-form{padding:2rem;background:var(--cream);border-radius:8px}.reserve-form h2{color:var(--rail-gray);margin-bottom:1.25rem}.reserve-form label{display:block;font-weight:600;margin-bottom:.35rem;font-size:.9rem}.reserve-form input,.reserve-form select{width:100%;padding:12px;margin-bottom:1.25rem;border:1px solid var(--steel);border-radius:4px;font-family:var(--font-body);font-size:1rem}.reserve-form input:focus,.reserve-form select:focus{outline:2px solid var(--coupler-red);outline-offset:2px;border-color:transparent}.reserve-sidebar{display:flex;flex-direction:column;gap:1.5rem}.info-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:var(--shadow);border-left:4px solid var(--coupler-red)}.info-card h3{color:var(--rail-gray);margin-bottom:.75rem}.info-card p{font-size:.95rem;color:var(--medium-gray);margin-bottom:.35rem}.info-card .phone-large{font-size:1.3rem;font-weight:700;color:var(--coupler-red)}.private-events{background:var(--rail-gray);color:var(--cream);border-radius:8px;padding:2rem}.private-events h3{color:var(--gold);margin-bottom:.75rem}.private-events p{opacity:.9;font-size:.95rem;margin-bottom:.5rem}.private-events .cta-btn{display:inline-block;margin-top:1rem;padding:12px 28px;background:var(--coupler-red);color:var(--white);border:none;border-radius:4px;font-weight:600;cursor:pointer;font-size:.95rem}.dress-code{background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center}.dress-code h3{color:var(--rail-gray);font-size:1rem;margin-bottom:.25rem}.dress-code p{font-size:.85rem;color:var(--medium-gray)}.disclosure{border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Link &amp; Pin</a>
+<nav class="nav-links">
+<a href="menu.html">Menu</a>
+<a href="locations.html">Locations</a>
+<a href="story.html">Our Story</a>
+<a href="reservations.html">Reservations</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Reserve a <span>Table</span></h1>
+<p>Dinner, brunch, or a special celebration — book your table at one of our three Charlotte-area locations.</p>
+</section>
+
+<section class="section container">
+<div class="reserve-layout">
+<div>
+<form class="demo-form reserve-form">
+<h2>Book a Table</h2>
+<label for="res-location">Location</label>
+<select id="res-location" required>
+<option value="">Select location</option>
+<option>Arboretum</option>
+<option>South End</option>
+<option>NorthCross</option>
+</select>
+<label for="res-name">Name</label>
+<input type="text" id="res-name" placeholder="Full name" required>
+<label for="res-email">Email</label>
+<input type="email" id="res-email" placeholder="you@example.com" required>
+<label for="res-date">Date</label>
+<input type="date" id="res-date" required>
+<label for="res-time">Time</label>
+<select id="res-time" required>
+<option value="">Select time</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>1:00 PM</option>
+<option>4:00 PM</option>
+<option>5:00 PM</option>
+<option>6:00 PM</option>
+<option>7:00 PM</option>
+<option>8:00 PM</option>
+<option>9:00 PM</option>
+</select>
+<label for="res-party">Party Size</label>
+<select id="res-party" required>
+<option value="">Select size</option>
+<option>1 guest</option>
+<option>2 guests</option>
+<option>3 guests</option>
+<option>4 guests</option>
+<option>5 guests</option>
+<option>6 guests</option>
+<option>7 guests</option>
+<option>8+ guests</option>
+</select>
+<button type="submit" class="btn btn-primary" style="width:100%">Request Reservation (Demo)</button>
+</form>
+</div>
+
+<div class="reserve-sidebar">
+<div class="info-card">
+<h3>Arboretum</h3>
+<p>8128 Providence Rd #1200, Charlotte</p>
+<p class="phone-large"><a href="tel:9802998006" style="color:var(--coupler-red)">(980) 299-8006</a></p>
+<p>Mon–Wed 4–11 PM | Thu–Fri 4 PM–12 AM</p>
+<p>Sat 10 AM–12 AM | Sun 10 AM–11 PM</p>
+</div>
+
+<div class="info-card">
+<h3>South End</h3>
+<p>155 New Bern St, Charlotte</p>
+<p class="phone-large">(980) 890-6451</p>
+</div>
+
+<div class="info-card">
+<h3>NorthCross</h3>
+<p>9723 Sam Furr Rd, Huntersville</p>
+</div>
+
+<div class="dress-code">
+<h3>👔 Smart Casual Attire</h3>
+<p>We invite you to dress comfortably yet polished for an elevated dining experience.</p>
+</div>
+
+<div class="private-events">
+<h3>🎉 Private Events</h3>
+<p>Celebrate your next special occasion with us — birthdays, anniversaries, corporate dinners, and more. Semi-private and full buyout options available at all three locations.</p>
+<p>Our events team will work with you to create a custom menu, select the perfect space, and ensure every detail is taken care of.</p>
+<form class="demo-form">
+<button type="submit" class="cta-btn">Inquire About Private Events (Demo)</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:var(--rail-gray);color:var(--cream);text-align:center">
+<div class="container">
+<p style="opacity:.8">&copy; 2026 Link &amp; Pin — Charlotte, NC</p>
+<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
+<a href="https://instagram.com/linkandpin" style="color:var(--gold)">@linkandpin</a> &middot;
+<a href="https://linkandpin.com" style="color:var(--gold)">linkandpin.com</a>
+</p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

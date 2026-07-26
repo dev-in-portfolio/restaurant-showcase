@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Heist Brewery Charlotte</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --amber:#c87a2c; --charcoal:#1a1a1a; --cream:#f5f0e8; --copper:#b86b3a; --navy:#1e2a3a; --gold:#d4a017; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:var(--charcoal); background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--amber); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--charcoal); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--charcoal); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.6rem; color:var(--amber); text-decoration:none; font-weight:700; letter-spacing:-0.5px; }
+  nav .logo span { color:#fff; }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--amber); }
+  .page-header { background:linear-gradient(135deg,#1a1a1a,#2d1f0e); color:#fff; padding:4rem 2rem; text-align:center; }
+  .page-header h1 { font-size:2.8rem; }
+  .page-header h1 span { color:var(--amber); }
+  .page-header p { color:#bbb; margin-top:0.5rem; }
+  .section { padding:5rem 2rem; max-width:1100px; margin:0 auto; }
+  .section-title { font-size:2rem; margin-bottom:1rem; text-align:center; }
+  .section-title span { color:var(--amber); }
+  .section-sub { text-align:center; color:#666; max-width:600px; margin:0 auto 3rem; }
+  .locations-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; }
+  .location-detail { background:#fff; border-radius:12px; padding:2.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .location-detail h3 { font-size:1.5rem; color:var(--amber); margin-bottom:1rem; }
+  .location-detail .info-row { display:flex; gap:1rem; margin-bottom:0.8rem; align-items:flex-start; }
+  .location-detail .info-row .icon { font-size:1.3rem; min-width:28px; }
+  .location-detail .info-row .text { color:#444; }
+  .location-detail .info-row .text strong { display:block; color:var(--charcoal); }
+  .hours-table { width:100%; border-collapse:collapse; margin-top:1rem; }
+  .hours-table td { padding:6px 0; border-bottom:1px solid #f0e8dc; font-size:0.9rem; }
+  .hours-table td:last-child { text-align:right; color:#555; }
+  .contact-form-wrap { max-width:600px; margin:3rem auto 0; background:#fff; padding:2.5rem; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .contact-form-wrap .form-group { margin-bottom:1.5rem; }
+  .contact-form-wrap label { display:block; font-weight:600; margin-bottom:0.3rem; color:var(--charcoal); }
+  .contact-form-wrap input,.contact-form-wrap textarea { width:100%; padding:12px; border:1px solid #ddd; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.95rem; }
+  .contact-form-wrap textarea { resize:vertical; min-height:120px; }
+  .location-selector { display:flex; gap:0.5rem; margin-bottom:2rem; justify-content:center; flex-wrap:wrap; }
+  .loc-btn { padding:10px 24px; border:2px solid var(--amber); background:transparent; color:var(--amber); border-radius:6px; cursor:pointer; font-weight:600; transition:all 0.2s; font-family:'DM Sans',sans-serif; font-size:0.9rem; }
+  .loc-btn.active { background:var(--amber); color:#fff; }
+  .loc-btn:hover { background:var(--amber); color:#fff; }
+  footer { background:var(--charcoal); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; }
+  footer .social a:hover { color:var(--amber); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { .locations-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Heist<span>Brewery</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-header" id="main">
+  <h1>Get in <span>Touch</span></h1>
+  <p>Two locations. One unforgettable experience.</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our <span>Locations</span></h2>
+  <p class="section-sub">Find us in NoDa and at North End — each with its own character, both serving the full Heist experience.</p>
+
+  <div class="location-selector">
+    <button class="loc-btn active" data-loc="noda">NoDa Brewpub</button>
+    <button class="loc-btn" data-loc="barrelarts">Barrel Arts</button>
+  </div>
+
+  <div class="locations-grid" id="locDisplay">
+    <div class="location-detail" data-loc-panel="noda">
+      <h3>&#x1F3E0; Heist Brewery — NoDa</h3>
+      <div class="info-row"><span class="icon">&#x1F4CD;</span><span class="text">2909 N Davidson St STE 200, Charlotte, NC 28205</span></div>
+      <div class="info-row"><span class="icon">&#x1F4DE;</span><span class="text">(704) 375-8260</span></div>
+      <div class="info-row"><span class="icon">&#x2709;&#xFE0F;</span><span class="text">info@heistbrewery.com</span></div>
+      <table class="hours-table">
+        <tr><td>Monday — Thursday</td><td>11:00 am — 10:00 pm</td></tr>
+        <tr><td>Friday — Saturday</td><td>11:00 am — 12:00 am</td></tr>
+        <tr><td>Sunday</td><td>10:00 am — 10:00 pm</td></tr>
+      </table>
+    </div>
+    <div class="location-detail" data-loc-panel="barrelarts" style="display:none;">
+      <h3>&#x1F3E0; Barrel Arts at North End</h3>
+      <div class="info-row"><span class="icon">&#x1F4CD;</span><span class="text">1030 Woodward Ave, Charlotte, NC 28206</span></div>
+      <div class="info-row"><span class="icon">&#x1F4DE;</span><span class="text">(704) 595-3111</span></div>
+      <div class="info-row"><span class="icon">&#x2709;&#xFE0F;</span><span class="text">info@heistbrewery.com</span></div>
+      <table class="hours-table">
+        <tr><td>Monday</td><td>3:00 pm — 8:00 pm</td></tr>
+        <tr><td>Tuesday — Thursday</td><td>3:00 pm — 10:00 pm</td></tr>
+        <tr><td>Friday</td><td>3:00 pm — 11:00 pm</td></tr>
+        <tr><td>Saturday</td><td>11:00 am — 11:00 pm</td></tr>
+        <tr><td>Sunday</td><td>12:00 pm — 8:00 pm</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="contact-form-wrap">
+    <h3 style="font-family:'Fraunces',Georgia,serif;font-size:1.5rem;margin-bottom:0.5rem;text-align:center;">Send Us a <span style="color:var(--amber);">Message</span></h3>
+    <p style="text-align:center;color:#666;margin-bottom:2rem;font-size:0.9rem;">General inquiries, feedback, or just saying hello.</p>
+    <form class="demo-form" data-demo-form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="General inquiry, catering, events...">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Tell us what's on your mind..."></textarea>
+      </div>
+      <button type="submit" class="btn" style="border:none;cursor:pointer;width:100%;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/heistbrewery/" target="_blank">&#x1F4F7;</a>
+    <a href="https://www.facebook.com/HeistBrewery" target="_blank">&#x1F4AC;</a>
+    <a href="https://x.com/HeistBrewery" target="_blank">&#x1D54F;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Heist Brewery Concept &bull; Charlotte, NC</p>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

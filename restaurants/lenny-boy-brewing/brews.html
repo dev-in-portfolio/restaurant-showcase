@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brews — Lenny Boy Brewing Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--teal:#2a9d8f;--fermented:#8b5e3c;--kombucha-pink:#e76f51;--cream:#faf3e0;--charcoal:#1a1a1a;--gold:#c9a84c;--sage:#7a9a7a}.page-hero{background:linear-gradient(135deg,#0d1f1c,var(--teal));color:var(--cream);padding:5rem 24px;text-align:center}.page-hero h1{color:var(--cream);margin-bottom:.5rem}.page-hero h1 span{color:var(--kombucha-pink)}.page-hero p{opacity:.8;max-width:600px;margin:0 auto}.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;justify-content:center}.tab-btn{padding:10px 24px;border:2px solid var(--teal);background:transparent;color:var(--charcoal);border-radius:4px;font-weight:600;cursor:pointer;transition:all .2s}.tab-btn:hover{background:var(--teal);color:var(--white)}.tab-btn.active{background:var(--teal);color:var(--white)}.tab-pane{display:none}.tab-pane.active{display:block}.brew-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}.brew-item{background:var(--white);border-radius:8px;padding:1.5rem;box-shadow:var(--shadow);border-left:4px solid var(--teal)}.brew-item h3{color:var(--fermented);margin-bottom:.25rem}.brew-item .style{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--medium-gray);margin-bottom:.5rem}.brew-item p{font-size:.9rem;color:var(--medium-gray)}.brew-item .meta{display:flex;gap:1rem;margin-top:.75rem;font-size:.85rem;font-weight:600}.brew-item .abv{color:var(--kombucha-pink)}.brew-item .ibu{color:var(--teal)}.kombucha-section{background:var(--cream);border-radius:8px;padding:2rem;margin:3rem 0}.kombucha-section h2{color:var(--teal);text-align:center}.kombucha-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1.5rem}.kombucha-flavor{background:var(--white);border-radius:8px;padding:1.25rem;text-align:center}.kombucha-flavor h4{color:var(--kombucha-pink);font-size:.95rem}.kombucha-flavor p{font-size:.8rem;color:var(--medium-gray)}.flight-cta{text-align:center;margin:2rem 0;padding:2.5rem;background:linear-gradient(135deg,var(--teal),var(--fermented));border-radius:8px;color:var(--cream)}.flight-cta h2{color:var(--cream)}.disclosure{border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Lenny Boy Brewing</a>
+<nav class="nav-links">
+<a href="brews.html">Brews</a>
+<a href="taproom.html">Taproom</a>
+<a href="events.html">Events</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Our <span>Brews</span></h1>
+<p>From organic kombucha to barrel-aged sours — every sip tells a story.</p>
+</section>
+
+<section class="section container">
+<div class="tabs">
+<button class="tab-btn active" data-tab="beer">Beer</button>
+<button class="tab-btn" data-tab="kombucha">Kombucha</button>
+<button class="tab-btn" data-tab="sours">Sours &amp; Wild Ales</button>
+<button class="tab-btn" data-tab="cocktails">Cocktails &amp; Wine</button>
+</div>
+
+<div class="tab-pane active" id="tab-beer">
+<div class="brew-list">
+<div class="brew-item">
+<h3>Citraphilia</h3>
+<div class="style">American IPA</div>
+<p>A juicy, hop-forward IPA bursting with citrus and tropical fruit notes. Medium body, smooth finish — a taproom staple.</p>
+<div class="meta"><span class="abv">6.5% ABV</span><span class="ibu">55 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>Juice Drip</h3>
+<div class="style">New England Hazy IPA</div>
+<p>Hazy, silky, and loaded with stone fruit and melon hop character. Low bitterness with a luscious mouthfeel.</p>
+<div class="meta"><span class="abv">5.9% ABV</span><span class="ibu">35 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>Proper Pint</h3>
+<div class="style">English Brown Ale</div>
+<p>A traditional English brown with notes of toasted nuts, caramel, and a gentle earthy hop finish. Sessionable and satisfying.</p>
+<div class="meta"><span class="abv">5.0% ABV</span><span class="ibu">25 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>Frank the Dank</h3>
+<div class="style">American IPA</div>
+<p>Bold, resinous, and unapologetically dank. Pine, grapefruit, and a firm bitter finish for the hop heads.</p>
+<div class="meta"><span class="abv">6.2% ABV</span><span class="ibu">65 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>El Hefe</h3>
+<div class="style">Hefeweizen</div>
+<p>Classic German-style wheat beer with notes of banana, clove, and bubblegum. Cloudy, refreshing, and perfect for sunny days.</p>
+<div class="meta"><span class="abv">5.2% ABV</span><span class="ibu">12 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>Czech Please</h3>
+<div class="style">Czech Pilsner</div>
+<p>Crisp, clean, and noble-hopped. A bright pilsner with a firm Saaz character and a dry finish.</p>
+<div class="meta"><span class="abv">5.0% ABV</span><span class="ibu">35 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>Uno Más</h3>
+<div class="style">Mexican Lager</div>
+<p>A light, crisp lager with a touch of corn sweetness and a clean finish. Perfectly crushable.</p>
+<div class="meta"><span class="abv">4.8% ABV</span><span class="ibu">18 IBU</span></div>
+</div>
+<div class="brew-item">
+<h3>Chuffed to Bits</h3>
+<div class="style">Extra Special Bitter</div>
+<p>An ESB with a firm malt backbone, subtle fruity esters, and a balancing bitterness. English ale yeast character shines.</p>
+<div class="meta"><span class="abv">5.8% ABV</span><span class="ibu">40 IBU</span></div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-kombucha">
+<div class="kombucha-section">
+<p>We were one of the first breweries in North Carolina to brew organic kombucha in-house. Our house-fermented kombucha uses high-quality tea, organic cane sugar, and a proprietary SCOBY culture — resulting in a bright, effervescent, and probiotic-rich brew.</p>
+<div class="kombucha-grid">
+<div class="kombucha-flavor"><h4>Strawberry</h4><p>Sweet, fruity, and crowd-pleasing</p></div>
+<div class="kombucha-flavor"><h4>Ginger</h4><p>Spicy, zesty, and warming</p></div>
+<div class="kombucha-flavor"><h4>Turmeric Sunrise</h4><p>Earthy, golden, anti-inflammatory</p></div>
+<div class="kombucha-flavor"><h4>Passion Fruit</h4><p>Tropical, tart, and bright</p></div>
+<div class="kombucha-flavor"><h4>Blueberry Mint</h4><p>Herbaceous and refreshing</p></div>
+<div class="kombucha-flavor"><h4>Seasonal Rotations</h4><p>Check the taproom for limited releases</p></div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-sours">
+<div class="brew-list">
+<div class="brew-item">
+<h3>Passion Fruit Gose</h3>
+<div class="style">Fruited Sour</div>
+<p>A tart, refreshing gose loaded with passion fruit purée. Bright pink, lightly salty, and incredibly drinkable.</p>
+<div class="meta"><span class="abv">4.8% ABV</span></div>
+</div>
+<div class="brew-item">
+<h3>Peach Jam</h3>
+<div class="style">Fruited Sour</div>
+<p>Tastes like biting into a fresh peach — juicy, tart, and brimming with summer stone fruit flavor.</p>
+<div class="meta"><span class="abv">5.2% ABV</span></div>
+</div>
+<div class="brew-item">
+<h3>Triple Berry Jam</h3>
+<div class="style">Fruited Sour</div>
+<p>A medley of raspberry, blueberry, and blackberry in a tart, effervescent sour base.</p>
+<div class="meta"><span class="abv">5.0% ABV</span></div>
+</div>
+<div class="brew-item">
+<h3>Hay Girl Hay</h3>
+<div class="style">Brett Farmhouse Ale</div>
+<p>A funky, dry farmhouse ale fermented with brettanomyces. Notes of hay, lemon, and wet stone.</p>
+<div class="meta"><span class="abv">6.4% ABV</span></div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-cocktails">
+<div class="brew-list">
+<div class="brew-item">
+<h3>Lenny's Mule</h3>
+<p>House ginger kombucha, vodka, lime, mint</p>
+<div class="meta"><span class="abv">Cocktail</span></div>
+</div>
+<div class="brew-item">
+<h3>Booch &amp; Bourbon</h3>
+<p>Bourbon, strawberry kombucha, lemon, basil</p>
+<div class="meta"><span class="abv">Cocktail</span></div>
+</div>
+<div class="brew-item">
+<h3>Turmeric Sparkler</h3>
+<p>Gin, turmeric kombucha, club soda, lime</p>
+<div class="meta"><span class="abv">Cocktail</span></div>
+</div>
+<div class="brew-item">
+<h3>Wine Selection</h3>
+<p>Rotating red, white, and sparkling by the glass — ask your bartender for current pours.</p>
+</div>
+</div>
+</div>
+
+<div class="flight-cta">
+<h2>Can't Decide? Try a Flight!</h2>
+<p>Sample four beers, kombuchas, or a mix of both — $10 on Fridays. The best way to explore everything we brew.</p>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:#0d1f1c;color:var(--cream);text-align:center">
+<div class="container">
+<p style="opacity:.8">&copy; 2026 Lenny Boy Brewing Co. — Charlotte, NC</p>
+<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
+<a href="https://instagram.com/lennyboybrewingco" style="color:var(--kombucha-pink)">@lennyboybrewingco</a> &middot;
+<a href="tel:9805851728" style="color:var(--kombucha-pink)">(980) 585-1728</a>
+</p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){var btns=document.querySelectorAll('.tab-btn');var panes=document.querySelectorAll('.tab-pane');btns.forEach(function(btn){btn.addEventListener('click',function(){btns.forEach(function(b){b.classList.remove('active')});panes.forEach(function(p){p.classList.remove('active')});btn.classList.add('active');document.getElementById('tab-'+btn.getAttribute('data-tab')).classList.add('active')})})});
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

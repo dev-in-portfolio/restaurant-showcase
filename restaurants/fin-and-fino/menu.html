@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Fin &amp; Fino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0a192f;--teal:#2a9d8f;--gold:#e9c46a;--cream:#f8f4e6;--charcoal:#0d1117;--muted:#7a8a9a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(42,157,143,.15)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--teal)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0a192f,#0f2a3f);padding:3rem 2rem;text-align:center}
+.page-header h1{margin:0;font-size:2.2rem;color:var(--gold)}
+.page-header p{font-style:italic;opacity:.5;margin:.35rem 0 0}
+.tab-bar{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;padding:1.5rem 1rem;background:rgba(0,0,0,.2)}
+.tab-bar button{padding:.65rem 1.4rem;background:transparent;border:1px solid rgba(42,157,143,.2);border-radius:999px;color:var(--cream);font-weight:600;font-size:.82rem;letter-spacing:.06em;cursor:pointer;transition:.25s;text-transform:uppercase}
+.tab-bar button:hover{border-color:var(--teal);color:var(--teal)}
+.tab-bar button.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.menu-section{max-width:820px;margin:0 auto;padding:3rem 2rem}
+.menu-section.hidden{display:none}
+.menu-cat{margin-bottom:2.5rem}
+.menu-cat h3{color:var(--teal);font-size:1.1rem;margin:0 0 .2rem;border-bottom:1px solid rgba(42,157,143,.1);padding-bottom:.5rem}
+.menu-cat .cat-note{font-size:.78rem;opacity:.4;font-style:italic;margin-bottom:1rem}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.menu-item .name{font-size:.92rem;font-weight:600}
+.menu-item .desc{font-size:.78rem;opacity:.4;margin-top:.15rem}
+.menu-item .price{font-family:'Fraunces',serif;color:var(--gold);font-size:.95rem;white-space:nowrap;margin-left:1rem}
+.quiz-box{max-width:580px;margin:3rem auto;padding:2rem;background:rgba(42,157,143,.04);border:1px solid rgba(42,157,143,.12);border-radius:12px;text-align:center}
+.quiz-box h3{color:var(--gold);margin:0 0 .5rem}
+.quiz-box p{font-size:.85rem;opacity:.5;margin:0 0 1.5rem}
+.quiz-step{margin-bottom:1.5rem}
+.quiz-step label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.6rem;color:var(--teal)}
+.quiz-step select{width:100%;max-width:320px;padding:.75rem 1rem;border:1px solid rgba(42,157,143,.2);border-radius:8px;background:rgba(0,0,0,.3);color:var(--cream);font-size:.9rem}
+.quiz-step select option{background:var(--charcoal);color:var(--cream)}
+.quiz-btn{display:inline-block;background:var(--teal);color:#fff;padding:.75rem 2rem;border:none;border-radius:6px;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;transition:.2s}
+.quiz-btn:hover{background:#238c7f}
+.quiz-result{margin-top:1.5rem;padding:1.25rem;border-radius:8px;background:rgba(233,196,106,.08);border:1px solid rgba(233,196,106,.15);display:none}
+.quiz-result.show{display:block}
+.quiz-result h4{color:var(--gold);margin:0 0 .35rem}
+.quiz-result p{font-size:.88rem;opacity:.6;margin:0}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(42,157,143,.08)}
+footer a{color:var(--teal);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Fin &amp; Fino</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Our Menu</h1>
+  <p>Fresh seafood, high-quality meats, house-made pastas &amp; craft cocktails</p>
+</header>
+<div class="tab-bar" data-toggle-group>
+  <button data-toggle="dinner" class="active">Dinner</button>
+  <button data-toggle="lunch">Lunch</button>
+  <button data-toggle="rawbar">Raw Bar</button>
+  <button data-toggle="cocktails">Cocktails</button>
+</div>
+
+<section class="menu-section" data-panel="dinner" id="dinner">
+  <div class="menu-cat">
+    <h3>The Treatment</h3>
+    <p class="cat-note">Let your server and chef take you on a tasting tour of the F&F menu — $5 donated to local charity</p>
+    <div class="menu-item"><span><span class="name">The Treatment</span><div class="desc">A curated tasting journey through our menu. 4 dishes plus dessert. Chef's choice.</div></span><span class="price">$70</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Small Plates</h3>
+    <div class="menu-item"><span><span class="name">Seafood Salad</span><div class="desc">Steamed mussels, poached shrimp, confit octopus, calabrian chilis, vidalia onion, parsley, toasted panko</div></span><span class="price">$14</span></div>
+    <div class="menu-item"><span><span class="name">Farm Greens</span><div class="desc">Red onion, daikon, fennel, goat cheese, toasted pumpkin seeds, white balsamic vinaigrette</div></span><span class="price">$14</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Entrées</h3>
+    <div class="menu-item"><span><span class="name">Sunburst Farms Trout</span><div class="desc">Carolina gold rice, rock shrimp, trinity, herbs, lemon, garlic aleppo relish</div></span><span class="price">$20</span></div>
+    <div class="menu-item"><span><span class="name">Tuna &amp; Salmon Poke</span><div class="desc">Pickled jalapeno, avocado, green onion, sushi rice, furikake, cucumbers</div></span><span class="price">$20</span></div>
+    <div class="menu-item"><span><span class="name">Seared Tuna</span><div class="desc">Peanut salsa macha, pickled red onion, cilantro</div></span><span class="price">$22</span></div>
+    <div class="menu-item"><span><span class="name">Sautéed Shrimp</span><div class="desc">Preserved lemon butter, aleppo pepper, capers, sherry</div></span><span class="price">$19</span></div>
+    <div class="menu-item"><span><span class="name">House Pasta</span><div class="desc">Pei mussels, shrimp, parsley, basil, calabrian chili, toasted panko</div></span><span class="price">$20</span></div>
+    <div class="menu-item"><span><span class="name">Lamb Rigatoni</span><div class="desc">House-made rigatoni, braised lamb, mushrooms, pecorino</div></span><span class="price">$22</span></div>
+    <div class="menu-item"><span><span class="name">Scallops</span><div class="desc">Butternut squash risotto, pine nut pesto</div></span><span class="price">$24</span></div>
+    <div class="menu-item"><span><span class="name">Denver Steak</span><div class="desc">Cipollini onions, chimichurri</div></span><span class="price">$25</span></div>
+    <div class="menu-item"><span><span class="name">Heart of Ribeye 10oz</span><div class="desc">Bleu cheese butter</div></span><span class="price">$45</span></div>
+  </div>
+</section>
+
+<section class="menu-section hidden" data-panel="lunch" id="lunch">
+  <div class="menu-cat">
+    <h3>Prix-Fixe 3-Course</h3>
+    <div class="menu-item"><span><span class="name">Lunch Prix-Fixe</span><div class="desc">Starter + entrée + dessert from the lunch menu</div></span><span class="price">$25</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Starters</h3>
+    <div class="menu-item"><span><span class="name">Furikake Fries</span><div class="desc">Kewpie mayo</div></span><span class="price">$9</span></div>
+    <div class="menu-item"><span><span class="name">Daily Oyster</span><div class="desc">East Coast oyster on the half shell, mignonette, hot sauce</div></span><span class="price">$3.25/each</span></div>
+    <div class="menu-item"><span><span class="name">Shrimp Cocktail</span><div class="desc">Cocktail sauce and lemon</div></span><span class="price">$14</span></div>
+    <div class="menu-item"><span><span class="name">Pimento Cheese Dip</span><div class="desc">House-made corn tortilla chips</div></span><span class="price">$9</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Sandwiches</h3>
+    <p class="cat-note">All sandwiches served with french fries. Sub side salad $4, sub furikake fries $2</p>
+    <div class="menu-item"><span><span class="name">Crab Cake Sandwich</span><div class="desc">Brioche, bacon, green tomato, relish, bibb lettuce</div></span><span class="price">$20</span></div>
+    <div class="menu-item"><span><span class="name">Shrimp Banh Mi Tacos</span><div class="desc">Pickled veggies, jalapeno, aioli, cilantro</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">Grilled Chicken</span><div class="desc">Sourdough, spicy aioli, bibb lettuce, pickled jalapeños, pepper jack cheese, red onion</div></span><span class="price">$14</span></div>
+    <div class="menu-item"><span><span class="name">Bison Burger</span><div class="desc">Lettuce, tomato jam, worcestershire onions, brioche</div></span><span class="price">$16</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Lunch Entrées</h3>
+    <div class="menu-item"><span><span class="name">Poke Bowl</span><div class="desc">Tuna, salmon, furikake, cucumbers, sesame oil, green onions, avocado</div></span><span class="price">$19</span></div>
+    <div class="menu-item"><span><span class="name">Pan Seared Trout</span><div class="desc">Navy beans, fennel, bacon, tomato, salsa verde</div></span><span class="price">$18</span></div>
+    <div class="menu-item"><span><span class="name">Grilled Salmon</span><div class="desc">Sweet potato, kale, red onion, fennel, sour cherries, candied walnut, apple vinaigrette</div></span><span class="price">$18</span></div>
+    <div class="menu-item"><span><span class="name">House Pasta</span><div class="desc">House-made rigatoni, pesto, parmesan</div></span><span class="price">$16</span></div>
+  </div>
+</section>
+
+<section class="menu-section hidden" data-panel="rawbar" id="rawbar">
+  <div class="menu-cat">
+    <h3>Oysters on the Half Shell</h3>
+    <p class="cat-note">Served with mignonette, cocktail sauce and house-made hot sauce</p>
+    <div class="menu-item"><span><span class="name">Eastern Canada</span><div class="desc">Moderate brine with clean, rounded granite finish</div></span><span class="price">$4/each</span></div>
+    <div class="menu-item"><span><span class="name">New England</span><div class="desc">Full brine with creamy yet firm meats and a sweet, seaweed finish</div></span><span class="price">$4/each</span></div>
+    <div class="menu-item"><span><span class="name">Mid Atlantic</span><div class="desc">Salty and creamy with mellow sweetness</div></span><span class="price">$4/each</span></div>
+    <div class="menu-item"><span><span class="name">West Coast</span><div class="desc">Firm, rich and creamy with a buttery sweet finish</div></span><span class="price">$4/each</span></div>
+  </div>
+  <div class="menu-cat">
+    <h3>Raw Bar Extras</h3>
+    <div class="menu-item"><span><span class="name">Jumbo Shrimp Cocktail</span><div class="desc">Chilled jumbo shrimp, house cocktail sauce, lemon</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">Ahi Tuna Tartare</span><div class="desc">Sesame, avocado, wonton crisps</div></span><span class="price">$17</span></div>
+  </div>
+
+  <div class="quiz-box">
+    <h3>Oyster Origin Explorer</h3>
+    <p>Not sure which oyster to order? Pick your coast and let us guide you.</p>
+    <div class="quiz-step">
+      <label for="oyster-coast">Where should your oyster come from?</label>
+      <select id="oyster-coast">
+        <option value="">Choose a coast…</option>
+        <option value="east">East Coast — Briny &amp; crisp</option>
+        <option value="west">West Coast — Buttery &amp; sweet</option>
+        <option value="gulf">Gulf — Mild &amp; plump</option>
+      </select>
+    </div>
+    <button class="quiz-btn" id="oyster-btn">Explore Oysters</button>
+    <div class="quiz-result" id="oyster-result">
+      <h4 id="oyster-name"></h4>
+      <p id="oyster-desc"></p>
+      <p style="margin-top:.6rem;font-size:.82rem;opacity:.5">*Consuming raw shellfish may increase your risk of foodborne illness</p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section hidden" data-panel="cocktails" id="cocktails">
+  <div class="menu-cat">
+    <h3>Featured Cocktails</h3>
+    <p class="cat-note">Our 12th cocktail menu: PLOT TWIST — Browse by vibe, not ingredients</p>
+    <div class="menu-item"><span><span class="name">Of Love &amp; Chartreuse</span><div class="desc">El Tesoro Blanco Tequila, Green Chartreuse, Velvet Falernum, Lemon, Avocado</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">Master of the Rum House</span><div class="desc">White Chocolate Washed Rum, Cocoa Nib Infused Luxardo, Crème de Cacao, Lime, Grapefruit</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">Absinthe &amp; Alibis</span><div class="desc">Mezcal, Blanco Tequila, Elderflower, Yellow Chartreuse, Lavender Orgeat, Lime, Lavender Absinthe</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">The Perks of Being a Toast Flower</span><div class="desc">Knob Creek Bourbon, Appleton Estate Rum, Toasted Marshmallow, Coffee Bean Reduction, Cocoa Bitters</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">Jekyll &amp; Rye</span><div class="desc">Knob Creek Rye, Cynar, Ancho Reyes Verde, Maraschino Cherry Liqueur, Lemon</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">The Man Who Was Thursday</span><div class="desc">El Tesoro Reposado, Green Chartreuse, Mango Oleo, Honey, Pink Peppercorn, Lemon</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">The Age of Wicked</span><div class="desc">Roku Gin, Scotch, House Orange Vermouth, Cynar, Tokaj + Strawberry Reduction, Lemon</div></span><span class="price">$16</span></div>
+    <div class="menu-item"><span><span class="name">Call of the Clam</span><div class="desc">Our jukebox, your dime. Choose the spirit and direction — we do the rest. Custom off-menu creation.</div></span><span class="price">$17</span></div>
+  </div>
+
+  <div class="quiz-box">
+    <h3>Call of the Clam</h3>
+    <p>Not sure what to drink? Tell us your spirit and mood — we'll craft the perfect pour.</p>
+    <div class="quiz-step">
+      <label for="spirit">Pick your spirit</label>
+      <select id="spirit">
+        <option value="">Choose a spirit…</option>
+        <option value="bourbon">Bourbon / Whiskey</option>
+        <option value="tequila">Tequila / Mezcal</option>
+        <option value="gin">Gin</option>
+        <option value="rum">Rum</option>
+      </select>
+    </div>
+    <div class="quiz-step">
+      <label for="mood">Pick your mood</label>
+      <select id="mood">
+        <option value="">Choose a mood…</option>
+        <option value="bold">Bold &amp; Smoky</option>
+        <option value="fresh">Light &amp; Fresh</option>
+        <option value="sweet">Sweet &amp; Indulgent</option>
+        <option value="spicy">Complex &amp; Spicy</option>
+      </select>
+    </div>
+    <button class="quiz-btn" id="cocktail-btn">Call of the Clam</button>
+    <div class="quiz-result" id="cocktail-result">
+      <h4 id="cocktail-name"></h4>
+      <p id="cocktail-desc"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Fin &amp; Fino · 135 Levine Avenue of the Arts #100 · Charlotte, NC 28202 · (704) 800-5680</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+document.getElementById('oyster-btn').addEventListener('click',function(){const c=document.getElementById('oyster-coast').value;const r=document.getElementById('oyster-result');const n=document.getElementById('oyster-name');const d=document.getElementById('oyster-desc');const picks={east:{name:'Eastern Canada \u2022 New England',desc:'Moderate to full brine with clean, firm meats \u2014 a classic East Coast experience that pairs perfectly with a crisp Gruner Veltliner.'},west:{name:'West Coast',desc:'Firm, rich and creamy with a buttery sweet finish \u2014 try these with a bright, citrus-forward cocktail like The Man Who Was Thursday.'},gulf:{name:'Gulf Coast',desc:'Mild, plump and approachable \u2014 ideal for oyster newcomers. Pair with a chilled Albari\u00f1o or a light beer.'}};if(!c){r.classList.remove('show');return}const pick=picks[c];n.textContent=pick.name;d.textContent=pick.desc;r.classList.add('show')});
+document.getElementById('cocktail-btn').addEventListener('click',function(){const s=document.getElementById('spirit').value;const m=document.getElementById('mood').value;const r=document.getElementById('cocktail-result');const n=document.getElementById('cocktail-name');const d=document.getElementById('cocktail-desc');const map={bourbon:{bold:{name:'The Perks of Being a Toast Flower',desc:'Knob Creek Bourbon meets toasted marshmallow, coffee reduction and cocoa bitters \u2014 bold, warm and indulgent.'},fresh:{name:'The Secret Garden',desc:"Maker's Mark Bourbon with apricot liqueur, Amaro Nonino, sage and lemon zest \u2014 smooth with a herbal lift."},sweet:{name:'Jekyll & Rye',desc:'Knob Creek Rye, Cynar, Ancho Reyes and maraschino \u2014 complex, sweet-spicy and dangerously drinkable.'},spicy:{name:'The First Draft of Anything Is Sh*t',desc:'Persimmon infused Mezcal, Luxardo, Yellow Chartreuse and lemon \u2014 smoky, fruity and utterly intriguing.'}},tequila:{bold:{name:'Of Love & Chartreuse',desc:'El Tesoro Blanco, Green Chartreuse, Velvet Falernum, lemon and avocado \u2014 herbaceous, creamy and bold.'},fresh:{name:'The Man Who Was Thursday',desc:'El Tesoro Reposado, Green Chartreuse, mango oleo, honey and pink peppercorn \u2014 bright, tropical and complex.'},sweet:{name:'Absinthe & Alibis',desc:'Mezcal, Blanco Tequila, elderflower, lavender orgeat and lime \u2014 floral, sweet with a subtle smoky edge.'},spicy:{name:'The Age of Wicked',desc:'Roku Gin, Scotch, house orange vermouth, Cynar and strawberry reduction \u2014 layered, intense and unforgettable.'}},gin:{bold:{name:'The Age of Wicked',desc:'Roku Gin, Scotch, house orange vermouth, Cynar and strawberry reduction \u2014 herbaceous, smoky and complex.'},fresh:{name:'The Fall of House Cider',desc:'Vanilla infused Gin, apple cider, green apple Dolin Blanc and caramel reduction \u2014 crisp, fruity and refreshing.'},sweet:{name:'Of Love & Chartreuse',desc:'El Tesoro Blanco, Green Chartreuse, Velvet Falernum, lemon and avocado \u2014 creamy, herbal and surprisingly sweet.'},spicy:{name:'Absinthe & Alibis',desc:'Mezcal, Blanco Tequila, elderflower, lavender orgeat and lime \u2014 a cocktail that keeps revealing new layers.'}},rum:{bold:{name:'Master of the Rum House',desc:'White chocolate washed Rum, cocoa nib infused Luxardo, lime and grapefruit \u2014 rich, decadent and powerful.'},fresh:{name:'Call of the Clam Special',desc:'Aged rum, fresh lime, mint, ginger and a touch of honey \u2014 bright, zesty and easygoing.'},sweet:{name:'The Perks of Being a Toast Flower',desc:'Appleton Estate Rum with bourbon, toasted marshmallow and vanilla salt \u2014 dessert in a glass.'},spicy:{name:'Jekyll & Rye',desc:'Rum takes a backseat to rye in this complex blend \u2014 ask your bartender for a rum-forward twist.'}}};if(!s||!m){r.classList.remove('show');return}const pick=map[s][m];n.textContent=pick.name;d.textContent=pick.desc;r.classList.add('show')});
+</script>
+</body>
+</html>

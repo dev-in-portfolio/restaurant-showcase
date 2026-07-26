@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations · Hawthorne's NY Pizza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#c41e1e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--green:#2a7a3a;--muted:#8a7a6a;--gold:#d4a34a}
+body{margin:0;background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(196,30,30,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#2a1212);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--red)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--red);margin:0 0 .1rem;border-left:3px solid var(--green);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.location-card{background:rgba(255,255,255,.03);border:1px solid rgba(196,30,30,.06);border-radius:10px;padding:1.5rem}
+.location-card h3{color:var(--red);font-size:.95rem;margin:0 0 .3rem}
+.location-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:.15rem 0}
+.location-card .phone{color:var(--green);text-decoration:none;font-weight:600;font-size:.82rem}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(196,30,30,.06)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Hawthorne's NY Pizza</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Locations</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Locations</h1>
+  <p>10 locations across the Charlotte metro — find one near you</p>
+</div>
+<section class="section">
+  <div class="location-grid">
+    <div class="location-card">
+      <h3>7th Street</h3>
+      <p>1701 East 7th Street, Charlotte, NC 28204</p>
+      <a class="phone" href="tel:+17043589339">(704) 358-9339</a>
+    </div>
+    <div class="location-card">
+      <h3>Rea Road</h3>
+      <p>8420 Rea Road, Charlotte, NC 28277</p>
+      <a class="phone" href="tel:+19802729494">(980) 272-9494</a>
+    </div>
+    <div class="location-card">
+      <h3>Carmel Road</h3>
+      <p>4100 Suit A Carmel Road, Charlotte, NC 28226</p>
+      <a class="phone" href="tel:+17045440299">(704) 544-0299</a>
+    </div>
+    <div class="location-card">
+      <h3>South End</h3>
+      <p>1515 S Tryon St, Suite 104, Charlotte, NC 28203</p>
+      <a class="phone" href="tel:+17049103878">(704) 910-3878</a>
+    </div>
+    <div class="location-card">
+      <h3>Huntersville</h3>
+      <p>14205 Reese Blvd, Suite E2, Huntersville, NC 28078</p>
+      <a class="phone" href="tel:+17049921602">(704) 992-1602</a>
+    </div>
+    <div class="location-card">
+      <h3>Concord</h3>
+      <p>25 N. Union Street, Concord, NC 28025</p>
+      <a class="phone" href="tel:+17047879676">(704) 787-9676</a>
+    </div>
+    <div class="location-card">
+      <h3>Highland Creek</h3>
+      <p>5814 Highland Shoppes Drive, Charlotte, NC 28269</p>
+      <a class="phone" href="tel:+17048758502">(704) 875-8502</a>
+    </div>
+    <div class="location-card">
+      <h3>Meridian Place</h3>
+      <p>6215 Old Post Road Suite 101, Charlotte, NC 28212</p>
+      <a class="phone" href="tel:+19804741797">(980) 474-1797</a>
+    </div>
+    <div class="location-card">
+      <h3>Mint Hill</h3>
+      <p>7319 Matthews Mint Hill Road, Mint Hill, NC 28227</p>
+      <a class="phone" href="tel:+17045458089">(704) 545-8089</a>
+    </div>
+    <div class="location-card">
+      <h3>Mooresville</h3>
+      <p>427 E. Statesville Avenue, Mooresville, NC 28115</p>
+      <a class="phone" href="tel:+17043604299">(704) 360-4299</a>
+    </div>
+  </div>
+  <div style="margin-top:2rem;text-align:center">
+    <p style="font-size:.85rem;opacity:.55">Email: <a href="mailto:letusknow@hawthornespizza.com" style="color:var(--red);text-decoration:none">letusknow@hawthornespizza.com</a></p>
+    <p style="font-size:.85rem;opacity:.55">Instagram: <a href="https://www.instagram.com/hawthornespizza" style="color:var(--red);text-decoration:none">@hawthornespizza</a></p>
+    <p style="font-size:.85rem;opacity:.55"><a href="https://order.online/store/hawthorne's-ny-pizza-and-bar-charlotte-33765/?hideModal=true&pickup=true" style="color:var(--red);text-decoration:none">Order Online</a></p>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--red);font-size:.9rem">Hawthorne's NY Pizza & Bar</strong><br>10 locations across Charlotte, NC · <a href="contact.html" style="color:var(--red)">Find a location near you</a></p>
+  <p><a href="contact.html">Locations</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a> · <a href="story.html">Our Story</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+</body>
+</html>

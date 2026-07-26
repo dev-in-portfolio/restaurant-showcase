@@ -1,0 +1,1209 @@
+/* ============================================
+   Eddie V's Prime Seafood — Luxury Seafood House
+   ============================================ */
+
+:root {
+  --p: #0d1b2a;
+  --a: #c9a84c;
+  --a-hover: #d4b85c;
+  --bg: #faf6f0;
+  --bg-alt: #f0ebe3;
+  --text: #1a1208;
+  --muted: #7a6e60;
+  --surface: #fff;
+  --border: #e5ddd2;
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 1200px;
+  --narrow-width: 800px;
+}
+
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container.narrow {
+  max-width: var(--narrow-width);
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.section-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--a);
+  margin-bottom: 0.75rem;
+}
+
+.section-tag-light { color: var(--a); }
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--p);
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.section-title-light { color: #fff; }
+
+.section-text {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.section-text:last-child { margin-bottom: 0; }
+.section-text-light { color: rgba(255,255,255,0.8); }
+
+.section-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-gold {
+  background: var(--a);
+  color: var(--p);
+  border-color: var(--a);
+}
+
+.btn-gold:hover {
+  background: var(--a-hover);
+  border-color: var(--a-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--p);
+  border-color: var(--border);
+}
+
+.btn-outline-dark:hover {
+  background: var(--p);
+  color: #fff;
+  border-color: var(--p);
+}
+
+/* ---- Navigation ---- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(13, 27, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  transition: background 0.3s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--a);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--a);
+}
+
+.nav-cta {
+  background: var(--a);
+  color: var(--p) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+  font-weight: 600 !important;
+}
+
+.nav-cta:hover {
+  background: var(--a-hover);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--p);
+  background-image:
+    radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #0a1520 0%, var(--p) 50%, #0a1520 100%);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(201,168,76,0.015) 2px,
+      rgba(201,168,76,0.015) 4px
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem 4rem;
+}
+
+.hero-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--a);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.35);
+}
+
+.hero-scroll span {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-scroll-dot {
+  animation: scrollDot 2s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0%, 100% { cy: 9; opacity: 1; }
+  50% { cy: 18; opacity: 0.3; }
+}
+
+/* ---- Sections ---- */
+.section {
+  padding: 5rem 0;
+}
+
+.section:nth-child(even) {
+  background: var(--bg);
+}
+
+/* ---- About Intro ---- */
+.about-intro {
+  text-align: center;
+}
+
+.about-intro .section-text {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Features ---- */
+.features {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.feature-icon {
+  color: var(--a);
+  margin-bottom: 1.25rem;
+}
+
+.feature-title {
+  font-size: 1.4rem;
+  color: var(--p);
+  margin-bottom: 0.75rem;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---- Signature Plates ---- */
+.signature-plates {
+  background: var(--bg);
+}
+
+.plates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.plate-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.plate-card:hover {
+  border-color: var(--a);
+}
+
+.plate-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.plate-name {
+  font-size: 1.25rem;
+  color: var(--p);
+  margin-bottom: 0.5rem;
+}
+
+.plate-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ---- V Lounge Preview ---- */
+.v-lounge-preview {
+  background: var(--p);
+  background-image:
+    radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+}
+
+.v-lounge-preview .container.narrow {
+  text-align: center;
+}
+
+.hh-highlights {
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.hh-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hh-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.hh-price {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--a);
+}
+
+.hh-schedule {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 1rem;
+}
+
+/* ---- Location Card ---- */
+.location-card {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.location-grid {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.location-address {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--p);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.location-detail {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.location-amenities {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.amenity {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--a);
+  background: rgba(201,168,76,0.08);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+.location-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- Page Headers ---- */
+.page-header {
+  background: var(--p);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  background-image:
+    radial-gradient(ellipse at 50% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.page-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ---- Menu Page ---- */
+.menu-section {
+  padding: 4rem 0 5rem;
+}
+
+.menu-category {
+  margin-bottom: 4rem;
+}
+
+.menu-category:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.menu-category-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-category-title {
+  font-size: 2rem;
+  color: var(--p);
+  margin-bottom: 0.25rem;
+}
+
+.menu-category-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.menu-category-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--a);
+  margin-bottom: 0.25rem;
+}
+
+.menu-category-highlight {
+  background: var(--surface);
+  border: 2px solid var(--a);
+  padding: 2.5rem;
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+}
+
+.menu-category-highlight .menu-category-header {
+  border-bottom-color: rgba(201,168,76,0.25);
+}
+
+.menu-items {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.menu-item {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(229,221,210,0.5);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.menu-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--p);
+}
+
+.menu-item-price {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--a);
+  white-space: nowrap;
+}
+
+.menu-item-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.menu-subcategory-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--p);
+  margin-bottom: 0.5rem;
+}
+
+.menu-items-cocktails {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(201,168,76,0.3);
+}
+
+/* Wine Banner */
+.menu-wine-banner {
+  background: var(--p);
+  margin: 1rem -2rem -1rem;
+  padding: 3rem;
+  text-align: center;
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+
+.wine-banner-content h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.wine-banner-content p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+/* ---- About Page ---- */
+.about-story {
+  padding-top: 5rem;
+}
+
+.about-intro-block {
+  text-align: center;
+}
+
+.about-pillars {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.about-pillar {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.about-pillar-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--a);
+  margin-bottom: 0.75rem;
+}
+
+.about-pillar-title {
+  font-size: 1.4rem;
+  color: var(--p);
+  margin-bottom: 0.75rem;
+}
+
+.about-pillar-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about-atmosphere,
+.about-location {
+  text-align: center;
+}
+
+.about-location .section-text {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Private Dining ---- */
+.pd-intro {
+  text-align: center;
+}
+
+.pd-occasions-title {
+  text-align: center;
+}
+
+.pd-occasions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pd-occasion {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.pd-occasion:hover {
+  border-color: var(--a);
+}
+
+.pd-occasion-icon {
+  color: var(--a);
+  margin-bottom: 1rem;
+}
+
+.pd-occasion-title {
+  font-size: 1.15rem;
+  color: var(--p);
+  margin-bottom: 0.5rem;
+}
+
+.pd-occasion-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.pd-cta-section {
+  background: var(--p);
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+}
+
+.pd-cta-card {
+  text-align: center;
+}
+
+.pd-cta-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.pd-cta-text {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pd-cta-contact {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.pd-cta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pd-cta-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.pd-cta-phone {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--a);
+}
+
+.pd-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pd-location {
+  text-align: center;
+}
+
+/* ---- Visit Page ---- */
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.visit-hours-card,
+.visit-info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+}
+
+.visit-card-title {
+  font-size: 1.6rem;
+  color: var(--p);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hours-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(229,221,210,0.4);
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.hours-time {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--p);
+}
+
+.hours-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.5rem 0;
+}
+
+.hours-subtitle {
+  font-size: 1rem;
+  color: var(--a);
+  margin-bottom: 0.75rem;
+}
+
+.hours-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.visit-address {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--p);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.visit-detail {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.visit-subtitle {
+  font-size: 0.95rem;
+  color: var(--p);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.visit-actions {
+  margin-top: 1.5rem;
+}
+
+/* Reservations */
+.visit-reservations {
+  background: var(--bg-alt);
+}
+
+.visit-reservations .section-title {
+  text-align: center;
+}
+
+.visit-reservations .section-text {
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.reservation-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.reservation-option {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.reservation-option-title {
+  font-size: 1.2rem;
+  color: var(--p);
+  margin-bottom: 0.5rem;
+}
+
+.reservation-option-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Nearby */
+.visit-nearby {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.visit-nearby .section-title {
+  text-align: center;
+}
+
+.visit-nearby-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.nearby-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.nearby-name {
+  font-size: 1rem;
+  color: var(--p);
+  margin-bottom: 0.5rem;
+}
+
+.nearby-detail {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background: var(--p);
+  color: rgba(255,255,255,0.6);
+  padding: 4rem 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--a);
+  margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1rem;
+}
+
+.footer-address {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-links h4 {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.footer-links a {
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--a);
+}
+
+.footer-bottom {
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .features-grid,
+  .plates-grid,
+  .about-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pd-occasions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nearby-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .menu-category-highlight {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(13, 27, 42, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    transform: translateY(-120%);
+    transition: transform 0.35s ease;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .features-grid,
+  .plates-grid,
+  .about-pillars-grid,
+  .pd-occasions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-options {
+    grid-template-columns: 1fr;
+  }
+
+  .nearby-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pd-cta-contact {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .menu-category-highlight {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .nearby-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .menu-wine-banner {
+    margin: 1rem -1.25rem -1rem;
+    padding: 2rem 1.25rem;
+  }
+}

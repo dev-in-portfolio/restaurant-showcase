@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locations | Calle Sol Latin Café & Cevicheria</title>
+  <meta name="description" content="Two Charlotte locations: Plaza Midwood and SouthPark. Hours, directions, and what's unique about each.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Calle Sol Home">
+        <div class="logo-icon" aria-hidden="true">&#9728;</div>
+        <div>
+          <span class="logo-text">Calle Sol</span>
+          <span class="logo-sub">Latin Café &amp; Cevicheria</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html" class="active">Locations</a></li>
+          <li><a href="ceviche.html">Ceviche Bar</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="visit.html#order" class="header-cta">Order Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-locations">
+      <div class="wrap">
+        <span class="page-hero-badge">&#128205; Two Neighborhoods</span>
+        <h1>Our Locations</h1>
+        <p>Same Latin soul, two Charlotte neighborhoods. Choose the one closest to you.</p>
+      </div>
+    </section>
+
+    <!-- Location Switcher -->
+    <section>
+      <div class="wrap">
+        <div class="loc-switcher" role="tablist" aria-label="Choose location">
+          <button class="loc-tab active" data-loc="midwood" role="tab" aria-selected="true">Plaza Midwood</button>
+          <button class="loc-tab" data-loc="southpark" role="tab" aria-selected="false">SouthPark</button>
+        </div>
+
+        <div class="loc-detail" id="loc-midwood" role="tabpanel">
+          <div class="loc-detail-grid">
+            <div class="loc-info">
+              <h2>Plaza Midwood</h2>
+              <p class="loc-address">1205 Thomas Avenue<br>Charlotte, NC 28205</p>
+              <p class="loc-phone"><a href="tel:7045658291">(704) 565-8291</a></p>
+              <div class="loc-hours-block">
+                <h3>Hours</h3>
+                <table class="hours-table">
+                  <tr><td>Monday – Thursday</td><td>11:00 AM – 9:00 PM</td></tr>
+                  <tr><td>Friday – Saturday</td><td>11:00 AM – 10:00 PM</td></tr>
+                  <tr><td>Sunday</td><td>11:00 AM – 9:00 PM</td></tr>
+                </table>
+              </div>
+              <div class="loc-features">
+                <span class="loc-feature">&#128062; Dog-Friendly Patio</span>
+                <span class="loc-feature">&#9728; Outdoor Seating</span>
+                <span class="loc-feature">&#128663; Free Parking</span>
+              </div>
+              <a href="https://maps.google.com/?q=1205+Thomas+Avenue+Charlotte+NC+28205" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+            <div class loc-about>
+              <h3>The Neighborhood</h3>
+              <p>Our original home. Plaza Midwood is Charlotte's eclectic, walkable neighborhood&mdash;vintage shops, local bars, and a strong community. Calle Sol fits right in: casual, colorful, and always welcoming.</p>
+              <p>Grab a seat on the patio, order a ceviche, and watch the neighborhood go by.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="loc-detail" id="loc-southpark" role="tabpanel" hidden>
+          <div class="loc-detail-grid">
+            <div class="loc-info">
+              <h2>SouthPark</h2>
+              <p class="loc-address">3100 Apex Drive<br>Charlotte, NC 28211</p>
+              <p class="loc-phone"><a href="tel:7046261022">(704) 626-1022</a></p>
+              <div class="loc-hours-block">
+                <h3>Hours</h3>
+                <table class="hours-table">
+                  <tr><td>Monday – Thursday</td><td>11:00 AM – 9:00 PM</td></tr>
+                  <tr><td>Friday – Saturday</td><td>11:00 AM – 10:00 PM</td></tr>
+                  <tr><td>Sunday</td><td>11:00 AM – 9:00 PM</td></tr>
+                </table>
+              </div>
+              <div class="loc-features">
+                <span class="loc-feature">&#9728; Indoor &amp; Outdoor Seating</span>
+                <span class="loc-feature">&#128663; Free Parking (3 hours)</span>
+                <span class="loc-feature">&#127866; Full Bar</span>
+              </div>
+              <a href="https://maps.google.com/?q=3100+Apex+Drive+Charlotte+NC+28211" class="btn btn-p" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+            <div class="loc-about">
+              <h3>The Neighborhood</h3>
+              <p>Our SouthPark location brings Calle Sol to Charlotte's premier shopping and dining district. A bit more polished, same vibrant energy, and close to SouthPark Mall.</p>
+              <p>Perfect for a post-shopping lunch or a dinner out with friends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="cta-banner">
+          <h2>Can't Decide?</h2>
+          <p>Same menu, same Latin soul. Pick the location closest to you and come hungry.</p>
+          <div class="btn-row">
+            <a href="visit.html#order" class="btn btn-a">Order Online</a>
+            <a href="menu.html" class="btn btn-o">See the Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Calle Sol</h3>
+          <p>Latin Café &amp; Cevicheria. From Cuba to Peru, in the heart of Charlotte. Two locations: Plaza Midwood and SouthPark.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="tel:7045658291">(704) 565-8291</a></li>
+            <li><a href="mailto:info@callesolcafe.com">Email</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calle Sol Latin Café &amp; Cevicheria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

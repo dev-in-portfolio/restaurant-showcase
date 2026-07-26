@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barrington's Restaurant - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Barrington's
+          <span>New American Bistro</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html">Wine Cellar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Events</a>
+        <a href="contact.html">Reservations</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Intimate Culinary Landmark</span>
+        <h2 class="hero-title">Barrington's</h2>
+        <p class="hero-desc">"Bruce Moffett’s flagship restaurant: a cozy, 45-seat dining room serving seasonal New American classics crafted from organic, locally harvested ingredients."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>📍 Location: 7822 Fairview Road, Charlotte, NC 28226 | Phone: (704) 364-5755</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 850px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">An Intimate Fine-Dining Experience</h2>
+      <p style="font-size: 1.15rem; line-height: 1.85; color: var(--color-text-muted); margin-bottom: 2rem; font-family: var(--font-serif); font-style: italic;">
+        Established in 2000, Barrington’s is the restaurant that started it all for Chef Bruce Moffett and the Moffett Restaurant Group. Tucked away in the Foxcroft East Shopping Center in South Charlotte, our cozy, candlelight dining room offers a warm, personal atmosphere where every table is treated like family.
+      </p>
+      <a href="about.html" style="color: var(--color-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1.5px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast); font-size: 0.85rem;">
+        Discover Our Heritage ➔
+      </a>
+    </section>
+
+    <!-- Interactive tasting customizer -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Tasting Menu Planner</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 3rem auto; font-weight: 500; font-style: italic; font-family: var(--font-serif);">Select your course structure and customize your dishes to preview our chef's signature tasting card.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Menu Card -->
+        <div class="plate-canvas">
+          <div class="tasting-menu-card" id="menu-card-box">
+            
+            <div class="tasting-menu-header">
+              <h4 class="tasting-menu-title">Barrington's</h4>
+              <span class="tasting-menu-tier" id="card-tier-label">3-Course Tasting</span>
+            </div>
+
+            <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 1rem;">
+              
+              <div class="tasting-item-slot" id="slot-first" style="opacity: 1; transform: translateY(0);">
+                <div class="tasting-slot-title">First Course</div>
+                <div class="tasting-slot-val" id="val-first">Maine Lobster Gnocchi</div>
+              </div>
+
+              <!-- Only visible in 4-course tier -->
+              <div class="tasting-item-slot" id="slot-second" style="display: none;">
+                <div class="tasting-slot-title">Second Course</div>
+                <div class="tasting-slot-val" id="val-second">Pan-Seared Halibut</div>
+              </div>
+
+              <div class="tasting-item-slot" id="slot-main" style="opacity: 1; transform: translateY(0);">
+                <div class="tasting-slot-title" id="main-course-title-label">Main Course</div>
+                <div class="tasting-slot-val" id="val-main">Crispy Duck Breast</div>
+              </div>
+
+              <div class="tasting-item-slot" id="slot-dessert" style="opacity: 1; transform: translateY(0);">
+                <div class="tasting-slot-title">Dessert</div>
+                <div class="tasting-slot-val" id="val-dessert">Warm Chocolate Torte</div>
+              </div>
+
+            </div>
+
+            <div class="tasting-menu-price" id="card-price-label">
+              $75.00 <span style="font-size: 0.85rem; font-family: var(--font-sans); font-weight: 500; color: #7c2d12;">per guest</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Side: Options -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Choose Tasting Tier</label>
+            <div class="option-grid" id="tier-options">
+              <button class="option-btn active" onclick="setTier(3, 75.00)">3-Course ($75.00)</button>
+              <button class="option-btn" onclick="setTier(4, 95.00)">4-Course ($95.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Select First Course</label>
+            <div class="option-grid" id="first-options">
+              <button class="option-btn active" onclick="setItem('first', 'Maine Lobster Gnocchi')">Lobster Gnocchi</button>
+              <button class="option-btn" onclick="setItem('first', 'Truffle Mushroom Tart')">Mushroom Tart</button>
+              <button class="option-btn" onclick="setItem('first', 'Organic Baby Green Salad')">Baby Green Salad</button>
+            </div>
+          </div>
+
+          <!-- Second course selector (only relevant if 4-course) -->
+          <div class="control-group" id="selector-second" style="display: none;">
+            <label>3. Select Second Course</label>
+            <div class="option-grid" id="second-options">
+              <button class="option-btn active" onclick="setItem('second', 'Pan-Seared Halibut')">Pan-Seared Halibut</button>
+              <button class="option-btn" onclick="setItem('second', 'Handmade Goat Cheese Cavatelli')">Goat Cheese Cavatelli</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label id="main-selector-title">3. Select Main Course</label>
+            <div class="option-grid" id="main-options">
+              <button class="option-btn active" onclick="setItem('main', 'Crispy Duck Breast')">Crispy Duck Breast</button>
+              <button class="option-btn" onclick="setItem('main', 'Center Cut Grilled Filet')">Grilled Filet</button>
+              <button class="option-btn" onclick="setItem('main', 'Braised Short Rib Rigatoni')">Short Rib Rigatoni</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label id="dessert-selector-title">4. Select Dessert</label>
+            <div class="option-grid" id="dessert-options">
+              <button class="option-btn active" onclick="setItem('dessert', 'Warm Chocolate Torte')">Chocolate Torte</button>
+              <button class="option-btn" onclick="setItem('dessert', 'Seasonal Fruit Cobbler')">Fruit Cobbler</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Seasonal Gastronomy</span>
+        <h4 class="builder-display-title" id="display-title">Curated tasting card prepared by Chef Bruce Moffett.</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.8; max-width: 600px; margin: 0 auto;" id="display-desc">Experience an intimate progression of flavors. Hand-pulled potato gnocchi tossed with sweet Maine lobster cream, followed by roasted heritage duck breast served with fig reduction, and completed with a decadent flourless warm chocolate torte.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Sommelier Wine Pairing</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500; font-family: var(--font-serif); font-style: italic;">
+        Unlock our cellars. Discover the perfect white, red, or sparkling vintage recommended by our cellar sommelier for each signature dish.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        Launch Sommelier Guide
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>7822 Fairview Road<br>Charlotte, NC 28226</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Sat: 5:00 PM - 10:00 PM<br>Sunday: Closed<br><em>*Reservations Recommended</em></p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 364-5755<br>New American Fine Dining | Private Events Available</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Barrington's Restaurant. Moffett Restaurant Group.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let currentTier = 3;
+    let currentPrice = 75.00;
+    const currentItems = {
+      first: 'Maine Lobster Gnocchi',
+      second: 'Pan-Seared Halibut',
+      main: 'Crispy Duck Breast',
+      dessert: 'Warm Chocolate Torte'
+    };
+
+    function setTier(tier, price) {
+      const buttons = document.getElementById('tier-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      currentTier = tier;
+      currentPrice = price;
+
+      // Adjust displays
+      const slotSecond = document.getElementById('slot-second');
+      const selectorSecond = document.getElementById('selector-second');
+      
+      const mainTitle = document.getElementById('main-selector-title');
+      const dessertTitle = document.getElementById('dessert-selector-title');
+
+      const mainLabel = document.getElementById('main-course-title-label');
+
+      if (tier === 4) {
+        slotSecond.style.display = 'block';
+        selectorSecond.style.display = 'block';
+        mainTitle.innerText = "4. Select Main Course";
+        dessertTitle.innerText = "5. Select Dessert";
+        mainLabel.innerText = "Third Course";
+        document.getElementById('card-tier-label').innerText = "4-Course Tasting";
+      } else {
+        slotSecond.style.display = 'none';
+        selectorSecond.style.display = 'none';
+        mainTitle.innerText = "3. Select Main Course";
+        dessertTitle.innerText = "4. Select Dessert";
+        mainLabel.innerText = "Main Course";
+        document.getElementById('card-tier-label').innerText = "3-Course Tasting";
+      }
+
+      updateDisplay();
+    }
+
+    function setItem(course, value) {
+      const parent = document.getElementById(`${course}-options`);
+      const buttons = parent.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      currentItems[course] = value;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Update price label on card
+      document.getElementById('card-price-label').innerHTML = `$${currentPrice.toFixed(2)} <span style="font-size: 0.85rem; font-family: var(--font-sans); font-weight: 500; color: #7c2d12;">per guest</span>`;
+
+      // Update text values
+      document.getElementById('val-first').innerText = currentItems.first;
+      document.getElementById('val-second').innerText = currentItems.second;
+      document.getElementById('val-main').innerText = currentItems.main;
+      document.getElementById('val-dessert').innerText = currentItems.dessert;
+
+      // Compile summaries
+      let itemsList = [];
+      if (currentTier === 3) {
+        itemsList = [currentItems.first, currentItems.main, currentItems.dessert];
+      } else {
+        itemsList = [currentItems.first, currentItems.second, currentItems.main, currentItems.dessert];
+      }
+
+      document.getElementById('display-title').innerText = `${currentTier}-Course Culinary Journey`;
+      document.getElementById('display-desc').innerText = `A custom-crafted progression featuring ${itemsList.slice(0, -1).join(', ')}, completed with our elegant ${itemsList.slice(-1)}. Each dish is made fresh to order by Chef Bruce Moffett's team.`;
+
+      // Soft transition animation on card
+      const card = document.getElementById('menu-card-box');
+      card.style.transform = 'scale(0.97)';
+      setTimeout(() => {
+        card.style.transform = 'scale(1)';
+      }, 150);
+    }
+  </script>
+</body>
+</html>

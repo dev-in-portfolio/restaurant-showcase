@@ -1,59 +1,56 @@
-# Restaurant Website Showcase (Polished Showroom)
+# Polished Showcase (Showroom)
 
-Welcome to the **Polished Showcase** (or **Showroom**) repository.
+Welcome to the **Polished Showcase** (or **Showroom**) repository. 
 
-This repository contains only completed, verified, stable, polished, presentation-ready restaurant website demonstrations.
+This repository functions as the professional sales showroom. It contains only completed, verified, stable, highly polished, and presentation-ready restaurant website demonstrations.
 
 Repository URL: `https://github.com/dev-in-portfolio/restaurant-showcase`
 
 ## Pipeline Context
+Our restaurant website production workflow consists of three distinct stages:
 1. **Thunderdome** (`dev-in-portfolio/restaurants`) — Prospect research, concept testing, active experimentation.
 2. **Ready for Polish (Staging)** (`dev-in-portfolio/restaurant-staging`) — Controlled staging, QA, and validation.
 3. **Polished Showcase (Showroom)** (`dev-in-portfolio/restaurant-showcase`) — *[You are here]* Presentation-ready completed showcase.
 
-For full pipeline documentation, see the [Restaurant Pipeline Document](https://github.com/dev-in-portfolio/restaurants/blob/main/docs/RESTAURANT_PIPELINE.md).
+---
 
 ## Directory Structure
 
-* `/restaurants/` — Approved, polished restaurant showcase projects. Each folder contains static site files and a `restaurant.json` metadata file.
-* `/scripts/` — Automation and validation scripts for showcase promotion.
-* `/data/restaurants.json` — Showroom index of all approved restaurants.
-* `/templates/` — Metadata templates.
-* `/docs/` — Showcase rules and definitions.
+* `/restaurants/` — Presentation-ready restaurant projects currently in the showroom. Each folder is a static site containing its pages and a `restaurant.json` metadata file.
+* `/data/` — Contains `restaurants.json`, the registry index of all approved showcase projects.
+* `/scripts/` — Showcase management and validation tools:
+  * `import-approved-restaurant.js` — Promotion tool to import approved sites from staging.
+  * `validate-showcase.js` — Validation script to run strict showcase audits.
+  * `shared/comparison-button.js` — Reusable component for the floating current-site comparison feature.
+* `/templates/` — Metadata examples.
+* `/docs/` — Showroom definitions, presentation rules, and approval guidelines.
 
-## Getting Started
-
-```bash
-npm install
-```
-
-### Promoting a Site from Staging
-```bash
-npm run promote:showcase -- --restaurant <restaurant-slug>
-```
-
-Options:
-* `--restaurant <slug>` (Required) The slug folder name of the restaurant in staging.
-* `--source <path>` (Optional) Path to the staging repo (defaults to `../restaurant-staging`).
-* `--update` (Optional) Allow overwriting an existing showcase restaurant directory.
-* `--dry-run` (Optional) Validate the source and print changes without writing files.
-* `--help` Show this help message.
-
-### Validating Showcase Restaurants
-```bash
-npm run validate -- --restaurant <restaurant-slug>
-npm run validate:all
-```
+---
 
 ## Showcase Standards
 
-A restaurant must meet all of the following before it can be promoted to showcase:
-* `status` is `approved` in `restaurant.json`
-* All review flags are `true`
-* Either `comparisonButtonAdded` or `comparisonButtonNotApplicable` is `true`
-* `productionBuildPassed` is `true`
-* `approvedForPresentation` is `true`
-* No placeholder content
-* No broken local references
-* No temporary files
-* Passes showcase validation
+A restaurant website is only promoted to the showroom when it has:
+* A fully selected and approved design.
+* Verified public restaurant information (no placeholder content).
+* Consistent branding and typography, optimized media, and functional calls to action.
+* Responsive layouts matching mobile and desktop standards (no overlaps, zero console errors).
+* A working floating current-site comparison button.
+* Approved status indicators on all checks in `restaurant.json`.
+
+## Showcase Usage
+
+### Importing an Approved Restaurant
+To import a verified restaurant from staging, run:
+```bash
+npm run promote:showcase -- --restaurant <restaurant-slug>
+```
+Options:
+* `--restaurant <slug>` (Required) The slug folder name of the restaurant.
+* `--update` (Optional) Allow updating/overwriting an existing showcase restaurant directory.
+* `--source <path>` (Optional) Explicit path to the local staging repo (defaults to `../restaurant-staging`).
+
+### Running Showcase Audits
+To run validation audits on a showcase restaurant's files:
+```bash
+npm run validate -- --restaurant <restaurant-slug>
+```

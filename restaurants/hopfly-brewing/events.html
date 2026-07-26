@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — HopFly Brewing Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<link rel="stylesheet" href="css/hopfly.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">H</span>
+      <span class="logo-text">HopFly Brewing Co.</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="story.html" class="nav-link">Our Story</a></li>
+        <li><a href="events.html" class="nav-link active">Events</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="section page-header">
+    <div class="container narrow text-center">
+      <h1>Events &amp; Community</h1>
+      <p>There's always something happening at HopFly. From weekly rides to private parties, come be part of it.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <article class="event-block">
+        <h2 class="section-title">HopFly Bike and Brew Cycling Club</h2>
+        <p class="event-tag">Every Tuesday &amp; Thursday | Charlotte Taproom</p>
+        <p>Grab your bike and join the HopFly crew for a group ride through Charlotte's South End and beyond. All paces welcome — we ride together, then grab a beer together. Routes vary weekly and end back at the taproom.</p>
+        <ul class="simple-list">
+          <li><strong>Meet:</strong> 1327 S Mint St, Charlotte</li>
+          <li><strong>Roll out:</strong> 6:30 PM sharp</li>
+          <li><strong>Distance:</strong> 12&ndash;18 miles, no-drop</li>
+          <li><strong>Post-ride:</strong> First pint discount for riders</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container narrow">
+      <article class="event-block">
+        <h2 class="section-title">Mindless Minutia Trivia</h2>
+        <p class="event-tag">Every Wednesday | Charlotte Taproom</p>
+        <p>Test your knowledge on obscure facts, pop culture, and the completely useless. Teams up to 6 people. Winner takes home a round of beers and eternal bragging rights.</p>
+        <ul class="simple-list">
+          <li><strong>Time:</strong> 7:00 PM &ndash; 9:00 PM</li>
+          <li><strong>Teams:</strong> Up to 6 players</li>
+          <li><strong>Prize:</strong> pitcher of your choice</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <article class="event-block">
+        <h2 class="section-title">Private Events at The Loft</h2>
+        <p class="event-tag">Charlotte Rooftop | Capacity: 60&ndash;80 guests</p>
+        <p>Our rooftop bar, The Loft, is available for private buyouts and special events. With sweeping skyline views, a dedicated bar, and the full HopFly beer selection, it's the perfect setting for corporate events, birthday parties, rehearsal dinners, and more.</p>
+        <ul class="simple-list">
+          <li>Dedicated bartender and HopFly staff</li>
+          <li>Custom beer and cider packages</li>
+          <li>Food truck coordination available</li>
+          <li>AV equipment for presentations</li>
+        </ul>
+        <p>Interested? Fill out the form below and we'll be in touch within 48 hours.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container narrow">
+      <h2 class="section-title">Event Inquiry</h2>
+      <form class="demo-form" data-demo-form="event-inquiry" novalidate>
+        <div class="form-group">
+          <label for="inquiry-name">Your Name</label>
+          <input type="text" id="inquiry-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="inquiry-email">Email Address</label>
+          <input type="email" id="inquiry-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="inquiry-phone">Phone Number</label>
+          <input type="tel" id="inquiry-phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="inquiry-type">Event Type</label>
+          <select id="inquiry-type" name="type" required>
+            <option value="">Select one...</option>
+            <option value="corporate">Corporate Event</option>
+            <option value="birthday">Birthday Party</option>
+            <option value="rehearsal">Rehearsal Dinner</option>
+            <option value="nonprofit">Nonprofit / Fundraiser</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inquiry-date">Preferred Date</label>
+          <input type="date" id="inquiry-date" name="date">
+        </div>
+        <div class="form-group">
+          <label for="inquiry-guests">Estimated Guests</label>
+          <input type="number" id="inquiry-guests" name="guests" min="1" max="80">
+        </div>
+        <div class="form-group full">
+          <label for="inquiry-message">Tell Us About Your Event</label>
+          <textarea id="inquiry-message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" disabled>Send Inquiry (Demo)</button>
+        <p class="form-note">This is a demo form. No data will be submitted.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow text-center">
+      <p class="event-email">For immediate inquiries, email <a href="mailto:events@hopflybrewing.com">events@hopflybrewing.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <h4>HopFly Brewing Company</h4>
+      <p>Charlotte &amp; Rocky Mount, NC</p>
+      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:info@hopflybrewing.com">info@hopflybrewing.com</a>
+      <a href="mailto:events@hopflybrewing.com">events@hopflybrewing.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="menu.html">Beer Menu</a>
+      <a href="events.html">Events</a>
+      <a href="story.html">Our Story</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../site-core.js"></script>
+<script src="js/hopfly.js"></script>
+</body>
+</html>

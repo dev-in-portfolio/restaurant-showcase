@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawthorne's NY Pizza & Bar · Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red:#c41e1e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--green:#2a7a3a;--muted:#8a7a6a;--gold:#d4a34a}
+body{margin:0;background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(196,30,30,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--red)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.hero{min-height:78vh;background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#2a1212);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:3rem;margin:0;color:var(--cream);line-height:1.1}
+.hero h1 span{color:var(--red)}
+.hero .tagline{font-size:1.05rem;opacity:.5;font-style:italic;margin:.6rem 0 1.5rem;font-family:'Fraunces',serif}
+.hero .btn{display:inline-block;background:var(--red);color:#fff;padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.hero .btn:hover{background:#8e1212;transform:translateY(-2px)}
+.hero .btn-outline{background:transparent;border:1px solid var(--red);color:var(--red);margin-left:.5rem}
+.hero .btn-outline:hover{background:rgba(196,30,30,.1)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--red);margin:0 0 .25rem;border-left:3px solid var(--green);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2.5rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(196,30,30,.06);border-radius:10px;padding:1.75rem;transition:.25s}
+.feature-card:hover{border-color:rgba(196,30,30,.2);transform:translateY(-3px)}
+.feature-card .icon{font-size:2rem;margin-bottom:.6rem;display:block}
+.feature-card h3{font-size:1rem;color:var(--red);margin:0 0 .35rem}
+.feature-card p{font-size:.82rem;opacity:.5;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:2.5rem 0}
+.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(196,30,30,.04)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--red);display:block}
+.stat .label{font-size:.82rem;opacity:.4;margin-top:.3rem;display:block}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(196,30,30,.06)}
+footer a{color:var(--red);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Hawthorne's NY Pizza</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="contact.html">Locations</a>
+  </div>
+</nav>
+<div class="hero">
+  <div>
+    <p style="color:var(--red);font-weight:700;letter-spacing:.16em;font-size:.8rem;margin:0 0 .5rem">10 LOCATIONS · CHARLOTTE METRO</p>
+    <h1>New York Pizza<br><span>Charlotte's Own Since 2004</span></h1>
+    <p class="tagline">True NY-style pizza, craft beer, and good times at 10 locations across Charlotte</p>
+    <div>
+      <a href="menu.html" class="btn">View Menu</a>
+      <a href="contact.html" class="btn btn-outline">Find a Location</a>
+    </div>
+  </div>
+</div>
+<section class="section" id="about">
+  <h2>Welcome to Hawthorne's</h2>
+  <p class="subtitle">True New York tasting pizza — right here in Charlotte</p>
+  <p style="font-size:.92rem;opacity:.6;line-height:1.7;max-width:720px;margin:0 0 2.5rem">Sharing a meal is powerful. It brings people together, shapes our memories, and builds community. Hawthorne's NY Pizza & Bar was established in 2004 to do just that. With true New York-style pizza, fresh ingredients, and a neighborhood atmosphere, we've grown to 10 locations across the Charlotte metro — each one a gathering place for friends, families, and pizza lovers.</p>
+  <div class="featured-grid">
+    <div class="feature-card">
+      <span class="icon">🍕</span>
+      <h3>NY Style Pizza</h3>
+      <p>Thin, foldable, and loaded with premium toppings — true New York taste in every slice.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🍗</span>
+      <h3>Wings & More</h3>
+      <p>Crispy wings, mozzarella sticks, garlic knots, salads, and pasta — something for everyone.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🍺</span>
+      <h3>Craft Beer & Bar</h3>
+      <p>Full bar with craft beers on draft, wine, and cocktails at every location.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🎉</span>
+      <h3>Parties & Events</h3>
+      <p>Book your next party with us — we have the perfect space for your celebration.</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:rgba(255,255,255,.02);padding-top:3rem;padding-bottom:3rem">
+  <div class="two-col">
+    <div>
+      <h2 style="margin-top:0">Charlotte's Pizza Since 2004</h2>
+      <p style="font-size:.88rem;opacity:.55;line-height:1.7">From our original 7th Street location to 10 locations across the metro, Hawthorne's has been serving authentic NY-style pizza to Charlotte for over two decades. Every pizza is made with fresh dough, premium cheese, and the finest toppings — served with a side of genuine hospitality.</p>
+      <a href="story.html" style="color:var(--red)">Read our story →</a>
+    </div>
+    <div class="stats" style="margin:0">
+      <div class="stat">
+        <span class="num">2004</span>
+        <span class="label">Established</span>
+      </div>
+      <div class="stat">
+        <span class="num">10</span>
+        <span class="label">Locations</span>
+      </div>
+      <div class="stat">
+        <span class="num">NY</span>
+        <span class="label">Style Pizza</span>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p><strong style="color:var(--red);font-size:.9rem">Hawthorne's NY Pizza & Bar</strong><br>10 locations across Charlotte, NC · <a href="contact.html" style="color:var(--red)">Find a location near you</a></p>
+  <p><a href="contact.html">Locations</a> · <a href="menu.html">Menu</a> · <a href="catering.html">Catering</a> · <a href="story.html">Our Story</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sour Program · Divine Barrel Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --indigo: #2d1b4e;
+  --gold: #d4a847;
+  --teal: #1a7a7a;
+  --charcoal: #1a1a1a;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--indigo); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { min-height: 40vh; background: linear-gradient(135deg, var(--indigo), #1a0d2e); display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; position: relative; }
+.hero h1 { font-size: 2.5rem; margin: 0; color: var(--warm-white); }
+.hero .tagline { font-size: 1.1rem; opacity: .5; font-style: italic; margin: .5rem 0 1.5rem; color: var(--gold); }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--gold); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+
+/* Interactive Sour Visualizer Styling */
+.sour-mat {
+  background: radial-gradient(circle, #221430 0%, #0c0712 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+.sour-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .sour-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 168, 71, 0.2);
+  color: var(--cream);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,168,71,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Divine Barrel</a>
+  <div class="nav-links">
+    <a href="beers.html">Beers</a>
+    <a href="cellar.html" style="color: var(--gold);">Sour Program</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Wood-Aged Sour Program</h1>
+    <p class="tagline">Traditional spontaneous fermentation, oak barrels, and fresh local fruit</p>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Wild Sour &amp; Fruit Blend Visualizer</h2>
+  <p class="subtitle">Select your wild barrel base, organic fruit addition, and oak conditioning time to preview your blend.</p>
+  
+  <div class="sour-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(212,168,71,0.05);">
+    
+    <!-- Left: Sour Platter -->
+    <div class="sour-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="sour-tag-display">GOLDEN SOUR BASE</span>
+      <h3 style="font-size: 2.2rem; color: var(--warm-white); margin: 0 0 0.8rem 0;" id="sour-title-display">Raspberry Golden Sour</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="sour-price-display">$7.50</p>
+      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="sour-desc-display">Golden wild ale aged for 12 months in neutral white oak barrels, blended with fresh red raspberry puree.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label>1. Select Barrel Base</label>
+        <select id="sour-base" onchange="updateSour()">
+          <option value="golden" selected>Golden Wild Sour ($7.00)</option>
+          <option value="flanders">Flanders Red Ale ($8.00)</option>
+          <option value="saison">Brett Saison ($7.00)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>2. Select Fruit Blend</label>
+        <select id="sour-fruit" onchange="updateSour()">
+          <option value="raspberry" selected>Wild Red Raspberry (+$0.50)</option>
+          <option value="blackberry">Sweet Blackberries (+$0.50)</option>
+          <option value="mango">Juicy Mango (+$0.75)</option>
+          <option value="lime">Fresh Key Lime (+$0.25)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>3. Oak Conditioning Time</label>
+        <select id="sour-aging" onchange="updateSour()">
+          <option value="6">6 Months Oak (+$0.00)</option>
+          <option value="12" selected>12 Months Oak (+$0.50)</option>
+          <option value="18">18 Months Oak Reserve (+$1.00)</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,168,71,.06)">
+  <h2>Spontaneous Fermentation Philosophy</h2>
+  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <div class="feature-card">
+      <h3>Oak Foudres</h3>
+      <p>We ferment our base sours in massive French oak foudres. Over months, wild microflora inoculate the beer, creating deep tart acidity and complex oaky structure.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Bespoke Blends</h3>
+      <p>Before bottling, our brewers sample each individual wine barrel, selecting and blending complementary profiles to highlight fruit pickings and seasonal dynamics.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Divine Barrel Brewing · 3701 N Davidson St · Charlotte, NC 28205 · (704) 999-0534</p>
+  <p><a href="beers.html">Beers</a> · <a href="cellar.html">Sour Program</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="about.html">About</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const baseData = {
+    golden: { name: "Golden Sour Base", tag: "GOLDEN WILD SOUR BASE", price: 7.00, desc: "Golden wild ale fermented on mixed microflora in white oak" },
+    flanders: { name: "Flanders Red Ale", tag: "FLANDERS RED BASE", price: 8.00, desc: "Dark, ruby-colored Belgian style red ale offering deep balsamic acidity" },
+    saison: { name: "Brett Saison", tag: "BRETT SAISON BASE", price: 7.00, desc: "Rustic farmhouse ale conditioned on wild Brettanomyces yeast strain" }
+  };
+
+  const fruitData = {
+    raspberry: { name: "Raspberry", label: "fresh red raspberry puree", charge: 0.50 },
+    blackberry: { name: "Blackberry", label: "plump sweet blackberry puree", charge: 0.50 },
+    mango: { name: "Mango", label: "tropical sweet mango nectar", charge: 0.75 },
+    lime: { name: "Key Lime", label: "tart key lime juice", charge: 0.25 }
+  };
+
+  const agingData = {
+    "6": { label: "6 months in neutral white oak barrels", charge: 0.00 },
+    "12": { label: "12 months in white oak barrels for balanced wood tannins", charge: 0.50 },
+    "18": { label: "18 months reserve barrel conditioning for advanced sour complexity", charge: 1.00 }
+  };
+
+  function updateSour() {
+    const baseKey = document.getElementById('sour-base').value;
+    const fruitKey = document.getElementById('sour-fruit').value;
+    const agingKey = document.getElementById('sour-aging').value;
+
+    const base = baseData[baseKey];
+    const fruit = fruitData[fruitKey];
+    const aging = agingData[agingKey];
+
+    const total = base.price + fruit.charge + aging.charge;
+
+    document.getElementById('sour-tag-display').innerText = base.tag;
+    document.getElementById('sour-title-display').innerText = `${fruit.name} ${base.name}`;
+    document.getElementById('sour-price-display').innerText = `$${total.toFixed(2)}`;
+
+    let desc = `${base.desc}, aged for ${aging.label}, blended with ${fruit.label}.`;
+    document.getElementById('sour-desc-display').innerText = desc;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updateSour();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,11 +1,13 @@
-# Approval Process
+# Showcase Approval Process
 
-Before a restaurant can be promoted from staging to the showcase, it must satisfy:
+Moving a project from staging to the showcase requires formal review.
 
-1. All review flags in `restaurant.json` are set to `true`
-2. The `status` field is set to `"approved"`
-3. The project passes showcase validation
-4. No placeholder or incomplete content exists
-5. All local assets resolve correctly
-
-The promotion script enforces these rules programmatically.
+## Review Steps
+1. The developer finishes all items on the `QUALITY_CHECKLIST.md` in staging.
+2. The staging validation check passes.
+3. The developer runs the showcase promotion command:
+   ```bash
+   npm run promote:showcase -- --restaurant <restaurant-slug>
+   ```
+4. The promotion command automatically inspects the candidate project's metadata (`restaurant.json`) and sweeps files to ensure showcase readiness.
+5. If the checklist passes, the project is imported, and the registry index (`data/restaurants.json`) is updated.

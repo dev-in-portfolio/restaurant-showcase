@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burial Beer Co. - Charlotte, NC | Visit & Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">✝</div>
+        <h1 class="brand-name">
+          Burial Beer Co.
+          <span>House of Relics Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="visuals.html">Visuals Wine</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Rooftop</a>
+        <a href="contact.html" class="active">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Thomas Ave Sanctuary</h2>
+    <p class="page-subtitle">Grab a draft pint, order Asian comfort bowls, and check live rooftop deck capacity below.</p>
+  </header>
+
+  <!-- Live dining room status banner -->
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <span style="font-weight: 800;">📍 Live Seating Capacity:</span>
+      <span class="wait-badge wait-low" id="live-wait-badge">Walk-ins Welcome</span>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Details Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Visit Us</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Address</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">
+            1214 Thomas Ave<br>Charlotte, NC 28205<br>
+            <span style="font-size: 0.85rem; font-style: italic; color: var(--color-text-muted);">
+              (Located in the heart of Plaza Midwood off Commonwealth Ave)
+            </span>
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Sanctuary Hours</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Monday - Thursday:</strong> 12:00 PM - 11:00 PM<br>
+            <strong>Friday - Saturday:</strong> 12:00 PM - 12:00 AM<br>
+            <strong>Sunday:</strong> 12:00 PM - 9:00 PM
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Parking details</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            Street parking on Thomas Avenue is limited. Public pay parking lots are located within one block on Commonwealth Avenue and Gordon Street.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Drop a Note</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem; font-family: var(--font-heading); font-style: italic;">
+          Looking for a specific Asheville stout release or want to book the rooftop deck? Send us a message.
+        </p>
+        
+        <form id="contact-form">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg">Message</label>
+              <textarea id="contact-msg" required placeholder="Write your note to our crypt crew..." style="min-height: 100px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+          <div class="success-icon">✉</div>
+          <h3 class="success-title">Message Sent!</h3>
+          <p class="success-msg">Thank you. Our Plaza Midwood team will review and respond.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pre-order Case Section -->
+    <section id="reserve-table" class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Pre-Order Keg or Cans</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit bulk purchase requests below. We offer 1/6 barrel keg shells and 4-pack case orders.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="order-type">Package Type</label>
+              <select id="order-type" required>
+                <option value="Case">4-Pack Case (24 Cans)</option>
+                <option value="Keg Sixth">1/6 Barrel Keg Shell</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="details">Beer Style requested (e.g. Shadows of Our Ancestors DIPA, Portal Stout)</label>
+              <textarea id="details" required placeholder="e.g. One case of Shadows of Our Ancestors Hazy DIPA..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Pre-Order</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍺</div>
+          <h3 class="success-title">Order Received!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have logged your request. Our taproom crew will call you shortly to confirm inventory.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Burial Beer Co. Plaza Midwood Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live Seating wait calculation based on hour of the day
+    function updateWaitTime() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const badge = document.getElementById('live-wait-badge');
+
+      // Check open hours: 12:00 PM to 11:00 PM (12:00 AM Fri-Sat, 9:00 PM Sun)
+      let closeHour = 23;
+      if (day === 5 || day === 6) { // Fri-Sat
+        closeHour = 24; // 12 AM
+      } else if (day === 0) { // Sun
+        closeHour = 21; // 9 PM
+      }
+
+      if (hour < 12 || hour >= closeHour) {
+        badge.innerText = "CLOSED - Taproom is closed";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Friday/Saturday Night: 6 PM - 11 PM
+      const isWeekendPeak = (day === 5 || day === 6) && (hour >= 18 && hour < 23);
+      // Sunday afternoon: 1 PM - 6 PM
+      const isSundayPeak = (day === 0 && hour >= 13 && hour < 18);
+
+      if (isWeekendPeak) {
+        badge.innerText = "PEAK HOURS: Rooftop full. Garden standing only. 30-40 min wait.";
+        badge.className = "wait-badge wait-high";
+      } else if (isSundayPeak) {
+        badge.innerText = "WEEKEND HANGOUT: Rooftop busy. Garden seating open. 10-15 min wait.";
+        badge.className = "wait-badge wait-medium";
+      } else {
+        badge.innerText = "LIGHT CROWD: Relaxed sanctuary seating. Sit anywhere.";
+        badge.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTime();
+
+    // Handle contact submissions
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    });
+
+    // Handle order submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const dateVal = document.getElementById('pickup-date').value;
+      const typeVal = document.getElementById('order-type').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Order logged, <strong>${name}</strong>! We will reserve your <strong>${typeVal}</strong> for pickup on <strong>${dateVal}</strong>. We'll call you to coordinate!`;
+    });
+  </script>
+</body>
+</html>

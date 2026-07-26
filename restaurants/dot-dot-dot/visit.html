@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit · Dot Dot Dot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --black: #0d0d0d;
+  --charcoal: #1a1a1a;
+  --gold: #c9a84c;
+  --amber: #d4a047;
+  --burgundy: #6b2c3a;
+  --merlot: #4a1a2e;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #888;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,168,76,.15); }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .8; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .15em; text-transform: uppercase; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--black), var(--charcoal)); padding: 3rem 2rem; text-align: center; border-bottom: 1px solid rgba(201,168,76,.1); }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .6; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+@media (max-width:640px) { .info-grid { grid-template-columns: 1fr; } }
+.info-card { background: var(--charcoal); border: 1px solid rgba(201,168,76,.08); border-radius: 8px; padding: 1.5rem; }
+.info-card h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .75rem; }
+.hours-row { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1.25rem; font-size: .88rem; }
+.hours-row .day { font-weight: 600; opacity: .7; }
+.hours-row .time { opacity: .6; }
+.info-card p { font-size: .88rem; line-height: 1.6; opacity: .65; margin: 0; }
+.info-card a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.info-card a:hover { text-decoration: underline; }
+.entrance-guide { background: var(--charcoal); border: 1px solid rgba(201,168,76,.12); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+.entrance-guide h3 { text-align: center; color: var(--gold); font-size: 1.1rem; margin: 0 0 1.5rem; }
+.entrance-step { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.04); align-items: flex-start; }
+.entrance-step:last-child { border-bottom: none; }
+.entrance-step .num { width: 32px; height: 32px; min-width: 32px; border-radius: 50%; background: var(--gold); color: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; }
+.entrance-step .text { font-size: .9rem; line-height: 1.6; opacity: .7; }
+.dress-code { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+@media (max-width:640px) { .dress-code { grid-template-columns: 1fr; } }
+.dress-card { background: var(--charcoal); border: 1px solid rgba(201,168,76,.08); border-radius: 8px; padding: 1.25rem; }
+.dress-card h4 { font-size: .9rem; color: var(--gold); margin: 0 0 .5rem; }
+.dress-card p { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0; }
+.dress-card.bad h4 { color: var(--burgundy); }
+.map-placeholder { background: var(--charcoal); border: 2px dashed rgba(201,168,76,.15); border-radius: 8px; height: 220px; display: flex; align-items: center; justify-content: center; opacity: .4; font-style: italic; font-size: .85rem; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+@media (max-width:640px) { .faq-grid { grid-template-columns: 1fr; } }
+.faq-item { background: var(--charcoal); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(201,168,76,.06); }
+.faq-item h4 { font-size: .9rem; color: var(--gold); margin: 0 0 .35rem; }
+.faq-item p { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0; }
+footer { background: var(--black); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dot Dot Dot</a>
+  <div class="nav-links">
+    <a href="membership.html">Membership</a>
+    <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a>
+    <a href="cocktails.html">Cocktail Lab</a>
+    <a href="visit.html">Visit</a>
+    <a href="events.html">Events</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Visit</h1>
+  <p>Everything you need to find the door — and what to expect once you do</p>
+</header>
+
+<section class="section">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Location</h3>
+      <p>4237 Park Rd Unit B<br>Charlotte, NC 28209</p>
+      <p style="margin-top:.5rem">Park Road Shopping Center — rear lot, beside Blackhawk Hardware</p>
+      <p style="margin-top:.5rem"><a href="#">Get Directions →</a></p>
+    </div>
+    <div class="info-card">
+      <h3>Hours</h3>
+      <div class="hours-row">
+        <span class="day">Monday–Thursday</span><span class="time">5:00 PM – 11:00 PM</span>
+        <span class="day" style="grid-column:1">Kitchen</span><span class="time">5:00 PM – 10:00 PM</span>
+        <span class="day">Friday</span><span class="time">5:00 PM – 1:00 AM</span>
+        <span class="day" style="grid-column:1">Kitchen</span><span class="time">5:00 PM – 12:00 AM</span>
+        <span class="day">Saturday</span><span class="time">4:00 PM – 1:00 AM</span>
+        <span class="day" style="grid-column:1">Kitchen</span><span class="time">4:00 PM – 12:00 AM</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Find the Door</h2>
+  <p class="subtitle">No sign, no street number. Just three dots.</p>
+
+  <div class="entrance-guide">
+    <h3>Your Guide to the Hidden Entrance</h3>
+    <div class="entrance-step">
+      <div class="num">1</div>
+      <div class="text">Park in the rear lot of Park Road Shopping Center, behind the main strip.</div>
+    </div>
+    <div class="entrance-step">
+      <div class="num">2</div>
+      <div class="text">Walk toward the back side of the building, past Blackhawk Hardware.</div>
+    </div>
+    <div class="entrance-step">
+      <div class="num">3</div>
+      <div class="text">Look for a discreet brass logo featuring three dots above an unmarked door.</div>
+    </div>
+    <div class="entrance-step">
+      <div class="num">4</div>
+      <div class="text">A valid membership is required to enter. Members may bring up to three guests.</div>
+    </div>
+    <div class="entrance-step">
+      <div class="num">5</div>
+      <div class="text">Reservations are highly recommended on Fridays and Saturdays. Last seating is one hour before close.</div>
+    </div>
+  </div>
+
+  <div class="map-placeholder">Map coming soon</div>
+
+  <h2 style="margin-top:3rem">Dress Code &amp; House Rules</h2>
+  <p class="subtitle">We keep it refined. Here's what to wear — and what to leave at home.</p>
+  <div class="dress-code">
+    <div class="dress-card">
+      <h4>✓ Appropriate</h4>
+      <p>Cocktail attire, button-downs, blazers, dresses, dark denim (no rips), clean sneakers or dress shoes</p>
+    </div>
+    <div class="dress-card bad">
+      <h4>✗ Not Permitted</h4>
+      <p>Athletic wear, gym shoes, baseball caps, excessively casual or ripped clothing, work boots</p>
+    </div>
+  </div>
+
+  <h2>FAQs</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Do I need a membership to enter?</h4>
+      <p>Yes. A $10/year membership is required for all guests. Members can sign up online or at the door (subject to availability).</p>
+    </div>
+    <div class="faq-item">
+      <h4>How many guests can I bring?</h4>
+      <p>Each member may bring up to three guests per visit. Guests must comply with all house rules and dress code.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you take reservations?</h4>
+      <p>Yes — reservations are highly recommended on Fridays and Saturdays. Book through Resy or call (704) 817-3710.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is there a dress code?</h4>
+      <p>Yes — upscale casual. No athletic wear, gym shoes, or excessively casual attire. When in doubt, dress up.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I host a private event?</h4>
+      <p>Absolutely. We offer private buyouts and semi-private event space. Visit our Events page for details.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What's the parking situation?</h4>
+      <p>Free parking is available in the Park Road Shopping Center rear lot. We're located behind the main strip beside Blackhawk Hardware.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dot Dot Dot · 4237 Park Rd Unit B · Charlotte, NC 28209 · (704) 817-3710</p>
+  <p><a href="membership.html">Membership</a> · <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a> · <a href="visit.html">Visit</a> · <a href="events.html">Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

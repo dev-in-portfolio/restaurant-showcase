@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divine Barrel Brewing · NoDa Craft Brewery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --indigo: #2d1b4e;
+  --gold: #d4a847;
+  --teal: #1a7a7a;
+  --charcoal: #1a1a1a;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #999;
+  --purple-light: #4a2d7a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--indigo); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.hero { padding: 6rem 2rem 4rem; text-align: center; background: linear-gradient(135deg, var(--indigo), #1a0d2e); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a847' fill-opacity='0.04'%3E%3Cpath d='M30 0l30 30-30 30L0 30z'/%3E%3C/g%3E%3C/svg%3E"); }
+.hero-content { position: relative; z-index: 1; }
+.hero .tagline { font-size: .9rem; text-transform: uppercase; letter-spacing: .25em; color: var(--gold); margin-bottom: .5rem; }
+.hero h1 { font-size: 3.2rem; margin: 0 0 .25rem; color: var(--warm-white); }
+.hero .subtitle { font-size: 1.15rem; color: var(--teal); font-style: italic; font-family: 'Fraunces', serif; margin-bottom: 1.5rem; }
+.hero p { font-size: .95rem; line-height: 1.7; max-width: 500px; margin: 0 auto 2rem; opacity: .7; }
+.btn { display: inline-block; background: var(--gold); color: var(--charcoal); padding: .8rem 2.5rem; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; border: none; cursor: pointer; transition: all .2s; }
+.btn:hover { background: #c39130; transform: translateY(-1px); }
+.btn-outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--charcoal); }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section-dark { background: #111; }
+.section h2 { text-align: center; font-size: 1.75rem; margin: 0 0 .25rem; color: var(--warm-white); }
+.section .subtitle { text-align: center; color: var(--muted); font-style: italic; margin-bottom: 2.5rem; font-size: .95rem; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.feature-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.1); border-radius: 8px; padding: 2rem; text-align: center; }
+.feature-card .icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.feature-card h3 { font-size: 1rem; margin: 0 0 .5rem; color: var(--gold); }
+.feature-card p { font-size: .85rem; line-height: 1.6; margin: 0; opacity: .65; }
+.beer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+.beer-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.08); border-radius: 8px; padding: 1.25rem; }
+.beer-card .style { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); font-weight: 600; margin-bottom: .25rem; }
+.beer-card h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--gold); }
+.beer-card .desc { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0 0 .5rem; }
+.beer-card .abv { font-size: .8rem; color: var(--muted); }
+.specials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: .75rem; }
+.special-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.08); border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer; transition: all .2s; }
+.special-card:hover { border-color: var(--gold); background: rgba(212,168,71,.06); }
+.special-card .day { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); font-weight: 600; }
+.special-card h4 { font-size: .9rem; margin: .35rem 0; color: var(--gold); }
+.special-card p { font-size: .8rem; opacity: .6; margin: 0; line-height: 1.4; }
+.special-card .detail { display: none; margin-top: .5rem; padding-top: .5rem; border-top: 1px solid rgba(212,168,71,.1); font-size: .8rem; opacity: .7; }
+.special-card .detail.show { display: block; }
+.cta-section { text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, var(--indigo), var(--purple-light)); }
+.cta-section h2 { font-size: 1.6rem; margin: 0 0 .5rem; color: var(--warm-white); }
+.cta-section p { font-size: .95rem; margin-bottom: 1.5rem; opacity: .8; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,168,71,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Divine Barrel</a>
+  <div class="nav-links">
+    <a href="beers.html">Beers</a>
+    <a href="cellar.html">Sour Program</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tagline">To brew is human. To ferment, divine.</div>
+    <h1>Divine Barrel Brewing</h1>
+    <p class="subtitle">Award-winning craft beer in the heart of NoDa</p>
+    <p>From hazy IPAs to barrel-aged sours, our taproom offers a constantly rotating lineup of modern and traditional brews — plus cocktails, wine, and a welcoming space for all.</p>
+    <div class="hero-actions">
+      <a href="beers.html" class="btn">Explore Our Beers</a>
+      <a href="taproom.html" class="btn btn-outline">Plan Your Visit</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What We Brew</h2>
+  <p class="subtitle">A style for every palate</p>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍺</span>
+      <h3>Hazy IPAs</h3>
+      <p>Juicy, aromatic, and unfiltered — our IPAs are a taproom favorite. Try Universal Language or Climb a Cloud.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🍒</span>
+      <h3>Barrel-Aged Sours</h3>
+      <p>Complex, tart, and aged in oak. Our sour program pushes boundaries with fruit-forward and funky blends.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🌾</span>
+      <h3>Traditional Styles</h3>
+      <p>Lagers, stouts, porters, and everything in between — we honor the classics alongside our experiments.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon" aria-hidden="true">🥃</span>
+      <h3>Cocktails &amp; Wine</h3>
+      <p>Not a beer drinker? We offer craft cocktails, wine pours, and non-alcoholic options too.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <h2>Featured Beers</h2>
+  <p class="subtitle">A glimpse at what's on tap</p>
+  <div class="beer-grid">
+    <div class="beer-card">
+      <div class="style">Hazy IPA</div>
+      <h3>Universal Language</h3>
+      <p class="desc">Our flagship hazy IPA — bright citrus, stone fruit, and a soft finish</p>
+      <span class="abv">6.8% ABV</span>
+    </div>
+    <div class="beer-card">
+      <div class="style">Hazy IPA</div>
+      <h3>Climb a Cloud</h3>
+      <p class="desc">Double hazy IPA with notes of mango, pineapple, and tangerine</p>
+      <span class="abv">8.2% ABV</span>
+    </div>
+    <div class="beer-card">
+      <div class="style">Sour</div>
+      <h3>Snakes</h3>
+      <p class="desc">Barrel-aged sour with raspberry, blackberry, and a touch of vanilla</p>
+      <span class="abv">6.5% ABV</span>
+    </div>
+    <div class="beer-card">
+      <div class="style">Sour</div>
+      <h3>Sparklers</h3>
+      <p class="desc">Bright, effervescent sour with passionfruit and guava</p>
+      <span class="abv">5.8% ABV</span>
+    </div>
+    <div class="beer-card">
+      <div class="style">Stout</div>
+      <h3>Big Lubelski</h3>
+      <p class="desc">Imperial stout aged in bourbon barrels — rich, roasty, and warming</p>
+      <span class="abv">12% ABV</span>
+    </div>
+    <div class="beer-card">
+      <div class="style">Cocktail</div>
+      <h3>Divine Cocktails</h3>
+      <p class="desc">Craft cocktails available on tap and by the glass — ask your bartender</p>
+      <span class="abv">Varies</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2rem">
+    <a href="beers.html" class="btn btn-outline">Full Beer List</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Weekly Specials</h2>
+  <p class="subtitle">Something every day of the week</p>
+  <div class="specials-grid">
+    <div class="special-card" data-day="mon">
+      <div class="day">Monday</div>
+      <h4>$10 Flights</h4>
+      <p>Trivia at 7pm</p>
+      <div class="detail">Mindless Minutia Trivia + discounted flight boards all night</div>
+    </div>
+    <div class="special-card" data-day="tue">
+      <div class="day">Tuesday</div>
+      <h4>BYO Vinyl</h4>
+      <p>Open arts night</p>
+      <div class="detail">Bring your own records for the house turntable. Weekly open arts and crafts event.</div>
+    </div>
+    <div class="special-card" data-day="wed">
+      <div class="day">Wednesday</div>
+      <h4>Game Night</h4>
+      <p>Potions &amp; Pixels</div>
+      <div class="detail">Board games, card games, and Queen City Crokinole — all night</div>
+    </div>
+    <div class="special-card" data-day="thu">
+      <div class="day">Thursday</div>
+      <h4>Run Club</h4>
+      <p>6:30pm</p>
+      <div class="detail">Group run starts at 6:30pm. All paces welcome. Beer after!</div>
+    </div>
+    <div class="special-card" data-day="fri">
+      <div class="day">Friday</div>
+      <h4>Weekend Starts</h4>
+      <p>Food truck + live music</p>
+      <div class="detail">Check our events calendar for this week's food truck and music lineup</div>
+    </div>
+    <div class="special-card" data-day="sat">
+      <div class="day">Saturday</div>
+      <h4>All Day</h4>
+      <p>Food truck + events</p>
+      <div class="detail">Full taproom hours. Rotating food trucks and featured events.</div>
+    </div>
+    <div class="special-card" data-day="sun">
+      <div class="day">Sunday</div>
+      <h4>$5 Wine Pours</h4>
+      <p>Relaxed vibes</p>
+      <div class="detail">Wind down the week with $5 wine pours all day</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Visit Our Taproom</h2>
+  <p>3701 N Davidson St Suite #203 · NoDa · Charlotte, NC</p>
+  <a href="taproom.html" class="btn">Hours &amp; Location</a>
+</section>
+
+<footer>
+  <p>Divine Barrel Brewing · 3701 N Davidson St Suite #203 · Charlotte, NC 28205 · (980) 237-1803</p>
+  <p><a href="beers.html">Beers</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="about.html">About</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const cards = document.querySelectorAll('.special-card');
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
+      const detail = this.querySelector('.detail');
+      if (detail) detail.classList.toggle('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>

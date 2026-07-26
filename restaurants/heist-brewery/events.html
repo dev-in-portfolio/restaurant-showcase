@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Heist Brewery Charlotte</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --amber:#c87a2c; --charcoal:#1a1a1a; --cream:#f5f0e8; --copper:#b86b3a; --navy:#1e2a3a; --gold:#d4a017; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:var(--charcoal); background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--amber); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--charcoal); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--charcoal); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.6rem; color:var(--amber); text-decoration:none; font-weight:700; letter-spacing:-0.5px; }
+  nav .logo span { color:#fff; }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--amber); }
+  .page-header { background:linear-gradient(135deg,#1a1a1a,#2d1f0e); color:#fff; padding:4rem 2rem; text-align:center; }
+  .page-header h1 { font-size:2.8rem; }
+  .page-header h1 span { color:var(--amber); }
+  .page-header p { color:#bbb; margin-top:0.5rem; }
+  .section { padding:5rem 2rem; max-width:1100px; margin:0 auto; }
+  .section-title { font-size:2rem; margin-bottom:1rem; text-align:center; }
+  .section-title span { color:var(--amber); }
+  .section-sub { text-align:center; color:#666; max-width:600px; margin:0 auto 3rem; }
+  .event-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  .event-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.2s; }
+  .event-card:hover { transform:translateY(-4px); }
+  .event-img { height:160px; display:flex; align-items:center; justify-content:center; font-size:3rem; }
+  .event-body { padding:1.5rem; }
+  .event-body .date { color:var(--amber); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; }
+  .event-body h3 { font-size:1.2rem; margin:0.3rem 0; }
+  .event-body p { color:#555; font-size:0.9rem; }
+  .private-event { background:var(--charcoal); color:#fff; padding:5rem 2rem; }
+  .private-event h2 { font-size:2.2rem; margin-bottom:1rem; text-align:center; }
+  .private-event h2 span { color:var(--amber); }
+  .private-event p { color:#aaa; max-width:600px; margin:0 auto 2rem; text-align:center; }
+  .private-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; max-width:1000px; margin:2rem auto 0; }
+  .private-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:2rem; text-align:center; }
+  .private-card .icon { font-size:2.5rem; margin-bottom:1rem; }
+  .private-card h3 { color:var(--amber); margin-bottom:0.5rem; }
+  .private-card p { color:#aaa; font-size:0.9rem; text-align:center; }
+  .cta-section { text-align:center; padding:4rem 2rem; }
+  .cta-section h2 { font-family:'Fraunces',Georgia,serif; font-size:2rem; margin-bottom:1rem; }
+  .event-form { max-width:600px; margin:2rem auto 0; background:#fff; padding:2.5rem; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .event-form .form-group { margin-bottom:1.5rem; }
+  .event-form label { display:block; font-weight:600; margin-bottom:0.3rem; color:var(--charcoal); }
+  .event-form input,.event-form select,.event-form textarea { width:100%; padding:12px; border:1px solid #ddd; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.95rem; }
+  .event-form textarea { resize:vertical; min-height:100px; }
+  footer { background:var(--charcoal); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; }
+  footer .social a:hover { color:var(--amber); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { .event-grid,.private-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Heist<span>Brewery</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-header" id="main">
+  <h1>Events &amp; <span>Celebrations</span></h1>
+  <p>From live music to private parties — Heist is where Charlotte comes together</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Upcoming <span>Events</span></h2>
+  <p class="section-sub">Weekly events, seasonal releases, and special celebrations at both locations.</p>
+  <div class="event-grid">
+    <div class="event-card">
+      <div class="event-img" style="background:#f0e6d6;">&#x1F3B5;</div>
+      <div class="event-body">
+        <div class="date">Every Thursday</div>
+        <h3>Live Music at NoDa</h3>
+        <p>Local artists and touring acts on the NoDa stage. Free entry, full food &amp; drink menu.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-img" style="background:#e8ddd0;">&#x1F37A;</div>
+      <div class="event-body">
+        <div class="date">Every Wednesday</div>
+        <h3>Brewery Trivia</h3>
+        <p>Test your knowledge with themed trivia rounds. Prizes for the winning team including Heist swag and beer.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-img" style="background:#f0e6d6;">&#x1F9D6;</div>
+      <div class="event-body">
+        <div class="date">Monthly</div>
+        <h3>Yoga &amp; Brews</h3>
+        <p>Sunday morning yoga at Barrel Arts followed by a post-flow pint. All levels welcome.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-img" style="background:#e8ddd0;">&#x1F942;</div>
+      <div class="event-body">
+        <div class="date">Seasonal</div>
+        <h3>Beer Release Parties</h3>
+        <p>Be the first to try new batches. Limited releases, barrel-aged debuts, and seasonal favorites.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-img" style="background:#f0e6d6;">&#x1F372;</div>
+      <div class="event-body">
+        <div class="date">Monthly</div>
+        <h3>Beer &amp; Food Pairing</h3>
+        <p>Chef-curated multi-course dinner paired with Heist beers. Reservations required.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-img" style="background:#e8ddd0;">&#x1F3B0;</div>
+      <div class="event-body">
+        <div class="date">Weekly</div>
+        <h3>Cocktail Happy Hour</h3>
+        <p>Half-off select craft cocktails and draft beer. Monday-Friday 4-6 PM at both locations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="private-event">
+  <h2>Host Your Event at <span>Heist</span></h2>
+  <p>Whether it's an intimate dinner, corporate gathering, or a celebration — our spaces are designed to impress.</p>
+  <div class="private-grid">
+    <div class="private-card">
+      <div class="icon">&#x1F3E0;</div>
+      <h3>NoDa Taproom</h3>
+      <p>Full buyout available for up to 150 guests. Includes main bar, dining area, and stage.</p>
+    </div>
+    <div class="private-card">
+      <div class="icon">&#x2601;&#xFE0F;</div>
+      <h3>Skyline Room</h3>
+      <p>Private mezzanine with views of the Charlotte skyline. Perfect for 30-60 seated or 80 cocktail-style.</p>
+    </div>
+    <div class="private-card">
+      <div class="icon">&#x1F3D4;&#xFE0F;</div>
+      <h3>Barrel Arts Patio</h3>
+      <p>Spacious outdoor patio at North End with covered seating, fire pits, and string lights. Up to 100 guests.</p>
+    </div>
+    <div class="private-card">
+      <div class="icon">&#x1F4BC;</div>
+      <h3>Corporate Events</h3>
+      <p>A/V equipped semi-private spaces with catering menus, beer &amp; cocktail packages for team events and client entertainment.</p>
+    </div>
+    <div class="private-card">
+      <div class="icon">&#x1F470;</div>
+      <h3>Wedding Receptions</h3>
+      <p>The Skyline Room and Barrel Arts patio offer unique backdrops for rehearsal dinners and receptions.</p>
+    </div>
+    <div class="private-card">
+      <div class="icon">&#x1F389;</div>
+      <h3>Birthday &amp; Celebrations</h3>
+      <p>Custom packages with food, drink, and dedicated service. Make your next milestone unforgettable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Plan Your <span style="color:var(--amber);">Event</span></h2>
+  <p style="color:#666;margin-bottom:2rem;">Tell us about your event and we'll create a custom proposal.</p>
+  <form class="event-form demo-form" data-demo-form>
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="type">Event Type</label>
+      <select id="type" name="type">
+        <option value="">Select one</option>
+        <option>Corporate Event</option>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Private Dinner</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="guests">Estimated Guests</label>
+      <input type="number" id="guests" name="guests" min="1" max="300">
+    </div>
+    <div class="form-group">
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date">
+    </div>
+    <div class="form-group">
+      <label for="details">Tell Us More</label>
+      <textarea id="details" name="details" placeholder="Any special requests, dietary needs, or questions..."></textarea>
+    </div>
+    <button type="submit" class="btn" style="border:none;cursor:pointer;width:100%;">Submit Inquiry</button>
+  </form>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/heistbrewery/" target="_blank">&#x1F4F7;</a>
+    <a href="https://www.facebook.com/HeistBrewery" target="_blank">&#x1F4AC;</a>
+    <a href="https://x.com/HeistBrewery" target="_blank">&#x1D54F;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Heist Brewery Concept &bull; Charlotte, NC</p>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdsong Brewing Co. - Charlotte, NC | Visit & Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Birdsong
+          <span>Brewing Company</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Tap List</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Rentals</a>
+        <a href="contact.html" class="active">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Davidson St. Taproom</h2>
+    <p class="page-subtitle">Grab a pint, crack some peanuts, and hang out on our dog-friendly patio. Check live taproom crowd status below.</p>
+  </header>
+
+  <!-- Live dining room status banner -->
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <span style="font-weight: 800;">📍 Taproom Crowd Level:</span>
+      <span class="wait-badge wait-low" id="live-wait-badge">Light Crowd</span>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Details Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Visit Us</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-amber); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Address</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">
+            1016 N. Davidson St.<br>Charlotte, NC 28206
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-amber); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Taproom Hours</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Monday:</strong> Closed (Brewing)<br>
+            <strong>Tuesday - Thursday:</strong> 3:00 PM - 10:00 PM<br>
+            <strong>Friday - Saturday:</strong> 12:00 PM - 11:00 PM<br>
+            <strong>Sunday:</strong> 11:00 AM - 8:00 PM
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-amber); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Taproom Desk</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Phone:</strong> (704) 332-1810<br>
+            <span style="display: block; margin-top: 0.5rem; font-size: 0.85rem; font-style: italic; color: #10b981;">
+              *keg pick-up orders require 48 hours pre-order.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Taproom Policies</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+          <strong>Dog-Friendly:</strong> Leashed dogs are welcome on our outdoor solar-covered wooden deck. Owners are responsible for their pets' behavior.
+        </p>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+          <strong>Outside Food:</strong> You are welcome to order or bring outside food to enjoy in the taproom. We also have local food trucks parked on Davidson St daily (except Mondays).
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Keg pre-order Form Section -->
+    <section id="reserve-table" class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Pre-Order Keg for Pickup</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. We sell 1/6 Bbl (approx. 40 pints) and 1/2 Bbl (approx. 120 pints) kegs for home parties and tailgates.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Pickup Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="keg-size">Select Keg Size</label>
+              <select id="keg-size" required>
+                <option value="Sixth">1/6 Barrel (40 Pints)</option>
+                <option value="Half">1/2 Barrel (120 Pints)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="items">Select Beer (e.g. Jalapeño Pale Ale, Higher Ground IPA, Rewind Lager)</label>
+              <select id="beer-choice" required style="width: 100%; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--color-border); color: #fff; padding: 0.95rem; border-radius: 6px;">
+                <option value="Jalapeño">Jalapeño Pale Ale</option>
+                <option value="Higher Ground">Higher Ground IPA</option>
+                <option value="Rewind">Rewind Lager</option>
+                <option value="Lazy Bird">Lazy Bird Brown Ale</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Keg Order</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍺</div>
+          <h3 class="success-title">Keg Pre-Order Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have received your keg order request. Our crew will prepare the barrel and call you to arrange deposit details.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Birdsong Brewing Co. Brewed solar clean.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live Capacity check based on clock time
+    function updateWaitTime() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const badge = document.getElementById('live-wait-badge');
+
+      // Closed Monday (1)
+      if (day === 1) {
+        badge.innerText = "CLOSED - Taproom closed Mondays for brewing";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Tuesday-Thursday: 3 PM - 10 PM (15:00 to 22:00)
+      // Friday-Saturday: 12 PM - 11 PM (12:00 to 23:00)
+      // Sunday: 11 AM - 8 PM (11:00 to 20:00)
+      let openHour = 15;
+      let closeHour = 22;
+
+      if (day === 0) { // Sunday
+        openHour = 11;
+        closeHour = 20;
+      } else if (day === 5 || day === 6) { // Fri-Sat
+        openHour = 12;
+        closeHour = 23;
+      }
+
+      if (hour < openHour || hour >= closeHour) {
+        badge.innerText = "CLOSED - Taproom is closed";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Peak Hours: Friday 5 PM - 10 PM, Saturday 2 PM - 9 PM
+      const isFridayPeak = (day === 5 && hour >= 17 && hour < 22);
+      const isSaturdayPeak = (day === 6 && hour >= 14 && hour < 21);
+
+      if (isFridayPeak || isSaturdayPeak) {
+        badge.innerText = "PEAK CAPACITY - Deck and taproom are highly busy (Seating limited)";
+        badge.className = "wait-badge wait-medium";
+      } else {
+        badge.innerText = "LIGHT CROWD - Plenty of open tables and bar seating";
+        badge.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTime();
+
+    // Handle order submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const dateVal = document.getElementById('pickup-date').value;
+      const sizeVal = document.getElementById('keg-size').value;
+      const beerVal = document.getElementById('beer-choice').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Order logged, <strong>${name}</strong>! We will have your <strong>${sizeVal} Barrel of ${beerVal}</strong> ready for pickup on <strong>${dateVal}</strong>. Bring your keg shell deposit to the register!`;
+    });
+  </script>
+</body>
+</html>

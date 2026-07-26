@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Kindred, Davidson NC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,italic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>.menu-tabs{display:flex;gap:4px;margin-bottom:2rem;flex-wrap:wrap}.menu-tab{padding:10px 24px;border:1px solid var(--light-gray);background:var(--white);cursor:pointer;font-family:var(--font-body);font-weight:600;font-size:.9rem;border-radius:4px;transition:.2s}.menu-tab.active{background:var(--amber);color:var(--white);border-color:var(--amber)}.menu-tab:hover:not(.active){border-color:var(--amber);color:var(--amber)}.menu-section{margin-bottom:2.5rem}.menu-section h3{font-size:1.2rem;text-transform:uppercase;letter-spacing:.05em;color:var(--amber);border-bottom:1px solid var(--light-gray);padding-bottom:.5rem;margin-bottom:1rem}.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.04)}.menu-item .name{font-weight:600}.menu-item .desc{font-size:.9rem;color:var(--medium-gray);margin-top:2px;max-width:80%}.menu-item .price{font-weight:600;color:var(--charcoal);white-space:nowrap}.chef-note{background:var(--warm-gray);padding:2rem;border-radius:8px;margin:3rem 0}.chef-note .quote{font-family:var(--font-heading);font-style:italic;font-size:1.2rem;color:var(--charcoal)}.wine-pairings{margin-top:2rem}.wine-pair{display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--light-gray)}.wine-pair .wine-name{font-weight:600;min-width:180px}.wine-pair .wine-desc{font-size:.9rem;color:var(--medium-gray)}</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Kindred</a>
+<nav aria-label="Main navigation">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html" aria-current="page">Menu</a></li>
+<li><a href="story.html">Story</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section">
+<div class="container">
+<h1>Seasonal Menu</h1>
+<p class="hero-subtitle" style="font-size:1rem;margin-bottom:2rem">"The menu changes based on what's in season." — Chef Joe Kindred</p>
+
+<div class="menu-tabs" role="tablist">
+<button class="menu-tab active" role="tab" aria-selected="true" data-menu="dinner">Dinner</button>
+<button class="menu-tab" role="tab" aria-selected="false" data-menu="brunch">Brunch</button>
+</div>
+
+<div id="menu-dinner" class="menu-panel" role="tabpanel">
+<div class="menu-section">
+<h3>To Start</h3>
+<div class="menu-item"><div><div class="name">House Milk Bread</div><div class="desc">Tangzhong milk bread, house-cultured butter, sea salt</div></div><div class="price">$12</div></div>
+<div class="menu-item"><div><div class="name">Squid Ink Pasta</div><div class="desc">Calamari, nduja breadcrumbs, preserved lemon, smoked chili oil</div></div><div class="price">$18</div></div>
+<div class="menu-item"><div><div class="name">Heirloom Tomato Salad</div><div class="desc">Burrata, basil, aged balsamic, olive oil</div></div><div class="price">$16</div></div>
+<div class="menu-item"><div><div class="name">Roasted Bone Marrow</div><div class="desc">Parsley salad, grilled sourdough, sea salt</div></div><div class="price">$19</div></div>
+</div>
+
+<div class="menu-section">
+<h3>Mains</h3>
+<div class="menu-item"><div><div class="name">Duck Fat Potatoes</div><div class="desc">Crispy confit potatoes, roasted garlic aioli, chives</div></div><div class="price">$15</div></div>
+<div class="menu-item"><div><div class="name">Pan-Roasted Trout</div><div class="desc">Fingerling potatoes, asparagus, lemon-caper beurre blanc</div></div><div class="price">$34</div></div>
+<div class="menu-item"><div><div class="name">Heritage Pork Chop</div><div class="desc">Wild mushrooms, apple-sage compote, cider jus</div></div><div class="price">$38</div></div>
+<div class="menu-item"><div><div class="name">Dry-Aged Ribeye</div><div class="desc">Grilled asparagus, béarnaise, pommes purée</div></div><div class="price">$52</div></div>
+<div class="menu-item"><div><div class="name">Braised Short Rib</div><div class="desc">Creamy polenta, slow-roasted tomatoes, gremolata</div></div><div class="price">$42</div></div>
+</div>
+
+<div class="menu-section">
+<h3>Dessert</h3>
+<div class="menu-item"><div><div class="name">Olive Oil Cake</div><div class="desc">Whipped ricotta, honey, thyme</div></div><div class="price">$12</div></div>
+<div class="menu-item"><div><div class="name">Dark Chocolate Pot de Crème</div><div class="desc">Sea salt, olive oil, shortbread</div></div><div class="price">$14</div></div>
+</div>
+</div>
+
+<div id="menu-brunch" class="menu-panel" role="tabpanel" style="display:none">
+<div class="menu-section">
+<h3>Brunch</h3>
+<div class="menu-item"><div><div class="name">Milk Bread French Toast</div><div class="desc">Brown butter, maple syrup, seasonal fruit</div></div><div class="price">$16</div></div>
+<div class="menu-item"><div><div class="name">Shakshuka</div><div class="desc">Poached eggs, spiced tomato sauce, feta, sourdough</div></div><div class="price">$15</div></div>
+<div class="menu-item"><div><div class="name">Duck Confit Hash</div><div class="desc">Crispy potatoes, caramelized onions, sunny egg, hollandaise</div></div><div class="price">$19</div></div>
+<div class="menu-item"><div><div class="name">House Granola</div><div class="desc">Honey-yogurt, seasonal berries, mint</div></div><div class="price">$12</div></div>
+<div class="menu-item"><div><div class="name">Biscuit & Gravy</div><div class="desc">Sage sausage gravy, house-made buttermilk biscuit</div></div><div class="price">$14</div></div>
+</div>
+<div class="menu-section">
+<h3>Cocktails</h3>
+<div class="menu-item"><div><div class="name">Kindred Bellini</div><div class="desc">Peach purée, prosecco, thyme</div></div><div class="price">$14</div></div>
+<div class="menu-item"><div><div class="name">Bloody Kindred</div><div class="desc">House mix, bacon salt rim, pickled okra</div></div><div class="price">$15</div></div>
+</div>
+</div>
+
+<div class="chef-note">
+<p class="quote">"Every plate is a conversation between Italian technique and Southern ingredients. We don't force it — we just let the season decide."</p>
+<p style="margin-top:.75rem;font-weight:600">— Chef Joe Kindred</p>
+</div>
+
+<h2 style="margin-top:3rem">Wine Pairings</h2>
+<div class="wine-pairings">
+<div class="wine-pair"><span class="wine-name">Sancerre</span><span class="wine-desc">Crisp, mineral — trout & asparagus</span></div>
+<div class="wine-pair"><span class="wine-name">Barbaresco</span><span class="wine-desc">Earthy, structured — mushroom dishes</span></div>
+<div class="wine-pair"><span class="wine-name">Chianti Classico</span><span class="wine-desc">Bright acidity — braised pork shoulder</span></div>
+<div class="wine-pair"><span class="wine-name">Cabernet Sauvignon</span><span class="wine-desc">Full-bodied — dry-aged ribeye</span></div>
+<div class="wine-pair"><span class="wine-name">Vermentino</span><span class="wine-desc">Floral, coastal — squid ink pasta</span></div>
+</div>
+
+<div class="seasonal-picker" id="seasonalPicker">
+<h2 style="margin-bottom:.5rem">🍽️ The Seasonal Picker</h2>
+<p style="color:var(--medium-gray);margin-bottom:1.5rem">Not sure what to order? Pick a protein and a vegetable — we'll suggest the perfect dish.</p>
+
+<form class="demo-form" style="max-width:100%" data-demo-form="picker">
+<div class="picker-grid">
+<div>
+<h3>Pick Your Protein</h3>
+<div class="form-group" style="margin-top:1rem">
+<label><input type="radio" name="protein" value="chicken" checked> Chicken</label><br>
+<label><input type="radio" name="protein" value="fish"> Fish</label><br>
+<label><input type="radio" name="protein" value="pork"> Pork</label><br>
+<label><input type="radio" name="protein" value="beef"> Beef</label>
+</div>
+</div>
+<div>
+<h3>Pick Your Vegetable</h3>
+<div class="form-group" style="margin-top:1rem">
+<label><input type="radio" name="veggie" value="asparagus" checked> Asparagus</label><br>
+<label><input type="radio" name="veggie" value="mushroom"> Mushrooms</label><br>
+<label><input type="radio" name="veggie" value="tomato"> Tomatoes</label><br>
+<label><input type="radio" name="veggie" value="root"> Root Vegetables</label>
+</div>
+</div>
+</div>
+<div class="picker-result" id="pickerResult">
+<p style="color:var(--medium-gray)">Select a protein and a vegetable to see your dish.</p>
+</div>
+</form>
+</div>
+
+<div style="text-align:center;margin-top:2rem">
+<p style="color:var(--medium-gray)">Menu subject to seasonal change. Ask your server about today's market specials.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<p><a href="index.html">Kindred</a> · 131 N Main St, Davidson, NC · <a href="tel:+19802315000">(980) 231-5000</a></p>
+<p style="margin-top:.5rem"><a href="https://kindreddavidson.com" target="_blank">kindreddavidson.com</a> · <a href="https://instagram.com/kindredrestaurant" target="_blank">@kindredrestaurant</a></p>
+<p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+<script src="../site-core.js"></script>
+<script>document.querySelectorAll('.menu-tab').forEach(function(tab){tab.addEventListener('click',function(){document.querySelectorAll('.menu-tab').forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false')});this.classList.add('active');this.setAttribute('aria-selected','true');document.querySelectorAll('.menu-panel').forEach(function(p){p.style.display='none'});document.getElementById('menu-'+this.dataset.menu).style.display='block'})})</script>
+</body>
+</html>

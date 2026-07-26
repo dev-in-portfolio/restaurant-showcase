@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · The Goodyear House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--sage:#7a8a6e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--brick:#8a3a2a;--muted:#8a7a6a;--warm:#c49a6c}
+body{margin:0;background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(122,138,110,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--sage)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--cream)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a2a15);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--warm)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--sage);margin:0 0 .1rem;border-left:3px solid var(--brick);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.timeline{position:relative;padding-left:2rem;margin:2rem 0}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(122,138,110,.2)}
+.timeline-item{position:relative;margin-bottom:2rem;padding-left:1.5rem}
+.timeline-item::before{content:'';position:absolute;left:-.4rem;top:.35rem;width:10px;height:10px;border-radius:50%;background:var(--sage);border:2px solid var(--dark)}
+.timeline-item .year{font-family:'Fraunces',serif;color:var(--warm);font-weight:700;font-size:.95rem}
+.timeline-item .desc{font-size:.85rem;opacity:.55;line-height:1.5;margin:.2rem 0 0}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+.team-card{background:rgba(255,255,255,.03);border:1px solid rgba(122,138,110,.06);border-radius:10px;padding:1.5rem}
+.team-card .role{color:var(--sage);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 .25rem}
+.team-card .name{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--warm);margin:0 0 .5rem}
+.team-card .bio{font-size:.82rem;opacity:.5;line-height:1.6;margin:0}
+.quote{background:rgba(122,138,110,.04);border-left:3px solid var(--sage);padding:1.25rem 1.5rem;margin:2rem 0;border-radius:0 8px 8px 0}
+.quote p{font-style:italic;font-size:.95rem;opacity:.7;line-height:1.6;margin:0}
+.quote cite{display:block;margin-top:.5rem;font-size:.78rem;opacity:.4;font-style:normal}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(122,138,110,.06)}
+footer a{color:var(--sage);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">The Goodyear House</a>
+  <div class="nav-links">
+    <a href="menu.html">Menus</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Find Us</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Our Story</h1>
+  <p>A restored mill home, a neighborhood, a philosophy of growth</p>
+</div>
+<section class="section">
+  <h2>Why "Goodyear"?</h2>
+  <p class="note">A tradition of adding on when times are good</p>
+  <p style="font-size:.9rem;opacity:.55;line-height:1.7;max-width:720px">In the early 1900s, when a family had a prosperous year, they would add a room, a porch, or a second story to their home. These additions — sometimes mismatched in color or style — told the story of growth and resilience. When we found this 1900s mill house in NoDa, we knew it deserved to carry that tradition forward. The Goodyear House is a place that grows with its community, honoring the past while embracing the future.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">1900s</div>
+      <div class="desc">Original mill home built in the NoDa neighborhood of Charlotte, NC</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2010s</div>
+      <div class="desc">NoDa transforms into Charlotte's Arts & Entertainment District — vibrant, creative, growing</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2020</div>
+      <div class="desc">Built On Hospitality finds the mill home and begins restoration</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2021</div>
+      <div class="desc">The Goodyear House opens its doors — a neighborhood restaurant in a historic home</div>
+    </div>
+    <div class="timeline-item">
+      <div class="year">Today</div>
+      <div class="desc">A beloved gathering place for Charlotte — serving dinner, lunch, weekend brunch, and hosting private events, weddings, and celebrations in our garden and greenhouse</div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:rgba(255,255,255,.02)">
+  <h2>Built on Hospitality</h2>
+  <p class="note">The people behind the house</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <p class="role">Executive Chef</p>
+      <p class="name">Chris Coleman</p>
+      <p class="bio">Food Network Champion with appearances on Chopped, Beat Bobby Flay, Alex vs. America, Superchef Grudge Match, and Guy's Grocery Games. Featured at euphoria, Charleston Wine & Food, and the James Beard House in NYC. Recipient of multiple Best of the Best awards from <em>Charlotte</em> magazine.</p>
+    </div>
+    <div class="team-card">
+      <p class="role">General Manager</p>
+      <p class="name">Aaron Bouma</p>
+      <p class="bio">Michigan native and Army brat who began hospitality at 14. Youngest GM at McAlister's Deli at 22. Led Mortimer's Cafe & Pub, helped launch Cowbell Burger & Whiskey Bar, and spent four years with RH Rooftop Restaurant. Now with Built On Hospitality.</p>
+    </div>
+    <div class="team-card">
+      <p class="role">Bar Manager</p>
+      <p class="name">Lauren Long</p>
+      <p class="bio">Started hosting then serving, and discovered a passion for leadership during the pandemic. Bartender turned Bar Manager at The Goodyear House for the past three years. Creates a bar program that's welcoming, efficient, and rooted in genuine hospitality.</p>
+    </div>
+  </div>
+  <div class="quote">
+    <p>"We are dedicated to the highest standards of service, innovation, and community engagement — crafting exceptional dining experiences that resonate with our guests and leave an indelible mark on their memories."</p>
+    <cite>— Built On Hospitality</cite>
+  </div>
+  <p style="font-size:.85rem;opacity:.45;text-align:center">The Goodyear House is the first restaurant by <a href="https://builtonhospitality.com" style="color:var(--sage)">Built On Hospitality</a>, a Charlotte-based hospitality group.</p>
+</section>
+<footer>
+  <p><strong style="color:var(--sage);font-size:.9rem">The Goodyear House</strong><br>3032 North Davidson Street, Charlotte, NC 28205 · (704) 910-0132</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menus</a> · <a href="events.html">Private Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+</body>
+</html>

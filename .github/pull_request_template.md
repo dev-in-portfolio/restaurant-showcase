@@ -1,12 +1,11 @@
-# Showcase PR Template
+# Showcase Promotion PR Template
 
 ## Description
-Summary of the showcase addition or update.
+This PR promotes a restaurant website from Staging to Showcase.
 
-## Checklist
-- [ ] Restaurant passes showcase validation
-- [ ] Metadata review flags are all `true`
-- [ ] `status` is `approved`
-- [ ] No placeholder or broken content
-- [ ] Showroom index is updated
-- [ ] No duplicate slugs in the index
+## Promotion Checklist
+- [ ] Staging-to-Showcase validation command passes locally
+- [ ] No placeholder text detected
+- [ ] All checkmarks in `restaurant.json` set to `true`
+- [ ] Tested floating comparison button
+- [ ] Registry index `data/restaurants.json` updated

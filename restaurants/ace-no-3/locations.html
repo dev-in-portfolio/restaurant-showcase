@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visit ACE No. 3 in Charlotte — Belmont Village, Center City, Concord Mills and Myers Park. Hours, directions and contact info.">
+  <title>Locations — ACE No. 3</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+
+    :root {
+      --ace-black: #1a1a1a;
+      --ace-dark: #2d2d2d;
+      --ace-cream: #f5f0e8;
+      --ace-warm: #e8ddd0;
+      --ace-sage: #9eb5a0;
+      --ace-sage-dark: #7a937c;
+      --ace-cognac: #8b6040;
+      --ace-gold: #c4a46c;
+      --ace-font: 'DM Sans', system-ui, sans-serif;
+      --ace-serif: 'Fraunces', Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--ace-font);
+      background: var(--ace-cream); color: var(--ace-black);
+      line-height: 1.6; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .concept-bar { background: var(--ace-gold); color: var(--ace-black); }
+
+    .nav-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+      background: rgba(26,26,26,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-logo { font-weight: 900; font-size: 1.15rem; letter-spacing: .12em; color: var(--ace-cream); display: flex; align-items: center; gap: .5rem; }
+    .nav-logo span { color: var(--ace-gold); }
+    .nav-links { display: flex; gap: .25rem; }
+    .nav-links a {
+      padding: .5rem .9rem; border-radius: .4rem;
+      font-size: .82rem; font-weight: 600; letter-spacing: .04em;
+      color: rgba(245,240,232,.75); transition: .2s;
+    }
+    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,.08); color: var(--ace-cream); }
+    .nav-order {
+      background: var(--ace-gold); color: var(--ace-black) !important;
+      border-radius: 2rem !important; padding: .5rem 1.2rem !important; font-weight: 700 !important;
+    }
+    .nav-order:hover { background: #d4b47c !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ace-cream); border-radius: 2px; transition: .2s; }
+    @media (max-width:720px) {
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(26,26,26,.97); padding: .5rem 1rem 1rem; gap: .15rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .7rem .9rem; }
+      .nav-bar { padding: .75rem 1rem; }
+    }
+
+    .page-header {
+      padding: 7rem 2rem 3rem;
+      background: var(--ace-black); color: var(--ace-cream);
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: var(--ace-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 .5rem;
+    }
+    .page-header p { color: rgba(245,240,232,.6); max-width: 480px; margin: 0 auto; font-size: 1.05rem; }
+
+    .locations-grid { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+
+    .loc-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: .75rem;
+      margin-bottom: 2.5rem;
+    }
+    .loc-btn {
+      padding: 1rem; border-radius: .8rem;
+      border: 2px solid rgba(26,26,26,.1);
+      background: transparent;
+      text-align: center; cursor: pointer;
+      font-weight: 600; font-size: .88rem;
+      transition: .2s; font-family: var(--ace-font);
+    }
+    .loc-btn:hover { border-color: var(--ace-sage); }
+    .loc-btn.active { background: var(--ace-black); color: var(--ace-cream); border-color: var(--ace-black); }
+    .loc-btn small { display: block; font-weight: 400; font-size: .75rem; color: rgba(26,26,26,.45); margin-top: .15rem; }
+    .loc-btn.active small { color: rgba(245,240,232,.5); }
+
+    .loc-detail {
+      display: none;
+      background: #fff; border-radius: 1.2rem; padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+    .loc-detail.active { display: block; }
+    .loc-detail h2 {
+      font-family: var(--ace-serif);
+      font-size: 1.6rem; font-weight: 700; margin: 0 0 .25rem;
+    }
+    .loc-detail .subtitle { font-size: .9rem; color: rgba(26,26,26,.5); margin-bottom: 1.25rem; }
+    .loc-detail .info-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .loc-detail .info-block h3 {
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ace-cognac); margin: 0 0 .3rem;
+    }
+    .loc-detail .info-block p { margin: 0; font-size: .95rem; }
+    .loc-detail .info-block a { color: var(--ace-cognac); font-weight: 600; }
+    .loc-detail .info-block a:hover { color: var(--ace-black); }
+    .loc-detail .hours-list { font-size: .9rem; }
+    .loc-detail .hours-list div { display: flex; justify-content: space-between; padding: .15rem 0; }
+    .loc-detail .hours-list span:last-child { font-weight: 600; }
+    .loc-detail .actions { margin-top: 1.5rem; display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn-primary, .btn-outline {
+      padding: .75rem 1.5rem; border-radius: 2.5rem;
+      font-weight: 700; font-size: .88rem;
+      letter-spacing: .03em; transition: .2s; display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-primary { background: var(--ace-gold); color: var(--ace-black); }
+    .btn-primary:hover { background: #d4b47c; transform: translateY(-2px); }
+    .btn-outline { border: 2px solid rgba(26,26,26,.2); color: var(--ace-black); }
+    .btn-outline:hover { border-color: var(--ace-black); background: rgba(0,0,0,.03); transform: translateY(-2px); }
+
+    @media (max-width:600px) {
+      .loc-detail .info-grid { grid-template-columns: 1fr; }
+    }
+
+    .hours-note {
+      padding: 2rem 2rem 0;
+      max-width: 960px; margin: 0 auto;
+    }
+    .hours-note .note-card {
+      background: var(--ace-warm); border-radius: 1rem; padding: 1.25rem 1.5rem;
+      font-size: .88rem; color: rgba(26,26,26,.6);
+    }
+    .hours-note .note-card strong { color: var(--ace-black); }
+
+    .contact-section { max-width: 640px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .contact-section h2 {
+      font-family: var(--ace-serif);
+      font-size: 1.6rem; font-weight: 700; text-align: center; margin-bottom: .5rem;
+    }
+    .contact-section > p { text-align: center; color: rgba(26,26,26,.55); margin-bottom: 1.5rem; }
+
+    .demo-form { display: grid; gap: 1rem; }
+    .demo-form input, .demo-form textarea, .demo-form select {
+      width: 100%; border: 1px solid rgba(26,26,26,.15); border-radius: .7rem;
+      padding: .85rem 1rem; background: #fff; color: var(--ace-black); font-family: var(--ace-font);
+    }
+    .demo-form textarea { min-height: 120px; resize: vertical; }
+    .demo-form label { display: grid; gap: .4rem; font-size: .82rem; font-weight: 700; }
+    .demo-form button {
+      padding: .9rem 2rem; border-radius: 2.5rem;
+      background: var(--ace-black); color: var(--ace-cream);
+      border: none; font-weight: 700; font-size: .95rem;
+      cursor: pointer; transition: .2s; font-family: var(--ace-font);
+    }
+    .demo-form button:hover { background: var(--ace-dark); }
+
+    .footer {
+      background: var(--ace-black); border-top: 1px solid rgba(255,255,255,.06);
+      padding: 3rem 2rem 2rem; color: rgba(245,240,232,.5); font-size: .82rem;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer h4 { color: var(--ace-cream); font-size: .85rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+    .footer a { color: rgba(245,240,232,.5); transition: .2s; }
+    .footer a:hover { color: var(--ace-gold); }
+    .footer-col p { margin-bottom: .35rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: .5rem; }
+    .footer-social a { font-size: 1.2rem; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; font-size: .75rem; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/ace-no-3/" class="nav-logo">ACE <span>No. 3</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/ace-no-3/">Home</a>
+      <a href="/ace-no-3/menu.html">Menu</a>
+      <a href="/ace-no-3/story.html">Story</a>
+      <a href="/ace-no-3/catering.html">Catering</a>
+      <a href="/ace-no-3/locations.html">Locations</a>
+      <a href="https://order.toasttab.com/online/ace-belmontvillage" class="nav-order" target="_blank" rel="noopener">Order Now</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Visit Us</h1>
+      <p>Four locations across Charlotte. Same burgers, same philosophy.</p>
+    </div>
+
+    <div class="hours-note">
+      <div class="note-card">
+        <strong>Standard hours:</strong> Sun&#8211;Thu: 11am&#8211;9pm &nbsp;|&nbsp; Fri&#8211;Sat: 11am&#8211;10pm<br>
+        Half-priced milkshakes: Mon&#8211;Fri, 2&#8211;4 PM
+      </div>
+    </div>
+
+    <div class="locations-grid">
+      <div class="loc-selector" role="tablist" aria-label="Select a location">
+        <button class="loc-btn active" data-loc="belmont" role="tab" aria-selected="true">
+          Belmont Village
+          <small>1001 Belmont Ave</small>
+        </button>
+        <button class="loc-btn" data-loc="center-city" role="tab" aria-selected="false">
+          Center City
+          <small>101 S Tryon St</small>
+        </button>
+        <button class="loc-btn" data-loc="concord" role="tab" aria-selected="false">
+          Concord Mills
+          <small>Concord, NC</small>
+        </button>
+        <button class="loc-btn" data-loc="myers" role="tab" aria-selected="false">
+          Myers Park
+          <small>829 Providence Rd</small>
+        </button>
+      </div>
+
+      <div id="belmont" class="loc-detail active">
+        <h2>Belmont Village</h2>
+        <div class="subtitle">The original</div>
+        <div class="info-grid">
+          <div class="info-block">
+            <h3>Address</h3>
+            <p>1001 Belmont Ave<br>Charlotte, NC 28205</p>
+          </div>
+          <div class="info-block">
+            <h3>Phone</h3>
+            <p><a href="tel:7049102200">704-910-2200</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Email</h3>
+            <p><a href="mailto:ace.bv@eat704.com">ace.bv@eat704.com</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Hours</h3>
+            <div class="hours-list">
+              <div><span>Sun&#8211;Thu</span><span>11am&#8211;9pm</span></div>
+              <div><span>Fri&#8211;Sat</span><span>11am&#8211;10pm</span></div>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>Parking</h3>
+            <p>Free street parking available. Please don&#8217;t fill up neighbors&#8217; lots.</p>
+          </div>
+          <div class="info-block">
+            <h3>Order</h3>
+            <p><a href="https://order.toasttab.com/online/ace-belmontvillage" target="_blank" rel="noopener">Order online for pickup &rarr;</a></p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="https://www.google.com/maps/place/1001+Belmont+Ave+Charlotte+NC+28205" class="btn-primary" target="_blank" rel="noopener">Get Directions</a>
+          <a href="https://order.toasttab.com/online/ace-belmontvillage" class="btn-outline" target="_blank" rel="noopener">Order Now</a>
+        </div>
+      </div>
+
+      <div id="center-city" class="loc-detail">
+        <h2>Center City</h2>
+        <div class="subtitle">Uptown at One South</div>
+        <div class="info-grid">
+          <div class="info-block">
+            <h3>Address</h3>
+            <p>101 S Tryon St Unit 120<br>Charlotte, NC 28280</p>
+          </div>
+          <div class="info-block">
+            <h3>Phone</h3>
+            <p><a href="tel:7044702435">704-470-2435</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Hours</h3>
+            <div class="hours-list">
+              <div><span>Sun&#8211;Thu</span><span>11am&#8211;9pm</span></div>
+              <div><span>Fri&#8211;Sat</span><span>11am&#8211;10pm</span></div>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>Order</h3>
+            <p><a href="https://order.toasttab.com/online/ace-no-3-uptown" target="_blank" rel="noopener">Order online for pickup &rarr;</a></p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="https://www.google.com/maps/place/101+S+Tryon+St+Charlotte+NC+28280" class="btn-primary" target="_blank" rel="noopener">Get Directions</a>
+          <a href="https://order.toasttab.com/online/ace-no-3-uptown" class="btn-outline" target="_blank" rel="noopener">Order Now</a>
+        </div>
+      </div>
+
+      <div id="concord" class="loc-detail">
+        <h2>Concord Mills</h2>
+        <div class="subtitle">Concord, NC</div>
+        <div class="info-grid">
+          <div class="info-block">
+            <h3>Phone</h3>
+            <p><a href="tel:9808198190">980-819-8190</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Hours</h3>
+            <div class="hours-list">
+              <div><span>Sun&#8211;Thu</span><span>11am&#8211;9pm</span></div>
+              <div><span>Fri&#8211;Sat</span><span>11am&#8211;10pm</span></div>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>Order</h3>
+            <p><a href="https://order.toasttab.com/online/ace-concordmills" target="_blank" rel="noopener">Order online for pickup &rarr;</a></p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="https://order.toasttab.com/online/ace-concordmills" class="btn-primary" target="_blank" rel="noopener">Order Now</a>
+        </div>
+      </div>
+
+      <div id="myers" class="loc-detail">
+        <h2>Myers Park</h2>
+        <div class="subtitle">829 Providence Road</div>
+        <div class="info-grid">
+          <div class="info-block">
+            <h3>Address</h3>
+            <p>829 Providence Rd<br>Charlotte, NC 28207</p>
+          </div>
+          <div class="info-block">
+            <h3>Phone</h3>
+            <p><a href="tel:7045260204">704-526-0204</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Hours</h3>
+            <div class="hours-list">
+              <div><span>Sun&#8211;Thu</span><span>11am&#8211;9pm</span></div>
+              <div><span>Fri&#8211;Sat</span><span>11am&#8211;10pm</span></div>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>Order</h3>
+            <p><a href="https://order.toasttab.com/online/ace-no-3-3rd-location-829-providence-rd" target="_blank" rel="noopener">Order online for pickup &rarr;</a></p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="https://www.google.com/maps/place/829+Providence+Rd+Charlotte+NC+28207" class="btn-primary" target="_blank" rel="noopener">Get Directions</a>
+          <a href="https://order.toasttab.com/online/ace-no-3-3rd-location-829-providence-rd" class="btn-outline" target="_blank" rel="noopener">Order Now</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="contact-section">
+      <h2>Get in touch</h2>
+      <p>General inquiries, group orders, or just want to say hey.</p>
+      <form class="demo-form" data-demo-form>
+        <label>
+          Name
+          <input type="text" placeholder="Your name">
+        </label>
+        <label>
+          Email
+          <input type="email" placeholder="you@example.com">
+        </label>
+        <label>
+          Location
+          <select>
+            <option value="">Select a location</option>
+            <option>Belmont Village</option>
+            <option>Center City</option>
+            <option>Concord Mills</option>
+            <option>Myers Park</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea placeholder="How can we help?"></textarea>
+        </label>
+        <button type="submit">Send Message</button>
+        <p style="font-size:.78rem;color:rgba(26,26,26,.4);text-align:center;margin-top:.5rem">Demo form — no information will be sent.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>ACE No. 3</h4>
+        <p>Smash burgers, shakes &amp; beer.</p>
+        <p>Charlotte, NC</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/aceno.3" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/aceno.3burgers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p><a href="/ace-no-3/locations.html#belmont">Belmont Village</a></p>
+        <p><a href="/ace-no-3/locations.html#center-city">Center City</a></p>
+        <p><a href="/ace-no-3/locations.html#concord">Concord Mills</a></p>
+        <p><a href="/ace-no-3/locations.html#myers">Myers Park</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <p><a href="/ace-no-3/menu.html">Menu</a></p>
+        <p><a href="/ace-no-3/story.html">Our Story</a></p>
+        <p><a href="/ace-no-3/catering.html">Catering</a></p>
+        <p><a href="/ace-no-3/locations.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Part of</h4>
+        <p><a href="https://www.eat704.com" target="_blank" rel="noopener">High Tide Hospitality Group</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>This is an unofficial concept presentation and is not affiliated with or operated by ACE No. 3 or High Tide Hospitality Group.</p>
+    </div>
+  </footer>
+  <div class="demo-toast" role="status"></div>
+  <script src="../site-core.js"></script>
+  <script>
+    (function() {
+      var buttons = document.querySelectorAll('.loc-btn');
+      var panels = document.querySelectorAll('.loc-detail');
+
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var loc = this.getAttribute('data-loc');
+
+          buttons.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          this.classList.add('active'); this.setAttribute('aria-selected', 'true');
+
+          panels.forEach(function(p) {
+            p.classList.toggle('active', p.id === loc);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

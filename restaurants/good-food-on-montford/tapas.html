@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tapas Builder · Good Food on Montford</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match Good Food's aesthetic */
+.tapas-mat {
+  background: radial-gradient(circle, #4a3728 0%, #170f09 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.tapas-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .tapas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--a);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--p);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Good Food on Montford</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="tapas.html" class="active">Tapas Builder</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="reserve.html">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 4rem 2rem; min-height: 35vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Chef Bruce Moffett · Montford Drive</p>
+      <h1>Tapas &amp; Wine Planner</h1>
+      <p class="hero-sub">Design your signature global small plates tasting tour matched with organic wines</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center;">Tasting Tour Builder</h2>
+      
+      <div class="tapas-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow);">
+        
+        <!-- Left: Tour Card Visualizer -->
+        <div class="tapas-mat">
+          <span style="font-size: 0.78rem; font-weight: 600; color: var(--a); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="tap-tag-display">CHEF'S SPECIALTY</span>
+          <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Playfair Display', serif; margin: 0 0 0.8rem 0;" id="tap-title-display">Korean Beef Tapas</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: var(--a); margin: 0 0 1.2rem 0;" id="tap-price-display">$16.00</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="tap-desc-display">Marinated Korean beef strips over pan-seared crispy rice blocks with scallion kimchi, served with house farmhouse cheeses.</p>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">1. Choose Tapas Main</label>
+            <select id="tap-main" onchange="updateTour()">
+              <option value="beef" selected>Korean Beef with Crispy Rice ($16.00)</option>
+              <option value="buns">Steamed Pork Belly Buns ($14.00)</option>
+              <option value="pasta">Garganelli with House Sausage ($15.00)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">2. Select Starter / Cheese</label>
+            <select id="tap-starter" onchange="updateTour()">
+              <option value="cheese" selected>Southern Farmhouse Cheeses (+$12.00)</option>
+              <option value="calamari">Crispy Calamari with Sweet Pepper Jelly (+$10.00)</option>
+              <option value="none">No Starter (+$0.00)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="control-label">3. Select Eclectic Wine Pairing</label>
+            <select id="tap-wine" onchange="updateTour()">
+              <option value="none" selected>No Wine Pairing (+$0.00)</option>
+              <option value="pinot">Willamette Valley Pinot Noir (+$14.00)</option>
+              <option value="sauv">Marlborough Sauvignon Blanc (+$12.00)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background:var(--p); color:rgba(255,255,255,0.7); text-align:center; padding:2.5rem 2rem; font-size:.82rem;">
+    <div class="container">
+      <p>Good Food on Montford · 1701 Montford Dr · Charlotte, NC 28209 · (704) 525-5554</p>
+      <p class="disclosure" style="color:rgba(255,255,255,0.35); font-style:italic;">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
+
+  <script>
+    const mainData = {
+      beef: { tag: "GLOBAL SPECIALTY", name: "Korean Beef Tapas", basePrice: 16.00, label: "marinated Korean beef strips over griddled crispy rice blocks with scallion kimchi" },
+      buns: { tag: "STEAMED BUN SPECIALTY", name: "Pork Belly Buns", basePrice: 14.00, label: "fluffy steamed buns loaded with glazed pork belly, pickled cucumbers, and hoisin" },
+      pasta: { tag: "HOUSE-MADE PASTA", name: "Sausage Garganelli", basePrice: 15.00, label: "hand-rolled garganelli pasta tossed with crumbled house Italian sausage, garlic, and fresh tomato broth" }
+    };
+
+    const starterData = {
+      cheese: { name: "Farmhouse Cheese", label: ", accompanied by our Southern Farmhouse Cheese board with truffled chutney", charge: 12.00 },
+      calamari: { name: "Crispy Calamari", label: ", accompanied by a basket of crispy cornmeal-crusted calamari with hot pepper jelly", charge: 10.00 },
+      none: { name: "", label: "", charge: 0.00 }
+    };
+
+    const wineData = {
+      none: { name: "", label: "", charge: 0.00 },
+      pinot: { name: "Pinot Noir", label: ", paired with a glass of earthy Willamette Valley Pinot Noir", charge: 14.00 },
+      sauv: { name: "Sauvignon Blanc", label: ", paired with a glass of crisp Marlborough Sauvignon Blanc", charge: 12.00 }
+    };
+
+    function updateTour() {
+      const mainKey = document.getElementById('tap-main').value;
+      const starterKey = document.getElementById('tap-starter').value;
+      const wineKey = document.getElementById('tap-wine').value;
+
+      const main = mainData[mainKey];
+      const starter = starterData[starterKey];
+      const wine = wineData[wineKey];
+
+      const totalPrice = main.basePrice + starter.charge + wine.charge;
+
+      document.getElementById('tap-tag-display').innerText = main.tag;
+      document.getElementById('tap-title-display').innerText = main.name;
+      document.getElementById('tap-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A gourmet small plate of ${main.label}${starter.label}${wine.label}.`;
+      
+      document.getElementById('tap-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateTour();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

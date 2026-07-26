@@ -1,18 +1,5 @@
-# Presentation Rules
+# Showroom Presentation Rules
 
-Every restaurant in the showcase must follow these presentation rules:
-
-## Comparison Button
-- The floating current-site comparison button is required
-- If the restaurant has no online presence, `comparisonButtonNotApplicable` must be set to `true`
-- The button must open in a new tab with `noopener noreferrer`
-- It must be keyboard accessible with a clear accessible label
-- It must not cover navigation or primary calls to action
-- Safe-area spacing must be respected on mobile
-
-## Quality
-- All pages must have comparable visual polish
-- No page may look unfinished compared to others
-- All links must work
-- All images must load
-- Content must be accurate and verified
+1. **Floating Comparison Button**: Presenters should use the floating comparison button at the corner of the screen to transition to the restaurant's current site for comparison.
+2. **Neutral Tone**: Do not insult or criticize the restaurant's current online presence. Let the visual difference speak for itself.
+3. **Verified Information Only**: During presentations, ensure all references to the restaurant's services, hours, or locations match current public records.

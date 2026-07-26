@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carolina Beer Temple | Custom Draft Beer Flights</title>
+  <meta name="description" content="Design your custom beer flight at Carolina Beer Temple. Choose four premium Belgian or local Carolina draft pours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* Styling for the interactive flight mat */
+    .flight-mat {
+      background: radial-gradient(circle, #29211a 0%, #0d0a08 100%);
+      border: 1.5px solid var(--color-a);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-lg);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s;
+      color: #fff;
+    }
+    .flight-slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .flight-slot {
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 1rem 0.5rem;
+      background: rgba(255,255,255,0.02);
+      transition: all 0.3s;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .flight-slot.active {
+      border-style: solid;
+      border-color: var(--color-p);
+      background: rgba(197, 97, 58, 0.08);
+    }
+    .flight-glass-visual {
+      width: 32px;
+      height: 50px;
+      border: 2px solid var(--color-text-light);
+      border-radius: 4px 4px 15px 15px;
+      background: #eab308; /* Beer amber color */
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Carolina Beer Temple Home">
+        <div class="logo-icon" aria-hidden="true">&#9876;</div>
+        <div>
+          <span class="logo-text">Carolina Beer Temple</span>
+          <span class="logo-sub">Matthews, NC</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="taps.html">Tap List</a></li>
+          <li><a href="flight.html" class="active">Beer Flights</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="visit.html#newsletter" class="header-cta">Subscribe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Page Header -->
+    <header class="page-header text-center" style="padding: 60px 0 30px;">
+      <div class="wrap">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: #fff;">Custom Beer Flights</h2>
+        <p style="color: var(--tx2); max-width: 600px; margin: 10px auto 0 auto; font-size: 1.1rem;">Sample and compare four draft offerings from our rotating tap list. Served on a custom tasting mat with notes.</p>
+      </div>
+    </header>
+
+    <!-- Interactive Beer Flight Builder -->
+    <section class="wrap" style="margin-bottom: 5rem;">
+      <div class="interactive-panel" style="background: var(--bg2); padding: 40px 32px; border-radius: var(--r);">
+        <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: 8px;">Tasting Mat Flight Builder</h3>
+        <p style="text-align: center; color: var(--tx2); font-size: 1.02rem; max-width: 600px; margin: 0 auto 2.5rem auto;">Select a taster pour for each of the four slots to construct your customized tasting flight.</p>
+        
+        <div class="catering-grid" style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: start;">
+          
+          <!-- Left Side: Flight Mat Visualizer -->
+          <div class="flight-mat">
+            <div class="flight-slots-grid">
+              <div class="flight-slot active" id="slot-0">
+                <div class="flight-glass-visual" id="glass-0"></div>
+                <span style="font-size:0.7rem; font-weight:700;" id="slot-name-0">Empty</span>
+              </div>
+              <div class="flight-slot active" id="slot-1">
+                <div class="flight-glass-visual" id="glass-1"></div>
+                <span style="font-size:0.7rem; font-weight:700;" id="slot-name-1">Empty</span>
+              </div>
+              <div class="flight-slot active" id="slot-2">
+                <div class="flight-glass-visual" id="glass-2"></div>
+                <span style="font-size:0.7rem; font-weight:700;" id="slot-name-2">Empty</span>
+              </div>
+              <div class="flight-slot active" id="slot-3">
+                <div class="flight-glass-visual" id="glass-3"></div>
+                <span style="font-size:0.7rem; font-weight:700;" id="slot-name-3">Empty</span>
+              </div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="flight-display-title">Custom 4-Pour Flight</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-a); margin: 0.5rem 0;" id="flight-display-price">$12.00</p>
+          </div>
+
+          <!-- Right Side: Controls -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <div style="margin-bottom: 1.2rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--tx); display: block; margin-bottom: 0.4rem;">Slot 1</label>
+              <select id="select-0" onchange="updateFlight(0)" style="width: 100%; padding: 10px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="abt">St. Bernardus Abt 12 ($4.00)</option>
+                <option value="tripel">St. Bernardus Tripel ($3.50)</option>
+                <option value="ipa">Resident Culture Hazy IPA ($3.00)</option>
+                <option value="jalapeno">Birdsong Jalapeno Pale ($3.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--tx); display: block; margin-bottom: 0.4rem;">Slot 2</label>
+              <select id="select-1" onchange="updateFlight(1)" style="width: 100%; padding: 10px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="tripel" selected>St. Bernardus Tripel ($3.50)</option>
+                <option value="abt">St. Bernardus Abt 12 ($4.00)</option>
+                <option value="ipa">Resident Culture Hazy IPA ($3.00)</option>
+                <option value="jalapeno">Birdsong Jalapeno Pale ($3.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--tx); display: block; margin-bottom: 0.4rem;">Slot 3</label>
+              <select id="select-2" onchange="updateFlight(2)" style="width: 100%; padding: 10px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="ipa" selected>Resident Culture Hazy IPA ($3.00)</option>
+                <option value="abt">St. Bernardus Abt 12 ($4.00)</option>
+                <option value="tripel">St. Bernardus Tripel ($3.50)</option>
+                <option value="jalapeno">Birdsong Jalapeno Pale ($3.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--tx); display: block; margin-bottom: 0.4rem;">Slot 4</label>
+              <select id="select-3" onchange="updateFlight(3)" style="width: 100%; padding: 10px; border: 1px solid var(--bdr); border-radius: var(--r-s);">
+                <option value="jalapeno" selected>Birdsong Jalapeno Pale ($3.00)</option>
+                <option value="abt">St. Bernardus Abt 12 ($4.00)</option>
+                <option value="tripel">St. Bernardus Tripel ($3.50)</option>
+                <option value="ipa">Resident Culture Hazy IPA ($3.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3.5rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 2rem;">
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;" id="display-flight-name">Custom 4-Pour Flight</h4>
+          <p style="font-size: 0.9rem; color: var(--tx2); max-width: 600px; margin: 0 auto;" id="display-flight-desc">A tasting flight of Abt 12, Tripel, Hazy IPA, and Jalapeno Pale. Average ABV: 7.7%.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flight Packages -->
+    <section class="section-dark">
+      <div class="wrap">
+        <h3 class="section-title text-center" style="color: #fff; margin-bottom: 2rem;">Curated Tasting Flights</h3>
+        <div class="menu-preview">
+          
+          <div class="menu-item">
+            <h4>Belgian Abbey Flight <span class="price">$14.00</span></h4>
+            <p>Four 5oz pours of traditional Belgian monastic ales: St. Bernardus Pater 6, Prior 8, Abt 12, and Tripel. Rich, malty, and complex.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Carolina Hop Harvest <span class="price">$12.00</span></h4>
+            <p>A selection of the Carolinas' best IPAs: Resident Culture, Birdsong, Divine Barrel, and Sycamore brews. Hazy, piney, and crisp.</p>
+          </div>
+
+          <div class="menu-item">
+            <h4>Sour & Wild Ales Flight <span class="price">$13.00</span></h4>
+            <p>A flight of tart, puckery ales: Duchesse de Bourgogne Flemish Red, local kettle sours, and dry-hopped wild ferments.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h3>Carolina Beer Temple</h3>
+        <p>Your premier craft beer shop and official St. Bernardus taproom in historic Matthews, North Carolina. Over 18 rotating taps and hundreds of local/Belgian cans.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          195 N Trade St<br>
+          Matthews, NC 28105<br>
+          Phone: (704) 847-2337
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">
+          Mon - Thu: 2:00 PM - 10:00 PM<br>
+          Fri - Sat: 12:00 PM - 11:00 PM<br>
+          Sunday: 12:00 PM - 8:00 PM
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Carolina Beer Temple. All rights reserved. Unofficial concept presentation.</p>
+    </div>
+  </footer>
+
+  <script>
+    const beerData = {
+      abt: { name: "Abt 12 Quad", price: 4.00, abv: 10.0, color: "#1e1b4b" },
+      tripel: { name: "St.B Tripel", price: 3.50, abv: 8.0, color: "#f59e0b" },
+      ipa: { name: "RC Hazy IPA", price: 3.00, abv: 6.5, color: "#fbbf24" },
+      jalapeno: { name: "BS Jalapeno", price: 3.00, abv: 5.5, color: "#eab308" }
+    };
+
+    function updateFlight() {
+      let total = 0;
+      let abvSum = 0;
+      const names = [];
+
+      for (let i = 0; i < 4; i++) {
+        const val = document.getElementById(`select-${i}`).value;
+        const b = beerData[val];
+
+        total += b.price;
+        abvSum += b.abv;
+        names.push(b.name);
+
+        // Update glass visual color
+        document.getElementById(`glass-${i}`).style.backgroundColor = b.color;
+        document.getElementById(`slot-name-${i}`).innerText = b.name;
+      }
+
+      const abvAvg = abvSum / 4;
+
+      document.getElementById('flight-display-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-flight-desc').innerText = `A tasting flight of ${names.join(', ')}. Average ABV: ${abvAvg.toFixed(1)}%.`;
+    }
+
+    // Trigger initial load
+    window.addEventListener('load', () => {
+      updateFlight();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story · Dressler's</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0f172a;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#1a1a1a;--muted:#8899aa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#0f172a,#1a1a2e);padding:3rem 2rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
+.page-header p{opacity:.55;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
+.section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:2rem 0 1rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section p{font-size:.92rem;line-height:1.7;opacity:.65}
+.timeline{position:relative;padding-left:2rem;margin:2rem 0}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:rgba(201,168,76,.15)}
+.timeline-item{position:relative;margin-bottom:1.5rem;padding-left:1rem}
+.timeline-item::before{content:'';position:absolute;left:-1.5rem;top:.35rem;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.timeline-item .year{font-family:'Fraunces',serif;color:var(--gold);font-size:.85rem;font-weight:600}
+.timeline-item .desc{font-size:.85rem;opacity:.5;margin:.15rem 0 0}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,168,76,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dressler's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="wine.html">Wine Program</a>
+    <a href="story.html">Our Story</a>
+    <a href="private-dining.html">Private Dining</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>Where it all started for Rare Roots Hospitality</p>
+</header>
+<section class="section">
+  <h2>From Dream to Destination</h2>
+  <p>Dressler's Restaurant is where it all started for Rare Roots Hospitality Group. Chasing a lifelong dream, Kim and Jon Dressler opened the first Dressler's in Huntersville in 2003, and expanded to add the location at The Metropolitan in 2010. For over two decades, Dressler's has existed to provide memorable evenings and exceptional service.</p>
+  <p>Named one of Charlotte's best steakhouses and seafood destinations, Dressler's combines prime cuts of beef with imaginative seafood preparations, an extensive wine list, and a warm, sophisticated atmosphere. The Metropolitan location features an expansive patio with one of the best views of the Uptown Charlotte skyline, nestled along the Little Sugar Creek Greenway.</p>
+  <div class="timeline">
+    <div class="timeline-item"><span class="year">2003</span><p class="desc">Kim and Jon Dressler open the first Dressler's in Huntersville's Birkdale Village</p></div>
+    <div class="timeline-item"><span class="year">2010</span><p class="desc">Dressler's Metropolitan opens at The Metropolitan in Midtown Charlotte</p></div>
+    <div class="timeline-item"><span class="year">2015+</span><p class="desc">Rare Roots Hospitality Group expands with new concepts while Dressler's remains the flagship</p></div>
+    <div class="timeline-item"><span class="year">Today</span><p class="desc">Dressler's continues to serve Charlotte with prime steaks, fresh seafood, and skyline patio dining</p></div>
+  </div>
+  <p>Part of the Rare Roots Hospitality family — which includes Fin &amp; Fino, Chapter 6, The Porter's House, and more — Dressler's remains the cornerstone of the group's commitment to exceptional dining experiences.</p>
+</section>
+<footer>
+  <p>Dressler's · 1100 Metropolitan Ave #125 · Charlotte, NC 28204 · (704) 909-6295</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="private-dining.html">Private Dining</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

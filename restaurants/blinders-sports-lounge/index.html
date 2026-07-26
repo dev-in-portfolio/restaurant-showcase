@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinders Sports Lounge - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* absolute positions for visual wing graphics */
+    #node-wing-1 { top: 40px; left: 40px; }
+    #node-wing-2 { top: 40px; left: 140px; }
+    #node-wing-3 { top: 100px; left: 20px; }
+    #node-wing-4 { top: 100px; left: 160px; }
+    #node-wing-5 { top: 60px; left: 90px; }
+    #node-wing-6 { top: 110px; left: 95px; }
+    #node-dip-cup { top: 140px; left: 95px; font-size: 0.85rem; border-color: var(--color-gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Blinders
+          <span>Sports Lounge South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="schedule.html">Watch Schedule</a>
+        <a href="about.html">About</a>
+        <a href="services.html">VIP Planner</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte's Premium Watch Experience • 21+ Only</span>
+        <h2 class="hero-title">Blinders Sports Lounge</h2>
+        <p class="hero-desc">"Gourmet duck fat wings, smash burgers, and expertly crafted cocktails served in an upscale, high-energy South End viewing arena."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>⚽ South End: 225 W Tremont Ave. Calibrated HD Screens & Sports Betting Feeds Active.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Elevated Game Day Dining</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Blinders Sports Lounge in South End Charlotte. We are a premier 21+ watch destination combining elite audio-visual systems with a scratch-made gourmet menu. Skip the greasy diner baskets; our kitchen prepares crispy wings cooked in rich duck fat, double smash burger patties, and artisanal flatbreads, paired with a full craft cocktail program.
+      </p>
+      <a href="about.html" style="color: var(--color-emerald); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-emerald); padding-bottom: 4px; transition: var(--transition-fast);">
+        View Our Screen Configurations ➔
+      </a>
+    </section>
+
+    <!-- Interactive Wing Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Duck Fat Wing Customizer</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Design your custom wings plate. Choose count scale, gourmet glaze coatings, and premium dipping sauces.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Platter visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="wing-platter-wireframe">
+            <div class="wing-platter-rim"></div>
+            <!-- Wing items -->
+            <div class="wing-visual-node" id="node-wing-1">🍗</div>
+            <div class="wing-visual-node" id="node-wing-2">🍗</div>
+            <div class="wing-visual-node" id="node-wing-3">🍗</div>
+            <div class="wing-visual-node" id="node-wing-4">🍗</div>
+            <div class="wing-visual-node" id="node-wing-5">🍗</div>
+            <div class="wing-visual-node" id="node-wing-6">🍗</div>
+            <!-- Dip -->
+            <div class="wing-visual-node" id="node-dip-cup">Ranch</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Wing Count</label>
+            <div class="option-grid" id="wing-options">
+              <button class="option-btn active" onclick="setWings(6, 10.50, '6 Wings')">6 Wings ($10.50)</button>
+              <button class="option-btn" onclick="setWings(12, 19.50, '12 Wings')">12 Wings ($19.50)</button>
+              <button class="option-btn" onclick="setWings(18, 27.50, '18 Wings')">18 Wings ($27.50)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Glaze Style</label>
+            <div class="option-grid" id="glaze-options">
+              <button class="option-btn active" onclick="setGlaze('buffalo', 'Spicy Buffalo')">Spicy Buffalo</button>
+              <button class="option-btn" onclick="setGlaze('honey', 'Hot Honey Glaze')">Hot Honey</button>
+              <button class="option-btn" onclick="setGlaze('lemon', 'Lemon Pepper Rub')">Lemon Pepper</button>
+              <button class="option-btn" onclick="setGlaze('garlic', 'Garlic Parmesan')">Garlic Parm</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Premium Dipping Sauce</label>
+            <div class="option-grid" id="dip-options">
+              <button class="option-btn active" onclick="setDip('ranch', 'Truffle Ranch')">Truffle Ranch</button>
+              <button class="option-btn" onclick="setDip('blue', 'Blue Cheese')">Blue Cheese</button>
+              <button class="option-btn" onclick="setDip('aioli', 'Herb Aioli')">Herb Aioli</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Gourmet Basket Order</span>
+        <h4 class="builder-display-title" id="display-wing-name">6 Spicy Buffalo Wings</h4>
+        <p id="display-wing-sauce" style="color: var(--color-emerald); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Dipped in Truffle Ranch</p>
+        <div class="builder-display-price" id="display-wing-price">$10.50</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-wing-desc">Six crispy jumbo wings cooked in rich duck fat, coated in Spicy Buffalo, served with truffle ranch dipping sauce and celery.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Game Drink Pairer</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Match your favorite live sports watch with our tailored cocktail or draft beer flight suggestions. Select sports categories to review tasting guides. Click below to view the selector.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Drink Pairer
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>225 W Tremont Ave<br>Charlotte, NC 28203</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Wed: 5:00 PM - 11:00 PM<br>Thu: 5:00 PM - 12:00 AM<br>Fri: 5:00 PM - 1:00 AM<br>Sat: 11:00 AM - 1:00 AM<br>Sun: 11:00 AM - 12:00 AM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Reservations via website | 21+ Age Policy | Validated Deck Parking</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Blinders Sports Lounge. South End Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedWings = { count: 6, price: 10.50, name: '6 Wings' };
+    let selectedGlaze = { key: 'buffalo', name: 'Spicy Buffalo' };
+    let selectedDip = { key: 'ranch', name: 'Truffle Ranch' };
+
+    function setWings(count, price, name) {
+      const buttons = document.getElementById('wing-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedWings = { count, price, name };
+      updateDisplay();
+    }
+
+    function setGlaze(key, name) {
+      const buttons = document.getElementById('glaze-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedGlaze = { key, name };
+      updateDisplay();
+    }
+
+    function setDip(key, name) {
+      const buttons = document.getElementById('dip-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedDip = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      document.getElementById('display-wing-price').innerText = `$${selectedWings.price.toFixed(2)}`;
+      document.getElementById('display-wing-name').innerText = `${selectedWings.count} ${selectedGlaze.name} Wings`;
+      document.getElementById('display-wing-sauce').innerText = `Dipped in ${selectedDip.name}`;
+
+      document.getElementById('display-wing-desc').innerText = `${selectedWings.name} cooked in rich duck fat, coated in ${selectedGlaze.name}, served with ${selectedDip.name.toLowerCase()} dipping sauce and fresh celery sticks.`;
+
+      // Update graphic overlay items
+      const allWingNodes = document.querySelectorAll('.wing-visual-node');
+      allWingNodes.forEach(node => {
+        node.style.opacity = '0';
+        node.style.transform = 'scale(0.5)';
+      });
+
+      // Show wing nodes up to count
+      for (let i = 1; i <= selectedWings.count; i++) {
+        // Since we only have 6 visual slots max in the wireframe basket representation:
+        const slotIdx = i > 6 ? (i % 6 || 6) : i;
+        const el = document.getElementById(`node-wing-${slotIdx}`);
+        if (el) {
+          el.style.opacity = '1';
+          el.style.transform = 'scale(1)';
+        }
+      }
+
+      // Show Dip cup label
+      const dipEl = document.getElementById('node-dip-cup');
+      dipEl.innerText = selectedDip.name.replace('Truffle ', '').replace(' Sauce', '');
+      dipEl.style.opacity = '1';
+      dipEl.style.transform = 'scale(1)';
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

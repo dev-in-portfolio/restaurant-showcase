@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HEX Coffee Roasters — Charlotte, NC</title>
+<meta name="description" content="HEX Coffee Roasters — Unashamedly Bright Coffees. Specialty coffee roaster in Charlotte, NC. Light roast, terroir-driven single origins.">
+<link rel="stylesheet" href="../site-core.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&amp;display=swap">
+<style>
+:root{--coral:#e86a5f;--teal:#2a9d8f;--gold:#d4a747;--cream:#fdf8f0;--dark:#1a1614;--light:#fffaf5}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--dark);background:var(--light);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.container{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;max-width:72rem;margin:0 auto}
+.logo{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.55rem;letter-spacing:-.04em;text-decoration:none;color:var(--dark)}
+.logo span{color:var(--coral)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dark);transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--dark)}
+
+/* hero */
+.hero{text-align:center;padding:5rem 1.5rem 4rem;background:linear-gradient(180deg,var(--cream) 0%,#fff 100%);position:relative;overflow:hidden}
+.hero::before{content:'ESTD.20-15';position:absolute;top:2rem;right:2rem;font-family:'Fraunces',Georgia,serif;font-size:.8rem;font-weight:600;letter-spacing:.15em;color:var(--teal);opacity:.5}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);margin:0 0 1.2rem;color:var(--dark)}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero .tagline{font-size:clamp(1rem,2.2vw,1.35rem);font-weight:400;color:#5a524b;max-width:36rem;margin:0 auto 1.8rem;line-height:1.5}
+.hero .tagline strong{display:block;font-family:'Fraunces',Georgia,serif;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--teal);font-weight:600;margin-top:.6rem}
+.hero-cta{display:inline-flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:.85rem 2rem;border-radius:2.5rem;font-weight:700;font-size:.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;transition:transform .2s,box-shadow .2s;cursor:pointer;border:0}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.btn-primary{background:var(--coral);color:#fff}
+.btn-secondary{background:transparent;color:var(--dark);border:2px solid var(--dark)}
+
+/* sections */
+.section{padding:4.5rem 1.5rem}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);margin:0 0 .6rem;text-align:center}
+.section-sub{text-align:center;color:#5a524b;max-width:32rem;margin:0 auto 3rem;font-size:1rem}
+
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:68rem;margin:0 auto}
+.feature-card{background:#fff;border-radius:1.5rem;padding:2.2rem 1.8rem;box-shadow:0 2px 20px rgba(0,0,0,.04);text-align:center;transition:transform .25s,box-shadow .25s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.feature-icon{font-size:2.2rem;margin-bottom:.8rem;display:block}
+.feature-card h3{font-size:1.2rem;margin:0 0 .4rem}
+.feature-card p{font-size:.9rem;color:#5a524b;margin:0;line-height:1.5}
+
+/* featured coffees */
+.coffee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem;max-width:68rem;margin:0 auto}
+.coffee-card{background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 16px rgba(0,0,0,.04);border-left:4px solid var(--gold)}
+.coffee-card .origin{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--teal);font-weight:700}
+.coffee-card h3{font-size:1.1rem;margin:.3rem 0 .5rem}
+.coffee-card .notes{font-size:.85rem;color:#5a524b;margin:0 0 .6rem}
+.coffee-card .price{font-weight:700;color:var(--coral);font-size:.9rem}
+
+/* locations preview */
+.loc-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:56rem;margin:0 auto}
+.loc-card{background:#fff;border-radius:1.5rem;padding:2rem;box-shadow:0 2px 20px rgba(0,0,0,.04)}
+.loc-card .loc-name{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;font-weight:700;margin:0 0 .3rem}
+.loc-card address{font-style:normal;font-size:.9rem;color:#5a524b;margin:0 0 .6rem}
+.loc-card .loc-tag{display:inline-block;font-size:.68rem;text-transform:uppercase;letter-spacing:.11em;font-weight:700;padding:.25rem .75rem;border-radius:2rem;background:var(--teal);color:#fff}
+
+footer{background:var(--dark);color:rgba(255,255,255,.7);padding:3rem 1.5rem;text-align:center;font-size:.85rem}
+footer a{color:rgba(255,255,255,.9);text-decoration:none}
+footer a:hover{color:var(--gold)}
+footer .footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;padding:0;margin:0 0 1rem}
+
+@media(max-width:700px){
+nav{flex-wrap:wrap}
+.nav-links{display:none;flex-direction:column;width:100%;gap:.5rem;padding:1rem 0}
+.nav-links.open{display:flex}
+.nav-toggle{display:block}
+.hero{padding:3rem 1.5rem 2.5rem}
+.hero::before{top:1rem;right:1rem}
+.section{padding:2.5rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+<a href="index.html" class="logo">HEX<span>.</span></a>
+<button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="story.html">Story</a></li>
+<li><a href="brew.html">Brew</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<main id="main">
+
+<section class="hero">
+<h1><em>Unashamedly</em><br>Bright Coffees</h1>
+<p class="tagline">Light roast. Terroir-driven. Singular origins.<br>
+<strong>— Pointed Toward Provenance —</strong></p>
+<div class="hero-cta">
+<a href="menu.html" class="btn btn-primary">Explore Coffees</a>
+<a href="brew.html" class="btn btn-secondary">Find Your Coffee</a>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">What Makes HEX</h2>
+<p class="section-sub">Minimalist, architecturally-minded roasting focused on clarity and vibrancy.</p>
+<div class="features">
+<div class="feature-card">
+<span class="feature-icon">🔥</span>
+<h3>Light Roast Focus</h3>
+<p>We roast light to highlight acidity, sweetness, and the distinct character of each lot.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🌍</span>
+<h3>Terroir-Driven Sourcing</h3>
+<p>Direct relationships in Colombia, Kenya, Ethiopia, and Myanmar bring the farm to your cup.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🏠</span>
+<h3>Two Charlotte Homes</h3>
+<p>Our Plaza Midwood cafe and Camp North End kitchen &amp; wine bar serve the community daily.</p>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--cream)">
+<h2 class="section-title">Featured Coffees</h2>
+<p class="section-sub">Current rotating single-origin offerings</p>
+<div class="coffee-grid">
+<div class="coffee-card">
+<div class="origin">Colombia</div>
+<h3>Wilmer Lasso · Pink Bourbon</h3>
+<p class="notes">Starfruit, orange blossom, honey. Washed process, light roast.</p>
+<div class="price">$22 / 12oz</div>
+</div>
+<div class="coffee-card">
+<div class="origin">Kenya</div>
+<h3>Gachatha AA</h3>
+<p class="notes">Blackcurrant, tomato vine, brown sugar. Washed, light+ roast.</p>
+<div class="price">$24 / 12oz</div>
+</div>
+<div class="coffee-card">
+<div class="origin">Ethiopia</div>
+<h3>Konga Natural</h3>
+<p class="notes">Blueberry, jasmine, dark chocolate. Natural process, light roast.</p>
+<div class="price">$23 / 12oz</div>
+</div>
+<div class="coffee-card">
+<div class="origin">Myanmar</div>
+<h3>Ywangan Lot 7</h3>
+<p class="notes">Pomelo, lemongrass, raw honey. Washed, light roast.</p>
+<div class="price">$21 / 12oz</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Our Spaces</h2>
+<p class="section-sub">Two distinct locations, one commitment to quality.</p>
+<div class="loc-preview">
+<div class="loc-card">
+<div class="loc-tag">Plaza Midwood</div>
+<div class="loc-name">HEX Coffee</div>
+<address>1616 Central Ave, Charlotte, NC 28205</address>
+<p style="font-size:.85rem;color:#5a524b">Coffee bar · Retail beans · Minimalist tasting room</p>
+</div>
+<div class="loc-card">
+<div class="loc-tag">Camp North End</div>
+<div class="loc-name">HEX Coffee, Kitchen &amp; Natural Wines</div>
+<address>201 Camp Rd Suite 103, Charlotte, NC 28206</address>
+<p style="font-size:.85rem;color:#5a524b">Full kitchen · Natural wine bar · Indoor &amp; outdoor seating</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<ul class="footer-links">
+<li><a href="menu.html">Menu</a></li>
+<li><a href="story.html">Story</a></li>
+<li><a href="brew.html">Brew Guides</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://hex.coffee" target="_blank" rel="noopener">hex.coffee</a></li>
+</ul>
+<p>&copy; Concept design — HEX Coffee Roasters, Charlotte NC. ESTD.2015</p>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

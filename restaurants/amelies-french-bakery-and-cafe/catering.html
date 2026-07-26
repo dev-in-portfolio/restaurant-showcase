@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering & Events · Amélie's French Bakery & Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --navy: #1a1a2e;
+  --blush: #d4a5b5;
+  --gold: #c9a84c;
+  --cream: #faf3e0;
+  --rose: #e8a0bf;
+  --deep-rose: #c26a8a;
+  --charcoal: #2d2d3f;
+  --warm-white: #fff9f0;
+}
+body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.nav a:hover { color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--gold) !important; letter-spacing: 0; text-transform: none; }
+.page-header { background: linear-gradient(135deg, var(--navy) 0%, #16213e 100%); color: var(--cream); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { color: var(--blush); font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--navy); margin: 0 0 .25rem; text-align: center; }
+.section .subtitle { text-align: center; color: #888; font-style: italic; margin-bottom: 2.5rem; font-size: .95rem; }
+.event-planner { background: var(--warm-white); border-radius: 12px; padding: 2.5rem; border: 1px solid rgba(0,0,0,.06); max-width: 700px; margin: 0 auto 3rem; }
+.event-planner h3 { text-align: center; color: var(--navy); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.event-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .75rem; margin-bottom: 1.5rem; }
+.event-type-btn { background: #fff; border: 2px solid #eee; padding: 1rem .75rem; border-radius: 8px; cursor: pointer; text-align: center; transition: all .2s; font-family: 'DM Sans', sans-serif; }
+.event-type-btn:hover { border-color: var(--blush); }
+.event-type-btn.selected { border-color: var(--gold); background: var(--cream); }
+.event-type-btn .emoji { font-size: 1.5rem; display: block; margin-bottom: .35rem; }
+.event-type-btn .label { font-size: .82rem; font-weight: 600; color: var(--charcoal); }
+.event-type-btn .desc { font-size: .7rem; color: #888; margin-top: .2rem; }
+.suggestion-box { background: var(--navy); color: var(--cream); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; display: none; }
+.suggestion-box.show { display: block; }
+.suggestion-box h4 { color: var(--gold); margin: 0 0 .5rem; font-size: 1.05rem; }
+.suggestion-box ul { margin: 0; padding: 0 0 0 1.25rem; }
+.suggestion-box li { font-size: .88rem; line-height: 1.7; color: rgba(255,255,255,.85); }
+.suggestion-box .note { font-size: .8rem; color: var(--blush); margin-top: .75rem; font-style: italic; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; color: #555; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid #ddd; border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; box-sizing: border-box; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--navy); padding: .75rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer; width: 100%; }
+.btn:hover { background: #b8942e; }
+.toast { background: var(--navy); color: var(--cream); padding: 1rem 2rem; border-radius: 8px; text-align: center; margin-top: 1rem; display: none; }
+.toast.show { display: block; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.service-card { background: var(--warm-white); border-radius: 8px; padding: 1.5rem; border: 1px solid rgba(0,0,0,.06); }
+.service-card h3 { font-size: 1.05rem; margin: 0 0 .5rem; color: var(--navy); }
+.service-card p { font-size: .88rem; line-height: 1.6; color: #555; margin: 0; }
+.service-card ul { margin: .5rem 0 0; padding: 0 0 0 1.1rem; font-size: .85rem; color: #666; line-height: 1.7; }
+.faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+.faq-item { background: var(--warm-white); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(0,0,0,.06); }
+.faq-item h4 { font-size: .95rem; margin: 0 0 .35rem; color: var(--navy); }
+.faq-item p { font-size: .85rem; line-height: 1.6; color: #555; margin: 0; }
+footer { background: var(--navy); color: rgba(255,255,255,.6); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.45); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Amélie's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="locations.html">Locations</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Catering &amp; Events</h1>
+  <p>Let us bring the taste of Paris to your next gathering</p>
+</header>
+
+<section class="section">
+  <h2>Plan Your Event</h2>
+  <p class="subtitle">Tell us about your occasion — we'll suggest the perfect menu</p>
+
+  <div class="event-planner">
+    <h3>What kind of event are you hosting?</h3>
+    <div class="event-types" id="eventTypes">
+      <button class="event-type-btn" data-event="wedding">
+        <span class="emoji" aria-hidden="true">💍</span>
+        <span class="label">Wedding</span>
+        <span class="desc">Receptions &amp; showers</span>
+      </button>
+      <button class="event-type-btn" data-event="corporate">
+        <span class="emoji" aria-hidden="true">💼</span>
+        <span class="label">Corporate</span>
+        <span class="desc">Meetings &amp; events</span>
+      </button>
+      <button class="event-type-btn" data-event="birthday">
+        <span class="emoji" aria-hidden="true">🎂</span>
+        <span class="label">Birthday</span>
+        <span class="desc">Parties &amp; celebrations</span>
+      </button>
+      <button class="event-type-btn" data-event="baby">
+        <span class="emoji" aria-hidden="true">🍼</span>
+        <span class="label">Baby Shower</span>
+        <span class="desc">Welcoming little ones</span>
+      </button>
+      <button class="event-type-btn" data-event="holiday">
+        <span class="emoji" aria-hidden="true">🎄</span>
+        <span class="label">Holiday</span>
+        <span class="desc">Seasonal gatherings</span>
+      </button>
+    </div>
+
+    <div class="suggestion-box" id="suggestionWedding">
+      <h4>Wedding &amp; Shower Menu</h4>
+      <ul>
+        <li>Mini quiches (assorted) — $3.50 each</li>
+        <li>Macaron tower (50 macarons) — $85.00</li>
+        <li>Petit fours platter (serves 20) — $60.00</li>
+        <li>Croissant sandwich bar (serves 15) — $95.00</li>
+        <li>Champagne &amp; mimosa bar add-on — $12/person</li>
+      </ul>
+      <p class="note">Includes complimentary tasting for bookings of 50+ guests</p>
+    </div>
+    <div class="suggestion-box" id="suggestionCorporate">
+      <h4>Corporate Event Menu</h4>
+      <ul>
+        <li>Breakfast pastry basket (serves 15) — $55.00</li>
+        <li>Boxed lunch — croissant sandwich, salad, macaron — $16.00/person</li>
+        <li>Coffee &amp; tea service (serves 20) — $45.00</li>
+        <li>Quiche &amp; salad platter (serves 12) — $80.00</li>
+        <li>Assorted cookie &amp; petit four tray (serves 25) — $50.00</li>
+      </ul>
+      <p class="note">Volume discounts available for recurring orders</p>
+    </div>
+    <div class="suggestion-box" id="suggestionBirthday">
+      <h4>Birthday Celebration Menu</h4>
+      <ul>
+        <li>Custom celebration cake (serves 20) — $65.00+</li>
+        <li>Macaron assortment (2 dozen) — $48.00</li>
+        <li>Savory tartlet platter (serves 15) — $65.00</li>
+        <li>French pastry assortment (serves 20) — $55.00</li>
+        <li>Sparkling cider or wine pairing — $8/person</li>
+      </ul>
+      <p class="note">Personalized cake consultations available</p>
+    </div>
+    <div class="suggestion-box" id="suggestionBaby">
+      <h4>Baby Shower Menu</h4>
+      <ul>
+        <li>Tea sandwich platter (serves 20) — $55.00</li>
+        <li>Fruit tartlet &amp; éclair tray (serves 20) — $50.00</li>
+        <li>Macaron tower (36 macarons) — $65.00</li>
+        <li>Mimosa &amp; herbal tea bar — $10/person</li>
+        <li>Custom petit fours with shower colors — $3.50 each</li>
+      </ul>
+      <p class="note">Complimentary decorative setup included</p>
+    </div>
+    <div class="suggestion-box" id="suggestionHoliday">
+      <h4>Holiday Gathering Menu</h4>
+      <ul>
+        <li>Holiday pastry assortment (serves 25) — $60.00</li>
+        <li>Bûche de Noël (serves 12) — $45.00</li>
+        <li>Hot cocoa &amp; coffee bar (serves 20) — $40.00</li>
+        <li>Savory galette des rois (serves 10) — $35.00</li>
+        <li>Gingerbread &amp; spiced cookie tray (serves 20) — $30.00</li>
+      </ul>
+      <p class="note">Order by December 10 for holiday availability</p>
+    </div>
+
+    <form class="demo-form" data-demo-form>
+      <h3 style="margin-bottom:1rem">Request a Catering Quote</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="eventType">Event Type</label>
+          <select id="eventType">
+            <option>Wedding / Shower</option><option>Corporate</option><option>Birthday</option><option>Baby Shower</option><option>Holiday</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guests">Expected Guests</label>
+          <select id="guests">
+            <option>1–15</option><option>16–30</option><option>31–50</option><option>51–100</option><option>100+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="details">Additional Details</label>
+        <textarea id="details" rows="3" placeholder="Date, location, dietary restrictions..."></textarea>
+      </div>
+      <button class="btn" type="submit">Request Quote</button>
+      <div class="toast" role="alert">Merci! We'll send your personalized quote within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <p class="subtitle">Beyond catering — we bring the bakery to you</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Full-Service Catering</h3>
+      <p>Delivery, setup, and staffing for events of all sizes. Choose from our curated menus or build your own.</p>
+    </div>
+    <div class="service-card">
+      <h3>Drop-Off Catering</h3>
+      <p>Pre-ordered platters and trays delivered to your door — perfect for office meetings and casual gatherings.</p>
+    </div>
+    <div class="service-card">
+      <h3>Custom Cakes &amp; Desserts</h3>
+      <ul>
+        <li>Wedding cakes starting at $5.00/slice</li>
+        <li>Custom birthday and celebration cakes</li>
+        <li>Macaron towers and dessert bars</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>Wholesale &amp; Partnerships</h3>
+      <p>We supply fresh pastries and baked goods to Charlotte-area coffee shops, hotels, and restaurants. <a href="#contact" style="color:var(--deep-rose);font-weight:600;text-decoration:none;">Inquire about wholesale →</a></p>
+    </div>
+    <div class="service-card">
+      <h3>In-House Events</h3>
+      <p>Host your event at one of our café locations. Private buyouts available for up to 80 guests. Contact us for availability.</p>
+    </div>
+    <div class="service-card">
+      <h3>Pick-Up Catering</h3>
+      <p>Order online and pick up from your nearest Amélie's location. Minimum 24-hour advance notice recommended.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Frequently Asked Questions</h2>
+  <p class="subtitle">Everything you need to know about catering with Amélie's</p>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>How far in advance should I order?</h4>
+      <p>We recommend at least 72 hours for drop-off orders and 2 weeks for full-service catering. Custom cakes require 7 days' notice.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you accommodate dietary restrictions?</h4>
+      <p>Yes! We offer gluten-free, vegetarian, and vegan options across our catering menu. Just let us know when you request your quote.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What is your delivery area?</h4>
+      <p>We deliver throughout the Charlotte metro area. A delivery fee applies based on distance — we'll confirm when you book.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I sample items before ordering?</h4>
+      <p>Absolutely. We offer complimentary tastings for events of 50+ guests. Smaller tastings are available for a nominal fee.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you offer rentals (linens, serveware)?</h4>
+      <p>We can arrange rentals through our partner vendors for an additional fee. Ask your event coordinator for details.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What is your cancellation policy?</h4>
+      <p>Full refund for cancellations made 7+ days before the event. 50% refund within 3–7 days. Within 72 hours, we credit your account.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Amélie's French Bakery &amp; Café · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Story</a> · <a href="catering.html">Catering</a> · <a href="locations.html">Locations</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const btns = document.querySelectorAll('.event-type-btn');
+  const boxes = {
+    wedding: document.getElementById('suggestionWedding'),
+    corporate: document.getElementById('suggestionCorporate'),
+    birthday: document.getElementById('suggestionBirthday'),
+    baby: document.getElementById('suggestionBaby'),
+    holiday: document.getElementById('suggestionHoliday')
+  };
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      btns.forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      Object.values(boxes).forEach(b => b.classList.remove('show'));
+      const type = this.dataset.event;
+      if (boxes[type]) boxes[type].classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>

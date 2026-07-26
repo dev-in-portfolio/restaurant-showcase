@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bossy Beulah's Chicken Shack - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling combo display card */
+    .combo-display-card {
+      background: radial-gradient(circle, #fefdf9 0%, #fafaf4 100%);
+      border: 1.5px solid var(--color-red);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .combo-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--color-red);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-red);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .combo-title {
+      font-size: 1.95rem;
+      color: var(--color-text-dark);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .combo-meta {
+      font-size: 0.9rem;
+      color: var(--color-green);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .combo-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bossy Beulah's
+          <span>Chicken Shack Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="locations.html">Our Shacks</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Shack Bites & Combos</h2>
+    <p class="page-subtitle">Crispy pasture-raised wings, nuggets, and signature fries. Mix and match order sizes and sauces below.</p>
+  </header>
+
+  <!-- Interactive Bites & Wings Calculator -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Bites & Wings Combo Builder</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Combo Display -->
+        <div class="combo-display-card" id="combo-display-box">
+          <div class="combo-badge">Combo Box</div>
+          <h4 class="combo-title" id="combo-display-title">12 Bossy Bites Box</h4>
+          <div class="combo-meta" id="combo-display-meta">12 Pcs Bites • $11.00</div>
+          <p class="combo-desc" id="combo-display-desc">Twelve tender pasture-raised chicken breast nuggets fried crispy, served with Bossy Sauce.</p>
+          <div style="font-size: 2.2rem; font-weight: 900; color: var(--color-red); margin-top: 0.5rem;" id="combo-display-price">$11.00</div>
+        </div>
+
+        <!-- Right Side: Options -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Base order</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn" onclick="setBase('bites8', '8 Bossy Bites', 8.00)">8 Bites ($8.00)</button>
+              <button class="option-btn active" onclick="setBase('bites12', '12 Bossy Bites', 11.00)">12 Bites ($11.00)</button>
+              <button class="option-btn" onclick="setBase('wings6', '6 Crispy Wings', 10.00)">6 Wings ($10.00)</button>
+              <button class="option-btn" onclick="setBase('wings12', '12 Crispy Wings', 18.00)">12 Wings ($18.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Dipping Sauce</label>
+            <div class="option-grid" id="sauce-options">
+              <button class="option-btn active" onclick="setSauce('bossy', 'Bossy Sauce')">Bossy Sauce</button>
+              <button class="option-btn" onclick="setSauce('hot', 'Beaut\'s Hot Sauce')">Beaut's Hot</button>
+              <button class="option-btn" onclick="setSauce('mustard', 'Honey Mustard')">Honey Mustard</button>
+              <button class="option-btn" onclick="setSauce('ranch', 'Buttermilk Ranch')">Ranch</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Add Side & Drink (Get $1.50 Off Combo Discount)</label>
+            <div class="option-grid">
+              <button class="option-btn" id="side-fries" onclick="toggleSide('fries', 3.50, 'House Fries')">House Fries (+$3.50)</button>
+              <button class="option-btn" id="side-cookie" onclick="toggleSide('cookie', 2.50, 'Copain Bakery Cookie')">Bakery Cookie (+$2.50)</button>
+              <button class="option-btn" id="side-drink" onclick="toggleSide('drink', 2.50, 'Soft Drink')">Soft Drink (+$2.50)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Beulah's Shack Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Chicken Sandwiches</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The Beaut<span class="menu-item-badge">Signature</span></span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Pasture-raised crispy chicken breast, Duke's mayo, and house-made pickles on a toasted brioche bun.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">The Cheesy Beaut</span>
+            <span class="menu-item-price">$9.50</span>
+          </div>
+          <p class="menu-item-desc">Our signature sandwich topped with melted baby Swiss cheese, mayo, and pickles on brioche.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Hot Thigh Sandwich</span>
+            <span class="menu-item-price">$8.00</span>
+          </div>
+          <p class="menu-item-desc">Juicy fried chicken thigh coated in Beaut's Hot Sauce and topped with crunchy pickles.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Sides & Bakery Sweets</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">House Fries</span>
+            <span class="menu-item-price">$3.50</span>
+          </div>
+          <p class="menu-item-desc">Hand-cut, double-fried crispy potatoes tossed in Beulah's special seasoning salt.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Copain Bakery Cookie</span>
+            <span class="menu-item-price">$2.50</span>
+          </div>
+          <p class="menu-item-desc">Thick, chewy chocolate chip cookie fresh-baked daily by Copain Bakery in Charlotte.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Classic Milkshake</span>
+            <span class="menu-item-price">$5.50</span>
+          </div>
+          <p class="menu-item-desc">Creamy soft-serve milkshake. Choice of Rich Chocolate, Sweet Vanilla, or Fresh Strawberry.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>OG Address</h3>
+        <p>2200 Freedom Drive<br>Charlotte, NC 28208</p>
+      </div>
+      <div class="info-block">
+        <h3>OG Hours</h3>
+        <p>Sun - Thu: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Other Shops</h3>
+        <p>Park Road Shopping Center (Brandywine Rd)<br>Ballantyne Bowl (Bowl Street)</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bossy Beulah's. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let selectedBase = { key: 'bites12', name: '12 Bossy Bites', price: 11.00 };
+    let selectedSauce = { key: 'bossy', name: 'Bossy Sauce' };
+    let activeSides = {
+      fries: { active: false, price: 3.50, label: 'House Fries' },
+      cookie: { active: false, price: 2.50, label: 'Bakery Cookie' },
+      drink: { active: false, price: 2.50, label: 'Soft Drink' }
+    };
+
+    function setBase(key, name, price) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, name, price };
+      updateCombo();
+    }
+
+    function setSauce(key, name) {
+      const buttons = document.getElementById('sauce-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSauce = { key, name };
+      updateCombo();
+    }
+
+    function toggleSide(key, price, label) {
+      activeSides[key].active = !activeSides[key].active;
+      const el = document.getElementById(`side-${key}`);
+      if (activeSides[key].active) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+      updateCombo();
+    }
+
+    function updateCombo() {
+      let basePrice = selectedBase.price;
+      let sideLabels = [];
+      let sideCount = 0;
+      let hasDrink = activeSides.drink.active;
+
+      for (let k in activeSides) {
+        if (activeSides[k].active) {
+          basePrice += activeSides[k].price;
+          sideLabels.push(activeSides[k].label);
+          if (k !== 'drink') sideCount++;
+        }
+      }
+
+      // Check combo discount: needs at least one food side AND a drink
+      let discountApplied = false;
+      if (sideCount >= 1 && hasDrink) {
+        basePrice -= 1.50;
+        discountApplied = true;
+      }
+
+      document.getElementById('combo-display-title').innerText = `${selectedBase.name} Box`;
+      document.getElementById('combo-display-meta').innerText = `${selectedBase.name} • ${selectedSauce.name}`;
+      
+      let sideText = sideLabels.length > 0 ? ` with ${sideLabels.join(' & ')}` : '';
+      let discountText = discountApplied ? ' (Includes $1.50 Combo Discount!)' : '';
+      
+      document.getElementById('combo-display-desc').innerText = `Crispy fried ${selectedBase.name.toLowerCase()} served hot with a side of ${selectedSauce.name}${sideText}.${discountText}`;
+      document.getElementById('combo-display-price').innerText = `$${basePrice.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

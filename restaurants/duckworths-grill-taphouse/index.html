@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duckworth's Grill & Taphouse · Uptown Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0f1a2e;--gold:#c99c3b;--copper:#b87333;--cream:#f5efe6;--charcoal:#1a1a1a;--muted:#8899aa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.hero{min-height:70vh;background:linear-gradient(135deg,#0f1a2e,#1a2a4e 50%,#2c1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:2.5rem;margin:0;color:var(--gold)}
+.hero .tagline{font-size:1.05rem;opacity:.6;font-style:italic;margin:.5rem 0 1.5rem;font-family:'Fraunces',serif}
+.hero .btn{display:inline-block;background:var(--gold);color:var(--navy);padding:.8rem 2.5rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+.hero .btn:hover{background:#d4a520}
+.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,156,59,.08);border-radius:8px;padding:1.5rem}
+.feature-card .icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
+.feature-card h3{font-size:1.05rem;color:var(--gold);margin:0 0 .35rem}
+.feature-card p{font-size:.85rem;opacity:.6;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:2rem 0}
+.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(201,156,59,.06)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.8rem;color:var(--gold)}
+.stat .label{font-size:.82rem;opacity:.5}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,156,59,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Duckworth's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="beer.html">Beer Flights</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="hero">
+  <div>
+    <h1>Duckworth's Grill &amp; Taphouse</h1>
+    <p class="tagline">Crafted comfort. Locally owned. Locally operated.</p>
+    <a href="menu.html" class="btn">See Our Menu</a>
+  </div>
+</header>
+<section class="section">
+  <h2>Welcome to Duckworth's</h2>
+  <p class="subtitle">Redefining casual dining, one tap and plate at a time</p>
+  <div class="featured-grid">
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍔</span><h3>Hand-Crafted Burgers</h3><p>8 oz. house-blend patties with premium toppings — including our famous Taphouse and Chorizo burgers</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍺</span><h3>150+ Craft Beers</h3><p>Unbeatable tap selection at our Uptown location — featuring local NC brews and rotating seasonal taps</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍕</span><h3>Pizzas &amp; Flatbreads</h3><p>Personal pizzas with premium toppings, baked to perfection — a crowd favorite</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🏆</span><h3>Game Day Ready</h3><p>Multiple HD TVs, full menu until close, and a lineup of wings, nachos, and shareables</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">150+</span><span class="label">Craft Beers on Tap (Uptown)</span></div>
+    <div class="stat"><span class="num">5</span><span class="label">NC Locations</span></div>
+    <div class="stat"><span class="num">11AM</span><span class="label">Open Daily</span></div>
+    <div class="stat"><span class="num">Full Menu</span><span class="label">Until Closing</span></div>
+  </div>
+</section>
+<section class="section" style="border-top:1px solid rgba(201,156,59,.06)">
+  <h2>Visit Uptown</h2>
+  <div class="stats">
+    <div class="stat"><span class="num">330 N Tryon St</span><span class="label">Charlotte, NC 28202</span></div>
+    <div class="stat"><span class="num">980-939-1166</span><span class="label">Call for Reservations</span></div>
+    <div class="stat"><span class="num">Sun–Wed 11–11</span><span class="label">Thu–Sat 11–12</span></div>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem"><a href="locations.html" class="hero btn">All Locations</a></div>
+</section>
+<footer>
+  <p>Duckworth's Grill &amp; Taphouse · 330 N Tryon St · Charlotte, NC 28202 · 980-939-1166</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

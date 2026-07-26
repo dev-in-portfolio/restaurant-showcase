@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banh Mi Brothers - Charlotte, NC | Boba Tea Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive boba tea cup */
+    .boba-cup-container {
+      background: radial-gradient(circle, #182210 0%, #080a06 100%);
+      border: 1.5px solid var(--color-green);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .boba-cup-graphic {
+      width: 80px;
+      height: 140px;
+      border: 3.5px solid var(--color-text-light);
+      border-radius: 5px 5px 30px 30px;
+      background: rgba(255,255,255,0.05);
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+    .boba-liquid {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 40px; /* Liquid level */
+      background: #dfa87a; /* Milk tea brown default */
+      transition: var(--transition-smooth);
+    }
+    .boba-straw {
+      width: 14px;
+      height: 170px;
+      background: #f43f5e; /* Red straw */
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%) rotate(5deg);
+      border-radius: 5px;
+      z-index: 10;
+    }
+    .boba-pearls {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      right: 10px;
+      height: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+      align-content: flex-end;
+      z-index: 2;
+      opacity: 0.95;
+      transition: var(--transition-smooth);
+    }
+    .boba-pearl {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #111111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Banh Mi Bros
+          <span>Street Food & Boba</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="boba.html" class="active">Boba Tea Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Boba Tea Bar</h2>
+    <p class="page-subtitle">Custom brewed leaf teas, organic creamers, and house-cooked tapioca pearls prepared fresh every 4 hours.</p>
+  </header>
+
+  <!-- Interactive Boba Builder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Bubble Tea Mixer</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your milk tea base, adjust sweetness levels, and choose your favorite toppings.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Boba Cup Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="boba-cup-container" id="cup-box">
+            <div class="boba-cup-graphic">
+              <div class="boba-straw"></div>
+              <div class="boba-liquid" id="liquid-layer"></div>
+              <div class="boba-pearls" id="pearls-layer">
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+                <div class="boba-pearl"></div>
+              </div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="cup-display-title">Classic Milk Tea</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-green); margin: 0.5rem 0;" id="cup-display-price">$5.50</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Tea Base</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setBase('classic', 'Classic Black Milk Tea', 5.50, '#dfa87a')">Black Milk Tea ($5.50)</button>
+              <button class="option-btn" onclick="setBase('jasmine', 'Jasmine Green Milk Tea', 5.50, '#fef08a')">Jasmine Milk Tea ($5.50)</button>
+              <button class="option-btn" onclick="setBase('taro', 'Taro Cream Tea', 6.00, '#c084fc')">Taro Tea ($6.00)</button>
+              <button class="option-btn" onclick="setBase('matcha', 'Matcha Latte', 6.00, '#4ade80')">Matcha Latte ($6.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Sweetness Level</label>
+            <div class="option-grid" id="sweet-options">
+              <button class="option-btn active" onclick="setSweet('100', '100% (Standard Sweet)')">100%</button>
+              <button class="option-btn" onclick="setSweet('70', '70% (Less Sweet)')">70%</button>
+              <button class="option-btn" onclick="setSweet('50', '50% (Half Sweet)')">50%</button>
+              <button class="option-btn" onclick="setSweet('0', '0% (Unsweetened)')">Unsweetened</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Add Topping</label>
+            <div class="option-grid" id="topping-options">
+              <button class="option-btn active" onclick="setTopping('boba', 'Brown Sugar Boba Pearls', 0.75, 1, '#111111')">Boba Pearls (+$0.75)</button>
+              <button class="option-btn" onclick="setTopping('jelly', 'Coconut Lychee Jelly', 0.50, 0.7, '#f4eae6')">Lychee Jelly (+$0.50)</button>
+              <button class="option-btn" onclick="setTopping('pudding', 'Caramel Egg Pudding', 0.75, 0.8, '#eab308')">Egg Pudding (+$0.75)</button>
+              <button class="option-btn" onclick="setTopping('none', 'No Toppings', 0.00, 0, '#ffffff')">No Toppings</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Tea Brewer</span>
+        <h4 class="builder-display-title" id="display-boba-name">Classic Black Milk Tea</h4>
+        <p id="display-boba-toppings" style="color: var(--color-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Brown Sugar Boba Pearls</p>
+        <div class="builder-display-price" id="display-boba-price">$6.25</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-boba-desc">Premium Classic Black Milk Tea brewed at 100% (Standard Sweet) sweetness, topped with brown sugar boba pearls.</p>
+      </div>
+    </section>
+
+    <!-- Boba Lists -->
+    <h3 class="section-title">Specialty Milk Teas</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Signature Teas</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Brown Sugar Tiger Tea</span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">Fresh slow-brewed black milk tea drizzled with caramelized house brown sugar syrup and boba pearls.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Jasmine Milk Tea</span>
+            <span class="menu-item-price">$5.50</span>
+          </div>
+          <p class="menu-item-desc">Fragrant jasmine green tea leaves infused with premium dairy-free creamer. Light and floral.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Taro Milk Tea</span>
+            <span class="menu-item-price">$6.00</span>
+          </div>
+          <p class="menu-item-desc">Creamy and rich taro root brewed with green tea. Features a sweet, nutty, cookie-like flavor profile.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Fresh Fruit Infusions</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Mango Green Tea</span>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Chilled Jasmine green tea shaken with fresh organic mango puree and topped with crystal boba.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Strawberry Hibiscus Tea</span>
+            <span class="menu-item-price">$5.75</span>
+          </div>
+          <p class="menu-item-desc">Herbal hibiscus tea shaken with sweet crushed strawberries. Caffeine-free and refreshing.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Lychee Black Tea</span>
+            <span class="menu-item-price">$5.50</span>
+          </div>
+          <p class="menu-item-desc">Strong Assam black tea shaken with sweet lychee juice syrup and served with lychee jelly pieces.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>University Area</h3>
+        <p>230 E W.T. Harris Blvd, Suite A7<br>Charlotte, NC 28262<br>Phone: (980) 237-7756</p>
+      </div>
+      <div class="info-block">
+        <h3>Operating Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 8:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Boba Details</h3>
+        <p>Dairy-free creamer standard. Whole milk or oat milk substitutes available upon request.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Banh Mi Brothers. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBase = { key: 'classic', name: 'Classic Black Milk Tea', price: 5.50, color: '#dfa87a' };
+    let selectedSweet = { key: '100', name: '100% (Standard Sweet)' };
+    let selectedTopping = { key: 'boba', name: 'Brown Sugar Boba Pearls', price: 0.75, opacity: 1, color: '#111111' };
+
+    function setBase(key, name, price, color) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, name, price, color };
+      updateDisplay();
+    }
+
+    function setSweet(key, name) {
+      const buttons = document.getElementById('sweet-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSweet = { key, name };
+      updateDisplay();
+    }
+
+    function setTopping(key, name, price, opacity, color) {
+      const buttons = document.getElementById('topping-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedTopping = { key, name, price, opacity, color };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedBase.price + selectedTopping.price;
+      document.getElementById('cup-display-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('cup-display-title').innerText = selectedBase.name;
+
+      document.getElementById('display-boba-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-boba-name').innerText = selectedBase.name;
+      document.getElementById('display-boba-toppings').innerText = selectedTopping.name;
+
+      // Update visual liquid color
+      document.getElementById('liquid-layer').style.backgroundColor = selectedBase.color;
+
+      // Update boba pearls visibility and color
+      const pearlsLayer = document.getElementById('pearls-layer');
+      pearlsLayer.style.opacity = selectedTopping.opacity;
+      const pearls = pearlsLayer.querySelectorAll('.boba-pearl');
+      pearls.forEach(p => p.style.backgroundColor = selectedTopping.color);
+
+      // Update description text
+      const desc = `Premium ${selectedBase.name} brewed at ${selectedSweet.name} sweetness, topped with ${selectedTopping.name.toLowerCase()}.`;
+      document.getElementById('display-boba-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

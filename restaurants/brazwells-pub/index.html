@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brazwells Pub - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Layer styling overrides for burger stack */
+    #layer-top-bun { background: #d97706; }
+    #layer-egg { background: #fef08a; border-color: #facc15; color: #854d0e; }
+    #layer-cheese { background: #fbbf24; border-color: #d97706; color: #78350f; }
+    #layer-bacon { background: #991b1b; border-color: #450a0a; }
+    #layer-patty { background: #451a03; border-color: #1c0a00; height: 50px; line-height: 46px; }
+    #layer-onions { background: #78350f; border-color: #451a03; }
+    #layer-bottom-bun { background: #d97706; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Brazwells
+          <span>Neighborhood Pub Montford</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="brunch.html">Brunch</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte, NC • Montford Drive Landmark</span>
+        <h2 class="hero-title">Brazwells Pub</h2>
+        <p class="hero-desc">"Enjoying classic burgers, hot wings, and cold beers on Montford's largest outdoor patio since 1999."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>🍺 Happy Hour Specials Active. Cozy Fireplace Indoors & Shaded Patio Bar Outdoors.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">The Heart of Montford</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        For over two decades, Brazwells Pub has been the go-to gathering place on Montford Drive. Whether you are catching the Panthers game on our outdoor patio, meeting friends for trivia in our brick hearth lounge, or savoring our signature hand-cut fries and Angus burgers, you are part of the family.
+      </p>
+      <a href="about.html" style="color: var(--color-amber); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-amber); padding-bottom: 4px; transition: var(--transition-fast);">
+        View Our Patio Setup ➔
+      </a>
+    </section>
+
+    <!-- Interactive Burger Customizer Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Tavern Burger Builder</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Stack your pub burger. Toggle ingredients to watch the grill cook your custom stack in real-time.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Burger stack visualizer -->
+        <div class="plate-canvas" style="min-height: 340px;">
+          <div class="grill-stacker-box">
+            <!-- Layers stacked top-to-bottom -->
+            <div class="grill-layer-node" id="layer-top-bun">Brioche Bun</div>
+            <div class="grill-layer-node hidden" id="layer-egg">Fried Egg</div>
+            <div class="grill-layer-node hidden" id="layer-cheese">Cheddar Cheese</div>
+            <div class="grill-layer-node hidden" id="layer-bacon">Crispy Bacon</div>
+            <div class="grill-layer-node" id="layer-patty">Angus Beef</div>
+            <div class="grill-layer-node" id="layer-onions">Grilled Onions</div>
+            <div class="grill-layer-node" id="layer-bottom-bun">Brioche Bun</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Bun Style</label>
+            <div class="option-grid" id="bun-options">
+              <button class="option-btn active" onclick="setBun('brioche', 'Brioche Bun', 0.00)">Brioche Bun</button>
+              <button class="option-btn" onclick="setBun('pretzel', 'Pretzel Bun', 0.75)">Pretzel Bun (+$0.75)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Grill Patty Style</label>
+            <div class="option-grid" id="patty-options">
+              <button class="option-btn active" onclick="setPatty('angus', 'Angus Beef Patty', 12.00)">Angus Beef ($12.00)</button>
+              <button class="option-btn" onclick="setPatty('turkey', 'Turkey Patty', 11.50)">Turkey ($11.50)</button>
+              <button class="option-btn" onclick="setPatty('veggie', 'Black Bean Patty', 11.00)">Veggie ($11.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Premium Toppings & Sauces</label>
+            <div class="option-grid">
+              <button class="option-btn active" id="btn-onions" onclick="toggleTopping('onions')">Caramelized Onions</button>
+              <button class="option-btn" id="btn-cheese" onclick="toggleTopping('cheese')">Cheddar Cheese (+$1.00)</button>
+              <button class="option-btn" id="btn-bacon" onclick="toggleTopping('bacon')">Crispy Bacon (+$1.50)</button>
+              <button class="option-btn" id="btn-egg" onclick="toggleTopping('egg')">Fried Egg (+$1.25)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Burger Grill</span>
+        <h4 class="builder-display-title" id="display-burger-name">The Custom Burger</h4>
+        <p id="display-burger-desc" style="color: var(--color-amber); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Stacked on Brioche Bun</p>
+        <div class="builder-display-price" id="display-burger-price">$12.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-burger-summary">Your customized tavern burger with Angus Beef Patty cooked to temperature, caramelized onions, served with hand-cut fries.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Daily Specials Wheel</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Match your visit day with our rotating drink and food specials. Spin our daily selector wheel to check promotions. Click below to view the wheel.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Specials Wheel
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1627 Montford Dr<br>Charlotte, NC 28209</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 12:00 AM<br>Fri: 11:00 AM - 2:00 AM<br>Sat: 10:00 AM - 2:00 AM<br>Sun: 10:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Est. 1999 on Montford Drive | Large Covered Patio | Full Tavern Bar</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Brazwells Pub. Montford Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBun = { key: 'brioche', name: 'Brioche Bun', price: 0.00 };
+    let selectedPatty = { key: 'angus', name: 'Angus Beef Patty', price: 12.00 };
+    let activeToppings = {
+      onions: { active: true, price: 0.00, label: 'Caramelized Onions' },
+      cheese: { active: false, price: 1.00, label: 'Cheddar Cheese' },
+      bacon: { active: false, price: 1.50, label: 'Crispy Bacon' },
+      egg: { active: false, price: 1.25, label: 'Fried Egg' }
+    };
+
+    function setBun(key, name, price) {
+      const buttons = document.getElementById('bun-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBun = { key, name, price };
+      
+      // Update bun text layers
+      document.getElementById('layer-top-bun').innerText = selectedBun.name;
+      document.getElementById('layer-bottom-bun').innerText = selectedBun.name;
+      
+      if (key === 'pretzel') {
+        document.getElementById('layer-top-bun').style.background = '#854d0e';
+        document.getElementById('layer-bottom-bun').style.background = '#854d0e';
+      } else {
+        document.getElementById('layer-top-bun').style.background = '#d97706';
+        document.getElementById('layer-bottom-bun').style.background = '#d97706';
+      }
+
+      updateDisplay();
+    }
+
+    function setPatty(key, name, price) {
+      const buttons = document.getElementById('patty-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedPatty = { key, name, price };
+      document.getElementById('layer-patty').innerText = selectedPatty.name.replace(' Patty', '');
+      
+      if (key === 'veggie') {
+        document.getElementById('layer-patty').style.background = '#166534';
+      } else if (key === 'turkey') {
+        document.getElementById('layer-patty').style.background = '#ca8a04';
+      } else {
+        document.getElementById('layer-patty').style.background = '#451a03';
+      }
+
+      updateDisplay();
+    }
+
+    function toggleTopping(key) {
+      activeToppings[key].active = !activeToppings[key].active;
+      const el = document.getElementById(`btn-${key}`);
+      if (activeToppings[key].active) {
+        el.classList.add('active');
+        document.getElementById(`layer-${key}`).classList.remove('hidden');
+      } else {
+        el.classList.remove('active');
+        document.getElementById(`layer-${key}`).classList.add('hidden');
+      }
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate price
+      let totalPrice = selectedPatty.price + selectedBun.price;
+      let toppingLabels = [];
+
+      for (let k in activeToppings) {
+        if (activeToppings[k].active) {
+          totalPrice += activeToppings[k].price;
+          toppingLabels.push(activeToppings[k].label);
+        }
+      }
+
+      document.getElementById('display-burger-price').innerText = `$${totalPrice.toFixed(2)}`;
+      
+      // Build title based on key items
+      let title = 'The Custom Burger';
+      if (selectedPatty.key === 'veggie') {
+        title = 'Garden Burger';
+      } else if (activeToppings.bacon.active && activeToppings.cheese.active) {
+        title = 'Bacon Cheddar Burger';
+      }
+
+      document.getElementById('display-burger-name').innerText = title;
+      document.getElementById('display-burger-desc').innerText = `Stacked on ${selectedBun.name} with: ${toppingLabels.join(', ')}`;
+
+      document.getElementById('display-burger-summary').innerText = `Your customized burger featuring a grilled ${selectedPatty.name.toLowerCase()} served on a toasted ${selectedBun.name.toLowerCase()} loaded with ${toppingLabels.join(', ').toLowerCase()} and hand-cut tavern fries.`;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      // Show default layers
+      document.getElementById('layer-onions').classList.remove('hidden');
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

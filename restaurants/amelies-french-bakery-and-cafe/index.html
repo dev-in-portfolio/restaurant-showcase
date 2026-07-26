@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amélie's French Bakery & Café | A Little Taste of Paris in Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --navy: #1a1a2e;
+  --blush: #d4a5b5;
+  --gold: #c9a84c;
+  --cream: #faf3e0;
+  --rose: #e8a0bf;
+  --deep-rose: #c26a8a;
+  --charcoal: #2d2d3f;
+  --warm-white: #fff9f0;
+}
+body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.nav a:hover { color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--gold) !important; letter-spacing: 0; text-transform: none; }
+.hero { padding: 5rem 2rem 4rem; text-align: center; background: linear-gradient(135deg, var(--navy) 0%, #16213e 100%); color: var(--cream); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a5b5' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: .4; }
+.hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.hero h1 { font-size: 3rem; margin: 0 0 .25rem; color: var(--gold); }
+.hero .tagline { font-size: 1.15rem; color: var(--blush); font-style: italic; margin-bottom: 2rem; }
+.hero p { font-size: .95rem; line-height: 1.7; margin-bottom: 2rem; max-width: 580px; margin-left: auto; margin-right: auto; }
+.btn { display: inline-block; background: var(--gold); color: var(--navy); padding: .75rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer; }
+.btn:hover { background: #b8942e; }
+.btn-outline { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--navy); }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { text-align: center; font-size: 1.75rem; margin-bottom: .25rem; color: var(--navy); }
+.section .subtitle { text-align: center; color: #888; font-style: italic; margin-bottom: 2.5rem; font-size: .95rem; }
+.locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.location-card { background: var(--warm-white); border-radius: 8px; padding: 1.5rem; border: 1px solid rgba(0,0,0,.06); transition: transform .2s, box-shadow .2s; }
+.location-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.location-card h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--navy); }
+.location-card .loc-neighborhood { font-size: .8rem; color: var(--blush); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem; }
+.location-card p { font-size: .85rem; margin: .25rem 0; color: #555; line-height: 1.5; }
+.location-card a { color: var(--deep-rose); font-size: .85rem; font-weight: 600; text-decoration: none; }
+.location-card a:hover { text-decoration: underline; }
+.signature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.signature-item { text-align: center; padding: 2rem 1rem; background: var(--warm-white); border-radius: 8px; border: 1px solid rgba(0,0,0,.06); }
+.signature-item .icon { font-size: 2.5rem; margin-bottom: .75rem; display: block; }
+.signature-item h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--navy); }
+.signature-item p { font-size: .85rem; color: #666; margin: 0; }
+.decor-section { background: var(--navy); color: var(--cream); }
+.decor-section h2 { color: var(--gold); }
+.decor-section .subtitle { color: var(--blush); }
+.decor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+.decor-card { text-align: center; padding: 2rem; }
+.decor-card .decor-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.decor-card h3 { font-size: 1.05rem; margin: 0 0 .5rem; color: var(--gold); }
+.decor-card p { font-size: .88rem; line-height: 1.6; color: rgba(255,255,255,.8); }
+.catering-cta { text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, var(--blush), var(--rose)); color: var(--navy); }
+.catering-cta h2 { font-size: 1.75rem; margin: 0 0 .5rem; color: var(--navy); }
+.catering-cta p { font-size: 1rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+footer { background: var(--navy); color: rgba(255,255,255,.6); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.45); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Amélie's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="locations.html">Locations</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Amélie's <br>French Bakery &amp; Café</h1>
+    <p class="tagline">— un petit coin de Paris à Charlotte —</p>
+    <p>From flaky croissants and colorful macarons to hearty quiches and velvety lattes, Amélie's brings the warmth, whimsy, and flavor of a Parisian café to four beloved Charlotte locations.</p>
+    <div class="hero-actions">
+      <a href="menu.html" class="btn">Explore Our Menu</a>
+      <a href="locations.html" class="btn btn-outline">Find a Location</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Nos Locations</h2>
+  <p class="subtitle">Four corners of Charlotte, one Parisian spirit</p>
+  <div class="locations-grid">
+    <div class="location-card">
+      <div class="loc-neighborhood">NoDa</div>
+      <h3>136 E 36th St</h3>
+      <p>Charlotte, NC 28202</p>
+      <p>(704) 376-1781</p>
+      <p><a href="locations.html">View Hours →</a></p>
+    </div>
+    <div class="location-card">
+      <div class="loc-neighborhood">Park Road</div>
+      <h3>524 Brandywine Rd</h3>
+      <p>Charlotte, NC 28209</p>
+      <p>(704) 405-0570</p>
+      <p><a href="locations.html">View Hours →</a></p>
+    </div>
+    <div class="location-card">
+      <div class="loc-neighborhood">Carmel Commons</div>
+      <h3>7715 Pineville-Matthews Rd</h3>
+      <p>Charlotte, NC 28226</p>
+      <p><a href="locations.html">View Hours →</a></p>
+    </div>
+    <div class="location-card">
+      <div class="loc-neighborhood">Uptown</div>
+      <h3>380 S College St</h3>
+      <p>Charlotte, NC 28202</p>
+      <p><a href="locations.html">View Hours →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Nos Favoris</h2>
+  <p class="subtitle">A taste of what awaits</p>
+  <div class="signature-grid">
+    <div class="signature-item">
+      <span class="icon" aria-hidden="true">🥐</span>
+      <h3>Butter Croissant</h3>
+      <p>Classic French croissant, golden and flaky</p>
+    </div>
+    <div class="signature-item">
+      <span class="icon" aria-hidden="true">🍪</span>
+      <h3>Macarons</h3>
+      <p>Rainbow of flavors, delicate and crisp</p>
+    </div>
+    <div class="signature-item">
+      <span class="icon" aria-hidden="true">🥧</span>
+      <h3>Quiche du Jour</h3>
+      <p>Savory egg custard in a buttery crust</p>
+    </div>
+    <div class="signature-item">
+      <span class="icon" aria-hidden="true">🥗</span>
+      <h3>Signature Chicken Salad</h3>
+      <p>Our most-loved lunch classic</p>
+    </div>
+    <div class="signature-item">
+      <span class="icon" aria-hidden="true">☕</span>
+      <h3>Café au Lait</h3>
+      <p>Rich espresso with steamed milk</p>
+    </div>
+    <div class="signature-item">
+      <span class="icon" aria-hidden="true">🥖</span>
+      <h3>Fresh Baguettes</h3>
+      <p>Crusty outside, soft inside — baked daily</p>
+    </div>
+  </div>
+</section>
+
+<section class="section decor-section">
+  <h2>A Flea Market Meets Left Bank</h2>
+  <p class="subtitle">Every corner tells a story</p>
+  <div class="decor-grid">
+    <div class="decor-card">
+      <span class="decor-icon" aria-hidden="true">🪑</span>
+      <h3>Eclectic Finds</h3>
+      <p>Mismatched vintage chairs, antique mirrors, and curated treasures fill every seat with personality.</p>
+    </div>
+    <div class="decor-card">
+      <span class="decor-icon" aria-hidden="true">🎨</span>
+      <h3>Local Art</h3>
+      <p>Walls rotate with works from Charlotte artists — each visit brings something new to discover.</p>
+    </div>
+    <div class="decor-card">
+      <span class="decor-icon" aria-hidden="true">💡</span>
+      <h3>Whimsy &amp; Warmth</h3>
+      <p>Chandeliers, playful vignettes, and cozy nooks make every table feel like a hidden Parisian corner.</p>
+    </div>
+  </div>
+</section>
+
+<section class="catering-cta">
+  <h2>Let Amélie's Cater Your Next Event</h2>
+  <p>From intimate gatherings to grand celebrations, bring the taste of Paris to your occasion.</p>
+  <a href="catering.html" class="btn">Plan Your Event</a>
+</section>
+
+<footer>
+  <p>Amélie's French Bakery &amp; Café · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Story</a> · <a href="catering.html">Catering</a> · <a href="locations.html">Locations</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

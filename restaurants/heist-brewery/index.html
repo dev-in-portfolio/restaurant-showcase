@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heist Brewery — Craft Brewpub in NoDa Charlotte</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --amber:#c87a2c; --charcoal:#1a1a1a; --cream:#f5f0e8; --copper:#b86b3a; --navy:#1e2a3a; --gold:#d4a017; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:var(--charcoal); background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--amber); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--charcoal); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--charcoal); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.6rem; color:var(--amber); text-decoration:none; font-weight:700; letter-spacing:-0.5px; }
+  nav .logo span { color:#fff; }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--amber); }
+  .hero { background:linear-gradient(135deg,#1a1a1a 0%,#2d1f0e 50%,#1a1a1a 100%); color:#fff; padding:6rem 2rem 5rem; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.06"><path d="M20,40 Q35,15 50,40 T80,40" fill="none" stroke="%23c87a2c" stroke-width="0.5"/><path d="M10,55 Q30,30 50,55 T90,55" fill="none" stroke="%23c87a2c" stroke-width="0.3"/></svg>') repeat; background-size:200px 100px; }
+  .hero h1 { font-size:3.5rem; margin-bottom:0.5rem; position:relative; }
+  .hero h1 span { color:var(--amber); }
+  .hero p { font-size:1.2rem; color:#bbb; max-width:600px; margin:0 auto 2rem; position:relative; }
+  .hero .tagline { font-family:'Fraunces',Georgia,serif; font-size:1.1rem; color:var(--gold); font-style:italic; position:relative; }
+  .btn { display:inline-block; background:var(--amber); color:#fff; padding:14px 36px; text-decoration:none; font-weight:600; border-radius:4px; transition:all 0.2s; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem; }
+  .btn:hover { background:var(--copper); transform:translateY(-2px); }
+  .btn-outline { background:transparent; border:2px solid var(--amber); color:var(--amber); }
+  .btn-outline:hover { background:var(--amber); color:#fff; }
+  .section { padding:5rem 2rem; max-width:1200px; margin:0 auto; }
+  .section-title { font-size:2.2rem; margin-bottom:1rem; text-align:center; }
+  .section-title span { color:var(--amber); }
+  .section-sub { text-align:center; color:#666; max-width:600px; margin:0 auto 3rem; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  .card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.2s; }
+  .card:hover { transform:translateY(-4px); }
+  .card-img { height:200px; display:flex; align-items:center; justify-content:center; font-size:3rem; }
+  .card-body { padding:1.5rem; }
+  .card-body h3 { font-size:1.3rem; margin-bottom:0.5rem; }
+  .card-body p { color:#555; font-size:0.95rem; }
+  .featured-section { background:var(--charcoal); color:#fff; }
+  .featured-section .section-sub { color:#aaa; }
+  .featured-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:3rem; align-items:center; max-width:1200px; margin:0 auto; padding:5rem 2rem; }
+  .featured-icon { font-size:4rem; margin-bottom:1rem; }
+  .featured-text h2 { font-size:2rem; margin-bottom:1rem; }
+  .featured-text p { color:#aaa; margin-bottom:1.5rem; }
+  .beer-list { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  .beer-item { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:1.5rem; text-align:center; }
+  .beer-item h4 { color:var(--amber); margin-bottom:0.3rem; }
+  .beer-item p { color:#999; font-size:0.85rem; }
+  .beer-item .abv { color:var(--gold); font-weight:600; margin-top:0.5rem; }
+  .locations-preview { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; }
+  .location-card { background:#fff; border-radius:12px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .location-card h3 { color:var(--amber); margin-bottom:0.5rem; }
+  .location-card .addr { color:#555; margin-bottom:0.3rem; }
+  .location-card .hours { color:#777; font-size:0.9rem; }
+  .instagram-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+  .instagram-grid div { aspect-ratio:1; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:2rem; background:var(--charcoal); color:var(--amber); }
+  footer { background:var(--charcoal); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; transition:color 0.2s; }
+  footer .social a:hover { color:var(--amber); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { nav ul { gap:1rem; } nav ul li a { font-size:0.75rem; } .hero h1 { font-size:2.2rem; } .grid-3, .featured-grid, .beer-list, .locations-preview { grid-template-columns:1fr; } .instagram-grid { grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Heist<span>Brewery</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="main">
+  <h1>Charlotte's Original <span>Craft Brewpub</span></h1>
+  <p class="tagline">Since 2012 — Where Hazy IPAs Were Born in North Carolina</p>
+  <p>Wood-fired flatbreads, proprietary-blend burgers, and award-winning small-batch beer at two Charlotte locations.</p>
+  <a href="menu.html" class="btn">Explore Our Menu</a>
+  <a href="#featured-beer" class="btn btn-outline" style="margin-left:1rem;">View Beers</a>
+</section>
+
+<section class="section">
+  <h2 class="section-title">The <span>Heist</span> Experience</h2>
+  <p class="section-sub">Craft beer, wood-fired cuisine, and an atmosphere that defines Charlotte's craft scene.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-img" style="background:#f0e6d6;">&#x1F37A;</div>
+      <div class="card-body">
+        <h3>Craft Beer</h3>
+        <p>From the original CitraQuench'l hazy IPA to barrel-aged stouts and fruited sours — brewed on our 30BBL production system.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background:#e8ddd0;">&#x1F525;</div>
+      <div class="card-body">
+        <h3>Wood-Fired Kitchen</h3>
+        <p>Flatbreads, dips, proprietary-blend burgers, and seasonal fare sourced from local farms and purveyors.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background:#f0e6d6;">&#x1F3E0;</div>
+      <div class="card-body">
+        <h3>Two Locations</h3>
+        <p>NoDa brewpub and Barrel Arts at North End — each with its own vibe, full menu, and craft cocktail program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section" id="featured-beer">
+  <div class="featured-grid">
+    <div class="featured-text">
+      <div class="featured-icon">&#x1F37A;</div>
+      <h2>Born in Charlotte — <span style="color:var(--amber);">The Original Hazy IPA</span></h2>
+      <p>In 2016, Heist Brewery created CitraQuench'l — the first hazy IPA in North Carolina. Our portfolio has since grown to include pilsners, fruited sours, adjunct stouts, and barrel-aged specialties.</p>
+      <a href="story.html" class="btn">Our Story</a>
+    </div>
+    <div>
+      <div class="beer-list">
+        <div class="beer-item">
+          <h4>CitraQuench'l</h4>
+          <p>Hazy IPA — Citra hops, juicy finish</p>
+          <div class="abv">6.5% ABV</div>
+        </div>
+        <div class="beer-item">
+          <h4>Barrel-Aged Stout</h4>
+          <p>Bourbon barrel, vanilla, cocoa</p>
+          <div class="abv">11% ABV</div>
+        </div>
+        <div class="beer-item">
+          <h4>Fruited Sour</h4>
+          <p>Seasonal fruit, tart finish</p>
+          <div class="abv">5.2% ABV</div>
+        </div>
+        <div class="beer-item">
+          <h4>German Pils</h4>
+          <p>Crisp, clean, traditional</p>
+          <div class="abv">5.0% ABV</div>
+        </div>
+        <div class="beer-item">
+          <h4>Hazy IPA</h4>
+          <p>Double dry-hopped, smooth</p>
+          <div class="abv">7.2% ABV</div>
+        </div>
+        <div class="beer-item">
+          <h4>Small Batch</h4>
+          <p>House-only experimental brews</p>
+          <div class="abv">Varies</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our <span>Locations</span></h2>
+  <p class="section-sub">Two distinct experiences in Charlotte's most vibrant neighborhoods.</p>
+  <div class="locations-preview">
+    <div class="location-card">
+      <h3>&#x1F3E0; Heist Brewery — NoDa</h3>
+      <p class="addr">2909 N Davidson St STE 200, Charlotte, NC 28205</p>
+      <p class="hours">Mon-Thu 11a-10p &bull; Fri-Sat 11a-12a &bull; Sun 10a-10p</p>
+      <p style="margin-top:1rem;color:#555;">Our original brewpub with the full food menu, all beer on tap, and the energy that made NoDa famous.</p>
+      <a href="contact.html" class="btn btn-outline" style="margin-top:1rem;display:inline-block;">Visit NoDa</a>
+    </div>
+    <div class="location-card">
+      <h3>&#x1F3E0; Barrel Arts at North End</h3>
+      <p class="addr">1030 Woodward Ave, Charlotte, NC 28206</p>
+      <p class="hours">Mon 3-8p &bull; Tue-Thu 3-10p &bull; Fri 3-11p &bull; Sat 11a-11p &bull; Sun 12-8p</p>
+      <p style="margin-top:1rem;color:#555;">Our second location featuring Livy's Neapolitan Pizzeria, craft cocktails, and a spacious outdoor patio.</p>
+      <a href="contact.html" class="btn btn-outline" style="margin-top:1rem;display:inline-block;">Visit Barrel Arts</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy);color:#fff;padding:4rem 2rem;text-align:center;">
+  <h2 style="font-size:2rem;margin-bottom:1rem;">Follow the <span style="color:var(--amber);">Heist</span></h2>
+  <p style="color:#aaa;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">Stay up to date with new releases, events, and behind-the-scenes at the brewery.</p>
+  <div class="instagram-grid" style="max-width:800px;margin:0 auto;">
+    <div>&#x1F37A;</div><div>&#x1F355;</div><div>&#x1F942;</div><div>&#x1F964;</div>
+  </div>
+  <div class="social" style="margin-top:2rem;">
+    <a href="https://www.instagram.com/heistbrewery/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/HeistBrewery" target="_blank">Facebook</a>
+    <a href="https://x.com/HeistBrewery" target="_blank">X</a>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/heistbrewery/" target="_blank">&#x1F4F7;</a>
+    <a href="https://www.facebook.com/HeistBrewery" target="_blank">&#x1F4AC;</a>
+    <a href="https://x.com/HeistBrewery" target="_blank">&#x1D54F;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Heist Brewery Concept &bull; Charlotte, NC</p>
+</footer>
+</body>
+</html>

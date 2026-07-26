@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banh Mi Brothers - Charlotte, NC | Catering & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Banh Mi Bros
+          <span>Street Food & Boba</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="boba.html">Boba Tea Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Banh Mi Box Lunch Catering</h2>
+    <p class="page-subtitle">Feed your UNCC event, corporate office lunch, or family party with Banh Mi Brothers' scratch-made lunch boxes and egg roll pans.</p>
+  </header>
+
+  <!-- Interactive Platter Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Interactive Catering Calculator</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Drag the slider to input your expected guest count. Our calculator will estimate the required boxes and total cost.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 1.1rem; font-weight: 700; color: var(--color-green); margin-bottom: 1rem; text-transform: uppercase;">Expected Guests: <span id="guests-val" style="font-size: 2rem; color: #ffffff;">30</span> people</label>
+        <input type="range" id="guests-count" min="10" max="120" value="30" step="5" style="width: 100%; accent-color: var(--color-green); cursor: pointer;" oninput="calculateFeast(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🍱</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Banh Mi Lunch Boxes</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-green);" id="box-lunches">30 Boxes</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Individually labeled ($10.50/ea)</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🥢</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Egg Roll Pans</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-green);" id="eggroll-pans">3 Pans</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">20 crispy egg rolls per pan ($50/ea)</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <span style="font-size: 2rem;">🧋</span>
+          <h4 style="margin: 0.8rem 0 0.4rem 0; color: #ffffff;">Gallons of Boba Tea</h4>
+          <p style="font-size: 1.8rem; font-weight: 800; color: var(--color-green);" id="boba-gallons">3 Gallons</p>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Serves ~10 people per gallon ($35/ea)</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(132, 204, 22, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%);">
+        <span style="font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-light); letter-spacing: 0.05em;">Estimated Catering Total</span>
+        <h4 style="font-size: 3rem; color: #ffffff; margin: 0.5rem 0;" id="feast-cost">$570.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="feast-summary">Includes 30 Banh Mi boxes, 3 Egg Roll pans, and 3 Gallons of Boba tea.</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Catering Booking Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. All catering orders require 48 hours notice. pickup-only or delivery available near Harris Boulevard.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="pickup-date">Requested Pickup Date</label>
+              <input type="date" id="pickup-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="30" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(132, 204, 22, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details of your request (Specify sandwich proteins, sweetness of tea gallons, etc.)</label>
+              <textarea id="notes" placeholder="e.g. Please make 15 Grilled Pork, 10 Chicken and 5 Tofu box lunches. Make the taro boba tea 70% sweet..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Catering Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🥡</div>
+          <h3 class="success-title">Feast Request Logged!</h3>
+          <p class="success-msg" id="success-message">Thank you. Banh Mi Brothers' catering coordinator will review details and call you to arrange pricing and pick-up details.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>230 E W.T. Harris Blvd, Suite A7<br>Charlotte, NC 28262</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 10:30 AM - 7:00 PM<br>Fri - Sat: 10:30 AM - 8:00 PM<br>Sunday: 11:00 AM - 7:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (980) 237-7756<br>Vietnamese Street Food & Boba | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Banh Mi Brothers. Fresh baguettes rolled daily.</p>
+    </div>
+  </footer>
+
+  <script>
+    function calculateFeast(guests) {
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      // Calculation logic
+      const boxes = Math.ceil(guests * 1);
+      const eggrolls = Math.ceil(guests * 1.5 / 20);
+      const gallons = Math.ceil(guests / 10);
+
+      const totalCost = (boxes * 10.50) + (eggrolls * 50) + (gallons * 35);
+
+      document.getElementById('box-lunches').innerText = `${boxes} ${boxes === 1 ? 'Box' : 'Boxes'}`;
+      document.getElementById('eggroll-pans').innerText = `${eggrolls} ${eggrolls === 1 ? 'Pan' : 'Pans'}`;
+      document.getElementById('boba-gallons').innerText = `${gallons} ${gallons === 1 ? 'Gallon' : 'Gallons'}`;
+      document.getElementById('feast-cost').innerText = `$${totalCost.toFixed(2)}`;
+      document.getElementById('feast-summary').innerText = `Includes ${boxes} Banh Mi boxes, ${eggrolls} Egg Roll ${eggrolls === 1 ? 'pan' : 'pans'}, and ${gallons} Gallon ${gallons === 1 ? 'boba tea' : 'boba teas'}.`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your catering request has been logged. Our coordinator will call you at <strong>${phone}</strong> shortly to finalize options and schedule pickup.`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menus · The Goodyear House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--sage:#7a8a6e;--cream:#f5efe3;--dark:#1a1510;--charcoal:#0f0c0a;--brick:#8a3a2a;--muted:#8a7a6a;--warm:#c49a6c}
+body{margin:0;background:var(--dark);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--charcoal);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(122,138,110,.1)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--sage)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:.95rem;color:var(--cream)!important;letter-spacing:.04em;text-transform:none;opacity:1!important}
+.page-header{background:linear-gradient(135deg,#1a1510,#0f0c0a 50%,#1a2a15);padding:3.5rem 2rem 2.5rem;text-align:center}
+.page-header h1{font-size:2.2rem;margin:0;color:var(--warm)}
+.page-header p{opacity:.5;font-style:italic;margin:.4rem 0 0}
+.section{padding:3.5rem 2rem;max-width:1000px;margin:0 auto}
+.section h2{font-size:1.3rem;color:var(--sage);margin:0 0 .1rem;border-left:3px solid var(--brick);padding-left:.75rem}
+.section .note{color:var(--muted);font-style:italic;font-size:.88rem;margin-bottom:2rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.menu-item{background:rgba(255,255,255,.03);border:1px solid rgba(122,138,110,.06);border-radius:10px;padding:1.25rem 1.5rem}
+.menu-item .name{font-weight:700;color:var(--warm);font-size:.92rem;display:flex;justify-content:space-between}
+.menu-item .name .price{color:var(--cream);opacity:.5;font-weight:400}
+.menu-item .desc{font-size:.8rem;opacity:.45;line-height:1.5;margin-top:.3rem}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(122,138,110,.06)}
+footer a{color:var(--sage);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+.finder{background:rgba(122,138,110,.06);border:1px solid rgba(122,138,110,.15);border-radius:12px;padding:2rem;margin-top:1.5rem}
+.finder h3{color:var(--sage);margin:0 0 .75rem;font-size:1.1rem}
+.finder .finder-form{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}@media(max-width:600px){.finder .finder-form{grid-template-columns:1fr}}
+.finder label{font-size:.82rem;font-weight:700;display:grid;gap:.4rem}
+.finder select,.finder button{width:100%;padding:.8rem 1rem;border-radius:8px;font-size:.85rem}
+.finder select{border:1px solid rgba(122,138,110,.2);background:rgba(0,0,0,.3);color:var(--cream)}
+.finder button{background:var(--brick);color:#fff;border:none;font-weight:700;cursor:pointer;transition:.2s}
+.finder button:hover{background:#6e2e1e}
+.finder-result{background:rgba(255,255,255,.03);border-radius:8px;padding:1rem;margin-top:1rem;display:none;border:1px solid var(--sage)}
+.finder-result.show{display:block}
+.tab-bar{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab-bar button{background:rgba(255,255,255,.03);border:1px solid rgba(122,138,110,.1);color:var(--cream);padding:.5rem 1.2rem;border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+.tab-bar button.active,.tab-bar button:hover{background:var(--sage);color:#fff;border-color:var(--sage)}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">The Goodyear House</a>
+  <div class="nav-links">
+    <a href="menu.html">Menus</a>
+    <a href="story.html">Our Story</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Find Us</a>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Our Menus</h1>
+  <p>Seasonal, chef-driven — ever-changing with the bounty from local farmers</p>
+</div>
+<section class="section">
+  <div class="tab-bar" data-toggle-group>
+    <button data-toggle="dinner" class="active">Dinner</button>
+    <button data-toggle="lunch">Lunch</button>
+    <button data-toggle="brunch">Brunch</button>
+    <button data-toggle="beverage">Beverage</button>
+  </div>
+  <div data-panel="dinner">
+    <h2>Dinner</h2>
+    <p class="note">Small bites, hearty entrees, salads & sweets — something for everyone</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Fried Green Tomatoes</span> <span class="price">13</span></div>
+        <div class="desc">House-made pimento cheese, pepper jelly, micro greens</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Carolina Shrimp & Grits</span> <span class="price">27</span></div>
+        <div class="desc">Stone-ground grits, local shrimp, tasso ham, scallion, tomato gravy</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Heritage Pork Chop</span> <span class="price">32</span></div>
+        <div class="desc">Brine-roasted, sweet potato puree, collard greens, apple mostarda</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Cast-Iron Chicken</span> <span class="price">26</span></div>
+        <div class="desc">Springer Mountain half chicken, herb butter, roasted vegetables, pan jus</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>NC Mountain Trout</span> <span class="price">29</span></div>
+        <div class="desc">Pan-seared, lemon caper butter, crispy potatoes, arugula salad</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Chief Burger</span> <span class="price">18</span></div>
+        <div class="desc">Double smash patty, aged cheddar, house pickles, special sauce, brioche</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="lunch" hidden>
+    <h2>Lunch</h2>
+    <p class="note">Hearty & handheld — served Mon–Fri 11AM–3PM</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Goodyear Salad</span> <span class="price">15</span></div>
+        <div class="desc">Mixed greens, goat cheese, candied pecans, dried cranberries, sherry vinaigrette</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>BLT & Avo</span> <span class="price">16</span></div>
+        <div class="desc">Applewood bacon, fried green tomato, avocado, arugula, comeback sauce on sourdough</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Grilled Chicken Wrap</span> <span class="price">15</span></div>
+        <div class="desc">Herb-marinated chicken, romaine, tomato, ranch, flour tortilla</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Chief Burger</span> <span class="price">18</span></div>
+        <div class="desc">Double smash patty, aged cheddar, house pickles, special sauce, brioche</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="brunch" hidden>
+    <h2>Brunch</h2>
+    <p class="note">Feel-good classics & Southern staples — Sat & Sun alongside lunch</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Buttermilk Pancakes</span> <span class="price">14</span></div>
+        <div class="desc">House-made, bourbon maple syrup, whipped butter, fresh berries</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Shrimp & Grits</span> <span class="price">20</span></div>
+        <div class="desc">Brunch portion — stone-ground grits, local shrimp, tasso ham, two eggs any style</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Biscuits & Gravy</span> <span class="price">15</span></div>
+        <div class="desc">House buttermilk biscuits, sage sausage gravy, two eggs</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Hangover Bowl</span> <span class="price">16</span></div>
+        <div class="desc">Hash browns, pulled pork, two eggs, pimento cheese, hot sauce</div>
+      </div>
+    </div>
+  </div>
+  <div data-panel="beverage" hidden>
+    <h2>Beverage Menu</h2>
+    <p class="note">Seasonal cocktails, local brews, and fine wines</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="name"><span>Goodyear Old Fashioned</span> <span class="price">15</span></div>
+        <div class="desc">Bourbon, brown sugar demerara, black walnut bitters, orange</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>Southern Sour</span> <span class="price">14</span></div>
+        <div class="desc">Peach whiskey, lemon, honey, thyme, egg white</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>NoDa Pale Ale</span> <span class="price">7</span></div>
+        <div class="desc">Local favorite — crisp, hoppy, and always on draft</div>
+      </div>
+      <div class="menu-item">
+        <div class="name"><span>House Wine</span> <span class="price">12</span></div>
+        <div class="desc">Rotating selection by the glass — ask your server for today's pour</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section">
+  <div class="finder" data-demo-form>
+    <h3>Find Your Perfect Meal</h3>
+    <p style="font-size:.85rem;opacity:.5;margin:0 0 1rem">Tell us what you're in the mood for and we'll point you to the perfect dish</p>
+    <form class="finder-form" data-demo-form>
+      <label>What's your craving?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="comfort">Southern comfort</option>
+          <option value="fresh">Light & fresh</option>
+          <option value="hearty">Hearty & filling</option>
+          <option value="brunch">Brunch vibes</option>
+          <option value="drinks">Cocktails & drinks</option>
+        </select>
+      </label>
+      <label>Time of day?
+        <select required>
+          <option value="">Choose one</option>
+          <option value="lunch">Lunch (11AM–3PM)</option>
+          <option value="dinner">Dinner (4PM–close)</option>
+          <option value="brunch-time">Weekend brunch</option>
+        </select>
+      </label>
+      <div style="grid-column:1/-1">
+        <button type="submit">Find My Dish</button>
+      </div>
+    </form>
+    <div class="finder-result" id="finder-result">
+      <p style="margin:0;color:var(--sage);font-weight:700">Great choice! Come see us and our team will take care of the rest. Reserve a table on OpenTable.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p><strong style="color:var(--sage);font-size:.9rem">The Goodyear House</strong><br>3032 North Davidson Street, Charlotte, NC 28205 · (704) 910-0132</p>
+  <p><a href="contact.html">Hours & Directions</a> · <a href="menu.html">Menus</a> · <a href="events.html">Private Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

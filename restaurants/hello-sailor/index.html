@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello, Sailor — Lakeside Restaurant on Lake Norman Cornelius</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --coral:#e8685a; --teal:#3a9b9e; --cream:#fdf8f2; --gold:#d4a843; --navy:#1a2a4a; --white:#fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:#333; background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--coral); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--navy); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--navy); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.5rem; color:var(--white); text-decoration:none; font-weight:700; letter-spacing:1px; }
+  nav .logo span { color:var(--coral); }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--coral); }
+  .hero { background:linear-gradient(135deg,#1a2a4a 0%,#3a9b9e 40%,#e8685a 100%); color:#fff; padding:6rem 2rem 5rem; text-align:center; position:relative; }
+  .hero h1 { font-size:4rem; margin-bottom:0.5rem; letter-spacing:-1px; }
+  .hero h1 span { color:var(--gold); }
+  .hero .tagline { font-size:1.3rem; color:rgba(255,255,255,0.85); font-style:italic; margin-bottom:2rem; }
+  .hero p { color:rgba(255,255,255,0.8); max-width:550px; margin:0 auto 2rem; }
+  .btn { display:inline-block; background:var(--coral); color:#fff; padding:14px 36px; text-decoration:none; font-weight:600; border-radius:50px; transition:all 0.2s; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem; }
+  .btn:hover { background:#d04a3a; transform:translateY(-2px); }
+  .btn-outline { background:transparent; border:2px solid var(--white); color:var(--white); }
+  .btn-outline:hover { background:var(--white); color:var(--navy); }
+  .section { padding:5rem 2rem; max-width:1200px; margin:0 auto; }
+  .section-title { font-size:2.4rem; margin-bottom:0.5rem; text-align:center; }
+  .section-title span { color:var(--coral); }
+  .section-sub { text-align:center; color:#666; max-width:600px; margin:0 auto 3rem; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  .card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); transition:transform 0.2s; }
+  .card:hover { transform:translateY(-4px); }
+  .card-img { height:200px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; }
+  .card-body { padding:1.5rem; }
+  .card-body h3 { font-size:1.3rem; margin-bottom:0.5rem; }
+  .card-body p { color:#555; font-size:0.95rem; }
+  .vibe-section { background:var(--teal); color:#fff; padding:4rem 2rem; text-align:center; }
+  .vibe-section h2 { font-size:2.2rem; margin-bottom:1rem; }
+  .vibe-section h2 span { color:var(--gold); }
+  .vibe-section p { color:rgba(255,255,255,0.85); max-width:500px; margin:0 auto 2rem; }
+  .vibe-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:800px; margin:0 auto; }
+  .vibe-card { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:2rem; cursor:pointer; transition:all 0.2s; }
+  .vibe-card:hover { background:rgba(255,255,255,0.2); transform:translateY(-2px); }
+  .vibe-card.selected { background:var(--coral); border-color:var(--coral); }
+  .vibe-card .icon { font-size:2.5rem; margin-bottom:0.5rem; }
+  .vibe-card h4 { font-size:1.1rem; }
+  .vibe-card p { font-size:0.85rem; opacity:0.8; }
+  .vibe-result { margin-top:2rem; padding:1.5rem; background:rgba(255,255,255,0.1); border-radius:12px; display:none; max-width:500px; margin-left:auto; margin-right:auto; }
+  .vibe-result h4 { color:var(--gold); font-size:1.2rem; margin-bottom:0.3rem; }
+  .view-section { background:linear-gradient(135deg,#1a2a4a,#3a9b9e); color:#fff; padding:5rem 2rem; }
+  .view-content { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+  .view-text h2 { font-size:2.2rem; margin-bottom:1rem; }
+  .view-text p { color:rgba(255,255,255,0.8); margin-bottom:1.5rem; }
+  .view-features { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+  .view-features div { background:rgba(255,255,255,0.08); padding:1rem; border-radius:8px; text-align:center; }
+  .view-features div .num { font-family:'Fraunces',Georgia,serif; font-size:1.8rem; color:var(--gold); }
+  .view-features div .label { font-size:0.85rem; opacity:0.8; }
+  .social-row { display:flex; justify-content:center; gap:1.5rem; margin-top:2rem; }
+  .social-row a { color:#fff; font-size:1.5rem; text-decoration:none; transition:color 0.2s; }
+  .social-row a:hover { color:var(--coral); }
+  footer { background:var(--navy); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; }
+  footer .social a:hover { color:var(--coral); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { nav ul { gap:1rem; } nav ul li a { font-size:0.75rem; } .hero h1 { font-size:2.5rem; } .grid-3,.vibe-grid,.view-content,.view-features { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Hello, <span>Sailor</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="main">
+  <h1>Smooth Sailing, <span>Y'all</span></h1>
+  <p class="tagline">Retro-chic waterfront dining on Lake Norman</p>
+  <p>From the team behind Kindred comes a sunny lakeside escape with chef-driven seafood, craft cocktails, and the best view on the water.</p>
+  <a href="menu.html" class="btn">View Menu</a>
+  <a href="contact.html" class="btn btn-outline" style="margin-left:1rem;">Reserve a Table</a>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Welcome to <span>Hello, Sailor</span></h2>
+  <p class="section-sub">North Carolina fish camp meets mid-century Palm Springs — right on the shores of Lake Norman.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-img" style="background:#fce8e4;">&#x1F30A;</div>
+      <div class="card-body">
+        <h3>Waterfront Dining</h3>
+        <p>Three-tiered patio with sweeping lake views, a seasonal tiki bar, and 20 boat slips for diners arriving by water.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background:#e0f0f0;">&#x1F41F;</div>
+      <div class="card-body">
+        <h3>Chef-Driven Seafood</h3>
+        <p>Fresh PEI oysters, Calabash shrimp, smoked fish dip, and creative coastal fare from the Kindred culinary team.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img" style="background:#fce8e4;">&#x1F378;</div>
+      <div class="card-body">
+        <h3>Tiki Bar &amp; Cocktails</h3>
+        <p>Seasonal outdoor tiki bar with tropical cocktails, frozen drinks, and a carefully curated wine and beer list.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view-section">
+  <div class="view-content">
+    <div class="view-text">
+      <h2>Lake Norman's <span style="color:var(--gold);">Premier Waterfront Spot</span></h2>
+      <p>Perched on the shores of Lake Norman at Holiday Marina, Hello, Sailor offers an experience that's equal parts relaxed and refined. Inside, find mid-century charm with a wood-burning stove. Outside, soak up the sun on our multi-level deck.</p>
+      <div class="view-features">
+        <div><div class="num">20</div><div class="label">Boat Slips</div></div>
+        <div><div class="num">3</div><div class="label">Outdoor Decks</div></div>
+        <div><div class="num">500</div><div class="label">Event Capacity</div></div>
+        <div><div class="num">&#x2600;&#xFE0F;</div><div class="label">Pet-Friendly Patio</div></div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.05);border-radius:16px;padding:3rem;text-align:center;">
+      <div style="font-size:6rem;margin-bottom:1rem;">&#x26F5;</div>
+      <p style="color:rgba(255,255,255,0.7);font-style:italic;">"A bright and sunny waterfront restaurant with alluring retro charm."</p>
+      <p style="color:var(--gold);margin-top:1rem;">— Michelin Guide</p>
+    </div>
+  </div>
+</section>
+
+<section class="vibe-section">
+  <h2>Find Your <span>Retro Vibe</span></h2>
+  <p>Not sure what to order? Pick your mood and we'll recommend the perfect dish and drink.</p>
+  <div class="vibe-grid" id="vibeFinder">
+    <div class="vibe-card" data-dish="Oysters on the Half Shell" data-drink="Crisp Sauvignon Blanc" data-msg="Fresh, briny, perfectly shucked. A classic start to any lakeside meal.">
+      <div class="icon">&#x1F41A;</div>
+      <h4>Beach Bum</h4>
+      <p>Laid-back, salty air, toes in the sand</p>
+    </div>
+    <div class="vibe-card" data-dish="Skillet Burger + Fries" data-drink="Craft IPA" data-msg="The legendary Kindred skillet burger. Juicy, crispy-edged, and utterly satisfying.">
+      <div class="icon">&#x1F354;</div>
+      <h4>All-American</h4>
+      <p>Classic, hearty, no frills needed</p>
+    </div>
+    <div class="vibe-card" data-dish="Baby Back Ribs" data-drink="Bourbon Smash" data-msg="Sticky, tender, fall-off-the-bone ribs with a side of lake views.">
+      <div class="icon">&#x1F356;</div>
+      <h4>Backyard BBQ</h4>
+      <p>Finger-lickin' good, napkins required</p>
+    </div>
+    <div class="vibe-card" data-dish="Citrus Crab Louie Salad" data-drink="Frozen Mojito" data-msg="Light, bright, and refreshing. The perfect lakeside lunch.">
+      <div class="icon">&#x1F957;</div>
+      <h4>Fresh &amp; Light</h4>
+      <p>Healthy, vibrant, garden-to-table</p>
+    </div>
+    <div class="vibe-card" data-dish="PEI Mussels + Crostini" data-drink="Glass of Champagne" data-msg="Steamed in white wine, garlic, and herbs. Romantic and shareable.">
+      <div class="icon">&#x1F48B;</div>
+      <h4>Date Night</h4>
+      <p>Romantic, sunset views, share plates</p>
+    </div>
+    <div class="vibe-card" data-dish="Calabash Shrimp Platter" data-drink="Tiki Punch" data-msg="Crispy, golden, Carolina-style fried shrimp with a tropical twist.">
+      <div class="icon">&#x1F379;</div>
+      <h4>Tiki Time</h4>
+      <p>Tropical drinks, sunshine, good vibes</p>
+    </div>
+  </div>
+  <div class="vibe-result" id="vibeResult">
+    <h4 id="vibeDish"></h4>
+    <p id="vibeDrink" style="color:var(--gold);margin-bottom:0.3rem;"></p>
+    <p id="vibeMsg" style="opacity:0.8;"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/hellosailornc" target="_blank">&#x1F4F7;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Hello, Sailor Concept &bull; Cornelius, NC</p>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  var cards = document.querySelectorAll('.vibe-card');
+  var result = document.getElementById('vibeResult');
+  var dishEl = document.getElementById('vibeDish');
+  var drinkEl = document.getElementById('vibeDrink');
+  var msgEl = document.getElementById('vibeMsg');
+  cards.forEach(function(c) {
+    c.addEventListener('click', function() {
+      cards.forEach(function(c2) { c2.classList.remove('selected'); });
+      this.classList.add('selected');
+      dishEl.textContent = '\uD83C\uDF54 ' + this.getAttribute('data-dish') + ' + ' + this.getAttribute('data-drink');
+      drinkEl.textContent = this.getAttribute('data-drink');
+      msgEl.textContent = this.getAttribute('data-msg');
+      result.style.display = 'block';
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The story of ACE No. 3 — How two Charlotte restaurateurs built a smash-burger concept around the idea that less is more.">
+  <title>Our Story — ACE No. 3</title>
+  <link rel="stylesheet" href="../site-core.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+
+    :root {
+      --ace-black: #1a1a1a;
+      --ace-dark: #2d2d2d;
+      --ace-cream: #f5f0e8;
+      --ace-warm: #e8ddd0;
+      --ace-sage: #9eb5a0;
+      --ace-sage-dark: #7a937c;
+      --ace-cognac: #8b6040;
+      --ace-gold: #c4a46c;
+      --ace-font: 'DM Sans', system-ui, sans-serif;
+      --ace-serif: 'Fraunces', Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: var(--ace-font);
+      background: var(--ace-cream); color: var(--ace-black);
+      line-height: 1.7; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .concept-bar { background: var(--ace-gold); color: var(--ace-black); }
+
+    .nav-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+      background: rgba(26,26,26,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-logo { font-weight: 900; font-size: 1.15rem; letter-spacing: .12em; color: var(--ace-cream); display: flex; align-items: center; gap: .5rem; }
+    .nav-logo span { color: var(--ace-gold); }
+    .nav-links { display: flex; gap: .25rem; }
+    .nav-links a {
+      padding: .5rem .9rem; border-radius: .4rem;
+      font-size: .82rem; font-weight: 600; letter-spacing: .04em;
+      color: rgba(245,240,232,.75); transition: .2s;
+    }
+    .nav-links a:hover, .nav-links a:focus { background: rgba(255,255,255,.08); color: var(--ace-cream); }
+    .nav-order {
+      background: var(--ace-gold); color: var(--ace-black) !important;
+      border-radius: 2rem !important; padding: .5rem 1.2rem !important; font-weight: 700 !important;
+    }
+    .nav-order:hover { background: #d4b47c !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ace-cream); border-radius: 2px; transition: .2s; }
+    @media (max-width:720px) {
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(26,26,26,.97); padding: .5rem 1rem 1rem; gap: .15rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .7rem .9rem; }
+      .nav-bar { padding: .75rem 1rem; }
+    }
+
+    .page-header {
+      padding: 7rem 2rem 3rem;
+      background: var(--ace-black); color: var(--ace-cream);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-header::after {
+      content: '&#9824;';
+      position: absolute; bottom: -2rem; right: -1rem;
+      font-size: 12rem; opacity: .04; line-height: 1;
+    }
+    .page-header h1 {
+      font-family: var(--ace-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 .5rem;
+    }
+    .page-header p { color: rgba(245,240,232,.6); max-width: 520px; margin: 0 auto; font-size: 1.05rem; }
+
+    .story-content { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .story-section { margin-bottom: 3rem; }
+    .story-section h2 {
+      font-family: var(--ace-serif);
+      font-size: 1.6rem; font-weight: 700;
+      margin: 0 0 .75rem;
+    }
+    .story-section p { margin-bottom: 1rem; color: rgba(26,26,26,.72); font-size: 1rem; }
+    .story-section .lead { font-size: 1.1rem; color: var(--ace-black); font-weight: 500; }
+
+    .timeline {
+      display: grid; gap: 2rem;
+      margin: 3rem 0;
+    }
+    .timeline-item {
+      display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem;
+      align-items: start;
+    }
+    .timeline-year {
+      font-family: var(--ace-serif);
+      font-size: 1.8rem; font-weight: 700; line-height: 1;
+      color: var(--ace-gold); text-align: right;
+    }
+    .timeline-content h3 { font-size: 1rem; font-weight: 700; margin: 0 0 .3rem; }
+    .timeline-content p { font-size: .9rem; color: rgba(26,26,26,.6); margin: 0; }
+
+    @media (max-width:520px) {
+      .timeline-item { grid-template-columns: 1fr; gap: .25rem; }
+      .timeline-year { text-align: left; }
+    }
+
+    .value-block {
+      background: var(--ace-warm); border-radius: 1.2rem;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .value-block h2 { font-family: var(--ace-serif); font-size: 1.6rem; font-weight: 700; margin: 0 0 .75rem; }
+    .value-block p { color: rgba(26,26,26,.65); max-width: 540px; margin: 0 auto 1rem; font-size: .95rem; }
+
+    .group-logos {
+      display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: center;
+      margin-top: 1.5rem;
+    }
+    .group-logos a {
+      font-size: .82rem; font-weight: 600; letter-spacing: .04em;
+      padding: .5rem 1.2rem; border: 1px solid rgba(26,26,26,.1); border-radius: 2rem;
+      color: rgba(26,26,26,.55); transition: .2s;
+    }
+    .group-logos a:hover { border-color: var(--ace-cognac); color: var(--ace-black); }
+
+    .footer {
+      background: var(--ace-black); border-top: 1px solid rgba(255,255,255,.06);
+      padding: 3rem 2rem 2rem; color: rgba(245,240,232,.5); font-size: .82rem;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+    .footer h4 { color: var(--ace-cream); font-size: .85rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+    .footer a { color: rgba(245,240,232,.5); transition: .2s; }
+    .footer a:hover { color: var(--ace-gold); }
+    .footer-col p { margin-bottom: .35rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: .5rem; }
+    .footer-social a { font-size: 1.2rem; }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); text-align: center; font-size: .75rem; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/ace-no-3/" class="nav-logo">ACE <span>No. 3</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/ace-no-3/">Home</a>
+      <a href="/ace-no-3/menu.html">Menu</a>
+      <a href="/ace-no-3/story.html">Story</a>
+      <a href="/ace-no-3/catering.html">Catering</a>
+      <a href="/ace-no-3/locations.html">Locations</a>
+      <a href="https://order.toasttab.com/online/ace-belmontvillage" class="nav-order" target="_blank" rel="noopener">Order Now</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Our Story</h1>
+      <p>How a simple idea &#8212; great burger, cold beer, no fuss &#8212; grew into four Charlotte locations.</p>
+    </div>
+
+    <div class="story-content">
+      <div class="story-section">
+        <p class="lead">ACE No. 3 started with a bet on simplicity. In an industry that keeps adding, we chose to subtract.</p>
+        <p>Charlotte restaurateurs Andrew Chapman and Paul Manley had spent years building seafood concepts &#8212; Sea Level NC, The Waterman Fish Bar, Packard Tavern. They knew the Charlotte dining scene inside out. But what they really wanted was something smaller. A counter-service burger joint that stripped everything back to what mattered: the burger.</p>
+        <p>The idea was almost stubborn in its restraint. A short menu. Freshly griddled patties. Toasted potato rolls from Golden Grains Bakery. Housemade sauces. Cold beer. No reservations, no servers, no pretense.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-content">
+            <h3>The original opens in Belmont Village</h3>
+            <p>Chapman and Manley remodeled a brick-and-mortar space in the Belmont neighborhood and opened the first ACE No. 3. The interior was kept intentionally clean and simple &#8212; pastel green blocking, cognac-colored stools, red brick, quality wood tops.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <h3>Best Burger &#8212; Charlotte Magazine</h3>
+            <p>ACE No. 3 won its first Best Burger award from Charlotte Magazine. The recognition put the tiny counter-service spot on the map. More awards would follow.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <h3>Center City opens</h3>
+            <p>ACE expanded to Uptown, taking a spot in the One South building at 101 S Tryon Street. The second location brought smash burgers to the lunch crowd and after-work beer seekers.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h3>Concord Mills &amp; Myers Park</h3>
+            <p>Two more locations opened, bringing ACE to four. Myers Park at 829 Providence Road and Concord Mills rounded out the roster. Burger Bucks loyalty program launched.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-content">
+            <h3>Still going. Still simple.</h3>
+            <p>Four locations. Four-time Best Burger winner. Same griddles, same philosophy. Less is more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="value-block">
+        <h2>The Philosophy</h2>
+        <p>We believe that less is more. Our menu is simple, but pretty darn delicious. Fresh ingredients, cooked to order, served without attitude. A burger, a shake, a beer. That&#8217;s all you need.</p>
+        <p style="font-style:italic;color:var(--ace-cognac);font-weight:600">&#8212; Founders Andrew Chapman &amp; Paul Manley</p>
+      </div>
+
+      <div class="story-section">
+        <h2>Part of Something Bigger</h2>
+        <p>ACE No. 3 is a proud member of High Tide Hospitality Group, a Charlotte-based collection of independent restaurants. From seafood to tavern fare to smash burgers, each concept serves its own purpose &#8212; but the commitment to quality, hospitality and local identity runs through all of them.</p>
+      </div>
+
+      <div class="group-logos">
+        <a href="https://www.sealevelnc.com" target="_blank" rel="noopener">Sea Level NC</a>
+        <a href="https://www.watermanclt.com" target="_blank" rel="noopener">The Waterman Fish Bar</a>
+        <a href="https://www.packardtavern.com/" target="_blank" rel="noopener">Packard Tavern</a>
+        <a href="https://www.eat704.com" target="_blank" rel="noopener">High Tide Hospitality</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>ACE No. 3</h4>
+        <p>Smash burgers, shakes &amp; beer.</p>
+        <p>Charlotte, NC</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/aceno.3" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/aceno.3burgers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <p><a href="/ace-no-3/locations.html#belmont">Belmont Village</a></p>
+        <p><a href="/ace-no-3/locations.html#center-city">Center City</a></p>
+        <p><a href="/ace-no-3/locations.html#concord">Concord Mills</a></p>
+        <p><a href="/ace-no-3/locations.html#myers">Myers Park</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <p><a href="/ace-no-3/menu.html">Menu</a></p>
+        <p><a href="/ace-no-3/story.html">Our Story</a></p>
+        <p><a href="/ace-no-3/catering.html">Catering</a></p>
+        <p><a href="/ace-no-3/locations.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Part of</h4>
+        <p><a href="https://www.eat704.com" target="_blank" rel="noopener">High Tide Hospitality Group</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>This is an unofficial concept presentation and is not affiliated with or operated by ACE No. 3 or High Tide Hospitality Group.</p>
+    </div>
+  </footer>
+  <div class="demo-toast" role="status"></div>
+  <script src="../site-core.js"></script>
+</body>
+</html>

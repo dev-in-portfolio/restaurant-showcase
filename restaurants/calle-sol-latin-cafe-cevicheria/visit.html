@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit | Calle Sol Latin Café & Cevicheria</title>
+  <meta name="description" content="Order online, find hours, get directions, or inquire about catering at Calle Sol.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Calle Sol Home">
+        <div class="logo-icon" aria-hidden="true">&#9728;</div>
+        <div>
+          <span class="logo-text">Calle Sol</span>
+          <span class="logo-sub">Latin Café &amp; Cevicheria</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="ceviche.html">Ceviche Bar</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html" class="active">Visit</a></li>
+          <li><a href="visit.html#order" class="header-cta">Order Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-visit">
+      <div class="wrap">
+        <span class="page-hero-badge">&#128663; Order &amp; Visit</span>
+        <h1>Visit Us</h1>
+        <p>Order online for pickup or delivery, or visit us in Plaza Midwood or SouthPark.</p>
+      </div>
+    </section>
+
+    <!-- Online Ordering -->
+    <section id="order">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Order Online</h2>
+          <p>For pickup or delivery, order through Toast</p>
+        </div>
+        <div class="order-grid">
+          <div class="order-card">
+            <div class="order-badge">Plaza Midwood</div>
+            <h3>1205 Thomas Avenue</h3>
+            <p>Charlotte, NC 28205</p>
+            <a href="https://order.toasttab.com/online/locations/34fff39a-b77f-46c7-bad4-bdf6bec8c7ae/1205" class="btn btn-p" target="_blank" rel="noopener">Order from Midwood</a>
+          </div>
+          <div class="order-card">
+            <div class="order-badge">SouthPark</div>
+            <h3>3100 Apex Drive</h3>
+            <p>Charlotte, NC 28211</p>
+            <a href="https://order.toasttab.com/online/locations/34fff39a-b77f-46c7-bad4-bdf6bec8c7ae/3100" class="btn btn-p" target="_blank" rel="noopener">Order from SouthPark</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations Detail -->
+    <section class="section-alt" id="midwood">
+      <div class="wrap">
+        <div class="visit-grid">
+          <div class="visit-card">
+            <h3>&#128205; Plaza Midwood</h3>
+            <p class="address">1205 Thomas Avenue<br>Charlotte, NC 28205</p>
+            <p><a href="tel:7045658291">(704) 565-8291</a></p>
+            <table class="hours-table" aria-label="Plaza Midwood hours">
+              <tr><td>Mon – Thu</td><td>11 AM – 9 PM</td></tr>
+              <tr><td>Fri – Sat</td><td>11 AM – 10 PM</td></tr>
+              <tr><td>Sun</td><td>11 AM – 9 PM</td></tr>
+            </table>
+            <p class="loc-note">&#128062; Dog-friendly patio &bull; &#128663; Free parking</p>
+            <a href="https://maps.google.com/?q=1205+Thomas+Avenue+Charlotte+NC+28205" class="btn btn-sm" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <div class="visit-card" id="southpark">
+            <h3>&#128205; SouthPark</h3>
+            <p class="address">3100 Apex Drive<br>Charlotte, NC 28211</p>
+            <p><a href="tel:7046261022">(704) 626-1022</a></p>
+            <table class="hours-table" aria-label="SouthPark hours">
+              <tr><td>Mon – Thu</td><td>11 AM – 9 PM</td></tr>
+              <tr><td>Fri – Sat</td><td>11 AM – 10 PM</td></tr>
+              <tr><td>Sun</td><td>11 AM – 9 PM</td></tr>
+            </table>
+            <p class="loc-note">&#128663; Free parking (3 hours) &bull; &#127866; Full bar</p>
+            <a href="https://maps.google.com/?q=3100+Apex+Drive+Charlotte+NC+28211" class="btn btn-sm" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catering -->
+    <section>
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Catering</h2>
+          <p>Bring Calle Sol to your event. Latin catering for groups of all sizes.</p>
+        </div>
+        <div class="catering-inquiry">
+          <form class="contact-form" id="catering-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Estimated Guests</label>
+                <select id="guests" name="guests">
+                  <option value="10-20">10–20</option>
+                  <option value="20-50">20–50</option>
+                  <option value="50-100">50–100</option>
+                  <option value="100+">100+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="location">Preferred Location</label>
+                <select id="location" name="location">
+                  <option value="midwood">Plaza Midwood</option>
+                  <option value="southpark">SouthPark</option>
+                  <option value="either">Either</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your event</label>
+              <textarea id="message" name="message" rows="4" placeholder="Date, occasion, any dietary needs..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-p">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Calle Sol</h3>
+          <p>Latin Café &amp; Cevicheria. From Cuba to Peru, in the heart of Charlotte. Two locations: Plaza Midwood and SouthPark.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="visit.html">Visit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="tel:7045658291">(704) 565-8291</a></li>
+            <li><a href="mailto:info@callesolcafe.com">Email</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calle Sol Latin Café &amp; Cevicheria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

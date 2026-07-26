@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beer Flights · Duckworth's Grill & Taphouse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0f1a2e;--gold:#c99c3b;--copper:#b87333;--cream:#f5efe6;--charcoal:#1a1a1a;--muted:#8899aa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.hero{min-height:40vh;background:linear-gradient(135deg,#0f1a2e,#1a2a4e 50%,#2c1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:2.5rem;margin:0;color:var(--gold)}
+.hero .tagline{font-size:1.1rem;opacity:.5;font-style:italic;margin:.5rem 0 1.5rem;color:var(--gold);font-family:'Fraunces',serif}
+.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
+
+/* Interactive Beer Flight Styling */
+.beer-mat {
+  background: radial-gradient(circle, #1a2a4e 0%, #080f1e 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+}
+.beer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .beer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 156, 59, 0.2);
+  color: var(--cream);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,156,59,.08)}
+footer a{color:var(--gold);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Duckworth's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="beer.html" style="color: var(--gold);">Beer Flights</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Uptown Beer Flights</h1>
+    <p class="tagline">Select four custom pours from our rotating line-up of 150+ craft beers on tap</p>
+  </div>
+</header>
+
+<section class="section">
+  <h2>Taproom Flight Builder</h2>
+  <p class="subtitle">Select your four tasting glass pours below to calculate average ABV and display your custom flight board.</p>
+  
+  <div class="beer-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: 10px; border: 1px solid rgba(201,156,59, 0.05);">
+    
+    <!-- Left: Flight Platter Visualizer -->
+    <div class="beer-mat">
+      <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="beer-tag-display">CUSTOM BEER FLIGHT</span>
+      <h3 style="font-size: 2.2rem; color: var(--cream); margin: 0 0 0.8rem 0;" id="beer-title-display">4-Pour Tasting Flight</h3>
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="beer-price-display">$14.00</p>
+      <p style="font-size: 0.95rem; opacity: 0.7; line-height: 1.7; margin: 0;" id="beer-desc-display">Hazy IPA, Hazy IPA, Hazy IPA, and Hazy IPA. Average Flight Strength: 7.2% ABV.</p>
+    </div>
+
+    <!-- Right: Controls -->
+    <div>
+      <div style="margin-bottom: 1.5rem;">
+        <label>1. Glass One Pour</label>
+        <select id="beer-pour-1" onchange="updateBeer()">
+          <option value="hazy" selected>Sycamore Mountain Candy Hazy IPA (7.2% ABV)</option>
+          <option value="west">NoDa Hop Drop &apos;N Roll West Coast IPA (6.8% ABV)</option>
+          <option value="pilsner">OMB Captain Jack Pilsner (4.8% ABV)</option>
+          <option value="stout">Triple C Baby Maker Bourbon Imperial Stout (11.5% ABV)</option>
+          <option value="gose">Birdsong Jalapeño Pale Ale (5.5% ABV)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>2. Glass Two Pour</label>
+        <select id="beer-pour-2" onchange="updateBeer()">
+          <option value="hazy">Sycamore Mountain Candy Hazy IPA (7.2% ABV)</option>
+          <option value="west" selected>NoDa Hop Drop &apos;N Roll West Coast IPA (6.8% ABV)</option>
+          <option value="pilsner">OMB Captain Jack Pilsner (4.8% ABV)</option>
+          <option value="stout">Triple C Baby Maker Bourbon Imperial Stout (11.5% ABV)</option>
+          <option value="gose">Birdsong Jalapeño Pale Ale (5.5% ABV)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label>3. Glass Three Pour</label>
+        <select id="beer-pour-3" onchange="updateBeer()">
+          <option value="hazy">Sycamore Mountain Candy Hazy IPA (7.2% ABV)</option>
+          <option value="west">NoDa Hop Drop &apos;N Roll West Coast IPA (6.8% ABV)</option>
+          <option value="pilsner" selected>OMB Captain Jack Pilsner (4.8% ABV)</option>
+          <option value="stout">Triple C Baby Maker Bourbon Imperial Stout (11.5% ABV)</option>
+          <option value="gose">Birdsong Jalapeño Pale Ale (5.5% ABV)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>4. Glass Four Pour</label>
+        <select id="beer-pour-4" onchange="updateBeer()">
+          <option value="hazy">Sycamore Mountain Candy Hazy IPA (7.2% ABV)</option>
+          <option value="west">NoDa Hop Drop &apos;N Roll West Coast IPA (6.8% ABV)</option>
+          <option value="pilsner">OMB Captain Jack Pilsner (4.8% ABV)</option>
+          <option value="stout" selected>Triple C Baby Maker Bourbon Imperial Stout (11.5% ABV)</option>
+          <option value="gose">Birdsong Jalapeño Pale Ale (5.5% ABV)</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(201,156,59,.06)">
+  <h2>Taphouse Cellar Logistics</h2>
+  <div class="featured-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <div class="feature-card">
+      <h3>Cold-Room Storage</h3>
+      <p>All kegs are kept in our state-of-the-art cold room at a constant 36°F to ensure fresh pours without secondary fermentation.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Weekly Line Cleaning</h3>
+      <p>We perform draft line acid cleaning every single Tuesday morning. This ensures that every beer tastes exactly as the brewer intended.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Duckworth's Grill &amp; Taphouse · 330 N Tryon St · Charlotte, NC 28202 · 980-939-1166</p>
+  <p><a href="menu.html">Menu</a> · <a href="beer.html">Beer Flights</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+
+<script>
+  const beerData = {
+    hazy: { name: "Sycamore Hazy IPA", abv: 7.2 },
+    west: { name: "NoDa West Coast IPA", abv: 6.8 },
+    pilsner: { name: "OMB Pilsner", abv: 4.8 },
+    stout: { name: "Triple C Stout", abv: 11.5 },
+    gose: { name: "Birdsong Pale Ale", abv: 5.5 }
+  };
+
+  function updateBeer() {
+    const p1 = beerData[document.getElementById('beer-pour-1').value];
+    const p2 = beerData[document.getElementById('beer-pour-2').value];
+    const p3 = beerData[document.getElementById('beer-pour-3').value];
+    const p4 = beerData[document.getElementById('beer-pour-4').value];
+
+    const avgAbv = (p1.abv + p2.abv + p3.abv + p4.abv) / 4;
+
+    document.getElementById('beer-desc-display').innerText = 
+      `${p1.name}, ${p2.name}, ${p3.name}, and ${p4.name}. Average Flight Strength: ${avgAbv.toFixed(1)}% ABV.`;
+  }
+
+  // Initial trigger
+  window.addEventListener('load', () => {
+    updateBeer();
+  });
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

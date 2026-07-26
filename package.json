@@ -1,13 +1,13 @@
 {
   "name": "restaurant-showcase",
   "version": "1.0.0",
-  "description": "Polished, presentation-ready restaurant website demonstrations",
+  "description": "Polished Showcase showroom for approved restaurant websites",
   "type": "commonjs",
   "scripts": {
     "promote:showcase": "node scripts/import-approved-restaurant.js",
     "validate": "node scripts/validate-showcase.js",
-    "validate:all": "node scripts/validate-showcase.js --all",
-    "test": "node --test"
+    "serve": "python -m http.server 8085",
+    "dev": "python -m http.server 8085"
   },
   "keywords": [],
   "author": "",

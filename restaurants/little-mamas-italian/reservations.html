@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservations — Little Mama's Italian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--red-sauce:#c41e1e;--olive:#5c7a3a;--cream:#faf3e0;--warm-wood:#6b4226;--gold:#c9a84c;--charcoal:#1a1a1a;--mozz:#f5f0e0;--terracotta:#c1663c}.page-hero{background:linear-gradient(135deg,#1a0f0a,var(--red-sauce));color:var(--cream);padding:5rem 24px;text-align:center}.page-hero h1{color:var(--cream)}.page-hero h1 span{color:var(--gold);font-style:italic}.page-hero p{opacity:.8;max-width:600px;margin:0 auto}.reserve-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}@media(max-width:768px){.reserve-layout{grid-template-columns:1fr}}.reserve-form{padding:2rem;background:var(--cream);border-radius:8px}.reserve-form h2{color:var(--red-sauce);margin-bottom:1.25rem}.reserve-form label{display:block;font-weight:600;margin-bottom:.35rem;font-size:.9rem}.reserve-form input,.reserve-form select{width:100%;padding:12px;margin-bottom:1.25rem;border:1px solid #d4d0c8;border-radius:4px;font-family:var(--font-body);font-size:1rem}.reserve-form input:focus,.reserve-form select:focus{outline:2px solid var(--olive);outline-offset:2px;border-color:transparent}.sidebar{display:flex;flex-direction:column;gap:1.5rem}.info-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:var(--shadow);border-left:4px solid var(--olive)}.info-card h3{color:var(--red-sauce);margin-bottom:.75rem}.info-card p{font-size:.95rem;color:var(--medium-gray);margin-bottom:.35rem}.info-card .phone{font-size:1.2rem;font-weight:700;color:var(--olive)}.group-dining{background:var(--red-sauce);color:var(--cream);border-radius:8px;padding:2rem;text-align:center}.group-dining h3{color:var(--gold);margin-bottom:.5rem}.group-dining p{opacity:.9;font-size:.95rem}.group-dining .cta-btn{display:inline-block;margin-top:1rem;padding:12px 28px;background:var(--gold);color:var(--charcoal);border:none;border-radius:4px;font-weight:700;cursor:pointer}.disclosure{border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Little Mama's</a>
+<nav class="nav-links">
+<a href="menu.html">Menu</a>
+<a href="locations.html">Locations</a>
+<a href="story.html">Our Story</a>
+<a href="reservations.html">Reservations</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Reserve a <span>Table</span></h1>
+<p>Join us for lunch, dinner, or Sunday supper — at SouthPark or Rea Farms.</p>
+</section>
+
+<section class="section container">
+<div class="reserve-layout">
+<div>
+<form class="demo-form reserve-form">
+<h2>Book a Table</h2>
+<label for="res-location">Location</label>
+<select id="res-location" required>
+<option value="">Select location</option>
+<option>SouthPark — 4521 Sharon Rd</option>
+<option>Rea Farms — 9825 Sandy Rock Pl</option>
+</select>
+<label for="res-name">Name</label>
+<input type="text" id="res-name" placeholder="Full name" required>
+<label for="res-email">Email</label>
+<input type="email" id="res-email" placeholder="you@example.com" required>
+<label for="res-date">Date</label>
+<input type="date" id="res-date" required>
+<label for="res-time">Time</label>
+<select id="res-time" required>
+<option value="">Select time</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>1:00 PM</option>
+<option>5:00 PM</option>
+<option>6:00 PM</option>
+<option>7:00 PM</option>
+<option>8:00 PM</option>
+</select>
+<label for="res-party">Party Size</label>
+<select id="res-party" required>
+<option value="">Select size</option>
+<option>1 guest</option>
+<option>2 guests</option>
+<option>3 guests</option>
+<option>4 guests</option>
+<option>5 guests</option>
+<option>6 guests</option>
+<option>7 guests</option>
+<option>8+ guests</option>
+</select>
+<button type="submit" class="btn" style="width:100%;background:var(--red-sauce);color:var(--white);font-weight:700">Request Reservation (Demo)</button>
+</form>
+</div>
+
+<div class="sidebar">
+<div class="info-card">
+<h3>SouthPark</h3>
+<p>4521 Sharon Rd, Charlotte, NC 28211</p>
+<p class="phone"><a href="tel:9802090323" style="color:var(--olive)">(980) 209-0323</a></p>
+<p>Mon–Thu 11 AM–9 PM · Fri–Sat 11 AM–10 PM · Sun 10 AM–9 PM</p>
+</div>
+
+<div class="info-card">
+<h3>Rea Farms</h3>
+<p>9825 Sandy Rock Pl, Unit 1A, Charlotte, NC 28277</p>
+<p class="phone"><a href="tel:7045203601" style="color:var(--olive)">(704) 520-3601</a></p>
+<p>Sun–Thu 11 AM–9 PM · Fri–Sat 11 AM–10 PM</p>
+</div>
+
+<div class="group-dining">
+<h3>Group Dining &amp; Celebrations</h3>
+<p>Planning a birthday, anniversary, or family gathering? We accommodate groups at both locations with family-style menu options and dedicated service.</p>
+<form class="demo-form">
+<button type="submit" class="cta-btn">Inquire About Group Dining (Demo)</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:#1a0f0a;color:var(--cream);text-align:center">
+<div class="container">
+<p style="opacity:.8">&copy; 2026 Little Mama's Italian — Charlotte, NC</p>
+<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
+<a href="https://instagram.com/littlemamasitalian" style="color:var(--gold)">@littlemamasitalian</a> &middot;
+<a href="https://littlemamasitalian.com" style="color:var(--gold)">littlemamasitalian.com</a>
+</p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

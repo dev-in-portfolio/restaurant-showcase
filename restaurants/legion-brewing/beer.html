@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beer — Legion Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0a1628;--copper:#b87333;--cream:#f5f0e8;--dark-wood:#3e2c1b;--gold:#c9a84c}.nav-bg{background:var(--navy)}.copper{color:var(--copper)}.beer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}.beer-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:var(--shadow);border-top:4px solid var(--copper);transition:transform .2s}.beer-card:hover{transform:translateY(-4px)}.beer-card .style{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--copper);font-weight:600}.beer-card h3{color:var(--navy);margin:.25rem 0}.beer-card .abv{font-size:.85rem;color:var(--medium-gray);margin-bottom:.5rem}.beer-card p{font-size:.95rem}.quiz-section{background:linear-gradient(135deg,var(--navy)0%,#1a2a40 100%);color:var(--cream);border-radius:12px;padding:3rem 2rem;margin-top:3rem}.quiz-section h2{color:var(--cream);text-align:center}.quiz-section h2 span{color:var(--copper)}.quiz-step{margin-bottom:2rem;text-align:center}.quiz-step h3{color:var(--cream);margin-bottom:1rem}.quiz-options{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}.quiz-option{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 24px;color:var(--cream);font-family:var(--font-body);font-size:1rem;cursor:pointer;transition:all .2s}.quiz-option:hover{border-color:var(--copper);background:rgba(184,115,51,.15)}.quiz-option.selected{border-color:var(--copper);background:rgba(184,115,51,.25)}.quiz-result{display:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:2rem;margin-top:1.5rem;text-align:center}.quiz-result.show{display:block}.quiz-result h4{color:var(--copper);font-size:1.4rem;margin-bottom:.5rem}.quiz-result .desc{font-size:1rem;opacity:.9;max-width:500px;margin:0 auto}.quiz-result .pairing{font-size:.85rem;opacity:.6;margin-top:.5rem}.quiz-reset{display:none;margin-top:1rem;justify-content:center}.quiz-reset.show{display:flex}.trolley-section{background:var(--cream);border-radius:12px;padding:2rem}.trolley-section h3{color:var(--navy)}.trolley-section .style{color:var(--copper)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo">Legion Brewing</a>
+<nav class="nav-links">
+<a href="beer.html">Beer</a>
+<a href="story.html">Our Story</a>
+<a href="locations.html">Locations</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+
+<section class="section container" id="main">
+<h1 class="text-center">Our <span class="copper">Beers</span></h1>
+<p class="text-center" style="max-width:600px;margin:0 auto 3rem">From flagship favorites to Trolley Barn experiments, every pint reflects our commitment to craft.</p>
+
+<div class="beer-grid">
+<div class="beer-card">
+<span class="style">Flagship IPA</span>
+<h3>Juicy Jay IPA</h3>
+<div class="abv">7.2% ABV</div>
+<p>Our crown jewel. A hazy New England-style IPA loaded with Citra, Mosaic, and Galaxy hops. Explosive notes of orange, mango, and passion fruit with a velvety-smooth finish.</p>
+</div>
+
+<div class="beer-card">
+<span class="style">Classic Stout</span>
+<h3>Penguin Stout</h3>
+<div class="abv">5.8% ABV</div>
+<p>A Charlotte institution. Rich roasted barley and chocolate malt deliver deep notes of cocoa, espresso, and a whisper of vanilla. Silky, sessionable, unforgettable.</p>
+</div>
+
+<div class="beer-card">
+<span class="style">Seasonal</span>
+<h3>Sunshine Kölsch</h3>
+<div class="abv">4.8% ABV</div>
+<p>Warm-weather crusher. Delicately hopped with German Tradition, crackery pilsner malt, and a crisp, clean finish. Available spring through summer.</p>
+</div>
+
+<div class="beer-card">
+<span class="style">Seasonal</span>
+<h3>Autumn Ember Amber</h3>
+<div class="abv">5.6% ABV</div>
+<p>A toasted amber ale with caramel malt backbone, subtle roast, and a hint of cinnamon. Fireside drinking at its finest.</p>
+</div>
+
+<div class="beer-card">
+<span class="style">Seasonal</span>
+<h3>Winter Solstice Barleywine</h3>
+<div class="abv">11.2% ABV</div>
+<p>Bourbon barrel-aged barleywine with massive notes of toffee, dark fruit, and oak. Cellar-worthy and warming.</p>
+</div>
+
+<div class="beer-card">
+<span class="style">Trolley Barn Exclusive</span>
+<h3>Foeder-Soured Golden</h3>
+<div class="abv">6.4% ABV</div>
+<p>Aged in oak foeders for 12 months with wild Brettanomyces. Bright acidity, stone fruit, and a funky, complex finish. Only at Trolley Barn.</p>
+</div>
+</div>
+
+<div class="quiz-section">
+<h2>Beer <span>Finder Quiz</span></h2>
+<p style="text-align:center;opacity:.8;margin-bottom:2rem">Not sure what to drink? Tell us your mood and we'll find your perfect pint.</p>
+
+<div id="beerQuiz">
+<div class="quiz-step" id="stepMood">
+<h3>What's your mood right now?</h3>
+<div class="quiz-options">
+<button class="quiz-option" data-mood="hoppy">Hoppy &amp; Bold</button>
+<button class="quiz-option" data-mood="dark">Dark &amp; Roasty</button>
+<button class="quiz-option" data-mood="crisp">Light &amp; Crisp</button>
+<button class="quiz-option" data-mood="adventurous">Feeling Adventurous</button>
+</div>
+</div>
+
+<div class="quiz-step" id="stepFlavor" style="display:none">
+<h3>Pick your favorite flavor note</h3>
+<div class="quiz-options" id="flavorOptions"></div>
+</div>
+
+<div class="quiz-result" id="quizResult">
+<h4 id="resultName"></h4>
+<p class="desc" id="resultDesc"></p>
+<p class="pairing" id="resultPairing"></p>
+</div>
+
+<div class="quiz-reset" id="quizReset">
+<button class="btn btn-primary" onclick="resetQuiz()">Try Again</button>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:var(--navy);color:var(--cream);text-align:center">
+<div class="container">
+<p style="opacity:.8">&copy; 2026 Legion Brewing — Charlotte, NC</p>
+<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
+<a href="https://instagram.com/legionbrewing" style="color:var(--copper)">@legionbrewing</a> &middot;
+<a href="mailto:info@legionbrewing.com" style="color:var(--copper)">info@legionbrewing.com</a>
+</p>
+<p style="margin-top:.75rem;font-size:.75rem;opacity:.4">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function(){
+var beerData={
+hoppy:{name:'Juicy Jay IPA',desc:'Hazy New England IPA bursting with Citra, Mosaic, and Galaxy hops. Big citrus and tropical fruit with a silky finish.',pairing:'Pairs perfectly with our smoked wing dip or spicy sausage flatbread.'},
+dark:{name:'Penguin Stout',desc:'Rich, roasty stout with dark chocolate, cold-brew coffee, and a whisper of vanilla. Velvety smooth from first sip to last.',pairing:'Fantastic alongside the chocolate stout cake or a barrel-aged burger.'},
+crisp:{name:'Sunshine Kölsch',desc:'Crisp, delicate German-style ale with subtle hop spice and a refreshingly clean finish. Easy drinking at its best.',pairing:'A natural match for our citrus salad or the fried oyster sliders.'},
+adventurous:{name:'Foeder-Soured Golden',desc:'Trolley Barn exclusive. Wild ale aged 12 months in oak with Brettanomyces. Tart, funky, and brilliantly complex.',pairing:'Try it with the chef's cheese board or our berliner weisse slushie.'}
+};
+var state={mood:null};
+var flavorOptions=document.getElementById('flavorOptions');
+var stepMood=document.getElementById('stepMood');
+var stepFlavor=document.getElementById('stepFlavor');
+var quizResult=document.getElementById('quizResult');
+var resultName=document.getElementById('resultName');
+var resultDesc=document.getElementById('resultDesc');
+var resultPairing=document.getElementById('resultPairing');
+var quizReset=document.getElementById('quizReset');
+var moodBtns=document.querySelectorAll('[data-mood]');
+moodBtns.forEach(function(btn){
+btn.addEventListener('click',function(){
+moodBtns.forEach(function(b){b.classList.remove('selected')});
+btn.classList.add('selected');
+state.mood=btn.getAttribute('data-mood');
+var flavorMap={hoppy:['Citrus','Pine','Stone Fruit'],dark:['Chocolate','Coffee','Caramel'],crisp:['Lemon','Herbal','Biscuit'],adventurous:['Tart Funk','Oak','Tropical Sour']};
+var flavors=flavorMap[state.mood]||['Balanced'];
+flavorOptions.innerHTML='';
+flavors.forEach(function(f){
+var opt=document.createElement('button');
+opt.className='quiz-option';
+opt.textContent=f;
+opt.addEventListener('click',function(){showResult(state.mood)});
+flavorOptions.appendChild(opt);
+});
+stepMood.style.display='none';
+stepFlavor.style.display='block';
+});
+});
+function showResult(mood){
+var beer=beerData[mood];
+if(!beer)return;
+resultName.textContent=beer.name;
+resultDesc.textContent=beer.desc;
+resultPairing.textContent=beer.pairing;
+stepFlavor.style.display='none';
+quizResult.classList.add('show');
+quizReset.classList.add('show');
+}
+window.resetQuiz=function(){
+state.mood=null;
+moodBtns.forEach(function(b){b.classList.remove('selected')});
+quizResult.classList.remove('show');
+quizReset.classList.remove('show');
+stepFlavor.style.display='none';
+stepMood.style.display='block';
+};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Brew Guides — HEX Coffee Roasters</title>
+<meta name="description" content="HEX Coffee brew guides, subscription info, tasting notes, and interactive coffee finder quiz.">
+<link rel="stylesheet" href="../site-core.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&amp;display=swap">
+<style>
+:root{--coral:#e86a5f;--teal:#2a9d8f;--gold:#d4a747;--cream:#fdf8f0;--dark:#1a1614;--light:#fffaf5}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--dark);background:var(--light);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.container{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;max-width:72rem;margin:0 auto}
+.logo{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.55rem;letter-spacing:-.04em;text-decoration:none;color:var(--dark)}
+.logo span{color:var(--coral)}
+.nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dark);transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--dark)}
+
+.page-header{text-align:center;padding:4rem 1.5rem 1rem}
+.page-header h1{font-size:clamp(2rem,4vw,3rem);margin:0 0 .5rem}
+.page-header p{color:#5a524b;max-width:30rem;margin:0 auto;font-size:1rem}
+
+.section{padding:3rem 1.5rem}
+.section-title{font-size:clamp(1.3rem,2.8vw,1.8rem);margin:0 0 .3rem;text-align:center}
+.section-sub{color:#5a524b;font-size:.9rem;margin:0 0 2rem;text-align:center}
+
+/* brew guides */
+.brew-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;max-width:60rem;margin:0 auto}
+.brew-card{background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 16px rgba(0,0,0,.04)}
+.brew-card h3{font-size:1.1rem;margin:0 0 .8rem;display:flex;gap:.5rem;align-items:center}
+.brew-card .ratio{font-size:.78rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.brew-card ol{margin:0;padding:0 0 0 1.2rem;font-size:.85rem;color:#2a2520}
+.brew-card ol li{margin-bottom:.45rem}
+
+/* quiz */
+.quiz-card{max-width:36rem;margin:0 auto;background:#fff;border-radius:1.5rem;padding:2.5rem;box-shadow:0 4px 30px rgba(0,0,0,.06)}
+.quiz-question{margin-bottom:1.5rem}
+.quiz-question label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.6rem;font-family:'Fraunces',Georgia,serif}
+.quiz-question select,.quiz-question input{width:100%;border:1px solid #d4ccc4;border-radius:.8rem;padding:.75rem 1rem;background:#fff;font-family:'DM Sans',system-ui,sans-serif;font-size:.9rem}
+.quiz-result{display:none;margin-top:1.5rem;padding:1.5rem;background:var(--cream);border-radius:1rem;border-left:5px solid var(--coral)}
+.quiz-result.show{display:block}
+.quiz-result h4{margin:0 0 .3rem;color:var(--coral)}
+.quiz-result p{margin:0;font-size:.9rem}
+
+/* sub card */
+.sub-card{max-width:36rem;margin:0 auto;background:linear-gradient(135deg,var(--coral),#d45a4f);color:#fff;border-radius:1.5rem;padding:2.5rem;text-align:center}
+.sub-card h3{font-size:1.4rem;margin:0 0 .5rem;color:#fff}
+.sub-card p{font-size:.9rem;opacity:.9;margin:0 0 1.2rem}
+.sub-card .btn{background:#fff;color:var(--coral)}
+
+.quote-brew{margin:2.5rem auto;max-width:36rem;padding:1.8rem 2rem;background:var(--cream);border-radius:1.2rem;border-left:5px solid var(--gold);text-align:center}
+.quote-brew p{margin:0;font-family:'Fraunces',Georgia,serif;font-size:1.1rem;font-weight:600;font-style:italic;color:var(--dark)}
+
+footer{background:var(--dark);color:rgba(255,255,255,.7);padding:3rem 1.5rem;text-align:center;font-size:.85rem}
+footer a{color:rgba(255,255,255,.9);text-decoration:none}
+footer .footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;padding:0;margin:0 0 1rem}
+
+@media(max-width:700px){
+nav{flex-wrap:wrap}
+.nav-links{display:none;flex-direction:column;width:100%;gap:.5rem;padding:1rem 0}
+.nav-links.open{display:flex}
+.nav-toggle{display:block}
+.quiz-card{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="concept-bar">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+<a href="index.html" class="logo">HEX<span>.</span></a>
+<button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="story.html">Story</a></li>
+<li><a href="brew.html">Brew</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<main id="main">
+
+<div class="page-header">
+<h1>Brew at Home</h1>
+<p>Guides, subscriptions, and a coffee finder to match your taste.</p>
+</div>
+
+<section class="section">
+<h2 class="section-title">Brew Guides</h2>
+<p class="section-sub">Simple, repeatable recipes for light-roast coffee.</p>
+<div class="brew-grid">
+<div class="brew-card">
+<h3>☕ V60 Pour-Over</h3>
+<div class="ratio">18g coffee · 300g water · 2:30 total</div>
+<ol>
+<li>Rinse filter, add 18g ground coffee (medium-fine).</li>
+<li>Bloom with 50g water, wait 35s.</li>
+<li>Pour to 180g in slow spirals.</li>
+<li>Final pour to 300g. Drawdown by 2:30.</li>
+</ol>
+</div>
+<div class="brew-card">
+<h3>🧊 Cold Brew</h3>
+<div class="ratio">100g coffee · 900g water · 16h steep</div>
+<ol>
+<li>Coarse grind 100g coffee.</li>
+<li>Combine with filtered water in a jar.</li>
+<li>Steep 16 hours at room temp.</li>
+<li>Filter through paper. Serve over ice.</li>
+</ol>
+</div>
+<div class="brew-card">
+<h3>🫖 AeroPress</h3>
+<div class="ratio">15g coffee · 250g water · 1:30</div>
+<ol>
+<li>Fine grind. Add 15g coffee + 250g water at 205°F.</li>
+<li>Stir gently for 10s.</li>
+<li>Press slowly — 30s total.</li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--cream)">
+<h2 class="section-title">Coffee Finder Quiz</h2>
+<p class="section-sub">Tell us what you like, and we&rsquo;ll recommend a HEX origin.</p>
+
+<div class="quiz-card" id="quiz">
+<div class="quiz-question">
+<label for="q-acidity">How do you feel about acidity?</label>
+<select id="q-acidity">
+<option value="">Select one…</option>
+<option value="bright">Love it — give me bright and lively</option>
+<option value="balanced">Some is nice, but balanced</option>
+<option value="low">Prefer low-acid, smooth cups</option>
+</select>
+</div>
+<div class="quiz-question">
+<label for="q-notes">Favorite flavor notes?</label>
+<select id="q-notes">
+<option value="">Select one…</option>
+<option value="fruity">Fruity &amp; floral (berries, jasmine)</option>
+<option value="citrus">Citrus &amp; tea-like (pomelo, lemongrass)</option>
+<option value="savory">Savory &amp; complex (tomato, brown sugar)</option>
+</select>
+</div>
+<div class="quiz-question">
+<label for="q-body">Preferred body / mouthfeel?</label>
+<select id="q-body">
+<option value="">Select one…</option>
+<option value="light">Light &amp; tea-like</option>
+<option value="medium">Medium, silky</option>
+<option value="full">Full &amp; syrupy</option>
+</select>
+</div>
+<button class="btn btn-primary" id="quiz-submit" style="width:100%">Find My Coffee</button>
+<div class="quiz-result" id="quiz-result">
+<h4>We recommend…</h4>
+<p id="quiz-answer"></p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Subscription</h2>
+<p class="section-sub">Fresh-roasted light coffee, delivered on your schedule.</p>
+<div class="sub-card">
+<h3>HEX Subscription</h3>
+<p>Choose 12oz or 2lb bags, weekly or monthly. Rotating single origins or keep your favorite. Free shipping on all subscriptions.</p>
+<a href="#" class="btn demo-form" data-demo-form>Subscribe (Demo)</a>
+</div>
+<div class="quote-brew">
+<p>"Pour-overs at home have never been this clear. The V60 guide from HEX changed my morning."</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="story.html">Story</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="https://hex.coffee" target="_blank" rel="noopener">hex.coffee</a></li>
+</ul>
+<p>&copy; Concept design — HEX Coffee Roasters, Charlotte NC. ESTD.2015</p>
+</footer>
+
+<script src="../site-core.js"></script>
+<script>
+(function(){
+const quizResults = {
+  bright_fruity_light:    { origin: 'Ethiopia Konga Natural', desc: 'Blueberry, jasmine, dark chocolate. Light body, intense fruit. Perfect for bright-fruit lovers.' },
+  bright_fruity_medium:   { origin: 'Colombia Wilmer Lasso', desc: 'Starfruit, orange blossom, honey. Medium body, vibrant acidity.' },
+  bright_fruity_full:     { origin: 'Ethiopia Konga Natural', desc: 'Big body meets big fruit. Dark chocolate + blueberry in a syrupy cup.' },
+  bright_citrus_light:    { origin: 'Myanmar Ywangan Lot 7', desc: 'Pomelo, lemongrass, raw honey. Tea-like body, zesty clarity.' },
+  bright_citrus_medium:   { origin: 'Colombia Wilmer Lasso', desc: 'Citrus and honey dance in a silky, medium-bodied cup.' },
+  bright_citrus_full:     { origin: 'Kenya Gachatha AA', desc: 'Blackcurrant, tomato vine, brown sugar. Full body, winey.' },
+  bright_savory_light:    { origin: 'Kenya Gachatha AA', desc: 'Savory complexity with blackcurrant and tomato. Light+ body.' },
+  bright_savory_medium:   { origin: 'Kenya Gachatha AA', desc: 'Savory-sweet star. Brown sugar and tomato in perfect balance.' },
+  bright_savory_full:     { origin: 'Kenya Gachatha AA', desc: 'Deep, savory, full-bodied. A coffee that demands attention.' },
+  balanced_fruity_light:  { origin: 'Ethiopia Konga Natural', desc: 'Moderate acidity, big fruit. A crowd-pleasing natural.' },
+  balanced_fruity_medium: { origin: 'Colombia Wilmer Lasso', desc: 'Balanced sweetness and fruit. Honey and starfruit in harmony.' },
+  balanced_fruity_full:   { origin: 'Ethiopia Konga Natural', desc: 'Full body without being loud. Blueberry and chocolate.' },
+  balanced_citrus_light:  { origin: 'Myanmar Ywangan Lot 7', desc: 'Gentle citrus, tea-like body. An easy-drinking bright cup.' },
+  balanced_citrus_medium: { origin: 'Colombia Wilmer Lasso', desc: 'Orange blossom and honey in a silky, balanced cup.' },
+  balanced_citrus_full:   { origin: 'Kenya Gachatha AA', desc: 'Full body with citrus complexity. Tomato and brown sugar.' },
+  balanced_savory_light:  { origin: 'Myanmar Ywangan Lot 7', desc: 'Savory herbs and pomelo in a light, elegant cup.' },
+  balanced_savory_medium: { origin: 'Kenya Gachatha AA', desc: 'Savory-sweet perfection. Blackcurrant and brown sugar.' },
+  balanced_savory_full:   { origin: 'Kenya Gachatha AA', desc: 'All the complexity. Full body, savory notes, long finish.' },
+  low_fruity_light:       { origin: 'Ethiopia Konga Natural', desc: 'Low acid, big fruit. Smooth and approachable natural.' },
+  low_fruity_medium:      { origin: 'Colombia Wilmer Lasso', desc: 'Mellow acidity but plenty of character. Honey sweetness.' },
+  low_fruity_full:        { origin: 'Ethiopia Konga Natural', desc: 'Smooth, full, fruity — without the sharp edge.' },
+  low_citrus_light:       { origin: 'Myanmar Ywangan Lot 7', desc: 'Subtle citrus, very smooth. Tea-like and gentle.' },
+  low_citrus_medium:      { origin: 'Myanmar Ywangan Lot 7', desc: 'Pomelo and honey in a round, low-acid cup.' },
+  low_citrus_full:        { origin: 'Colombia Wilmer Lasso', desc: 'Full body, low acid, honey sweetness. Easy drinking.' },
+  low_savory_light:       { origin: 'Kenya Gachatha AA', desc: 'Savory but smooth. Tomato vine and brown sugar, softened.' },
+  low_savory_medium:      { origin: 'Kenya Gachatha AA', desc: 'Savory notes mellowed. A smooth, complex cup.' },
+  low_savory_full:        { origin: 'Colombia Wilmer Lasso', desc: 'Big body, low acid, savory undertones. Unexpected and great.' }
+};
+
+document.getElementById('quiz-submit').addEventListener('click', function(){
+  const acidity = document.getElementById('q-acidity').value;
+  const notes = document.getElementById('q-notes').value;
+  const body = document.getElementById('q-body').value;
+  const result = document.getElementById('quiz-result');
+  const answer = document.getElementById('quiz-answer');
+
+  if(!acidity || !notes || !body){
+    result.classList.add('show');
+    answer.textContent = 'Please answer all three questions to find your perfect coffee.';
+    return;
+  }
+
+  const key = acidity + '_' + notes + '_' + body;
+  const match = quizResults[key] || { origin: 'Colombia Wilmer Lasso', desc: 'A bright, balanced light roast that everyone loves.' };
+  result.classList.add('show');
+  answer.innerHTML = '<strong>' + match.origin + '</strong> &mdash; ' + match.desc;
+});
+})();
+</script>
+</body>
+</html>

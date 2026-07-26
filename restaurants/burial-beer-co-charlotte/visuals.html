@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burial Beer Co. - Charlotte, NC | Visuals Wine</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive wine/cider visualizer */
+    .visuals-box {
+      background: radial-gradient(circle, #24141d 0%, #0d060a 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+    .wine-glass-graphic {
+      width: 70px;
+      height: 120px;
+      border: 3px solid var(--color-text-light);
+      border-radius: 4px 4px 35px 35px;
+      background: rgba(255,255,255,0.05);
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+    .wine-liquid {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 90px; /* Liquid level */
+      background: #db2777; /* Rose default */
+      transition: var(--transition-smooth);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">✝</div>
+        <h1 class="brand-name">
+          Burial Beer Co.
+          <span>House of Relics Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="visuals.html" class="active">Visuals Wine</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Rooftop</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Visuals Wine & Cider</h2>
+    <p class="page-subtitle">A natural wine and botanical cider program by Burial Beer Co., fermenting native fruit, local honey, and forest botanicals.</p>
+  </header>
+
+  <!-- Interactive Wine/Cider Customizer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Visuals Botanical Cider & Wine Mixer</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select a natural fermentation base and a forest botanical infusion to customize your rustic goblet.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Wine Glass Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="visuals-box" id="glass-box">
+            <div class="wine-glass-graphic">
+              <div class="wine-liquid" id="liquid-layer"></div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="visuals-display-title">Sparkling Pet-Nat Rosé</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-gold); margin: 0.5rem 0;" id="visuals-display-price">$12.00</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Fermentation Base</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setBase('rose', 'Sparkling Pet-Nat Rosé', 12.00, '#db2777')">Pet-Nat Rosé ($12)</button>
+              <button class="option-btn" onclick="setBase('orange', 'Skin-Contact Orange Wine', 13.00, '#ea580c')">Orange Wine ($13)</button>
+              <button class="option-btn" onclick="setBase('cider', 'Wild Appalachian Cider', 10.00, '#eab308')">Wild Cider ($10)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Botanical Infusion</label>
+            <div class="option-grid" id="botanical-options">
+              <button class="option-btn active" onclick="setBotanical('lavender', 'Lavender & Sage')">Lavender & Sage</button>
+              <button class="option-btn" onclick="setBotanical('hibiscus', 'Hibiscus & Rosehips')">Hibiscus & Rosehips</button>
+              <button class="option-btn" onclick="setBotanical('juniper', 'Wild Juniper Berries')">Juniper Berries</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Sommelier Review</span>
+        <h4 class="builder-display-title" id="display-visuals-name">Sparkling Pet-Nat Rosé</h4>
+        <p id="display-visuals-botanical" style="color: var(--color-gold); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Lavender & Sage</p>
+        <div class="builder-display-price" id="display-visuals-price">$12.00</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-visuals-desc">Spontaneous fermentation of regional grapes infused with organic lavender and white sage. Earthy, floral, and bone-dry.</p>
+      </div>
+    </section>
+
+    <!-- Wine/Cider List Details -->
+    <h3 class="section-title">Visuals Tap & Bottle Highlights</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Natural Wines (By the Glass/Bottle)</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Visuals Pet-Nat Rosé</span>
+            <span class="menu-item-price">$12 / $48</span>
+          </div>
+          <p class="menu-item-desc">Sparkling wild-fermented Rosé. Notes of sour cherry, yeast crust, and forest moss. Unfiltered and carbonated naturally in the bottle.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Visuals Skin-Contact Orange</span>
+            <span class="menu-item-price">$13 / $52</span>
+          </div>
+          <p class="menu-item-desc">Grapes fermented on skins for 3 weeks. Complex tannins, bruised apricot, tea leaf, and dried ginger notes.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Visuals Oak-Aged Red</span>
+            <span class="menu-item-price">$14 / $56</span>
+          </div>
+          <p class="menu-item-desc">Rustic red blend fermented with wild yeasts and aged in neutral French oak barrels. Bold, earthy, and complex.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Botanical Ciders</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Visuals Wild Appalachian Cider</span>
+            <span class="menu-item-price">$10 / $40</span>
+          </div>
+          <p class="menu-item-desc">Appalachian heirloom apples fermented with wild yeasts. Tart, crisp, and bone-dry with a rustic farmhouse finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Botanical Sage & Honey Cider</span>
+            <span class="menu-item-price">$11 / $44</span>
+          </div>
+          <p class="menu-item-desc">Dry apple cider co-fermented with local wildflower honey and infused with white sage and cedar bark.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Hibiscus Lavender Perry</span>
+            <span class="menu-item-price">$11 / $44</span>
+          </div>
+          <p class="menu-item-desc">Pear cider (perry) infused with organic hibiscus petals and lavender buds, offering a bright pink color and floral nose.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Plaza Midwood Sanctuary</h3>
+        <p>1214 Thomas Ave<br>Charlotte, NC 28205<br>Phone: (704) 333-0909</p>
+      </div>
+      <div class="info-block">
+        <h3>Sanctuary Hours</h3>
+        <p>Mon - Thu: 4:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Wine & Cider Details</h3>
+        <p>All Visuals products are naturally fermented without added sulfites, coloring agents, or filtration. Vegan and gluten-free.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Burial Beer Co. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBase = { key: 'rose', name: 'Sparkling Pet-Nat Rosé', price: 12.00, color: '#db2777' };
+    let selectedBotanical = { key: 'lavender', name: 'Lavender & Sage' };
+
+    function setBase(key, name, price, color) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, name, price, color };
+      updateDisplay();
+    }
+
+    function setBotanical(key, name) {
+      const buttons = document.getElementById('botanical-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBotanical = { key, name };
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const total = selectedBase.price;
+      document.getElementById('visuals-display-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('visuals-display-title').innerText = selectedBase.name;
+
+      document.getElementById('display-visuals-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-visuals-name').innerText = selectedBase.name;
+      document.getElementById('display-visuals-botanical').innerText = selectedBotanical.name;
+
+      // Update liquid color
+      document.getElementById('liquid-layer').style.backgroundColor = selectedBase.color;
+
+      // Update description text
+      let desc = "";
+      if (selectedBase.key === 'rose') {
+        desc = `Spontaneous fermentation of regional grapes infused with organic ${selectedBotanical.name.toLowerCase()}. Earthy, floral, and bone-dry.`;
+      } else if (selectedBase.key === 'orange') {
+        desc = `Skin-contact white wine fermented with wild yeasts and infused with ${selectedBotanical.name.toLowerCase()}. Bold tannins and spice.`;
+      } else {
+        desc = `Appalachian heirloom apple cider co-fermented with wild yeasts and botanically infused with ${selectedBotanical.name.toLowerCase()}.`;
+      }
+      document.getElementById('display-visuals-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

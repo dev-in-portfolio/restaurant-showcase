@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinders Sports Lounge - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling sports drink card */
+    .sports-drink-card {
+      background: radial-gradient(circle, #0e1b18 0%, #060a09 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .sports-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-gold);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .sports-title {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .sports-meta {
+      font-size: 0.9rem;
+      color: var(--color-emerald);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sports-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Blinders
+          <span>Sports Lounge South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="schedule.html">Watch Schedule</a>
+        <a href="about.html">About</a>
+        <a href="services.html">VIP Planner</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Sports Bites & Craft Taps</h2>
+    <p class="page-subtitle">Savor duck-fat wings and double smashburgers. Select a sports watch category below to pair it with the perfect drink.</p>
+  </header>
+
+  <!-- Interactive Sports Drink Pairer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Sports Watch Drink Pairer</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Sports Drink Card -->
+        <div class="sports-drink-card" id="sports-card-box">
+          <div class="sports-badge">NFL Sunday Watch</div>
+          <h4 class="sports-title" id="pair-drink-title">Charlotte Haze IPA Flight</h4>
+          <div class="sports-meta" id="pair-drink-meta">Local Craft IPAs • 4 Pours • $14.00</div>
+          <p class="sports-desc" id="pair-drink-desc">A selection of local Charlotte hazy IPAs. The high-energy tropical hops slice clean through our rich duck fat wings and keep you focused on every fourth-down play.</p>
+        </div>
+
+        <!-- Right Side: Sports Options -->
+        <div style="display: flex; flex-direction: column; gap: 0.80rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Game Broadcast</label>
+          <button class="option-btn active" onclick="showPairing('nfl', this)">NFL Sunday Football</button>
+          <button class="option-btn" onclick="showPairing('nba', this)">NBA Basketball Night</button>
+          <button class="option-btn" onclick="showPairing('ufc', this)">UFC Fight Night (Saturdays)</button>
+          <button class="option-btn" onclick="showPairing('premier', this)">Premier League Soccer (Mornings)</button>
+          <button class="option-btn" onclick="showPairing('golf', this)">Golf Open Sunday</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Sports Bites Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Appetizers & Shares</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Duck Fat Wings<span class="menu-item-badge">Signature</span></span>
+            <span class="menu-item-price">$10.50</span>
+          </div>
+          <p class="menu-item-desc">Jumbo chicken wings slow-simmered in rich duck fat and crisped to order. Choice of Spicy Buffalo, Hot Honey, or Garlic Parmesan.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Barbacoa Nachos</span>
+            <span class="menu-item-price">$13.00</span>
+          </div>
+          <p class="menu-item-desc">Slow-cooked beef barbacoa layered over crispy tortilla chips, smothered in warm queso blanco, pickled jalapeños, and avocado crema.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Masa Fried Pickles</span>
+            <span class="menu-item-price">$8.00</span>
+          </div>
+          <p class="menu-item-desc">Crump pickle chips fried in a light masa corn batter, served hot with a side of house-made buttermilk dill ranch.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Gourmet Handhelds</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Blinders Smashburger</span>
+            <span class="menu-item-price">$14.50</span>
+          </div>
+          <p class="menu-item-desc">Two smashed angus beef patties, caramelized onions, melted white cheddar, and house special burger sauce on toasted brioche.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Hot Honey Chicken Sammie</span>
+            <span class="menu-item-price">$13.50</span>
+          </div>
+          <p class="menu-item-desc">Crispy fried chicken breast dipped in Carolina hot honey glaze, topped with house slaw and pickles on brioche.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Street Corn Caesar wrap</span>
+            <span class="menu-item-price">$11.50</span>
+          </div>
+          <p class="menu-item-desc">Crisp romaine lettuce, wood-grilled sweet corn kernels, parmesan, and spicy Caesar dressing wrapped in a warm flour tortilla.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>225 W Tremont Ave<br>Charlotte, NC 28203</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Wed: 5:00 PM - 11:00 PM<br>Thu: 5:00 PM - 12:00 AM<br>Fri: 5:00 PM - 1:00 AM<br>Sat: 11:00 AM - 1:00 AM<br>Sun: 11:00 AM - 12:00 AM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Reservations via website | 21+ Age Policy | Validated Deck Parking</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Blinders Sports Lounge. South End Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pairings = {
+      nfl: {
+        badge: "NFL Sunday Watch",
+        drink: "Charlotte Haze IPA Flight",
+        meta: "Local Craft IPAs • 4 Pours • $14.00",
+        desc: "A selection of local Charlotte hazy IPAs. The high-energy tropical hops slice clean through our rich duck fat wings and keep you focused on every fourth-down play."
+      },
+      nba: {
+        badge: "NBA Basketball Night",
+        drink: "Tremont Bourbon Sour",
+        meta: "Bourbon / Red Float • Glass • $13.00",
+        desc: "A fast-paced cocktail featuring rich bourbon, fresh lemon juice, and a floating splash of Spanish red wine. Elegant and smooth for court-side watch excitement."
+      },
+      ufc: {
+        badge: "UFC Fight Night (Saturdays)",
+        drink: "The Knockout Mojito",
+        meta: "Rum / Chili Mint • Glass • $12.00",
+        desc: "White rum muddled with fresh mint, lime, a dash of spicy chili-infused simple syrup, topped with club soda. Pack a refreshing punch for Saturday main card events."
+      },
+      premier: {
+        badge: "Premier League Soccer (Mornings)",
+        drink: "South End Beermosa",
+        meta: "Pilsner / Fresh Orange Juice • Mug • $9.00",
+        desc: "Crisp Patio Session Pilsner blended with fresh squeezed orange juice. Light, effervescent, and perfect for early morning kickoffs on our Tremont patio."
+      },
+      golf: {
+        badge: "Golf Open Sunday",
+        drink: "The Back-Nine Arnold Palmer",
+        meta: "Sweet Tea Vodka / Lemonade • Glass • $11.00",
+        desc: "Deep Eddy Sweet Tea Vodka mixed with iced lemonade and a fresh mint sprig. Calm, cool, and highly refreshing for watching Sunday tournament leaders."
+      }
+    };
+
+    function showPairing(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const card = document.getElementById('sports-card-box');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = pairings[key];
+        document.getElementById('pair-drink-title').innerText = data.drink;
+        document.getElementById('pair-drink-meta').innerText = data.meta;
+        document.getElementById('pair-drink-desc').innerText = data.desc;
+        card.querySelector('.sports-badge').innerText = data.badge;
+        
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

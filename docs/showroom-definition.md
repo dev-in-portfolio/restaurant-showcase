@@ -1,13 +1,12 @@
-# Showroom Definition
+# What is the Showcase Showroom?
 
-The Polished Showcase (Showroom) is the final repository in the three-stage restaurant pipeline. It contains only presentation-ready, fully verified restaurant website demonstrations.
+The **Polished Showcase** (or **Showroom**) stage is the final phase of our website pipeline.
 
-## Purpose
-To serve as a professional sales portfolio that can be presented to potential clients. Every project in the showcase represents a completed, polished, verifiable restaurant website rebuild.
+## Target Audience
+The showroom is designed specifically for sales presentations, client demos, and public portfolio display. It represents the pinnacle of our design work.
 
 ## Requirements
-- All metadata review flags are `true`
-- No placeholder content
-- No broken references
-- No temporary files
-- All required accessibility and presentation fields are satisfied
+To remain in the showroom, a site must have:
+* Zero visual defects across major browsers.
+* Working contact forms, menu selectors, and other custom widgets.
+* A working, accessible floating button directing visitors to the restaurant's current online presence.

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdsong Brewing Co. - Charlotte, NC | Drafts & Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Message board styling for events calendar */
+    .calendar-board {
+      background: radial-gradient(circle, #0e1a12 0%, #050a07 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .board-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-amber);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-amber);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .board-title {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .board-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-amber);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .board-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Birdsong
+          <span>Brewing Company</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Tap List</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Rentals</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Draft Taps & Food Trucks</h2>
+    <p class="page-subtitle">We host local food trucks daily! Select a weekday below to view scheduled trucks, live events, and pint specials.</p>
+  </header>
+
+  <!-- Interactive Food Truck calendar -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Food Truck & Event Calendar</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Board -->
+        <div class="calendar-board" id="calendar-card-box">
+          <div class="board-badge">Wednesday Taproom schedule</div>
+          <h4 class="board-title" id="pair-truck-name">Bleu Barn Bistro</h4>
+          <div class="board-subtitle" id="pair-event-name">Event: Trivia Night (7:00 PM)</div>
+          <p class="board-desc" id="pair-desc">Charlotte's best farm-to-table burgers and fresh fries parked on Davidson St from 5 PM to 9 PM. General knowledge trivia kicks off at 7:00 PM with prizes for the top teams!</p>
+        </div>
+
+        <!-- Right Side: Weekdays list -->
+        <div style="display: flex; flex-direction: column; gap: 0.80rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-amber); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Weekday</label>
+          <button class="option-btn" onclick="showSchedule('mon', this)">Monday</button>
+          <button class="option-btn" onclick="showSchedule('tue', this)">Tuesday</button>
+          <button class="option-btn active" onclick="showSchedule('wed', this)">Wednesday</button>
+          <button class="option-btn" onclick="showSchedule('thu', this)">Thursday</button>
+          <button class="option-btn" onclick="showSchedule('fri', this)">Friday</button>
+          <button class="option-btn" onclick="showSchedule('sat', this)">Saturday</button>
+          <button class="option-btn" onclick="showSchedule('sun', this)">Sunday</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Draft List Grid -->
+    <h3 class="section-title">Draft Selection</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Year-Round Flagships</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Jalapeño Pale Ale<span class="menu-item-badge">Favorite</span></span>
+            <span class="menu-item-price">5.5% ABV</span>
+          </div>
+          <p class="menu-item-desc">Our signature unfiltered pale ale brewed with fresh local jalapeños. Bright pepper aroma with a clean, smooth finish and none of the heat.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Higher Ground IPA</span>
+            <span class="menu-item-price">7.0% ABV</span>
+          </div>
+          <p class="menu-item-desc">West Coast style IPA dry-hopped with plenty of Cascade hops. Boasting robust pine, citrus peel aromas, and a balanced bitter finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Rewind Lager</span>
+            <span class="menu-item-price">4.4% ABV</span>
+          </div>
+          <p class="menu-item-desc">A highly crushable, traditional German-style pilsner. Clean, crisp, light-bodied, and perfect for warm patio gatherings.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Seasonal & Limited Taps</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Sunspree Hazy IPA</span>
+            <span class="menu-item-price">6.8% ABV</span>
+          </div>
+          <p class="menu-item-desc">A juicy, double dry-hopped hazy IPA loaded with Citra and Mosaic hops. Boasting bold notes of mango, passionfruit, and sweet grapefruit.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Lazy Bird Brown Ale</span>
+            <span class="menu-item-price">5.5% ABV</span>
+          </div>
+          <p class="menu-item-desc">A classic American brown ale brewed with roasted chocolate malts, giving notes of hazelnut, cocoa, and a clean, dry finish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Paradise Session IPA</span>
+            <span class="menu-item-price">4.8% ABV</span>
+          </div>
+          <p class="menu-item-desc">Light and sessionable tropical IPA dry-hopped with Citra, offering notes of fresh pine needles and orange zest.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1016 N. Davidson St.<br>Charlotte, NC 28206</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 3:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 11:00 AM - 8:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 332-1810<br>Solar Powered Taproom | Free Peanuts | Dog Friendly</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Birdsong Brewing Co. Brewed solar clean.</p>
+    </div>
+  </footer>
+
+  <script>
+    const schedules = {
+      mon: {
+        badge: "Monday Taproom Schedule",
+        truck: "CLOSED - No Food Truck",
+        event: "Event: Taproom closed Mondays for brewing",
+        desc: "Our brewhouse team is busy scrubbing tanks and cooking fresh solar beers. Taproom reopen Tuesday at 3:00 PM!"
+      },
+      tue: {
+        badge: "Tuesday Taproom Schedule",
+        truck: "Taco Green-go Food Truck",
+        event: "Event: Birdsong Run Club (6:30 PM)",
+        desc: "Parked on Davidson St from 5 PM to 9 PM serving fresh street tacos, loaded nachos, and burritos. Join the 1.5, 3, or 5-mile run starting at 6:30 PM and get $1 off your first draft pour!"
+      },
+      wed: {
+        badge: "Wednesday Taproom Schedule",
+        truck: "Bleu Barn Bistro",
+        event: "Event: Trivia Night (7:00 PM)",
+        desc: "Charlotte's best farm-to-table burgers and fresh fries parked on Davidson St from 5 PM to 9 PM. General knowledge trivia kicks off at 7:00 PM with prizes for the top teams!"
+      },
+      thu: {
+        badge: "Thursday Taproom Schedule",
+        truck: "Cousins Maine Lobster",
+        event: "Event: Pitcher Specials & Board Games",
+        desc: "Premium lobster rolls, lobster tots, and bisque served hot on the patio from 5 PM to 9 PM. Enjoy $2 off 64oz pitchers of Rewind Lager all evening."
+      },
+      fri: {
+        badge: "Friday Taproom Schedule",
+        truck: "Tin Kitchen Food Truck",
+        event: "Event: Live Taproom Acoustic Music (7:00 PM)",
+        desc: "Modern tacos, sliders, and quesadillas served from 4 PM to 10 PM. Local singer-songwriters perform acoustic sets on our Davidson St deck starting at 7:00 PM."
+      },
+      sat: {
+        badge: "Saturday Taproom Schedule",
+        truck: "Tacos El Nevado + King of Pops",
+        event: "Event: Weekend Hops & Solar Deck Hangout",
+        desc: "Local authentic Mexican street tacos served all day from 12 PM to 9 PM. Cool off on the deck with fruit pops from King of Pops. Full draft lineup active."
+      },
+      sun: {
+        badge: "Sunday Taproom Schedule",
+        truck: "Plated Palette Bistro",
+        event: "Event: Charity Sunday Tap (All Day)",
+        desc: "Serving gourmet sandwiches, wings, and sides from 12 PM to 7 PM. $1 of every pint of Jalapeño Pale Ale sold today is donated to local NoDa school art programs."
+      }
+    };
+
+    function showSchedule(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const board = document.getElementById('calendar-card-box');
+      board.style.opacity = '0';
+      board.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = schedules[key];
+        document.getElementById('pair-truck-name').innerText = data.truck;
+        document.getElementById('pair-event-name').innerText = data.event;
+        document.getElementById('pair-desc').innerText = data.desc;
+        board.querySelector('.board-badge').innerText = data.badge;
+        
+        board.style.opacity = '1';
+        board.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

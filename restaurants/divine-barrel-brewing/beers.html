@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Beers · Divine Barrel Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --indigo: #2d1b4e;
+  --gold: #d4a847;
+  --teal: #1a7a7a;
+  --charcoal: #1a1a1a;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #999;
+  --purple-light: #4a2d7a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--indigo); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--indigo), #1a0d2e); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 3rem 2rem 4rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.3rem; color: var(--warm-white); margin: 0 0 1.25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.filter-bar { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.filter-btn { background: rgba(255,255,255,.04); border: 1px solid rgba(212,168,71,.15); padding: .5rem 1.25rem; border-radius: 30px; font-size: .82rem; font-weight: 600; cursor: pointer; color: var(--muted); font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: .06em; transition: all .2s; }
+.filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+.filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--charcoal); }
+.beer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+.beer-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.08); border-radius: 8px; padding: 1.25rem; transition: opacity .3s; }
+.beer-card.hidden { display: none; }
+.beer-card .style { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); font-weight: 600; margin-bottom: .25rem; }
+.beer-card h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--gold); }
+.beer-card .desc { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0 0 .5rem; }
+.beer-card .abv { font-size: .8rem; color: var(--muted); }
+.beer-card .ibu { font-size: .8rem; color: var(--muted); margin-left: .75rem; }
+.beer-card .badge { display: inline-block; font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; background: rgba(212,168,71,.1); color: var(--gold); padding: .15rem .5rem; border-radius: 3px; margin-right: .25rem; }
+.quiz-section { background: #111; padding: 3rem 2rem; }
+.quiz-box { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.12); border-radius: 12px; padding: 2rem; }
+.quiz-box h3 { text-align: center; color: var(--gold); font-size: 1.15rem; margin: 0 0 1.25rem; }
+.quiz-step { display: none; }
+.quiz-step.active { display: block; }
+.quiz-q { font-size: 1rem; margin-bottom: 1rem; text-align: center; color: var(--warm-white); }
+.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; max-width: 440px; margin: 0 auto; }
+.quiz-opt { background: rgba(255,255,255,.04); border: 1px solid rgba(212,168,71,.12); padding: .85rem; border-radius: 6px; cursor: pointer; text-align: center; transition: all .2s; font-family: 'DM Sans', sans-serif; font-size: .88rem; color: var(--cream); }
+.quiz-opt:hover { border-color: var(--gold); background: rgba(212,168,71,.08); }
+.quiz-opt.selected { border-color: var(--gold); background: rgba(212,168,71,.12); color: var(--gold); }
+.quiz-result { display: none; text-align: center; padding: 1rem; }
+.quiz-result.show { display: block; }
+.quiz-result h4 { color: var(--gold); font-size: 1.1rem; margin: 0 0 .5rem; }
+.quiz-result p { opacity: .7; max-width: 400px; margin: 0 auto; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,168,71,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Divine Barrel</a>
+  <div class="nav-links">
+    <a href="beers.html">Beers</a>
+    <a href="cellar.html">Sour Program</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Beers</h1>
+  <p>Modern styles, traditional roots — always something new on tap</p>
+</header>
+
+<section class="section">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ipa">Hazy IPA</button>
+    <button class="filter-btn" data-filter="sour">Sour</button>
+    <button class="filter-btn" data-filter="stout">Stout / Porter</button>
+    <button class="filter-btn" data-filter="lager">Lager / Pilsner</button>
+    <button class="filter-btn" data-filter="other">Other</button>
+  </div>
+
+  <div class="beer-grid" id="beerGrid">
+    <div class="beer-card" data-style="ipa">
+      <span class="style">Hazy IPA</span>
+      <h3>Universal Language</h3>
+      <p class="desc">Our flagship — bright citrus, stone fruit, and a soft, juicy finish</p>
+      <span class="abv">6.8% ABV</span><span class="ibu">45 IBU</span>
+      <span class="badge">Flagship</span>
+    </div>
+    <div class="beer-card" data-style="ipa">
+      <span class="style">Hazy IPA</span>
+      <h3>Climb a Cloud</h3>
+      <p class="desc">Double hazy IPA with mango, pineapple, and tangerine notes</p>
+      <span class="abv">8.2% ABV</span><span class="ibu">55 IBU</span>
+    </div>
+    <div class="beer-card" data-style="ipa">
+      <span class="style">Hazy IPA</span>
+      <h3>I Did It All for the Wookie</h3>
+      <p class="desc">Triple hazy IPA — massive hop character, surprisingly smooth</p>
+      <span class="abv">10.5% ABV</span><span class="ibu">65 IBU</span>
+    </div>
+    <div class="beer-card" data-style="ipa">
+      <span class="style">Hazy IPA</span>
+      <h3>Neon Distraction</h3>
+      <p class="desc">West Coast-style hazy with pine and grapefruit bite</p>
+      <span class="abv">7.2% ABV</span><span class="ibu">50 IBU</span>
+    </div>
+    <div class="beer-card" data-style="ipa">
+      <span class="style">Hazy IPA</span>
+      <h3>Moving to Montana</h3>
+      <p class="desc">Hazy IPA with experimental hop blend — tropical and dank</p>
+      <span class="abv">7.8% ABV</span><span class="ibu">48 IBU</span>
+    </div>
+    <div class="beer-card" data-style="sour">
+      <span class="style">Sour</span>
+      <h3>Snakes</h3>
+      <p class="desc">Barrel-aged sour with raspberry, blackberry, and vanilla</p>
+      <span class="abv">6.5% ABV</span>
+      <span class="badge">Barrel-Aged</span>
+    </div>
+    <div class="beer-card" data-style="sour">
+      <span class="style">Sour</span>
+      <h3>Sparklers</h3>
+      <p class="desc">Bright, effervescent sour with passionfruit and guava</p>
+      <span class="abv">5.8% ABV</span>
+    </div>
+    <div class="beer-card" data-style="sour">
+      <span class="style">Sour</span>
+      <h3>Lunchbox Confidential</h3>
+      <p class="desc">Peanut butter and jelly sour — nostalgic and tart</p>
+      <span class="abv">6.2% ABV</span>
+    </div>
+    <div class="beer-card" data-style="sour">
+      <span class="style">Sour</span>
+      <h3>Fruit Fetish</h3>
+      <p class="desc">Mixed berry sour — rotating seasonal fruit blend</p>
+      <span class="abv">5.5% ABV</span>
+    </div>
+    <div class="beer-card" data-style="stout">
+      <span class="style">Stout</span>
+      <h3>Big Lubelski</h3>
+      <p class="desc">Bourbon barrel imperial stout — rich, roasty, warming</p>
+      <span class="abv">12% ABV</span>
+      <span class="badge">Barrel-Aged</span>
+    </div>
+    <div class="beer-card" data-style="stout">
+      <span class="style">Stout</span>
+      <h3>Peanut Butter Stout</h3>
+      <p class="desc">Silky stout with real peanut butter — dessert in a glass</p>
+      <span class="abv">8% ABV</span>
+    </div>
+    <div class="beer-card" data-style="stout">
+      <span class="style">Porter</span>
+      <h3>Midnight Passage</h3>
+      <p class="desc">Balanced porter with chocolate, coffee, and dark malt notes</p>
+      <span class="abv">6.5% ABV</span>
+    </div>
+    <div class="beer-card" data-style="lager">
+      <span class="style">Lager</span>
+      <h3>Divine Light</h3>
+      <p class="desc">Crisp German-style pilsner — clean, refreshing, classic</p>
+      <span class="abv">4.8% ABV</span>
+    </div>
+    <div class="beer-card" data-style="lager">
+      <span class="style">Lager</span>
+      <h3>Golden Hour</h3>
+      <p class="desc">Helles lager with a touch of honey malt — smooth and easy</p>
+      <span class="abv">5.2% ABV</span>
+    </div>
+    <div class="beer-card" data-style="other">
+      <span class="style">Other</span>
+      <h3>Holy Cow</h3>
+      <p class="desc">Cream ale with lactose — subtly sweet and incredibly smooth</p>
+      <span class="abv">5% ABV</span>
+    </div>
+    <div class="beer-card" data-style="other">
+      <span class="style">Cocktail</span>
+      <h3>House Cocktails</h3>
+      <p class="desc">Rotating craft cocktails on tap — ask your bartender</p>
+      <span class="abv">Varies</span>
+    </div>
+  </div>
+</section>
+
+<section class="quiz-section">
+  <div class="quiz-box" id="beerQuiz">
+    <h3>Find Your Brew</h3>
+    <p style="text-align:center;opacity:.6;margin-bottom:1.25rem;font-size:.85rem">Answer two quick questions and we'll recommend a beer for you.</p>
+
+    <div class="quiz-step active" data-step="1">
+      <p class="quiz-q">What flavor profile do you prefer?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-answer="hoppy" data-next="2">Hoppy &amp; Citrusy</button>
+        <button class="quiz-opt" data-answer="tart" data-next="2">Tart &amp; Fruity</button>
+        <button class="quiz-opt" data-answer="rich" data-next="2">Rich &amp; Roasty</button>
+        <button class="quiz-opt" data-answer="crisp" data-next="2">Crisp &amp; Clean</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="2">
+      <p class="quiz-q">How adventurous are you feeling?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" data-answer="flagship" data-next="done">Give me your flagship</button>
+        <button class="quiz-opt" data-answer="wild" data-next="done">Surprise me!</button>
+      </div>
+    </div>
+
+    <div class="quiz-result" id="beerResult">
+      <h4 id="resultName">Universal Language</h4>
+      <p id="resultDesc">Our flagship hazy IPA — bright citrus and stone fruit with a soft, juicy finish. You can't go wrong.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Divine Barrel Brewing · 3701 N Davidson St Suite #203 · Charlotte, NC 28205 · (980) 237-1803</p>
+  <p><a href="beers.html">Beers</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="about.html">About</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const filterBtns = document.querySelectorAll('[data-filter]');
+  const items = document.querySelectorAll('[data-style]');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const f = this.dataset.filter;
+      items.forEach(item => {
+        item.classList.toggle('hidden', f !== 'all' && item.dataset.style !== f);
+      });
+    });
+  });
+
+  const quiz = document.getElementById('beerQuiz');
+  const steps = quiz.querySelectorAll('.quiz-step');
+  const result = document.getElementById('beerResult');
+  const resultName = document.getElementById('resultName');
+  const resultDesc = document.getElementById('resultDesc');
+  const picks = {
+    'hoppy-flagship': ['Universal Language', 'Our flagship hazy IPA — bright citrus and stone fruit with a soft, juicy finish. You can\'t go wrong.'],
+    'hoppy-wild': ['Climb a Cloud', 'Double hazy IPA with mango, pineapple, and tangerine. Pushing the limits of what a haze can be.'],
+    'tart-flagship': ['Sparklers', 'Our most popular sour — bright, effervescent, and loaded with passionfruit and guava.'],
+    'tart-wild': ['Lunchbox Confidential', 'Peanut butter and jelly sour. Yes, it works. Yes, it\'s delicious.'],
+    'rich-flagship': ['Midnight Passage', 'A balanced porter with chocolate, coffee, and dark malt. Comfort in a glass.'],
+    'rich-wild': ['Big Lubelski', 'Bourbon barrel imperial stout at 12% ABV. Rich, roasty, and dangerously smooth.'],
+    'crisp-flagship': ['Divine Light', 'German-style pilsner — crisp, clean, and perfectly refreshing.'],
+    'crisp-wild': ['Golden Hour', 'Helles lager with honey malt. Smooth, subtle, and easy drinking.']
+  };
+  let answers = {};
+  quiz.querySelectorAll('.quiz-opt').forEach(opt => {
+    opt.addEventListener('click', function() {
+      const step = this.closest('.quiz-step');
+      const next = this.dataset.next;
+      const q = step.dataset.step;
+      answers[q] = this.dataset.answer;
+      const siblings = step.querySelectorAll('.quiz-opt');
+      siblings.forEach(s => s.classList.remove('selected'));
+      this.classList.add('selected');
+
+      if (next === 'done') {
+        step.classList.remove('active');
+        const key = answers['1'] + '-' + answers['2'];
+        const pick = picks[key] || picks['hoppy-flagship'];
+        resultName.textContent = pick[0];
+        resultDesc.textContent = pick[1];
+        result.classList.add('show');
+      } else {
+        setTimeout(() => {
+          step.classList.remove('active');
+          const ns = quiz.querySelector(`[data-step="${next}"]`);
+          if (ns) ns.classList.add('active');
+        }, 300);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havana Bar · El Puro Cuban Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style overrides to match El Puro Cuban Restaurant branding */
+.cocktail-mat {
+  background: radial-gradient(circle, #4d151c 0%, #1a0508 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.cocktail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .cocktail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--p);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b1d28;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="El Puro Cuban Restaurant Home">
+        <span class="logo-text">El Puro</span>
+        <span class="logo-sub">Cuban Restaurant</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cocktails.html" class="active">Havana Bar</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="events.html">Live Music</a></li>
+          <li><a href="reserve.html">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="wrap">
+        <div class="hero-content">
+          <h1>The Havana Cocktail Bar</h1>
+          <p class="hero-sub">Step back into pre-revolutionary 1950s Havana with our craft cocktails and vintage rum menu</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 4rem 0;">
+      <div class="wrap">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Havana Cocktail Customizer</h2>
+        
+        <div class="cocktail-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow);">
+          
+          <!-- Left: Glass Platter Visualizer -->
+          <div class="cocktail-mat">
+            <span style="font-size: 0.78rem; font-weight: 600; color: #f4c2c2; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="cocktail-tag-display">PRE-REVOLUTIONARY MOJITO</span>
+            <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Playfair Display', serif; margin: 0 0 0.8rem 0;" id="cocktail-title-display">Bacardí Mojito</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #f4c2c2; margin: 0 0 1.2rem 0;" id="cocktail-price-display">$14.00</p>
+            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="cocktail-desc-display">Bacardí Carta Blanca rum muddled with fresh mint sprigs, cane sugar, and fresh lime juice, finished with a fresh mint sprig.</p>
+          </div>
+
+          <!-- Right: Controls -->
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">1. Select Rum Base</label>
+              <select id="cocktail-rum" onchange="updateCocktail()">
+                <option value="bacardi" selected>Bacardí Carta Blanca ($14.00)</option>
+                <option value="havana">Havana Club 7-Year Aged ($16.00)</option>
+                <option value="mount">Mount Gay Aged Rum ($15.00)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">2. Select Cocktail Style</label>
+              <select id="cocktail-style" onchange="updateCocktail()">
+                <option value="mojito" selected>Classic Cuban Mojito (+$0.00)</option>
+                <option value="daiquiri">Hemingway Daiquiri (+$1.00)</option>
+                <option value="oldfashioned">El Puro Cafecito Old Fashioned (+$2.00)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label">3. Select Garnish Accent</label>
+              <select id="cocktail-garnish" onchange="updateCocktail()">
+                <option value="mint" selected>Fresh Mint Sprig</option>
+                <option value="lime">Candied Lime Pinwheel</option>
+                <option value="none">No Garnish (+$0.00)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border);">
+      <div class="wrap">
+        <p>El Puro Cuban Restaurant · 5033 South Blvd · Charlotte, NC 28217 · (980) 219-8113</p>
+        <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const rumData = {
+      bacardi: { name: "Bacardí", basePrice: 14.00, label: "Bacardí Carta Blanca rum" },
+      havana: { name: "Havana Club", basePrice: 16.00, label: "Havana Club 7-Year Aged dark rum" },
+      mount: { name: "Mount Gay", basePrice: 15.00, label: "Mount Gay premium aged rum" }
+    };
+
+    const styleData = {
+      mojito: { tag: "PRE-REVOLUTIONARY MOJITO", name: "Mojito", label: "muddled with fresh mint sprigs, organic cane sugar, and fresh lime juice" },
+      daiquiri: { tag: "HEMINGWAY DAIQUIRI", name: "Daiquiri", label: "shaken with fresh grapefruit juice, maraschino liqueur, and lime" },
+      oldfashioned: { tag: "EL PURO OLD FASHIONED", name: "Old Fashioned", label: "stirred with house espresso (cafecito) syrup and dark chocolate bitters" }
+    };
+
+    const garnishData = {
+      mint: "finished with a fresh mint sprig",
+      lime: "garnished with a candied lime pinwheel",
+      none: "served clean"
+    };
+
+    function updateCocktail() {
+      const rumKey = document.getElementById('cocktail-rum').value;
+      const styleKey = document.getElementById('cocktail-style').value;
+      const garnishKey = document.getElementById('cocktail-garnish').value;
+
+      const rum = rumData[rumKey];
+      const style = styleData[styleKey];
+      const garnish = garnishData[garnishKey];
+
+      let extra = 0;
+      if (styleKey === "daiquiri") extra = 1.00;
+      if (styleKey === "oldfashioned") extra = 2.00;
+
+      const totalPrice = rum.basePrice + extra;
+
+      document.getElementById('cocktail-tag-display').innerText = style.tag;
+      document.getElementById('cocktail-title-display').innerText = `${rum.name} ${style.name}`;
+      document.getElementById('cocktail-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `${rum.label} ${style.label}, ${garnish}.`;
+      
+      document.getElementById('cocktail-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateCocktail();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

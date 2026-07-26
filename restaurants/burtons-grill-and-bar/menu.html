@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burtons Grill & Bar - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Allergen tags styling */
+    .allergen-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .allergen-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      border: 1px solid transparent;
+    }
+    .tag-gf { background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.25); }
+    .tag-df { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-color: rgba(59, 130, 246, 0.25); }
+    .tag-vg { background: rgba(217, 119, 6, 0.15); color: var(--color-bronze); border-color: rgba(217, 119, 6, 0.25); }
+    .tag-contains { background: rgba(100, 116, 139, 0.1); color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Burtons
+          <span>Grill & Bar Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="allergy.html">Allergy Protocol</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Executive Casual Menu</h2>
+    <p class="page-subtitle">Savor premium casual American dishes. Use our allergen filter below to customize safe options for your needs.</p>
+  </header>
+
+  <!-- Interactive Allergen Filter -->
+  <main class="container">
+
+    <section class="premium-card" style="margin-bottom: 4.5rem; padding: 2.5rem;">
+      <h3 style="font-size: 1.25rem; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; text-align: center;">Allergen & Dietary Filter</h3>
+      
+      <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <label style="display: flex; align-items: center; gap: 0.6rem; font-weight: 700; cursor: pointer; color: var(--color-text-light);">
+          <input type="checkbox" id="chk-gf" onchange="applyFilters()" style="transform: scale(1.2); accent-color: var(--color-bronze);"> Gluten-Free (GF)
+        </label>
+        <label style="display: flex; align-items: center; gap: 0.6rem; font-weight: 700; cursor: pointer; color: var(--color-text-light);">
+          <input type="checkbox" id="chk-df" onchange="applyFilters()" style="transform: scale(1.2); accent-color: var(--color-bronze);"> Dairy-Free (DF)
+        </label>
+        <label style="display: flex; align-items: center; gap: 0.6rem; font-weight: 700; cursor: pointer; color: var(--color-text-light);">
+          <input type="checkbox" id="chk-vg" onchange="applyFilters()" style="transform: scale(1.2); accent-color: var(--color-bronze);"> Vegetarian (VG)
+        </label>
+      </div>
+
+      <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted);" id="filter-counter">Showing 9 of 9 items.</p>
+    </section>
+
+    <!-- Menu Items List -->
+    <div class="menu-grid" id="menu-container">
+      
+      <!-- Appetizers -->
+      <div class="premium-card menu-item-card" data-gf="false" data-df="false" data-vg="false">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Cheesesteak Spring Rolls</span>
+            <span class="menu-item-price">$15.00</span>
+          </div>
+          <p class="menu-item-desc">Crispy spring rolls stuffed with tender shaved beef, caramelized onions, and melted American cheese. Served with spicy dipping sauce.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-contains">Wheat / Gluten</span>
+            <span class="allergen-tag tag-contains">Dairy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="true" data-df="true" data-vg="true">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">General Tso Cauliflower</span>
+            <span class="menu-item-price">$13.00</span>
+          </div>
+          <p class="menu-item-desc">Crispy fried cauliflower florets tossed in sweet and spicy General Tso sauce, garnished with scallions and sesame seeds.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-gf">Gluten-Free</span>
+            <span class="allergen-tag tag-df">Dairy-Free</span>
+            <span class="allergen-tag tag-vg">Vegetarian</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="true" data-df="false" data-vg="true">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Beet & Goat Cheese Salad</span>
+            <span class="menu-item-price">$14.00</span>
+          </div>
+          <p class="menu-item-desc">Roasted red beets, mixed baby greens, goat cheese crumbles, candied pecans, and maple vinaigrette dressing.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-gf">Gluten-Free</span>
+            <span class="allergen-tag tag-vg">Vegetarian</span>
+            <span class="allergen-tag tag-contains">Dairy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Course -->
+      <div class="premium-card menu-item-card" data-gf="true" data-df="true" data-vg="false">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Center Cut Filet Mignon</span>
+            <span class="menu-item-price">$42.00</span>
+          </div>
+          <p class="menu-item-desc">8oz tender center cut filet grilled over hickory wood, served with mashed potatoes and seasoned broccoli. (Prepared with olive oil for dairy-free).</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-gf">Gluten-Free</span>
+            <span class="allergen-tag tag-df">Dairy-Free Option</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="false" data-df="false" data-vg="false">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Crab Crusted Haddock</span>
+            <span class="menu-item-price">$34.00</span>
+          </div>
+          <p class="menu-item-desc">Fresh haddock filet topped with a savory lump crabmeat crust, baked golden brown, served with wild rice and lemon butter sauce.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-contains">Wheat / Gluten</span>
+            <span class="allergen-tag tag-contains">Dairy</span>
+            <span class="allergen-tag tag-contains">Shellfish</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="true" data-df="false" data-vg="true">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Wild Mushroom Risotto</span>
+            <span class="menu-item-price">$22.00</span>
+          </div>
+          <p class="menu-item-desc">Creamy arborio rice simmered with assorted wild mushrooms, fresh thyme, baby spinach, and shaved parmesan cheese.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-gf">Gluten-Free</span>
+            <span class="allergen-tag tag-vg">Vegetarian</span>
+            <span class="allergen-tag tag-contains">Dairy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="true" data-df="true" data-vg="false">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Garlic Herb Chicken</span>
+            <span class="menu-item-price">$26.00</span>
+          </div>
+          <p class="menu-item-desc">Pan-seared marinated chicken breast with garlic herb sauce, served with roasted fingerling potatoes and green beans.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-gf">Gluten-Free</span>
+            <span class="allergen-tag tag-df">Dairy-Free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="false" data-df="false" data-vg="false">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Burtons Classic Burger</span>
+            <span class="menu-item-price">$17.00</span>
+          </div>
+          <p class="menu-item-desc">Certified Angus beef patty, cheddar cheese, lettuce, tomato, and red onion on a toasted brioche bun. Served with house cut fries.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-contains">Wheat / Gluten</span>
+            <span class="allergen-tag tag-contains">Dairy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card menu-item-card" data-gf="false" data-df="false" data-vg="false">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Key Lime Pie</span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Traditional tangy key lime custard on a graham cracker crust, topped with fresh whipped cream and lime zest.</p>
+          <div class="allergen-row">
+            <span class="allergen-tag tag-contains">Wheat / Gluten</span>
+            <span class="allergen-tag tag-contains">Dairy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Park Road Shop</h3>
+        <p>1601 East Woodlawn Road<br>Charlotte, NC 28209<br>Phone: 980-299-0999</p>
+      </div>
+      <div class="info-block">
+        <h3>Blakeney Shop</h3>
+        <p>9816 Rea Road<br>Charlotte, NC 28277<br>Phone: 704-555-0199</p>
+      </div>
+      <div class="info-block">
+        <h3>Park Road Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri: 11:00 AM - 11:00 PM<br>Sat: 10:30 AM - 11:00 PM<br>Sun: 10:30 AM - 9:00 PM</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Burtons Grill & Bar. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    function applyFilters() {
+      const gfChecked = document.getElementById('chk-gf').checked;
+      const dfChecked = document.getElementById('chk-df').checked;
+      const vgChecked = document.getElementById('chk-vg').checked;
+
+      const items = document.querySelectorAll('.menu-item-card');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const isGf = item.getAttribute('data-gf') === 'true';
+        const isDf = item.getAttribute('data-df') === 'true';
+        const isVg = item.getAttribute('data-vg') === 'true';
+
+        let show = true;
+        if (gfChecked && !isGf) show = false;
+        if (dfChecked && !isDf) show = false;
+        if (vgChecked && !isVg) show = false;
+
+        if (show) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('filter-counter').innerText = `Showing ${visibleCount} of ${items.length} items.`;
+    }
+  </script>
+</body>
+</html>

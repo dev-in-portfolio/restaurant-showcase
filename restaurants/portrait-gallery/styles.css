@@ -502,13 +502,3 @@ a {
     padding: 2.5rem 1.5rem;
   }
 }
-
-
-/* Global Uncropped Logo Styling */
-.logo img, .brand-logo img, .header-logo img, .hero-logo img, .footer-logo img {
-  object-fit: contain !important;
-  max-height: 70px !important;
-  width: auto !important;
-  padding: 4px !important;
-  display: inline-block !important;
-}

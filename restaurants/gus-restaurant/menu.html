@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gus' Family Restaurant - Monroe, NC | Menu</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="../compare-presence.js" defer></script>
 </head>
 <body>
 
@@ -191,7 +190,7 @@
     function setBase(key, price, name) {
       const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+      event.target.classList.add('active');
 
       selectedBase = { key, price, name };
       updateDisplay();
@@ -200,7 +199,7 @@
     function setProtein(key, price, name) {
       const buttons = document.getElementById('protein-options').querySelectorAll('.option-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+      event.target.classList.add('active');
 
       selectedProtein = { key, price, name };
       updateDisplay();
@@ -209,7 +208,7 @@
     function setSide(key, price, name) {
       const buttons = document.getElementById('side-options').querySelectorAll('.option-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
+      event.target.classList.add('active');
 
       selectedSide = { key, price, name };
       updateDisplay();
@@ -244,8 +243,5 @@
       document.getElementById('display-plate-desc').innerText = desc;
     }
   </script>
-
-  <!-- Dark Star Consulting Footer Badge -->
-  
 </body>
 </html>

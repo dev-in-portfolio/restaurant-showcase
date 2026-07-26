@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brazwells Pub - Charlotte, NC | Weekend Brunch</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive Bloody Mary glass visualizer */
+    .mary-glass-container {
+      background: radial-gradient(circle, #2a150c 0%, #0d0604 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+    .mary-glass-graphic {
+      width: 80px;
+      height: 140px;
+      border: 3.5px solid var(--color-text-light);
+      border-radius: 4px 4px 15px 15px;
+      background: rgba(255,255,255,0.05);
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+    .mary-liquid {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 110px; /* Liquid level */
+      background: #b91c1c; /* Crimson tomato base */
+      transition: var(--transition-smooth);
+    }
+    .mary-celery {
+      position: absolute;
+      top: -20px;
+      left: 15px;
+      width: 12px;
+      height: 90px;
+      background: #16a34a;
+      transform: rotate(-15deg);
+      border-radius: 4px;
+      z-index: 2;
+      display: none;
+    }
+    .mary-bacon {
+      position: absolute;
+      top: -30px;
+      right: 15px;
+      width: 14px;
+      height: 100px;
+      background: #7f1d1d;
+      transform: rotate(10deg);
+      border-radius: 2px;
+      z-index: 2;
+      display: none;
+    }
+    .mary-pickle {
+      position: absolute;
+      top: -10px;
+      left: 35px;
+      width: 10px;
+      height: 80px;
+      background: #15803d;
+      transform: rotate(5deg);
+      border-radius: 4px;
+      z-index: 2;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Brazwells
+          <span>Neighborhood Pub Montford</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="brunch.html" class="active">Brunch</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Weekend Tavern Brunch</h2>
+    <p class="page-subtitle">Served every Saturday & Sunday from 10:00 AM to 2:00 PM, featuring our legendary Build-Your-Own Bloody Mary Bar.</p>
+  </header>
+
+  <!-- Interactive Bloody Mary Customizer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Bloody Mary Bar Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your base spirit and premium tavern garnishes to customize your brunch cocktail.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Cocktail Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="mary-glass-container" id="glass-box">
+            <div class="mary-glass-graphic">
+              <div class="mary-liquid" id="liquid-layer"></div>
+              <div class="mary-celery" id="celery-layer"></div>
+              <div class="mary-bacon" id="bacon-layer"></div>
+              <div class="mary-pickle" id="pickle-layer"></div>
+            </div>
+            <h4 style="font-size: 1.6rem; color: #ffffff;" id="mary-display-title">Premium Vodka Bloody Mary</h4>
+            <p style="font-size: 1.25rem; font-weight: 800; color: var(--color-amber); margin: 0.5rem 0;" id="mary-display-price">$9.50</p>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Spirit Base</label>
+            <div class="option-grid" id="spirit-options">
+              <button class="option-btn active" onclick="setSpirit('vodka', 'Premium Vodka', 9.50, '#b91c1c')">Vodka ($9.50)</button>
+              <button class="option-btn" onclick="setSpirit('jalapeno', 'Spicy Jalapeño Vodka', 10.50, '#991b1b')">Jalapeño Vodka ($10.50)</button>
+              <button class="option-btn" onclick="setSpirit('mezcal', 'Smoked Mezcal', 11.00, '#7f1d1d')">Mezcal ($11)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Add Tavern Garnishes</label>
+            <div class="option-grid" id="garnish-options" style="grid-template-columns: 1fr;">
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light); margin-top: 0.4rem; font-weight: 500;">
+                <input type="checkbox" id="chk-celery" onchange="toggleGarnish('celery')" style="width: auto;"> Celery Stalk (+50¢)
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light); margin-top: 0.4rem; font-weight: 500;">
+                <input type="checkbox" id="chk-bacon" onchange="toggleGarnish('bacon')" style="width: auto;"> Crispy Bacon Strip (+$1.50)
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light); margin-top: 0.4rem; font-weight: 500;">
+                <input type="checkbox" id="chk-pickle" onchange="toggleGarnish('pickle')" style="width: auto;"> Kosher Pickle Spear (+$1.00)
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Bar Order Note</span>
+        <h4 class="builder-display-title" id="display-mary-name">Premium Vodka Bloody Mary</h4>
+        <div class="builder-display-price" id="display-mary-price">$9.50</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-mary-desc">Tavern-spiced tomato mix shaken with Premium Vodka, served with house ice.</p>
+      </div>
+    </section>
+
+    <!-- Brunch Specialty Lists -->
+    <h3 class="section-title">Weekend Brunch Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Signature Entrees</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Montford Benedict</span>
+            <span class="menu-item-price">$14.50</span>
+          </div>
+          <p class="menu-item-desc">Toasted English muffin, thick-cut Canadian bacon, poached farm eggs, covered in rich hollandaise, served with hashbrowns.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Chicken & Waffles</span>
+            <span class="menu-item-price">$15.00</span>
+          </div>
+          <p class="menu-item-desc">Crispy golden chicken breast strips served on top of a warm Belgian waffle, drizzled with hot honey maple syrup.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tavern Breakfast Quesadilla</span>
+            <span class="menu-item-price">$13.00</span>
+          </div>
+          <p class="menu-item-desc">Flour tortilla stuffed with scrambled eggs, crispy bacon bits, cheddar jack cheese, and green onions, served with salsa.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Mimosa & Bubbles</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Grand Mimosa Carafe</span>
+            <span class="menu-item-price">$22.00</span>
+          </div>
+          <p class="menu-item-desc">A full carafe of sparkling prosecco blended with fresh squeezed orange juice, built for sharing.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Blood Orange Mimosa</span>
+            <span class="menu-item-price">$7.50</span>
+          </div>
+          <p class="menu-item-desc">Prosecco champagne paired with bold, tart blood orange juice and fresh mint garnish.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tavern Stout Coffee</span>
+            <span class="menu-item-price">$6.50</span>
+          </div>
+          <p class="menu-item-desc">Freshly brewed coffee spiked with Irish cream liqueur and a float of dark roasted local stout beer.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Montford Road Stand</h3>
+        <p>1620 Montford Dr<br>Charlotte, NC 28209<br>Phone: (704) 521-9990</p>
+      </div>
+      <div class="info-block">
+        <h3>Brunch Hours</h3>
+        <p>Sat - Sun: 10:00 AM - 2:00 PM<br>Full Menu: Available until 11:00 PM<br>Bar: Closes at 2:00 AM</p>
+      </div>
+      <div class="info-block">
+        <h3>Brunch Ingredients</h3>
+        <p>Our Bloody Mary tomato mix is prepared fresh in-house every Friday night using local farm tomatoes, horseradish, and black pepper.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Brazwells Pub. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedSpirit = { key: 'vodka', name: 'Premium Vodka', price: 9.50, color: '#b91c1c' };
+    let activeGarnishes = {
+      celery: false,
+      bacon: false,
+      pickle: false
+    };
+
+    function setSpirit(key, name, price, color) {
+      const buttons = document.getElementById('spirit-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSpirit = { key, name, price, color };
+      updateDisplay();
+    }
+
+    function toggleGarnish(gKey) {
+      activeGarnishes[gKey] = document.getElementById(`chk-${gKey}`).checked;
+      
+      // Update visual layers
+      const layer = document.getElementById(`${gKey}-layer`);
+      if (layer) {
+        layer.style.display = activeGarnishes[gKey] ? 'block' : 'none';
+      }
+      
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      let extraPrice = 0;
+      const picks = [];
+      
+      if (activeGarnishes.celery) { extraPrice += 0.50; picks.push("celery stalk"); }
+      if (activeGarnishes.bacon) { extraPrice += 1.50; picks.push("crispy bacon strip"); }
+      if (activeGarnishes.pickle) { extraPrice += 1.00; picks.push("kosher pickle spear"); }
+
+      const total = selectedSpirit.price + extraPrice;
+      document.getElementById('mary-display-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('mary-display-title').innerText = `${selectedSpirit.name} Bloody Mary`;
+
+      document.getElementById('display-mary-price').innerText = `$${total.toFixed(2)}`;
+      document.getElementById('display-mary-name').innerText = `${selectedSpirit.name} Bloody Mary`;
+
+      // Update liquid color slightly based on spirit selection
+      document.getElementById('liquid-layer').style.backgroundColor = selectedSpirit.color;
+
+      // Update description text
+      let desc = `Tavern-spiced tomato mix shaken with ${selectedSpirit.name}, served with house ice.`;
+      if (picks.length > 0) {
+        desc += ` Garnish toppings: ${picks.join(', ')}.`;
+      }
+      document.getElementById('display-mary-desc').innerText = desc;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

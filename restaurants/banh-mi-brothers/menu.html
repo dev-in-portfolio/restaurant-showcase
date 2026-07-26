@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banh Mi Brothers - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Boba Glass Specific Visualizer Styles */
+    .boba-cup-visualizer {
+      height: 260px;
+      width: 140px;
+      border: 3.5px solid var(--color-green);
+      border-radius: 10px 10px 40px 40px;
+      position: relative;
+      background: rgba(132, 204, 22, 0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .boba-tea-fluid {
+      height: 70%;
+      width: 100%;
+      background: linear-gradient(180deg, #d97706 0%, #ca8a04 100%);
+      transition: all 0.5s ease;
+      position: relative;
+    }
+    .boba-straw {
+      position: absolute;
+      top: -40px;
+      left: 55px;
+      width: 16px;
+      height: 180px;
+      background: var(--color-orange);
+      border-radius: 50px;
+      transform: rotate(-10deg);
+      z-index: 10;
+      opacity: 0.85;
+      box-shadow: 0 0 10px rgba(234, 88, 12, 0.4);
+    }
+    .boba-pearl-node {
+      position: absolute;
+      font-size: 1.25rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Banh Mi Bros
+          <span>Street Food & Boba</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="boba.html">Boba Tea Bar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Vietnamese Street Menu</h2>
+    <p class="page-subtitle">Savor crispy baguettes and custom iced drinks. Try our interactive boba mixer below, or browse our classic bowls and starters.</p>
+  </header>
+
+  <!-- Interactive Boba Tea Mixer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Boba Tea Mixer</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Boba Cup Visualizer -->
+        <div class="plate-canvas" style="min-height: 300px;">
+          <div class="boba-straw"></div>
+          <div class="boba-cup-visualizer">
+            <div class="boba-tea-fluid" id="boba-fluid-box">
+              <!-- Visualized toppings -->
+              <div class="boba-pearl-node" id="topping-boba" style="bottom: 10px; left: 20px;">⚫⚫⚫⚫</div>
+              <div class="boba-pearl-node" id="topping-jelly" style="bottom: 40px; left: 30px;">🍍🍍🍍</div>
+              <div class="boba-pearl-node" id="topping-pudding" style="bottom: 70px; left: 25px;">🍮🍮</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Mix Options -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label>1. Select Tea Base</label>
+            <div class="option-grid" id="base-options">
+              <button class="option-btn active" onclick="setTeaBase('classic', 'Classic Milk Tea', '#dca47a')">Classic Milk Tea</button>
+              <button class="option-btn" onclick="setTeaBase('taro', 'Taro Milk Tea', '#c084fc')">Taro Milk Tea</button>
+              <button class="option-btn" onclick="setTeaBase('mango', 'Mango Green Tea', '#facc15')">Mango Green Tea</button>
+              <button class="option-btn" onclick="setTeaBase('thai', 'Thai Iced Tea', '#f97316')">Thai Iced Tea</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Choose Sweetness</label>
+            <div class="option-grid" id="sweetness-options">
+              <button class="option-btn active" onclick="setSweetness('100', 'Sweetness 100%')">Regular (100%)</button>
+              <button class="option-btn" onclick="setSweetness('70', 'Sweetness 70%')">Less Sweet (70%)</button>
+              <button class="option-btn" onclick="setSweetness('50', 'Sweetness 50%')">Half Sweet (50%)</button>
+              <button class="option-btn" onclick="setSweetness('0', 'Unsweetened (0%)')">Unsweetened (0%)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Add Boba Toppings</label>
+            <div class="option-grid">
+              <button class="option-btn active" id="btn-boba" onclick="toggleTopping('boba', 0.75)">Tapioca Pearls (+$0.75)</button>
+              <button class="option-btn" id="btn-jelly" onclick="toggleTopping('jelly', 0.75)">Lychee Jelly (+$0.75)</button>
+              <button class="option-btn" id="btn-pudding" onclick="toggleTopping('pudding', 1.00)">Egg Pudding (+$1.00)</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Fresh Boba Mix</span>
+        <h4 class="builder-display-title" id="display-tea-name">Classic Milk Tea</h4>
+        <p id="display-tea-sweetness" style="color: var(--color-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Regular Sweetness (100%), Tapioca Pearls</p>
+        <div class="builder-display-price" id="display-tea-price">$5.25</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-tea-desc">Slow-brewed black tea shaken with creamy milk, sugar syrup, and chewy brown-sugar tapioca pearls.</p>
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Banh Mi Brothers Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Banh Mi Sandwiches</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Classic Grilled Pork Banh Mi<span class="menu-item-badge">Bros Favorite</span></span>
+            <span class="menu-item-price">$7.50</span>
+          </div>
+          <p class="menu-item-desc">Freshly baked Vietnamese baguette stuffed with sweet lemongrass grilled pork, house mayo, savory pâté, fresh cilantro, cucumber slices, jalapeños, and pickled carrots & daikon.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Honey Soy Beef Banh Mi</span>
+            <span class="menu-item-price">$8.50</span>
+          </div>
+          <p class="menu-item-desc">Tender flank beef marinated in caramelized honey soy sauce, seared on the grill, packed into our signature French roll with toppings.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Crispy Tofu Banh Mi</span>
+            <span class="menu-item-price">$7.00</span>
+          </div>
+          <p class="menu-item-desc">Golden fried organic tofu cubes glazed in garlic soy sauce, served with vegan mayo spread and fresh crispy pickled garnishes.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Starters & Noodle Bowls</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Mama Doan's Egg Rolls</span>
+            <span class="menu-item-price">$5.95</span>
+          </div>
+          <p class="menu-item-desc">Two crispy, golden pork and shredded vegetable spring rolls prepared from the founders' family recipe. Served with sweet chili dipping sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tom Yum Pork Rinds</span>
+            <span class="menu-item-price">$4.00</span>
+          </div>
+          <p class="menu-item-desc">Crispy house-fried pork rinds dusted in tangly, spicy Tom Yum lemongrass powder. Made fresh daily.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Harris Blvd Noodle Bowl</span>
+            <span class="menu-item-price">$11.50</span>
+          </div>
+          <p class="menu-item-desc">A refreshing vermicelli rice noodle bowl topped with lemongrass grilled pork, shredded lettuce, bean sprouts, peanuts, cucumbers, and savory nuoc cham fish sauce.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>230 E W.T. Harris Blvd, Suite A7<br>Charlotte, NC 28262</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 10:30 AM - 7:00 PM<br>Fri - Sat: 10:30 AM - 8:00 PM<br>Sunday: 11:00 AM - 7:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (980) 237-7756<br>Vietnamese Street Food & Boba | Dine-In & Takeout</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Banh Mi Brothers. Fresh baguettes rolled daily.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBase = { key: 'classic', name: 'Classic Milk Tea', color: '#dca47a', basePrice: 4.50 };
+    let selectedSweetness = { key: '100', name: 'Regular Sweetness (100%)' };
+    const activeToppings = {
+      boba: { active: true, price: 0.75, name: 'Tapioca Pearls' },
+      jelly: { active: false, price: 0.75, name: 'Lychee Jelly' },
+      pudding: { active: false, price: 1.00, name: 'Egg Pudding' }
+    };
+
+    function setTeaBase(key, name, color) {
+      const buttons = document.getElementById('base-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBase = { key, name, color, basePrice: 4.50 };
+      updateDisplay();
+    }
+
+    function setSweetness(key, name) {
+      const buttons = document.getElementById('sweetness-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedSweetness = { key, name };
+      updateDisplay();
+    }
+
+    function toggleTopping(key, price) {
+      activeToppings[key].active = !activeToppings[key].active;
+      const btn = document.getElementById(`btn-${key}`);
+      if (activeToppings[key].active) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate Total Cost
+      let toppingCost = 0;
+      const toppingNames = [];
+      for (const k in activeToppings) {
+        if (activeToppings[k].active) {
+          toppingCost += activeToppings[k].price;
+          toppingNames.push(activeToppings[k].name);
+        }
+      }
+
+      const totalCost = (selectedBase.basePrice + toppingCost).toFixed(2);
+      document.getElementById('display-tea-price').innerText = `$${totalCost}`;
+
+      document.getElementById('display-tea-name').innerText = selectedBase.name;
+      
+      const toppingText = toppingNames.length > 0 ? `, ${toppingNames.join(', ')}` : '';
+      document.getElementById('display-tea-sweetness').innerText = `${selectedSweetness.name}${toppingText}`;
+
+      // Update fluid color inside boba cup
+      const fluid = document.getElementById('boba-fluid-box');
+      fluid.style.background = selectedBase.color;
+
+      // Animate boba pearls visibility
+      for (const k in activeToppings) {
+        const el = document.getElementById(`topping-${k}`);
+        if (activeToppings[k].active) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        } else {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+        }
+      }
+
+      // Update descriptive text
+      const toppingsSummary = toppingNames.length > 0 ? `mixed with chewy ${toppingNames.join(' and ')}` : 'served plain';
+      document.getElementById('display-tea-desc').innerText = `Freshly shaken ${selectedBase.name} customized to ${selectedSweetness.name.toLowerCase()} sweetness, ${toppingsSummary}.`;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

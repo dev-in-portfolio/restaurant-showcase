@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations · Amélie's French Bakery & Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --navy: #1a1a2e;
+  --blush: #d4a5b5;
+  --gold: #c9a84c;
+  --cream: #faf3e0;
+  --rose: #e8a0bf;
+  --deep-rose: #c26a8a;
+  --charcoal: #2d2d3f;
+  --warm-white: #fff9f0;
+}
+body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.nav a:hover { color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--gold) !important; letter-spacing: 0; text-transform: none; }
+.page-header { background: linear-gradient(135deg, var(--navy) 0%, #16213e 100%); color: var(--cream); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { color: var(--blush); font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--navy); margin: 0 0 .25rem; }
+.section .subtitle { color: #888; font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.location-selector { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+.loc-btn { background: #fff; border: 2px solid #eee; padding: .65rem 1.5rem; border-radius: 30px; font-size: .85rem; font-weight: 600; cursor: pointer; color: #666; font-family: 'DM Sans', sans-serif; transition: all .2s; }
+.loc-btn:hover { border-color: var(--blush); color: var(--navy); }
+.loc-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.location-detail { display: none; background: var(--warm-white); border-radius: 12px; padding: 2rem; border: 1px solid rgba(0,0,0,.06); }
+.location-detail.show { display: block; }
+.loc-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.loc-header h3 { font-size: 1.2rem; margin: 0; color: var(--navy); }
+.loc-header .loc-neighborhood { font-size: .8rem; color: var(--blush); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.loc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width:640px) { .loc-body { grid-template-columns: 1fr; } }
+.loc-info p { font-size: .9rem; margin: 0 0 .5rem; line-height: 1.5; }
+.loc-info .label { font-weight: 600; color: #555; display: block; margin-top: 1rem; }
+.loc-info .label:first-child { margin-top: 0; }
+.loc-info a { color: var(--deep-rose); text-decoration: none; font-weight: 600; }
+.loc-info a:hover { text-decoration: underline; }
+.hours-grid { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1.25rem; font-size: .85rem; }
+.hours-grid .day { font-weight: 600; color: #555; }
+.hours-grid .time { color: #444; }
+.map-placeholder { background: var(--cream); border: 2px dashed #ddd; border-radius: 8px; height: 220px; display: flex; align-items: center; justify-content: center; color: #aaa; font-style: italic; font-size: .85rem; }
+.all-locations { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+.mini-card { background: var(--warm-white); border-radius: 8px; padding: 1.25rem; border: 1px solid rgba(0,0,0,.06); cursor: pointer; transition: all .2s; }
+.mini-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.mini-card h3 { font-size: .95rem; margin: 0 0 .15rem; color: var(--navy); }
+.mini-card .neighborhood { font-size: .75rem; color: var(--blush); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; }
+.mini-card p { font-size: .82rem; margin: .15rem 0; color: #555; }
+.mini-card .phone { font-size: .82rem; color: var(--charcoal); }
+.demo-form { max-width: 600px; margin: 3rem auto 0; background: var(--warm-white); padding: 2rem; border-radius: 8px; border: 1px solid rgba(0,0,0,.06); }
+.demo-form h3 { text-align: center; color: var(--navy); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; color: #555; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid #ddd; border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; box-sizing: border-box; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--navy); padding: .75rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer; width: 100%; }
+.btn:hover { background: #b8942e; }
+.toast { background: var(--navy); color: var(--cream); padding: 1rem 2rem; border-radius: 8px; text-align: center; margin-top: 1rem; display: none; }
+.toast.show { display: block; }
+footer { background: var(--navy); color: rgba(255,255,255,.6); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.45); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Amélie's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="locations.html">Locations</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Find Us</h1>
+  <p>Four locations across Charlotte — each with its own charm</p>
+</header>
+
+<section class="section">
+  <div class="location-selector" id="locSelector">
+    <button class="loc-btn active" data-loc="noda">NoDa</button>
+    <button class="loc-btn" data-loc="park">Park Road</button>
+    <button class="loc-btn" data-loc="carmel">Carmel Commons</button>
+    <button class="loc-btn" data-loc="uptown">Uptown</button>
+  </div>
+
+  <div class="location-detail show" id="locNoda">
+    <div class="loc-header">
+      <div>
+        <div class="loc-neighborhood">NoDa</div>
+        <h3>136 E 36th St, Charlotte, NC 28202</h3>
+      </div>
+    </div>
+    <div class="loc-body">
+      <div class="loc-info">
+        <span class="label">Phone</span>
+        <p><a href="tel:+17043761781">(704) 376-1781</a></p>
+        <span class="label">Hours</span>
+        <div class="hours-grid">
+          <span class="day">Mon–Thu</span><span class="time">7:00 AM – 10:00 PM</span>
+          <span class="day">Fri–Sat</span><span class="time">7:00 AM – 12:00 AM</span>
+          <span class="day">Sunday</span><span class="time">7:00 AM – 10:00 PM</span>
+        </div>
+        <span class="label">Services</span>
+        <p>Dine-in · Takeout · Catering pick-up · Free Wi-Fi</p>
+        <p><a href="#">Order Online →</a></p>
+      </div>
+      <div>
+        <div class="map-placeholder">Map coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-detail" id="locPark">
+    <div class="loc-header">
+      <div>
+        <div class="loc-neighborhood">Park Road</div>
+        <h3>524 Brandywine Rd, Charlotte, NC 28209</h3>
+      </div>
+    </div>
+    <div class="loc-body">
+      <div class="loc-info">
+        <span class="label">Phone</span>
+        <p><a href="tel:+17044050570">(704) 405-0570</a></p>
+        <span class="label">Hours</span>
+        <div class="hours-grid">
+          <span class="day">Mon–Thu</span><span class="time">7:00 AM – 10:00 PM</span>
+          <span class="day">Fri–Sat</span><span class="time">7:00 AM – 12:00 AM</span>
+          <span class="day">Sunday</span><span class="time">7:00 AM – 10:00 PM</span>
+        </div>
+        <span class="label">Services</span>
+        <p>Dine-in · Takeout · Catering pick-up · Free Wi-Fi · Patio seating</p>
+        <p><a href="#">Order Online →</a></p>
+      </div>
+      <div>
+        <div class="map-placeholder">Map coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-detail" id="locCarmel">
+    <div class="loc-header">
+      <div>
+        <div class="loc-neighborhood">Carmel Commons</div>
+        <h3>7715 Pineville-Matthews Rd, Charlotte, NC 28226</h3>
+      </div>
+    </div>
+    <div class="loc-body">
+      <div class="loc-info">
+        <span class="label">Phone</span>
+        <p>(704) 540-1929</p>
+        <span class="label">Hours</span>
+        <div class="hours-grid">
+          <span class="day">Mon–Thu</span><span class="time">7:00 AM – 10:00 PM</span>
+          <span class="day">Fri–Sat</span><span class="time">7:00 AM – 12:00 AM</span>
+          <span class="day">Sunday</span><span class="time">7:00 AM – 10:00 PM</span>
+        </div>
+        <span class="label">Services</span>
+        <p>Dine-in · Takeout · Catering hub · Free Wi-Fi · Private event space</p>
+        <p><a href="#">Order Online →</a></p>
+      </div>
+      <div>
+        <div class="map-placeholder">Map coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-detail" id="locUptown">
+    <div class="loc-header">
+      <div>
+        <div class="loc-neighborhood">Uptown</div>
+        <h3>380 S College St, Charlotte, NC 28202</h3>
+      </div>
+    </div>
+    <div class="loc-body">
+      <div class="loc-info">
+        <span class="label">Phone</span>
+        <p>(704) 817-3113</p>
+        <span class="label">Hours</span>
+        <div class="hours-grid">
+          <span class="day">Mon–Thu</span><span class="time">7:00 AM – 10:00 PM</span>
+          <span class="day">Fri–Sat</span><span class="time">7:00 AM – 12:00 AM</span>
+          <span class="day">Sunday</span><span class="time">7:00 AM – 10:00 PM</span>
+        </div>
+        <span class="label">Services</span>
+        <p>Dine-in · Takeout · Catering pick-up · Free Wi-Fi · Grab-and-go</p>
+        <p><a href="#">Order Online →</a></p>
+      </div>
+      <div>
+        <div class="map-placeholder">Map coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <form class="demo-form" data-demo-form>
+    <h3>Contact Us</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="locPref">Location</label>
+      <select id="locPref">
+        <option>NoDa</option><option>Park Road</option><option>Carmel Commons</option><option>Uptown</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" rows="3" placeholder="How can we help?"></textarea>
+    </div>
+    <button class="btn" type="submit">Send Message</button>
+    <div class="toast" role="alert">Merci! We'll get back to you soon.</div>
+  </form>
+</section>
+
+<footer>
+  <p>Amélie's French Bakery &amp; Café · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Story</a> · <a href="catering.html">Catering</a> · <a href="locations.html">Locations</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const btns = document.querySelectorAll('.loc-btn');
+  const details = {
+    noda: document.getElementById('locNoda'),
+    park: document.getElementById('locPark'),
+    carmel: document.getElementById('locCarmel'),
+    uptown: document.getElementById('locUptown')
+  };
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      Object.values(details).forEach(d => d.classList.remove('show'));
+      const loc = this.dataset.loc;
+      if (details[loc]) details[loc].classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>

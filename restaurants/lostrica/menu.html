@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — L'Ostrica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--inky:#0f0b0a;--oyster:#e8ddd0;--coral:#c45a4a;--sage:#8a9a7a;--gold:#c9a84c;--cream:#f5efe6;--charcoal:#1a1a1a}.page-hero{background:linear-gradient(135deg,var(--inky),#1a1210);color:var(--oyster);padding:5rem 24px;text-align:center}.page-hero h1{color:var(--oyster)}.page-hero h1 span{color:var(--coral);font-style:italic}.page-hero p{opacity:.7;max-width:600px;margin:0 auto;font-size:.95rem}.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;justify-content:center}.tab-btn{padding:10px 24px;border:2px solid var(--coral);background:transparent;color:var(--charcoal);border-radius:4px;font-weight:600;cursor:pointer;transition:all .2s;font-size:.9rem}.tab-btn:hover{background:var(--coral);color:var(--white)}.tab-btn.active{background:var(--coral);color:var(--white)}.tab-pane{display:none}.tab-pane.active{display:block}.menu-section{margin-bottom:3rem}.menu-section h2{color:var(--inky);border-bottom:2px solid var(--coral);padding-bottom:.5rem;margin-bottom:1.25rem}.menu-section .note{font-size:.85rem;color:var(--medium-gray);font-style:italic;margin-bottom:1rem}.menu-item{padding:.6rem 0;border-bottom:1px dotted #d4d0c8}.menu-item .name{font-weight:600;font-size:1rem}.menu-item .desc{font-size:.88rem;color:var(--medium-gray);margin-top:.2rem}.sample-card{background:var(--cream);border-radius:8px;padding:2rem;margin-bottom:1.5rem}.sample-card h3{color:var(--coral);margin-bottom:.25rem}.sample-card .theme{font-size:.85rem;color:var(--sage);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem}.sample-card p{font-size:.9rem;color:var(--medium-gray)}.tasting-note{background:var(--inky);color:var(--oyster);border-radius:8px;padding:2.5rem;text-align:center;margin:2rem 0}.tasting-note h2{color:var(--gold)}.tasting-note p{opacity:.8;max-width:500px;margin:0 auto}.disclosure{border-color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+<div class="container header-inner">
+<a href="index.html" class="logo" style="letter-spacing:.04em">L'Ostrica</a>
+<nav class="nav-links">
+<a href="menu.html">Menu</a>
+<a href="story.html">Our Story</a>
+<a href="reservations.html">Reservations</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+
+<section class="page-hero" id="main">
+<h1>Seasonal <span>Menus</span></h1>
+<p>Our menus change with the seasons. Below is a glimpse of the current offerings — exact dishes evolve weekly based on what's freshest from our local farms and purveyors.</p>
+</section>
+
+<section class="section container">
+<div class="tabs">
+<button class="tab-btn active" data-tab="tasting">Tasting Menus</button>
+<button class="tab-btn" data-tab="sunday">Sunday Supper</button>
+<button class="tab-btn" data-tab="bar">Bar Menu</button>
+<button class="tab-btn" data-tab="market">Market</button>
+</div>
+
+<div class="tab-pane active" id="tab-tasting">
+<div class="sample-card">
+<h3>Signature Tasting Menu</h3>
+<div class="theme">10+ Courses · $195 per person</div>
+<p>A memorable exploration of seasonal ingredients, global techniques, and thoughtful wine pairings. Each course is designed to surprise, delight, and tell a story — from the first amuse to the final mignardise.</p>
+</div>
+<div class="sample-card">
+<h3>Tasting Menu</h3>
+<div class="theme">5–7 Courses · $120 per person</div>
+<p>An abbreviated progression of the Signature experience. Perfect for guests seeking a shorter but equally thoughtful journey through the season's bounty.</p>
+</div>
+<div class="tasting-note">
+<h2>Reservations Required</h2>
+<p>Tasting menus require advance booking. Dietary restrictions and allergies can be accommodated with advance notice — please note them when reserving.</p>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-sunday">
+<div class="menu-section">
+<h2>Sunday Supper</h2>
+<p class="note">Reservations required · Single seating at 5:30 PM · $85–90 per person</p>
+<p style="margin-bottom:1.5rem">Each Sunday, we transport our guests to a different corner of the world. Themes change weekly — from Amalfi Coast to Korean Night, Provençal to Carolina Piedmont. A multi-course fixed menu that's part pop-up, part tradition.</p>
+<div class="sample-card">
+<h3>Recent &amp; Upcoming Themes</h3>
+<div class="theme">Summer 2026</div>
+<p><strong>Amalfi Coast</strong> — Limoncello-marinated seafood, handmade pasta, coastal Italian flavors<br>
+<strong>Mediterranean Night</strong> — Mezze, grilled fish, spiced lamb, and honeyed desserts<br>
+<strong>Korean Night</strong> — Banchan, ssam, gochujang-glazed proteins, kimchi<br>
+<strong>Carolina Piedmont</strong> — Summer fruits, farm vegetables, heritage meats<br>
+<strong>A Night in Provence</strong> — Bouillabaisse, ratatouille, lavender-infused crème</p>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-bar">
+<div class="menu-section">
+<h2>Bar Seating</h2>
+<p class="note">Available Wed–Sat from 5 PM · 2-hour seating · No reservation required</p>
+<p style="margin-bottom:1.5rem">Our bar offers a curated a la carte menu alongside the full cocktail and wine program. Perfect for walk-ins and smaller parties (1–2 guests).</p>
+<div class="sample-card">
+<h3>Sample Bar Offerings</h3>
+<div class="theme">Rotating Seasonally</div>
+<p>Oysters on the half shell · Charcuterie · Seasonal crudo · Hand-rolled pasta · Grilled fish or steak · Market vegetables · Artisanal cheeses</p>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-market">
+<div class="menu-section">
+<h2>Market</h2>
+<p class="note">Wed–Sat · 11 AM – 2 PM</p>
+<p>Our daytime market features provisions, prepared foods, and seasonal pantry items. Stop by for house-made pastas, local produce, curated wines, and grab-and-go provisions curated by the L'Ostrica team.</p>
+</div>
+</div>
+</section>
+
+<footer class="section" style="padding:2rem 24px;background:var(--inky);color:var(--oyster);text-align:center">
+<div class="container">
+<p style="opacity:.6;font-size:.85rem">&copy; 2026 Pink Moon Restaurant, LLC — Charlotte, NC</p>
+<p style="font-size:.82rem;opacity:.5;margin-top:.5rem">
+<a href="https://instagram.com/lostrica_clt" style="color:var(--coral)">@lostrica_clt</a> &middot;
+<a href="tel:7045167283" style="color:var(--coral)">(704) 516-7283</a> &middot;
+<a href="https://lostricaclt.com" style="color:var(--coral)">lostricaclt.com</a>
+</p>
+<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.25)">Unofficial concept presentation — not operated by the restaurant</p>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){var btns=document.querySelectorAll('.tab-btn');var panes=document.querySelectorAll('.tab-pane');btns.forEach(function(btn){btn.addEventListener('click',function(){btns.forEach(function(b){b.classList.remove('active')});panes.forEach(function(p){p.classList.remove('active')});btn.classList.add('active');document.getElementById('tab-'+btn.getAttribute('data-tab')).classList.add('active')})})});
+</script>
+<script src="../site-core.js"></script>
+</body>
+</html>

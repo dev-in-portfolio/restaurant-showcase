@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brazwells Pub - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling daily special display card */
+    .special-display-card {
+      background: radial-gradient(circle, #1a0f0b 0%, #0c0705 100%);
+      border: 1.5px solid var(--color-amber);
+      border-radius: 8px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .special-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-amber);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--color-amber);
+      padding: 0.25rem 0.8rem;
+      border-radius: 4px;
+      margin: 0 auto 1.25rem auto;
+      max-width: fit-content;
+    }
+    .special-title {
+      font-size: 1.95rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    .special-meta {
+      font-size: 0.9rem;
+      color: var(--color-cream);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .special-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Brazwells
+          <span>Neighborhood Pub Montford</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="brunch.html">Brunch</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Tavern Plates & Drafts</h2>
+    <p class="page-subtitle">Savor classic fish & chips and custom burgers. Select a day of the week below to check our tavern drink and food specials.</p>
+  </header>
+
+  <!-- Interactive Specials Wheel -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 2rem;">Daily Specials Wheel</h3>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Special Card -->
+        <div class="special-display-card" id="special-card-box">
+          <div class="special-badge">Wednesday Wing Night</div>
+          <h4 class="special-title" id="special-food-title">Half-Price Tavern Wings</h4>
+          <div class="special-meta" id="special-drink-meta">$4.00 Domestic Drafts & Pitchers</div>
+          <p class="special-desc" id="special-desc-text">Get half-price orders of traditional or boneless wings tossed in any signature sauce, paired with $4 domestic pints. Live team trivia starts at 7:30 PM.</p>
+        </div>
+
+        <!-- Right Side: Weekdays -->
+        <div style="display: flex; flex-direction: column; gap: 0.70rem;">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-amber); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Weekday</label>
+          <button class="option-btn" onclick="showSpecial('mon', this)">Monday</button>
+          <button class="option-btn" onclick="showSpecial('tue', this)">Tuesday Specials</button>
+          <button class="option-btn active" onclick="showSpecial('wed', this)">Wednesday Trivia</button>
+          <button class="option-btn" onclick="showSpecial('thu', this)">Thursday Night</button>
+          <button class="option-btn" onclick="showSpecial('fri', this)">Friday Weekend Kickoff</button>
+          <button class="option-btn" onclick="showSpecial('sat', this)">Saturday Sports Watch</button>
+          <button class="option-btn" onclick="showSpecial('sun', this)">Sunday Funday Brunch</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Montford Tavern Menu</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Pub Starters</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Buffalo Chicken Dip<span class="menu-item-badge">Signature</span></span>
+            <span class="menu-item-price">$11.00</span>
+          </div>
+          <p class="menu-item-desc">Warm, bubbly blend of shredded chicken breasts, spicy buffalo sauce, and cream cheese, served with crispy corn tortilla chips.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Jumbo Pub Wings</span>
+            <span class="menu-item-price">$12.00</span>
+          </div>
+          <p class="menu-item-desc">Eight crispy wings (traditional or boneless). Choice of Spicy Buffalo, Lemon Pepper Rub, Teriyaki, or Sweet BBQ.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Potato Skins</span>
+            <span class="menu-item-price">$9.50</span>
+          </div>
+          <p class="menu-item-desc">Crispy potato halves stuffed with melted sharp cheddar cheese, smoked bacon bits, and served with sour cream.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Tavern Plates</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Fish & Chips</span>
+            <span class="menu-item-price">$15.50</span>
+          </div>
+          <p class="menu-item-desc">Beer-battered cod fillets fried golden brown, served with thick waffle fries, coleslaw, and house tartar sauce.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Fried Chicken Platter</span>
+            <span class="menu-item-price">$14.50</span>
+          </div>
+          <p class="menu-item-desc">Two hand-breaded crispy chicken breasts, served over skin-on mashed potatoes and green beans, topped with country gravy.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Philly Cheesesteak wrap</span>
+            <span class="menu-item-price">$12.50</span>
+          </div>
+          <p class="menu-item-desc">Shaved ribeye steak, grilled onions, peppers, and melted American cheese wrapped inside a toasted flour tortilla.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1627 Montford Dr<br>Charlotte, NC 28209</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 11:00 AM - 12:00 AM<br>Fri: 11:00 AM - 2:00 AM<br>Sat: 10:00 AM - 2:00 AM<br>Sun: 10:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Est. 1999 on Montford Drive | Large Covered Patio | Full Tavern Bar</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Brazwells Pub. Montford Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    const specials = {
+      mon: {
+        badge: "Monday Pot Roast",
+        drink: "$3.50 Craft Pints",
+        title: "Tavern Pot Roast Special",
+        desc: "Slow-roasted beef pot roast served with carrots, potatoes, and gravy over Texas toast for $11.95, paired with select craft drafts."
+      },
+      tue: {
+        badge: "Taco Tuesday",
+        drink: "$4.00 Margaritas & Corona Bottles",
+        title: "$3.00 Street Tacos",
+        desc: "Mix and match Beef Barbacoa, Shredded Chicken, or Crispy Cod street tacos for $3.00 each, plus discounted tequila pour specials."
+      },
+      wed: {
+        badge: "Wednesday Wing Night",
+        drink: "$4.00 Domestic Drafts & Pitchers",
+        title: "Half-Price Tavern Wings",
+        desc: "Get half-price orders of traditional or boneless wings tossed in any signature sauce, paired with $4 domestic pints. Live team trivia starts at 7:30 PM."
+      },
+      thu: {
+        badge: "Thursday Flatbreads",
+        drink: "$5.00 House Wine Glasses",
+        title: "$9.00 Custom Flatbreads",
+        desc: "Choose BBQ Chicken, Pepperoni, or Caprese flatbreads for $9.00 all night. Perfect for table shares on our covered patio."
+      },
+      fri: {
+        badge: "Friday Kickoff",
+        drink: "$5.00 Fireball & Green Tea Shots",
+        title: "Late Night Waffle Fries Platter",
+        desc: "Celebrate the weekend with loaded waffle fries platters (queso, bacon, sour cream) and discounted shooter specials after 9:00 PM."
+      },
+      sat: {
+        badge: "Saturday College Football Watch",
+        drink: "$15.00 Domestic Beer Buckets",
+        title: "Tavern Sliders Platter ($10)",
+        desc: "Enjoy three mini Angus smash sliders with fries for $10, and ice-cold domestic beer buckets on our massive covered patio."
+      },
+      sun: {
+        badge: "Sunday Funday Brunch",
+        drink: "$3.00 Mimosas & $5.00 Bloody Marys",
+        title: "Hangover Hash Platter",
+        desc: "Available 10:00 AM - 2:00 PM. Crispy home fries topped with peppers, cheddar cheese, sausage gravy, and two fried eggs."
+      }
+    };
+
+    function showSpecial(key, buttonElement) {
+      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const card = document.getElementById('special-card-box');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const data = specials[key];
+        document.getElementById('special-food-title').innerText = data.title;
+        document.getElementById('special-drink-meta').innerText = data.drink;
+        document.getElementById('special-desc-text').innerText = data.desc;
+        card.querySelector('.special-badge').innerText = data.badge;
+        
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 300);
+    }
+  </script>
+</body>
+</html>

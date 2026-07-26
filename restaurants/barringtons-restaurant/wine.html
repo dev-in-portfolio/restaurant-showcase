@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barrington's Restaurant - Charlotte, NC | Wine Cellar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the sommelier wine box visualizer */
+    .sommelier-box {
+      background: radial-gradient(circle, #221a15 0%, #0d0a08 100%);
+      border: 1.5px solid var(--color-gold);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Barrington's
+          <span>New American Bistro</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html" class="active">Wine Cellar</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Events</a>
+        <a href="contact.html">Reservations</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">The Wine Cellar</h2>
+    <p class="page-subtitle">A highly curated list of boutique, small-production wines chosen to harmonize with our seasonal New American cuisine.</p>
+  </header>
+
+  <!-- Interactive Sommelier Pairing Finder -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Sommelier Tasting Pairing Finder</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select one of Chef Bruce Moffett's signature creations to view our sommelier's recommended wine pairing by tier.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Sommelier wine details -->
+        <div class="sommelier-box" id="sommelier-display">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem;" id="pairing-dish-tag">For Maine Lobster Gnocchi</span>
+          <h4 style="font-size: 2.2rem; color: #ffffff; line-height: 1.15; margin-bottom: 0.8rem;" id="pairing-wine-name">Olivier Leflaive Bourgogne Blanc</h4>
+          <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-gold); margin-bottom: 1.2rem;" id="pairing-wine-tier-label">Standard Pairing Tier</p>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;" id="pairing-wine-desc">"Burgundy, France. 100% Chardonnay. Bright lemon citrus, white flowers, and light hazelnut notes with a clean, flinty minerality. The crisp acidity beautifully cuts through the rich lobster butter cream."</p>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">1. Select Tasting Dish</label>
+            <div class="option-grid" style="display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.5rem;">
+              <button class="option-btn active" onclick="setDish('gnocchi', this)">Maine Lobster Gnocchi</button>
+              <button class="option-btn" onclick="setDish('duck', this)">Crispy Duck Breast</button>
+              <button class="option-btn" onclick="setDish('beef', this)">Seared Beef Tenderloin</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">2. Select Pairing Tier</label>
+            <div class="option-grid" style="display: flex; gap: 0.55rem;">
+              <button class="option-btn active" onclick="setTier('standard', this)">Standard Pairing</button>
+              <button class="option-btn" onclick="setTier('reserve', this)">Reserve Cellar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Wine Menu Listings -->
+    <h3 class="section-title">Boutique Cellar Highlights</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Red Cellars</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Belle Glos Clark & Telephone Pinot Noir</span>
+            <span class="menu-item-price">$18 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Santa Maria Valley, California. Bold and lush with dark cherry, cranberry, nutmeg, and warm vanilla toast.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Jordan Cabernet Sauvignon 2018</span>
+            <span class="menu-item-price">$110 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Alexander Valley, California. Elegant dark fruit, cassis, and black tea notes with velvety fine-grained tannins.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Ridge Three Valleys Zinfandel</span>
+            <span class="menu-item-price">$15 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Sonoma County, California. Ripe raspberry, pepper, and sweet oak flavors with a clean, lively finish.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">White Cellars</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Olivier Leflaive Bourgogne Blanc</span>
+            <span class="menu-item-price">$16 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Burgundy, France. Classic French Chardonnay with crisp lemon peel, green apple, and elegant crushed stone minerals.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Cakebread Chardonnay 2021</span>
+            <span class="menu-item-price">$85 / Bottle</span>
+          </div>
+          <p class="menu-item-desc">Napa Valley, California. Ripe golden apple, pear, creamy butterscotch notes, and rich, vibrant oak texture.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Santa Margherita Pinot Grigio</span>
+            <span class="menu-item-price">$14 / Glass</span>
+          </div>
+          <p class="menu-item-desc">Trentino, Italy. Clean, dry, and crisp with fresh apple, citrus rind, and a refreshing mineral bite.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Fairview Road Stand</h3>
+        <p>7822 Fairview Rd<br>Charlotte, NC 28226<br>Phone: (704) 364-5755</p>
+      </div>
+      <div class="info-block">
+        <h3>Dinner Service Hours</h3>
+        <p>Mon - Thu: 5:00 PM - 9:30 PM<br>Fri - Sat: 5:00 PM - 10:00 PM<br>Sunday: Closed</p>
+      </div>
+      <div class="info-block">
+        <h3>Private Cellar Inquiries</h3>
+        <p>Special vintages and private dining menu pairing consultations are managed by our resident sommelier.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Barrington's Restaurant. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentDish = 'gnocchi';
+    let currentTier = 'standard';
+
+    const pairingData = {
+      gnocchi: {
+        dishName: "For Maine Lobster Gnocchi",
+        standard: {
+          wine: "Olivier Leflaive Bourgogne Blanc",
+          price: "$16 Glass / $64 Bottle",
+          desc: "\"Burgundy, France. 100% Chardonnay. Bright lemon citrus, white flowers, and light hazelnut notes with a clean, flinty minerality. The crisp acidity beautifully cuts through the rich lobster butter cream.\""
+        },
+        reserve: {
+          wine: "Cakebread Chardonnay 2021",
+          price: "$22 Glass / $85 Bottle",
+          desc: "\"Napa Valley, California. Rich golden apple, creamy vanilla custard, and toasted brioche. A fuller-bodied, butter-aged selection that elevates the pillowy potato gnocchi and sweet Maine lobster.\""
+        }
+      },
+      duck: {
+        dishName: "For Crispy Duck Breast",
+        standard: {
+          wine: "Belle Glos Clark & Telephone Pinot Noir",
+          price: "$18 Glass / $72 Bottle",
+          desc: "\"Santa Maria Valley, California. Rich dark cherry, cranberry relish, and warm vanilla baking spices. The bright berry acidity pairs perfectly with the roasted, gamey fat of our crispy duck.\""
+        },
+        reserve: {
+          wine: "Ridge Three Valleys Zinfandel",
+          price: "$15 Glass / $60 Bottle",
+          desc: "\"Sonoma County, California. Robust jammy plum, black pepper, and sweet American oak. Its deep spices complement the sweet cherry-duck glaze.\""
+        }
+      },
+      beef: {
+        dishName: "For Seared Beef Tenderloin",
+        standard: {
+          wine: "Ridge Three Valleys Zinfandel",
+          price: "$15 Glass / $60 Bottle",
+          desc: "\"Sonoma County, California. Rich, peppery dark fruit and toast. Structured tannins make this Zinfandel-blend an excellent match for premium grilled beef.\""
+        },
+        reserve: {
+          wine: "Jordan Cabernet Sauvignon 2018",
+          price: "$28 Glass / $110 Bottle",
+          desc: "\"Alexander Valley, California. Classic dark currant, cassis, cedar wood, and sweet cocoa. Rich, fine-grained tannins that effortlessly stand up to the prime beef tenderloin.\""
+        }
+      }
+    };
+
+    function setDish(dishKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentDish = dishKey;
+      updateDisplay();
+    }
+
+    function setTier(tierKey, btn) {
+      const buttons = btn.parentElement.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentTier = tierKey;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const display = document.getElementById('sommelier-display');
+      display.style.opacity = '0';
+      display.style.transform = 'translateY(10px)';
+
+      setTimeout(() => {
+        const dishData = pairingData[currentDish];
+        const tierData = dishData[currentTier];
+
+        document.getElementById('pairing-dish-tag').innerText = dishData.dishName;
+        document.getElementById('pairing-wine-name').innerText = tierData.wine;
+        document.getElementById('pairing-wine-tier-label').innerText = currentTier === 'standard' ? 'Standard Pairing Tier' : 'Reserve Cellar Pairing Tier';
+        document.getElementById('pairing-wine-price').innerText = tierData.price;
+        document.getElementById('pairing-wine-desc').innerText = tierData.desc;
+
+        display.style.opacity = '1';
+        display.style.transform = 'translateY(0)';
+      }, 250);
+    }
+  </script>
+</body>
+</html>

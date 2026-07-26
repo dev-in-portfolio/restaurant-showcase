@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Cajun Queen</title>
+  <meta name="description" content="Full dinner menu from Cajun Queen - Cajun appetizers, Creole entrees, seafood, desserts, and cocktails.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Cajun Queen Home">
+        <div class="logo-icon" aria-hidden="true">&#9834;</div>
+        <div>
+          <span class="logo-text">Cajun Queen</span>
+          <span class="logo-sub">Est. 1985 | Elizabeth, Charlotte</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="bar.html">Hurricane Bar</a></li>
+          <li><a href="music.html">Live Jazz</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="visit.html#reserve" class="header-cta">Reserve a Table</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-menu">
+      <div class="wrap">
+        <span class="page-hero-badge">&#127858; Dinner Menu</span>
+        <h1>Our Menu</h1>
+        <p>Authentic Cajun and Creole flavors, made fresh nightly. Seasonal ingredients, time-honored recipes.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="menu-search">
+          <label for="menu-search-input" class="sr-only">Search menu items</label>
+          <input type="text" id="menu-search-input" placeholder="Search menu items..." autocomplete="off">
+        </div>
+        <div class="menu-controls" role="toolbar" aria-label="Menu category filter">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="appetizers">Appetizers</button>
+          <button data-filter="entrees">Entrees</button>
+          <button data-filter="seafood">Seafood</button>
+          <button data-filter="sides">Sides</button>
+          <button data-filter="desserts">Desserts</button>
+          <button data-filter="drinks">Drinks</button>
+        </div>
+
+        <div class="menu-content" id="menu-content">
+          <div class="menu-section" data-category="appetizers">
+            <h3>Appetizers</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Fried Green Tomatoes</h4>
+                  <p>Cornmeal-crusted, topped with remoulade and crawfish tails</p>
+                </div>
+                <span class="menu-price">$14</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Cajun Calamari</h4>
+                  <p>Lightly fried with spicy aioli and marinara</p>
+                </div>
+                <span class="menu-price">$13</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Boudin Balls</h4>
+                  <p>Pork boudin, fried golden, with Creole mustard sauce</p>
+                </div>
+                <span class="menu-price">$12</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Alligator Bites</h4>
+                  <p>Flash-fried with cocktail and rémoulade sauces</p>
+                </div>
+                <span class="menu-price">$15</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Oysters on the Half Shell</h4>
+                  <p>Half dozen fresh Gulf oysters with mignonette</p>
+                </div>
+                <span class="menu-price">$16</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-section" data-category="entrees">
+            <h3>Entrees</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Diane with Chicken &amp; Shrimp</h4>
+                  <p>Blackened chicken and sautéed shrimp in our signature Diane sauce</p>
+                </div>
+                <span class="menu-price">$28</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Cajun Ribeye</h4>
+                  <p>12 oz ribeye, Cajun-seasoned, with garlic butter and choice of side</p>
+                </div>
+                <span class="menu-price">$36</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Chicken Étouffée</h4>
+                  <p>Tender chicken in rich Creole étouffée sauce over rice</p>
+                </div>
+                <span class="menu-price">$22</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Jambalaya</h4>
+                  <p>Chicken, andouille sausage, and shrimp in a spicy rice medley</p>
+                </div>
+                <span class="menu-price">$24</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Poverty Dish</h4>
+                  <p>Andouille sausage, rice, peppers, and Cajun spices</p>
+                </div>
+                <span class="menu-price">$19</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-section" data-category="seafood">
+            <h3>Seafood</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Shrimp &amp; Grits</h4>
+                  <p>Jumbo shrimp, andouille, Creole cream sauce over stone-ground grits</p>
+                </div>
+                <span class="menu-price">$24</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Crawfish Étouffée</h4>
+                  <p>Fresh crawfish tails in rich roux-based sauce over rice</p>
+                </div>
+                <span class="menu-price">$26</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>BBQ Shrimp</h4>
+                  <p>Gulf shrimp in Worcestershire-butter sauce, served with French bread</p>
+                </div>
+                <span class="menu-price">$25</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Blackened Catfish</h4>
+                  <p>Mississippi farm-raised, blackened, with hush puppies and coleslaw</p>
+                </div>
+                <span class="menu-price">$23</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Seafood Platter</h4>
+                  <p>Fried shrimp, oysters, catfish, and crawfish with two sides</p>
+                </div>
+                <span class="menu-price">$32</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-section" data-category="sides">
+            <h3>Sides</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Red Beans &amp; Rice</h4>
+                  <p>Classic Louisiana-style with andouille sausage</p>
+                </div>
+                <span class="menu-price">$6</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Hush Puppies</h4>
+                  <p>Golden-fried cornmeal fritters with honey butter</p>
+                </div>
+                <span class="menu-price">$5</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Cajun Fries</h4>
+                  <p>Seasoned with our house Cajun spice blend</p>
+                </div>
+                <span class="menu-price">$5</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Cole Slaw</h4>
+                  <p>Creamy, tangy, made fresh daily</p>
+                </div>
+                <span class="menu-price">$4</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-section" data-category="desserts">
+            <h3>Desserts</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Bourbon Bread Pudding</h4>
+                  <p>Warm custard pudding with bourbon sauce and vanilla bean ice cream</p>
+                </div>
+                <span class="menu-price">$12</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Pecan Praline Cheesecake</h4>
+                  <p>New York-style with praline caramel sauce</p>
+                </div>
+                <span class="menu-price">$11</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Bananas Foster</h4>
+                  <p>Fresh bananas flambéed in rum-brown sugar sauce over ice cream</p>
+                </div>
+                <span class="menu-price">$13</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Beadle Brownie</h4>
+                  <p>Rich chocolate brownie with praline sauce</p>
+                </div>
+                <span class="menu-price">$9</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-section" data-category="drinks">
+            <h3>Drinks</h3>
+            <div class="menu-items">
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Sazerac</h4>
+                  <p>Rye whiskey, Peychaud's bitters, absinthe rinse</p>
+                </div>
+                <span class="menu-price">$14</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>French 75</h4>
+                  <p>Gin, lemon juice, simple syrup, champagne</p>
+                </div>
+                <span class="menu-price">$13</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Hurricane</h4>
+                  <p>Rum, passion fruit, citrus, grenadine</p>
+                </div>
+                <span class="menu-price">$12</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Mardi Gras Martini</h4>
+                  <p>Vodka, blue curaçao, pineapple, grenadine</p>
+                </div>
+                <span class="menu-price">$13</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Abita Amber</h4>
+                  <p>Malty, rich, Louisiana-brewed amber lager</p>
+                </div>
+                <span class="menu-price">$6</span>
+              </div>
+              <div class="menu-row">
+                <div class="menu-item-info">
+                  <h4>Sweet Tea</h4>
+                  <p>House-brewed, Southern-style</p>
+                </div>
+                <span class="menu-price">$3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-empty" id="menu-empty" hidden>
+          <p>No items match your search. Try a different term.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Cajun Queen</h3>
+          <p>Authentic Cajun and Creole cuisine in Charlotte's historic Elizabeth neighborhood since 1985. Live jazz nightly.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="music.html">Live Jazz</a></li>
+            <li><a href="visit.html">Visit Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="tel:7043779017">(704) 377-9017</a></li>
+            <li><a href="mailto:info@cajunqueen.com">Email</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cajun Queen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

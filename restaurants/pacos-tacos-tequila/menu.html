@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu — Paco's Tacos & Tequila</title>
+<meta name="description" content="Full lunch and dinner menu at Paco's Tacos & Tequila — wood-fired fajitas, handmade enchiladas, tacos, quesadillas, and 230+ tequilas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+<div class="header-bar shell">
+<a href="index.html" class="logo" aria-label="Paco's Tacos & Tequila — Home">
+<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M32 4C16.5 4 4 16.5 4 32s12.5 28 28 28 28-12.5 28-28S47.5 4 32 4zm0 52c-13.3 0-24-10.7-24-24S18.7 8 32 8s24 10.7 24 24-10.7 24-24 24zm0-4c11 0 20-9 20-20S43 12 32 12 12 21 12 32s9 20 20 20z"/><path fill="currentColor" d="M32 16c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 28c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12-5.4 12-12 12z"/></svg>
+<span class="logo-text">Paco's Tacos & Tequila</span>
+</a>
+
+<nav class="main-nav" role="navigation" aria-label="Main navigation">
+<button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+<span class="hamburger" aria-hidden="true"></span>
+</button>
+<ul id="nav-links" class="nav-links" data-nav-links>
+<li><a href="menu.html" aria-current="page">Menu</a></li>
+<li><a href="about.html">Our Story</a></li>
+<li><a href="private-dining.html">Private Dining</a></li>
+<li><a href="visit.html" class="cta-nav">Visit & Reserve</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main id="main" role="main">
+<header class="page-hero">
+<div class="container shell">
+<h1>Our Menu</h1>
+<p>Wood-fired proteins, handmade tortillas, and salsas made fresh daily. Lunch served until 4pm.</p>
+</div>
+</header>
+
+<section class="section menu-section" aria-labelledby="menu-filters-title">
+<div class="container shell">
+<div class="filter-bar" role="tablist" aria-label="Menu categories" id="menu-filters-title">
+<button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="menu-panels">All</button>
+<button class="filter-btn" data-filter="starters" role="tab" aria-selected="false">Starters</button>
+<button class="filter-btn" data-filter="tacos" role="tab" aria-selected="false">Tacos</button>
+<button class="filter-btn" data-filter="fajitas" role="tab" aria-selected="false">Fajitas</button>
+<button class="filter-btn" data-filter="enchiladas" role="tab" aria-selected="false">Enchiladas</button>
+<button class="filter-btn" data-filter="quesadillas" role="tab" aria-selected="false">Quesadillas</button>
+<button class="filter-btn" data-filter="texas" role="tab" aria-selected="false">Texas Features</button>
+<button class="filter-btn" data-filter="sides" role="tab" aria-selected="false">Sides</button>
+<button class="filter-btn" data-filter="kids" role="tab" aria-selected="false">Kids</button>
+<button class="filter-btn" data-filter="desserts" role="tab" aria-selected="false">Desserts</button>
+</div>
+
+<div id="menu-panels" role="tabpanel">
+<section class="menu-category" data-category="starters" aria-labelledby="starters-heading">
+<h2 id="starters-heading" class="category-title">Starters & Shareables</h2>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Chili Con Queso</h3><p>Creamy cheeses melted with roasted green poblano chiles. Served with warm tortilla chips.</p></div><span class="dish-price">$12</span></article>
+<article class="dish"><div class="dish-info"><h3>Guacamole Tradicional</h3><p>Hand-mashed avocados, onion, cilantro, lime, serrano. Tableside on request.</p></div><span class="dish-price">$13</span></article>
+<article class="dish"><div class="dish-info"><h3>Bacon-Wrapped Jalapeños</h3><p>Roasted jalapeños stuffed with cheese, wrapped in applewood bacon. Avocado ranch.</p></div><span class="dish-price">$14</span></article>
+<article class="dish"><div class="dish-info"><h3>Ceviche de Camarón</h3><p>Gulf shrimp, lime, cucumber, red onion, serrano, cilantro. Served with tostadas.</p></div><span class="dish-price">$16</span></article>
+<article class="dish"><div class="dish-info"><h3>Queso Fundido con Chorizo</h3><p>Melted Oaxaca & Chihuahua cheese, house-made chorizo, roasted poblanos. Flour tortillas.</p></div><span class="dish-price">$15</span></article>
+<article class="dish"><div class="dish-info"><h3>Nachos "El Grande"</h3><p>Chips, black beans, queso, pico, jalapeños, crema, guac, pickled red onion. Add protein +$5.</p></div><span class="dish-price">$18</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="tacos" aria-labelledby="tacos-heading">
+<h2 id="tacos-heading" class="category-title">Tacos</h2>
+<p class="category-note">All tacos served on handmade corn tortillas. Flour available on request. Two per order.</p>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Carne Asada</h3><p>Wood-grilled skirt steak, onion, cilantro, salsa verde.</p></div><span class="dish-price">$6.50</span></article>
+<article class="dish"><div class="dish-info"><h3>Pollo Asado</h3><p>Marinated grilled chicken, pineapple, onion, cilantro, salsa roja.</p></div><span class="dish-price">$5.50</span></article>
+<article class="dish"><div class="dish-info"><h3>Camarón</h3><p>Wood-fired shrimp, cabbage slaw, chipotle crema, pickled onion, cilantro.</p></div><span class="dish-price">$7</span></article>
+<article class="dish"><div class="dish-info"><h3>Carnitas</h3><p>Slow-braised pork, crispy edges, onion, cilantro, salsa verde, lime.</p></div><span class="dish-price">$6</span></article>
+<article class="dish"><div class="dish-info"><h3>Barbacoa</h3><p>Chuck roast braised in adobo, consommé, onion, cilantro, lime.</p></div><span class="dish-price">$6.50</span></article>
+<article class="dish"><div class="dish-info"><h3>Pescado</h3><p>Beer-battered cod, cabbage slaw, pico, chipotle aioli, lime.</p></div><span class="dish-price">$7</span></article>
+<article class="dish"><div class="dish-info"><h3>Rajas con Crema <span class="veg-badge">Veg</span></h3><p>Roasted poblano strips, corn, onion, Mexican crema, queso fresco.</p></div><span class="dish-price">$5.50</span></article>
+<article class="dish"><div class="dish-info"><h3>Hongos <span class="veg-badge">Veg</span></h3><p>Wild mushrooms, garlic, epazote, queso fresco, salsa macha.</p></div><span class="dish-price">$6</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="fajitas" aria-labelledby="fajitas-heading">
+<h2 id="fajitas-heading" class="category-title">Wood-Fired Fajitas</h2>
+<p class="category-note">Served sizzling on a cast-iron comal with grilled onions & peppers. Includes: charro beans, Mexican rice, pico de gallo, guacamole, sour cream, cheese, flour tortillas.</p>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Fajitas de Res</h3><p>Skirt steak marinated in citrus-garlic mojo.</p></div><span class="dish-price">$28</span></article>
+<article class="dish"><div class="dish-info"><h3>Fajitas de Pollo</h3><p>Chicken breast in achiote-citrus marinade.</p></div><span class="dish-price">$25</span></article>
+<article class="dish"><div class="dish-info"><h3>Fajitas de Camarón</h3><p>Gulf shrimp with garlic-chile butter.</p></div><span class="dish-price">$30</span></article>
+<article class="dish"><div class="dish-info"><h3>Fajitas Mixtas</h3><p>Steak, chicken, and shrimp combined.</p></div><span class="dish-price">$32</span></article>
+<article class="dish"><div class="dish-info"><h3>Fajitas Vegetarianas <span class="veg-badge">Veg</span></h3><p>Portobello, zucchini, squash, peppers, onions, corn.</p></div><span class="dish-price">$23</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="enchiladas" aria-labelledby="enchiladas-heading">
+<h2 id="enchiladas-heading" class="category-title">Enchiladas</h2>
+<p class="category-note">Three rolled corn tortillas, baked with sauce & cheese. Served with charro beans & Mexican rice.</p>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Cheese Enchiladas con Chili Con Carne</h3><p>Our signature — cheese-filled, topped with Rob Walsh's chili gravy & melted cheddar.</p></div><span class="dish-price">$19</span></article>
+<article class="dish"><div class="dish-info"><h3>Enchiladas de Pollo Verde</h3><p>Shredded chicken, tomatillo sauce, queso fresco, crema, onion.</p></div><span class="dish-price">$20</span></article>
+<article class="dish"><div class="dish-info"><h3>Enchiladas de Camarón</h3><p>Shrimp, spinach, roasted poblano cream sauce, Oaxaca cheese.</p></div><span class="dish-price">$23</span></article>
+<article class="dish"><div class="dish-info"><h3>Enchiladas de Mole <span class="veg-badge">Veg</span></h3><p>Sweet potato, black bean, Oaxacan negro mole, sesame, queso fresco.</p></div><span class="dish-price">$19</span></article>
+<article class="dish"><div class="dish-info"><h3>Enchiladas Suizas</h3><p>Chicken, tomatillo cream sauce, Swiss cheese, avocado crema.</p></div><span class="dish-price">$21</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="quesadillas" aria-labelledby="quesadillas-heading">
+<h2 id="quesadillas-heading" class="category-title">Quesadillas</h2>
+<p class="category-note">Grilled flour tortillas, Oaxaca & Chihuahua cheese. Served with guacamole, pico, crema.</p>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Quesadilla de Hongos <span class="veg-badge">Veg</span></h3><p>Wild mushrooms, epazote, caramelized onion, queso fresco.</p></div><span class="dish-price">$16</span></article>
+<article class="dish"><div class="dish-info"><h3>Quesadilla de Pollo</h3><p>Grilled chicken, roasted corn, poblano, cilantro.</p></div><span class="dish-price">$17</span></article>
+<article class="dish"><div class="dish-info"><h3>Quesadilla de Carne Asada</h3><p>Skirt steak, caramelized onion, serrano, queso fresco.</p></div><span class="dish-price">$19</span></article>
+<article class="dish"><div class="dish-info"><h3>Quesadilla de Camarón</h3><p>Shrimp, spinach, chipotle, Oaxaca cheese.</p></div><span class="dish-price">$20</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="texas" aria-labelledby="texas-heading">
+<h2 id="texas-heading" class="category-title">Texas Features</h2>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Chile Relleno</h3><p>Poblano stuffed with picadillo (beef, raisins, almonds, plantain), tomato broth, queso fresco.</p></div><span class="dish-price">$22</span></article>
+<article class="dish"><div class="dish-info"><h3>Carne Guisada</h3><p>Beef stewed in tomatillo-chile gravy, potatoes, carrots. Flour tortillas.</p></div><span class="dish-price">$23</span></article>
+<article class="dish"><div class="dish-info"><h3>Taco Salad "Too Big"</h3><p>Crispy flour shell, romaine, beef or chicken, beans, cheese, tomato, guac, sour cream, jalapeños.</p></div><span class="dish-price">$18</span></article>
+<article class="dish"><div class="dish-info"><h3>Chalupas</h3><p>Flat fried corn tortillas, beans, shredded beef, lettuce, tomato, cheese, avocado.</p></div><span class="dish-price">$17</span></article>
+<article class="dish"><div class="dish-info"><h3>Flautas de Pollo</h3><p>Three rolled crispy tacos, chicken, lettuce, tomato, cheese, crema, guac, salsa verde.</p></div><span class="dish-price">$18</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="sides" aria-labelledby="sides-heading">
+<h2 id="sides-heading" class="category-title">Sides & A La Carte</h2>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Charro Beans</h3><p>Pinto beans, bacon, onion, tomato, serrano, cilantro.</p></div><span class="dish-price">$5</span></article>
+<article class="dish"><div class="dish-info"><h3>Mexican Street Corn <span class="veg-badge">Veg</span></h3><p>Grilled corn, mayo, cotija, chile powder, lime, cilantro.</p></div><span class="dish-price">$6</span></article>
+<article class="dish"><div class="dish-info"><h3>Mexican Rice</h3><p>Tomato, onion, garlic, peas, carrot, cilantro.</p></div><span class="dish-price">$4</span></article>
+<article class="dish"><div class="dish-info"><h3>Black Beans <span class="veg-badge">Veg</span></h3><p>Simmered with onion, garlic, epazote.</p></div><span class="dish-price">$5</span></article>
+<article class="dish"><div class="dish-info"><h3>Guacamole (side)</h3><p>Fresh hand-mashed to order.</p></div><span class="dish-price">$6</span></article>
+<article class="dish"><div class="dish-info"><h3>Pico de Gallo <span class="veg-badge">Veg</span></h3><p>Tomato, onion, cilantro, lime, serrano.</p></div><span class="dish-price">$4</span></article>
+<article class="dish"><div class="dish-info"><h3>Handmade Flour Tortillas (3)</h3><p>Warm, buttery, made fresh.</p></div><span class="dish-price">$3</span></article>
+<article class="dish"><div class="dish-info"><h3>Handmade Corn Tortillas (6) <span class="veg-badge">Veg</span></h3><p>Fresh nixtamalized masa.</p></div><span class="dish-price">$3</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="kids" aria-labelledby="kids-heading">
+<h2 id="kids-heading" class="category-title">Niños (12 & Under)</h2>
+<p class="category-note">Includes choice of rice, beans, or fruit. Soft drink or milk.</p>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Cheese Quesadilla <span class="veg-badge">Veg</span></h3><p>Flour tortilla, melted cheese.</p></div><span class="dish-price">$8</span></article>
+<article class="dish"><div class="dish-info"><h3>Chicken Tenders</h3><p>Hand-breaded, honey-chipotle dip.</p></div><span class="dish-price">$9</span></article>
+<article class="dish"><div class="dish-info"><h3>Mini Cheese Enchilada <span class="veg-badge">Veg</span></h3><p>One rolled enchilada, chili gravy, cheddar.</p></div><span class="dish-price">$8</span></article>
+<article class="dish"><div class="dish-info"><h3>Beef Taco (Corn or Flour)</h3><p>Seasoned ground beef, lettuce, cheese.</p></div><span class="dish-price">$8</span></article>
+</div>
+</section>
+
+<section class="menu-category" data-category="desserts" aria-labelledby="desserts-heading">
+<h2 id="desserts-heading" class="category-title">Postres</h2>
+<div class="dish-grid">
+<article class="dish"><div class="dish-info"><h3>Churros con Cajeta</h3><p>Warm cinnamon-sugar churros, goat milk caramel, chocolate sauce.</p></div><span class="dish-price">$9</span></article>
+<article class="dish"><div class="dish-info"><h3>Flan de Coco</h3><p>Coconut custard, toasted coconut, caramel.</p></div><span class="dish-price">$8</span></article>
+<article class="dish"><div class="dish-info"><h3>Tres Leches</h3><p>Classic three-milk cake, whipped cream, berries.</p></div><span class="dish-price">$9</span></article>
+<article class="dish"><div class="dish-info"><h3>Sopapillas</h3><p>Pillowy fried pastry, honey, cinnamon, vanilla ice cream.</p></div><span class="dish-price">$8</span></article>
+</div>
+</section>
+</div>
+</section>
+
+<section class="section tequila-section" id="tequila" aria-labelledby="tequila-title">
+<div class="container shell">
+<h2 id="tequila-title">The Tequila Library — 230+ Expressions</h2>
+<p class="section-lead">One of the largest agave collections in the Southeast. Our staff can guide you through flights by region, style, or age.</p>
+<div class="tequila-grid">
+<article class="tequila-card">
+<h3>Blanco / Plata</h3>
+<p>Unaged, pure agave expression. Crisp, vegetal, peppery.</p>
+<ul>
+<li>Fortaleza Still Strength</li>
+<li>G4 Blanco 108</li>
+<li>El Tesoro Platinum</li>
+<li>Tapatío Blanco</li>
+<li>Siete Leguas Blanco</li>
+</ul>
+</article>
+<article class="tequila-card">
+<h3>Reposado</h3>
+<p>2–11 months in oak. Balanced agave & vanilla.</p>
+<ul>
+<li>Clase Azul Reposado</li>
+<li>Fortaleza Reposado</li>
+<li>Ocho Reposado</li>
+<li>Cazadores Reposado</li>
+<li>Herradura Reposado</li>
+</ul>
+</article>
+<article class="tequila-card">
+<h3>Añejo</h3>
+<p>1–3 years. Rich oak, dried fruit, caramel.</p>
+<ul>
+<li>Don Julio 1942</li>
+<li>Clase Azul Añejo</li>
+<li>El Tesoro Añejo</li>
+<li>Tapatío Añejo</li>
+<li>Siete Leguas Añejo</li>
+</ul>
+</article>
+<article class="tequila-card">
+<h3>Extra Añejo & Rare</h3>
+<p>3+ years. Deep complexity, sipping only.</p>
+<ul>
+<li>Clase Azul Ultra</li>
+<li>Don Julio Real</li>
+<li>Tears of Llorona</li>
+<li>Gran Patrón Burdeos</li>
+<li>Jose Cuervo Reserva de la Familia</li>
+</ul>
+</article>
+<article class="tequila-card">
+<h3>Mezcal & Sotol</h3>
+<p>Smoky, wild, ancestral.</p>
+<ul>
+<li>Del Maguey Vida</li>
+<li>Montelobos Espadín</li>
+<li>Real Minero Pechuga</li>
+<li>Hacienda de Chihuahua Sotol</li>
+<li>Clande Sotol</li>
+</ul>
+</article>
+<article class="tequila-card">
+<h3>Tequila Flights</h3>
+<p>Curated 3-pour tastings — $28–$85</p>
+<ul>
+<li>Blanco Progression</li>
+<li>Aging Journey (Repo → Añejo → Extra)</li>
+<li>Highlands vs Lowlands</li>
+<li>Single Estate Showcase</li>
+<li>Mezcal Discovery</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section margs-section" id="margs" aria-labelledby="margs-title">
+<div class="container shell">
+<h2 id="margs-title">Signature Margaritas & Cocktails</h2>
+<div class="margs-grid">
+<article class="marg-card"><h3>Classic House Margarita</h3><p>El Jimador Blanco, Cointreau, fresh lime, agave. Rocks or frozen.</p><span class="price">$13</span></article>
+<article class="marg-card"><h3>No Name Margarita</h3><p>Casa Noble Blanco, Grand Marnier, lime, agave. The Cadillac.</p><span class="price">$18</span></article>
+<article class="marg-card"><h3>Spicy Paloma</h3><p>Tequila Ocho Blanco, fresh grapefruit, lime, serrano, agave, soda, Tajín rim.</p><span class="price">$14</span></article>
+<article class="marg-card"><h3>Oaxaca Old Fashioned</h3><p>Reposado tequila, mezcal, agave, Angostura, orange peel.</p><span class="price">$16</span></article>
+<article class="marg-card"><h3>Prickly Pear Margarita</h3><p>Blanco, prickly pear purée, lime, agave, salt rim.</p><span class="price">$14</span></article>
+<article class="marg-card"><h3>Tamarind Mezcalita</h3><p>Mezcal, tamarind, lime, chile de árbol, Tajín rim.</p><span class="price">$15</span></article>
+</div>
+</div>
+</section>
+
+<section class="section cta-strip" aria-labelledby="menu-cta-title">
+<div class="container shell">
+<h2 id="menu-cta-title" class="visually-hidden">Ready to order?</h2>
+<div class="cta-strip-inner">
+<p>Menus vary slightly between SouthPark and Fort Mill locations. <a href="visit.html">View location-specific menus</a> or browse our full offerings above.</p>
+<a href="visit.html" class="btn btn-primary">Reserve a Table</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+<div class="container shell">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="index.html" class="footer-logo" aria-label="Paco's Tacos & Tequila — Home">
+<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M32 4C16.5 4 4 16.5 4 32s12.5 28 28 28 28-12.5 28-28S47.5 4 32 4zm0 52c-13.3 0-24-10.7-24-24S18.7 8 32 8s24 10.7 24 24-10.7 24-24 24zm0-4c11 0 20-9 20-20S43 12 32 12 12 21 12 32s9 20 20 20z"/><path fill="currentColor" d="M32 16c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 28c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12-5.4 12-12 12z"/></svg>
+<span class="logo-text">Paco's Tacos & Tequila</span>
+</a>
+<p class="disclaimer">This is an unofficial presentation concept and is not affiliated with or operated by Paco's Tacos & Tequila or FS Food Group. All trademarks belong to their respective owners. Forms are non-submitting demonstrations only.</p>
+</div>
+<nav class="footer-nav" aria-label="Footer navigation">
+<div class="footer-col">
+<h4>Experience</h4>
+<ul>
+<li><a href="menu.html">Full Menu</a></li>
+<li><a href="menu.html#lunch">Lunch Menu</a></li>
+<li><a href="menu.html#dinner">Dinner Menu</a></li>
+<li><a href="menu.html#tequila">Tequila Library</a></li>
+<li><a href="menu.html#margs">Margaritas & Cocktails</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Gatherings</h4>
+<ul>
+<li><a href="private-dining.html">Private Dining</a></li>
+<li><a href="private-dining.html#catering">Catering & Fiesta Menus</a></li>
+<li><a href="private-dining.html#la-caja">La Caja (24 guests)</a></li>
+<li><a href="private-dining.html#main-room">Main Dining Room (70)</a></li>
+<li><a href="private-dining.html#planner">Event Planner</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Visit Us</h4>
+<ul>
+<li><a href="visit.html">Locations & Hours</a></li>
+<li><a href="visit.html#reservations">Reservations</a></li>
+<li><a href="visit.html#parking">Parking & Directions</a></li>
+<li><a href="visit.html#accessibility">Accessibility</a></li>
+<li><a href="visit.html#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Follow</h4>
+<ul>
+<li><a href="https://www.facebook.com/pacostacosandtequila" target="_blank" rel="noopener">Facebook</a></li>
+<li><a href="https://www.instagram.com/pacostacosandtequila" target="_blank" rel="noopener">Instagram</a></li>
+<li><a href="https://fsfoodgroup.com" target="_blank" rel="noopener">FS Food Group</a></li>
+<li><a href="https://www.opentable.com/r/pacos-tacos-and-tequila" target="_blank" rel="noopener">OpenTable</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Unofficial Demo · Not affiliated with Paco's Tacos & Tequila</p>
+</div>
+</div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

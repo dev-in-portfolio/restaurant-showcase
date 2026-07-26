@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bossy Beulah's Chicken Shack - Charlotte, NC | Visit</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .location-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-premium);
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .location-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-red);
+      box-shadow: var(--shadow-premium), var(--shadow-glow);
+    }
+    .location-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-dark);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bossy Beulah's
+          <span>Chicken Shack Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="locations.html">Our Shacks</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html" class="active">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Visit Our Shacks</h2>
+    <p class="page-subtitle">Grab hot chicken at Freedom Drive, Park Road Shopping Center, or Ballantyne Bowl. Check live counter queue wait times below.</p>
+  </header>
+
+  <!-- Live Location Statuses -->
+  <main class="container">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
+      
+      <!-- Freedom Drive -->
+      <div class="location-card">
+        <div class="location-title">Freedom Drive</div>
+        <p style="font-size: 0.82rem; color: var(--color-red); font-weight: 700; text-transform: uppercase; margin-bottom: 1.25rem;">The Original Shack</p>
+        
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+          2200 Freedom Drive<br>Charlotte, NC 28208<br>
+          <strong>Phone:</strong> (704) 555-0181
+        </p>
+
+        <p style="font-size: 0.88rem; line-height: 1.6; color: var(--color-text-dark); margin-bottom: 1.5rem;">
+          <strong>Sun - Thu:</strong> 11 AM - 8 PM<br>
+          <strong>Fri - Sat:</strong> 11 AM - 9 PM
+        </p>
+
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-text-muted); display: block; text-transform: uppercase; margin-bottom: 0.5rem;">Live Register Line:</span>
+          <span class="wait-badge wait-low" id="wait-freedom">Quiet (Under 5 min)</span>
+        </div>
+      </div>
+
+      <!-- Park Road -->
+      <div class="location-card">
+        <div class="location-title">Park Road</div>
+        <p style="font-size: 0.82rem; color: var(--color-red); font-weight: 700; text-transform: uppercase; margin-bottom: 1.25rem;">Shopping Center</p>
+        
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+          512 Brandywine Rd<br>Charlotte, NC 28209<br>
+          <strong>Phone:</strong> (704) 555-0182
+        </p>
+
+        <p style="font-size: 0.88rem; line-height: 1.6; color: var(--color-text-dark); margin-bottom: 1.5rem;">
+          <strong>Sun - Thu:</strong> 11 AM - 8 PM<br>
+          <strong>Fri - Sat:</strong> 11 AM - 9 PM
+        </p>
+
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-text-muted); display: block; text-transform: uppercase; margin-bottom: 0.5rem;">Live Register Line:</span>
+          <span class="wait-badge wait-low" id="wait-park">Quiet (Under 5 min)</span>
+        </div>
+      </div>
+
+      <!-- Ballantyne -->
+      <div class="location-card">
+        <div class="location-title">Ballantyne Bowl</div>
+        <p style="font-size: 0.82rem; color: var(--color-red); font-weight: 700; text-transform: uppercase; margin-bottom: 1.25rem;">Bowl Street Suite</p>
+        
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+          15110 Bowl Street<br>Charlotte, NC 28277<br>
+          <strong>Phone:</strong> (704) 555-0183
+        </p>
+
+        <p style="font-size: 0.88rem; line-height: 1.6; color: var(--color-text-dark); margin-bottom: 1.5rem;">
+          <strong>Daily:</strong> 11 AM - 9 PM
+        </p>
+
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-text-muted); display: block; text-transform: uppercase; margin-bottom: 0.5rem;">Live Register Line:</span>
+          <span class="wait-badge wait-low" id="wait-ballantyne">Quiet (Under 5 min)</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contact Form Section -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Drop Us a Line</h2>
+        
+        <form id="contact-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Have feedback about a recent Beaut sandwich or copain bakery batch? Let us know.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="details">Message Details</label>
+              <textarea id="details" required placeholder="Describe your experience or question..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">✉</div>
+          <h3 class="success-title">Message Sent!</h3>
+          <p class="success-msg">Thank you. Bossy Beulah's operations team will review your message and reach back.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Bossy Beulah's. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live Register wait times based on hour of the day
+    function updateWaitTime() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const elFreedom = document.getElementById('wait-freedom');
+      const elPark = document.getElementById('wait-park');
+      const elBallantyne = document.getElementById('wait-ballantyne');
+
+      // Check operating hours: 11:00 AM to 8:00 PM (9:00 PM Fri-Sat)
+      let closeHourNormal = 20;
+      let closeHourWeekend = 21;
+
+      // Freedom Dr & Park Rd: Sun-Thu close at 8, Fri-Sat close at 9
+      const isFreedomOpen = (hour >= 11) && (hour < ((day === 5 || day === 6) ? closeHourWeekend : closeHourNormal));
+      // Ballantyne is open daily 11 AM - 9 PM
+      const isBallantyneOpen = (hour >= 11 && hour < 21);
+
+      // Lunch peak: 12 PM - 2 PM, Dinner peak: 6 PM - 8 PM
+      const isLunchPeak = (hour >= 12 && hour < 14);
+      const isDinnerPeak = (hour >= 18 && hour < 20);
+
+      // Set Freedom
+      if (!isFreedomOpen) {
+        elFreedom.innerText = "CLOSED";
+        elFreedom.className = "wait-badge wait-high";
+      } else if (isLunchPeak || isDinnerPeak) {
+        elFreedom.innerText = "BUSY: 15-20 min line";
+        elFreedom.className = "wait-badge wait-medium";
+      } else {
+        elFreedom.innerText = "QUIET: Under 5 min line";
+        elFreedom.className = "wait-badge wait-low";
+      }
+
+      // Set Park Road
+      if (!isFreedomOpen) {
+        elPark.innerText = "CLOSED";
+        elPark.className = "wait-badge wait-high";
+      } else if (isLunchPeak || isDinnerPeak) {
+        elPark.innerText = "MODERATE: 10-15 min line";
+        elPark.className = "wait-badge wait-medium";
+      } else {
+        elPark.innerText = "QUIET: Under 5 min line";
+        elPark.className = "wait-badge wait-low";
+      }
+
+      // Set Ballantyne
+      if (!isBallantyneOpen) {
+        elBallantyne.innerText = "CLOSED";
+        elBallantyne.className = "wait-badge wait-high";
+      } else if (isLunchPeak || isDinnerPeak) {
+        elBallantyne.innerText = "MODERATE: 10-15 min line";
+        elBallantyne.className = "wait-badge wait-medium";
+      } else {
+        elBallantyne.innerText = "QUIET: Under 5 min line";
+        elBallantyne.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTime();
+
+    // Handle submissions
+    const form = document.getElementById('contact-form');
+    const successPanel = document.getElementById('success-panel');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

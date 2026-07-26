@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Hello, Sailor Lake Norman Cornelius</title>
+<link rel="stylesheet" href="../site-core.css">
+<style>
+  :root { --coral:#e8685a; --teal:#3a9b9e; --cream:#fdf8f2; --gold:#d4a843; --navy:#1a2a4a; --white:#fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; color:#333; background:var(--cream); line-height:1.7; }
+  h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-weight:700; }
+  .skip-link { position:absolute; top:-100px; left:8px; background:var(--coral); color:#fff; padding:8px 16px; z-index:1000; text-decoration:none; }
+  .skip-link:focus { top:8px; }
+  .disclosure { background:var(--navy); color:#aaa; text-align:center; font-size:0.75rem; padding:6px; letter-spacing:0.5px; }
+  nav { background:var(--navy); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:72px; position:sticky; top:0; z-index:100; }
+  nav .logo { font-family:'Fraunces',Georgia,serif; font-size:1.5rem; color:var(--white); text-decoration:none; font-weight:700; letter-spacing:1px; }
+  nav .logo span { color:var(--coral); }
+  nav ul { list-style:none; display:flex; gap:2rem; }
+  nav ul li a { color:#ccc; text-decoration:none; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; transition:color 0.2s; }
+  nav ul li a:hover { color:var(--coral); }
+  .page-header { background:linear-gradient(135deg,#1a2a4a,#3a9b9e); color:#fff; padding:4rem 2rem; text-align:center; }
+  .page-header h1 { font-size:2.8rem; }
+  .page-header h1 span { color:var(--gold); }
+  .page-header p { color:rgba(255,255,255,0.8); margin-top:0.5rem; }
+  .section { padding:4rem 2rem; max-width:1100px; margin:0 auto; }
+  .section-title { font-size:1.8rem; margin-bottom:2rem; text-align:center; }
+  .section-title span { color:var(--coral); }
+  .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; }
+  .menu-category { background:#fff; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .menu-category h3 { font-size:1.4rem; color:var(--teal); margin-bottom:1rem; border-bottom:2px solid var(--cream); padding-bottom:0.5rem; }
+  .menu-item { padding:0.75rem 0; border-bottom:1px solid #f0e8dc; }
+  .menu-item:last-child { border-bottom:none; }
+  .menu-item .name { font-weight:600; display:flex; justify-content:space-between; }
+  .menu-item .price { color:var(--coral); font-weight:600; }
+  .menu-item .desc { color:#666; font-size:0.9rem; margin-top:0.2rem; }
+  .featured-item { background:linear-gradient(135deg,#fff8f5,#fff); border:2px solid var(--coral); border-radius:12px; padding:1.5rem; margin-top:1.5rem; }
+  .featured-item .name { font-size:1.2rem; color:var(--coral); }
+  footer { background:var(--navy); color:#aaa; text-align:center; padding:3rem 2rem; }
+  footer .social { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; }
+  footer .social a { color:#fff; font-size:1.5rem; text-decoration:none; }
+  footer .social a:hover { color:var(--coral); }
+  footer p { font-size:0.85rem; }
+  @media (max-width:768px) { .menu-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
+
+<nav>
+  <a href="index.html" class="logo">Hello, <span>Sailor</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-header" id="main">
+  <h1>Lake Norman <span>Menu</span></h1>
+  <p>Chef-driven coastal fare — from fresh oysters to the legendary skillet burger</p>
+</section>
+
+<section class="section">
+  <h2 class="section-title">From the <span>Water</span></h2>
+  <div class="menu-grid">
+    <div class="menu-category">
+      <h3>Raw Bar</h3>
+      <div class="menu-item"><div class="name"><span>PEI Oysters (Half Dozen)</span><span class="price">18</span></div><div class="desc">Fresh, briny, perfectly shucked — served with mignonette and cocktail sauce</div></div>
+      <div class="menu-item"><div class="name"><span>PEI Oysters (Dozen)</span><span class="price">34</span></div><div class="desc">The full dozen — a lakeside essential</div></div>
+      <div class="menu-item"><div class="name"><span>Hamachi Crudo</span><span class="price">19</span></div><div class="desc">Pacific yellowtail, radish, macadamia, toasted black rice</div></div>
+      <div class="menu-item"><div class="name"><span>Smoked Fish Dip</span><span class="price">14</span></div><div class="desc">House-smoked fish, caper, lemon, grilled crostini</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Starters &amp; Shares</h3>
+      <div class="menu-item"><div class="name"><span>PEI Mussels</span><span class="price">17</span></div><div class="desc">Steamed in white wine, garlic, herbs, and butter — with crostini</div></div>
+      <div class="menu-item"><div class="name"><span>Grandfather's Pickles</span><span class="price">8</span></div><div class="desc">House-made bread &amp; butter pickles</div></div>
+      <div class="menu-item"><div class="name"><span>Smoked Chicken Wings</span><span class="price">15</span></div><div class="desc">Half-dozen, choice of buffalo or bourbon glaze</div></div>
+      <div class="menu-item"><div class="name"><span>Popcorn Shrimp Basket</span><span class="price">16</span></div><div class="desc">Crispy Cali-style shrimp, beef-fat fries, remoulade</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Mains</h3>
+      <div class="menu-item"><div class="name"><span>Baby Back Pork Ribs</span><span class="price">26</span></div><div class="desc">Fall-off-the-bone, house BBQ glaze, slaw, fries</div></div>
+      <div class="menu-item"><div class="name"><span>Carolina Shrimp Calabash</span><span class="price">24</span></div><div class="desc">Fried Calabash-style, tartar sauce, coleslaw, hushpuppies</div></div>
+      <div class="menu-item"><div class="name"><span>Skillet Burger</span><span class="price">19</span></div><div class="desc">The Kindred classic — custom blend, American cheese, special sauce, fries</div></div>
+      <div class="menu-item"><div class="name"><span>Crispy Chicken Sandwich</span><span class="price">17</span></div><div class="desc">Buttermilk brined, fried, slaw, comeback sauce, fries</div></div>
+      <div class="menu-item"><div class="name"><span>Catch of the Day</span><span class="price">MP</span></div><div class="desc">Market price — ask your server about today's fresh catch</div></div>
+    </div>
+    <div class="menu-category">
+      <h3>Salads &amp; Greens</h3>
+      <div class="menu-item"><div class="name"><span>Citrus Crab Louie Salad</span><span class="price">21</span></div><div class="desc">Lump crab, citrus segments, avocado, louie dressing</div></div>
+      <div class="menu-item"><div class="name"><span>Caesar</span><span class="price">13</span></div><div class="desc">Romaine, parmesan, house croutons, white anchovy</div></div>
+      <div class="menu-item"><div class="name"><span>Watermelon &amp; Feta</span><span class="price">14</span></div><div class="desc">Seasonal watermelon, mint, feta, balsamic glaze</div></div>
+      <div class="featured-item">
+        <div class="name">&#x1F4DD; Market Sheet</div>
+        <div class="desc" style="color:#666;margin-top:0.3rem;">Ask about our daily market sheet — feature oysters, crudo, and chef's selections from the boat.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy);color:#fff;padding:4rem 2rem;text-align:center;">
+  <h2 style="font-size:2rem;margin-bottom:1rem;">Thirsty? <span style="color:var(--gold);">We've Got That Too</span></h2>
+  <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 2rem;">Tiki cocktails, local craft beer, and a thoughtfully curated wine list.</p>
+  <div class="menu-grid" style="max-width:700px;margin:0 auto;text-align:left;">
+    <div class="menu-category" style="background:rgba(255,255,255,0.05);color:#fff;">
+      <h3 style="color:var(--gold);">Tiki Cocktails</h3>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Hello Punch</span><span class="price" style="color:var(--gold);">14</span></div><div class="desc" style="color:#aaa;">Rum, passionfruit, lime, mint</div></div>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Frozen Mojito</span><span class="price" style="color:var(--gold);">13</span></div><div class="desc" style="color:#aaa;">White rum, mint, lime, simple syrup</div></div>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Bourbon Smash</span><span class="price" style="color:var(--gold);">15</span></div><div class="desc" style="color:#aaa;">Bourbon, lemon, mint, simple</div></div>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Tiki Punch</span><span class="price" style="color:var(--gold);">15</span></div><div class="desc" style="color:#aaa;">House blend of rums, tropical juices, exotic spices</div></div>
+    </div>
+    <div class="menu-category" style="background:rgba(255,255,255,0.05);color:#fff;">
+      <h3 style="color:var(--gold);">Beer &amp; Wine</h3>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Local Craft Rotating</span><span class="price" style="color:var(--gold);">7-9</span></div><div class="desc" style="color:#aaa;">NC craft beers on draft</div></div>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Wine by the Glass</span><span class="price" style="color:var(--gold);">12-16</span></div><div class="desc" style="color:#aaa;">Curated selection of old and new world</div></div>
+      <div class="menu-item" style="border-color:rgba(255,255,255,0.1);"><div class="name"><span>Wine by the Bottle</span><span class="price" style="color:var(--gold);">36-80</span></div><div class="desc" style="color:#aaa;">Ask your server for our wine list</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/hellosailornc" target="_blank">&#x1F4F7;</a>
+  </div>
+  <p>Unofficial concept presentation — not operated by the restaurant</p>
+  <p>&copy; 2026 Hello, Sailor Concept &bull; Cornelius, NC</p>
+</footer>
+
+<script src="../site-core.js"></script>
+</body>
+</html>

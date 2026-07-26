@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burtons Grill & Bar - Charlotte, NC | Allergy Protocol</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styling for the interactive allergen filter menu box */
+    .allergy-box {
+      background: radial-gradient(circle, #141a20 0%, #06080a 100%);
+      border: 1.5px solid var(--color-bronze);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-premium);
+      min-height: 290px;
+      transition: var(--transition-smooth);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Burtons
+          <span>Grill & Bar Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="allergy.html" class="active">Allergy Protocol</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Events</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Dining with Peace of Mind</h2>
+    <p class="page-subtitle">From dedicated prep stations to custom purple plates, our kitchen is designed to prevent cross-contact for guests with severe dietary restrictions.</p>
+  </header>
+
+  <!-- Interactive Allergen Customizer -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Gluten-Free & Allergen Menu Builder</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select your dietary requirements and allergen restrictions to dynamically customize a safe starting menu.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Dynamic Menu Display -->
+        <div class="plate-canvas" style="min-height: 350px;">
+          <div class="allergy-box" id="menu-box">
+            <h4 style="font-size: 1.4rem; color: var(--color-bronze); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;" id="menu-title">Your Custom Allergen-Safe Menu</h4>
+            <div id="safe-items-container" style="display: flex; flex-direction: column; gap: 1rem; text-align: left;">
+              <!-- Safe menu items will be injected here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-bronze); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Restrictions</label>
+          <div class="option-grid" id="restriction-options" style="grid-template-columns: 1fr; gap: 0.70rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light); font-weight: 500;">
+              <input type="checkbox" id="chk-gf" onchange="filterMenu()" style="width: auto;"> Gluten-Free / Celiac Safe
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light); font-weight: 500;">
+              <input type="checkbox" id="chk-df" onchange="filterMenu()" style="width: auto;"> Dairy-Free
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--color-text-light); font-weight: 500;">
+              <input type="checkbox" id="chk-nf" onchange="filterMenu()" style="width: auto;"> Peanut & Tree Nut-Free
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Protocol Details -->
+    <h3 class="section-title">Our Certified Food Safety Standards</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Allergy Handoff Process</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Purple Plate Protocol</span>
+          </div>
+          <p class="menu-item-desc">All allergen-safe and gluten-free orders are served on dedicated purple square plates. This ensures our service staff can visually identify safe plates during final delivery.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Manager Validation Check</span>
+          </div>
+          <p class="menu-item-desc">A certified food safety manager personally reviews every allergen ticket, inspects the prep line, and runs the dish to the guest's table.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Ingredient Separation</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Separate Fryers & Grills</span>
+          </div>
+          <p class="menu-item-desc">We utilize dedicated fryers for all gluten-free preparations (like our signature french fries) and separate grill sectors to prevent cross-contamination.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Color-Coded Utensils</span>
+          </div>
+          <p class="menu-item-desc">All allergen-safe dishes are prepared using purple tongs, pans, and chef knives stored in sealed sanitizing containers.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Blakeney Village Stand</h3>
+        <p>9816 Rea Rd<br>Charlotte, NC 28277<br>Phone: (704) 971-9090</p>
+      </div>
+      <div class="info-block">
+        <h3>Dinner Service Hours</h3>
+        <p>Mon - Thu: 4:00 PM - 9:30 PM<br>Fri - Sat: 4:00 PM - 10:00 PM<br>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Safety Disclaimer</h3>
+        <p>While we take extreme measures to prevent cross-contact, our kitchen is not completely wheat-free. Guests are advised to alert servers to any severe celiac conditions.</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Burtons Grill & Bar. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuItems = [
+      {
+        name: "General Tso's Cauliflower",
+        price: "$14.50",
+        desc: "Crispy cauliflower florets tossed in sweet chili ginger glaze.",
+        gf: true, df: true, nf: true
+      },
+      {
+        name: "Philly Spring Rolls",
+        price: "$15.00",
+        desc: "Shaved ribeye steak, melted provolone, onions in a crispy roll.",
+        gf: false, df: false, nf: true
+      },
+      {
+        name: "Premium Ribeye Platter",
+        price: "$46.00",
+        desc: "14oz wood-grilled Angus ribeye, seasoned fries, and charred asparagus.",
+        gf: true, df: true, nf: true
+      },
+      {
+        name: "Mediterranean Chicken Bowl",
+        price: "$24.50",
+        desc: "Grilled chicken breast, wild rice, cucumber olives salad, and tzatziki.",
+        gf: true, df: false, nf: true
+      },
+      {
+        name: "Warm Key Lime Pie",
+        price: "$9.00",
+        desc: "Traditional key lime custard with graham cracker crust and whipped cream.",
+        gf: true, df: false, nf: true
+      },
+      {
+        name: "Chocolate Chip Cookie Sundae",
+        price: "$10.00",
+        desc: "Warm chocolate cookie, vanilla bean ice cream, chocolate syrup.",
+        gf: true, df: false, nf: false
+      }
+    ];
+
+    function filterMenu() {
+      const gf = document.getElementById('chk-gf').checked;
+      const df = document.getElementById('chk-df').checked;
+      const nf = document.getElementById('chk-nf').checked;
+
+      const container = document.getElementById('safe-items-container');
+      container.innerHTML = '';
+
+      // Filter items
+      const filtered = menuItems.filter(item => {
+        if (gf && !item.gf) return false;
+        if (df && !item.df) return false;
+        if (nf && !item.nf) return false;
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="color: var(--color-text-muted); font-style: italic;">No items match all selected allergen requirements. Please contact our certified chef for custom options.</p>';
+        return;
+      }
+
+      filtered.forEach(item => {
+        const div = document.createElement('div');
+        div.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
+        div.style.paddingBottom = '0.8rem';
+        div.innerHTML = `
+          <div style="display:flex; justify-content:space-between; font-weight:700; color:#fff;">
+            <span>${item.name}</span>
+            <span style="color: var(--color-bronze);">${item.price}</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--color-text-muted); margin-top:0.25rem;">${item.desc}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Trigger initial filter
+    window.addEventListener('load', () => {
+      filterMenu();
+    });
+  </script>
+</body>
+</html>

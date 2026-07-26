@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cajun Kitchen · Eddie's Place</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local style modifications to match Eddie's Place branding */
+.cajun-mat {
+  background: radial-gradient(circle, #5b1a0d 0%, #1c0502 100%);
+  border: 1.5px solid var(--a);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.cajun-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .cajun-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--p);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #c43a21;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo" aria-label="Eddie's Place Home">
+        <div class="logo-icon" aria-hidden="true">&#127835;</div>
+        <div><span class="logo-text">Eddie's Place</span><span class="logo-sub">Restaurant &amp; Bar</span></div>
+      </a>
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="main-nav" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cajun.html" class="active">Cajun Kitchen</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding: 4rem 0;">
+      <div class="wrap">
+        <div class="hero-content">
+          <h1>Cajun Cookhouse Specials</h1>
+          <p class="hero-sub">Explore our legendary Louisiana-inspired favorites, house spices, and cup pairings</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 4rem 0;">
+      <div class="wrap">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Cajun Skillet Planner</h2>
+        
+        <div class="cajun-grid" style="background: var(--surface); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow);">
+          
+          <!-- Left: Skillet Platter Visualizer -->
+          <div class="cajun-mat">
+            <span style="font-size: 0.78rem; font-weight: 600; color: #e59c8d; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="cajun-tag-display">CAJUN CLASSIC</span>
+            <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Playfair Display', serif; margin: 0 0 0.8rem 0;" id="cajun-title-display">Shrimp &amp; Grits</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; color: #e59c8d; margin: 0 0 1.2rem 0;" id="cajun-price-display">$16.95</p>
+            <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0;" id="cajun-desc-display">Garlic herb butter sautéed shrimp, spicy tasso ham, and parmesan cheese grits prepared with mild creole seasoning.</p>
+          </div>
+
+          <!-- Right: Controls -->
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">1. Choose Cajun Dish</label>
+              <select id="cajun-dish" onchange="updateCajun()">
+                <option value="shrimp" selected>Shrimp &amp; Grits ($16.95)</option>
+                <option value="jambalaya">Cajun Jambalaya ($15.95)</option>
+                <option value="muffuletta">Muffuletta Platter ($14.95)</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label class="control-label">2. Select Spice Level</label>
+              <select id="cajun-spice" onchange="updateCajun()">
+                <option value="mild" selected>Mild Creole Seasoning</option>
+                <option value="medium">Medium Cajun Heat</option>
+                <option value="hot">Blazing Orleans Spiced</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="control-label">3. Add Legendary Soup Cup</label>
+              <select id="cajun-soup" onchange="updateCajun()">
+                <option value="none" selected>No Soup (+$0.00)</option>
+                <option value="shecrab">Cup of Legendary She-Crab Soup (+$4.95)</option>
+                <option value="gumbo">Cup of Seafood Gumbo (+$4.50)</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border);">
+      <div class="wrap">
+        <p>Eddie's Place · 2900 Wentworth Pl · Charlotte, NC 28209 · (704) 365-0080</p>
+        <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const dishData = {
+      shrimp: { tag: "CAJUN CLASSIC", name: "Shrimp & Grits", basePrice: 16.95, label: "garlic herb butter sautéed shrimp, spicy tasso ham, and parmesan cheese grits" },
+      jambalaya: { tag: "LOUISIANA SOUL", name: "Cajun Jambalaya", basePrice: 15.95, label: "spicy rice medley packed with smoked andouille sausage, chicken, and sautéed shrimp" },
+      muffuletta: { tag: "NEW ORLEANS CLASSIC", name: "Muffuletta Platter", basePrice: 14.95, label: "New Orleans muffuletta loaded with salami, ham, provolone, and olive salad on warm bread" }
+    };
+
+    const spiceData = {
+      mild: { name: "Creole", label: "prepared with mild creole seasoning" },
+      medium: { name: "Cajun", label: "kicked up with medium Cajun heat spices" },
+      hot: { name: "Orleans", label: "stewed with blazing Orleans ghost-pepper spices" }
+    };
+
+    const soupData = {
+      none: { label: "", charge: 0.00 },
+      shecrab: { label: ", paired with a warm cup of our legendary rich She-Crab Soup", charge: 4.95 },
+      gumbo: { label: ", paired with a cup of our spicy dark-roux Seafood Gumbo", charge: 4.50 }
+    };
+
+    function updateCajun() {
+      const dishKey = document.getElementById('cajun-dish').value;
+      const spiceKey = document.getElementById('cajun-spice').value;
+      const soupKey = document.getElementById('cajun-soup').value;
+
+      const dish = dishData[dishKey];
+      const spice = spiceData[spiceKey];
+      const soup = soupData[soupKey];
+
+      const totalPrice = dish.basePrice + soup.charge;
+
+      document.getElementById('cajun-tag-display').innerText = dish.tag;
+      document.getElementById('cajun-title-display').innerText = `${dish.name}`;
+      document.getElementById('cajun-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let desc = `A classic plate of our ${dish.label} ${spice.label}${soup.label}.`;
+      
+      document.getElementById('cajun-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateCajun();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

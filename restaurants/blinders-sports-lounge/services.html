@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinders Sports Lounge - Charlotte, NC | Watch Parties</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Blinders
+          <span>Sports Lounge South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="schedule.html">Watch Schedule</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">VIP Planner</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">VIP watch party bookings</h2>
+    <p class="page-subtitle">Reserve our semi-private viewing booths or buy out our covered patio for the big game, fantasy drafts, or corporate celebrations.</p>
+  </header>
+
+  <!-- Interactive Planner -->
+  <main class="container">
+    
+    <section class="interactive-panel">
+      <h3 class="section-title" style="margin-bottom: 1rem;">Watch-Party VIP Planner</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Select your guest count, duration, and viewing package to calculate estimated costs.</p>
+      
+      <div style="max-width: 500px; margin: 0 auto 3rem auto; text-align: center;">
+        <label for="guests-count" style="display: block; font-size: 0.9rem; font-weight: 700; color: var(--color-emerald); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-sans);">Expected Guests: <span id="guests-val" style="font-size: 1.8rem; color: #ffffff;">15</span> people</label>
+        <input type="range" id="guests-count" min="8" max="40" value="15" step="1" style="width: 100%; accent-color: var(--color-emerald); cursor: pointer;" oninput="calculateEvent(this.value)">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+        
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">Watch Duration</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <select id="event-hours" style="background: rgba(0,0,0,0.5); border: 1px solid var(--color-border); color: #fff; padding: 0.5rem 1rem; border-radius: 4px;" onchange="updateHours(this.value)">
+              <option value="2">2 Hours</option>
+              <option value="3" selected>3 Hours</option>
+              <option value="4">4 Hours</option>
+            </select>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);" id="booth-rate-label">Booth Rate: $200/hour</p>
+        </div>
+
+        <div class="premium-card" style="padding: 2rem; text-align: center;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.6rem; color: #ffffff;">VIP Package</h4>
+          <div class="option-grid" style="justify-content: center; margin-bottom: 0.5rem;">
+            <button class="option-btn" id="btn-pkg-base" onclick="selectPkg(30, 'Base Watch')">Base ($30)</button>
+            <button class="option-btn active" id="btn-pkg-skybox" onclick="selectPkg(50, 'Premium Skybox')">Skybox ($50)</button>
+            <button class="option-btn" id="btn-pkg-mvp" onclick="selectPkg(80, 'Elite MVP')">MVP ($80)</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--color-text-muted);">Pricing per guest. Includes customized screen audio.</p>
+        </div>
+
+      </div>
+
+      <div class="result-card" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); border: 1px solid var(--color-border); border-radius: 8px; padding: 3rem 2rem;">
+        <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--color-text-muted); letter-spacing: 0.08em; font-family: var(--font-sans);">Estimated Reservation Subtotal</span>
+        <h4 style="font-size: 3.2rem; color: #ffffff; margin: 0.5rem 0;" id="event-cost">$1,350.00</h4>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted);" id="event-summary">Based on 15 guests for 3 hours with Premium Skybox ($600 booth rental + $750 food & beverage package).</p>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Watch Party Booking Request</h2>
+        
+        <form id="catering-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit watch details below. Private watch booths are strictly 21+ only. We will customize screen feeds for your party.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Contact Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Event/Game Date</label>
+              <input type="date" id="event-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-count-input">Estimated Guest Count</label>
+              <input type="number" id="guests-count-input" value="15" readonly style="background: rgba(0,0,0,0.5); border-color: rgba(16, 185, 129, 0.1);">
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="notes">Details & Requests (Specify target broadcast game/match, sound channel details, dietary needs)</label>
+              <textarea id="notes" placeholder="e.g. We want to watch the UFC main card broadcast. Please make sure the table audio channels are routed for the main screen feed..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Watch Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🏈</div>
+          <h3 class="success-title">Watch Party Requested!</h3>
+          <p class="success-msg" id="success-message">Thank you. Blinders' Host Coordinator will check screen schedules and call you shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>225 W Tremont Ave<br>Charlotte, NC 28203</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Wed: 5:00 PM - 11:00 PM<br>Thu: 5:00 PM - 12:00 AM<br>Fri: 5:00 PM - 1:00 AM<br>Sat: 11:00 AM - 1:00 AM<br>Sun: 11:00 AM - 12:00 AM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Reservations via website | 21+ Age Policy | Validated Deck Parking</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Blinders Sports Lounge. South End Charlotte.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentGuests = 15;
+    let selectedHours = 3;
+    let pkgCost = 50;
+    let pkgName = 'Premium Skybox';
+
+    function updateHours(val) {
+      selectedHours = parseInt(val);
+      calculateEvent(currentGuests);
+    }
+
+    function selectPkg(cost, name) {
+      pkgCost = cost;
+      pkgName = name;
+
+      document.getElementById('btn-pkg-base').classList.remove('active');
+      document.getElementById('btn-pkg-skybox').classList.remove('active');
+      document.getElementById('btn-pkg-mvp').classList.remove('active');
+      
+      if (cost === 30) {
+        document.getElementById('btn-pkg-base').classList.add('active');
+      } else if (cost === 50) {
+        document.getElementById('btn-pkg-skybox').classList.add('active');
+      } else {
+        document.getElementById('btn-pkg-mvp').classList.add('active');
+      }
+
+      calculateEvent(currentGuests);
+    }
+
+    function calculateEvent(guests) {
+      currentGuests = parseInt(guests);
+      document.getElementById('guests-val').innerText = guests;
+      document.getElementById('guests-count-input').value = guests;
+
+      // Booth fee: up to 10 guests = $100/hr, 20 = $200/hr, 30 = $300/hr, 40 = $400/hr
+      let hourlyRate = 100;
+      if (currentGuests > 30) {
+        hourlyRate = 400;
+      } else if (currentGuests > 20) {
+        hourlyRate = 300;
+      } else if (currentGuests > 10) {
+        hourlyRate = 200;
+      }
+
+      document.getElementById('booth-rate-label').innerText = `Booth Rate: $${hourlyRate}/hour`;
+
+      const roomFee = hourlyRate * selectedHours;
+      const foodFee = currentGuests * pkgCost;
+      const totalCost = roomFee + foodFee;
+
+      document.getElementById('event-cost').innerText = `$${totalCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('event-summary').innerText = `Based on ${currentGuests} guests for ${selectedHours} hours with ${pkgName} ($${roomFee} booth rental + $${foodFee} food & beverage package).`;
+    }
+
+    // Handle catering submissions
+    const form = document.getElementById('catering-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Gracias, <strong>${name}</strong>. Your watch party request has been logged. Our host will call you at <strong>${phone}</strong> shortly to coordinate screen feeds and check dates.`;
+    });
+  </script>
+</body>
+</html>

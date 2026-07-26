@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birdsong Brewing Co. - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Flight tray circle alignment */
+    .flight-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Birdsong
+          <span>Brewing Company</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Tap List</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Rentals</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">100% Solar-Powered Taproom</span>
+        <h2 class="hero-title">Birdsong Brewing Co.</h2>
+        <p class="hero-desc">"Unfiltered, sessionable, and dry-hopped craft beers brewed in Charlotte's historic NoDa neighborhood."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>☀️ 1016 N. Davidson St., Charlotte, NC 28206 | 20 Taps of Year-Round and Rotating Hops.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">Fresh Beer, Solar-Powered Community</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        Welcome to Birdsong Brewing Co., one of Charlotte's original craft taprooms on the border of NoDa. Since 2011, we have focused on brewing sessionable, balanced beers for the community. With 20 active taps, free roasted peanuts, a dog-friendly outdoor deck, and a 100% solar-powered brewhouse, we provide a casual, welcoming space to gather.
+      </p>
+      <a href="about.html" style="color: var(--color-amber); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-amber); padding-bottom: 4px; transition: var(--transition-fast);">
+        Our Green Brewery Story ➔
+      </a>
+    </section>
+
+    <!-- Interactive Beer Flight customizer -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">Tap Flight Builder</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Select up to 4 draft pours to build your custom taproom tasting flight.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Interactive Flight Tray -->
+        <div class="plate-canvas" style="min-height: 200px;">
+          <div class="flight-tray">
+            <h4 style="text-align: center; color: #ffffff; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">Custom Flight Tray</h4>
+            <div class="flight-row">
+              <div class="flight-slot" id="slot-0">Empty</div>
+              <div class="flight-slot" id="slot-1">Empty</div>
+              <div class="flight-slot" id="slot-2">Empty</div>
+              <div class="flight-slot" id="slot-3">Empty</div>
+            </div>
+            <button class="submit-btn" style="padding: 0.5rem 1rem; margin-top: 0.5rem; font-size: 0.75rem;" onclick="clearFlight()">Reset Tray</button>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          <div class="control-group">
+            <label>Select Drafts (Click to add to tray)</label>
+            <div class="option-grid">
+              <button class="option-btn" onclick="addBeer('Jalapeño Pale Ale', '5.5%', '25', '🍺')">Jalapeño Pale Ale (5.5%)</button>
+              <button class="option-btn" onclick="addBeer('Higher Ground IPA', '7.0%', '65', '🍺')">Higher Ground IPA (7.0%)</button>
+              <button class="option-btn" onclick="addBeer('Rewind Lager', '4.4%', '15', '🍺')">Rewind Lager (4.4%)</button>
+              <button class="option-btn" onclick="addBeer('Lazy Bird Brown', '5.5%', '28', '🍺')">Lazy Bird Brown (5.5%)</button>
+              <button class="option-btn" onclick="addBeer('Sunspree IPA', '6.8%', '50', '🍺')">Sunspree IPA (6.8%)</button>
+              <button class="option-btn" onclick="addBeer('Paradise Session', '4.8%', '35', '🍺')">Paradise Session (4.8%)</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Flight Card</span>
+        <h4 class="builder-display-title" id="display-beer-name">Select Pours to Begin</h4>
+        <p id="display-beer-stats" style="color: var(--color-amber); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">ABV: -- | IBU: --</p>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-beer-desc">Assemble a balanced tasting lineup. We recommend mixing hop-forward IPAs, crisp lagers, and our signature vegetable pale ale.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Food Trucks & Events</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        We don't operate a kitchen, but we host Charlotte's finest mobile chefs daily. Click below to view our interactive Food Truck & Taproom activity calendar.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Calendar
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>1016 N. Davidson St.<br>Charlotte, NC 28206</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 3:00 PM - 10:00 PM<br>Fri - Sat: 12:00 PM - 11:00 PM<br>Sunday: 11:00 AM - 8:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 332-1810<br>Solar Powered Taproom | Free Peanuts | Dog Friendly</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Birdsong Brewing Co. Brewed solar clean.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    const flight = [];
+
+    function addBeer(name, abv, ibu, emoji) {
+      if (flight.length >= 4) {
+        alert("Your flight tray is full! Clear the tray to start fresh.");
+        return;
+      }
+
+      flight.push({ name, abv, ibu, emoji });
+      updateDisplay();
+    }
+
+    function clearFlight() {
+      flight.length = 0;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Clear slots
+      for (let i = 0; i < 4; i++) {
+        const slot = document.getElementById(`slot-${i}`);
+        slot.innerHTML = "Empty";
+        slot.className = "flight-slot";
+      }
+
+      // Populate slots
+      flight.forEach((beer, idx) => {
+        const slot = document.getElementById(`slot-${idx}`);
+        slot.innerHTML = `<div class="flight-glass" title="${beer.name}">${beer.emoji}</div>`;
+        slot.className = "flight-slot";
+      });
+
+      // Update display text based on last added beer
+      if (flight.length > 0) {
+        const lastBeer = flight[flight.length - 1];
+        document.getElementById('display-beer-name').innerText = lastBeer.name;
+        document.getElementById('display-beer-stats').innerText = `ABV: ${lastBeer.abv} | IBU: ${lastBeer.ibu}`;
+        
+        let desc = "";
+        if (lastBeer.name === 'Jalapeño Pale Ale') {
+          desc = "Our signature unfiltered pale ale infused with fresh, local jalapeños. Crisp, aromatic flavor with all the vegetable aroma and none of the heat.";
+        } else if (lastBeer.name === 'Higher Ground IPA') {
+          desc = "A West Coast style IPA dry-hopped with Cascades. Boasting vibrant pine aromas and grapefruity hop bitterness.";
+        } else if (lastBeer.name === 'Rewind Lager') {
+          desc = "A highly sessionable, clean, and crisp traditional Pilsner-style lager. Perfect for sunny patio afternoons.";
+        } else {
+          desc = `Fresh pour of our taproom specialty ${lastBeer.name}. Made with sustainable solar-brewed craftsmanship.`;
+        }
+        document.getElementById('display-beer-desc').innerText = desc;
+      } else {
+        document.getElementById('display-beer-name').innerText = "Select Pours to Begin";
+        document.getElementById('display-beer-stats').innerText = "ABV: -- | IBU: --";
+        document.getElementById('display-beer-desc').innerText = "Assemble a balanced tasting lineup. We recommend mixing hop-forward IPAs, crisp lagers, and our signature vegetable pale ale.";
+      }
+    }
+  </script>
+</body>
+</html>

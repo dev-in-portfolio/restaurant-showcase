@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcelona Wine Bar - Charlotte, NC | Visit & Reservations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Barcelona
+          <span>Wine Bar South End</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="wine.html">Wine Program</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Private Events</a>
+        <a href="contact.html" class="active">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">South End Wine Bar</h2>
+    <p class="page-subtitle">Grab a stool at the central bar, relax on our heated patio, or check live table wait times below.</p>
+  </header>
+
+  <!-- Live dining room status banner -->
+  <div class="container" style="margin-top: -1.5rem; margin-bottom: 3.5rem;">
+    <div class="notice-banner" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <span style="font-weight: 800;">📍 Dining Room Seating:</span>
+      <span class="wait-badge wait-low" id="live-wait-badge">Walk-ins Welcome</span>
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <main class="container">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+      
+      <!-- Details Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Visit Us</h3>
+        
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Address</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">
+            101 W. Worthington Ave, Suite 110<br>Charlotte, NC 28203
+          </p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Hours of Operation</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            <strong>Monday - Wednesday:</strong> 4:00 PM - 11:00 PM<br>
+            <strong>Thursday - Friday:</strong> 4:00 PM - 12:00 AM<br>
+            <strong>Saturday:</strong> 11:00 AM - 12:00 AM<br>
+            <strong>Sunday:</strong> 11:00 AM - 10:00 PM<br>
+            <span style="font-size: 0.85rem; color: #10b981; display: block; margin-top: 0.35rem;">
+              *Saturday & Sunday Brunch served 11:00 AM - 3:00 PM.
+            </span>
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 1rem; color: var(--color-gold); text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Parking & Access</h4>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;">
+            We offer 2-hour parking validations for the South End Design Center parking deck. Accessible directly off Worthington Ave.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Card -->
+      <div class="premium-card">
+        <h3 class="menu-category-title">Ask the Sommelier</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+          Curious about a specific Spanish grape variety, sherry profile, or looking for bottle suggestions? Message our cellars.
+        </p>
+        
+        <form id="contact-form">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg">Your Question</label>
+              <textarea id="contact-msg" required placeholder="e.g. Do you carry any Mencía wines from Bierzo?..." style="min-height: 100px;"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="padding: 0.9rem; margin-top: 0.5rem;">Send Inquiry</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="contact-success" style="padding: 3rem 0;">
+          <div class="success-icon">✉</div>
+          <h3 class="success-title">Question Sent!</h3>
+          <p class="success-msg">Thank you. Barcelona's Cellar Director will review and reply within 24 hours.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Table reservation Request Section -->
+    <section id="reserve-table" class="form-wrapper">
+      <div class="form-container">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Request Table Reservation</h2>
+        
+        <form id="reservation-form">
+          <p style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 500;">Submit your details. Walk-ins are always welcome, but pre-booking is recommended for weekend dinner hours.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required placeholder="(704) 555-0199">
+            </div>
+
+            <div class="form-group">
+              <label for="res-date">Requested Date</label>
+              <input type="date" id="res-date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Party Size</label>
+              <select id="guests" required>
+                <option value="2">2 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="8">8 Guests</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Table Request</button>
+          </div>
+        </form>
+
+        <div class="success-panel" id="success-panel">
+          <div class="success-icon">🍷</div>
+          <h3 class="success-title">Table Requested!</h3>
+          <p class="success-msg" id="success-message">Thank you. We have logged your request. We will email or text a confirmation code shortly.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="copyright-footer" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+      <p>© 2026 Barcelona Wine Bar. Charlotte South End.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Live Dining room wait-time calculation
+    function updateWaitTime() {
+      const now = new Date();
+      const hour = now.getHours();
+      const day = now.getDay();
+      
+      const badge = document.getElementById('live-wait-badge');
+
+      // Check open hours: 4 PM - 11 PM Mon-Wed, 4 PM - 12 AM Thu-Fri, 11 AM - 12 AM Sat, 11 AM - 10 PM Sun
+      let openHour = 16;
+      let closeHour = 23;
+
+      if (day === 0) { // Sunday
+        openHour = 11;
+        closeHour = 22;
+      } else if (day === 6) { // Saturday
+        openHour = 11;
+        closeHour = 24;
+      } else if (day === 4 || day === 5) { // Thu-Fri
+        openHour = 16;
+        closeHour = 24;
+      }
+
+      if (hour < openHour || hour >= closeHour) {
+        badge.innerText = "CLOSED - Cellar and dining room are closed";
+        badge.className = "wait-badge wait-high";
+        return;
+      }
+
+      // Peak dinner rush: Thu-Sat 6 PM - 10 PM (18:00 to 22:00)
+      const isDinnerRush = (day >= 4 && day <= 6) && (hour >= 18 && hour < 22);
+
+      // Brunch rush: Sat-Sun 11:30 AM - 2:30 PM (11:30 to 14:30)
+      const isBrunchRush = (day === 0 || day === 6) && (hour >= 11 && hour < 15);
+
+      // Sunday night special: Sun 5 PM - 9 PM
+      const isSundayNight = (day === 0 && hour >= 17 && hour < 21);
+
+      if (isDinnerRush) {
+        badge.innerText = "PEAK HOURS - Dining room & patio highly busy (45-60 min wait)";
+        badge.className = "wait-badge wait-high";
+      } else if (isBrunchRush) {
+        badge.innerText = "MODERATE CROWD - Brunch rush active (20-30 min wait)";
+        badge.className = "wait-badge wait-medium";
+      } else if (isSundayNight) {
+        badge.innerText = "HALF-OFF WINE NIGHT - High table demand (25-35 min wait)";
+        badge.className = "wait-badge wait-medium";
+      } else {
+        badge.innerText = "OFF-PEAK HOURS - Walk-ins seated immediately (0-5 min wait)";
+        badge.className = "wait-badge wait-low";
+      }
+    }
+
+    // Run on startup
+    updateWaitTime();
+
+    // Handle sommelier submissions
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      contactSuccess.style.display = 'block';
+    });
+
+    // Handle order submissions
+    const form = document.getElementById('reservation-form');
+    const successPanel = document.getElementById('success-panel');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const dateVal = document.getElementById('res-date').value;
+      const sizeVal = document.getElementById('guests').value;
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+      successMsg.innerHTML = `Reservation logged, <strong>${name}</strong>! We look forward to hosting your party of <strong>${sizeVal}</strong> on <strong>${dateVal}</strong>. We'll send details via SMS!`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocktails & Kitchen · Dot Dot Dot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --black: #0d0d0d;
+  --charcoal: #1a1a1a;
+  --gold: #c9a84c;
+  --amber: #d4a047;
+  --burgundy: #6b2c3a;
+  --merlot: #4a1a2e;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #888;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--black); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(201,168,76,.15); }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .8; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .15em; text-transform: uppercase; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--black), var(--charcoal)); padding: 3rem 2rem; text-align: center; border-bottom: 1px solid rgba(201,168,76,.1); }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .6; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; text-align: center; }
+.section .subtitle { text-align: center; color: var(--muted); font-style: italic; margin-bottom: 2.5rem; font-size: .95rem; }
+.menu-tabs { display: flex; gap: .25rem; justify-content: center; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.menu-tab { background: none; border: none; padding: .6rem 1.5rem; font-size: .85rem; font-weight: 600; cursor: pointer; color: var(--muted); border-bottom: 3px solid transparent; font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: .08em; transition: all .2s; }
+.menu-tab:hover { color: var(--gold); }
+.menu-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.menu-panel { display: none; }
+.menu-panel.active { display: block; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.menu-item { background: var(--charcoal); border: 1px solid rgba(201,168,76,.08); border-radius: 8px; padding: 1.25rem; }
+.menu-item h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--gold); }
+.menu-item .desc { font-size: .85rem; opacity: .6; line-height: 1.5; margin: 0 0 .5rem; }
+.menu-item .price { font-size: .9rem; color: var(--warm-white); }
+.menu-item .notes { font-size: .8rem; opacity: .45; font-style: italic; margin-top: .35rem; }
+.whiskey-note { background: var(--burgundy); color: var(--cream); padding: 2rem; border-radius: 8px; text-align: center; margin: 2rem 0; }
+.whiskey-note h3 { color: var(--gold); margin: 0 0 .5rem; }
+.whiskey-note p { opacity: .8; font-size: .9rem; line-height: 1.6; max-width: 500px; margin: 0 auto; }
+footer { background: var(--black); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(201,168,76,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Dot Dot Dot</a>
+  <div class="nav-links">
+    <a href="membership.html">Membership</a>
+    <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a>
+    <a href="cocktails.html">Cocktail Lab</a>
+    <a href="visit.html">Visit</a>
+    <a href="events.html">Events</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Cocktails &amp; Kitchen</h1>
+  <p>Classic libations and New American fare, crafted with intention</p>
+</header>
+
+<section class="section">
+  <div class="menu-tabs" role="tablist">
+    <button class="menu-tab active" role="tab" aria-selected="true" data-panel="cocktails">Cocktails</button>
+    <button class="menu-tab" role="tab" aria-selected="false" data-panel="whiskey">Whiskey &amp; Bourbon</button>
+    <button class="menu-tab" role="tab" aria-selected="false" data-panel="kitchen">The Kitchen</button>
+    <button class="menu-tab" role="tab" aria-selected="false" data-panel="wine">Wine &amp; Beer</button>
+  </div>
+
+  <div class="menu-panel active" id="panel-cocktails">
+    <h2 style="text-align:center;font-size:1.2rem;color:var(--gold);margin-bottom:1.5rem">Classic Cocktails</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Old Fashioned</h3>
+        <p class="desc">Bulleit bourbon, demerara, Angostura and orange bitters, expressed citrus</p>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <h3>The Last Word</h3>
+        <p class="desc">Hendrick's gin, green chartreuse, maraschino, fresh lime</p>
+        <span class="price">$17</span>
+      </div>
+      <div class="menu-item">
+        <h3>Sazerac</h3>
+        <p class="desc">Sazerac rye, absinthe rinse, Peychaud's bitters, lemon</p>
+        <span class="price">$17</span>
+      </div>
+      <div class="menu-item">
+        <h3>French 75</h3>
+        <p class="desc">Tanqueray gin, Champagne, lemon, simple syrup</p>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <h3>Smoked Old Fashioned</h3>
+        <p class="desc">Woodford Reserve, smoked cherrywood, demerara, orange</p>
+        <span class="price">$19</span>
+      </div>
+      <div class="menu-item">
+        <h3>Manhattan</h3>
+        <p class="desc">Rittenhouse rye, sweet vermouth, Angostura bitters, cherry</p>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <h3>Negroni</h3>
+        <p class="desc">Beefeater gin, Campari, sweet vermouth, orange</p>
+        <span class="price">$15</span>
+      </div>
+      <div class="menu-item">
+        <h3>Martini</h3>
+        <p class="desc">Hendrick's gin, dry vermouth, lemon twist or olive — your preference</p>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <h3>Whiskey Sour</h3>
+        <p class="desc">Four Roses bourbon, lemon, simple syrup, egg white, Angostura</p>
+        <span class="price">$15</span>
+      </div>
+      <div class="menu-item">
+        <h3>Vieux Carré</h3>
+        <p class="desc">Rye, cognac, sweet vermouth, Bénédictine, Peychaud's, Angostura</p>
+        <span class="price">$18</span>
+      </div>
+      <div class="menu-item">
+        <h3>Penicillin</h3>
+        <p class="desc">Blended scotch, lemon, honey-ginger syrup, Islay float</p>
+        <span class="price">$17</span>
+      </div>
+      <div class="menu-item">
+        <h3>Espresso Martini</h3>
+        <p class="desc">Vodka, Kahlúa, fresh espresso, demerara</p>
+        <span class="price">$16</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="panel-whiskey">
+    <h2 style="text-align:center;font-size:1.2rem;color:var(--gold);margin-bottom:1.5rem">Whiskey &amp; Bourbon</h2>
+    <p style="text-align:center;opacity:.6;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto">Our back bar features one of Charlotte's most extensive whiskey collections. Here's a glimpse.</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Bourbon Flight</h3>
+        <p class="desc">Three rotating pours — ask your server for today's selection</p>
+        <span class="price">$22</span>
+      </div>
+      <div class="menu-item">
+        <h3>Rye Flight</h3>
+        <p class="desc">Three rye whiskeys, curated by our bar team</p>
+        <span class="price">$24</span>
+      </div>
+      <div class="menu-item">
+        <h3>Blanton's Single Barrel</h3>
+        <p class="desc">Straight from the barrel, selected by our team</p>
+        <span class="price">$22</span>
+        <p class="notes">Limited availability</p>
+      </div>
+      <div class="menu-item">
+        <h3>Weller 12 Year</h3>
+        <p class="desc">Wheated bourbon, smooth and refined</p>
+        <span class="price">$28</span>
+        <p class="notes">Very limited</p>
+      </div>
+      <div class="menu-item">
+        <h3>Pappy Van Winkle 15 Year</h3>
+        <p class="desc">The crown jewel — available by the pour, when available</p>
+        <span class="price">MP</span>
+        <p class="notes">Market price · ask your server</p>
+      </div>
+      <div class="menu-item">
+        <h3>High West Midwinter's Night Dram</h3>
+        <p class="desc">Seasonal rye, port-finished, complex and bold</p>
+        <span class="price">$26</span>
+      </div>
+    </div>
+    <div class="whiskey-note">
+      <h3>Rare Pour Inquiries</h3>
+      <p>Our back bar holds over 200 whiskeys. If you're looking for something specific, ask your server — we may have a bottle behind the bar.</p>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="panel-kitchen">
+    <h2 style="text-align:center;font-size:1.2rem;color:var(--gold);margin-bottom:1.5rem">The Kitchen</h2>
+    <p style="text-align:center;opacity:.6;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto">New American small plates, designed for sharing. Sourced from Carolina farms and purveyors.</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Burrata &amp; Heirloom Tomatoes</h3>
+        <p class="desc">Creamy burrata, seasonal tomatoes, basil, balsamic reduction, grilled sourdough</p>
+        <span class="price">$15</span>
+      </div>
+      <div class="menu-item">
+        <h3>Beef Tartare</h3>
+        <p class="desc">Hand-cut filet, capers, cornichon, Dijon, quail yolk, crostini</p>
+        <span class="price">$18</span>
+      </div>
+      <div class="menu-item">
+        <h3>Roasted Bone Marrow</h3>
+        <p class="desc">Parsley salad, pickled shallots, toasted baguette</p>
+        <span class="price">$16</span>
+      </div>
+      <div class="menu-item">
+        <h3>Charcuterie Board</h3>
+        <p class="desc">House-selected cured meats, artisan cheeses, house pickles, mustard</p>
+        <span class="price">$22</span>
+      </div>
+      <div class="menu-item">
+        <h3>Crispy Brussels Sprouts</h3>
+        <p class="desc">Fried brussels, honey-sriracha glaze, toasted pecans, parmesan</p>
+        <span class="price">$13</span>
+      </div>
+      <div class="menu-item">
+        <h3>Seared Scallops</h3>
+        <p class="desc">Carolina day-boat scallops, cauliflower purée, brown butter, sage</p>
+        <span class="price">$19</span>
+      </div>
+      <div class="menu-item">
+        <h3>Wagyu Sliders</h3>
+        <p class="desc">Two sliders, caramelized onion, aged cheddar, truffle aioli, brioche</p>
+        <span class="price">$17</span>
+      </div>
+      <div class="menu-item">
+        <h3>Dark Chocolate Pot de Crème</h3>
+        <p class="desc">Valrhona chocolate, sea salt, crème fraîche, shortbread</p>
+        <span class="price">$11</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="panel-wine">
+    <h2 style="text-align:center;font-size:1.2rem;color:var(--gold);margin-bottom:1.5rem">Wine &amp; Beer</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Wine by the Glass</h3>
+        <p class="desc">Rotating selection of red, white, and rosé — domestic and French</p>
+        <span class="price">$12–$16</span>
+      </div>
+      <div class="menu-item">
+        <h3>Champagne Split</h3>
+        <p class="desc">Individual bottle · Veuve Clicquot or equivalent</p>
+        <span class="price">$22</span>
+      </div>
+      <div class="menu-item">
+        <h3>Sparkling Wine</h3>
+        <p class="desc">Crémant de Loire or comparable — by the glass</p>
+        <span class="price">$14</span>
+      </div>
+      <div class="menu-item">
+        <h3>Local Beer</h3>
+        <p class="desc">Rotating taps from Charlotte-area breweries</p>
+        <span class="price">$7</span>
+      </div>
+      <div class="menu-item">
+        <h3>Imported Beer</h3>
+        <p class="desc">Belgian, German, and other European selections</p>
+        <span class="price">$8</span>
+      </div>
+      <div class="menu-item">
+        <h3>Non-Alcoholic</h3>
+        <p class="desc">Seedlip cocktails, craft sodas, and NA spirits</p>
+        <span class="price">$8–$11</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Dot Dot Dot · 4237 Park Rd Unit B · Charlotte, NC 28209</p>
+  <p><a href="membership.html">Membership</a> · <a href="cocktails-kitchen.html">Cocktails &amp; Kitchen</a> · <a href="visit.html">Visit</a> · <a href="events.html">Events</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const tabs = document.querySelectorAll('.menu-tab');
+  const panels = {
+    cocktails: document.getElementById('panel-cocktails'),
+    whiskey: document.getElementById('panel-whiskey'),
+    kitchen: document.getElementById('panel-kitchen'),
+    wine: document.getElementById('panel-wine')
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      Object.values(panels).forEach(p => p.classList.remove('active'));
+      const id = this.dataset.panel;
+      if (panels[id]) panels[id].classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>

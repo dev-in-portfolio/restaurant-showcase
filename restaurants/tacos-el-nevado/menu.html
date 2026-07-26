@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tacos El Nevado - Charlotte, NC | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">N</div>
+        <h1 class="brand-name">
+          El Nevado
+          <span>Tacos & Oaxacan Kitchen</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header container">
+    <h2 class="page-title">Mexican Culinary Board</h2>
+    <p class="page-subtitle">Savor street classics and hearty stews. Check our live weekend Menudo status below, or browse our daily taco and torta menu listings.</p>
+  </header>
+
+  <!-- Interactive Menudo Availability Estimator Section -->
+  <main class="container">
+    
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h3 class="section-title" style="margin-bottom: 1.5rem;">Weekend Menudo Tracker</h3>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Our traditional Menudo (beef tripe & hominy stew seasoned with Oaxacan dried chiles) is slow-boiled and served **only on Saturdays and Sundays**.
+      </p>
+      
+      <!-- Display Panel -->
+      <div class="result-card" id="menudo-display" style="text-align: center; min-height: auto; background: radial-gradient(circle, rgba(234, 88, 12, 0.05) 0%, rgba(0, 0, 0, 0.6) 90%); padding: 3rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block; background: var(--color-terracotta-dim); color: var(--color-terracotta); border-color: rgba(234, 88, 12, 0.2);" id="menudo-status-badge">Checking Pot...</span>
+        <h4 style="font-size: 2.2rem; color: #ffffff; margin-bottom: 0.5rem;" id="menudo-title">Menudo Status</h4>
+        <p style="font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.6;" id="menudo-desc">Determining if fresh pots are boiling based on your local clock...</p>
+      </div>
+    </section>
+
+    <!-- Traditional Menu List Grid -->
+    <h3 class="section-title">Mexican & Oaxacan Board</h3>
+    <div class="menu-grid">
+      
+      <div class="premium-card">
+        <h4 class="menu-category-title">Antojitos & Tacos</h4>
+        
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Street Tacos<span class="menu-item-badge">Hand-Pressed Masa</span></span>
+            <span class="menu-item-price">$3.00 <span style="font-size: 0.85rem; font-weight: 400; color: var(--color-text-muted);">/ea</span></span>
+          </div>
+          <p class="menu-item-desc">Served on double hand-pressed fresh corn tortillas with chopped cilantro, onions, lime, and radish wedges. Choose Al Pastor, Carnitas, Carne Asada, Barbacoa, or Lengua (+$0.50).</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Quesabirria Combo</span>
+            <span class="menu-item-price">$13.00</span>
+          </div>
+          <p class="menu-item-desc">Three griddled corn tortillas folded with melted stringy cheese, shredded beef birria, onions, and cilantro. Served with a cup of hot consomé dipping broth.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Sopes</span>
+            <span class="menu-item-price">$4.50 <span style="font-size: 0.85rem; font-weight: 400; color: var(--color-text-muted);">/ea</span></span>
+          </div>
+          <p class="menu-item-desc">Thick corn masa boats with pinched edges, layered with refried black beans, choice of meat, lettuce, crumbled cotija cheese, and Mexican crema.</p>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <h4 class="menu-category-title">Tortas, stews & Aguas</h4>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Torta Oaxaqueña</span>
+            <span class="menu-item-price">$10.50</span>
+          </div>
+          <p class="menu-item-desc">Toasted telera sandwich bread stuffed with breaded steak (milanesa), black beans, avocado slices, stringy quesillo cheese, pickled jalapeños, and tomatoes.</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Oaxacan Clay-Pot Tlayuda</span>
+            <span class="menu-item-price">$14.50</span>
+          </div>
+          <p class="menu-item-desc">Large, crispy toasted corn tortilla spread with pork lard (asiento), black bean purée, shredded quesillo cheese, cabbage, and tasajo (thinly sliced grilled beef).</p>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Horchata & Jamaica</span>
+            <span class="menu-item-price">$3.50</span>
+          </div>
+          <p class="menu-item-desc">Traditional ice-cold sweet rice milk flavored with cinnamon sticks and vanilla, or sweet hibiscus flower tea (Jamaica) poured fresh.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>Locations</h3>
+        <p>4715 Central Ave, Charlotte, NC 28205<br>4640 South Blvd, Charlotte, NC 28209</p>
+      </div>
+      <div class="info-block">
+        <h3>Hours</h3>
+        <p>Mon - Thu: 10:00 AM - 10:00 PM<br>Fri - Sat: 10:00 AM - 11:00 PM<br>Sun: 10:00 AM - 10:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Details</h3>
+        <p>Phone: (704) 567-8889 (Central) | (704) 525-4475 (South)<br>Dine-In | Counter Takeout | Weekend Menudo</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Tacos El Nevado. Charlotte landmark since 2010.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateMenudoTracker() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+      
+      const badge = document.getElementById('menudo-status-badge');
+      const title = document.getElementById('menudo-title');
+      const desc = document.getElementById('menudo-desc');
+
+      // Check if Saturday (6) or Sunday (0)
+      if (day === 6 || day === 0) {
+        badge.innerText = "FRESH BATCH AVAILABLE NOW";
+        badge.style.background = "rgba(16, 185, 129, 0.1)";
+        badge.style.color = "var(--color-cactus)";
+        badge.style.borderColor = "rgba(16, 185, 129, 0.2)";
+        title.innerText = "🔥 Menudo is Hot & Ready!";
+        desc.innerText = "Drop by our Central Ave or South Blvd register counters to grab a hot quart of seasoned tripe & hominy soup. Available until sold out!";
+      } else {
+        badge.innerText = "WEEKEND ONLY BATCH";
+        badge.style.background = "rgba(234, 88, 12, 0.1)";
+        badge.style.color = "var(--color-terracotta)";
+        badge.style.borderColor = "rgba(234, 88, 12, 0.2)";
+        title.innerText = "Next Stew is Simmering";
+        
+        // Calculate days left to Saturday (6)
+        let daysLeft = 6 - day;
+        if (daysLeft < 0) daysLeft += 7;
+        
+        desc.innerHTML = `Our master chefs are prepping Oaxacan guajillo spices. Fresh batches boil starting in <strong>${daysLeft} days</strong> at Saturday 10:00 AM. Stop by this weekend!`;
+      }
+    }
+
+    // Run on load
+    updateMenudoTracker();
+  </script>
+</body>
+</html>

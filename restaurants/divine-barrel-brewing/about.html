@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · Divine Barrel Brewing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --indigo: #2d1b4e;
+  --gold: #d4a847;
+  --teal: #1a7a7a;
+  --charcoal: #1a1a1a;
+  --cream: #f5efe0;
+  --warm-white: #faf6ee;
+  --muted: #999;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--charcoal); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--indigo); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .85; }
+.nav a:hover { opacity: 1; color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--gold) !important; letter-spacing: .12em; text-transform: none; opacity: 1 !important; }
+.page-header { background: linear-gradient(135deg, var(--indigo), #1a0d2e); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { opacity: .65; font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+.section h2 { font-size: 1.5rem; color: var(--warm-white); margin: 0 0 .25rem; border-left: 3px solid var(--gold); padding-left: .75rem; }
+.section .subtitle { color: var(--muted); font-style: italic; margin-bottom: 2rem; font-size: .95rem; }
+.story-text { max-width: 720px; }
+.story-text p { font-size: .95rem; line-height: 1.7; opacity: .7; margin-bottom: 1rem; }
+.timeline { margin: 3rem 0; position: relative; padding-left: 2rem; border-left: 2px solid rgba(212,168,71,.2); }
+.timeline-item { margin-bottom: 2rem; position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -2.4rem; top: .3rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+.timeline-item .year { font-size: .8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; }
+.timeline-item .title { font-size: 1rem; font-weight: 600; color: var(--warm-white); margin: .15rem 0 .25rem; }
+.timeline-item .desc { font-size: .85rem; opacity: .6; line-height: 1.5; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.team-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.06); border-radius: 8px; padding: 1.5rem; text-align: center; }
+.team-card .avatar { width: 60px; height: 60px; border-radius: 50%; background: rgba(212,168,71,.12); margin: 0 auto .75rem; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; }
+.team-card h3 { font-size: .95rem; margin: 0; color: var(--gold); }
+.team-card .role { font-size: .82rem; opacity: .6; }
+.philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+@media (max-width:640px) { .philosophy-grid { grid-template-columns: 1fr; } }
+.phil-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.06); border-radius: 8px; padding: 1.5rem; }
+.phil-card h3 { font-size: 1rem; color: var(--gold); margin: 0 0 .5rem; }
+.phil-card p { font-size: .88rem; opacity: .65; line-height: 1.6; margin: 0; }
+.values { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.value-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,168,71,.06); border-radius: 6px; padding: 1.25rem; text-align: center; }
+.value-card .icon { font-size: 1.5rem; display: block; margin-bottom: .35rem; }
+.value-card span { font-size: .85rem; opacity: .65; }
+footer { background: var(--charcoal); color: rgba(255,255,255,.4); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; border-top: 1px solid rgba(212,168,71,.08); }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.25); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Divine Barrel</a>
+  <div class="nav-links">
+    <a href="beers.html">Beers</a>
+    <a href="cellar.html">Sour Program</a>
+    <a href="taproom.html">Taproom</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Story</h1>
+  <p>From a backyard brew rig to NoDa's destination taproom</p>
+</header>
+
+<section class="section">
+  <div class="story-text">
+    <p>Divine Barrel Brewing was born from a simple belief: great beer brings people together. Founders James Wilson and Mike Weber started experimenting with hop blends and barrel-aging in a shared garage, dreaming of a space where creativity and community could ferment side by side.</p>
+    <p>In 2020, that dream became reality when they opened the taproom on North Davidson Street in Charlotte's NoDa neighborhood. What started as a five-barrel system has grown into a 15-barrel production facility, but the spirit remains the same — bold flavors, experimental batches, and a warm welcome for everyone who walks through the door.</p>
+    <p>Today, Divine Barrel is known across the Southeast for our hazy IPAs, barrel-aged sours, and the kind of hospitality that makes strangers into regulars. We source local ingredients, collaborate with fellow Charlotte breweries, and pour every pint with pride.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="year">2018</span>
+      <div class="title">The Garage Days</div>
+      <div class="desc">James and Mike begin homebrewing on a 3-gallon system, experimenting with IPA hop combos and bourbon barrel stouts.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2019</span>
+      <div class="title">Finding the Space</div>
+      <div class="desc">After a year of test batches and renter's insurance claims, the duo signs a lease at 3701 N Davidson St.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2020</span>
+      <div class="title">Grand Opening</div>
+      <div class="desc">Divine Barrel opens its doors with 8 taps, a 5-bbl system, and a lineup built around Universal Language IPA.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2022</span>
+      <div class="title">Expansion</div>
+      <div class="desc">Production scales to 15 bbl. Canning line installed. Distribution begins across Charlotte and surrounding counties.</div>
+    </div>
+    <div class="timeline-item">
+      <span class="year">2024</span>
+      <div class="title">Barrel Program Matures</div>
+      <div class="desc">Dedicated barrel-aging room built. Snakes and Big Lubelski become cult favorites. Taproom hosts 100+ events per year.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,168,71,.06)">
+  <h2>Our Philosophy</h2>
+  <p class="subtitle">What we stand for</p>
+  <div class="philosophy-grid">
+    <div class="phil-card">
+      <h3>Beer First</h3>
+      <p>Every recipe starts with a question: "What if?" We push boundaries with hops, barrels, and fermentation, but never at the cost of drinkability.</p>
+    </div>
+    <div class="phil-card">
+      <h3>Community Built</h3>
+      <p>We host trivia, vinyl nights, run club, and fundraisers because a taproom should be more than a place to drink — it should be a gathering place.</p>
+    </div>
+    <div class="phil-card">
+      <h3>Always Welcoming</h3>
+      <p>Whether you're a beer nerd or trying your first IPA, you belong here. We're proud to be a pet-friendly, child-friendly, and LGBTQ+ welcoming space.</p>
+    </div>
+    <div class="phil-card">
+      <h3>Locally Rooted</h3>
+      <p>We partner with NC farms, roasters, and food purveyors. Our spent grain goes to local compost. We pour for our neighbors and sponsor neighborhood events.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,168,71,.06)">
+  <h2>Meet the Team</h2>
+  <p class="subtitle">The people behind the pints</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="avatar">JW</div>
+      <h3>James Wilson</h3>
+      <span class="role">Co-Founder &amp; Head Brewer</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">MW</div>
+      <h3>Mike Weber</h3>
+      <span class="role">Co-Founder &amp; Operations</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">SG</div>
+      <h3>Sarah Green</h3>
+      <span class="role">Taproom Manager</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">DR</div>
+      <h3>Danny Reyes</h3>
+      <span class="role">Lead Brewer</span>
+    </div>
+    <div class="team-card">
+      <div class="avatar">MK</div>
+      <h3>Maya Krishnan</h3>
+      <span class="role">Events &amp; Marketing</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid rgba(212,168,71,.06)">
+  <h2>Our Values</h2>
+  <div class="values">
+    <div class="value-card"><span class="icon" aria-hidden="true">🧑‍🌾</span><span>Local Sourcing</span></div>
+    <div class="value-card"><span class="icon" aria-hidden="true">♻️</span><span>Sustainability</span></div>
+    <div class="value-card"><span class="icon" aria-hidden="true">🎨</span><span>Creative Risk</span></div>
+    <div class="value-card"><span class="icon" aria-hidden="true">🤝</span><span>Community First</span></div>
+    <div class="value-card"><span class="icon" aria-hidden="true">🌈</span><span>Inclusion</span></div>
+  </div>
+</section>
+
+<footer>
+  <p>Divine Barrel Brewing · 3701 N Davidson St Suite #203 · Charlotte, NC 28205 · (980) 237-1803</p>
+  <p><a href="beers.html">Beers</a> · <a href="taproom.html">Taproom</a> · <a href="events.html">Events</a> · <a href="about.html">About</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>

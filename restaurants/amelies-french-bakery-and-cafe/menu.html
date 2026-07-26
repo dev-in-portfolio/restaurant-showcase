@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu · Amélie's French Bakery & Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root {
+  --navy: #1a1a2e;
+  --blush: #d4a5b5;
+  --gold: #c9a84c;
+  --cream: #faf3e0;
+  --rose: #e8a0bf;
+  --deep-rose: #c26a8a;
+  --charcoal: #2d2d3f;
+  --warm-white: #fff9f0;
+}
+body { background: var(--cream); color: var(--charcoal); font-family: 'DM Sans', sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+.nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav a { color: var(--cream); text-decoration: none; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.nav a:hover { color: var(--gold); }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.15rem; color: var(--gold) !important; letter-spacing: 0; text-transform: none; }
+.page-header { background: linear-gradient(135deg, var(--navy) 0%, #16213e 100%); color: var(--cream); padding: 3rem 2rem; text-align: center; }
+.page-header h1 { font-size: 2.2rem; margin: 0; color: var(--gold); }
+.page-header p { color: var(--blush); font-style: italic; margin: .5rem 0 0; font-size: .95rem; }
+.section { padding: 3rem 2rem 4rem; max-width: 1100px; margin: 0 auto; }
+.filter-bar { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center; margin-bottom: .5rem; }
+.filter-bar .filter-label { font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #888; }
+.filter-btn { background: none; border: 2px solid #ddd; padding: .5rem 1.25rem; border-radius: 30px; font-size: .85rem; font-weight: 600; cursor: pointer; color: #666; font-family: 'DM Sans', sans-serif; transition: all .2s; }
+.filter-btn:hover { border-color: var(--blush); color: var(--navy); }
+.filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.cat-tabs { display: flex; gap: .25rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+.cat-tab { background: none; border: none; padding: .6rem 1.25rem; font-size: .85rem; font-weight: 600; cursor: pointer; color: #888; border-bottom: 3px solid transparent; font-family: 'DM Sans', sans-serif; transition: all .2s; }
+.cat-tab:hover { color: var(--navy); }
+.cat-tab.active { color: var(--navy); border-bottom-color: var(--gold); }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+.menu-item { background: var(--warm-white); border-radius: 8px; padding: 1.25rem; border: 1px solid rgba(0,0,0,.06); transition: opacity .3s, transform .3s; }
+.menu-item.hidden { display: none; }
+.menu-item h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--navy); }
+.menu-item .desc { font-size: .85rem; color: #666; line-height: 1.5; margin: 0 0 .5rem; }
+.menu-item .price { font-size: .9rem; font-weight: 600; color: var(--deep-rose); }
+.menu-item .diet { display: inline-block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; background: var(--cream); color: #888; padding: .15rem .5rem; border-radius: 3px; margin-right: .25rem; }
+.menu-item .diet.gf { background: #e8f5e9; color: #2e7d32; }
+.menu-item .diet.vg { background: #fff3e0; color: #e65100; }
+.menu-item .diet.vn { background: #f3e5f5; color: #6a1b9a; }
+.menu-item .cat-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--blush); font-weight: 600; margin-bottom: .25rem; }
+.demo-form { max-width: 600px; margin: 3rem auto 0; background: var(--warm-white); padding: 2rem; border-radius: 8px; border: 1px solid rgba(0,0,0,.06); }
+.demo-form h3 { text-align: center; color: var(--navy); font-size: 1.2rem; margin: 0 0 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: .35rem; color: #555; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: .65rem .75rem; border: 1px solid #ddd; border-radius: 4px; font-size: .9rem; font-family: 'DM Sans', sans-serif; box-sizing: border-box; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn { display: inline-block; background: var(--gold); color: var(--navy); padding: .75rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer; width: 100%; }
+.btn:hover { background: #b8942e; }
+.toast { background: var(--navy); color: var(--cream); padding: 1rem 2rem; border-radius: 8px; text-align: center; margin-top: 1rem; display: none; }
+.toast.show { display: block; }
+footer { background: var(--navy); color: rgba(255,255,255,.6); text-align: center; padding: 2rem; font-size: .82rem; line-height: 1.6; }
+footer a { color: var(--gold); text-decoration: none; }
+.disclosure { font-size: .78rem; color: rgba(255,255,255,.45); font-style: italic; }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Amélie's</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Story</a>
+    <a href="catering.html">Catering</a>
+    <a href="locations.html">Locations</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Our Menu</h1>
+  <p>French classics and café favorites — crafted fresh daily</p>
+</header>
+
+<section class="section">
+  <div class="filter-bar">
+    <span class="filter-label">Dietary:</span>
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="gf">Sans Gluten</button>
+    <button class="filter-btn" data-filter="vg">Végétarien</button>
+    <button class="filter-btn" data-filter="vn">Végan</button>
+  </div>
+
+  <div class="cat-tabs" role="tablist" aria-label="Menu categories">
+    <button class="cat-tab active" role="tab" aria-selected="true" data-cat="all">Tout</button>
+    <button class="cat-tab" role="tab" aria-selected="false" data-cat="viennoiserie">Viennoiserie</button>
+    <button class="cat-tab" role="tab" aria-selected="false" data-cat="patisserie">Pâtisserie</button>
+    <button class="cat-tab" role="tab" aria-selected="false" data-cat="dejeuner">Déjeuner</button>
+    <button class="cat-tab" role="tab" aria-selected="false" data-cat="cafe">Café &amp; Thé</button>
+    <button class="cat-tab" role="tab" aria-selected="false" data-cat="boissons">Boissons</button>
+  </div>
+
+  <div class="menu-grid" id="menuGrid">
+    <div class="menu-item" data-category="viennoiserie" data-diets="">
+      <div class="cat-label">Viennoiserie</div>
+      <h3>Butter Croissant</h3>
+      <p class="desc">Golden, flaky, and deeply buttery — our signature laminated dough</p>
+      <span class="price">$4.25</span>
+    </div>
+    <div class="menu-item" data-category="viennoiserie" data-diets="vg">
+      <div class="cat-label">Viennoiserie</div>
+      <h3>Pain au Chocolat</h3>
+      <p class="desc">Butter croissant dough wrapped around dark chocolate batons</p>
+      <span class="price">$4.75</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="viennoiserie" data-diets="vg">
+      <div class="cat-label">Viennoiserie</div>
+      <h3>Almond Croissant</h3>
+      <p class="desc">Filled with almond cream and topped with sliced almonds and powdered sugar</p>
+      <span class="price">$5.50</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="viennoiserie" data-diets="vn">
+      <div class="cat-label">Viennoiserie</div>
+      <h3>Vegan Pain au Chocolat</h3>
+      <p class="desc">Plant-based laminated dough with rich dark chocolate</p>
+      <span class="price">$5.25</span>
+      <span class="diet vn">Végan</span>
+    </div>
+    <div class="menu-item" data-category="patisserie" data-diets="">
+      <div class="cat-label">Pâtisserie</div>
+      <h3>French Macarons</h3>
+      <p class="desc">Assorted flavors — vanilla, rose, pistachio, chocolate, raspberry</p>
+      <span class="price">$3.00</span>
+    </div>
+    <div class="menu-item" data-category="patisserie" data-diets="gf">
+      <div class="cat-label">Pâtisserie</div>
+      <h3>Chocolate Éclair</h3>
+      <p class="desc">Choux pastry filled with vanilla pastry cream, topped with dark chocolate ganache</p>
+      <span class="price">$5.25</span>
+      <span class="diet gf">Sans Gluten</span>
+    </div>
+    <div class="menu-item" data-category="patisserie" data-diets="gf vg">
+      <div class="cat-label">Pâtisserie</div>
+      <h3>Fruit Tartlet</h3>
+      <p class="desc">Crisp tart shell with vanilla custard and seasonal fresh fruit</p>
+      <span class="price">$5.75</span>
+      <span class="diet gf">Sans Gluten</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="patisserie" data-diets="">
+      <div class="cat-label">Pâtisserie</div>
+      <h3>Crème Brûlée</h3>
+      <p class="desc">Classic vanilla custard with caramelized sugar top</p>
+      <span class="price">$5.50</span>
+    </div>
+    <div class="menu-item" data-category="patisserie" data-diets="vn gf">
+      <div class="cat-label">Pâtisserie</div>
+      <h3>Vegan Chocolate Cake</h3>
+      <p class="desc">Rich, moist chocolate cake with dairy-free ganache</p>
+      <span class="price">$6.00</span>
+      <span class="diet vn">Végan</span>
+      <span class="diet gf">Sans Gluten</span>
+    </div>
+    <div class="menu-item" data-category="dejeuner" data-diets="">
+      <div class="cat-label">Déjeuner</div>
+      <h3>Quiche du Jour</h3>
+      <p class="desc">Savory egg custard with seasonal vegetables and cheese in a buttery crust</p>
+      <span class="price">$8.50</span>
+    </div>
+    <div class="menu-item" data-category="dejeuner" data-diets="">
+      <div class="cat-label">Déjeuner</div>
+      <h3>Croque Monsieur</h3>
+      <p class="desc">Ham, Gruyère, and béchamel on toasted brioche</p>
+      <span class="price">$10.50</span>
+    </div>
+    <div class="menu-item" data-category="dejeuner" data-diets="vg">
+      <div class="cat-label">Déjeuner</div>
+      <h3>Croque Madame</h3>
+      <p class="desc">Croque Monsieur with a fried egg and herbed salad</p>
+      <span class="price">$11.50</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="dejeuner" data-diets="vg">
+      <div class="cat-label">Déjeuner</div>
+      <h3>Signature Chicken Salad</h3>
+      <p class="desc">House-made chicken salad with grapes, pecans, and fresh herbs on mixed greens</p>
+      <span class="price">$9.75</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="dejeuner" data-diets="vg gf">
+      <div class="cat-label">Déjeuner</div>
+      <h3>Niçoise Salad</h3>
+      <p class="desc">Tuna, hard-boiled egg, olives, green beans, potatoes, and vinaigrette</p>
+      <span class="price">$11.00</span>
+      <span class="diet vg">Végétarien</span>
+      <span class="diet gf">Sans Gluten</span>
+    </div>
+    <div class="menu-item" data-category="dejeuner" data-diets="vn gf">
+      <div class="cat-label">Déjeuner</div>
+      <h3>Harvest Bowl</h3>
+      <p class="desc">Quinoa, roasted vegetables, chickpeas, and lemon-tahini dressing</p>
+      <span class="price">$10.25</span>
+      <span class="diet vn">Végan</span>
+      <span class="diet gf">Sans Gluten</span>
+    </div>
+    <div class="menu-item" data-category="cafe" data-diets="vg">
+      <div class="cat-label">Café &amp; Thé</div>
+      <h3>Café au Lait</h3>
+      <p class="desc">Rich espresso with steamed milk</p>
+      <span class="price">$4.50</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="cafe" data-diets="vg">
+      <div class="cat-label">Café &amp; Thé</div>
+      <h3>Latte</h3>
+      <p class="desc">Espresso with steamed milk and a light layer of foam</p>
+      <span class="price">$4.75</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="cafe" data-diets="vg">
+      <div class="cat-label">Café &amp; Thé</div>
+      <h3>Matcha Latte</h3>
+      <p class="desc">Ceremonial grade matcha whisked with steamed milk</p>
+      <span class="price">$5.25</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+    <div class="menu-item" data-category="cafe" data-diets="">
+      <div class="cat-label">Café &amp; Thé</div>
+      <h3>Café Noir</h3>
+      <p class="desc">House drip coffee or single-origin pour-over</p>
+      <span class="price">$3.25</span>
+    </div>
+    <div class="menu-item" data-category="cafe" data-diets="">
+      <div class="cat-label">Café &amp; Thé</div>
+      <h3>French Press</h3>
+      <p class="desc">Serves two — your choice of roast</p>
+      <span class="price">$6.00</span>
+    </div>
+    <div class="menu-item" data-category="boissons" data-diets="">
+      <div class="cat-label">Boissons</div>
+      <h3>French Lemonade</h3>
+      <p class="desc">Sparkling or still, house-made with fresh lemons</p>
+      <span class="price">$3.75</span>
+    </div>
+    <div class="menu-item" data-category="boissons" data-diets="">
+      <div class="cat-label">Boissons</div>
+      <h3>Kombucha</h3>
+      <p class="desc">Rotating seasonal flavors, on tap</p>
+      <span class="price">$5.00</span>
+    </div>
+    <div class="menu-item" data-category="boissons" data-diets="">
+      <div class="cat-label">Boissons</div>
+      <h3>Wine by the Glass</h3>
+      <p class="desc">French and domestic selections — red, white, rosé</p>
+      <span class="price">$8.00</span>
+    </div>
+    <div class="menu-item" data-category="boissons" data-diets="vg">
+      <div class="cat-label">Boissons</div>
+      <h3>French Martini</h3>
+      <p class="desc">Vodka, pineapple juice, and Chambord</p>
+      <span class="price">$11.00</span>
+      <span class="diet vg">Végétarien</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <form class="demo-form" data-demo-form>
+    <h3>Reserve a Table</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="guests">Guests</label>
+        <select id="guests">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <select id="time">
+          <option>Breakfast</option><option>Lunch</option><option>Afternoon</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pref">Location</label>
+      <select id="pref">
+        <option>NoDa</option><option>Park Road</option><option>Carmel Commons</option><option>Uptown</option>
+      </select>
+    </div>
+    <button class="btn" type="submit">Request Reservation</button>
+    <div class="toast" role="alert">Merci! We'll confirm your table shortly.</div>
+  </form>
+</section>
+
+<footer>
+  <p>Amélie's French Bakery &amp; Café · Charlotte, NC</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Story</a> · <a href="catering.html">Catering</a> · <a href="locations.html">Locations</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+<script>
+(function() {
+  const filterBtns = document.querySelectorAll('[data-filter]');
+  const catTabs = document.querySelectorAll('[data-cat]');
+  const items = document.querySelectorAll('.menu-item');
+  let activeFilter = 'all';
+  let activeCat = 'all';
+
+  function applyFilters() {
+    items.forEach(item => {
+      const cats = item.dataset.category;
+      const diets = item.dataset.diets || '';
+      const catMatch = activeCat === 'all' || cats === activeCat;
+      let dietMatch = activeFilter === 'all';
+      if (!dietMatch) {
+        dietMatch = diets.split(' ').includes(activeFilter);
+      }
+      item.classList.toggle('hidden', !(catMatch && dietMatch));
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activeFilter = this.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  catTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      catTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      activeCat = this.dataset.cat;
+      applyFilters();
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V Lounge & Raw Bar · Eddie V's Prime Seafood</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Local overrides to match Eddie V's look and feel */
+.seafood-mat {
+  background: radial-gradient(circle, #221a12 0%, #0d0a07 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s;
+  color: #fff;
+}
+.seafood-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .seafood-grid {
+    grid-template-columns: 1fr;
+  }
+}
+select {
+  background: #111;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  font-family: inherit;
+}
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.control-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+</style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">Eddie V's</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="lounge.html" class="active">V Lounge</a></li>
+        <li><a href="private-dining.html">Private Dining</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="visit.html#reservations" class="nav-cta">Reserve</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 4rem 2rem; min-height: 35vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>The V Lounge &amp; Raw Bar</h1>
+      <p class="hero-sub">Nightly live jazz, hand-shaken reserve cocktails, and chilled raw bar favorites</p>
+    </div>
+  </header>
+
+  <section class="section" style="background: #000; color: #fff;">
+    <div class="container">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); text-align: center; margin-bottom: 1.5rem;">Raw Bar Custom Platter Builder</h2>
+      
+      <div class="seafood-grid" style="background: rgba(255,255,255,0.02); padding: 40px 30px; border-radius: var(--radius-lg); border: 1px solid rgba(201,168,76, 0.08);">
+        
+        <!-- Left: Platter Visualizer -->
+        <div class="seafood-mat">
+          <span style="font-size: 0.78rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.8rem; display: block;" id="sea-tag-display">PREMIUM ICED SEAFOOD</span>
+          <h3 style="font-size: 2.2rem; color: #fff; font-family: 'Cormorant Garamond', serif; margin: 0 0 0.8rem 0;" id="sea-title-display">The Shellfish Tower</h3>
+          <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold); margin: 0 0 1.2rem 0;" id="sea-price-display">$85.00</p>
+          <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin: 0; font-family: 'Inter', sans-serif;" id="sea-desc-display">Our signature two-tiered tower of chilled oysters on the half shell, jumbo gulf shrimp, and crab claws.</p>
+        </div>
+
+        <!-- Right: Controls -->
+        <div>
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">1. Choose Seafood Base</label>
+            <select id="sea-base" onchange="updateSeafood()">
+              <option value="shellfish" selected>The Shellfish Tower ($85.00)</option>
+              <option value="grand">The Grand Tower ($165.00)</option>
+              <option value="oysters">The Oyster Medley ($45.00)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label class="control-label">2. Premium Add-On</label>
+            <select id="sea-addon" onchange="updateSeafood()">
+              <option value="lobster" selected>Maine Lobster Tail (+$25.00)</option>
+              <option value="crab">Alaskan King Crab Leg (+$30.00)</option>
+              <option value="none">No Add-On (+$0.00)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="control-label">3. V Lounge Cocktail Pairing</label>
+            <select id="sea-cocktail" onchange="updateSeafood()">
+              <option value="martin" selected>V Lounge Classic Dry Martini (+$16.00)</option>
+              <option value="smoke">Smoked Old Fashioned (+$18.00)</option>
+              <option value="none">No Drink Pairing (+$0.00)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Eddie V's Prime Seafood · 101 S Tryon St #100 · Charlotte, NC 28280 · (704) 333-5299</p>
+      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+    </div>
+  </footer>
+
+  <script>
+    const baseData = {
+      shellfish: { tag: "PREMIUM ICED SEAFOOD", name: "The Shellfish Tower", basePrice: 85.00, label: "signature two-tiered tower of chilled oysters on the half shell, jumbo gulf shrimp, and crab claws" },
+      grand: { tag: "LUXURY GRAND TOWER", name: "The Grand Tower", basePrice: 165.00, label: "monumental three-tiered tower loaded with prime oysters, Maine lobster halves, king crab, and giant shrimp" },
+      oysters: { tag: "RAW BAR SELECTION", name: "The Oyster Medley", basePrice: 45.00, label: "one dozen hand-shucked coastal oysters served over crushed ice with homemade cocktail sauce" }
+    };
+
+    const addonData = {
+      lobster: { name: "Maine Lobster", label: "paired with a chilled split sweet Maine lobster tail", charge: 25.00 },
+      crab: { name: "King Crab Leg", label: "paired with a cracked sweet Alaskan King Crab leg", charge: 30.00 },
+      none: { name: "None", label: "with no additions", charge: 0.00 }
+    };
+
+    const cocktailData = {
+      martin: { name: "Martini", label: "and a V Lounge Classic Dry Martini shaken with blue-cheese stuffed olives", charge: 16.00 },
+      smoke: { name: "Smoked Fashioned", label: "and a tableside Smoked Old Fashioned prepared with high-rye bourbon", charge: 18.00 },
+      none: { name: "None", label: "", charge: 0.00 }
+    };
+
+    function updateSeafood() {
+      const baseKey = document.getElementById('sea-base').value;
+      const addonKey = document.getElementById('sea-addon').value;
+      const cocktailKey = document.getElementById('sea-cocktail').value;
+
+      const base = baseData[baseKey];
+      const addon = addonData[addonKey];
+      const cocktail = cocktailData[cocktailKey];
+
+      const totalPrice = base.basePrice + addon.charge + cocktail.charge;
+
+      document.getElementById('sea-tag-display').innerText = base.tag;
+      document.getElementById('sea-title-display').innerText = base.name;
+      document.getElementById('sea-price-display').innerText = `$${totalPrice.toFixed(2)}`;
+
+      let addonText = addon.charge > 0 ? `, ${addon.label}` : `${addon.label}`;
+      let cocktailText = cocktail.charge > 0 ? `, ${cocktail.label}` : ``;
+      let desc = `Our ${base.label}${addonText}${cocktailText}. Served over block ice.`;
+      
+      document.getElementById('sea-desc-display').innerText = desc;
+    }
+
+    // Initial trigger
+    window.addEventListener('load', () => {
+      updateSeafood();
+    });
+  </script>
+  <script src="../site-core.js"></script>
+</body>
+</html>

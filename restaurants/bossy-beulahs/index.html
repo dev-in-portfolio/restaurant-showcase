@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bossy Beulah's Chicken Shack - Charlotte, NC | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Layer styling for sandwich stack */
+    #layer-top-bun { background: #d97706; }
+    #layer-salad { background: #22c55e; border-color: #15803d; }
+    #layer-cheese { background: #fef08a; border-color: #eab308; color: #854d0e; }
+    #layer-bacon { background: #b91c1c; border-color: #7f1d1d; }
+    #layer-chicken { background: #ca8a04; border-color: #854d0e; height: 50px; line-height: 46px; }
+    #layer-pickles { background: #15803d; border-color: #14532d; }
+    #layer-mayo { background: #fefeff; border-color: #e5e7eb; color: #4b5563; }
+    #layer-bottom-bun { background: #d97706; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="back-to-directory">
+        ← Directory Portal
+      </a>
+      
+      <div class="brand-wrapper">
+        <div class="brand-logo-css">B</div>
+        <h1 class="brand-name">
+          Bossy Beulah's
+          <span>Chicken Shack Charlotte</span>
+        </h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="locations.html">Our Shacks</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Catering</a>
+        <a href="contact.html">Visit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-frame">
+        <span class="hero-badge">Charlotte, NC • OG Freedom Drive & More</span>
+        <h2 class="hero-title">Bossy Beulah's</h2>
+        <p class="hero-desc">"Gourmet pasture-raised fried chicken sandwiches, crispy bites, and Copain bakery treats served hot in a modern Southern shack."</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Operating Notice -->
+  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
+    <div class="notice-banner">
+      <span>🐔 100% All-Natural Chicken. Free of Hormones & Antibiotics. Crispy, Golden & Juicy.</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Welcome Block -->
+    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <h2 class="section-title">The Legend of The Beaut</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
+        At Bossy Beulah's, we believe in doing one thing beautifully: the perfect fried chicken sandwich. Named after our founder's grandmother Beulah, who spent decades perfecting her crisp pressure-fry seasoning, our signature sandwich "The Beaut" features a local bakery brioche bun, house-cured pickles, Duke's mayonnaise, and premium pasture-raised chicken.
+      </p>
+      <a href="about.html" style="color: var(--color-red); font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 2px solid var(--color-red); padding-bottom: 4px; transition: var(--transition-fast);">
+        Read Beulah's Recipe Pledge ➔
+      </a>
+    </section>
+
+    <!-- Interactive Custom Beaut Builder Panel -->
+    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
+      <h2 class="section-title" style="margin-bottom: 1rem;">The Beaut Customizer</h2>
+      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Stack your sandwich. Toggle custom ingredients and toppings to watch your fried chicken masterpiece grow.</p>
+      
+      <div class="mixer-container">
+        
+        <!-- Left Side: Sandwich stack visualizer -->
+        <div class="plate-canvas" style="min-height: 340px;">
+          <div class="sandwich-stack-box">
+            <!-- Layers stacked top-to-bottom -->
+            <div class="sandwich-layer-node" id="layer-top-bun">Brioche Bun</div>
+            <div class="sandwich-layer-node hidden" id="layer-salad">Lettuce & Tomato</div>
+            <div class="sandwich-layer-node hidden" id="layer-cheese">Swiss Cheese</div>
+            <div class="sandwich-layer-node hidden" id="layer-bacon">Crispy Bacon</div>
+            <div class="sandwich-layer-node" id="layer-chicken">Crispy Breast</div>
+            <div class="sandwich-layer-node" id="layer-pickles">House Pickles</div>
+            <div class="sandwich-layer-node" id="layer-mayo">Duke's Mayo</div>
+            <div class="sandwich-layer-node" id="layer-bottom-bun">Brioche Bun</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Controls -->
+        <div class="bowl-controls">
+          
+          <div class="control-group">
+            <label>1. Select Bun Style</label>
+            <div class="option-grid" id="bun-options">
+              <button class="option-btn active" onclick="setBun('brioche', 'Brioche Bun', 0.00)">Brioche Bun</button>
+              <button class="option-btn" onclick="setBun('wrap', 'Lettuce Wrap', -0.50)">Lettuce Wrap (-$0.50)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>2. Chicken Style</label>
+            <div class="option-grid" id="chicken-options">
+              <button class="option-btn active" onclick="setChicken('crispy-breast', 'Crispy Chicken Breast', 8.50)">Crispy Breast ($8.50)</button>
+              <button class="option-btn" onclick="setChicken('spicy-breast', 'Spicy Chicken Breast', 9.00)">Spicy Breast ($9.00)</button>
+              <button class="option-btn" onclick="setChicken('crispy-thigh', 'Crispy Chicken Thigh', 8.00)">Crispy Thigh ($8.00)</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>3. Premium Add-Ons & Sauces</label>
+            <div class="option-grid">
+              <button class="option-btn active" id="btn-pickles" onclick="toggleTopping('pickles')">House Pickles</button>
+              <button class="option-btn active" id="btn-mayo" onclick="toggleTopping('mayo')">Duke's Mayo</button>
+              <button class="option-btn" id="btn-cheese" onclick="toggleTopping('cheese')">Swiss Cheese (+$1.00)</button>
+              <button class="option-btn" id="btn-bacon" onclick="toggleTopping('bacon')">Crispy Bacon (+$1.50)</button>
+              <button class="option-btn" id="btn-salad" onclick="toggleTopping('salad')">Lettuce & Tomato (+$0.75)</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="builder-display" style="margin-top: 3.5rem;">
+        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Stack Order</span>
+        <h4 class="builder-display-title" id="display-sandwich-name">The Custom Beaut</h4>
+        <p id="display-sandwich-desc" style="color: var(--color-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">With Duke's Mayo, House Pickles</p>
+        <div class="builder-display-price" id="display-sandwich-price">$8.50</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-sandwich-summary">Your customized sandwich with all-natural chicken fried crispy and hot, fresh pickles, and thick mayonnaise on toasted brioche.</p>
+      </div>
+    </section>
+
+    <!-- Quick Call to Action -->
+    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-text-dark);">Check Our Bites & Wings Combos</h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
+        Planning a group tailgate or looking for delicious house bites? Calculate combo totals, dipping sauces, and bakery fries using our menu companion.
+      </p>
+      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
+        View Combo Calculator
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Info Footer -->
+  <footer class="container">
+    <div class="footer-info">
+      <div class="info-block">
+        <h3>OG Address</h3>
+        <p>2200 Freedom Drive<br>Charlotte, NC 28208</p>
+      </div>
+      <div class="info-block">
+        <h3>OG Hours</h3>
+        <p>Sun - Thu: 11:00 AM - 8:00 PM<br>Fri - Sat: 11:00 AM - 9:00 PM</p>
+      </div>
+      <div class="info-block">
+        <h3>Other Shops</h3>
+        <p>Park Road Shopping Center (Brandywine Rd)<br>Ballantyne Bowl (Bowl Street)</p>
+      </div>
+    </div>
+    <div class="copyright-footer">
+      <p>© 2026 Bossy Beulah's. Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script>
+    // State variables
+    let selectedBun = { key: 'brioche', name: 'Brioche Bun', price: 0.00 };
+    let selectedChicken = { key: 'crispy-breast', name: 'Crispy Chicken Breast', price: 8.50 };
+    let activeToppings = {
+      pickles: { active: true, price: 0.00, label: 'House Pickles' },
+      mayo: { active: true, price: 0.00, label: "Duke's Mayo" },
+      cheese: { active: false, price: 1.00, label: 'Swiss Cheese' },
+      bacon: { active: false, price: 1.50, label: 'Crispy Bacon' },
+      salad: { active: false, price: 0.75, label: 'Lettuce & Tomato' }
+    };
+
+    function setBun(key, name, price) {
+      const buttons = document.getElementById('bun-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedBun = { key, name, price };
+      
+      // Update bun text layers
+      document.getElementById('layer-top-bun').innerText = selectedBun.name;
+      document.getElementById('layer-bottom-bun').innerText = selectedBun.name;
+      
+      if (key === 'wrap') {
+        document.getElementById('layer-top-bun').style.background = '#22c55e';
+        document.getElementById('layer-bottom-bun').style.background = '#22c55e';
+      } else {
+        document.getElementById('layer-top-bun').style.background = '#d97706';
+        document.getElementById('layer-bottom-bun').style.background = '#d97706';
+      }
+
+      updateDisplay();
+    }
+
+    function setChicken(key, name, price) {
+      const buttons = document.getElementById('chicken-options').querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      selectedChicken = { key, name, price };
+      document.getElementById('layer-chicken').innerText = selectedChicken.name.replace('Chicken ', '');
+      updateDisplay();
+    }
+
+    function toggleTopping(key) {
+      activeToppings[key].active = !activeToppings[key].active;
+      const el = document.getElementById(`btn-${key}`);
+      if (activeToppings[key].active) {
+        el.classList.add('active');
+        document.getElementById(`layer-${key}`).classList.remove('hidden');
+      } else {
+        el.classList.remove('active');
+        document.getElementById(`layer-${key}`).classList.add('hidden');
+      }
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      // Calculate price
+      let totalPrice = selectedChicken.price + selectedBun.price;
+      let toppingLabels = [];
+
+      for (let k in activeToppings) {
+        if (activeToppings[k].active) {
+          totalPrice += activeToppings[k].price;
+          toppingLabels.push(activeToppings[k].label);
+        }
+      }
+
+      document.getElementById('display-sandwich-price').innerText = `$${totalPrice.toFixed(2)}`;
+      
+      // Build title based on key items
+      let title = 'The Custom Beaut';
+      if (selectedChicken.key === 'spicy-breast') {
+        title = 'Spicy Beaut';
+      } else if (activeToppings.cheese.active) {
+        title = 'Cheesy Beaut';
+      } else if (selectedChicken.key === 'crispy-thigh') {
+        title = 'Hot Thigh Beaut';
+      }
+
+      document.getElementById('display-sandwich-name').innerText = title;
+      document.getElementById('display-sandwich-desc').innerText = `Stacked on ${selectedBun.name} with: ${toppingLabels.join(', ')}`;
+
+      document.getElementById('display-sandwich-summary').innerText = `Your customized sandwich featuring pasture-raised all-natural ${selectedChicken.name.toLowerCase()} served on a toasted ${selectedBun.name.toLowerCase()} loaded with ${toppingLabels.join(', ').toLowerCase()}.`;
+    }
+
+    // Trigger initial show
+    window.addEventListener('load', () => {
+      // Show default layers
+      document.getElementById('layer-pickles').classList.remove('hidden');
+      document.getElementById('layer-mayo').classList.remove('hidden');
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

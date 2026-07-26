@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Futo Buta | Rock n Roll Ramen</title>
+  <meta name="description" content="Full menu at Futo Buta — ramen bowls, izakaya small plates, buns, donburi, and more. South End, Charlotte, NC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Futo <span>Buta</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+        <a href="visit.html">Visit</a>
+        <a href="drinks.html">Drinks</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="menu-hero">
+    <div class="container">
+      <div class="hero-badge">The Menu</div>
+      <h1>Rock n Roll <span>Menu</span></h1>
+      <p>Steaming bowls, izakaya plates, and everything in between.</p>
+    </div>
+  </section>
+
+  <!-- Menu Content -->
+  <section class="menu-content">
+    <div class="container">
+
+      <!-- Controls -->
+      <div class="menu-controls">
+        <input type="text" class="menu-search" placeholder="Search the menu...">
+        <div class="category-pills">
+          <button class="category-pill active" data-category="all">All</button>
+          <button class="category-pill" data-category="izakaya">Izakaya</button>
+          <button class="category-pill" data-category="buns">Buns</button>
+          <button class="category-pill" data-category="donburi">Donburi</button>
+          <button class="category-pill" data-category="ramen">Ramen</button>
+        </div>
+      </div>
+
+      <!-- Izakaya -->
+      <div class="menu-category" data-category="izakaya">
+        <h2 class="menu-category-title">Izakaya</h2>
+        <div class="menu-items-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Edamame</h4>
+              <p>Steamed, sea salt</p>
+            </div>
+            <div class="menu-item-price">$6.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Gyoza</h4>
+              <p>Pan-fried pork dumplings</p>
+            </div>
+            <div class="menu-item-price">$7</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Fried Brussels Sprouts</h4>
+              <p>Sweet soy, sesame, bonito</p>
+            </div>
+            <div class="menu-item-price">$9.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Shishito Peppers</h4>
+              <p>Blistered, sea salt, lime</p>
+            </div>
+            <div class="menu-item-price">$8.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Tori Karaage</h4>
+              <p>Japanese fried chicken, mint, lime, chili mayo</p>
+            </div>
+            <div class="menu-item-price">$13.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Hamachi Crudo</h4>
+              <p>Yellowtail, avocado, grapefruit, ponzu</p>
+            </div>
+            <div class="menu-item-price">$12</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Salmon Belly Nigiri</h4>
+              <p>Pecan wood smoked, yuzu mayo</p>
+            </div>
+            <div class="menu-item-price">$10</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Tofu Skewers</h4>
+              <p>Grilled, teriyaki glaze</p>
+            </div>
+            <div class="menu-item-price">$5</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Rice Crispy Squares</h4>
+              <p>Sweet, chewy, done right</p>
+            </div>
+            <div class="menu-item-price">$12</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buns -->
+      <div class="menu-category" data-category="buns">
+        <h2 class="menu-category-title">Buns</h2>
+        <div class="menu-items-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Pork Belly Buns</h4>
+              <p>Gochujang BBQ, sesame slaw</p>
+            </div>
+            <div class="menu-item-price">$12</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Duck Confit Buns</h4>
+              <p>Five spice honey, pickled carrot</p>
+            </div>
+            <div class="menu-item-price">$12</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Veggie Buns</h4>
+              <p>Seasonal vegetables, miso glaze</p>
+            </div>
+            <div class="menu-item-price">$11</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donburi -->
+      <div class="menu-category" data-category="donburi">
+        <h2 class="menu-category-title">Donburi</h2>
+        <div class="menu-items-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Spicy Tuna Donburi</h4>
+              <p>Sushi rice, spicy tuna, avocado, scallion</p>
+            </div>
+            <div class="menu-item-price">$9</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Vegan Donburi</h4>
+              <p>Rice, seasonal vegetables, miso dressing</p>
+            </div>
+            <div class="menu-item-price">$8</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Duck Confit Donburi</h4>
+              <p>Rice, duck confit, pickled vegetables, hoisin</p>
+            </div>
+            <div class="menu-item-price">$11</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ramen -->
+      <div class="menu-category" data-category="ramen">
+        <h2 class="menu-category-title">Ramen</h2>
+        <div class="menu-items-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Tonkotsu</h4>
+              <p>Pork bone broth, pecan-smoked pork belly, onsen egg, black garlic</p>
+            </div>
+            <div class="menu-item-price">$19.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Miso</h4>
+              <p>Pork + chicken broth, sweet corn, bok choy</p>
+            </div>
+            <div class="menu-item-price">$18.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Shoyu</h4>
+              <p>Chicken + dashi broth, wakame, bamboo</p>
+            </div>
+            <div class="menu-item-price">$18</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Chizu</h4>
+              <p>Chicken broth, pecorino cheese, whipped egg, shiso pesto, yuzu</p>
+            </div>
+            <div class="menu-item-price">$18</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Fire and Ice</h4>
+              <p>Kimchi + dashi broth, hot smoked salmon, fresh mint</p>
+            </div>
+            <div class="menu-item-price">$18</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Niwa</h4>
+              <p>Vegan broth, organic mushroom, bok choy</p>
+            </div>
+            <div class="menu-item-price">$17</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Buta Bowl</h4>
+              <p>Double noodle, pork belly, duck confit, spicy pork, chili sauce</p>
+            </div>
+            <div class="menu-item-price">$22.90</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>Little Noodle</h4>
+              <p>Simple chicken + dashi broth with noodles — for the little ones</p>
+            </div>
+            <div class="menu-item-price">$9.90</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="menu-note">No substitutions on ramen.</p>
+      <div class="no-results" style="display:none;">No items match your search.</div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Futo <span>Buta</span></h3>
+          <p>Rock n Roll Ramen in Charlotte's South End. Pecan-smoked pork belly, creative bowls, and an izakaya vibe that hits different.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About</a>
+          <a href="visit.html">Visit</a>
+          <a href="drinks.html">Drinks</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <a href="visit.html">Sun–Mon: 12–9pm</a>
+          <a href="visit.html">Tue: Closed</a>
+          <a href="visit.html">Wed–Thu: 12–9pm</a>
+          <a href="visit.html">Fri–Sat: 12–10pm</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="tel:7043768400">(704) 376-8400</a>
+          <a href="https://www.google.com/maps/search/Futo+Buta+222+E+Bland+St+Charlotte+NC" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Futo Buta. All rights reserved.</span>
+        <span>222 E Bland St, Charlotte, NC 28203</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

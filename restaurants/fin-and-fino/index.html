@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fin &amp; Fino · Charlotte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-core.css">
+<style>
+:root{--navy:#0a192f;--teal:#2a9d8f;--gold:#e9c46a;--cream:#f8f4e6;--charcoal:#0d1117;--muted:#7a8a9a}
+body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(42,157,143,.15)}
+.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.75;transition:.2s}
+.nav a:hover{opacity:1;color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--teal)!important;letter-spacing:0;text-transform:none;opacity:1!important}
+.hero{min-height:80vh;background:linear-gradient(135deg,#0a192f,#0f2a3f 40%,#1a3a3a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;background:radial-gradient(circle,rgba(42,157,143,.08),transparent 70%);pointer-events:none}
+.hero h1{font-size:3.2rem;margin:0;color:var(--gold);line-height:1.1}
+.hero .tagline{font-size:1.2rem;opacity:.5;font-style:italic;margin:.5rem 0 1.5rem;font-family:'Fraunces',serif}
+.hero .sub{font-size:.92rem;opacity:.35;margin-bottom:1.8rem}
+.hero .btn{display:inline-block;background:var(--teal);color:#fff;padding:.85rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;transition:.2s}
+.hero .btn:hover{background:#238c7f;transform:translateY(-2px)}
+.section{padding:4.5rem 2rem;max-width:1100px;margin:0 auto}
+.section h2{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;border-left:3px solid var(--teal);padding-left:.75rem}
+.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2.5rem;font-size:.95rem}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(42,157,143,.08);border-radius:10px;padding:1.75rem;transition:.25s}
+.feature-card:hover{border-color:rgba(42,157,143,.25);transform:translateY(-3px)}
+.feature-card .icon{font-size:1.8rem;margin-bottom:.6rem;display:block}
+.feature-card h3{font-size:1.05rem;color:var(--teal);margin:0 0 .35rem}
+.feature-card p{font-size:.85rem;opacity:.55;line-height:1.5;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2.5rem 0}
+.stat{text-align:center;padding:1.75rem 1.5rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(233,196,106,.06)}
+.stat .num{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--gold);display:block}
+.stat .label{font-size:.82rem;opacity:.45;margin-top:.3rem;display:block}
+.bkg{background:rgba(0,0,0,.15);padding:3rem 2rem;border-radius:12px;margin:2.5rem 0}
+.bkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.bkg-card{padding:1.75rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(233,196,106,.08)}
+.bkg-card h3{color:var(--gold);margin:0 0 .25rem;font-size:1.1rem}
+.bkg-card .loc-sub{font-size:.85rem;opacity:.5;margin-bottom:.75rem}
+.bkg-card .loc-detail{font-size:.82rem;opacity:.4;line-height:1.7}
+.bkg-card .loc-detail strong{color:var(--teal);opacity:.9}
+footer{background:var(--charcoal);color:rgba(255,255,255,.35);text-align:center;padding:2.5rem 2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(42,157,143,.08)}
+footer a{color:var(--teal);text-decoration:none}
+.disclosure{font-size:.78rem;color:rgba(255,255,255,.2);font-style:italic}
+@media(max-width:700px){.bkg-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">Fin &amp; Fino</a>
+  <div class="nav-links">
+    <a href="menu.html">Menu</a>
+    <a href="story.html">Our Story</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<header class="hero">
+  <div>
+    <h1>Fin &amp; Fino</h1>
+    <p class="tagline">A Social Seafood House</p>
+    <p class="sub">Fresh seafood, craft cocktails &amp; warm hospitality in the heart of Uptown Charlotte</p>
+    <a href="menu.html" class="btn">Explore the Menu</a>
+  </div>
+</header>
+<section class="section">
+  <h2>Welcome Aboard</h2>
+  <p class="subtitle">Explorer's mindset. Sailor's heart. Every visit is a new adventure.</p>
+  <div class="featured-grid">
+    <div class="feature-card"><span class="icon" aria-hidden="true">🦪</span><h3>Raw Bar</h3><p>East Coast, West Coast and Gulf oysters — freshly shucked and served with classic mignonette, cocktail sauce and house-made hot sauce</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🐟</span><h3>Small Plates</h3><p>Seared tuna, sautéed shrimp, house-made pastas and locally grown produce — shareable plates built for discovery</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🍸</span><h3>Inventive Cocktails</h3><p>An award-winning cocktail program with a rotating seasonal menu. When in doubt, ask for a "Call of the Clam" — our off-menu custom creation</p></div>
+    <div class="feature-card"><span class="icon" aria-hidden="true">🌿</span><h3>Private Dining</h3><p>Two event spaces for 24–80 guests, plus the Fino Room with access to our outdoor patio — perfect for celebrations and corporate gatherings</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="num">Since 2018</span><span class="label">Uptown Charlotte Flagship</span></div>
+    <div class="stat"><span class="num">Two Locations</span><span class="label">Uptown &amp; Birkdale Village</span></div>
+    <div class="stat"><span class="num">$70</span><span class="label">The Treatment Tasting Tour</span></div>
+    <div class="stat"><span class="num">Rare Roots</span><span class="label">Hospitality Family</span></div>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <h2>Our Locations</h2>
+  <p class="subtitle">Find the Fin &amp; Fino nearest you</p>
+  <div class="bkg-grid">
+    <div class="bkg-card">
+      <h3>Uptown Charlotte</h3>
+      <p class="loc-sub">Flagship Location</p>
+      <p class="loc-detail">135 Levine Avenue of the Arts #100<br>Charlotte, NC 28202<br><strong>(704) 800-5680</strong><br>Lunch: Mon–Thu 11:30 AM<br>Dinner: Mon–Sun 5:00 PM</p>
+    </div>
+    <div class="bkg-card">
+      <h3>Birkdale Village</h3>
+      <p class="loc-sub">Huntersville</p>
+      <p class="loc-detail">8630 Lindholm Drive<br>Huntersville, NC 28078<br><strong>(704) 987-1779</strong><br>Mon–Thu 5–9 PM · Fri 5–10 PM<br>Sat 4–10 PM · Sun 12–8 PM</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Fin &amp; Fino · 135 Levine Avenue of the Arts #100 · Charlotte, NC 28202 · (704) 800-5680</p>
+  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
+  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
+</footer>
+<script src="../site-core.js"></script>
+</body>
+</html>
