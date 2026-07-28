@@ -3,90 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reserve — Flour Shop</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
+  <title>Reservations | Flour Shop</title>
+  <meta name="description" content="Reserve a table at Flour Shop in Charlotte, NC. Book your dining experience online.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Flour Shop</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html" class="active nav-cta">Reserve</a></li>
-      </ul>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍸</span>
+        <span class="brand-title">Flour Shop</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link active">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
-  </nav>
-
-  <header class="page-header">
-    <h1>Reserve a Table</h1>
-    <p class="page-sub">Evenings at the pasta bar, nights on the patio</p>
   </header>
 
-  <section class="section">
-    <div class="container reservation-grid">
-      <div class="reservation-main">
-        <h2>Book on OpenTable</h2>
-        <p>We partner with OpenTable for all reservations. Select your party size, date, and time — you'll be seated in our dining room, at the pasta bar, or on the creekside patio (weather permitting).</p>
-        <a href="https://www.opentable.com/r/flour-shop-charlotte" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Book on OpenTable</a>
-
-        <h3 style="margin-top:3rem;">Walk-Ins Welcome</h3>
-        <p>We hold a portion of our seats for walk-in guests. If you don't have a reservation, come by and we'll do our best to seat you. The pasta bar is often the best spot for walk-ins — grab a seat and watch the kitchen work.</p>
-
-        <h3 style="margin-top:2rem;">Creekside Patio</h3>
-        <p>Our patio seating is available on a first-come, first-served basis. Request patio seating when you book, or ask your server when you arrive. The patio is beautiful on warm evenings — shaded, quiet, and right along the creek.</p>
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="max-width: 650px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h1 class="hero-title" style="font-size: 2.5rem;">Reserve Your Table</h1>
+        <p class="hero-subtitle">Join us for lunch, dinner, or special occasion dining.</p>
       </div>
 
-      <div class="reservation-sidebar">
-        <div class="sidebar-card">
-          <h3>What to Expect</h3>
-          <ul class="expect-list">
-            <li><strong>Open Kitchen</strong> — Watch your meal come together at the pasta bar</li>
-            <li><strong>24 Pasta Bar Seats</strong> — The best seats in the house, up close to the action</li>
-            <li><strong>Creekside Patio</strong> — Shaded outdoor dining in the backlot</li>
-            <li><strong>Seasonal Menu</strong> — Every visit is a little different</li>
-          </ul>
-        </div>
+      <div class="card" style="padding: 2.5rem;">
+        <form onsubmit="handleReserve(event)">
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Party Size</label>
+            <select style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+              <option>2 Guests</option>
+              <option>4 Guests</option>
+              <option>6 Guests</option>
+              <option>8+ Guests (Large Group)</option>
+            </select>
+          </div>
 
-        <div class="sidebar-card">
-          <h3>Date Night</h3>
-          <p>Flour Shop is one of Charlotte's favorite date night spots. The intimate dining room, open kitchen, and creekside patio set the mood. Start with Burrata Di Bufala, share the Squid Ink Linguine, and linger over dessert.</p>
-        </div>
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Preferred Date & Time</label>
+            <input type="datetime-local" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;" required>
+          </div>
 
-        <div class="sidebar-card">
-          <h3>Hours</h3>
-          <ul class="hours-list compact">
-            <li><span>Mon – Sat</span><span>5:00 – 10:00 pm</span></li>
-            <li><span>Sunday</span><span>5:00 – 9:00 pm</span></li>
-          </ul>
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Special Requests / Occasion</label>
+            <input type="text" aria-label="Special requests or occasion notes" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Reservation Request →</button>
+        </form>
+
+        <div id="reserve-msg" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; border-radius: 8px; text-align: center;">
+          ✓ Demo Request Received! In production, live OpenTable/Resy integration processes instantaneous table confirmations.
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-logo">Flour Shop</p>
-      <p class="footer-addr">530 A Brandywine Rd, Charlotte, NC 28209 · <a href="tel:+19802993754">(980) 299-3754</a></p>
-      <nav class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About</a>
-        <a href="visit.html">Visit</a>
-        <a href="reserve.html">Reserve</a>
-      </nav>
-      <p class="footer-copy">&copy; 2026 Flour Shop. All rights reserved.</p>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Flour Shop</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1057" style="color: var(--accent-color);">(704) 555-1057</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    function handleReserve(e) {
+      e.preventDefault();
+      document.getElementById('reserve-msg').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
