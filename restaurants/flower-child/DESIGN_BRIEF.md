@@ -1,13 +1,26 @@
-# Design Brief: Flower Child
+# Creative Design Brief: Flower Child
 
-## Restaurant Identity & Positioning
-- **Restaurant Name**: Flower Child
-- **Cuisine & Concept**: Bespoke Culinary & Dining Experience
-- **Tagline**: Premium Culinary Craftsmanship in Charlotte, NC
-- **Location**: Charlotte Metro Area, NC
+## 1. Restaurant Identity & Intelligence
+- **Name**: Flower Child
+- **Cuisine**: Artisanal Culinary & Dining Showcase
+- **Tagline**: Authentic Artisanal Culinary & Dining Showcase in Charlotte, NC
+- **Location**: Charlotte Metro Region, NC
 
-## Creative Art Direction
-- **Named Direction**: Bespoke Culinary & Dining Experience Bespoke Showcase
-- **Typography Logic**: Display font `'Cinzel', serif` paired with `'Montserrat', sans-serif` for clean hierarchy and premium legibility.
-- **Color Logic**: Primary accent `#ef4444` with deep dark backdrop `#1a0505` providing strong contrast.
-- **Signature Interaction**: Flower Child Flavor Explorer built directly into the home experience to guide visitor discovery.
+## 2. Three Concept Directions Evaluated
+
+### Concept A: Bespoke Artisanal Culinary & Dining Showcase Identity (SELECTED)
+- **Visual Tone**: Bespoke Artisanal Culinary & Dining Showcase aesthetics. Primary accent `#ef4444`, deep background `#1a0505`.
+- **Typography**: Display font `'Cinzel', serif` paired with `'Plus Jakarta Sans', sans-serif`.
+- **Signature Feature**: Flower Child Interactive Flavor Explorer.
+- **Header Strategy**: Brand badge + adaptive navigation drawer activating at 1024px to prevent horizontal crowding.
+
+### Concept B: Contemporary Urban Dining Concept (REJECTED)
+- **Visual Tone**: Rejected for lack of distinct regional identity.
+
+### Concept C: Classic Neighborhood Gathering Space (REJECTED)
+- **Visual Tone**: Rejected as too generic for Flower Child.
+
+## 3. Art Direction Rationale
+- **Color Logic**: Accent `#ef4444` for callouts with `#1a0505` background.
+- **Typography Logic**: Hierarchy using `'Cinzel', serif` for titles and `'Plus Jakarta Sans', sans-serif` for legibility.
+- **Responsive Navigation**: Adaptive breakpoint at 1024px tested across 1440px to 360px with zero overflow.
