@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations | Kid Cashew</title>
+  <meta name="description" content="Reserve a table at Kid Cashew in Charlotte, NC. Book your dining experience online.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍽️</span>
+        <span class="brand-title">Kid Cashew</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link active">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="max-width: 650px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h1 class="hero-title" style="font-size: 2.5rem;">Reserve Your Table</h1>
+        <p class="hero-subtitle">Join us for lunch, dinner, or special occasion dining.</p>
+      </div>
+
+      <div class="card" style="padding: 2.5rem;">
+        <form onsubmit="handleReserve(event)">
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Party Size</label>
+            <select style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+              <option>2 Guests</option>
+              <option>4 Guests</option>
+              <option>6 Guests</option>
+              <option>8+ Guests (Large Group)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Preferred Date & Time</label>
+            <input type="datetime-local" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;" required>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Special Requests / Occasion</label>
+            <input type="text" aria-label="Special requests or occasion notes" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Reservation Request →</button>
+        </form>
+
+        <div id="reserve-msg" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; border-radius: 8px; text-align: center;">
+          ✓ Demo Request Received! In production, live OpenTable/Resy integration processes instantaneous table confirmations.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Kid Cashew</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1066" style="color: var(--accent-color);">(704) 555-1066</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    function handleReserve(e) {
+      e.preventDefault();
+      document.getElementById('reserve-msg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
