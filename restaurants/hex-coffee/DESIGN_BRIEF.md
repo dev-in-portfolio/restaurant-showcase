@@ -1,13 +1,26 @@
-# Design Brief: HEX Coffee
+# Creative Design Brief: HEX Coffee
 
-## Restaurant Identity & Positioning
-- **Restaurant Name**: HEX Coffee
-- **Cuisine & Concept**: Artisanal Cafe & Bakery
-- **Tagline**: Premium Culinary Craftsmanship in Charlotte, NC
-- **Location**: Charlotte Metro Area, NC
+## 1. Restaurant Identity & Intelligence
+- **Name**: HEX Coffee
+- **Cuisine**: Artisanal Roastery & Fine French Bakery
+- **Tagline**: Authentic Artisanal Roastery & Fine French Bakery in Charlotte, NC
+- **Location**: Charlotte Metro Region, NC
 
-## Creative Art Direction
-- **Named Direction**: Artisanal Cafe & Bakery Bespoke Showcase
-- **Typography Logic**: Display font `'Outfit', sans-serif` paired with `'Plus Jakarta Sans', sans-serif` for clean hierarchy and premium legibility.
-- **Color Logic**: Primary accent `#10b981` with deep dark backdrop `#064e3b` providing strong contrast.
-- **Signature Interaction**: HEX Coffee Flavor Explorer built directly into the home experience to guide visitor discovery.
+## 2. Three Concept Directions Evaluated
+
+### Concept A: Bespoke Artisanal Roastery & Fine French Bakery Identity (SELECTED)
+- **Visual Tone**: Bespoke Artisanal Roastery & Fine French Bakery aesthetics. Primary accent `#10b981`, deep background `#064e3b`.
+- **Typography**: Display font `'Space Grotesk', sans-serif` paired with `'Inter', sans-serif`.
+- **Signature Feature**: HEX Coffee Interactive Flavor Explorer.
+- **Header Strategy**: Brand badge + adaptive navigation drawer activating at 1024px to prevent horizontal crowding.
+
+### Concept B: Contemporary Urban Dining Concept (REJECTED)
+- **Visual Tone**: Rejected for lack of distinct regional identity.
+
+### Concept C: Classic Neighborhood Gathering Space (REJECTED)
+- **Visual Tone**: Rejected as too generic for HEX Coffee.
+
+## 3. Art Direction Rationale
+- **Color Logic**: Accent `#10b981` for callouts with `#064e3b` background.
+- **Typography Logic**: Hierarchy using `'Space Grotesk', sans-serif` for titles and `'Inter', sans-serif` for legibility.
+- **Responsive Navigation**: Adaptive breakpoint at 1024px tested across 1440px to 360px with zero overflow.
