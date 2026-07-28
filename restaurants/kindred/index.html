@@ -1,123 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kindred — Davidson, NC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,italic&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>.hero{background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%)}.hero .logo-mark{font-family:var(--font-heading);font-size:clamp(3rem,8vw,6rem);font-weight:700;color:var(--white);line-height:1;margin-bottom:.25rem}.hero .tagline{font-size:1rem;text-transform:uppercase;letter-spacing:.12em;color:var(--amber);margin-bottom:2rem}.accolades{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:2rem 0}.accolade{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:.75rem 1.25rem;border-radius:4px;font-size:.85rem;color:rgba(255,255,255,.7)}.accolade strong{color:var(--white)}.signature-dish{text-align:center;padding:1.5rem;background:var(--warm-gray);border-radius:8px}.signature-dish h3{color:var(--amber);margin-bottom:.25rem}.signature-dish .method{font-size:.85rem;color:var(--medium-gray)}.space-between{padding:0 2rem}.quick-info{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:2rem}.quick-info-item{text-align:center}.quick-info-item .num{font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--amber)}.quick-info-item .label{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--medium-gray)}.experience-text{font-size:1.1rem;line-height:1.8;max-width:720px;margin:0 auto}@media(max-width:768px){.quick-info{gap:1rem}.accolades{gap:.75rem}}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindred | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Kindred in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header">
-<div class="container header-inner">
-<a href="index.html" class="logo">Kindred</a>
-<nav aria-label="Main navigation">
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="menu.html">Menu</a></li>
-<li><a href="story.html">Story</a></li>
-<li><a href="events.html">Events</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<main id="main">
-<section class="hero">
-<div class="container">
-<p class="hero-subtitle">James Beard Nominated · MICHELIN Guide · Davidson, NC</p>
-<div class="logo-mark">Kindred</div>
-<p class="tagline">Destination Dining in a Small College Town</p>
-<p style="max-width:600px;margin:0 auto 1.5rem">Seasonal contemporary cuisine with Italian influence and a Southern accent — crafted by husband-and-wife team Joe &amp; Katy Kindred in a restored Main Street pharmacy.</p>
-<a href="menu.html" class="btn btn-primary">Explore the Menu</a>
-<div class="accolades">
-<div class="accolade"><strong>James Beard</strong> Nominated</div>
-<div class="accolade"><strong>Bon Appetit</strong> Hot Ten Best New Restaurants</div>
-<div class="accolade"><strong>The New York Times</strong> Best Restaurant List</div>
-<div class="accolade"><strong>MICHELIN Guide</strong></div>
-</div>
-</div>
-</section>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🌿</span>
+        <span class="brand-title">Kindred</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="section">
-<div class="container">
-<div class="grid-2">
-<div>
-<h2>House-Made Milk Bread</h2>
-<p class="hero-subtitle" style="font-size:1rem;margin-bottom:1rem">The bread that built a reputation</p>
-<p class="experience-text">Made using the tangzhong method, our milk bread is a labor of love — pillowy, slightly sweet, and impossibly soft. Served warm with house-cultured butter and sea salt. It's the first thing guests taste and the dish they remember most.</p>
-<p style="margin-top:1.5rem"><a href="menu.html" class="btn btn-primary">View Our Menu</a></p>
-</div>
-<div class="signature-dish">
-<div style="background:var(--sage);color:var(--white);width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem;font-family:var(--font-heading)">✦</div>
-<h3>Milk Bread</h3>
-<p class="method">Tangzhong method · House-cultured butter · Sea salt</p>
-<p style="margin-top:.75rem;font-size:.9rem;color:var(--medium-gray)">"The warm, pull-apart loaf arrives at every table — and rarely lasts long."</p>
-</div>
-</div>
-</div>
-</section>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Kindred</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
+    </section>
 
-<section class="section" style="background:var(--warm-gray)">
-<div class="container text-center">
-<h2>An Unforgettable Setting</h2>
-<p class="experience-text" style="margin-bottom:2.5rem">Housed in a former pharmacy on Main Street, Kindred blends crisp white tiles, exposed brick, and hardwood floors with mismatched plates and flatware that make every table feel like home.</p>
-<div class="grid-3">
-<div class="card">
-<div style="font-size:2.5rem;margin-bottom:.5rem">🏛️</div>
-<h3>The Space</h3>
-<p style="font-size:.95rem;color:var(--medium-gray)">Two stories — the kitchen lives on the lower floor, the dining room upstairs. A hidden staircase connects them.</p>
-</div>
-<div class="card">
-<div style="font-size:2.5rem;margin-bottom:.5rem">🍝</div>
-<h3>The Philosophy</h3>
-<p style="font-size:.95rem;color:var(--medium-gray)">"The menu changes based on what's in season." Every plate reflects the best of the moment.</p>
-</div>
-<div class="card">
-<div style="font-size:2.5rem;margin-bottom:.5rem">🥂</div>
-<h3>The Experience</h3>
-<p style="font-size:.95rem;color:var(--medium-gray)">Mismatched china, warm lighting, and a wine list that travels the old world and new.</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="section">
-<div class="container text-center">
-<h2>From the Kindred Table</h2>
-<p class="experience-text" style="margin-bottom:2rem">Beyond Kindred, the same team brings you Hello, Sailor, Albertine, and milkbread cafe — each its own expression of thoughtful hospitality.</p>
-<div class="quick-info">
-<div class="quick-info-item">
-<div class="num">131</div>
-<div class="label">N Main St, Davidson</div>
-</div>
-<div class="quick-info-item">
-<div class="num">5–10</div>
-<div class="label">Tues–Sat Dinner</div>
-</div>
-<div class="quick-info-item">
-<div class="num">5–9</div>
-<div class="label">Sunday Dinner</div>
-</div>
-<div class="quick-info-item">
-<div class="num">11–2</div>
-<div class="label">Sat–Sun Brunch</div>
-</div>
-</div>
-<p style="margin-top:2.5rem"><a href="contact.html" class="btn btn-outline">Reservations &amp; Hours</a></p>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container">
-<p><a href="index.html">Kindred</a> · 131 N Main St, Davidson, NC · <a href="tel:+19802315000">(980) 231-5000</a></p>
-<p style="margin-top:.5rem"><a href="https://kindreddavidson.com" target="_blank">kindreddavidson.com</a> · <a href="https://instagram.com/kindredrestaurant" target="_blank">@kindredrestaurant</a></p>
-<p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</div>
-</footer>
-<script src="../site-core.js"></script>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Kindred Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
+
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Kindred.
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Kindred</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1151" style="color: var(--accent-color);">(704) 555-1151</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
