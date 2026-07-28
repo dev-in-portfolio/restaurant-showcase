@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story | Diamond Restaurant</title>
+  <meta name="description" content="Learn about the heritage, culinary philosophy, and community story behind Diamond Restaurant in Charlotte, NC.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🌿</span>
+        <span class="brand-title">Diamond Restaurant</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link active">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+      <span class="hero-badge">Heritage & Philosophy</span>
+      <h1 class="hero-title" style="font-size: 2.8rem; margin-top: 0.5rem;">Rooted in Passion</h1>
+      <p class="hero-subtitle">Every dish at Diamond Restaurant represents our unwavering commitment to scratch cooking, local sourcing, and warm community hospitality.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="card">
+        <div class="card-icon">🍳</div>
+        <h3 class="card-title">Scratch Kitchen Tradition</h3>
+        <p class="card-desc">We prepare our sauces, stocks, dressings, and specialty batters fresh each morning without shortcuts.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌱</div>
+        <h3 class="card-title">Local Farmer Partnerships</h3>
+        <p class="card-desc">Proudly sourcing regional produce, meats, and dairy from North Carolina agricultural partners.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3 class="card-title">Community Hospitality</h3>
+        <p class="card-desc">Providing a welcoming, memorable atmosphere where neighbors gather and celebrations feel at home.</p>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Diamond Restaurant</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1109" style="color: var(--accent-color);">(704) 555-1109</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+</body>
+</html>
