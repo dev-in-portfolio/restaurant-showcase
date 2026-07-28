@@ -2803,10 +2803,10 @@
     "slug": "the-derby",
     "name": "The Derby",
     "area": "Charlotte, NC",
-    "cuisine": "Restaurant Rebuild",
+    "cuisine": "Classic Southern Tavern & Grill",
     "description": "Presentation-ready 6-page branding concept and website rebuild for The Derby.",
-    "emoji": "🍽️",
-    "gradient": "linear-gradient(135deg, #172033, #334155 52%, #0f172a)",
+    "emoji": "🏇",
+    "gradient": "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 75%)",
     "href": "restaurants/the-derby/index.html",
     "stage": "showcase",
     "status": "presentation-ready",
@@ -2817,7 +2817,9 @@
     "performanceReviewed": true,
     "accessibilityReviewed": true,
     "productionBuildPassed": true,
-    "approvedForPresentation": true
+    "approvedForPresentation": true,
+    "currentWebsiteUrl": "https://thederbyrestaurant.com",
+    "comparisonButtonAdded": true
   },
   {
     "slug": "the-dive-n",
