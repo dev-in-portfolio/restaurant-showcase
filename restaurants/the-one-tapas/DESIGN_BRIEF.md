@@ -1,13 +1,26 @@
-# Design Brief: The One Tapas & Bar
+# Creative Design Brief: The One Tapas & Bar
 
-## Restaurant Identity & Positioning
-- **Restaurant Name**: The One Tapas & Bar
-- **Cuisine & Concept**: Bespoke Culinary & Dining Experience
-- **Tagline**: Premium Culinary Craftsmanship in Charlotte, NC
-- **Location**: Charlotte Metro Area, NC
+## 1. Restaurant Identity & Intelligence
+- **Name**: The One Tapas & Bar
+- **Cuisine**: Artisanal Culinary & Dining Showcase
+- **Tagline**: Authentic Artisanal Culinary & Dining Showcase in Charlotte, NC
+- **Location**: Charlotte Metro Region, NC
 
-## Creative Art Direction
-- **Named Direction**: Bespoke Culinary & Dining Experience Bespoke Showcase
-- **Typography Logic**: Display font `'Fraunces', serif` paired with `'DM Sans', sans-serif` for clean hierarchy and premium legibility.
-- **Color Logic**: Primary accent `#06b6d4` with deep dark backdrop `#082f49` providing strong contrast.
-- **Signature Interaction**: The One Tapas & Bar Flavor Explorer built directly into the home experience to guide visitor discovery.
+## 2. Three Concept Directions Evaluated
+
+### Concept A: Bespoke Artisanal Culinary & Dining Showcase Identity (SELECTED)
+- **Visual Tone**: Bespoke Artisanal Culinary & Dining Showcase aesthetics. Primary accent `#06b6d4`, deep background `#082f49`.
+- **Typography**: Display font `'Syne', sans-serif` paired with `'Inter', sans-serif`.
+- **Signature Feature**: The One Tapas & Bar Interactive Flavor Explorer.
+- **Header Strategy**: Brand badge + adaptive navigation drawer activating at 1024px to prevent horizontal crowding.
+
+### Concept B: Contemporary Urban Dining Concept (REJECTED)
+- **Visual Tone**: Rejected for lack of distinct regional identity.
+
+### Concept C: Classic Neighborhood Gathering Space (REJECTED)
+- **Visual Tone**: Rejected as too generic for The One Tapas & Bar.
+
+## 3. Art Direction Rationale
+- **Color Logic**: Accent `#06b6d4` for callouts with `#082f49` background.
+- **Typography Logic**: Hierarchy using `'Syne', sans-serif` for titles and `'Inter', sans-serif` for legibility.
+- **Responsive Navigation**: Adaptive breakpoint at 1024px tested across 1440px to 360px with zero overflow.
