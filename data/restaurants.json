@@ -547,10 +547,10 @@
     "slug": "carolina-beer-temple",
     "name": "Carolina Beer Temple",
     "area": "Charlotte, NC",
-    "cuisine": "Restaurant Rebuild",
+    "cuisine": "Craft Brewery & Taproom",
     "description": "Presentation-ready 6-page branding concept and website rebuild for Carolina Beer Temple.",
-    "emoji": "🍽️",
-    "gradient": "linear-gradient(135deg, #172033, #334155 52%, #0f172a)",
+    "emoji": "🌿",
+    "gradient": "radial-gradient(circle at 50% 0%, #065f46 0%, #022c22 75%)",
     "href": "restaurants/carolina-beer-temple/index.html",
     "stage": "showcase",
     "status": "presentation-ready",
@@ -561,7 +561,9 @@
     "performanceReviewed": true,
     "accessibilityReviewed": true,
     "productionBuildPassed": true,
-    "approvedForPresentation": true
+    "approvedForPresentation": true,
+    "currentWebsiteUrl": "https://www.google.com/search?q=Carolina%20Beer%20Temple%20Charlotte%20NC",
+    "comparisonButtonAdded": true
   },
   {
     "slug": "carolina-scoops",

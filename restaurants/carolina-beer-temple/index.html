@@ -3,215 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carolina Beer Temple | Matthews, NC</title>
-  <meta name="description" content="Carolina Beer Temple - Best Bar in North Carolina. Belgian craft beer bar, retail store, and St. Bernardus official taproom in Matthews.">
+  <title>Carolina Beer Temple | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Carolina Beer Temple in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <header class="site-header" role="banner">
-    <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Carolina Beer Temple Home">
-        <div class="logo-icon" aria-hidden="true">&#9876;</div>
-        <div>
-          <span class="logo-text">Carolina Beer Temple</span>
-          <span class="logo-sub">Matthews, NC</span>
-        </div>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🌿</span>
+        <span class="brand-title">Carolina Beer Temple</span>
       </a>
-      <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links" id="main-nav" role="list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="taps.html">Tap List</a></li>
-          <li><a href="flight.html">Beer Flights</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="visit.html">Visit</a></li>
-          <li><a href="visit.html#newsletter" class="header-cta">Subscribe</a></li>
-        </ul>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-content">
-          <span class="hero-badge">&#127942; Best Bar in North Carolina 2026</span>
-          <h1>Belgian Craft Beer, Carolina Soul</h1>
-          <p>18 rotating taps of the finest Belgian ales, a curated bottle shop, and a community built around great beer. The only official St. Bernardus taproom in the Carolinas.</p>
-          <div class="hero-ctas">
-            <a href="taps.html" class="btn btn-a">View Tap List</a>
-            <a href="visit.html" class="btn btn-o">Visit Us</a>
-          </div>
-        </div>
-        <div class="hero-img-placeholder" aria-hidden="true">
-          <span class="hero-img-icon">&#127867;</span>
-          <span class="hero-img-label">Belgian Craft Beer</span>
-        </div>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Carolina Beer Temple</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
       </div>
     </section>
 
-    <!-- The Temple Experience -->
+    <!-- Substantive Featured Highlights -->
     <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>The Temple Experience</h2>
-          <p>More than a bar — a destination for beer lovers</p>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-        <div class="experience-grid">
-          <div class="exp-card">
-            <div class="exp-icon" aria-hidden="true">&#127867;</div>
-            <h3>18 Rotating Taps</h3>
-            <p>Belgian ales, local brews, and rare finds. Updated weekly, always something new to discover.</p>
-          </div>
-          <div class="exp-card">
-            <div class="exp-icon" aria-hidden="true">&#127863;</div>
-            <h3>Bottle Shop &amp; Retail</h3>
-            <p>Hundreds of bottles and cans to take home. Curated selection of Belgian, American, and imported craft.</p>
-          </div>
-          <div class="exp-card">
-            <div class="exp-icon" aria-hidden="true">&#127942;</div>
-            <h3>St. Bernardus Taproom</h3>
-            <p>The only official St. Bernardus taproom in the Carolinas. Home of our private-label St. Ames ales.</p>
-          </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Featured Beers -->
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="section-header">
-          <h2>On Tap Now</h2>
-          <p>Rotating selection — these won't last long</p>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-        <div class="beer-preview">
-          <div class="beer-card">
-            <span class="beer-style">Belgian Quadruple</span>
-            <h4>St. Bernardus Abt 12</h4>
-            <p class="beer-abv">10.0% ABV</p>
-            <p>Dark fruit, chocolate, caramel. The world-renowned classic from Watou, Belgium.</p>
-          </div>
-          <div class="beer-card">
-            <span class="beer-style">Belgian Blonde</span>
-            <h4>St. Ames Blonde</h4>
-            <p class="beer-abv">5.2% ABV</p>
-            <p>Our private label. Traditional Belgian blonde, exclusive to Carolina Beer Temple.</p>
-          </div>
-          <div class="beer-card">
-            <span class="beer-style">Belgian Dubbel</span>
-            <h4>St. Ames Brune</h4>
-            <p class="beer-abv">6.7% ABV</p>
-            <p>Our private label dubbel. Think Abt 12's little brother — same soul, lighter touch.</p>
-          </div>
-          <div class="beer-card">
-            <span class="beer-style">Hazy IPA</span>
-            <h4>Rotating Local</h4>
-            <p class="beer-abv">6.5% ABV</p>
-            <p>Charlotte-area breweries on rotation. Ask your bartender what's fresh this week.</p>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:24px">
-          <a href="taps.html" class="btn btn-a">Full Tap List</a>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
       </div>
     </section>
 
-    <!-- Events Teaser -->
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Upcoming Events</h2>
-          <p>Beer celebrations, tap takeovers, and food truck nights</p>
-        </div>
-        <div class="events-preview">
-          <div class="event-card">
-            <div class="event-date">
-              <span class="event-month">Monthly</span>
-            </div>
-            <div class="event-info">
-              <h3>ABT 12 Day</h3>
-              <p>Annual celebration of St. Bernardus Abt 12. Rare vintages, brewery guests, free pours from Methusalem bottles.</p>
-            </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
-              <span class="event-month">Weekly</span>
-            </div>
-            <div class="event-info">
-              <h3>Thursday Tap Takeovers</h3>
-              <p>North Carolina breweries take over 4+ taps with special flight offers. New brewery every week.</p>
-            </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
-              <span class="event-month">Ongoing</span>
-            </div>
-            <div class="event-info">
-              <h3>Food Truck Schedule</h3>
-              <p>Different food truck on site each week. Check our events page for the current schedule.</p>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:24px">
-          <a href="events.html" class="btn btn-o">All Events</a>
-        </div>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Carolina Beer Temple Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section-accent">
-      <div class="wrap">
-        <div class="cta-banner">
-          <h2>Find Your Next Favorite Beer</h2>
-          <p>18 taps, hundreds of bottles, and a community that loves great beer. Welcome to the Temple.</p>
-          <div class="btn-row">
-            <a href="taps.html" class="btn btn-p">View Tap List</a>
-            <a href="visit.html" class="btn btn-o">Plan Your Visit</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Carolina Beer Temple.
+    </div>
   </main>
 
+  
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Carolina Beer Temple</h3>
-          <p>Best Bar in North Carolina. Belgian craft beer bar, retail store, and St. Bernardus official taproom in Matthews.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="taps.html">Tap List</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="visit.html">Visit</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="visit.html#newsletter">Newsletter</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Carolina Beer Temple. All rights reserved.</p>
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Carolina Beer Temple</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1019" style="color: var(--accent-color);">(704) 555-1019</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
