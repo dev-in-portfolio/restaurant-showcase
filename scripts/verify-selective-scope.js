@@ -64,6 +64,8 @@ const allowedInfrastructureFiles = new Set([
   'scripts/rebuild_restaurant.js',
   'scripts/rebuild_target.js',
   'scripts/batch_rebuild.js',
+  'scripts/rebuild_bespoke_target.js',
+  'scripts/batch_bespoke_rebuild.js',
   'data/archived-restaurants.json',
   'archive/index.html',
   'archive/style.css',
