@@ -1,121 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leluia Hall — Charlotte, NC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--stone:#dad3c7;--terracotta:#c1663c;--deep-teal:#1b4d4a;--cream:#f5efe6;--charcoal:#1e1a16;--gold:#c9a84c;--sage:#7a9a7a}.teal-bg{background:var(--deep-teal);color:var(--cream)}.terracotta{color:var(--terracotta)}.cream-bg{background:var(--cream)}.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,var(--charcoal)0%,var(--deep-teal)50%,var(--charcoal)100%);color:var(--cream);padding:2rem 24px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M20 20 L30 20 L30 30 L20 30 Z" fill="%23c1663c" opacity="0.08"/><path d="M60 50 L75 50 L75 65 L60 65 Z" fill="%23c1663c" opacity="0.06"/><path d="M10 70 L22 70 L22 82 L10 82 Z" fill="%23c1663c" opacity="0.05"/><path d="M70 15 L80 15 L80 25 L70 25 Z" fill="%23c1663c" opacity="0.07"/></svg>')repeat;pointer-events:none}.hero h1{color:var(--cream);margin-bottom:.5rem}.hero h1 span{color:var(--terracotta)}.hero p{font-size:1.2rem;max-width:640px;margin:0 auto 2rem;opacity:.9}.menu-highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}.menu-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:var(--shadow);border-top:4px solid var(--terracotta);transition:transform .2s,box-shadow .2s}.menu-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}.menu-card h3{color:var(--deep-teal)}.menu-card .price{color:var(--terracotta);font-weight:700;font-size:1.1rem}.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-top:2rem}.feature{text-align:center;padding:1.5rem}.feature .icon{font-size:2.2rem;display:block;margin-bottom:.75rem}.feature h4{color:var(--deep-teal);margin-bottom:.25rem}.feature p{font-size:.9rem;color:var(--medium-gray)}.brunch-banner{background:linear-gradient(135deg,var(--terracotta),var(--deep-teal));color:var(--cream);padding:3rem 24px;text-align:center;border-radius:8px;margin:3rem 0}.brunch-banner h2{color:var(--cream)}.brunch-banner p{opacity:.9;max-width:500px;margin:0 auto 1.5rem}.hours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;max-width:600px;margin:2rem auto}.hours-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--light-gray);font-size:.95rem}.hours-row .day{font-weight:600}.hours-row .time{color:var(--medium-gray)}.hours-row.closed{opacity:.5}.disclosure{border-color:rgba(255,255,255,.2)}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leluia Hall | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Leluia Hall in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">✨</span>
+        <span class="brand-title">Leluia Hall</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="site-header">
-<div class="container header-inner">
-<a href="index.html" class="logo">Leluia Hall</a>
-<nav class="nav-links">
-<a href="menu.html">Menu</a>
-<a href="about.html">Our Story</a>
-<a href="reservations.html">Reservations</a>
-<a href="gallery.html">Gallery</a>
-</nav>
-</div>
-</header>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Leluia Hall</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
+    </section>
 
-<section class="hero" id="main">
-<div>
-<h1>Leluia <span>Hall</span></h1>
-<p>Steak &amp; surf in a restored 1915 church — at the edge of historic Dilworth and fast-growing Southend.</p>
-<a href="reservations.html" class="btn btn-primary">Reserve a Table</a>
-<a href="menu.html" class="btn btn-outline" style="background:transparent;color:var(--cream);border-color:var(--cream);margin-left:.75rem">View Menu</a>
-</div>
-</section>
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="section container">
-<h2 class="text-center">Steak &amp; <span class="terracotta">Surf</span></h2>
-<p class="text-center" style="max-width:600px;margin:0 auto 1rem">Prime cuts of steak, entrée seafoods, mini tacos with housemade tortillas, a full raw bar, and thoughtful desserts — flavors inspired by the coastal Americas.</p>
-<div class="menu-highlights">
-<div class="menu-card">
-<h3>Prime Steaks</h3>
-<p>Center-cut filets, bone-in ribeyes, and dry-aged strips — each grilled to perfection over high heat.</p>
-</div>
-<div class="menu-card">
-<h3>Raw Bar</h3>
-<p>Fresh oysters, chilled shrimp, house-made cocktails, and seasonal ceviche sourced from both coasts.</p>
-</div>
-<div class="menu-card">
-<h3>Mini Tacos</h3>
-<p>Housemade tortillas filled with grilled fish, braised short rib, or roasted vegetables — bright, fresh, and tropical.</p>
-</div>
-<div class="menu-card">
-<h3>Desserts</h3>
-<p>Thoughtful endings like key lime pie, coconut flan, and warm chocolate budino with sea salt.</p>
-</div>
-</div>
-</section>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Leluia Hall Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
 
-<section class="section" style="background:var(--cream)">
-<div class="container">
-<div class="brunch-banner">
-<h2>Weekend Brunch</h2>
-<p>Saturdays &amp; Sundays · 10:30 AM – 2:30 PM. Steak and eggs, lobster rolls, duck confit hash, and bottomless mimosas.</p>
-<a href="reservations.html" class="btn" style="background:var(--white);color:var(--charcoal)">Book Brunch</a>
-</div>
-</div>
-</section>
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
 
-<section class="section container">
-<h2 class="text-center">Hours</h2>
-<div class="hours-grid">
-<div class="hours-row closed"><span class="day">Monday</span><span class="time">Closed</span></div>
-<div class="hours-row"><span class="day">Tuesday</span><span class="time">4:30 – 9:30 PM</span></div>
-<div class="hours-row"><span class="day">Wednesday</span><span class="time">4:30 – 9:30 PM</span></div>
-<div class="hours-row"><span class="day">Thursday</span><span class="time">4:30 – 9:30 PM</span></div>
-<div class="hours-row"><span class="day">Friday</span><span class="time">4:00 – 10:30 PM</span></div>
-<div class="hours-row"><span class="day">Saturday</span><span class="time">10:30 AM – 2:30 PM &amp; 4:00 – 10:30 PM</span></div>
-<div class="hours-row"><span class="day">Sunday</span><span class="time">10:30 AM – 2:30 PM &amp; 4:30 – 9:30 PM</span></div>
-</div>
-<div class="features-grid">
-<div class="feature">
-<span class="icon">🏛️</span>
-<h4>Historic Space</h4>
-<p>Housed in a lovingly restored 1915 church building</p>
-</div>
-<div class="feature">
-<span class="icon">🍷</span>
-<h4>Wine Cellar</h4>
-<p>Private dining for 6–10 in our underground cellar</p>
-</div>
-<div class="feature">
-<span class="icon">🌿</span>
-<h4>Outdoor Seating</h4>
-<p>Patio dining available seasonally</p>
-</div>
-<div class="feature">
-<span class="icon">🎶</span>
-<h4>Live Music</h4>
-<p>Weekly performances on our intimate stage</p>
-</div>
-</div>
-</section>
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
 
-<footer class="section" style="padding:2rem 24px;background:var(--deep-teal);color:var(--cream);text-align:center">
-<div class="container">
-<p style="opacity:.8">&copy; 2026 Leluia Hall — Charlotte, NC</p>
-<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
-<a href="https://instagram.com/leluiahall" style="color:var(--terracotta)">@leluiahall</a> &middot;
-<a href="mailto:leluiahall@icloud.com" style="color:var(--terracotta)">leluiahall@icloud.com</a> &middot;
-<a href="tel:7042482512" style="color:var(--terracotta)">(704) 248-2512</a>
-</p>
-<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
-</div>
-</footer>
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Leluia Hall.
+    </div>
+  </main>
 
-<script src="../site-core.js"></script>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Leluia Hall</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1068" style="color: var(--accent-color);">(704) 555-1068</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
