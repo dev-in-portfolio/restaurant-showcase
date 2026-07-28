@@ -1,196 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Idlewild — Cocktail Bar, Charlotte NC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-.hero-tagline {
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  color: var(--amber);
-  font-style: italic;
-  margin-bottom: 1.5rem;
-  line-height: 1.3;
-}
-.hero-ambient {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(201,149,46,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255,214,153,0.05) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 20%, rgba(139,94,60,0.04) 0%, transparent 50%);
-  z-index: 0;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(10,22,40,0.6) 100%);
-  z-index: 1;
-}
-.atmosphere-grid { margin-top: 2rem; }
-.atm-item {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-.atm-item .num {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  color: var(--amber);
-  font-weight: 300;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.atm-item h4 {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--cream);
-  font-weight: 400;
-  margin-bottom: 0.25rem;
-}
-.atm-item p { color: var(--text-muted); font-size: 0.9rem; }
-.quote-block {
-  border-left: 3px solid var(--amber);
-  padding: 1.5rem 2rem;
-  margin: 2rem 0;
-  background: rgba(201,149,46,0.04);
-  border-radius: 0 8px 8px 0;
-}
-.quote-block p {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--cream);
-  line-height: 1.5;
-}
-.quote-block cite {
-  display: block;
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-style: normal;
-}
-.hero-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-@media (max-width: 480px) {
-  .hero-cta-group { flex-direction: column; align-items: center; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idlewild | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Idlewild in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<div class="disclosure">Unofficial concept presentation — not operated by the restaurant</div>
-
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Idlewild<span>.</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cocktails.html">Cocktails</a></li>
-      <li><a href="story.html">Story</a></li>
-      <li><a href="visit.html">Visit</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<main id="main">
-
-  <section class="hero" aria-label="Welcome to Idlewild">
-    <div class="hero-ambient"></div>
-    <div class="hero-content">
-      <p class="hero-tagline">No menu. Just your taste.</p>
-      <h1>Idlewild</h1>
-      <p class="hero-sub">A casual, cozy cocktail bar in Charlotte's NoDa neighborhood. Hand-carved ice, fresh-pressed juices, and cocktails built around what <em>you</em> love.</p>
-      <div class="hero-cta-group">
-        <a href="visit.html" class="btn btn-primary">Reserve a Lounge</a>
-        <a href="cocktails.html" class="btn btn-outline">Find Your Cocktail</a>
-      </div>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍸</span>
+        <span class="brand-title">Idlewild</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="section" aria-labelledby="atmosphere-heading">
-    <div class="section-inner">
-      <h2 id="atmosphere-heading" class="section-title">The <i>Experience</i></h2>
-      <p class="section-sub">Step off 36th Street into a world of dim light, deep sound, and drinks made with intention. Idlewild is Charlotte's most intimate cocktail retreat.</p>
-      <div class="grid-3 atmosphere-grid">
-        <div class="atm-item">
-          <span class="num">01</span>
-          <h4>The Space</h4>
-          <p>High ceilings, warm candlelight, plush seating. An intimate speakeasy atmosphere that invites conversation and relaxation.</p>
-        </div>
-        <div class="atm-item">
-          <span class="num">02</span>
-          <h4>The Sound</h4>
-          <p>Curated deep house and chill electronic — music that sets the mood without overpowering the moment.</p>
-        </div>
-        <div class="atm-item">
-          <span class="num">03</span>
-          <h4>The Craft</h4>
-          <p>Every cocktail is built to order. Hand-carved ice, juices pressed fresh, and ingredients sourced with care.</p>
-        </div>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Idlewild</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" style="background: var(--navy-light);" aria-labelledby="concept-heading">
-    <div class="section-inner">
-      <h2 id="concept-heading" class="section-title">The No-<i>Menu</i> Concept</h2>
-      <p class="section-sub">Tell us what you like — sweet, smoky, herbal, spirit-forward — and we'll craft something you'll remember. There's no list to choose from, just a conversation that ends in an excellent drink.</p>
-      <div class="quote-block">
-        <p>"We don't have a menu because we don't believe in limiting what you might discover. Every drink is a collaboration between you and the bartender."</p>
-        <cite>&mdash; Idlewild Bar Team</cite>
-      </div>
-      <div class="text-center mt-2">
-        <a href="cocktails.html" class="btn btn-primary">Explore the Approach</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="bites-heading">
-    <div class="section-inner">
-      <h2 id="bites-heading" class="section-title">Small <i>Bites</i></h2>
-      <p class="section-sub">Designed to complement your cocktail. A small, thoughtful food menu built for sharing.</p>
-      <div class="grid-3" style="margin-top:1.5rem;">
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
         <div class="card">
-          <div class="card-icon">&#x1F9C4;</div>
-          <h3>Seasonal Offerings</h3>
-          <p>Rotating small plates built around what's fresh — think marinated olives, spiced nuts, charcuterie boards, and warm bites.</p>
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
+        
         <div class="card">
-          <div class="card-icon">&#x1F33F;</div>
-          <h3>Locally Sourced</h3>
-          <p>Partnering with Charlotte-area purveyors to bring you ingredients that are as thoughtful as the cocktails they accompany.</p>
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
+        
         <div class="card">
-          <div class="card-icon">&#x1FAD6;</div>
-          <h3>Cocktail Pairings</h3>
-          <p>Ask your bartender to pair a bite with your drink — they'll guide you to the perfect combination.</p>
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
       </div>
+    </section>
+
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Idlewild Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
+
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Idlewild.
     </div>
-  </section>
+  </main>
 
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-social">
-      <a href="https://instagram.com/idlewildbar" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://idlewildbar.com" target="_blank" rel="noopener noreferrer">Website</a>
-      <a href="contact.html">Contact</a>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Idlewild</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1129" style="color: var(--accent-color);">(704) 555-1129</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
     </div>
-    <p class="footer-copy">Unofficial concept presentation &mdash; not operated by the restaurant. <br>Idlewild &middot; 424 E 36th St, Unit 2, Charlotte, NC</p>
-  </div>
-</footer>
+  </footer>
 
-<script src="../site-core.js"></script>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
