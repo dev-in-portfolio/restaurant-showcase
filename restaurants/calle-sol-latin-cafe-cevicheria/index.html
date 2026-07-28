@@ -3,208 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calle Sol Latin Café & Cevicheria | Charlotte, NC</title>
-  <meta name="description" content="Cuban to Peruvian cuisine in Plaza Midwood and SouthPark. Fresh ceviche, Latin flavors, vibrant atmosphere.">
+  <title>Calle Sol Latin Café & Cevicheria | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Calle Sol Latin Café & Cevicheria in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <header class="site-header" role="banner">
-    <div class="wrap header-inner">
-      <a href="index.html" class="logo" aria-label="Calle Sol Home">
-        <div class="logo-icon" aria-hidden="true">&#9728;</div>
-        <div>
-          <span class="logo-text">Calle Sol</span>
-          <span class="logo-sub">Latin Café &amp; Cevicheria</span>
-        </div>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍸</span>
+        <span class="brand-title">Calle Sol Latin Café & Cevicheria</span>
       </a>
-      <nav aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links" id="main-nav" role="list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="locations.html">Locations</a></li>
-          <li><a href="ceviche.html">Ceviche Bar</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="visit.html">Visit</a></li>
-          <li><a href="visit.html#order" class="header-cta">Order Now</a></li>
-        </ul>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-content">
-          <span class="hero-badge">&#9728; From Cuba to Peru</span>
-          <h1>Latin Flavors in the Heart of Charlotte</h1>
-          <p>Fresh ceviche, Cuban fried rice, and Peruvian classics served in a vibrant neighborhood café. Two locations: Plaza Midwood and SouthPark.</p>
-          <div class="hero-ctas">
-            <a href="menu.html" class="btn btn-a">View Menu</a>
-            <a href="visit.html#order" class="btn btn-o">Order Online</a>
-          </div>
-        </div>
-        <div class="hero-img-placeholder" aria-hidden="true">
-          <span class="hero-img-icon">&#127869;</span>
-          <span class="hero-img-label">Fresh, Vibrant, Authentic</span>
-        </div>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Calle Sol Latin Café & Cevicheria</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
       </div>
     </section>
 
-    <!-- Signature Dishes -->
+    <!-- Substantive Featured Highlights -->
     <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Signature Dishes</h2>
-          <p>From Cuban fried rice to Peruvian ceviche</p>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-        <div class="menu-preview">
-          <div class="menu-item">
-            <div class="menu-item-tag">Popular</div>
-            <h4>Cuban Fried Rice</h4>
-            <span class="price">$19.90</span>
-            <p>Roasted lechon, bacon, caramelized pineapple, plantains, sesame seeds, and Sol sauce</p>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-tag">Ceviche</div>
-            <h4>Classic Ceviche</h4>
-            <span class="price">$16</span>
-            <p>Fresh citrus-cured seafood with red onion, cilantro, and house leche de tigre</p>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-tag">Peruvian</div>
-            <h4>Chaufa</h4>
-            <span class="price">$19.90</span>
-            <p>Peruvian-Chinese fried rice with chicken, soy, and aromatics</p>
-          </div>
-          <div class="menu-item">
-            <h4>Lechon Asado</h4>
-            <span class="price">$19.90</span>
-            <p>10-hour roasted pork, mojo marinade, rice, beans, plantains</p>
-          </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-        <div style="text-align:center;margin-top:24px">
-          <a href="menu.html" class="btn btn-o">See Full Menu</a>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
       </div>
     </section>
 
-    <!-- Two Locations -->
-    <section class="section-alt">
-      <div class="wrap">
-        <div class="section-header">
-          <h2>Two Locations</h2>
-          <p>Same Latin soul, two Charlotte neighborhoods</p>
-        </div>
-        <div class="location-compare">
-          <div class="loc-card">
-            <div class="loc-badge">Plaza Midwood</div>
-            <h3>1205 Thomas Avenue</h3>
-            <p>Charlotte, NC 28205</p>
-            <p class="loc-phone"><a href="tel:7045658291">(704) 565-8291</a></p>
-            <div class="loc-hours">
-              <span>Mon–Thu: 11AM – 9PM</span>
-              <span>Fri–Sat: 11AM – 10PM</span>
-              <span>Sun: 11AM – 9PM</span>
-            </div>
-            <a href="visit.html#midwood" class="btn btn-o">Get Directions</a>
-          </div>
-          <div class="loc-card">
-            <div class="loc-badge">SouthPark</div>
-            <h3>3100 Apex Drive</h3>
-            <p>Charlotte, NC 28211</p>
-            <p class="loc-phone"><a href="tel:7046261022">(704) 626-1022</a></p>
-            <div class="loc-hours">
-              <span>Mon–Thu: 11AM – 9PM</span>
-              <span>Fri–Sat: 11AM – 10PM</span>
-              <span>Sun: 11AM – 9PM</span>
-            </div>
-            <a href="visit.html#southpark" class="btn btn-o">Get Directions</a>
-          </div>
-        </div>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Calle Sol Latin Café & Cevicheria Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
       </div>
     </section>
 
-    <!-- Why Calle Sol -->
-    <section>
-      <div class="wrap">
-        <div class="section-header">
-          <h2>The Calle Sol Experience</h2>
-        </div>
-        <div class="experience-grid">
-          <div class="exp-card">
-            <div class="exp-icon" aria-hidden="true">&#129424;</div>
-            <h3>Fresh Ceviche Bar</h3>
-            <p>Made to order, never frozen. Choose your fish, your heat, your style.</p>
-          </div>
-          <div class="exp-card">
-            <div class="exp-icon" aria-hidden="true">&#127866;</div>
-            <h3>Latin Cocktails</h3>
-            <p>Pisco sours, mojitos, and house specials. Latin sodas for the non-drinkers.</p>
-          </div>
-          <div class="exp-card">
-            <div class="exp-icon" aria-hidden="true">&#127796;</div>
-            <h3>Outdoor Seating</h3>
-            <p>Both locations have patio seating. Dogs welcome at Plaza Midwood.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section-dark">
-      <div class="wrap">
-        <div class="cta-banner">
-          <h2>Craving Latin?</h2>
-          <p>Order online for pickup or delivery, or visit us in Plaza Midwood or SouthPark.</p>
-          <div class="btn-row">
-            <a href="visit.html#order" class="btn btn-a">Order Now</a>
-            <a href="menu.html" class="btn btn-o">See the Menu</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Calle Sol Latin Café & Cevicheria.
+    </div>
   </main>
 
+  
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Calle Sol</h3>
-          <p>Latin Café &amp; Cevicheria. From Cuba to Peru, in the heart of Charlotte. Two locations: Plaza Midwood and SouthPark.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="visit.html">Visit</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="tel:7045658291">(704) 565-8291</a></li>
-            <li><a href="mailto:info@callesolcafe.com">Email</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Calle Sol Latin Café &amp; Cevicheria. All rights reserved.</p>
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Calle Sol Latin Café & Cevicheria</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1105" style="color: var(--accent-color);">(704) 555-1105</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
