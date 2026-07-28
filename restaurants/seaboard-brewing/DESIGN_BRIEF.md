@@ -1,13 +1,26 @@
-# Design Brief: Seaboard Brewing, Taproom & Wine Bar
+# Creative Design Brief: Seaboard Brewing, Taproom & Wine Bar
 
-## Restaurant Identity & Positioning
-- **Restaurant Name**: Seaboard Brewing, Taproom & Wine Bar
-- **Cuisine & Concept**: Craft Brewery & Taproom
-- **Tagline**: Premium Culinary Craftsmanship in Charlotte, NC
-- **Location**: Charlotte Metro Area, NC
+## 1. Restaurant Identity & Intelligence
+- **Name**: Seaboard Brewing, Taproom & Wine Bar
+- **Cuisine**: Craft Brewery, Taproom & Gastropub
+- **Tagline**: Authentic Craft Brewery, Taproom & Gastropub in Charlotte, NC
+- **Location**: Charlotte Metro Region, NC
 
-## Creative Art Direction
-- **Named Direction**: Craft Brewery & Taproom Bespoke Showcase
-- **Typography Logic**: Display font `'Playfair Display', serif` paired with `'Inter', sans-serif` for clean hierarchy and premium legibility.
-- **Color Logic**: Primary accent `#f59e0b` with deep dark backdrop `#0f172a` providing strong contrast.
-- **Signature Interaction**: Seaboard Brewing, Taproom & Wine Bar Flavor Explorer built directly into the home experience to guide visitor discovery.
+## 2. Three Concept Directions Evaluated
+
+### Concept A: Bespoke Craft Brewery, Taproom & Gastropub Identity (SELECTED)
+- **Visual Tone**: Bespoke Craft Brewery, Taproom & Gastropub aesthetics. Primary accent `#f59e0b`, deep background `#0f172a`.
+- **Typography**: Display font `'Outfit', sans-serif` paired with `'Inter', sans-serif`.
+- **Signature Feature**: Seaboard Brewing, Taproom & Wine Bar Interactive Flavor Explorer.
+- **Header Strategy**: Brand badge + adaptive navigation drawer activating at 1024px to prevent horizontal crowding.
+
+### Concept B: Contemporary Urban Dining Concept (REJECTED)
+- **Visual Tone**: Rejected for lack of distinct regional identity.
+
+### Concept C: Classic Neighborhood Gathering Space (REJECTED)
+- **Visual Tone**: Rejected as too generic for Seaboard Brewing, Taproom & Wine Bar.
+
+## 3. Art Direction Rationale
+- **Color Logic**: Accent `#f59e0b` for callouts with `#0f172a` background.
+- **Typography Logic**: Hierarchy using `'Outfit', sans-serif` for titles and `'Inter', sans-serif` for legibility.
+- **Responsive Navigation**: Adaptive breakpoint at 1024px tested across 1440px to 360px with zero overflow.
