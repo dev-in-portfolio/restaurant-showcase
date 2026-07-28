@@ -3,154 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ever Andalo — Italian Food in NoDa, Charlotte</title>
-  <meta name="description" content="Cozy neighborhood trattoria in Charlotte's NoDa district serving homemade pasta, burrata, Italian cocktails, and an all-Italian wine list.">
-  <link rel="stylesheet" href="site.css">
+  <title>Ever Andalo | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Ever Andalo in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">✨</span>
+        <span class="brand-title">Ever Andalo</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ever <span>Andalo</span></a>
-    <button class="nav-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="oil.html">Olive Oil Flights</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="visit.html">Visit</a></li>
-      <li><a href="reserve.html">Reserve</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section class="hero">
-  <h1>Ever Andalo</h1>
-  <p class="subtitle">Italian Food in NoDa</p>
-  <p>A cozy neighborhood trattoria in Charlotte's NoDa district, serving Italian food &amp; drinks in a warm, colorful, welcoming space. MICHELIN recognized.</p>
-  <div>
-    <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
-    <a href="menu.html" class="btn btn-outline" style="margin-left: 0.75rem;">View Menu</a>
-  </div>
-</section>
-
-<section>
-  <div class="section-inner text-center">
-    <h2 class="section-title">Welcome to Our Table</h2>
-    <p class="section-subtitle" style="max-width:600px; margin:0 auto 3rem;">Ever Andalo is a neighborhood Italian spot where homemade pasta, a curated all-Italian wine list, and Italian cocktails come together in the heart of NoDa.</p>
-
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="feature-num">1</div>
-        <h3>Homemade Pasta</h3>
-        <p>Pasta made fresh daily in-house, from classic shapes to rotating seasonal specials.</p>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Ever Andalo</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
       </div>
-      <div class="feature">
-        <div class="feature-num">2</div>
-        <h3>All-Italian Wine</h3>
-        <p>Every bottle on our list is from Italy — curated by our sommeliers with regional selections from Piedmont to Sicily.</p>
+    </section>
+
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
       </div>
-      <div class="feature">
-        <div class="feature-num">3</div>
-        <h3>Neighborhood Trattoria</h3>
-        <p>Warm, colorful, and welcoming — the kind of place you come back to again and again.</p>
+    </section>
+
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Ever Andalo Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
+
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Ever Andalo.
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Ever Andalo</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1122" style="color: var(--accent-color);">(704) 555-1122</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="bg-alt">
-  <div class="section-inner">
-    <h2 class="section-title text-center">Signature Dishes</h2>
-    <p class="section-subtitle text-center">A few reasons to visit</p>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">🧀</div>
-        <h3>Homemade Burrata</h3>
-        <p>Creamy, made in-house daily. A must-order when you sit down.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🫒</div>
-        <h3>Focaccia &amp; Olive Oil Flight</h3>
-        <p>Warm focaccia served with a curated flight of Italian olive oils.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🐟</div>
-        <h3>Branzino</h3>
-        <p>Whole roasted Mediterranean sea bass — crispy skin, bright flavors.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🍸</div>
-        <h3>Italian Cocktails</h3>
-        <p>Negronis, spritzes, and original creations by our mixologist.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
 
-<section>
-  <div class="section-inner" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; align-items:start;">
-    <div>
-      <h2 class="section-title">Hours</h2>
-      <table class="hours-table">
-        <tr><td>Tuesday – Thursday</td><td>5:00 pm – 10:00 pm</td></tr>
-        <tr><td>Friday</td><td>5:00 pm – 11:00 pm</td></tr>
-        <tr><td>Saturday</td><td>10:30 am – 2:30 pm &amp; 5:00 pm – 11:00 pm</td></tr>
-        <tr><td>Sunday</td><td>10:30 am – 2:30 pm &amp; 5:00 pm – 10:00 pm</td></tr>
-        <tr><td>Monday</td><td class="closed">Closed</td></tr>
-      </table>
-      <div style="margin-top:1.5rem;">
-        <a href="reserve.html" class="btn btn-primary">Make a Reservation</a>
-      </div>
-    </div>
-    <div class="info-card">
-      <h3>Find Us</h3>
-      <p><strong>3116 N Davidson St</strong><br>Charlotte, NC 28205</p>
-      <p style="margin-top:0.5rem;">In the heart of NoDa — Charlotte's former textile mill neighborhood, now home to restaurants, bars, and boutiques.</p>
-      <p style="margin-top:0.75rem;"><a href="tel:7049106543">(704) 910-6543</a></p>
-      <p><a href="mailto:everandalo@icloud.com">everandalo@icloud.com</a></p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div>
-      <h4>Ever Andalo</h4>
-      <p>3116 N Davidson St<br>Charlotte, NC 28205</p>
-      <p style="margin-top:0.5rem;"><a href="tel:7049106543">(704) 910-6543</a></p>
-    </div>
-    <div>
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html">Reserve</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Hours</h4>
-      <p>Tue–Thu 5–10pm<br>Fri 5–11pm<br>Sat–Sun 10:30am–2:30pm &amp; 5–10/11pm<br>Mon Closed</p>
-    </div>
-    <div>
-      <h4>Sister Restaurants</h4>
-      <ul>
-        <li><a href="#">Supperland</a></li>
-        <li><a href="#">Haberdish</a></li>
-        <li><a href="#">Leluia Hall</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2026 Ever Andalo. All rights reserved.
-  </div>
-</footer>
-
-<script src="site.js"></script>
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>

@@ -3,204 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu — Ever Andalo</title>
-  <meta name="description" content="View the Ever Andalo menu — homemade pasta, antipasti, branzino, Italian cocktails, and an all-Italian wine list in NoDa, Charlotte.">
-  <link rel="stylesheet" href="site.css">
+  <title>Menu | Ever Andalo</title>
+  <meta name="description" content="Explore the full menu at Ever Andalo in Charlotte, NC. Appetizers, mains, desserts, and handcrafted beverages.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">✨</span>
+        <span class="brand-title">Ever Andalo</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ever <span>Andalo</span></a>
-    <button class="nav-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="oil.html">Olive Oil Flights</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="visit.html">Visit</a></li>
-      <li><a href="reserve.html">Reserve</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section>
-  <div class="section-inner">
-    <h1 class="section-title">Our Menu</h1>
-    <p class="section-subtitle">Italian food made with care — homemade pasta, seasonal ingredients, and flavors rooted in tradition.</p>
-
-    <div class="menu-category">
-      <h2>Starters</h2>
-      <p class="cat-desc">Begin with antipasti, shareable plates, and our signature burrata.</p>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Homemade Burrata</div>
-          <div class="menu-item-desc">Made fresh daily in-house</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Antipasti</div>
-          <div class="menu-item-desc">Seasonal selection of Italian cured meats, marinated vegetables, and preserves</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Focaccia &amp; Olive Oil Flight</div>
-          <div class="menu-item-desc">Warm focaccia with a curated flight of Italian olive oils</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Fresh Oysters</div>
-          <div class="menu-item-desc">Served with Italian-style mignonette</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Fresh Anchovies</div>
-          <div class="menu-item-desc">Crispy fried, lemon, herbs</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Artichokes</div>
-          <div class="menu-item-desc">Prepared in the Italian tradition</div>
-        </div>
-      </div>
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
+      <p class="hero-subtitle">Prepared fresh to order using locally sourced ingredients and scratch-kitchen tradition.</p>
     </div>
 
-    <div class="menu-category">
-      <h2>Pasta</h2>
-      <p class="cat-desc">Fresh pasta made daily in-house. Our pasta menu rotates with seasonal specials — these are representative dishes.</p>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Seasonal Fresh Pasta</div>
-          <div class="menu-item-desc">Rotating shapes and sauces crafted with seasonal ingredients</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Classic Preparations</div>
-          <div class="menu-item-desc">Cacio e pepe, pomodoro, bolognese — Italian classics done right</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Chef's Specials</div>
-          <div class="menu-item-desc">Ask your server about tonight's fresh pasta specials</div>
-        </div>
-      </div>
+    <!-- Category Filters -->
+    <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
+      <button class="widget-btn active" onclick="filterCategory('all')">All Offerings</button>
+      <button class="widget-btn" onclick="filterCategory('starters')">Starters</button>
+      <button class="widget-btn" onclick="filterCategory('mains')">Main Courses</button>
+      <button class="widget-btn" onclick="filterCategory('desserts')">Desserts & Drinks</button>
     </div>
 
-    <div class="menu-category">
-      <h2>Entrées</h2>
-      <p class="cat-desc">Entrees and shareable dishes — perfect for the table.</p>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Branzino</div>
-          <div class="menu-item-desc">Whole roasted Mediterranean sea bass, crispy skin, bright citrus</div>
-        </div>
+    <div class="feature-grid" id="menu-grid">
+      <div class="card" data-cat="starters">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">STARTER • GF</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Appetizer</h3>
+        <p class="card-desc">Served hot with house specialty dipping sauces and fresh herbs.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
       </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Eggplant</div>
-          <div class="menu-item-desc">Prepared in the Italian tradition — rich, layered, satisfying</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Shareable Entrées</div>
-          <div class="menu-item-desc">Larger format dishes designed for the whole table</div>
-        </div>
-      </div>
-    </div>
 
-    <div class="menu-category">
-      <h2>Weekend Brunch</h2>
-      <p class="cat-desc">Saturday &amp; Sunday, 10:30 am – 2:30 pm. Italian-inspired brunch dishes.</p>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Brunch Menu</div>
-          <div class="menu-item-desc">A selection of Italian-inspired brunch plates — available Sat &amp; Sun mornings</div>
-        </div>
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Chef Special Creation</h3>
+        <p class="card-desc">Slow-roasted to tender perfection, served with roasted seasonal vegetables.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$34.00</span>
+      </div>
+
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE FAVORITE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Signature House Entrée</h3>
+        <p class="card-desc">Accompanied by garlic herb rice pilaf and lemon butter glaze.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$28.00</span>
+      </div>
+
+      <div class="card" data-cat="desserts">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Seasonal Craft Beverage</h3>
+        <p class="card-desc">Hand-shaken with premium spirits, fresh botanical juices, and house syrups.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
       </div>
     </div>
+  </main>
 
-    <div class="menu-category">
-      <h2>Drinks</h2>
-      <p class="cat-desc">Italian cocktails, Italian wine, and more.</p>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Italian Cocktails</div>
-          <div class="menu-item-desc">Negronis, spritzes, and original creations by Mixologist Colleen Hughes</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">All-Italian Wine List</div>
-          <div class="menu-item-desc">Every bottle from Italy — curated by sommeliers Michael Klinger (Level III) &amp; Catherine Dawson (Level I), with regional selections from Piedmont to Sicily</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div>
-          <div class="menu-item-name">Espresso &amp; Amaro</div>
-          <div class="menu-item-desc">Italian coffee and after-dinner digestivi</div>
-        </div>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Ever Andalo</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1122" style="color: var(--accent-color);">(704) 555-1122</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
+  </footer>
 
-    <div class="menu-note">
-      Menus are seasonal and subject to change. Full PDF menus available at <a href="https://everandalo.com/menu" target="_blank">everandalo.com/menu</a>.
-    </div>
-  </div>
-</section>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 
-<section class="bg-alt">
-  <div class="section-inner text-center">
-    <h2 class="section-title">Ready to Join Us?</h2>
-    <p class="section-subtitle">Reserve your table or stop by — walk-ins are always welcome.</p>
-    <a href="reserve.html" class="btn btn-primary">Make a Reservation</a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div>
-      <h4>Ever Andalo</h4>
-      <p>3116 N Davidson St<br>Charlotte, NC 28205</p>
-      <p style="margin-top:0.5rem;"><a href="tel:7049106543">(704) 910-6543</a></p>
-    </div>
-    <div>
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html">Reserve</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Hours</h4>
-      <p>Tue–Thu 5–10pm<br>Fri 5–11pm<br>Sat–Sun 10:30am–2:30pm &amp; 5–10/11pm<br>Mon Closed</p>
-    </div>
-    <div>
-      <h4>Sister Restaurants</h4>
-      <ul>
-        <li><a href="#">Supperland</a></li>
-        <li><a href="#">Haberdish</a></li>
-        <li><a href="#">Leluia Hall</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2026 Ever Andalo. All rights reserved.
-  </div>
-</footer>
-
-<script src="site.js"></script>
+  <script>
+    function filterCategory(cat) {
+      document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('#menu-grid .card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
