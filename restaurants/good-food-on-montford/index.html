@@ -3,167 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Good Food on Montford — Creative Small Plates in Charlotte</title>
+  <title>Good Food on Montford | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Good Food on Montford in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">Good Food on Montford</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="tapas.html">Tapas Builder</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html">Reserve</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-tag">Chef Bruce Moffett · Montford Drive, Charlotte</p>
-      <h1>Good Food on Montford</h1>
-      <p class="hero-sub">Creative small plates on Montford Drive</p>
-      <div class="hero-actions">
-        <a href="reserve.html" class="btn btn-primary">Reserve a Table</a>
-        <a href="menu.html" class="btn btn-outline">View Menu</a>
-      </div>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍽️</span>
+        <span class="brand-title">Good Food on Montford</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
   </header>
 
-  <section class="section features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🍽</div>
-          <h3>Shareable Plates</h3>
-          <p>Creative small plates designed for sharing — order a few and pass them around the table.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🍷</div>
-          <h3>Eclectic Wine List</h3>
-          <p>A curated, ever-changing selection of wines chosen to pair with our bold, layered flavors.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">👨‍🍳</div>
-          <h3>Chef's Counter</h3>
-          <p>Grab a front-row seat to the kitchen action and watch our team bring each plate to life.</p>
-        </div>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Good Food on Montford</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section about-preview">
-    <div class="container">
-      <div class="about-preview-grid">
-        <div class="about-preview-text">
-          <p class="section-label">Welcome</p>
-          <h2>Creative American Tapas<br>on Montford Drive</h2>
-          <p>For over 17 years, Chef Bruce Moffett has been serving up bold, eclectic small plates in the heart of South Charlotte. Named a James Beard semi-finalist for Best New Restaurant in 2010, Good Food on Montford is where adventurous eaters come to share, sip, and discover something new.</p>
-          <p>Every dish is a conversation starter. Pull up a chair, order a few plates, and let us do the rest.</p>
-          <a href="about.html" class="btn btn-secondary">Our Story</a>
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-        <div class="about-preview-image">
-          <div class="image-placeholder">
-            <span>Chef Bruce Moffett<br>at the Pass</span>
-          </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section signatures">
-    <div class="container">
-      <p class="section-label center">Signature Plates</p>
-      <h2 class="center">Guest Favorites</h2>
-      <div class="sig-grid">
-        <div class="sig-card">
-          <h4>Southern Farmhouse Cheeses</h4>
-          <p>Truffled chutney, bourbon fig compote</p>
-          <span class="price">$12</span>
-        </div>
-        <div class="sig-card">
-          <h4>Garganelli</h4>
-          <p>House-made Italian sausage, tomato</p>
-          <span class="price">$10</span>
-        </div>
-        <div class="sig-card">
-          <h4>Korean Beef</h4>
-          <p>Crispy rice, scallion kimchi</p>
-          <span class="price">$11</span>
-        </div>
-        <div class="sig-card">
-          <h4>Mussels</h4>
-          <p>Green curry, coconut milk, cilantro</p>
-          <span class="price">$10</span>
-        </div>
-        <div class="sig-card">
-          <h4>Southern Fried Quail</h4>
-          <p>Buttermilk blue cheese, hot sauce</p>
-          <span class="price">$13</span>
-        </div>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Good Food on Montford Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
       </div>
-      <div class="center" style="margin-top:2rem">
-        <a href="menu.html" class="btn btn-secondary">Full Menu</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section hours-location">
-    <div class="container">
-      <div class="hl-grid">
-        <div class="hl-card">
-          <h3>Hours</h3>
-          <p><strong>Monday – Saturday</strong><br>5:30 PM – 10:00 PM</p>
-          <p class="muted">Sunday — Closed</p>
-        </div>
-        <div class="hl-card">
-          <h3>Find Us</h3>
-          <p>1701 Montford Dr<br>Charlotte, NC 28209</p>
-          <p><a href="tel:7045250881">(704) 525-0881</a></p>
-        </div>
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
       </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>Good Food on Montford</h4>
-          <p>Creative American small plates on Montford Drive in South Charlotte.</p>
-        </div>
-        <div>
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="visit.html">Visit</a></li>
-            <li><a href="reserve.html">Reserve</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p>1701 Montford Dr<br>Charlotte, NC 28209</p>
-          <p><a href="tel:7045250881">(704) 525-0881</a></p>
-        </div>
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Good Food on Montford. All rights reserved.</p>
+    </section>
+
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Good Food on Montford.
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Good Food on Montford</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1048" style="color: var(--accent-color);">(704) 555-1048</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
