@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legion Brewing — Charlotte, NC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--navy:#0a1628;--copper:#b87333;--cream:#f5f0e8;--dark-wood:#3e2c1b;--gold:#c9a84c}.navy-bg{background:var(--navy);color:var(--cream)}.copper{color:var(--copper)}.cream-bg{background:var(--cream)}.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,var(--navy)0%,#1a2a40 50%,var(--navy)100%);color:var(--cream);padding:2rem 24px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23b87333" opacity="0.15"/><circle cx="50" cy="30" r="1.5" fill="%23b87333" opacity="0.1"/><circle cx="80" cy="60" r="1" fill="%23b87333" opacity="0.12"/><circle cx="30" cy="80" r="1.2" fill="%23b87333" opacity="0.08"/><circle cx="90" cy="15" r="0.8" fill="%23b87333" opacity="0.15"/><circle cx="20" cy="50" r="1.3" fill="%23b87333" opacity="0.1"/></svg>')repeat;pointer-events:none}.hero h1{color:var(--cream);margin-bottom:.5rem}.hero h1 span{color:var(--copper)}.hero p{font-size:1.2rem;max-width:640px;margin:0 auto 2rem;opacity:.9}.hero-locations{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:900px;margin:2rem auto 0;width:100%}.hero-location-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:1.25rem;text-align:center}.hero-location-card h4{color:var(--copper);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.25rem}.hero-location-card p{font-size:.85rem;margin:0;opacity:.7}.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}.location-card{background:var(--white);border-radius:8px;padding:2rem;box-shadow:var(--shadow);border-left:4px solid var(--copper);transition:transform .2s,box-shadow .2s}.location-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}.location-card h3{color:var(--navy);margin-bottom:.25rem}.location-card .loc-sub{color:var(--copper);font-weight:600;font-size:.9rem;margin-bottom:.75rem}.location-card p{margin-bottom:.35rem;font-size:.95rem}.mission-section{background:linear-gradient(135deg,var(--navy)0%,#1a2a40 100%);color:var(--cream);text-align:center}.mission-section h2{color:var(--cream)}.mission-section h2 span{color:var(--copper)}.mission-section blockquote{font-family:var(--font-heading);font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;max-width:720px;margin:1.5rem auto 0;line-height:1.6;opacity:.9}.features-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}.feature-item{text-align:center}.feature-item .icon{font-size:2.5rem;margin-bottom:.75rem;display:block}.feature-item h4{color:var(--copper);margin-bottom:.25rem}.feature-item p{font-size:.9rem;opacity:.8}.disclosure{text-align:center;font-size:.8rem;color:var(--medium-gray);padding:1rem 24px;border-top:1px solid var(--light-gray)}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legion Brewing | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Legion Brewing in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">✨</span>
+        <span class="brand-title">Legion Brewing</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="site-header">
-<div class="container header-inner">
-<a href="index.html" class="logo">Legion Brewing</a>
-<nav class="nav-links">
-<a href="beer.html">Beer</a>
-<a href="story.html">Our Story</a>
-<a href="locations.html">Locations</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Legion Brewing</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
+    </section>
 
-<section class="hero" id="main">
-<div>
-<h1>Legion <span>Brewing</span></h1>
-<p>Craft beer &amp; chef-driven food born in Charlotte, NC. Four locations, one mission: bring people together.</p>
-<a href="beer.html" class="btn btn-primary">Explore Our Beers</a>
-<a href="locations.html" class="btn btn-outline" style="background:transparent;color:var(--cream);border-color:var(--cream);margin-left:.75rem">Find a Location</a>
-<div class="hero-locations">
-<div class="hero-location-card">
-<h4>Plaza Midwood</h4>
-<p>1906 Commonwealth Ave</p>
-</div>
-<div class="hero-location-card">
-<h4>SouthPark</h4>
-<p>5610 Carnegie Blvd</p>
-</div>
-<div class="hero-location-card">
-<h4>Trolley Barn</h4>
-<p>2104 South Blvd</p>
-</div>
-<div class="hero-location-card">
-<h4>West Morehead</h4>
-<p>2013 W Morehead St</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="section container">
-<h2 class="text-center">Our <span class="copper">Beers</span></h2>
-<p class="text-center" style="max-width:600px;margin:0 auto 3rem">From flagship IPAs to Trolley Barn experimental small batches, there's a pint for every palate.</p>
-<div class="location-grid">
-<div class="location-card">
-<h3>Juicy Jay IPA</h3>
-<div class="loc-sub">Flagship IPA</div>
-<p>Our best-selling New England-style IPA bursting with citrus and tropical fruit notes. Hazy, juicy, and remarkably smooth.</p>
-</div>
-<div class="location-card">
-<h3>Penguin Stout</h3>
-<div class="loc-sub">Classic Stout</div>
-<p>Rich, roasty, and full-bodied. Notes of dark chocolate and coffee with a silky finish. A Charlotte cold-weather classic.</p>
-</div>
-<div class="location-card">
-<h3>Seasonal Rotations</h3>
-<div class="loc-sub">Limited Releases</div>
-<p>From crisp kölsch in summer to barrel-aged barleywines in winter, our brewers keep the taplines fresh year-round.</p>
-</div>
-<div class="location-card">
-<h3>Trolley Barn Exclusives</h3>
-<div class="loc-sub">Experimental Only</div>
-<p>Our South Blvd outpost is dedicated to small-batch experiments—sours, wild ales, and one-off collaborations you won't find anywhere else.</p>
-</div>
-</div>
-</section>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Legion Brewing Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
 
-<section class="section" style="background:var(--cream)">
-<div class="container">
-<div class="text-center" style="max-width:700px;margin:0 auto">
-<h2>Chef-Driven <span class="copper">Food</span></h2>
-<p style="font-size:1.1rem;margin-bottom:2rem">We're redefining what brewery food means. From brick-oven pizzas at West Morehead to elevated pub fare at Plaza Midwood, every dish is crafted with the same care as our beer.</p>
-<a href="locations.html" class="btn btn-primary">See What's on the Menu</a>
-</div>
-</div>
-</section>
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
 
-<section class="section mission-section">
-<div class="container">
-<h2>Our <span>Mission</span></h2>
-<blockquote>"Bring people together and make each moment a little more special — over exceptional beer, thoughtful food, and genuine hospitality."</blockquote>
-<div class="features-showcase">
-<div class="feature-item">
-<span class="icon">🐕</span>
-<h4>Dog-Friendly</h4>
-<p>Well-behaved pups welcome at all locations</p>
-</div>
-<div class="feature-item">
-<span class="icon">🏃</span>
-<h4>Run Club</h4>
-<p>Weekly group runs from select locations</p>
-</div>
-<div class="feature-item">
-<span class="icon">🤝</span>
-<h4>Socially Conscious</h4>
-<p>Community partnerships &amp; sustainable practices</p>
-</div>
-<div class="feature-item">
-<span class="icon">🎉</span>
-<h4>Private Events</h4>
-<p>The Tower Room &amp; Capitol Room at SouthPark</p>
-</div>
-</div>
-</div>
-</section>
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
 
-<footer class="section" style="padding:2rem 24px;background:var(--navy);color:var(--cream);text-align:center">
-<div class="container">
-<p style="opacity:.8">&copy; 2026 Legion Brewing — Charlotte, NC</p>
-<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
-<a href="https://instagram.com/legionbrewing" style="color:var(--copper)">@legionbrewing</a> &middot;
-<a href="mailto:info@legionbrewing.com" style="color:var(--copper)">info@legionbrewing.com</a>
-</p>
-<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
-</div>
-</footer>
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Legion Brewing.
+    </div>
+  </main>
 
-<script src="../site-core.js"></script>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Legion Brewing</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1110" style="color: var(--accent-color);">(704) 555-1110</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
