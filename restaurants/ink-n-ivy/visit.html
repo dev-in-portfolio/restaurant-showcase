@@ -4,31 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visit Us | Ink N Ivy</title>
-  <meta name="description" content="Location, hours, directions, and contact information for Ink N Ivy in Charlotte, NC.">
+  <meta name="description" content="Location, hours, and contact information for Ink N Ivy in Charlotte, NC.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   
   <header class="site-header">
     <div class="site-container header-inner">
-      <a href="index.html" class="brand-logo">
-        <span class="brand-emoji">🍽️</span>
+      <a href="index.html" class="brand-wrapper">
+        <span class="brand-badge">🍽️</span>
         <span class="brand-title">Ink N Ivy</span>
       </a>
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="nav-menu" id="nav-menu">
+      <nav class="desktop-nav">
         <a href="index.html" class="nav-link ">Home</a>
         <a href="menu.html" class="nav-link ">Menu</a>
         <a href="story.html" class="nav-link ">Our Story</a>
         <a href="experience.html" class="nav-link ">Experience</a>
         <a href="reserve.html" class="nav-link ">Reservations</a>
         <a href="visit.html" class="nav-link active">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Book Table</a>
+        <a href="reserve.html" class="nav-cta">Reserve Table</a>
       </nav>
     </div>
+    <nav class="mobile-drawer" id="mobile-drawer">
+      <a href="index.html" class="nav-link ">Home</a>
+      <a href="menu.html" class="nav-link ">Menu</a>
+      <a href="story.html" class="nav-link ">Our Story</a>
+      <a href="experience.html" class="nav-link ">Experience</a>
+      <a href="reserve.html" class="nav-link ">Reservations</a>
+      <a href="visit.html" class="nav-link active">Visit Us</a>
+      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
+    </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3rem;">
+  <main class="site-container" style="padding-top: 3.5rem;">
     <div style="text-align: center; margin-bottom: 3.5rem;">
       <h1 class="hero-title" style="font-size: 2.8rem;">Visit & Contact</h1>
       <p class="hero-subtitle">We look forward to hosting you in Charlotte, NC.</p>
@@ -36,22 +45,19 @@
 
     <div class="feature-grid">
       <div class="card">
-        <div class="card-icon">📍</div>
         <h3 class="card-title">Location & Address</h3>
-        <p class="card-desc" style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Charlotte Metro Area, NC</p>
-        <p class="card-desc">Convenient parking available on site.</p>
+        <p class="card-desc" style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Charlotte Metro Region, NC</p>
+        <p class="card-desc">Convenient parking available nearby.</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">🕒</div>
         <h3 class="card-title">Hours of Operation</h3>
         <p class="card-desc" style="color: #fff; font-weight: 600;">Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">📞</div>
         <h3 class="card-title">Direct Contact</h3>
-        <p class="card-desc">Phone: <a href="tel:(704) 555-1078" style="color: var(--accent-color); font-weight: 700;">(704) 555-1078</a></p>
+        <p class="card-desc">Phone: <a href="tel:(704) 555-2078" style="color: var(--accent-color); font-weight: 700;">(704) 555-2078</a></p>
       </div>
     </div>
   </main>
@@ -59,18 +65,18 @@
   
   <footer class="site-footer">
     <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Ink N Ivy</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1078" style="color: var(--accent-color);">(704) 555-1078</a></p>
-      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <div style="margin-top: 1.5rem;">
-        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
-      </div>
+      <p style="margin-bottom: 0.5rem;"><strong>Ink N Ivy</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2078" style="color: var(--accent-color);">(704) 555-2078</a></p>
+      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
-      document.getElementById('nav-menu')?.classList.toggle('open');
-    });
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggleBtn && drawer) {
+      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
+    }
   </script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
