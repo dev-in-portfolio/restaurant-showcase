@@ -3,94 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservations | Amelie's French Bakery & Cafe</title>
-  <meta name="description" content="Reserve a table at Amelie's French Bakery & Cafe in Charlotte, NC. Book your dining experience online.">
+  <title>Catering & Macaron Towers | Amélie's French Bakery & Café</title>
+  <meta name="description" content="Order custom French macaron towers, assorted pastry boxes, and private event salon bookings from Amélie's French Bakery & Café in Charlotte, NC.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+
+  <!-- Adaptive Navigation Header -->
   <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-logo">
-        <span class="brand-emoji">🍽️</span>
-        <span class="brand-title">Amelie's French Bakery & Cafe</span>
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-badge">A</div>
+        <div class="brand-text-group">
+          <span class="brand-name">AMÉLIE’S</span>
+          <span class="brand-subtext">French Bakery & Café</span>
+        </div>
       </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link active">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Book Table</a>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Patisserie Menu</a>
+        <a href="story.html" class="nav-link">Our Heritage</a>
+        <a href="experience.html" class="nav-link">The Salon</a>
+        <a href="reserve.html" class="nav-link active">Catering & Towers</a>
+        <a href="visit.html" class="nav-link">Locations & Hours</a>
+        <a href="reserve.html" class="nav-cta">Order & Catering</a>
       </nav>
     </div>
+
+    <nav class="mobile-drawer" id="mobile-drawer">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="menu.html" class="nav-link">Patisserie Menu</a>
+      <a href="story.html" class="nav-link">Our Heritage</a>
+      <a href="experience.html" class="nav-link">The Salon</a>
+      <a href="reserve.html" class="nav-link active">Catering & Towers</a>
+      <a href="visit.html" class="nav-link">Locations & Hours</a>
+      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Order & Catering</a>
+    </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3rem;">
-    <div style="max-width: 650px; margin: 0 auto;">
-      <div style="text-align: center; margin-bottom: 2.5rem;">
-        <h1 class="hero-title" style="font-size: 2.5rem;">Reserve Your Table</h1>
-        <p class="hero-subtitle">Join us for lunch, dinner, or special occasion dining.</p>
+  <main class="container" style="padding-top: 3.5rem;">
+    <div style="max-width: 680px; margin: 0 auto;">
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span class="section-script">Custom Pastry & Event Requests</span>
+        <h1 class="section-title-serif" style="font-size: 2.8rem;">Macaron Towers & Catering</h1>
+        <p style="color: var(--amelie-muted); margin-top: 0.5rem;">Order custom macaron displays, pastry assortments, or inquire about private salon space.</p>
       </div>
 
-      <div class="card" style="padding: 2.5rem;">
-        <form onsubmit="handleReserve(event)">
+      <div class="amelie-card" style="padding: 2.5rem;">
+        <form onsubmit="handleCateringSubmit(event)">
           <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Party Size</label>
-            <select style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
-              <option>2 Guests</option>
-              <option>4 Guests</option>
-              <option>6 Guests</option>
-              <option>8+ Guests (Large Group)</option>
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem; color: var(--amelie-teal-dark);">Inquiry Type</label>
+            <select style="width: 100%; padding: 0.8rem; background: var(--amelie-paper); border: 1px solid rgba(198, 146, 20, 0.4); color: var(--amelie-charcoal); border-radius: 8px; font-family: var(--font-sans);">
+              <option>Custom Macaron Tower (4 to 10 Tiers)</option>
+              <option>Assorted French Pastry Party Box</option>
+              <option>Private Salon Event Space Booking</option>
+              <option>Wedding & Reception Dessert Table</option>
             </select>
           </div>
 
           <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Preferred Date & Time</label>
-            <input type="datetime-local" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;" required>
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem; color: var(--amelie-teal-dark);">Event Date & Guest Count</label>
+            <input type="text" aria-label="Event date and guest count" style="width: 100%; padding: 0.8rem; background: var(--amelie-paper); border: 1px solid rgba(198, 146, 20, 0.4); color: var(--amelie-charcoal); border-radius: 8px;" required>
           </div>
 
           <div style="margin-bottom: 1.5rem;">
-            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Special Requests / Occasion</label>
-            <input type="text" aria-label="Special requests or occasion notes" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem; color: var(--amelie-teal-dark);">Flavor Requests & Event Details</label>
+            <textarea aria-label="Flavor requests and event details" rows="3" style="width: 100%; padding: 0.8rem; background: var(--amelie-paper); border: 1px solid rgba(198, 146, 20, 0.4); color: var(--amelie-charcoal); border-radius: 8px; font-family: var(--font-sans);"></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Reservation Request →</button>
+          <button type="submit" class="btn-primary-amelie" style="width: 100%; justify-content: center;">Submit Catering Inquiry →</button>
         </form>
 
-        <div id="reserve-msg" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; border-radius: 8px; text-align: center;">
-          ✓ Demo Request Received! In production, live OpenTable/Resy integration processes instantaneous table confirmations.
+        <div id="catering-confirmation" style="display: none; margin-top: 1.5rem; padding: 1.2rem; background: rgba(27, 73, 88, 0.08); border: 1px solid var(--amelie-teal); border-radius: 12px; text-align: center; color: var(--amelie-teal-dark);">
+          ✓ <strong>Demo Inquiry Submitted!</strong> In production, live catering workflows route directly to Amélie's pastry team.
         </div>
       </div>
     </div>
   </main>
 
-  
   <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Amelie's French Bakery & Cafe</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1138" style="color: var(--accent-color);">(704) 555-1138</a></p>
-      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <div style="margin-top: 1.5rem;">
-        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+    <div class="container footer-grid">
+      <div>
+        <h3 class="footer-col-title">Amélie's French Bakery & Café</h3>
+        <p class="footer-text">Whimsical Parisian salon featuring French macarons, viennoiserie, and late-night coffee culture.</p>
       </div>
+
+      <div>
+        <h3 class="footer-col-title">NoDa Flagship</h3>
+        <p class="footer-text">3808 N Davidson St, Charlotte, NC 28205<br>Phone: <a href="tel:7043761781" style="color: var(--amelie-gold);">(704) 376-1781</a></p>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <p class="footer-text">
+          <a href="menu.html" style="color: #cbd5e1; text-decoration: underline;">Patisserie Menu</a> | 
+          <a href="story.html" style="color: #cbd5e1; text-decoration: underline;">Our Heritage</a> | 
+          <a href="visit.html" style="color: #cbd5e1; text-decoration: underline;">Store Hours & Map</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>© Amélie's French Bakery & Café Showcase Demo • Dark Star Consulting Handoff Concept</p>
+      <p style="margin-top: 0.5rem;"><a href="../../index.html" style="color: var(--amelie-gold);">← Return to Main Showroom Index</a></p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
-      document.getElementById('nav-menu')?.classList.toggle('open');
-    });
-  </script>
-  <script src="../../scripts/shared/comparison-button.js" defer></script>
-  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
-
-  <script>
-    function handleReserve(e) {
+    function handleCateringSubmit(e) {
       e.preventDefault();
-      document.getElementById('reserve-msg').style.display = 'block';
+      document.getElementById('catering-confirmation').style.display = 'block';
+    }
+
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggleBtn && drawer) {
+      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
     }
   </script>
+
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>
 </html>

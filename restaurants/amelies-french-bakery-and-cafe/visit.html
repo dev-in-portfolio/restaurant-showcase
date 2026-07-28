@@ -3,75 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit Us | Amelie's French Bakery & Cafe</title>
-  <meta name="description" content="Location, hours, directions, and contact information for Amelie's French Bakery & Cafe in Charlotte, NC.">
+  <title>Locations & Hours | Amélie's French Bakery & Café</title>
+  <meta name="description" content="Find Amélie's French Bakery & Café locations in Charlotte, NC (NoDa, Park Road, Carmel Commons) and Rock Hill, SC. Hours, phone numbers, and directions.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+
+  <!-- Adaptive Navigation Header -->
   <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-logo">
-        <span class="brand-emoji">🍽️</span>
-        <span class="brand-title">Amelie's French Bakery & Cafe</span>
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-badge">A</div>
+        <div class="brand-text-group">
+          <span class="brand-name">AMÉLIE’S</span>
+          <span class="brand-subtext">French Bakery & Café</span>
+        </div>
       </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link active">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Book Table</a>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Patisserie Menu</a>
+        <a href="story.html" class="nav-link">Our Heritage</a>
+        <a href="experience.html" class="nav-link">The Salon</a>
+        <a href="reserve.html" class="nav-link">Catering & Towers</a>
+        <a href="visit.html" class="nav-link active">Locations & Hours</a>
+        <a href="reserve.html" class="nav-cta">Order & Catering</a>
       </nav>
     </div>
+
+    <nav class="mobile-drawer" id="mobile-drawer">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="menu.html" class="nav-link">Patisserie Menu</a>
+      <a href="story.html" class="nav-link">Our Heritage</a>
+      <a href="experience.html" class="nav-link">The Salon</a>
+      <a href="reserve.html" class="nav-link">Catering & Towers</a>
+      <a href="visit.html" class="nav-link active">Locations & Hours</a>
+      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Order & Catering</a>
+    </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3rem;">
-    <div style="text-align: center; margin-bottom: 3.5rem;">
-      <h1 class="hero-title" style="font-size: 2.8rem;">Visit & Contact</h1>
-      <p class="hero-subtitle">We look forward to hosting you in Charlotte, NC.</p>
+  <main class="container" style="padding-top: 3.5rem;">
+    <div class="section-header">
+      <span class="section-script">Find Your Nearest Salon</span>
+      <h1 class="section-title-serif" style="font-size: 3rem;">Locations & Hours</h1>
+      <p style="color: var(--amelie-muted); margin-top: 0.5rem;">Visit us for morning croissants, afternoon espresso, or late-night dessert.</p>
     </div>
 
-    <div class="feature-grid">
-      <div class="card">
-        <div class="card-icon">📍</div>
-        <h3 class="card-title">Location & Address</h3>
-        <p class="card-desc" style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Charlotte Metro Area, NC</p>
-        <p class="card-desc">Convenient parking available on site.</p>
+    <div class="grid-2" style="margin-bottom: 4rem;">
+      <!-- NoDa Flagship -->
+      <div class="amelie-card" style="padding: 2.5rem;">
+        <span class="card-tag">FLAGSHIP LOCATION • NODA ARTS DISTRICT</span>
+        <h2 class="card-title-serif">NoDa Flagship Bakery</h2>
+        <p class="card-text" style="font-weight: 600; color: var(--amelie-teal-dark); margin-bottom: 0.4rem;">
+          3808 N Davidson St, Charlotte, NC 28205
+        </p>
+        <p class="card-text" style="margin-bottom: 1rem;">
+          Hours: Sun-Thu: 7am - 10pm | Fri-Sat: 7am - 12am Midnight<br>
+          Phone: <a href="tel:7043761781" style="color: var(--amelie-gold); font-weight: 700;">(704) 376-1781</a>
+        </p>
+        <p class="card-text">
+          Features our iconic grand chandelier lounge, full pastry case, espresso bar, and outdoor patio seating.
+        </p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">🕒</div>
-        <h3 class="card-title">Hours of Operation</h3>
-        <p class="card-desc" style="color: #fff; font-weight: 600;">Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <!-- Park Road -->
+      <div class="amelie-card" style="padding: 2.5rem;">
+        <span class="card-tag">PARK ROAD SHOPPING CENTER</span>
+        <h2 class="card-title-serif">Park Road Café</h2>
+        <p class="card-text" style="font-weight: 600; color: var(--amelie-teal-dark); margin-bottom: 0.4rem;">
+          4321 Park Rd, Charlotte, NC 28209
+        </p>
+        <p class="card-text" style="margin-bottom: 1rem;">
+          Hours: Mon-Sun: 7am - 8pm<br>
+          Phone: <a href="tel:7044050017" style="color: var(--amelie-gold); font-weight: 700;">(704) 405-0017</a>
+        </p>
+        <p class="card-text">
+          Cozy neighborhood bakery serving fresh macarons, viennoiserie, savory sandwiches, and specialty espresso.
+        </p>
       </div>
 
-      <div class="card">
-        <div class="card-icon">📞</div>
-        <h3 class="card-title">Direct Contact</h3>
-        <p class="card-desc">Phone: <a href="tel:(704) 555-1138" style="color: var(--accent-color); font-weight: 700;">(704) 555-1138</a></p>
+      <!-- Rock Hill -->
+      <div class="amelie-card" style="padding: 2.5rem;">
+        <span class="card-tag">HISTORIC ROCK HILL, SC</span>
+        <h2 class="card-title-serif">Rock Hill Bakery</h2>
+        <p class="card-text" style="font-weight: 600; color: var(--amelie-teal-dark); margin-bottom: 0.4rem;">
+          157 E Main St, Rock Hill, SC 29730
+        </p>
+        <p class="card-text" style="margin-bottom: 1rem;">
+          Hours: Mon-Sat: 7am - 8pm | Sun: 8am - 7pm<br>
+          Phone: <a href="tel:8033240003" style="color: var(--amelie-gold); font-weight: 700;">(803) 324-0003</a>
+        </p>
+        <p class="card-text">
+          Located in downtown Rock Hill, featuring velvet salon seating and signature macaron towers.
+        </p>
+      </div>
+
+      <!-- Carmel Commons -->
+      <div class="amelie-card" style="padding: 2.5rem;">
+        <span class="card-tag">SOUTH CHARLOTTE</span>
+        <h2 class="card-title-serif">Carmel Commons Café</h2>
+        <p class="card-text" style="font-weight: 600; color: var(--amelie-teal-dark); margin-bottom: 0.4rem;">
+          7715 Pineville-Matthews Rd, Charlotte, NC 28226
+        </p>
+        <p class="card-text" style="margin-bottom: 1rem;">
+          Hours: Mon-Sun: 7am - 8pm<br>
+          Phone: <a href="tel:7043761782" style="color: var(--amelie-gold); font-weight: 700;">(704) 376-1782</a>
+        </p>
+        <p class="card-text">
+          Convenient South Charlotte bakery destination with drive-up pickup options and full espresso menu.
+        </p>
       </div>
     </div>
   </main>
 
-  
   <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Amelie's French Bakery & Cafe</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1138" style="color: var(--accent-color);">(704) 555-1138</a></p>
-      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <div style="margin-top: 1.5rem;">
-        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+    <div class="container footer-grid">
+      <div>
+        <h3 class="footer-col-title">Amélie's French Bakery & Café</h3>
+        <p class="footer-text">Handcrafted French macarons, viennoiserie, and late-night coffee culture in the Carolinas.</p>
       </div>
+
+      <div>
+        <h3 class="footer-col-title">NoDa Flagship</h3>
+        <p class="footer-text">3808 N Davidson St, Charlotte, NC 28205<br>Phone: <a href="tel:7043761781" style="color: var(--amelie-gold);">(704) 376-1781</a></p>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <p class="footer-text">
+          <a href="menu.html" style="color: #cbd5e1; text-decoration: underline;">Patisserie Menu</a> | 
+          <a href="story.html" style="color: #cbd5e1; text-decoration: underline;">Our Story</a> | 
+          <a href="reserve.html" style="color: #cbd5e1; text-decoration: underline;">Catering Orders</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>© Amélie's French Bakery & Café Showcase Demo • Dark Star Consulting Handoff Concept</p>
+      <p style="margin-top: 0.5rem;"><a href="../../index.html" style="color: var(--amelie-gold);">← Return to Main Showroom Index</a></p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
-      document.getElementById('nav-menu')?.classList.toggle('open');
-    });
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggleBtn && drawer) {
+      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
+    }
   </script>
+
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>

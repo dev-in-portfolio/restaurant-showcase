@@ -3,136 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amelie's French Bakery & Cafe | Premium Culinary Craftsmanship in Charlotte, NC</title>
-  <meta name="description" content="Welcome to Amelie's French Bakery & Cafe in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <title>Amélie's French Bakery & Café | Charlotte, NC</title>
+  <meta name="description" content="Welcome to Amélie's French Bakery & Café in Charlotte, NC. Discover hand-crafted French macarons, artisanal pastries, savory tartines, and bohemian Parisian salon atmosphere.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+
+  <!-- Adaptive Navigation Header -->
   <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-logo">
-        <span class="brand-emoji">🍽️</span>
-        <span class="brand-title">Amelie's French Bakery & Cafe</span>
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-badge">A</div>
+        <div class="brand-text-group">
+          <span class="brand-name">AMÉLIE’S</span>
+          <span class="brand-subtext">French Bakery & Café</span>
+        </div>
       </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="nav-menu" id="nav-menu">
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav class="desktop-nav">
         <a href="index.html" class="nav-link active">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Book Table</a>
+        <a href="menu.html" class="nav-link">Patisserie Menu</a>
+        <a href="story.html" class="nav-link">Our Heritage</a>
+        <a href="experience.html" class="nav-link">The Salon</a>
+        <a href="reserve.html" class="nav-link">Catering & Towers</a>
+        <a href="visit.html" class="nav-link">Locations & Hours</a>
+        <a href="reserve.html" class="nav-cta">Order & Catering</a>
       </nav>
     </div>
+
+    <nav class="mobile-drawer" id="mobile-drawer">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="menu.html" class="nav-link">Patisserie Menu</a>
+      <a href="story.html" class="nav-link">Our Heritage</a>
+      <a href="experience.html" class="nav-link">The Salon</a>
+      <a href="reserve.html" class="nav-link">Catering & Towers</a>
+      <a href="visit.html" class="nav-link">Locations & Hours</a>
+      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Order & Catering</a>
+    </nav>
   </header>
 
-  <main class="site-container">
-    <section class="hero-section">
-      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
-      <h1 class="hero-title">Amelie's French Bakery & Cafe</h1>
-      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
-      <div class="hero-actions">
-        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
-        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
-      </div>
-    </section>
+  <!-- Hero Showcase -->
+  <main>
+    <section class="hero-wrapper">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge-tag">NoDa Art District Flagship & Carolinas Locations</span>
+          <h1 class="hero-heading">
+            Eclectic Parisian Charm,
+            <span class="hero-script-lead">Handcrafted French Patisserie Daily</span>
+          </h1>
+          <p class="hero-description">
+            Step under the chandeliers into a whimsical Parisian salon where French macarons, flaky croissants, rich tartines, and artisanal espresso unfold in an atmosphere of creative discovery.
+          </p>
+          <div class="hero-btn-group">
+            <a href="menu.html" class="btn-primary-amelie">Explore Pastry Case →</a>
+            <a href="visit.html" class="btn-secondary-amelie">Find Nearest Location</a>
+          </div>
+        </div>
 
-    <!-- Substantive Featured Highlights -->
-    <section>
-      <h2 class="section-title">House Signature Specialties</h2>
-      <div class="feature-grid">
-        
-        <div class="card">
-          <div class="card-icon">✨</div>
-          <h3 class="card-title">Chef Special Creation</h3>
-          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">🔥</div>
-          <h3 class="card-title">Signature House Entrée</h3>
-          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">✨</div>
-          <h3 class="card-title">Handcrafted Appetizer</h3>
-          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">🔥</div>
-          <h3 class="card-title">Seasonal Craft Beverage</h3>
-          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        <div class="hero-visual-card">
+          <span style="font-family: var(--font-script); font-size: 1.5rem; color: var(--amelie-gold); display: block; margin-bottom: 0.2rem;">Daily Feature</span>
+          <h2 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--amelie-teal-dark); margin-bottom: 0.5rem;">Salted Caramel Macaron</h2>
+          <p style="color: var(--amelie-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Our world-famous signature macaron filled with rich house-made fleur de sel caramel butter fill.
+          </p>
+          <div style="background: var(--amelie-paper); border-radius: 12px; padding: 1rem; text-align: center; border: 1px solid rgba(198, 146, 20, 0.2);">
+            <span style="font-weight: 700; color: var(--amelie-teal); font-size: 0.9rem;">PARISIAN CAFÉ PAIRING</span>
+            <p style="font-size: 0.92rem; color: var(--amelie-charcoal); margin-top: 0.2rem;">Recommended with a hot Café au Lait or French Roast Espresso</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Restaurant Specific Interactive Module -->
-    <section class="interactive-widget" id="interactive-module">
-      <div class="widget-header">
-        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Amelie's French Bakery & Cafe Flavor Explorer</h2>
-        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
-      </div>
+    <!-- Signature Visual Moment: Interactive Parisian Pastry Display Cabinet -->
+    <section class="container">
+      <div class="pastry-cabinet-wrapper" id="pastry-cabinet">
+        <div class="section-header">
+          <span class="section-script">Interactive Curiosity Display</span>
+          <h2 class="section-title-serif">The Parisian Pastry Case & Macaron Cabinet</h2>
+          <p style="color: var(--amelie-muted); margin-top: 0.5rem;">Select a delicacy to reveal its flavor story and custom beverage pairing from our baristas.</p>
+        </div>
 
-      <div class="widget-controls" id="widget-controls">
-        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
-        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
-        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
-        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
-      </div>
+        <div class="cabinet-controls" id="cabinet-controls">
+          <button class="cabinet-tab active" onclick="showPastry('salted-caramel')">Salted Caramel Macaron</button>
+          <button class="cabinet-tab" onclick="showPastry('pistachio-tart')">Pistachio Fruit Tart</button>
+          <button class="cabinet-tab" onclick="showPastry('croissant-beurre')">Traditional Butter Croissant</button>
+          <button class="cabinet-tab" onclick="showPastry('spinach-quiche')">Savory Spinach & Goat Cheese Quiche</button>
+          <button class="cabinet-tab" onclick="showPastry('eclair-chocolat')">Parisian Chocolate Éclair</button>
+        </div>
 
-      <div class="widget-output" id="widget-output" aria-live="polite">
-        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
-        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+        <div class="cabinet-display-box" id="cabinet-display">
+          <h3 class="cabinet-item-title" id="cabinet-title">Salted Caramel Macaron</h3>
+          <p class="cabinet-item-desc" id="cabinet-desc">A delicate almond meringue shell filled with our legendary small-batch caramel sauce infused with French sea salt.</p>
+          <span class="cabinet-pairing-badge" id="cabinet-pairing">Best Paired With: House Special Café au Lait</span>
+        </div>
       </div>
     </section>
 
-    <!-- Demo Disclosure -->
-    <div class="demo-disclosure">
-      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Amelie's French Bakery & Cafe.
+    <!-- Feature Section: Atmosphere & Tradition -->
+    <section class="container" style="padding: 3rem 0;">
+      <div class="section-header">
+        <span class="section-script">The Amélie’s Atmosphere</span>
+        <h2 class="section-title-serif">Bohemian Elegance Meets Scratch Baking</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="amelie-card">
+          <span class="card-tag">AUTHENTIC PATISSERIE</span>
+          <h3 class="card-title-serif">French Butter & Flour</h3>
+          <p class="card-text">
+            Our bakers craft croissants, brioche, and pastry shells by hand using classic French laminating techniques and European butter.
+          </p>
+        </div>
+
+        <div class="amelie-card">
+          <span class="card-tag">THE SALON VIBE</span>
+          <h3 class="card-title-serif">Chandeliers & Antiques</h3>
+          <p class="card-text">
+            Every location features hand-picked vintage chandeliers, plush velvet seating, and colorful French-inspired artwork for comfortable gathering.
+          </p>
+        </div>
+
+        <div class="amelie-card">
+          <span class="card-tag">SPECIAL OCCASIONS</span>
+          <h3 class="card-title-serif">Custom Macaron Towers</h3>
+          <p class="card-text">
+            Elevate weddings, anniversaries, and corporate celebrations with towering, colorful displays of our signature macarons.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Level 0 Demo Disclosure -->
+    <div class="container">
+      <div class="demo-disclosure-banner">
+        ℹ️ <strong>Unofficial Demonstration Website:</strong> This website is an independent presentation build created by Dark Star Consulting to showcase custom web design for Amélie's French Bakery & Café.
+      </div>
     </div>
   </main>
 
-  
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Amelie's French Bakery & Cafe</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1138" style="color: var(--accent-color);">(704) 555-1138</a></p>
-      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <div style="margin-top: 1.5rem;">
-        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+    <div class="container footer-grid">
+      <div>
+        <h3 class="footer-col-title">Amélie's French Bakery & Café</h3>
+        <p class="footer-text">
+          A beloved North Carolina tradition bringing authentic French pastries, specialty espresso, and whimsical salon culture to Charlotte and beyond.
+        </p>
       </div>
+
+      <div>
+        <h3 class="footer-col-title">Flagship Location</h3>
+        <p class="footer-text">
+          3808 N Davidson St<br>
+          Charlotte, NC 28205<br>
+          Phone: <a href="tel:7043761781" style="color: var(--amelie-gold);">(704) 376-1781</a>
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <p class="footer-text">
+          <a href="menu.html" style="color: #cbd5e1; text-decoration: underline;">Full Patisserie Menu</a><br>
+          <a href="story.html" style="color: #cbd5e1; text-decoration: underline;">Our Heritage Story</a><br>
+          <a href="reserve.html" style="color: #cbd5e1; text-decoration: underline;">Macaron Towers & Catering</a><br>
+          <a href="visit.html" style="color: #cbd5e1; text-decoration: underline;">All Store Hours & Map</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>© Amélie's French Bakery & Café Showcase Demo • Dark Star Consulting Handoff Concept</p>
+      <p style="margin-top: 0.5rem;"><a href="../../index.html" style="color: var(--amelie-gold);">← Return to Main Showroom Index</a></p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
-      document.getElementById('nav-menu')?.classList.toggle('open');
-    });
-  </script>
-  <script src="../../scripts/shared/comparison-button.js" defer></script>
-  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
-
-  <script>
-    const optionsData = {
-      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
-      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
-      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
-      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    // Interactive Pastry Display Data
+    const pastryData = {
+      'salted-caramel': {
+        title: 'Salted Caramel Macaron',
+        desc: 'A delicate almond meringue shell filled with our legendary small-batch caramel sauce infused with French sea salt.',
+        pairing: 'Best Paired With: House Special Café au Lait'
+      },
+      'pistachio-tart': {
+        title: 'Pistachio & Fresh Berry Fruit Tart',
+        desc: 'Butter pastry crust layered with pistachio pastry cream, crowned with fresh raspberries and a apricot glaze.',
+        pairing: 'Best Paired With: Iced Lavender Honey Latte'
+      },
+      'croissant-beurre': {
+        title: 'Traditional French Butter Croissant',
+        desc: 'Golden, honeycomb-layered croissant made with imported French butter, baked fresh every morning at dawn.',
+        pairing: 'Best Paired With: Dark Roast French Press Coffee'
+      },
+      'spinach-quiche': {
+        title: 'Savory Spinach, Leek & Goat Cheese Quiche',
+        desc: 'Flaky pie crust filled with silky egg custard, fresh spinach, sautéed leeks, and tangy goat cheese.',
+        pairing: 'Best Paired With: Sparkling Mineral Water or Mimosa'
+      },
+      'eclair-chocolat': {
+        title: 'Parisian Chocolate Éclair',
+        desc: 'Light choux pastry piped with rich chocolate diplomat cream, finished with glossy dark chocolate fondant.',
+        pairing: 'Best Paired With: Double Shot Espresso'
+      }
     };
 
-    function selectOption(key) {
-      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+    function showPastry(key) {
+      document.querySelectorAll('#cabinet-controls .cabinet-tab').forEach(tab => tab.classList.remove('active'));
       event.target.classList.add('active');
-      const data = optionsData[key];
-      document.getElementById('output-title').innerText = data.title;
-      document.getElementById('output-desc').innerText = data.desc;
+      const item = pastryData[key];
+      document.getElementById('cabinet-title').innerText = item.title;
+      document.getElementById('cabinet-desc').innerText = item.desc;
+      document.getElementById('cabinet-pairing').innerText = item.pairing;
+    }
+
+    // Mobile Navigation Toggle
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    if (toggleBtn && drawer) {
+      toggleBtn.addEventListener('click', () => {
+        drawer.classList.toggle('active');
+      });
     }
   </script>
+
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>
 </html>
