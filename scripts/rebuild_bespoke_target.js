@@ -1015,7 +1015,16 @@ a { color: inherit; text-decoration: none; }
 
   // 16. Dedicated Git Commit
   console.log(`Making dedicated git commit for ${slug}...`);
-  execSync(`git add . && git commit -m "redo(${slug}): rebuild approved showcase demo"`, { stdio: 'inherit', cwd: showcaseRoot });
+  try {
+    const statusOutput = execSync(`git status --porcelain`, { encoding: 'utf8', cwd: showcaseRoot });
+    if (statusOutput.trim() !== '') {
+      execSync(`git add . && git commit -m "redo(${slug}): rebuild approved showcase demo"`, { stdio: 'inherit', cwd: showcaseRoot });
+    } else {
+      console.log(`✓ Working tree clean for ${slug} (already committed).`);
+    }
+  } catch (err) {
+    console.log(`Note on commit for ${slug}: ${err.message}`);
+  }
   console.log(`✓ Completed bespoke rebuild cycle for ${slug}`);
 }
 
