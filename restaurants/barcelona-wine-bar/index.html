@@ -3,240 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barcelona Wine Bar - Charlotte, NC | Tapas & Wine Cellar</title>
+  <title>Barcelona Wine Bar | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Barcelona Wine Bar in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Absolute placement positions for food platter nodes */
-    #node-jamon { top: 30px; left: 40px; }
-    #node-chorizo { top: 80px; left: 20px; }
-    #node-salchichon { top: 130px; left: 40px; }
-    #node-manchego { top: 30px; left: 120px; }
-    #node-mahon { top: 80px; left: 140px; }
-    #node-valdeon { top: 130px; left: 120px; }
-    #node-olives { top: 75px; left: 80px; font-size: 0.85rem; border-color: var(--color-olive); }
-    #node-almonds { top: 110px; left: 85px; font-size: 0.85rem; border-color: var(--color-olive); }
-  </style>
 </head>
 <body>
-
-  <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🌿</span>
+        <span class="brand-title">Barcelona Wine Bar</span>
       </a>
-      
-      <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
-        <h1 class="brand-name">
-          Barcelona
-          <span>Wine Bar South End</span>
-        </h1>
-      </div>
-
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="wine.html">Wine Program</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Private Events</a>
-        <a href="contact.html">Visit</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero-section">
-    <div class="container hero-content">
-      <div class="hero-frame">
-        <span class="hero-badge">Charlotte's Premier Tapas Experience</span>
-        <h2 class="hero-title">Barcelona Wine Bar</h2>
-        <p class="hero-desc">"An ever-changing, seasonal menu focused on rustic Spanish tapas, paired with one of the largest Spanish wine programs in the country."</p>
-      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Operating Notice -->
-  <div class="container" style="margin-top: -3.5rem; position: relative; z-index: 10;">
-    <div class="notice-banner">
-      <span>🍷 Join us in South End: 101 W. Worthington Ave. Half-Off Wine Bottles Every Sunday!</span>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="container">
-    
-    <!-- Welcome Block -->
-    <section style="text-align: center; margin-bottom: 5.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <h2 class="section-title">Spanish Tapas & Charcuterie</h2>
-      <p style="font-size: 1.15rem; font-family: var(--font-serif); font-style: italic; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 2rem;">
-        Welcome to Barcelona Wine Bar in South End Charlotte. We specialize in rustic small plates (tapas) inspired by the vibrant food culture of Spain and the Mediterranean. From wood-grilled octopus and crispy patatas bravas to hand-sliced jamón serrano and local artisan cheeses, our cellar kitchen prepares every plate to be shared alongside our extensive wine list.
-      </p>
-      <a href="about.html" style="color: var(--color-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1.5px solid var(--color-gold); padding-bottom: 4px; transition: var(--transition-fast);">
-        Explore Our Kitchen Heritage ➔
-      </a>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Barcelona Wine Bar</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
     </section>
 
-    <!-- Interactive Tapas Board Customizer Panel -->
-    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Tapas & Charcuterie Board Builder</h2>
-      <p style="text-align: center; color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">Design your custom charcuterie platter. Select meats, cheeses, and accompaniments to populate the mahogany board.</p>
-      
-      <div class="mixer-container">
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
         
-        <!-- Left Side: Platter visualizer -->
-        <div class="plate-canvas" style="min-height: 300px;">
-          <div class="wood-platter-wireframe">
-            <div class="wood-platter-grain"></div>
-            <!-- Platter item nodes -->
-            <div class="platter-item-node" id="node-jamon">Jamón</div>
-            <div class="platter-item-node" id="node-chorizo">Chorizo</div>
-            <div class="platter-item-node" id="node-salchichon">Salchichón</div>
-            <div class="platter-item-node" id="node-manchego">Manchego</div>
-            <div class="platter-item-node" id="node-mahon">Mahón</div>
-            <div class="platter-item-node" id="node-valdeon">Valdeón</div>
-            <div class="platter-item-node" id="node-olives">Olives</div>
-            <div class="platter-item-node" id="node-almonds">Almonds</div>
-          </div>
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-
-        <!-- Right Side: Controls -->
-        <div class="bowl-controls">
-          
-          <div class="control-group">
-            <label>1. Cured Spanish Meats</label>
-            <div class="option-grid">
-              <button class="option-btn active" id="btn-jamon" onclick="toggleItem('jamon', 8.50, 'Jamón Serrano')">Jamón Serrano ($8.50)</button>
-              <button class="option-btn active" id="btn-chorizo" onclick="toggleItem('chorizo', 7.50, 'Chorizo de Pamplona')">Chorizo ($7.50)</button>
-              <button class="option-btn" id="btn-salchichon" onclick="toggleItem('salchichon', 7.50, 'Salchichón de Cantimpalos')">Salchichón ($7.50)</button>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label>2. Artisan Cheeses</label>
-            <div class="option-grid">
-              <button class="option-btn active" id="btn-manchego" onclick="toggleItem('manchego', 8.00, 'Manchego')">Manchego ($8.00)</button>
-              <button class="option-btn" id="btn-mahon" onclick="toggleItem('mahon', 7.00, 'Mahón')">Mahón ($7.00)</button>
-              <button class="option-btn" id="btn-valdeon" onclick="toggleItem('valdeon', 7.50, 'Valdeón')">Valdeón ($7.50)</button>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <label>3. Cellar Accompaniments</label>
-            <div class="option-grid">
-              <button class="option-btn active" id="btn-olives" onclick="toggleItem('olives', 4.00, 'Spanish Olives')">Olives ($4.00)</button>
-              <button class="option-btn active" id="btn-almonds" onclick="toggleItem('almonds', 4.50, 'Marcona Almonds')">Almonds ($4.50)</button>
-            </div>
-          </div>
-
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
         </div>
-
-      </div>
-
-      <div class="builder-display" style="margin-top: 3.5rem;">
-        <span class="menu-item-badge" style="margin-left: 0; margin-bottom: 1rem; display: inline-block;">Custom Platter Selection</span>
-        <h4 class="builder-display-title" id="display-board-title">Custom Charcuterie Board</h4>
-        <p id="display-board-items" style="color: var(--color-gold); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.8rem; text-transform: uppercase;">Jamón Serrano, Chorizo de Pamplona, Manchego, Spanish Olives, Marcona Almonds</p>
-        <div class="builder-display-price" id="display-board-price">$32.50</div>
-        <p style="font-size: 0.9rem; color: var(--color-text-muted);" id="display-board-desc">An elegant arrangement of sliced Jamón Serrano, Chorizo de Pamplona, aged Manchego cheese, marinated olives, and roasted Marcona almonds served on a mahogany board with toasted bread.</p>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Quick Call to Action -->
-    <section class="premium-card" style="text-align: center; margin-bottom: 5rem;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #ffffff;">Launch the Sommelier Pairer</h2>
-      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2.5rem auto; font-weight: 500;">
-        Match our signature Spanish tapas with sommelier wine suggestions. Select standard dishes to explore wine regions, flavor profiles, and glass rates. Click below to view the wine selector.
-      </p>
-      <a href="menu.html" class="submit-btn" style="display: inline-block; padding: 1.15rem 3rem;">
-        View Sommelier Pairer
-      </a>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Barcelona Wine Bar Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
     </section>
 
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Barcelona Wine Bar.
+    </div>
   </main>
 
-  <!-- Info Footer -->
-  <footer class="container">
-    <div class="footer-info">
-      <div class="info-block">
-        <h3>Address</h3>
-        <p>101 W. Worthington Ave, Suite 110<br>Charlotte, NC 28203</p>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Barcelona Wine Bar</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1061" style="color: var(--accent-color);">(704) 555-1061</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
-      <div class="info-block">
-        <h3>Hours</h3>
-        <p>Mon - Wed: 4:00 PM - 11:00 PM<br>Thu - Fri: 4:00 PM - 12:00 AM<br>Saturday: 11:00 AM - 12:00 AM<br>Sunday: 11:00 AM - 10:00 PM</p>
-      </div>
-      <div class="info-block">
-        <h3>Reservations</h3>
-        <p>Phone: (704) 741-0300<br>South End Parking Garage validation available</p>
-      </div>
-    </div>
-    <div class="copyright-footer">
-      <p>© 2026 Barcelona Wine Bar. Charlotte South End.</p>
     </div>
   </footer>
 
   <script>
-    // State variables
-    const boardItems = {
-      jamon: { active: true, price: 8.50, name: 'Jamón Serrano' },
-      chorizo: { active: true, price: 7.50, name: 'Chorizo de Pamplona' },
-      salchichon: { active: false, price: 7.50, name: 'Salchichón de Cantimpalos' },
-      manchego: { active: true, price: 8.00, name: 'Manchego' },
-      mahon: { active: false, price: 7.00, name: 'Mahón' },
-      valdeon: { active: false, price: 7.50, name: 'Valdeón' },
-      olives: { active: true, price: 4.00, name: 'Spanish Olives' },
-      almonds: { active: true, price: 4.50, name: 'Marcona Almonds' }
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
     };
 
-    function toggleItem(key, price, name) {
-      boardItems[key].active = !boardItems[key].active;
-      
-      const btn = document.getElementById(`btn-${key}`);
-      if (boardItems[key].active) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-
-      updateDisplay();
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
     }
-
-    function updateDisplay() {
-      // Calculate Total Cost
-      let totalCost = 0;
-      const activeNames = [];
-      for (const k in boardItems) {
-        if (boardItems[k].active) {
-          totalCost += boardItems[k].price;
-          activeNames.push(boardItems[k].name);
-        }
-      }
-
-      document.getElementById('display-board-price').innerText = `$${totalCost.toFixed(2)}`;
-      document.getElementById('display-board-items').innerText = activeNames.length > 0 ? activeNames.join(', ') : 'No Items Selected';
-
-      // Update descriptions
-      const itemsListText = activeNames.length > 0 ? `sliced ${activeNames.slice(0, -1).join(', ')}, and ${activeNames.slice(-1)}` : 'selected cured delicacies';
-      document.getElementById('display-board-desc').innerText = `An elegant arrangement of ${itemsListText} served on a mahogany board with toasted sourdough bread, crackers, and house jams.`;
-
-      // Update graphic overlay items
-      for (const k in boardItems) {
-        const el = document.getElementById(`node-${k}`);
-        if (boardItems[k].active) {
-          el.style.opacity = '1';
-          el.style.transform = 'scale(1)';
-        } else {
-          el.style.opacity = '0';
-          el.style.transform = 'scale(0.5)';
-        }
-      }
-    }
-
-    // Trigger initial show
-    window.addEventListener('load', () => {
-      updateDisplay();
-    });
   </script>
 </body>
 </html>

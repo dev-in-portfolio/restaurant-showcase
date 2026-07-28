@@ -3,261 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barcelona Wine Bar - Charlotte, NC | Menu</title>
+  <title>Menu | Barcelona Wine Bar</title>
+  <meta name="description" content="Explore the full menu at Barcelona Wine Bar in Charlotte, NC. Appetizers, mains, desserts, and handcrafted beverages.">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Styling wine tasting notes card */
-    .sommelier-paper-card {
-      background-color: #faf6f0; /* Aged wine label paper color */
-      color: #1c1512;
-      border: 1px solid #e7d8c4;
-      border-radius: 8px;
-      padding: 3rem 2rem;
-      box-shadow: var(--shadow-premium);
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-    .wine-label-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--color-burgundy);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border: 1px solid var(--color-burgundy);
-      padding: 0.25rem 0.8rem;
-      border-radius: 4px;
-      margin: 0 auto 1.25rem auto;
-      max-width: fit-content;
-    }
-    .wine-title {
-      font-size: 1.85rem;
-      color: #7f1d1d;
-      margin-bottom: 0.5rem;
-      font-family: var(--font-serif);
-      font-weight: 700;
-    }
-    .wine-meta {
-      font-size: 0.85rem;
-      color: #5c433c;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .wine-desc {
-      font-size: 0.95rem;
-      color: #3f312c;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Navigation Header -->
-  <nav class="nav-header">
-    <div class="nav-container">
-      <a href="../index.html" class="back-to-directory">
-        ← Directory Portal
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🌿</span>
+        <span class="brand-title">Barcelona Wine Bar</span>
       </a>
-      
-      <div class="brand-wrapper">
-        <div class="brand-logo-css">B</div>
-        <h1 class="brand-name">
-          Barcelona
-          <span>Wine Bar South End</span>
-        </h1>
-      </div>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="menu.html" class="active">Menu</a>
-        <a href="wine.html">Wine Program</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Private Events</a>
-        <a href="contact.html">Visit</a>
-      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Page Header -->
-  <header class="page-header container">
-    <h2 class="page-title">Tapas & Wine Selection</h2>
-    <p class="page-subtitle">Browse our seasonal small plates and Spanish charcuterie. Select a tapas plate below to view the Sommelier wine recommendation.</p>
   </header>
 
-  <!-- Interactive Sommelier Wine Pairer -->
-  <main class="container">
-    
-    <section class="interactive-panel" style="margin-bottom: 5.5rem;">
-      <h3 class="section-title" style="margin-bottom: 2rem;">Sommelier Wine Pairer</h3>
-      
-      <div class="mixer-container">
-        
-        <!-- Left Side: Sommelier Paper Card -->
-        <div class="sommelier-paper-card" id="wine-card-box">
-          <div class="wine-label-badge">Crispy Potato Pairing</div>
-          <h4 class="wine-title" id="pair-wine-title">2021 Loxarel, 'Amaltea'</h4>
-          <div class="wine-meta" id="pair-wine-meta">Garnacha/Samsó • Penedès, Spain • $11 Glass / $44 Bottle</div>
-          <p class="wine-desc" id="pair-wine-desc">A bright, red-fruit forward blend with wild herb undertones. The vibrant acidity cuts cleanly through the spicy brava sauce and rich garlic aioli of our crispy potatoes.</p>
-        </div>
-
-        <!-- Right Side: Tapas Options -->
-        <div style="display: flex; flex-direction: column; gap: 0.80rem;">
-          <label style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--color-gold); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Select Tapas Plate</label>
-          <button class="option-btn active" onclick="showPairing('bravas', this)">Patatas Bravas</button>
-          <button class="option-btn" onclick="showPairing('meatballs', this)">Albóndigas (Meatballs)</button>
-          <button class="option-btn" onclick="showPairing('octopus', this)">Wood-Grilled Octopus</button>
-          <button class="option-btn" onclick="showPairing('shrimp', this)">Garlic Shrimp</button>
-          <button class="option-btn" onclick="showPairing('croquetas', this)">Jamón & Manchego Croquetas</button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Traditional Menu List Grid -->
-    <h3 class="section-title">Seasonal Offerings</h3>
-    <div class="menu-grid">
-      
-      <div class="premium-card">
-        <h4 class="menu-category-title">Charcuterie & Cheese</h4>
-        
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Jamón Serrano<span class="menu-item-badge">Imported</span></span>
-            <span class="menu-item-price">$8.50</span>
-          </div>
-          <p class="menu-item-desc">Premium dry-cured Spanish mountain ham aged for 15 months. Sliced ultra-thin and served with house crackers.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Aged Manchego</span>
-            <span class="menu-item-price">$8.00</span>
-          </div>
-          <p class="menu-item-desc">A firm, pasteurized sheep's milk cheese from Castilla-La Mancha. Aged for 6 months, giving a buttery, slightly nutty finish.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Mahón</span>
-            <span class="menu-item-price">$7.00</span>
-          </div>
-          <p class="menu-item-desc">A semi-firm cow's milk cheese from Menorca, rubbed with olive oil and paprika, offering a mild, salty finish.</p>
-        </div>
-      </div>
-
-      <div class="premium-card">
-        <h4 class="menu-category-title">Spanish Tapas</h4>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Patatas Bravas</span>
-            <span class="menu-item-price">$7.50</span>
-          </div>
-          <p class="menu-item-desc">Double-fried crispy potato cubes drizzled with our signature spicy tomato brava sauce and garlic-infused aioli.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Albóndigas</span>
-            <span class="menu-item-price">$8.50</span>
-          </div>
-          <p class="menu-item-desc">Traditional house-rolled beef and pork meatballs simmered in a rich, spiced tomato garlic reduction.</p>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Garlic Shrimp (Gambas al Ajillo)</span>
-            <span class="menu-item-price">$12.50</span>
-          </div>
-          <p class="menu-item-desc">Wild shrimp sautéed in robust olive oil with garlic cloves, dried red chilis, and a splash of dry sherry.</p>
-        </div>
-      </div>
-
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
+      <p class="hero-subtitle">Prepared fresh to order using locally sourced ingredients and scratch-kitchen tradition.</p>
     </div>
 
+    <!-- Category Filters -->
+    <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
+      <button class="widget-btn active" onclick="filterCategory('all')">All Offerings</button>
+      <button class="widget-btn" onclick="filterCategory('starters')">Starters</button>
+      <button class="widget-btn" onclick="filterCategory('mains')">Main Courses</button>
+      <button class="widget-btn" onclick="filterCategory('desserts')">Desserts & Drinks</button>
+    </div>
+
+    <div class="feature-grid" id="menu-grid">
+      <div class="card" data-cat="starters">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">STARTER • GF</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Appetizer</h3>
+        <p class="card-desc">Served hot with house specialty dipping sauces and fresh herbs.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
+      </div>
+
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Chef Special Creation</h3>
+        <p class="card-desc">Slow-roasted to tender perfection, served with roasted seasonal vegetables.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$34.00</span>
+      </div>
+
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE FAVORITE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Signature House Entrée</h3>
+        <p class="card-desc">Accompanied by garlic herb rice pilaf and lemon butter glaze.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$28.00</span>
+      </div>
+
+      <div class="card" data-cat="desserts">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Seasonal Craft Beverage</h3>
+        <p class="card-desc">Hand-shaken with premium spirits, fresh botanical juices, and house syrups.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
+      </div>
+    </div>
   </main>
 
-  <!-- Info Footer -->
-  <footer class="container">
-    <div class="footer-info">
-      <div class="info-block">
-        <h3>Address</h3>
-        <p>101 W. Worthington Ave, Suite 110<br>Charlotte, NC 28203</p>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Barcelona Wine Bar</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1061" style="color: var(--accent-color);">(704) 555-1061</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
-      <div class="info-block">
-        <h3>Hours</h3>
-        <p>Mon - Wed: 4:00 PM - 11:00 PM<br>Thu - Fri: 4:00 PM - 12:00 AM<br>Saturday: 11:00 AM - 12:00 AM<br>Sunday: 11:00 AM - 10:00 PM</p>
-      </div>
-      <div class="info-block">
-        <h3>Reservations</h3>
-        <p>Phone: (704) 741-0300<br>South End Parking Garage validation available</p>
-      </div>
-    </div>
-    <div class="copyright-footer">
-      <p>© 2026 Barcelona Wine Bar. Charlotte South End.</p>
     </div>
   </footer>
 
   <script>
-    const pairings = {
-      bravas: {
-        badge: "Crispy Potato Pairing",
-        wine: "2021 Loxarel, 'Amaltea'",
-        meta: "Garnacha/Samsó • Penedès, Spain • $11 Glass / $44 Bottle",
-        desc: "A bright, red-fruit forward blend with wild herb undertones. The vibrant acidity cuts cleanly through the spicy brava sauce and rich garlic aioli of our crispy potatoes."
-      },
-      meatballs: {
-        badge: "Spiced Meatball Pairing",
-        wine: "2019 La Montesa",
-        meta: "Tempranillo Blend • Rioja, Spain • $12.50 Glass / $50 Bottle",
-        desc: "A structured, velvety red featuring notes of dark cherries and warm baking spices. The woodsy tannins stand up perfectly to the savory spiced tomato beef-pork reduction."
-      },
-      octopus: {
-        badge: "Charred Seafood Pairing",
-        wine: "2022 Rezabal",
-        meta: "Hondarribi Zuri • Getariako Txakolina, Spain • $12 Glass / $48 Bottle",
-        desc: "An effervescent, crisp Basque white with notes of sea salt and green apple. Excellent for lifting the smokiness of wood-grilled octopus and rich potato mash."
-      },
-      shrimp: {
-        badge: "Garlic Sauté Pairing",
-        wine: "2021 Asnella",
-        meta: "Arinto/Loureiro • Vinho Verde, Portugal • $11 Glass / $44 Bottle",
-        desc: "A light, citrus-driven mineral white. Its laser-like lemon acidity slices through the rich garlic-infused olive oil and balances the slight spice of red chilis."
-      },
-      croquetas: {
-        badge: "Fritter Pairing",
-        wine: "NV Barcino, Brut Selecció",
-        meta: "Xarel-lo/Macabeo • Cava, Spain • $10 Glass / $40 Bottle",
-        desc: "A sparkling, crisp dry Cava with notes of brioche and golden apples. The tiny bubbles scrub the palate clean of rich bechamel, salty jamón, and manchego grease."
-      }
-    };
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 
-    function showPairing(key, buttonElement) {
-      const buttons = buttonElement.parentElement.querySelectorAll('.option-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      buttonElement.classList.add('active');
-
-      const card = document.getElementById('wine-card-box');
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(10px)';
-
-      setTimeout(() => {
-        const data = pairings[key];
-        document.getElementById('pair-wine-title').innerText = data.wine;
-        document.getElementById('pair-wine-meta').innerText = data.meta;
-        document.getElementById('pair-wine-desc').innerText = data.desc;
-        card.querySelector('.wine-label-badge').innerText = data.badge;
-        
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 300);
+  <script>
+    function filterCategory(cat) {
+      document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('#menu-grid .card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     }
   </script>
 </body>
