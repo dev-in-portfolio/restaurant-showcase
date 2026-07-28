@@ -1,122 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu · Duckworth's Grill & Taphouse</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--navy:#0f1a2e;--gold:#c99c3b;--copper:#b87333;--cream:#f5efe6;--charcoal:#1a1a1a;--muted:#8899aa}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
-.nav a:hover{opacity:1;color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:0;text-transform:none;opacity:1!important}
-.page-header{background:linear-gradient(135deg,#0f1a2e,#1a2a4e);padding:3rem 2rem;text-align:center}
-.page-header h1{font-size:2.2rem;margin:0;color:var(--gold)}
-.page-header p{opacity:.65;font-style:italic;margin:.5rem 0 0;font-size:.95rem}
-.section{padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto}
-.cat-tabs{display:flex;gap:.25rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.cat-tab{background:rgba(255,255,255,.03);border:none;padding:.65rem 1.25rem;border-radius:4px 4px 0 0;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif}
-.cat-tab:hover{color:var(--cream)}
-.cat-tab.active{background:rgba(201,156,59,.12);color:var(--gold)}
-.cat-panel{display:none}
-.cat-panel.active{display:block}
-.menu-cat-title{color:var(--gold);font-size:1.1rem;margin:0 0 1rem}
-.menu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.menu-item:last-child{border-bottom:none}
-.menu-item .name{font-weight:600;font-size:.95rem}
-.menu-item .desc{font-size:.82rem;opacity:.55;line-height:1.4;margin:.15rem 0 0;max-width:75%}
-.menu-item .price{font-size:.9rem;color:var(--gold);font-weight:600;white-space:nowrap;margin-left:1rem}
-.menu-item .badge{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;background:rgba(201,156,59,.15);color:var(--gold);padding:.15rem .5rem;border-radius:3px;margin-left:.5rem}
-footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(201,156,59,.08)}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Duckworth's Grill & Taphouse</title>
+  <meta name="description" content="Explore the full menu at Duckworth's Grill & Taphouse in Charlotte, NC. Appetizers, mains, desserts, and handcrafted beverages.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">Duckworth's</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="beer.html">Beer Flights</a>
-    <a href="story.html">Our Story</a>
-    <a href="locations.html">Locations</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="page-header">
-  <h1>Menu</h1>
-  <p>American comfort food with a brew pub twist</p>
-</header>
-<section class="section">
-  <div class="cat-tabs">
-    <button class="cat-tab active" data-tab="appetizers">Starters</button>
-    <button class="cat-tab" data-tab="burgers">Burgers</button>
-    <button class="cat-tab" data-tab="sandwiches">Sandwiches</button>
-    <button class="cat-tab" data-tab="entrees">Entrees</button>
-    <button class="cat-tab" data-tab="pizza">Pizza</button>
-    <button class="cat-tab" data-tab="salads">Salads</button>
-  </div>
-  <div class="cat-panel active" data-panel="appetizers">
-    <h3 class="menu-cat-title">Starters &amp; Shareables</h3>
-    <div class="menu-item"><div><span class="name">Momma's Wings</span><span class="badge">Signature</span><p class="desc">Crispy wings tossed in your choice of sauce — medium, hot, BBQ, garlic parmesan, lemon pepper, or sweet n' bold gold</p></div><span class="price">$13.99</span></div>
-    <div class="menu-item"><div><span class="name">Nashville Hot Chicken</span><span class="badge">Popular</span><p class="desc">Hand-breaded tenders with just enough heat, served with bread, pickles, and house-made ranch</p></div><span class="price">$13.99</span></div>
-    <div class="menu-item"><div><span class="name">Fried Pickles</span><p class="desc">Thinly sliced pickles, breaded and fried golden — served with house-made ranch</p></div><span class="price">$8.29</span></div>
-    <div class="menu-item"><div><span class="name">Loaded Nachos</span><p class="desc">Nacho chips piled with cheese, red onions, tomatoes, jalapeños, sour cream, guacamole — choice of fajita chicken or buffalo chicken</p></div><span class="price">$18.99</span></div>
-    <div class="menu-item"><div><span class="name">Pretzel Bread</span><p class="desc">Four mini buns served hot with cheese sauce and Sierra Nevada beer mustard</p></div><span class="price">$9.49</span></div>
-    <div class="menu-item"><div><span class="name">Hand-Battered Chicken Tenders</span><p class="desc">Served with fresh-cut fries and honey mustard or any wing sauce</p></div><span class="price">$13.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="burgers">
-    <h3 class="menu-cat-title">Burgers</h3>
-    <div class="menu-item"><div><span class="name">Taphouse Burger</span><span class="badge">Signature</span><p class="desc">8 oz. house-blend patty, jalapeño bacon, Swiss, roasted garlic mayo, Taphouse sauce on brioche</p></div><span class="price">$15.99</span></div>
-    <div class="menu-item"><div><span class="name">Chorizo Burger</span><span class="badge">Popular</span><p class="desc">House-blend beef and chorizo patty, pepper jack, grilled peppers, onions, smoky chipotle mayo on sweet onion roll</p></div><span class="price">$14.99</span></div>
-    <div class="menu-item"><div><span class="name">Firebird Burger</span><p class="desc">Pepper jack, jalapeño bacon, onion straws, bourbon glaze, jalapeño relish on sweet onion roll</p></div><span class="price">$15.99</span></div>
-    <div class="menu-item"><div><span class="name">The Impossible Burger</span><p class="desc">100% plant-based patty with lettuce, tomato, onion, and Impossible Sauce on brioche</p></div><span class="price">$15.99</span></div>
-    <div class="menu-item"><div><span class="name">Classic Cheeseburger</span><p class="desc">8 oz. house-blend patty with American cheese, lettuce, tomato, onion, pickle</p></div><span class="price">$13.99</span></div>
-    <div class="menu-item"><div><span class="name">Create Your Own Burger</span><p class="desc">Choose your patty, cheese, toppings, and side — build it your way</p></div><span class="price">$13.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="sandwiches">
-    <h3 class="menu-cat-title">Philly, Sandwiches &amp; Wraps</h3>
-    <div class="menu-item"><div><span class="name">Philly Cheese Steak</span><span class="badge">Classic</span><p class="desc">Tender beef, melted cheese, grilled onions and peppers on a toasted hoagie</p></div><span class="price">$14.99</span></div>
-    <div class="menu-item"><div><span class="name">BBQ Pulled Pork Sandwich</span><p class="desc">Slow-cooked pork with house-made BBQ sauce on a brioche bun</p></div><span class="price">$13.99</span></div>
-    <div class="menu-item"><div><span class="name">Grilled Chicken Wrap</span><p class="desc">Grilled chicken, lettuce, tomato, cheese, and ranch in a flour tortilla</p></div><span class="price">$12.99</span></div>
-    <div class="menu-item"><div><span class="name">Buffalo Chicken Wrap</span><p class="desc">Buffalo chicken, lettuce, tomato, blue cheese crumbles in a flour tortilla</p></div><span class="price">$12.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="entrees">
-    <h3 class="menu-cat-title">Entrees</h3>
-    <div class="menu-item"><div><span class="name">Steak &amp; Fries</span><span class="badge">Popular</span><p class="desc">Grilled sirloin with hand-cut fries and choice of side</p></div><span class="price">$19.99</span></div>
-    <div class="menu-item"><div><span class="name">Baby Back Ribs</span><p class="desc">Slow-cooked, fall-off-the-bone ribs with house-made BBQ sauce</p></div><span class="price">$21.99</span></div>
-    <div class="menu-item"><div><span class="name">Grilled Salmon</span><p class="desc">Fresh Atlantic salmon with seasonal vegetables and rice pilaf</p></div><span class="price">$18.99</span></div>
-    <div class="menu-item"><div><span class="name">Chicken Tenders Plate</span><p class="desc">Hand-battered tenders, fresh-cut fries, coleslaw, choice of sauce</p></div><span class="price">$13.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="pizza">
-    <h3 class="menu-cat-title">Pizzas &amp; Flatbreads</h3>
-    <div class="menu-item"><div><span class="name">Build Your Own Pizza</span><span class="badge">Popular</span><p class="desc">Personal pizza with your choice of toppings — cheese, pepperoni, sausage, mushrooms, peppers, onions</p></div><span class="price">$11.99</span></div>
-    <div class="menu-item"><div><span class="name">Buffalo Chicken Flatbread</span><p class="desc">Buffalo chicken, mozzarella, red onion, ranch drizzle on crispy flatbread</p></div><span class="price">$12.99</span></div>
-    <div class="menu-item"><div><span class="name">Margherita Pizza</span><p class="desc">Fresh mozzarella, Roma tomatoes, basil, balsamic reduction</p></div><span class="price">$11.99</span></div>
-    <div class="menu-item"><div><span class="name">BBQ Chicken Flatbread</span><p class="desc">Grilled chicken, BBQ sauce, mozzarella, red onion, cilantro</p></div><span class="price">$12.99</span></div>
-  </div>
-  <div class="cat-panel" data-panel="salads">
-    <h3 class="menu-cat-title">Salads</h3>
-    <div class="menu-item"><div><span class="name">Asian Chicken Salad</span><span class="badge">Popular</span><p class="desc">Grilled chicken, mixed greens, mandarin oranges, crispy wontons, tangy Asian dressing</p></div><span class="price">$12.99</span></div>
-    <div class="menu-item"><div><span class="name">Insalata Caprese</span><p class="desc">Fresh mozzarella, Roma tomatoes, extra virgin olive oil, balsamic reduction, fresh basil</p></div><span class="price">$8.39</span></div>
-    <div class="menu-item"><div><span class="name">Create Your Own Salad</span><p class="desc">Choose your greens, toppings, protein, and dressing</p></div><span class="price">$10.99</span></div>
-    <div class="menu-item"><div><span class="name">Caesar Salad</span><p class="desc">Crisp romaine, Parmesan, croutons, house-made Caesar dressing — add grilled chicken for $4</p></div><span class="price">$9.99</span></div>
-  </div>
-</section>
-<footer>
-  <p>Duckworth's Grill &amp; Taphouse · 330 N Tryon St · Charlotte, NC 28202 · 980-939-1166</p>
-  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="locations.html">Locations</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
-<script>(function(){const t=document.querySelectorAll('[data-tab]'),p=document.querySelectorAll('[data-panel]');t.forEach(tb=>{tb.addEventListener('click',function(){t.forEach(t=>t.classList.remove('active'));this.classList.add('active');p.forEach(pl=>pl.classList.toggle('active',pl.dataset.panel===this.dataset.tab))})})})();</script>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍽️</span>
+        <span class="brand-title">Duckworth's Grill & Taphouse</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
+      <p class="hero-subtitle">Prepared fresh to order using locally sourced ingredients and scratch-kitchen tradition.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
+      <button class="widget-btn active" onclick="filterCategory('all')">All Offerings</button>
+      <button class="widget-btn" onclick="filterCategory('starters')">Starters</button>
+      <button class="widget-btn" onclick="filterCategory('mains')">Main Courses</button>
+      <button class="widget-btn" onclick="filterCategory('desserts')">Desserts & Drinks</button>
+    </div>
+
+    <div class="feature-grid" id="menu-grid">
+      <div class="card" data-cat="starters">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">STARTER • GF</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Appetizer</h3>
+        <p class="card-desc">Served hot with house specialty dipping sauces and fresh herbs.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
+      </div>
+
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Chef Special Creation</h3>
+        <p class="card-desc">Slow-roasted to tender perfection, served with roasted seasonal vegetables.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$34.00</span>
+      </div>
+
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE FAVORITE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Signature House Entrée</h3>
+        <p class="card-desc">Accompanied by garlic herb rice pilaf and lemon butter glaze.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$28.00</span>
+      </div>
+
+      <div class="card" data-cat="desserts">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Seasonal Craft Beverage</h3>
+        <p class="card-desc">Hand-shaken with premium spirits, fresh botanical juices, and house syrups.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Duckworth's Grill & Taphouse</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1054" style="color: var(--accent-color);">(704) 555-1054</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    function filterCategory(cat) {
+      document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('#menu-grid .card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
