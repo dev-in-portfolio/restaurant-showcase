@@ -1,211 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beer Menu — HopFly Brewing Company</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<link rel="stylesheet" href="css/hopfly.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | HopFly Brewing Company</title>
+  <meta name="description" content="Explore the full menu at HopFly Brewing Company in Charlotte, NC. Appetizers, mains, desserts, and handcrafted beverages.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-mark">H</span>
-      <span class="logo-text">HopFly Brewing Co.</span>
-    </a>
-    <nav aria-label="Main navigation">
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="menu.html" class="nav-link active">Menu</a></li>
-        <li><a href="story.html" class="nav-link">Our Story</a></li>
-        <li><a href="events.html" class="nav-link">Events</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="main-content">
-  <section class="section page-header">
-    <div class="container narrow text-center">
-      <h1>Beer &amp; Provisions</h1>
-      <p>IPAs, sours, lagers, and experimental releases — plus non-beer options for every palate.</p>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">✨</span>
+        <span class="brand-title">HopFly Brewing Company</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Flagship &amp; Seasonal Beers</h2>
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
+      <p class="hero-subtitle">Prepared fresh to order using locally sourced ingredients and scratch-kitchen tradition.</p>
+    </div>
 
-      <h3 class="category-label">Hazy IPAs</h3>
-      <div class="beer-grid">
-        <div class="beer-card" data-beer-id="hometown" data-beer-name="HopFly Hometown">
-          <h4>HopFly Hometown</h4>
-          <p class="beer-style">Hazy IPA</p>
-          <p class="beer-desc">Our flagship — juicy, soft, and packed with citrus. The beer that started it all.</p>
-        </div>
-        <div class="beer-card" data-beer-id="incarnation" data-beer-name="Incarnation">
-          <h4>Incarnation</h4>
-          <p class="beer-style">Hazy Double IPA</p>
-          <p class="beer-desc">Bold, dank, and brimming with tropical fruit. A double IPA that pushes the limits.</p>
-        </div>
-        <div class="beer-card" data-beer-id="inclusion" data-beer-name="Inclusion">
-          <h4>Inclusion</h4>
-          <p class="beer-style">Hazy IPA</p>
-          <p class="beer-desc">Brewed with spelt and oat — silky smooth with notes of peach and melon.</p>
-        </div>
-        <div class="beer-card" data-beer-id="safe-sound" data-beer-name="Safe &amp; Sound">
-          <h4>Safe &amp; Sound</h4>
-          <p class="beer-style">Hazy IPA</p>
-          <p class="beer-desc">Bright, approachable, and dangerously drinkable. Your go-to pint.</p>
-        </div>
-        <div class="beer-card" data-beer-id="third-eye" data-beer-name="Third Eye">
-          <h4>Third Eye</h4>
-          <p class="beer-style">Hazy IPA</p>
-          <p class="beer-desc">Experimental hop blends meet a silky malt backbone. Open your third eye.</p>
-        </div>
-        <div class="beer-card" data-beer-id="trail-magic" data-beer-name="Trail Magic">
-          <h4>Trail Magic</h4>
-          <p class="beer-style">IPA</p>
-          <p class="beer-desc">A crisp, clean IPA built for the outdoors. Refreshing and full of character.</p>
-        </div>
+    <!-- Category Filters -->
+    <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
+      <button class="widget-btn active" onclick="filterCategory('all')">All Offerings</button>
+      <button class="widget-btn" onclick="filterCategory('starters')">Starters</button>
+      <button class="widget-btn" onclick="filterCategory('mains')">Main Courses</button>
+      <button class="widget-btn" onclick="filterCategory('desserts')">Desserts & Drinks</button>
+    </div>
+
+    <div class="feature-grid" id="menu-grid">
+      <div class="card" data-cat="starters">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">STARTER • GF</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Appetizer</h3>
+        <p class="card-desc">Served hot with house specialty dipping sauces and fresh herbs.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
       </div>
 
-      <h3 class="category-label">Sours</h3>
-      <div class="beer-grid">
-        <div class="beer-card" data-beer-id="hurricane" data-beer-name="Hurricane Blender">
-          <h4>Hurricane Blender</h4>
-          <p class="beer-style">Fruited Sour</p>
-          <p class="beer-desc">Tart, fruity, and wildly refreshing. Our Blender series rotates with the seasons.</p>
-        </div>
-        <div class="beer-card" data-beer-id="cranberry-sour" data-beer-name="Cranberry Sour">
-          <h4>Cranberry Sour</h4>
-          <p class="beer-style">Fruited Sour</p>
-          <p class="beer-desc">Tart cranberry meets a puckery finish. A seasonal favorite.</p>
-        </div>
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Chef Special Creation</h3>
+        <p class="card-desc">Slow-roasted to tender perfection, served with roasted seasonal vegetables.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$34.00</span>
       </div>
 
-      <h3 class="category-label">Lagers &amp; Stouts</h3>
-      <div class="beer-grid">
-        <div class="beer-card" data-beer-id="crunchtime" data-beer-name="Crunchtime Lager">
-          <h4>Crunchtime Lager</h4>
-          <p class="beer-style">American Lager</p>
-          <p class="beer-desc">Crisp, clean, and built for the work you put in. The perfect reward.</p>
-        </div>
-        <div class="beer-card" data-beer-id="hunter-hill" data-beer-name="Hunter Hill Porter">
-          <h4>Hunter Hill Porter</h4>
-          <p class="beer-style">Porter</p>
-          <p class="beer-desc">Roasty, smooth, with notes of chocolate and coffee. A cool evening essential.</p>
-        </div>
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE FAVORITE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Signature House Entrée</h3>
+        <p class="card-desc">Accompanied by garlic herb rice pilaf and lemon butter glaze.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$28.00</span>
+      </div>
+
+      <div class="card" data-cat="desserts">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Seasonal Craft Beverage</h3>
+        <p class="card-desc">Hand-shaken with premium spirits, fresh botanical juices, and house syrups.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
       </div>
     </div>
-  </section>
+  </main>
 
-  <section class="section bg-cream">
-    <div class="container">
-      <h2 class="section-title">Build Your Flight</h2>
-      <p class="section-desc">Pick any 4 beers from our lineup below and we'll pour you a custom flight. <strong>Select 4 to get started.</strong></p>
-      <div class="flight-builder" data-demo-form="flight-builder">
-        <div class="flight-selector" id="flight-selector">
-          <div class="flight-option" data-beer-id="hometown" data-beer-name="HopFly Hometown">HopFly Hometown</div>
-          <div class="flight-option" data-beer-id="incarnation" data-beer-name="Incarnation">Incarnation</div>
-          <div class="flight-option" data-beer-id="inclusion" data-beer-name="Inclusion">Inclusion</div>
-          <div class="flight-option" data-beer-id="safe-sound" data-beer-name="Safe &amp; Sound">Safe &amp; Sound</div>
-          <div class="flight-option" data-beer-id="third-eye" data-beer-name="Third Eye">Third Eye</div>
-          <div class="flight-option" data-beer-id="trail-magic" data-beer-name="Trail Magic">Trail Magic</div>
-          <div class="flight-option" data-beer-id="hurricane" data-beer-name="Hurricane Blender">Hurricane Blender</div>
-          <div class="flight-option" data-beer-id="cranberry-sour" data-beer-name="Cranberry Sour">Cranberry Sour</div>
-          <div class="flight-option" data-beer-id="crunchtime" data-beer-name="Crunchtime Lager">Crunchtime Lager</div>
-          <div class="flight-option" data-beer-id="hunter-hill" data-beer-name="Hunter Hill Porter">Hunter Hill Porter</div>
-        </div>
-        <div class="flight-tray" id="flight-tray">
-          <div class="tray-slot" data-slot="1">&#43;</div>
-          <div class="tray-slot" data-slot="2">&#43;</div>
-          <div class="tray-slot" data-slot="3">&#43;</div>
-          <div class="tray-slot" data-slot="4">&#43;</div>
-        </div>
-        <div class="flight-status" id="flight-status">Select 4 beers to build your flight</div>
-        <button class="btn btn-primary" id="flight-submit" disabled>Build Your Flight</button>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>HopFly Brewing Company</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1062" style="color: var(--accent-color);">(704) 555-1062</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="section">
-    <div class="container narrow">
-      <h2 class="section-title">Non-Beer Options</h2>
-      <ul class="simple-list">
-        <li><strong>HopFly Craft Soda</strong> — house-made ginger ale and citrus soda</li>
-        <li><strong>Local NC Wines</strong> — rotating selection from Yadkin Valley vineyards</li>
-        <li><strong>Canned Cocktails</strong> — ready-to-drink spirits from NC distilleries</li>
-        <li><strong>NA Brews</strong> — non-alcoholic craft beer and hop water</li>
-      </ul>
-    </div>
-  </section>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 
-  <section class="section bg-cream">
-    <div class="container narrow">
-      <h2 class="section-title">Food Truck Calendar</h2>
-      <p class="section-desc">We don't have a kitchen, but we host an amazing rotation of food trucks. Follow us on social for weekly schedules.</p>
-      <div class="truck-list" id="truck-list">
-        <div class="truck-day">
-          <span class="truck-day-name">Tuesday</span>
-          <span class="truck-name">Taco El Regio</span>
-        </div>
-        <div class="truck-day">
-          <span class="truck-day-name">Wednesday</span>
-          <span class="truck-name">Outta the Box Grill</span>
-        </div>
-        <div class="truck-day">
-          <span class="truck-day-name">Thursday</span>
-          <span class="truck-name">Papi's Food Truck</span>
-        </div>
-        <div class="truck-day">
-          <span class="truck-day-name">Friday</span>
-          <span class="truck-name">Tacos El Nevado</span>
-        </div>
-        <div class="truck-day">
-          <span class="truck-day-name">Saturday</span>
-          <span class="truck-name">Soul Food Kitchen</span>
-        </div>
-        <div class="truck-day">
-          <span class="truck-day-name">Sunday</span>
-          <span class="truck-name">Smoke &amp; Barrel BBQ</span>
-        </div>
-      </div>
-      <p class="footnote">Schedule subject to change. Check our Instagram for daily updates.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-col">
-      <h4>HopFly Brewing Company</h4>
-      <p>Charlotte &amp; Rocky Mount, NC</p>
-      <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:info@hopflybrewing.com">info@hopflybrewing.com</a>
-      <a href="mailto:events@hopflybrewing.com">events@hopflybrewing.com</a>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="menu.html">Beer Menu</a>
-      <a href="events.html">Events</a>
-      <a href="story.html">Our Story</a>
-    </div>
-  </div>
-</footer>
-
-<script src="../site-core.js"></script>
-<script src="js/hopfly.js"></script>
+  <script>
+    function filterCategory(cat) {
+      document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('#menu-grid .card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
