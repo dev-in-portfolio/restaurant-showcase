@@ -1,87 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DB's Tavern · Ballantyne Sports Bar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@400;600&family=Fraunces:opsz,wght@9..144,400;6..144,600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--navy:#1a2a3a;--gold:#d4a84b;--red:#c0392b;--charcoal:#1a1a1a;--cream:#f5efe6;--warm:#faf5ee;--muted:#999}
-*{box-sizing:border-box}
-body{margin:0;background:var(--charcoal);color:var(--cream);font-family:'DM Sans',sans-serif}
-h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
-.nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
-.nav a{color:var(--cream);text-decoration:none;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
-.nav a:hover{opacity:1;color:var(--gold)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-logo{font-family:'Fraunces',serif;font-size:1rem;color:var(--gold)!important;letter-spacing:.12em;text-transform:none;opacity:1!important}
-.hero{min-height:70vh;background:linear-gradient(135deg,#0d1219,#1a2a3a 50%,#2a1a0a);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
-.hero h1{font-size:2.5rem;margin:0;color:var(--gold)}
-.hero .tagline{font-size:1rem;opacity:.6;font-style:italic;margin:.5rem 0 1.5rem}
-.hero .btn{display:inline-block;background:var(--red);color:var(--cream);padding:.8rem 2.5rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
-.hero .btn:hover{background:#d64531}
-.section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
-.section h2{font-size:1.5rem;color:var(--warm);margin:0 0 .25rem;border-left:3px solid var(--gold);padding-left:.75rem}
-.section .subtitle{color:var(--muted);font-style:italic;margin-bottom:2rem;font-size:.95rem}
-.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
-.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(212,168,75,.08);border-radius:8px;padding:1.5rem}
-.feature-card .icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
-.feature-card h3{font-size:1.05rem;color:var(--gold);margin:0 0 .35rem}
-.feature-card p{font-size:.85rem;opacity:.6;line-height:1.5;margin:0}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
-.stat{text-align:center;padding:1.5rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(212,168,75,.06)}
-.stat .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--gold)}
-.stat .label{font-size:.82rem;opacity:.5}
-footer{background:var(--charcoal);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.82rem;line-height:1.6;border-top:1px solid rgba(212,168,75,.08)}
-footer a{color:var(--gold);text-decoration:none}
-.disclosure{font-size:.78rem;color:rgba(255,255,255,.25);font-style:italic}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DB's Tavern | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to DB's Tavern in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">DB's Tavern</a>
-  <div class="nav-links">
-    <a href="menu.html">Menu</a>
-    <a href="wings.html">Wings</a>
-    <a href="story.html">Our Story</a>
-    <a href="order.html">Order</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-<header class="hero">
-  <div>
-    <h1>DB's Tavern</h1>
-    <p class="tagline">Ballantyne's neighborhood sports bar since 2014</p>
-    <a href="menu.html" class="btn">View Menu</a>
-  </div>
-</header>
-<section class="section">
-  <h2>Welcome to DB's</h2>
-  <p class="subtitle">Great food, cold drinks, and the best wings in Ballantyne</p>
-  <div class="featured-grid">
-    <div class="feature-card"><span class="icon" aria-hidden="true">🍕</span><h3>Pizza Rolls</h3><p>Hand-rolled, baked golden — our signature dough filled with fresh ingredients</p></div>
-    <div class="feature-card"><span class="icon" aria-hidden="true">🍗</span><h3>Wings</h3><p>Best wings in town since 1988 — 18 sauces from Lemon Pepper to Lucifer's Own</p></div>
-    <div class="feature-card"><span class="icon" aria-hidden="true">🍔</span><h3>Burgers</h3><p>Hand-pressed patties, fresh toppings, tavern-style perfection</p></div>
-    <div class="feature-card"><span class="icon" aria-hidden="true">🏈</span><h3>Game Day</h3><p>TVs everywhere, open till 2 AM — the ultimate Ballantyne sports destination</p></div>
-  </div>
-</section>
-<section class="section" style="border-top:1px solid rgba(212,168,75,.06)">
-  <h2>Hours &amp; Location</h2>
-  <div class="stats">
-    <div class="stat"><span class="num">Mon–Sat</span><span class="label">11:00 AM – 2:00 AM</span></div>
-    <div class="stat"><span class="num">Sunday</span><span class="label">11:00 AM – 12:00 AM</span></div>
-    <div class="stat"><span class="num">8155 Ardrey Kell Rd</span><span class="label">Ballantyne · Charlotte</span></div>
-  </div>
-  <div style="text-align:center;margin-top:1.5rem"><a href="order.html" class="hero btn">Order Takeout</a></div>
-</section>
-<footer>
-  <p>DB's Tavern · 8155 Ardrey Kell Rd · Charlotte, NC 28277 · (704) 844-0534</p>
-  <p><a href="menu.html">Menu</a> · <a href="story.html">Our Story</a> · <a href="order.html">Order</a> · <a href="contact.html">Contact</a></p>
-  <p class="disclosure">Unofficial concept presentation — not operated by the restaurant</p>
-</footer>
-<script src="../site-core.js"></script>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🌿</span>
+        <span class="brand-title">DB's Tavern</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">DB's Tavern</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
+    </section>
+
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">DB's Tavern Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
+
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for DB's Tavern.
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>DB's Tavern</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1037" style="color: var(--accent-color);">(704) 555-1037</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
