@@ -1,165 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Cafe South — family-owned breakfast and lunch in South Charlotte since 2012. Home-cooked meals, daily specials, and catering.">
-<title>Cafe South | Home-Cooked Breakfast & Lunch in South Charlotte</title>
-<link rel="stylesheet" href="site.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe South | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Cafe South in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="notice">Unofficial five-page redesign demo &bull; forms are demonstration only &bull; not affiliated with Cafe South</div>
-<nav>
-  <a class="brand" href="index.html"><span>&#9749;</span> Cafe South</a>
-  <button class="toggle-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="specials.html">Daily Specials</a>
-    <a href="about.html">Our Story</a>
-    <a href="catering.html">Catering</a>
-    <a href="visit.html">Visit Us</a>
-  </div>
-</nav>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">✨</span>
+        <span class="brand-title">Cafe South</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<main id="main">
-  <section class="hero">
-    <div>
-      <div class="tag">South Charlotte &bull; Family-Owned Since 2012</div>
-      <h1>Good food and good people come together.</h1>
-      <p>Cafe South serves home-cooked breakfast and lunch seven days a week at the intersection of West Arrowood Road and Forest Pine Drive — just off I-77 Exit 3.</p>
-      <div style="display:flex;gap:.8rem;flex-wrap:wrap">
-        <a class="btn" href="menu.html">View Full Menu</a>
-        <a class="btn btn-outline" href="catering.html">Plan Catering</a>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Cafe South</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
+    </section>
+
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Cafe South Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
+
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
+
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
+
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Cafe South.
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Cafe South</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1038" style="color: var(--accent-color);">(704) 555-1038</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
-    <div class="hero-art" aria-label="Concept illustration of a warm breakfast scene">
-      <svg viewBox="0 0 420 380" aria-hidden="true">
-        <rect x="40" y="200" width="340" height="140" rx="12" fill="#e8d5b4"/>
-        <ellipse cx="210" cy="200" rx="150" ry="20" fill="#d4a847" opacity=".3"/>
-        <rect x="80" y="120" width="100" height="80" rx="10" fill="#c4613a"/>
-        <circle cx="130" cy="155" r="22" fill="#faf5eb"/>
-        <circle cx="130" cy="155" r="16" fill="#d4a847"/>
-        <rect x="240" y="130" width="120" height="70" rx="8" fill="#2d5a3d"/>
-        <rect x="255" y="145" width="90" height="6" rx="3" fill="#c8e6d0"/>
-        <rect x="255" y="158" width="70" height="6" rx="3" fill="#c8e6d0"/>
-        <rect x="255" y="171" width="80" height="6" rx="3" fill="#c8e6d0"/>
-        <circle cx="100" cy="100" r="30" fill="#d4a847" opacity=".2"/>
-        <circle cx="320" cy="90" r="20" fill="#c4613a" opacity=".15"/>
-        <rect x="160" y="260" width="100" height="60" rx="6" fill="#c4613a" opacity=".15"/>
-        <text x="210" y="298" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#c4613a" opacity=".5">SINCE 2012</text>
-      </svg>
-    </div>
-  </section>
+  </footer>
 
-  <section class="alt">
-    <div class="tag">Why South Charlotte chooses Cafe South</div>
-    <h2>A neighborhood cafe, not a chain.</h2>
-    <div class="grid g3">
-      <article class="card">
-        <div class="icon">&#127859;</div>
-        <h3>Home-Cooked Every Day</h3>
-        <p>Every dish is prepared fresh. From buttermilk pancakes to country fried steak, the kitchen runs on real cooking, not shortcuts.</p>
-      </article>
-      <article class="card">
-        <div class="icon">&#9749;</div>
-        <h3>Breakfast & Lunch, Seven Days</h3>
-        <p>Monday through Saturday 6 AM&ndash;3 PM. Sunday 7 AM&ndash;3 PM. Morning coffee, full breakfast, or a grilled entree for lunch.</p>
-      </article>
-      <article class="card">
-        <div class="icon">&#127873;</div>
-        <h3>Catering for Any Group</h3>
-        <p>Continental breakfasts, hot buffets, box lunches, and party trays. Priced per person for offices, churches, and gatherings.</p>
-      </article>
-    </div>
-  </section>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 
-  <section>
-    <div class="feature-row">
-      <div>
-        <div class="tag">The Menu</div>
-        <h2>From farm-fresh eggs to fried catfish.</h2>
-        <p style="color:#5a4a3a;margin-bottom:1.5rem">Breakfast runs deep with omelettes, griddle specials, and chicken &amp; waffles. Lunch covers Southern favorites, seafood, burgers, gyros, sandwiches, and pasta. Daily specials rotate with the week.</p>
-        <a class="btn" href="menu.html">Browse the Full Menu</a>
-      </div>
-      <div class="feature-img">
-        <svg viewBox="0 0 340 280" aria-hidden="true">
-          <rect x="20" y="40" width="300" height="200" rx="14" fill="#2d5a3d"/>
-          <rect x="40" y="60" width="120" height="80" rx="8" fill="#faf5eb"/>
-          <circle cx="100" cy="100" r="28" fill="#d4a847"/>
-          <circle cx="100" cy="100" r="18" fill="#c4613a" opacity=".6"/>
-          <rect x="185" y="65" width="120" height="70" rx="6" fill="#faf5eb" opacity=".9"/>
-          <rect x="198" y="78" width="94" height="5" rx="2" fill="#c4613a" opacity=".4"/>
-          <rect x="198" y="90" width="80" height="5" rx="2" fill="#c4613a" opacity=".3"/>
-          <rect x="198" y="102" width="88" height="5" rx="2" fill="#c4613a" opacity=".25"/>
-          <rect x="50" y="160" width="240" height="60" rx="8" fill="#faf5eb" opacity=".7"/>
-          <text x="170" y="195" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#2d5a3d" opacity=".6">BREAKFAST &amp; LUNCH</text>
-        </svg>
-      </div>
-    </div>
-  </section>
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
 
-  <section class="alt">
-    <div class="feature-row reverse">
-      <div>
-        <div class="tag">Daily Specials</div>
-        <h2>Something new on the board every day.</h2>
-        <p style="color:#5a4a3a;margin-bottom:1rem">Cafe South rotates daily specials across the week — from beef tips and spaghetti to grilled pork chops and baked chicken. Call ahead to ask what's on the board today.</p>
-        <a class="btn btn-outline" href="tel:9802247328">Call (980) 224-7328</a>
-      </div>
-      <div class="feature-img">
-        <svg viewBox="0 0 340 280" aria-hidden="true">
-          <rect x="30" y="30" width="280" height="220" rx="14" fill="#c4613a"/>
-          <rect x="55" y="55" width="230" height="50" rx="6" fill="#faf5eb" opacity=".9"/>
-          <text x="170" y="85" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="800" fill="#c4613a">TODAY'S SPECIALS</text>
-          <rect x="55" y="120" width="100" height="40" rx="6" fill="#faf5eb" opacity=".7"/>
-          <rect x="175" y="120" width="110" height="40" rx="6" fill="#faf5eb" opacity=".7"/>
-          <rect x="55" y="175" width="230" height="30" rx="4" fill="#faf5eb" opacity=".5"/>
-          <rect x="55" y="215" width="160" height="16" rx="3" fill="#d4a847" opacity=".5"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="specials">
-      <div>
-        <div class="tag" style="color:var(--a)">Order Online</div>
-        <h2>Delivery available through Postmates &amp; Uber Eats.</h2>
-      </div>
-      <a class="btn" href="https://postmates.com/store/cafe-south/yrDJ5sFHRH6yt1sT9wd84w" style="background:var(--a);color:var(--ink)">Order Now</a>
-    </div>
-  </section>
-
-  <section class="alt">
-    <div class="tag">Hours</div>
-    <h2>Open every day.</h2>
-    <div class="hours-box" style="max-width:500px">
-      <h3>Cafe South</h3>
-      <div class="time">
-        <strong>Monday &ndash; Saturday</strong><br>
-        6:00 AM &ndash; 3:00 PM<br><br>
-        <strong>Sunday</strong><br>
-        7:00 AM &ndash; 3:00 PM
-      </div>
-      <p style="margin-top:1rem;color:#7a6a5a;font-size:.9rem">Breakfast served until 11:30 AM weekdays, 1 PM weekends</p>
-    </div>
-  </section>
-
-  <div class="cta-strip">
-    <h2>Find us off I-77 Exit 3.</h2>
-    <a class="btn" href="visit.html">Get Directions</a>
-  </div>
-</main>
-
-<footer>
-  <div><strong>Cafe South</strong><br>7901 Forest Pine Dr.<br>Charlotte, NC 28273<br><a href="tel:9802247328">(980) 224-7328</a></div>
-  <div><strong>Quick Links</strong><br><a href="menu.html">Menu</a><br><a href="catering.html">Catering</a><br><a href="visit.html">Directions</a><br><a href="https://postmates.com/store/cafe-south/yrDJ5sFHRH6yt1sT9wd84w">Order Online</a></div>
-  <div><strong>Connect</strong><br><a href="https://www.facebook.com/CafeSouthcharlotte/">Facebook</a><br><a href="https://www.yelp.com/biz/cafe-south-charlotte">Yelp</a><br><a href="https://goo.gl/maps/jhyFsQwmo9eHxA4V6">Google Maps</a></div>
-  <div><strong>Disclaimer</strong><br>This is an unofficial redesign demonstration and is not affiliated with, operated by, or endorsed by Cafe South.</div>
-</footer>
-<div class="disclosure">This site is an unofficial concept presentation for portfolio purposes only. All content is based on publicly available information. Forms do not submit data.</div>
-<script src="site.js"></script>
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
