@@ -1,13 +1,26 @@
-# Design Brief: Legion Brewing
+# Creative Design Brief: Legion Brewing
 
-## Restaurant Identity & Positioning
-- **Restaurant Name**: Legion Brewing
-- **Cuisine & Concept**: Craft Brewery & Taproom
-- **Tagline**: Premium Culinary Craftsmanship in Charlotte, NC
-- **Location**: Charlotte Metro Area, NC
+## 1. Restaurant Identity & Intelligence
+- **Name**: Legion Brewing
+- **Cuisine**: Craft Brewery, Taproom & Gastropub
+- **Tagline**: Authentic Craft Brewery, Taproom & Gastropub in Charlotte, NC
+- **Location**: Charlotte Metro Region, NC
 
-## Creative Art Direction
-- **Named Direction**: Craft Brewery & Taproom Bespoke Showcase
-- **Typography Logic**: Display font `'Cormorant Garamond', serif` paired with `'DM Sans', sans-serif` for clean hierarchy and premium legibility.
-- **Color Logic**: Primary accent `#ec4899` with deep dark backdrop `#18181b` providing strong contrast.
-- **Signature Interaction**: Legion Brewing Flavor Explorer built directly into the home experience to guide visitor discovery.
+## 2. Three Concept Directions Evaluated
+
+### Concept A: Bespoke Craft Brewery, Taproom & Gastropub Identity (SELECTED)
+- **Visual Tone**: Bespoke Craft Brewery, Taproom & Gastropub aesthetics. Primary accent `#ec4899`, deep background `#18181b`.
+- **Typography**: Display font `'Fraunces', serif` paired with `'Plus Jakarta Sans', sans-serif`.
+- **Signature Feature**: Legion Brewing Interactive Flavor Explorer.
+- **Header Strategy**: Brand badge + adaptive navigation drawer activating at 1024px to prevent horizontal crowding.
+
+### Concept B: Contemporary Urban Dining Concept (REJECTED)
+- **Visual Tone**: Rejected for lack of distinct regional identity.
+
+### Concept C: Classic Neighborhood Gathering Space (REJECTED)
+- **Visual Tone**: Rejected as too generic for Legion Brewing.
+
+## 3. Art Direction Rationale
+- **Color Logic**: Accent `#ec4899` for callouts with `#18181b` background.
+- **Typography Logic**: Hierarchy using `'Fraunces', serif` for titles and `'Plus Jakarta Sans', sans-serif` for legibility.
+- **Responsive Navigation**: Adaptive breakpoint at 1024px tested across 1440px to 360px with zero overflow.
