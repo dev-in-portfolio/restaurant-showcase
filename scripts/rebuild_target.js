@@ -20,6 +20,14 @@ function buildRestaurant(target) {
   const destDir = path.join(showcaseRoot, 'restaurants', slug);
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir, { recursive: true });
+  } else {
+    // Remove existing HTML and CSS files to avoid stale files failing validation
+    const existingFiles = fs.readdirSync(destDir);
+    existingFiles.forEach(f => {
+      if (f.endsWith('.html') || f.endsWith('.css')) {
+        fs.unlinkSync(path.join(destDir, f));
+      }
+    });
   }
 
   // 1. styles.css

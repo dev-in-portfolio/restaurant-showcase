@@ -61,12 +61,12 @@
   },
   {
     "slug": "aj-family-restaurant",
-    "name": "Aj Family Restaurant",
+    "name": "AJ Family Restaurant",
     "area": "Charlotte, NC",
-    "cuisine": "Restaurant Rebuild",
-    "description": "Presentation-ready 6-page branding concept and website rebuild for Aj Family Restaurant.",
-    "emoji": "🍽️",
-    "gradient": "linear-gradient(135deg, #172033, #334155 52%, #0f172a)",
+    "cuisine": "Comfort Country Diner",
+    "description": "Presentation-ready 6-page branding concept and website rebuild for AJ Family Restaurant.",
+    "emoji": "🍳",
+    "gradient": "radial-gradient(circle at 50% 0%, #27272a 0%, #09090b 75%)",
     "href": "restaurants/aj-family-restaurant/index.html",
     "stage": "showcase",
     "status": "presentation-ready",
@@ -77,7 +77,9 @@
     "performanceReviewed": true,
     "accessibilityReviewed": true,
     "productionBuildPassed": true,
-    "approvedForPresentation": true
+    "approvedForPresentation": true,
+    "currentWebsiteUrl": "https://ajfamilyrestaurant.com",
+    "comparisonButtonAdded": true
   },
   {
     "slug": "alexander-michaels",
