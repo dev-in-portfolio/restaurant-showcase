@@ -1379,10 +1379,10 @@
     "slug": "free-range-brewing",
     "name": "Free Range Brewing",
     "area": "Charlotte, NC",
-    "cuisine": "Restaurant Rebuild",
+    "cuisine": "Craft Brewery & Taproom",
     "description": "Presentation-ready 6-page branding concept and website rebuild for Free Range Brewing.",
-    "emoji": "🍽️",
-    "gradient": "linear-gradient(135deg, #172033, #334155 52%, #0f172a)",
+    "emoji": "🍸",
+    "gradient": "radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0f172a 75%)",
     "href": "restaurants/free-range-brewing/index.html",
     "stage": "showcase",
     "status": "presentation-ready",
@@ -1393,7 +1393,9 @@
     "performanceReviewed": true,
     "accessibilityReviewed": true,
     "productionBuildPassed": true,
-    "approvedForPresentation": true
+    "approvedForPresentation": true,
+    "currentWebsiteUrl": "https://www.google.com/search?q=Free%20Range%20Brewing%20Charlotte%20NC",
+    "comparisonButtonAdded": true
   },
   {
     "slug": "futo-buta",
