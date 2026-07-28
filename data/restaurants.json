@@ -2871,12 +2871,12 @@
   },
   {
     "slug": "south-21-drive-in",
-    "name": "South 21 Drive In",
+    "name": "South 21 Drive-In",
     "area": "Charlotte, NC",
-    "cuisine": "Restaurant Rebuild",
-    "description": "Presentation-ready 6-page branding concept and website rebuild for South 21 Drive In.",
+    "cuisine": "Bespoke Culinary & Dining Experience",
+    "description": "Presentation-ready 6-page branding concept and website rebuild for South 21 Drive-In.",
     "emoji": "🍽️",
-    "gradient": "linear-gradient(135deg, #172033, #334155 52%, #0f172a)",
+    "gradient": "radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 75%)",
     "href": "restaurants/south-21-drive-in/index.html",
     "stage": "showcase",
     "status": "presentation-ready",
@@ -2887,7 +2887,9 @@
     "performanceReviewed": true,
     "accessibilityReviewed": true,
     "productionBuildPassed": true,
-    "approvedForPresentation": true
+    "approvedForPresentation": true,
+    "currentWebsiteUrl": "https://www.google.com/search?q=South%2021%20Drive-In%20Charlotte%20NC",
+    "comparisonButtonAdded": true
   },
   {
     "slug": "tacos-el-nevado",
