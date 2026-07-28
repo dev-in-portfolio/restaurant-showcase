@@ -3,318 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | La Shish Kabob Charlotte</title>
-  <meta name="description" content="Explore our menu of kabobs, shawarma, falafel, salads, soups, and desserts at La Shish Kabob in Charlotte, NC. Build your own kabob with our interactive customizer.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../site-core.css">
+  <title>Menu | La Shish Kabob</title>
+  <meta name="description" content="Explore the full menu at La Shish Kabob in Charlotte, NC. Appetizers, mains, desserts, and handcrafted beverages.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<a class="skip-link" href="#main-content">Skip to main content</a>
-
-<header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a href="index.html" class="logo" aria-label="La Shish Kabob home">La Shish <span class="logo-star">&#9733;</span> Kabob</a>
-    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
-    <nav aria-label="Main navigation">
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="catering.html">Catering</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="main-content">
-  <section class="hero" style="padding:var(--spacing-lg) 0;">
-    <div class="hero-pattern" aria-hidden="true"></div>
-    <div class="container hero-content">
-      <h1>Our <span class="highlight">Menu</span></h1>
-      <p>Freshly prepared Middle-Eastern classics &mdash; made to order, every time.</p>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍸</span>
+        <span class="brand-title">La Shish Kabob</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- Kabobs -->
-  <section class="section" aria-labelledby="kabobs-heading">
-    <div class="container">
-      <div class="menu-category">
-        <h2 id="kabobs-heading" class="menu-category-title">Kabobs</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Chicken Kabob</h4>
-              <p>Marinated chicken breast skewered and grilled to perfection.</p>
-            </div>
-            <span class="menu-item-price">$14.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Beef Kabob</h4>
-              <p>Tender beef chunks marinated in traditional spices.</p>
-            </div>
-            <span class="menu-item-price">$15.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Lamb Kabob</h4>
-              <p>Succulent lamb seasoned with Middle-Eastern herbs.</p>
-            </div>
-            <span class="menu-item-price">$17.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Kofta Kabob</h4>
-              <p>Spiced ground beef and lamb mixed with onions and parsley.</p>
-            </div>
-            <span class="menu-item-price">$14.99</span>
-          </div>
-        </div>
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
+      <p class="hero-subtitle">Prepared fresh to order using locally sourced ingredients and scratch-kitchen tradition.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
+      <button class="widget-btn active" onclick="filterCategory('all')">All Offerings</button>
+      <button class="widget-btn" onclick="filterCategory('starters')">Starters</button>
+      <button class="widget-btn" onclick="filterCategory('mains')">Main Courses</button>
+      <button class="widget-btn" onclick="filterCategory('desserts')">Desserts & Drinks</button>
+    </div>
+
+    <div class="feature-grid" id="menu-grid">
+      <div class="card" data-cat="starters">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">STARTER • GF</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Appetizer</h3>
+        <p class="card-desc">Served hot with house specialty dipping sauces and fresh herbs.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
       </div>
 
-      <!-- Shawarma -->
-      <div class="menu-category">
-        <h2 id="shawarma-heading" class="menu-category-title">Shawarma</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Chicken Shawarma</h4>
-              <p>Thinly sliced marinated chicken, slow-roasted on a vertical spit.</p>
-            </div>
-            <span class="menu-item-price">$12.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Beef Shawarma</h4>
-              <p>Seasoned beef shawarma served with garlic sauce and pickles.</p>
-            </div>
-            <span class="menu-item-price">$13.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Shawarma Plate</h4>
-              <p>Your choice of chicken or beef with rice, salad, and pita.</p>
-            </div>
-            <span class="menu-item-price">$15.99</span>
-          </div>
-        </div>
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Chef Special Creation</h3>
+        <p class="card-desc">Slow-roasted to tender perfection, served with roasted seasonal vegetables.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$34.00</span>
       </div>
 
-      <!-- Falafel & Vegetarian -->
-      <div class="menu-category">
-        <h2 id="falafel-heading" class="menu-category-title">Falafel &amp; Vegetarian</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Falafel Plate</h4>
-              <p>Crispy chickpea falafel balls served with rice, salad, and tahini.</p>
-            </div>
-            <span class="menu-item-price">$11.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Falafel Wrap</h4>
-              <p>Falafel in warm pita with lettuce, tomatoes, and tahini sauce.</p>
-            </div>
-            <span class="menu-item-price">$9.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Vegetarian Combo</h4>
-              <p>Falafel, hummus, baba ganoush, and tabouli with pita bread.</p>
-            </div>
-            <span class="menu-item-price">$13.99</span>
-          </div>
-        </div>
+      <div class="card" data-cat="mains">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE FAVORITE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Signature House Entrée</h3>
+        <p class="card-desc">Accompanied by garlic herb rice pilaf and lemon butter glaze.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$28.00</span>
       </div>
 
-      <!-- Soups & Salads -->
-      <div class="menu-category">
-        <h2 id="soups-heading" class="menu-category-title">Soups &amp; Salads</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Lentil Soup</h4>
-              <p>Hearty red lentil soup with warm spices and a hint of lemon.</p>
-            </div>
-            <span class="menu-item-price">$5.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Fattoush Salad</h4>
-              <p>Mixed greens with crispy pita, tomatoes, cucumbers, and sumac vinaigrette.</p>
-            </div>
-            <span class="menu-item-price">$8.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Tabouli</h4>
-              <p>Fresh parsley, bulgur, tomatoes, and mint with lemon-olive oil dressing.</p>
-            </div>
-            <span class="menu-item-price">$7.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Greek Salad</h4>
-              <p>Crisp romaine, feta, olives, cucumbers, and house vinaigrette.</p>
-            </div>
-            <span class="menu-item-price">$8.99</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Desserts -->
-      <div class="menu-category">
-        <h2 id="desserts-heading" class="menu-category-title">Desserts</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Baklava</h4>
-              <p>Layers of phyllo dough filled with walnuts and sweet honey syrup.</p>
-            </div>
-            <span class="menu-item-price">$4.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Kunafa</h4>
-              <p>Shredded phyllo pastry with sweet cheese filling, drizzled with syrup.</p>
-            </div>
-            <span class="menu-item-price">$5.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Rice Pudding</h4>
-              <p>Creamy homemade rice pudding topped with cinnamon and nuts.</p>
-            </div>
-            <span class="menu-item-price">$4.99</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Appetizers -->
-      <div class="menu-category">
-        <h2 id="appetizers-heading" class="menu-category-title">Appetizers &amp; Sides</h2>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Hummus</h4>
-              <p>Smooth chickpea dip with tahini, olive oil, and paprika.</p>
-            </div>
-            <span class="menu-item-price">$6.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Baba Ganoush</h4>
-              <p>Smoky roasted eggplant dip blended with tahini and garlic.</p>
-            </div>
-            <span class="menu-item-price">$6.99</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-info">
-              <h4>Lamb Shank</h4>
-              <p>Slow-braised lamb shank served over rice with vegetables.</p>
-            </div>
-            <span class="menu-item-price">$18.99</span>
-          </div>
-        </div>
+      <div class="card" data-cat="desserts">
+        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
+        <h3 class="card-title" style="margin-top: 0.4rem;">Seasonal Craft Beverage</h3>
+        <p class="card-desc">Hand-shaken with premium spirits, fresh botanical juices, and house syrups.</p>
+        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Kabob Customizer -->
-  <section class="section" style="background:var(--color-cream-bright);" aria-labelledby="customizer-heading">
-    <div class="container">
-      <h2 id="customizer-heading" class="section-title">Kabob Customizer</h2>
-      <p class="section-subtitle">Build your perfect kabob plate &mdash; choose your protein, sides, and sauce.</p>
-
-      <div id="kabob-customizer" class="customizer">
-        <h3>&#127828; Build Your Kabob</h3>
-        <div class="customizer-steps">
-          <div class="customizer-step">
-            <span class="customizer-step-label">Step 1: Choose Your Protein</span>
-            <div class="customizer-options" role="radiogroup" aria-label="Protein selection">
-              <button class="customizer-option" data-step="protein" data-value="chicken" role="radio" aria-checked="false">Chicken</button>
-              <button class="customizer-option" data-step="protein" data-value="beef" role="radio" aria-checked="false">Beef</button>
-              <button class="customizer-option" data-step="protein" data-value="lamb" role="radio" aria-checked="false">Lamb <small>(+$2)</small></button>
-              <button class="customizer-option" data-step="protein" data-value="kofta" role="radio" aria-checked="false">Kofta <small>(+$1)</small></button>
-            </div>
-          </div>
-
-          <div class="customizer-step">
-            <span class="customizer-step-label">Step 2: Choose Your Sides</span>
-            <div class="customizer-options" role="radiogroup" aria-label="Sides selection">
-              <button class="customizer-option" data-step="sides" data-value="rice" role="radio" aria-checked="false">Rice</button>
-              <button class="customizer-option" data-step="sides" data-value="salad" role="radio" aria-checked="false">Salad</button>
-              <button class="customizer-option" data-step="sides" data-value="hummus" role="radio" aria-checked="false">Hummus</button>
-              <button class="customizer-option" data-step="sides" data-value="fries" role="radio" aria-checked="false">Fries</button>
-            </div>
-          </div>
-
-          <div class="customizer-step">
-            <span class="customizer-step-label">Step 3: Choose Your Sauce</span>
-            <div class="customizer-options" role="radiogroup" aria-label="Sauce selection">
-              <button class="customizer-option" data-step="sauce" data-value="tahini" role="radio" aria-checked="false">Tahini</button>
-              <button class="customizer-option" data-step="sauce" data-value="garlic" role="radio" aria-checked="false">Garlic</button>
-              <button class="customizer-option" data-step="sauce" data-value="hot" role="radio" aria-checked="false">Hot Sauce</button>
-              <button class="customizer-option" data-step="sauce" data-value="bbq" role="radio" aria-checked="false">BBQ</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="customizer-result">
-          <h4>Your Order</h4>
-          <p class="order-summary" id="customizer-order">Select your options above</p>
-          <div class="price" id="customizer-price">$13.99</div>
-          <button class="btn btn-primary" id="customizer-add-btn" disabled>Add to Order</button>
-          <p id="customizer-feedback" style="display:none;margin-top:var(--spacing-xs);font-weight:600;color:var(--color-olive);"></p>
-        </div>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>La Shish Kabob</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1123" style="color: var(--accent-color);">(704) 555-1123</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>La Shish Kabob</h4>
-        <p style="font-size:0.9rem;opacity:0.7;">Enjoy Healthy, Fresh Middle-Eastern Food. Family-owned since 2014.</p>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <ul>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="story.html">Our Story</a></li>
-          <li><a href="catering.html">Catering</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Hours</h4>
-        <p style="font-size:0.9rem;">Daily 11am &ndash; 11pm<br>Weekend Buffet Fri&ndash;Sun</p>
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.instagram.com/lashishkabobclt/" target="_blank" rel="noopener" class="social-link">Instagram</a>
-          <a href="https://www.facebook.com/lashishkabob/" target="_blank" rel="noopener" class="social-link">Facebook</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 La Shish Kabob &mdash; Charlotte, NC
-    </div>
-  </div>
-</footer>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 
-<div class="disclosure" role="contentinfo">
-  Unofficial concept presentation &mdash; not operated by the restaurant. <a href="https://lashishkabob.com" target="_blank" rel="noopener">Visit the official site</a>.
-</div>
-
-<script src="../site-core.js"></script>
+  <script>
+    function filterCategory(cat) {
+      document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('#menu-grid .card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
