@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showroom Archive | Retired Restaurant Website Demonstrations</title>
+  <meta name="description" content="Archive of retired and historical restaurant website demonstrations from Dark Star Consulting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
+  <style>
+    .archive-badge {
+      background: #dc2626 !important;
+      color: #ffffff !important;
+    }
+    .archive-notice-banner {
+      background: rgba(220, 38, 38, 0.12);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem auto 2.5rem;
+      max-width: 800px;
+      text-align: center;
+      color: #fca5a5;
+      font-size: 0.95rem;
+    }
+    .back-to-active {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--portal-accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .back-to-active:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="portal-container">
+    <a href="../index.html" class="back-to-active">← Back to Active Showroom</a>
+
+    <header class="portal-header">
+      <span class="portal-eyebrow" style="color: #ef4444; text-shadow: 0 0 12px rgba(239, 68, 68, 0.3);">Showroom Archive</span>
+      <h1 class="portal-title">Retired Demonstrations</h1>
+      <p class="portal-subtitle">Historical record of retired and archived restaurant website demonstrations. These demonstrations are preserved for reference and portfolio history but are no longer active in the primary sales collection.</p>
+      <div class="archive-notice-banner">
+        ⚠️ <strong>Archived Notice:</strong> The demonstrations listed below have been retired from active presentation. Historical designs and files are preserved intact for viewing.
+      </div>
+      <div class="portal-stats" id="portal-stats" aria-live="polite">Loading archive index…</div>
+    </header>
+
+    <section class="restaurant-grid" id="restaurant-grid" aria-label="Archived Restaurant Showroom Grid"></section>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const grid = document.getElementById('restaurant-grid');
+      const stats = document.getElementById('portal-stats');
+
+      const sortName = (name = '') => name
+        .replace(/^(the|a|an)\s+/i, '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+      function render(items) {
+        if (!items || items.length === 0) {
+          grid.innerHTML = '<p style="text-align:center; color: var(--text-muted); grid-column: 1/-1; padding: 4rem 0;">No archived demonstrations in repository.</p>';
+          stats.textContent = '0 archived demonstrations in repository';
+          return;
+        }
+
+        const sorted = [...items].sort((a, b) => sortName(a.name).localeCompare(sortName(b.name), undefined, { sensitivity: 'base' }));
+
+        grid.innerHTML = sorted.map(item => {
+          const targetUrl = item.href ? item.href : `restaurants/${item.slug}/index.html`;
+
+          return `
+            <article class="portal-card" data-href="${targetUrl}">
+              <div class="card-image-wrapper">
+                <span class="card-rating-badge archive-badge">RETIRED DEMO</span>
+                <div class="card-img-placeholder" style="background:${item.gradient || 'linear-gradient(135deg,#331010,#451a1a)'}">
+                  ${item.emoji || '📦'}
+                </div>
+              </div>
+              <div class="card-content">
+                <span class="card-cuisine" style="color: #fca5a5;">${item.cuisine || 'Archived Demonstration'}</span>
+                <h2 class="card-title">${item.name}</h2>
+                <p class="card-description">${item.description || 'Preserved historical demonstration.'}</p>
+                <div class="card-footer">
+                  <span class="card-price">Status: <span style="color:#ef4444;">Archived</span></span>
+                  <a href="${targetUrl}" class="visit-btn" style="background: rgba(220, 38, 38, 0.2); border-color: rgba(220, 38, 38, 0.4); color: #fca5a5;">View Archived Build →</a>
+                </div>
+              </div>
+            </article>`;
+        }).join('');
+
+        stats.textContent = `${sorted.length} retired demonstration(s) in archive`;
+      }
+
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.portal-card[data-href]');
+        if (!card) return;
+        const href = card.getAttribute('data-href');
+        if (!href) return;
+        if (e.target.closest('a')) return;
+        window.location.href = href;
+      });
+
+      async function init() {
+        try {
+          const res = await fetch(`../data/archived-restaurants.json?v=${Date.now()}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          render(data);
+        } catch (err) {
+          console.warn('Could not load data/archived-restaurants.json:', err.message);
+          render([]);
+        }
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
