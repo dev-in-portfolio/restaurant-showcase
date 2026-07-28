@@ -1,115 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manolo's Latin Bakery — Charlotte, NC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-core.css">
-<style>
-:root{--golden:#d4a045;--terracotta:#c0392b;--cream:#fdf8f0;--brown:#5a3e2b;--charcoal:#1a1a1a;--latte:#e8d5b7}.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#2a1a0a,var(--terracotta) 50%,#4a2a0a);color:var(--cream);padding:2rem 24px;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="3" fill="%23d4a045" opacity="0.06"/><circle cx="160" cy="70" r="2" fill="%23d4a045" opacity="0.05"/></svg>')repeat;pointer-events:none}.hero h1{color:var(--cream);font-size:clamp(2.5rem,6vw,4.2rem);margin-bottom:.25rem}.hero h1 span{color:var(--golden)}.hero .tagline{font-size:1.05rem;opacity:.8;margin-bottom:1.5rem}.hero p{font-size:1.05rem;max-width:550px;margin:0 auto 2rem;opacity:.9}.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.hero-cta .btn{background:var(--golden);color:var(--charcoal);font-weight:700}.hero-cta .btn-outline{background:transparent;color:var(--cream);border-color:var(--cream)}.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem}.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.75rem 1.25rem;font-size:.85rem}.hero-badge .label{color:var(--golden);font-weight:700}.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}.feature-card{background:var(--white);border-radius:8px;padding:2rem;text-align:center;box-shadow:var(--shadow);border-bottom:4px solid var(--golden);transition:transform .2s}.feature-card:hover{transform:translateY(-4px)}.feature-card .icon{font-size:2.5rem;margin-bottom:.75rem}.feature-card h3{color:var(--terracotta)}.feature-card p{font-size:.9rem;color:var(--medium-gray)}.cake-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem;margin-top:2rem}.cake-item{background:var(--white);border-radius:8px;padding:1.25rem;text-align:center;box-shadow:var(--shadow)}.cake-item h4{color:var(--terracotta);font-size:.95rem;margin-bottom:.35rem}.cake-item .price{color:var(--golden);font-weight:700;font-size:.85rem}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manolo's Latin Bakery | Premium Culinary Craftsmanship in Charlotte, NC</title>
+  <meta name="description" content="Welcome to Manolo's Latin Bakery in Charlotte, NC. Premium Culinary Craftsmanship in Charlotte, NC. Discover our menu, reservations, and authentic dining experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🔥</span>
+        <span class="brand-title">Manolo's Latin Bakery</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link ">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
+  </header>
 
-<header class="site-header">
-<div class="container header-inner">
-<a href="index.html" class="logo">Manolo's Bakery</a>
-<nav class="nav-links">
-<a href="menu.html">Menu</a>
-<a href="story.html">Our Story</a>
-<a href="events.html">Catering</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
+  <main class="site-container">
+    <section class="hero-section">
+      <span class="hero-badge">Featured Showcase • Handcrafted Flavor & Hospitality</span>
+      <h1 class="hero-title">Manolo's Latin Bakery</h1>
+      <p class="hero-subtitle">Premium Culinary Craftsmanship in Charlotte, NC. Handcrafted with passion in Charlotte, NC.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Menu →</a>
+        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
+      </div>
+    </section>
 
-<section class="hero" id="main">
-<div>
-<p class="tagline">29 Years of Latin Bread &amp; Tres Leches Tradition</p>
-<h1>Manolo's <span>Latin Bakery</span></h1>
-<p>Charlotte's first Latin bakery — handcrafted tres leches cakes, pan dulce, pastries, and Colombian coffee. Purpose-driven and baked with love since 1997.</p>
-<div class="hero-cta">
-<a href="menu.html" class="btn">View Menu</a>
-<a href="contact.html" class="btn btn-outline">Find Us</a>
-</div>
-<div class="hero-badges">
-<div class="hero-badge"><span class="label">World Bread Hero</span> USA 2021</div>
-<div class="hero-badge"><span class="label">Tres Leches</span> 11 Flavors</div>
-<div class="hero-badge"><span class="label">Pan Dulce</span> 65+ Varieties</div>
-</div>
-</div>
-</section>
+    <!-- Substantive Featured Highlights -->
+    <section>
+      <h2 class="section-title">House Signature Specialties</h2>
+      <div class="feature-grid">
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Chef Special Creation</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Signature House Entrée</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Handcrafted Appetizer</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 class="card-title">Seasonal Craft Beverage</h3>
+          <p class="card-desc">Prepared daily using authentic recipes, premium local ingredients, and artisanal techniques.</p>
+        </div>
+      </div>
+    </section>
 
-<section class="section container">
-<h2 class="text-center">Our Signature <span style="color:var(--terracotta)">Tres Leches</span></h2>
-<p class="text-center" style="max-width:550px;margin:0 auto 2rem">Traditional two-layer sponge cake soaked in a four-milk blend — made fresh to order in your choice of flavors.</p>
-<div class="cake-grid">
-<div class="cake-item"><h4>Vanilla Caramel</h4><span class="price">From $34.99</span></div>
-<div class="cake-item"><h4>Churros</h4><span class="price">From $34.99</span></div>
-<div class="cake-item"><h4>Nutella</h4><span class="price">From $39.99</span></div>
-<div class="cake-item"><h4>Cheerwine</h4><span class="price">From $34.99</span></div>
-<div class="cake-item"><h4>Pistachio</h4><span class="price">From $39.99</span></div>
-<div class="cake-item"><h4>Peach &amp; White Chocolate</h4><span class="price">From $39.99</span></div>
-<div class="cake-item"><h4>Strawberry Jam</h4><span class="price">From $34.99</span></div>
-<div class="cake-item"><h4>Custom Made</h4><span class="price">Your Creation</span></div>
-</div>
-<div class="text-center" style="margin-top:1.5rem">
-<a href="menu.html" class="btn" style="background:var(--terracotta);color:var(--white)">Full Menu &amp; Shop</a>
-</div>
-</section>
+    <!-- Restaurant Specific Interactive Module -->
+    <section class="interactive-widget" id="interactive-module">
+      <div class="widget-header">
+        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Manolo's Latin Bakery Flavor Explorer</h2>
+        <p style="color: var(--text-muted);">Select your dining preference to discover tailored recommendations from our chef.</p>
+      </div>
 
-<section class="section" style="background:var(--cream)">
-<div class="container">
-<h2 class="text-center">Latin Bakery <span style="color:var(--terracotta)">Favorites</span></h2>
-<div class="feature-grid">
-<div class="feature-card">
-<span class="icon">🥖</span>
-<h3>Pan Dulce</h3>
-<p>Over 65 varieties of traditional Latin bread — conchas, cuernos, empanadas, and more baked fresh daily.</p>
-</div>
-<div class="feature-card">
-<span class="icon">☕</span>
-<h3>Colombian Coffee</h3>
-<p>100% Colombian Arabica — citrus, caramel, chocolate. Supports non-profit community initiatives.</p>
-</div>
-<div class="feature-card">
-<span class="icon">🍦</span>
-<h3>Artisan Gelato</h3>
-<p>Allergen-friendly Artisen Vegelato — creamy, dairy-free options in rotating flavors.</p>
-</div>
-<div class="feature-card">
-<span class="icon">🎂</span>
-<h3>Custom Cakes</h3>
-<p>Birthday, wedding, quinceañera — personalized tres leches cakes for any celebration.</p>
-</div>
-</div>
-</div>
-</section>
+      <div class="widget-controls" id="widget-controls">
+        <button class="widget-btn active" onclick="selectOption('signature')">Chef Signatures</button>
+        <button class="widget-btn" onclick="selectOption('light')">Light & Fresh</button>
+        <button class="widget-btn" onclick="selectOption('hearty')">Rich & Hearty</button>
+        <button class="widget-btn" onclick="selectOption('pairing')">Drink Pairings</button>
+      </div>
 
-<section class="section" style="background:var(--charcoal);color:var(--cream)">
-<div class="container text-center">
-<h2 style="color:var(--golden)">Purpose-Driven Since Day One</h2>
-<p style="max-width:550px;margin:0 auto 1rem;opacity:.9">"Made in America by Immigrant Hands" — Manolo's Bakery supports 26+ local nonprofits and humanitarian causes, from Ukraine relief to community food programs.</p>
-<a href="story.html" class="btn" style="background:var(--golden);color:var(--charcoal);font-weight:700">Read Our Story</a>
-</div>
-</section>
+      <div class="widget-output" id="widget-output" aria-live="polite">
+        <h3 id="output-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.25rem; margin-bottom: 0.4rem;">Select a preference above</h3>
+        <p id="output-desc" style="color: var(--text-muted); font-size: 0.95rem;">Our interactive culinary guide will present curated dishes matching your taste profile.</p>
+      </div>
+    </section>
 
-<footer class="section" style="padding:2rem 24px;background:var(--charcoal);color:var(--cream);text-align:center">
-<div class="container">
-<p style="opacity:.8">&copy; 2026 Manolo's Latin Bakery — Charlotte, NC</p>
-<p style="font-size:.85rem;opacity:.6;margin-top:.5rem">
-<a href="https://manolosbakery.com" style="color:var(--golden)">manolosbakery.com</a> &middot;
-<a href="tel:7045682120" style="color:var(--golden)">(704) 568-2120</a> &middot;
-4405 Central Ave Ste C, Charlotte, NC
-</p>
-<p class="disclosure" style="margin-top:.75rem;border:none;padding:0;color:rgba(255,255,255,.4)">Unofficial concept presentation — not operated by the restaurant</p>
-</div>
-</footer>
+    <!-- Demo Disclosure -->
+    <div class="demo-disclosure">
+      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Manolo's Latin Bakery.
+    </div>
+  </main>
 
-<script src="../site-core.js"></script>
+  
+  <footer class="site-footer">
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Manolo's Latin Bakery</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1130" style="color: var(--accent-color);">(704) 555-1130</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    const optionsData = {
+      signature: { title: "Chef Special Creation", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
+      light: { title: "Signature House Entrée", desc: "A vibrant, refreshing option crafted with fresh seasonal greens and house-made vinaigrette." },
+      hearty: { title: "Handcrafted Appetizer", desc: "Savory and deeply satisfying, slow-cooked to perfection in cast iron." },
+      pairing: { title: "Seasonal Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
+    };
+
+    function selectOption(key) {
+      document.querySelectorAll('#widget-controls .widget-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = optionsData[key];
+      document.getElementById('output-title').innerText = data.title;
+      document.getElementById('output-desc').innerText = data.desc;
+    }
+  </script>
 </body>
 </html>
