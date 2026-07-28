@@ -4,159 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reservations | Fiamma Ristorante</title>
-  <meta name="description" content="Make a reservation at Fiamma Ristorante in Dilworth, Charlotte. Book via Tock, or walk in. Private dining and special events available.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site.css">
+  <meta name="description" content="Reserve a table at Fiamma Ristorante in Charlotte, NC. Book your dining experience online.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header" id="site-header">
-    <nav class="nav container">
-      <a href="index.html" class="nav__logo">Fiamma</a>
-      <button class="nav__toggle" aria-label="Toggle menu" id="nav-toggle">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="visit.html">Visit</a></li>
-        <li><a href="reserve.html" class="btn btn--accent nav__cta active">Reserve</a></li>
-      </ul>
-    </nav>
+  
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-emoji">🍽️</span>
+        <span class="brand-title">Fiamma Ristorante</span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="story.html" class="nav-link ">Our Story</a>
+        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="reserve.html" class="nav-link active">Reservations</a>
+        <a href="visit.html" class="nav-link ">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Book Table</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="page-hero page-hero--reserve">
-      <div class="container">
-        <h1 class="page-hero__title">Reservations</h1>
-        <p class="page-hero__subtitle">Secure your table at Fiamma</p>
+  <main class="site-container" style="padding-top: 3rem;">
+    <div style="max-width: 650px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h1 class="hero-title" style="font-size: 2.5rem;">Reserve Your Table</h1>
+        <p class="hero-subtitle">Join us for lunch, dinner, or special occasion dining.</p>
       </div>
-    </section>
 
-    <section class="reserve-main">
-      <div class="container">
-        <div class="reserve-main__grid">
-          <div class="reserve-main__primary">
-            <h2>Book Your Table</h2>
-            <p>We partner with <strong>Tock</strong> for all reservations. You can book online for the best availability, or call us directly for same-day requests.</p>
-
-            <a href="https://www.exploretock.com/fiammatoristorante" target="_blank" rel="noopener" class="reserve-btn">
-              <span class="reserve-btn__icon">🍽️</span>
-              <span class="reserve-btn__text">
-                <strong>Reserve on Tock</strong>
-                <span>Open in a new tab</span>
-              </span>
-            </a>
-
-            <div class="reserve-phone">
-              <h3>Prefer to Call?</h3>
-              <p>Call us directly at <a href="tel:7043333062"><strong>(704) 333-3062</strong></a></p>
-              <p class="reserve-phone__note">We're happy to accommodate phone reservations for same-day dining.</p>
-            </div>
+      <div class="card" style="padding: 2.5rem;">
+        <form onsubmit="handleReserve(event)">
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Party Size</label>
+            <select style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+              <option>2 Guests</option>
+              <option>4 Guests</option>
+              <option>6 Guests</option>
+              <option>8+ Guests (Large Group)</option>
+            </select>
           </div>
 
-          <div class="reserve-main__sidebar">
-            <div class="reserve-info-card">
-              <h3>Reservation Details</h3>
-              <ul class="reserve-info-card__list">
-                <li><strong>Party Size:</strong> We accommodate parties of 1–8 guests for standard reservations. For larger parties, please contact us directly.</li>
-                <li><strong>Cancellation Policy:</strong> We kindly ask for 24 hours' notice for cancellations or changes to your reservation.</li>
-                <li><strong>Lateness:</strong> Tables are held for 15 minutes past the reservation time. After that, we may need to accommodate other guests.</li>
-                <li><strong>Special Requests:</strong> Let us know about dietary restrictions, celebrations, or seating preferences when booking.</li>
-              </ul>
-            </div>
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Preferred Date & Time</label>
+            <input type="datetime-local" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;" required>
           </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Special Requests / Occasion</label>
+            <input type="text" aria-label="Special requests or occasion notes" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Reservation Request →</button>
+        </form>
+
+        <div id="reserve-msg" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; border-radius: 8px; text-align: center;">
+          ✓ Demo Request Received! In production, live OpenTable/Resy integration processes instantaneous table confirmations.
         </div>
       </div>
-    </section>
-
-    <section class="reserve-walkin">
-      <div class="container">
-        <div class="reserve-walkin__inner">
-          <div class="reserve-walkin__content">
-            <h2>Walk-Ins Welcome</h2>
-            <p>We always reserve a portion of our dining room for walk-in guests. Availability varies by night — Tuesday through Thursday typically has the best walk-in availability, while Friday and Saturday are busier.</p>
-            <p>If you're in the neighborhood and craving Italian, stop by! We'll do our best to seat you as quickly as possible.</p>
-          </div>
-          <div class="reserve-walkin__hours">
-            <h3>Walk-In Hours</h3>
-            <ul class="hours-list">
-              <li><span>Monday</span><span class="hours-list__closed">Closed</span></li>
-              <li><span>Tue – Thu</span><span>5:00 PM – 9:00 PM</span></li>
-              <li><span>Fri – Sat</span><span>5:00 PM – 10:00 PM</span></li>
-              <li><span>Sunday</span><span>5:00 PM – 9:00 PM</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="reserve-private">
-      <div class="container">
-        <div class="reserve-private__inner">
-          <h2>Private Parties & Special Events</h2>
-          <p>Planning a special celebration, corporate dinner, or intimate gathering? Fiamma offers private and semi-private dining options to make your event memorable.</p>
-          <div class="reserve-private__features">
-            <div class="reserve-private__feature">
-              <h3>Private Dining</h3>
-              <p>Our private dining room accommodates up to 20 guests for an exclusive Italian dining experience with a customized menu.</p>
-            </div>
-            <div class="reserve-private__feature">
-              <h3>Semi-Private Events</h3>
-              <p>For parties of 10–30, we can create a dedicated space within our main dining room with tailored menus and décor.</p>
-            </div>
-            <div class="reserve-private__feature">
-              <h3>Custom Menus</h3>
-              <p>Work directly with Chef Fernando to design a bespoke menu featuring his signature dishes and seasonal specials.</p>
-            </div>
-          </div>
-          <p>To inquire about private dining or event bookings, please <a href="tel:7043333062">call us</a> or email <a href="mailto:info@fiammatoristorante.com">info@fiammatoristorante.com</a>.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-section__inner">
-          <h2>We Look Forward to Seeing You</h2>
-          <p>Whether it's a weeknight dinner or a special celebration, your table is waiting at Fiamma.</p>
-          <a href="https://www.exploretock.com/fiammatoristorante" target="_blank" rel="noopener" class="btn btn--primary">Book on Tock</a>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
+  
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <h3 class="footer__logo">Fiamma</h3>
-          <p>Authentic Italian dining in the heart of Dilworth, Charlotte. A Zagat highest-rated Italian restaurant since 2008.</p>
-        </div>
-        <div class="footer__nav">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="visit.html">Visit</a></li>
-            <li><a href="reserve.html">Reservations</a></li>
-          </ul>
-        </div>
-        <div class="footer__contact">
-          <h4>Contact</h4>
-          <p>2418 Park Rd<br>Charlotte, NC 28203</p>
-          <p><a href="tel:7043333062">(704) 333-3062</a></p>
-          <p>Dilworth, Charlotte NC</p>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 Fiamma Ristorante. All rights reserved.</p>
+    <div class="site-container">
+      <p style="margin-bottom: 0.5rem;"><strong>Fiamma Ristorante</strong> • Charlotte Metro Area, NC • Phone: <a href="tel:(704) 555-1072" style="color: var(--accent-color);">(704) 555-1072</a></p>
+      <p style="font-size: 0.8rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Back to Main Showroom</a>
       </div>
     </div>
   </footer>
 
-  <script src="site.js"></script>
+  <script>
+    document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+      document.getElementById('nav-menu')?.classList.toggle('open');
+    });
+  </script>
+  <script src="../../scripts/shared/comparison-button.js" defer></script>
+  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <script>
+    function handleReserve(e) {
+      e.preventDefault();
+      document.getElementById('reserve-msg').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
