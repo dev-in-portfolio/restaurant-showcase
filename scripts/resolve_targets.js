@@ -100,7 +100,10 @@ const redoRaw = [
 const archiveRaw = [
   '007 | Alice Jules Coffee House',
   '008 | E.L.K. Tavern',
-  '133 | Boudreaux\'s Restaurant'
+  '133 | Boudreaux\'s Restaurant',
+  '901 | Devil\'s Logic Brewing',
+  '902 | Eddie V\'s Prime Seafood',
+  '903 | Futo Buta'
 ];
 
 const aliasMap = {

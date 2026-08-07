@@ -38,11 +38,49 @@
     .back-to-active:hover {
       text-decoration: underline;
     }
+    .archive-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .archive-toggle-nav {
+      display: inline-flex;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.35rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .archive-toggle-nav a {
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .archive-toggle-nav a:hover {
+      color: #ffffff;
+    }
+    .archive-toggle-nav a.active {
+      background: #dc2626;
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
   <main class="portal-container">
-    <a href="../index.html" class="back-to-active">← Back to Active Showroom</a>
+    <div class="archive-nav-bar">
+      <a href="../index.html" class="back-to-active">← Back to Active Showroom</a>
+      <nav class="archive-toggle-nav" aria-label="Archive navigation">
+        <a href="index.html" class="active">🏛️ Retired Demonstrations</a>
+        <a href="hold/index.html">⏳ Hold Demonstrations</a>
+      </nav>
+    </div>
 
     <header class="portal-header">
       <span class="portal-eyebrow" style="color: #ef4444; text-shadow: 0 0 12px rgba(239, 68, 68, 0.3);">Showroom Archive</span>

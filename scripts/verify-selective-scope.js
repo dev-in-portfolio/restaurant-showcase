@@ -68,7 +68,9 @@ const allowedInfrastructureFiles = new Set([
   'scripts/batch_bespoke_rebuild.js',
   'scripts/shared/comparison-button.js',
   'data/archived-restaurants.json',
+  'data/hold-restaurants.json',
   'archive/index.html',
+  'archive/hold/index.html',
   'archive/style.css',
   'package.json',
   'index.html'

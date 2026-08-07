@@ -5,6 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "promote:showcase": "node scripts/import-approved-restaurant.js",
+    "archive": "node scripts/archive-showcase.js",
     "archive:showcase": "node scripts/archive-showcase.js",
     "validate": "node scripts/validate-showcase.js",
     "serve": "python -m http.server 8085",
