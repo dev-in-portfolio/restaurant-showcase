@@ -288,26 +288,19 @@
     "comparisonButtonAdded": true
   },
   {
-    "slug": "comet-grill",
+    "id": "comet-grill",
     "name": "Comet Grill",
-    "area": "Charlotte, NC",
-    "cuisine": "Artisanal Culinary & Dining Showcase",
-    "description": "Presentation-ready 6-page bespoke branding concept and website rebuild for Comet Grill.",
-    "emoji": "🔥",
-    "gradient": "radial-gradient(circle at 50% 0%, #450a0a 0%, #180202 80%)",
-    "href": "restaurants/comet-grill/index.html",
-    "stage": "showcase",
-    "status": "presentation-ready",
-    "desktopReviewed": true,
-    "mobileReviewed": true,
-    "linksVerified": true,
-    "contentVerified": true,
-    "performanceReviewed": true,
-    "accessibilityReviewed": true,
-    "productionBuildPassed": true,
-    "approvedForPresentation": true,
-    "currentWebsiteUrl": "https://www.google.com/search?q=Comet%20Grill%20Charlotte%20NC",
-    "comparisonButtonAdded": true
+    "slug": "comet-grill",
+    "cuisine": "",
+    "location": {
+      "city": "Charlotte",
+      "state": "NC",
+      "address": ""
+    },
+    "currentWebsiteUrl": "https://www.cometgrillcharlotte.com",
+    "currentPublicPresenceType": "website",
+    "demoRoute": "restaurants/comet-grill/index.html",
+    "promotedToShowcaseAt": "2026-08-07T20:35:51.336Z"
   },
   {
     "slug": "cornerstone-pub-grill",

@@ -1,22 +1,34 @@
 {
-  "slug": "comet-grill",
+  "id": "comet-grill",
   "name": "Comet Grill",
-  "area": "Charlotte, NC",
-  "cuisine": "Artisanal Culinary & Dining Showcase",
-  "description": "Presentation-ready 6-page bespoke branding concept and website rebuild for Comet Grill.",
-  "emoji": "🔥",
-  "gradient": "radial-gradient(circle at 50% 0%, #450a0a 0%, #180202 80%)",
-  "href": "restaurants/comet-grill/index.html",
+  "slug": "comet-grill",
+  "location": {
+    "city": "Charlotte",
+    "state": "NC",
+    "address": ""
+  },
   "stage": "showcase",
   "status": "presentation-ready",
+  "sourceRepository": "dev-in-portfolio/restaurant-staging",
+  "sourcePath": "restaurants/comet-grill",
+  "currentWebsiteUrl": "https://www.cometgrillcharlotte.com",
+  "currentPublicPresenceType": "website",
+  "demoRoute": "restaurants/comet-grill/index.html",
+  "informationVerifiedAt": null,
+  "promotedToStagingAt": "2026-08-07T20:35:16.375Z",
+  "promotedToShowcaseAt": "2026-08-07T20:35:51.336Z",
   "desktopReviewed": true,
+  "tabletReviewed": false,
   "mobileReviewed": true,
   "linksVerified": true,
   "contentVerified": true,
   "performanceReviewed": true,
   "accessibilityReviewed": true,
+  "comparisonButtonAdded": true,
+  "comparisonButtonNotApplicable": false,
   "productionBuildPassed": true,
   "approvedForPresentation": true,
-  "currentWebsiteUrl": "https://www.google.com/search?q=Comet%20Grill%20Charlotte%20NC",
-  "comparisonButtonAdded": true
+  "notes": [
+    "Initial promotion metadata generated automatically from Thunderdome override source."
+  ]
 }
