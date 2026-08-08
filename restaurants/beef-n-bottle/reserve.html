@@ -3,85 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservations | Beef 'N Bottle</title>
-  <meta name="description" content="Reserve a table at Beef 'N Bottle in Charlotte, NC.">
+  <title>Table Reservations | Beef 'N Bottle Steakhouse Charlotte, NC</title>
+  <meta name="description" content="Reserve a table at Beef 'N Bottle Steakhouse in Charlotte, NC. Book online via OpenTable or call 704-523-9977 for personal reservation assistance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+
+  <!-- Site Header & Navigation -->
   <header class="site-header">
     <div class="site-container header-inner">
       <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Beef 'N Bottle</span>
+        <div class="brand-badge">🥩</div>
+        <div class="brand-info">
+          <span class="brand-title">BEEF 'N BOTTLE</span>
+          <span class="brand-subtitle">Est. 1958 • Charlotte, NC</span>
+        </div>
       </a>
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
       <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="story.html" class="nav-link">Our Story</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="experience.html" class="nav-link">Atmosphere</a>
         <a href="reserve.html" class="nav-link active">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+        <a href="visit.html" class="nav-link">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Reserve a Table</a>
       </nav>
     </div>
     <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="menu.html" class="nav-link ">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="story.html" class="nav-link">Our Story</a>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="experience.html" class="nav-link">Atmosphere</a>
       <a href="reserve.html" class="nav-link active">Reservations</a>
-      <a href="visit.html" class="nav-link ">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
+      <a href="visit.html" class="nav-link">Visit Us</a>
+      <a href="reserve.html" class="nav-cta">Reserve a Table</a>
     </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3.5rem;">
-    <div style="max-width: 650px; margin: 0 auto;">
-      <div style="text-align: center; margin-bottom: 2.5rem;">
-        <h1 class="hero-title" style="font-size: 2.5rem;">Reserve Your Table</h1>
-        <p class="hero-subtitle">Join us for lunch, dinner, or special occasions.</p>
+  <main>
+    <!-- Sub-page Header -->
+    <section class="section-padding" style="background: rgba(29, 18, 16, 0.6); text-align: center; border-bottom: 1px solid var(--card-border);">
+      <div class="site-container">
+        <span class="section-label">Join Us For Fine Dining</span>
+        <h1 class="section-title">Table Reservations</h1>
+        <div class="gold-divider-sm"></div>
+        <p class="section-intro">We recommend reserving your table in advance, particularly for Friday and Saturday evening dining.</p>
       </div>
+    </section>
 
-      <div class="card" style="padding: 2.5rem;">
-        <form onsubmit="handleReserveSubmit(event)">
-          <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Party Size</label>
-            <select style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
-              <option>2 Guests</option>
-              <option>4 Guests</option>
-              <option>6 Guests</option>
-              <option>8+ Guests</option>
-            </select>
+    <!-- Reservation Primary Block -->
+    <section class="section-padding">
+      <div class="site-container">
+        <div class="reservation-box" style="margin-top: 0;">
+          <span class="section-label">Direct Reservations</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--ivory);">Secure Your Table</h2>
+          <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--taupe); max-width: 680px; margin: 0.75rem auto 1.5rem;">We allocate a selection of tables for online booking via OpenTable. Because online availability can fill quickly, we warmly invite you to phone our host team directly for complete seating availability.</p>
+
+          <div>
+            <a href="tel:7045239977" class="phone-link">📞 Call 704-523-9977</a>
           </div>
 
-          <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Date & Time</label>
-            <input type="datetime-local" aria-label="Preferred reservation date and time" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;" required>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://www.opentable.com/beef-n-bottle" target="_blank" rel="noopener noreferrer" class="btn-primary">Reserve Online via OpenTable</a>
           </div>
-
-          <div style="margin-bottom: 1.5rem;">
-            <label style="display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem;">Special Requests / Occasion</label>
-            <input type="text" aria-label="Special requests or occasion notes" style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 8px;">
-          </div>
-
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Reservation Request →</button>
-        </form>
-
-        <div id="reserve-msg" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; border-radius: 8px; text-align: center;">
-          ✓ Demo Request Received! In production, live booking integrations process instantaneous table confirmations.
         </div>
+
+        <!-- Reservation Guidelines Grid -->
+        <div class="grid-3" style="margin-top: 4rem;">
+          <div class="steak-card">
+            <span class="card-badge">Operating Hours</span>
+            <h3 class="card-title" style="font-size: 1.4rem;">Dinner Schedule</h3>
+            <p class="card-desc">Monday – Thursday: 5:00 PM – 10:00 PM<br>Friday – Saturday: 5:00 PM – 10:30 PM<br>Sunday: 5:00 PM – 9:00 PM</p>
+          </div>
+          <div class="steak-card">
+            <span class="card-badge">Large Parties</span>
+            <h3 class="card-title" style="font-size: 1.4rem;">Group Dining</h3>
+            <p class="card-desc">For parties of 6 or more, please contact our host desk by phone at 704-523-9977 to arrange group seating and timing.</p>
+          </div>
+          <div class="steak-card">
+            <span class="card-badge">Guest Information</span>
+            <h3 class="card-title" style="font-size: 1.4rem;">Seating Guidelines</h3>
+            <p class="card-desc">We request that parties arrive promptly at their reserved time so we may ensure your table and white-linen service are ready upon arrival.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unofficial Demo Disclosure Banner -->
+    <div class="site-container">
+      <div class="demo-disclosure-banner">
+        ℹ️ <strong>Unofficial Demonstration Website:</strong> Independent concept build created by <strong>Dark Star Consulting</strong> for Beef 'N Bottle Steakhouse in Charlotte, NC. Official details available at beefandbottle.net.
       </div>
     </div>
   </main>
 
-  
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Beef 'N Bottle</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2055" style="color: var(--accent-color);">(704) 555-2055</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+      <div class="footer-brand">BEEF 'N BOTTLE</div>
+      <p style="font-family: var(--font-serif); color: var(--taupe); font-size: 1.05rem;">Established 1958 • Charlotte, North Carolina</p>
+      <p style="margin-top: 0.75rem; color: var(--linen);">4538 South Blvd, Charlotte, NC 28209 • Phone: <a href="tel:7045239977" style="color: var(--brass-light); font-weight: 600;">704-523-9977</a></p>
+      
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="menu.html">Menu</a>
+        <a href="experience.html">Atmosphere</a>
+        <a href="reserve.html">Reservations</a>
+        <a href="visit.html">Visit Us</a>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <a href="../../index.html" class="back-link">← Return to Main Showroom Index</a>
+      </div>
     </div>
   </footer>
 
@@ -94,12 +132,5 @@
   </script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
-
-  <script>
-    function handleReserveSubmit(e) {
-      e.preventDefault();
-      document.getElementById('reserve-msg').style.display = 'block';
-    }
-  </script>
 </body>
 </html>

@@ -3,83 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Beef 'N Bottle</title>
-  <meta name="description" content="Explore the full menu at Beef 'N Bottle in Charlotte, NC. Starters, entrees, desserts, and drinks.">
+  <title>Printed Steakhouse Menu | Beef 'N Bottle Steakhouse (Est. 1958)</title>
+  <meta name="description" content="Explore the authentic menu at Beef 'N Bottle Steakhouse in Charlotte, NC. Featuring prime hand-cut steaks, seafood, starters, and fine wines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+
+  <!-- Site Header & Navigation -->
   <header class="site-header">
     <div class="site-container header-inner">
       <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Beef 'N Bottle</span>
+        <div class="brand-badge">🥩</div>
+        <div class="brand-info">
+          <span class="brand-title">BEEF 'N BOTTLE</span>
+          <span class="brand-subtitle">Est. 1958 • Charlotte, NC</span>
+        </div>
       </a>
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
       <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="story.html" class="nav-link">Our Story</a>
         <a href="menu.html" class="nav-link active">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+        <a href="experience.html" class="nav-link">Atmosphere</a>
+        <a href="reserve.html" class="nav-link">Reservations</a>
+        <a href="visit.html" class="nav-link">Visit Us</a>
+        <a href="reserve.html" class="nav-cta">Reserve a Table</a>
       </nav>
     </div>
     <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link ">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="story.html" class="nav-link">Our Story</a>
       <a href="menu.html" class="nav-link active">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link ">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
+      <a href="experience.html" class="nav-link">Atmosphere</a>
+      <a href="reserve.html" class="nav-link">Reservations</a>
+      <a href="visit.html" class="nav-link">Visit Us</a>
+      <a href="reserve.html" class="nav-cta">Reserve a Table</a>
     </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3.5rem;">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
-      <p class="hero-subtitle">Prepared fresh to order using regional ingredients and scratch-kitchen tradition.</p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE STARTER</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Artisan Starter</h3>
-        <p class="card-desc">Served fresh with house dip and artisan garnishes.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
+  <main>
+    <!-- Sub-page Header -->
+    <section class="section-padding" style="background: rgba(29, 18, 16, 0.6); text-align: center; border-bottom: 1px solid var(--card-border);">
+      <div class="site-container">
+        <span class="section-label">Fine Dining Offerings</span>
+        <h1 class="section-title">Printed Steakhouse Menu</h1>
+        <div class="gold-divider-sm"></div>
+        <p class="section-intro">All steaks are hand-cut in house, aged to perfection, and broiled over high heat to order. Served in the classic steakhouse tradition.</p>
       </div>
+    </section>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Beef 'N Bottle House Entrée</h3>
-        <p class="card-desc">Slow-prepared to tender perfection, served with seasonal sides.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$32.00</span>
+    <!-- Interactive Category Filter Tabs -->
+    <section class="section-padding" style="padding-top: 3rem;">
+      <div class="site-container">
+        
+        <div class="menu-nav-tabs" id="menu-tabs">
+          <button class="tab-btn active" onclick="filterCategory('all')">Complete Menu</button>
+          <button class="tab-btn" onclick="filterCategory('steaks')">Prime Steaks</button>
+          <button class="tab-btn" onclick="filterCategory('seafood')">Seafood & Surf</button>
+          <button class="tab-btn" onclick="filterCategory('starters')">Appetizers</button>
+          <button class="tab-btn" onclick="filterCategory('sides')">Accompaniments</button>
+          <button class="tab-btn" onclick="filterCategory('wines')">Wine & Cellar</button>
+        </div>
+
+        <!-- Printed Menu Presentation -->
+        <div class="menu-container">
+          <div class="menu-header">
+            <h2 class="menu-title">BEEF 'N BOTTLE</h2>
+            <p class="serif-subtitle">Est. 1958 • Charlotte, North Carolina</p>
+          </div>
+
+          <!-- Section: Prime Steaks -->
+          <div class="menu-category-block" data-category="steaks">
+            <h3 class="menu-category-title">— Prime Hand-Cut Steaks & Chops —</h3>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Bone-In Kansas City Strip</span>
+                </div>
+                <span class="menu-item-desc">Richly marbled bone-in strip steak broiled over high flame for deep beef flavor.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Center Cut Filet Mignon</span>
+                </div>
+                <span class="menu-item-desc">Premium center-cut tenderloin, remarkably tender and served with compound butter.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Classic T-Bone Steak</span>
+                </div>
+                <span class="menu-item-desc">Generous steak featuring both rich New York strip and tender filet attached to the bone.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Hand-Cut Prime Ribeye</span>
+                </div>
+                <span class="menu-item-desc">Flavorful cut with deep natural marbling, broiled to your preferred temperature.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Classic New York Strip</span>
+                </div>
+                <span class="menu-item-desc">Traditional steakhouse cut with robust beef flavor and signature seasoning.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Center Cut Sirloin Steak</span>
+                </div>
+                <span class="menu-item-desc">Lean, tender center-cut sirloin prepared over intense open heat.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Seafood & Surf -->
+          <div class="menu-category-block" data-category="seafood" style="margin-top: 3.5rem;">
+            <h3 class="menu-category-title">— Seafood & Surf Specialties —</h3>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Cold-Water Lobster Tail</span>
+                </div>
+                <span class="menu-item-desc">Broiled sweet lobster tail served with drawn butter and lemon.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Broiled Sea Scallops</span>
+                </div>
+                <span class="menu-item-desc">Jumbo Atlantic scallops tenderly broiled in lemon white-wine garlic butter.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Atlantic Flounder</span>
+                </div>
+                <span class="menu-item-desc">Fresh flounder filet, lightly seasoned and broiled to a delicate flake.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Signature Lump Crab Cakes</span>
+                </div>
+                <span class="menu-item-desc">Jumbo lump crab meat gently bound with light herbs and pan-seared golden brown.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Grilled Atlantic Salmon</span>
+                </div>
+                <span class="menu-item-desc">Fresh salmon filet grilled with house seasoning and lemon herb butter.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Jumbo Fried Shrimp</span>
+                </div>
+                <span class="menu-item-desc">Hand-breaded jumbo shrimp crisp-fried and served with cocktail sauce.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Appetizers -->
+          <div class="menu-category-block" data-category="starters" style="margin-top: 3.5rem;">
+            <h3 class="menu-category-title">— Classic Steakhouse Starters —</h3>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Jumbo Shrimp Cocktail</span>
+                </div>
+                <span class="menu-item-desc">Chilled jumbo shrimp served with house zesty horseradish cocktail sauce.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Escargot Bourguignonne</span>
+                </div>
+                <span class="menu-item-desc">Baked in garlic-herb butter and white wine, served with toasted French bread.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">French Onion Soup Au Gratin</span>
+                </div>
+                <span class="menu-item-desc">Slow-simmered caramelized onions in rich beef broth topped with melted Gruyère.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Oysters on the Half Shell</span>
+                </div>
+                <span class="menu-item-desc">Freshly shucked oysters served over crushed ice with mignonette and cocktail sauce.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Sides & Accompaniments -->
+          <div class="menu-category-block" data-category="sides" style="margin-top: 3.5rem;">
+            <h3 class="menu-category-title">— Accompaniments & Steakhouse Sides —</h3>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Creamed Spinach</span>
+                </div>
+                <span class="menu-item-desc">Classic recipe folded with rich cream, garlic, and aged parmesan.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Loaded Jumbo Baked Potato</span>
+                </div>
+                <span class="menu-item-desc">Idaho baker with butter, sour cream, chives, and crisp bacon bits.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Hand-Cut Onion Rings</span>
+                </div>
+                <span class="menu-item-desc">Thick sweet onion rings dipped in seasoned batter and crisp-fried.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Sautéed Button Mushrooms</span>
+                </div>
+                <span class="menu-item-desc">Fresh mushrooms sautéed in butter, white wine, and Worcestershire.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Wines & Cocktails -->
+          <div class="menu-category-block" data-category="wines" style="margin-top: 3.5rem;">
+            <h3 class="menu-category-title">— Wine List & Classic Spirits —</h3>
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Napa Valley Cabernet Sauvignon</span>
+                </div>
+                <span class="menu-item-desc">Full-bodied red wine with dark fruit notes, perfect pairing for prime steaks.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Bordeaux & Pinot Noir</span>
+                </div>
+                <span class="menu-item-desc">Curated selection of elegant Old and New World red wines by glass or bottle.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Classic Gin or Vodka Martini</span>
+                </div>
+                <span class="menu-item-desc">Stirred cold with vermouth rinse and served with blue-cheese stuffed olives.</span>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item-header">
+                  <span class="menu-item-name">Old Fashioned & Bourbon</span>
+                </div>
+                <span class="menu-item-desc">Aged bourbon, Angostura bitters, sugar cube, and orange peel twist over block ice.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;">
+          <a href="reserve.html" class="btn-primary">Reserve a Table for Dinner</a>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE SPECIALTY</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Chef's Specialty Dish</h3>
-        <p class="card-desc">Accompanied by garlic herb pilaf and house reduction sauce.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$26.00</span>
-      </div>
-
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Signature Craft Beverage</h3>
-        <p class="card-desc">Hand-shaken with botanical juices and house syrups.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
+    <!-- Unofficial Demo Disclosure Banner -->
+    <div class="site-container">
+      <div class="demo-disclosure-banner">
+        ℹ️ <strong>Unofficial Demonstration Website:</strong> Independent concept build created by <strong>Dark Star Consulting</strong> for Beef 'N Bottle Steakhouse in Charlotte, NC. Official details available at beefandbottle.net.
       </div>
     </div>
   </main>
 
-  
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Beef 'N Bottle</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2055" style="color: var(--accent-color);">(704) 555-2055</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+      <div class="footer-brand">BEEF 'N BOTTLE</div>
+      <p style="font-family: var(--font-serif); color: var(--taupe); font-size: 1.05rem;">Established 1958 • Charlotte, North Carolina</p>
+      <p style="margin-top: 0.75rem; color: var(--linen);">4538 South Blvd, Charlotte, NC 28209 • Phone: <a href="tel:7045239977" style="color: var(--brass-light); font-weight: 600;">704-523-9977</a></p>
+      
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="menu.html">Menu</a>
+        <a href="experience.html">Atmosphere</a>
+        <a href="reserve.html">Reservations</a>
+        <a href="visit.html">Visit Us</a>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <a href="../../index.html" class="back-link">← Return to Main Showroom Index</a>
+      </div>
     </div>
   </footer>
 
@@ -88,6 +296,20 @@
     const drawer = document.getElementById('mobile-drawer');
     if (toggleBtn && drawer) {
       toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
+    }
+
+    function filterCategory(cat) {
+      document.querySelectorAll('#menu-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const blocks = document.querySelectorAll('.menu-category-block');
+      blocks.forEach(block => {
+        if (cat === 'all' || block.getAttribute('data-category') === cat) {
+          block.style.display = 'block';
+        } else {
+          block.style.display = 'none';
+        }
+      });
     }
   </script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
