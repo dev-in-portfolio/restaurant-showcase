@@ -1,0 +1,629 @@
+/* Courtyard Hooligans — British Soccer Pitch & Historic Brevard Court Pub Vault */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Unbounded:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --bg-stadium-dark: #0a1d13;
+  --bg-pitch-green: #0f2e1e;
+  --bg-chalk-cream: #f8faf6;
+  --bg-card-white: #ffffff;
+  
+  --championship-gold: #eab308;
+  --electric-white: #ffffff;
+  --turf-emerald: #10b981;
+  --text-dark-charcoal: #111827;
+  --text-muted-emerald: #4b6b5a;
+  --text-light-cream: #f8faf6;
+  
+  --border-gold-light: rgba(234, 179, 8, 0.25);
+  --border-gold-bold: rgba(234, 179, 8, 0.7);
+  
+  --font-display-athletic: 'Unbounded', sans-serif;
+  --font-sans-body: 'Outfit', sans-serif;
+  --font-mono-matchday: 'Space Mono', monospace;
+  
+  --speed-hooligans: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-hooligans-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-chalk-cream);
+  color: var(--text-dark-charcoal);
+  font-family: var(--font-sans-body);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .athletic-font {
+  font-family: var(--font-display-athletic);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-dark-charcoal);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.8vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.2vw, 1.8rem); }
+
+p {
+  color: var(--text-muted-emerald);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--championship-gold);
+  text-decoration: none;
+  transition: var(--speed-hooligans);
+}
+
+a:hover, a:focus-visible {
+  color: var(--turf-emerald);
+}
+
+:focus-visible {
+  outline: 2px solid var(--championship-gold);
+  outline-offset: 4px;
+}
+
+.skip-hooligans-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--championship-gold);
+  color: var(--bg-stadium-dark);
+  font-weight: 800;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-hooligans-btn:focus {
+  top: 1rem;
+}
+
+.hooligans-layout-container {
+  width: 90%;
+  max-width: var(--max-hooligans-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.hooligans-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 29, 19, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--championship-gold);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pub-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-athletic);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.brand-main-title span {
+  color: var(--championship-gold);
+}
+
+.brand-subline {
+  font-family: var(--font-mono-matchday);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--championship-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hooligans-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.hooligans-nav-link {
+  font-family: var(--font-sans-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light-cream);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.hooligans-nav-link:hover, .hooligans-nav-link.active {
+  color: var(--championship-gold);
+}
+
+.hooligans-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--championship-gold);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--championship-gold);
+  color: var(--bg-stadium-dark);
+  font-family: var(--font-sans-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-hooligans);
+}
+
+.btn-header-cta:hover {
+  background: #ffffff;
+  color: var(--bg-stadium-dark);
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--championship-gold);
+  color: var(--championship-gold);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-hooligans-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-pitch-green);
+  border-bottom: 3px solid var(--championship-gold);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.mobile-hooligans-drawer.open {
+  display: flex;
+}
+
+/* Soccer Pitch & Pub Hero */
+.pitch-hero-stage {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--bg-chalk-cream);
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.pitch-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.crest-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-matchday);
+  font-size: 0.78rem;
+  color: var(--bg-stadium-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid var(--border-gold-bold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--championship-gold);
+}
+
+.hero-subtext-para {
+  font-size: 1.2rem;
+  color: var(--text-muted-emerald);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-gold-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--championship-gold);
+  color: var(--bg-stadium-dark);
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-hooligans);
+}
+
+.btn-gold-fill:hover {
+  background: var(--bg-stadium-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 29, 19, 0.4);
+}
+
+.btn-gold-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--text-dark-charcoal);
+  border: 2px solid var(--text-dark-charcoal);
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-hooligans);
+}
+
+.btn-gold-outline:hover {
+  background: rgba(10, 29, 19, 0.08);
+}
+
+.pitch-frame-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(10, 29, 19, 0.25);
+  border: 3px solid var(--championship-gold);
+}
+
+.pitch-frame-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.hooligans-features-section {
+  padding: 4.5rem 0;
+  background: #eaf2ed;
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-matchday);
+  font-size: 0.8rem;
+  color: var(--bg-stadium-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.hooligans-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.hooligans-vault-card {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-gold-light);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-hooligans);
+  display: flex;
+  flex-direction: column;
+}
+
+.hooligans-vault-card:hover {
+  border-color: var(--championship-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(10, 29, 19, 0.22);
+}
+
+.card-icon-pub {
+  font-size: 2.2rem;
+  color: var(--championship-gold);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  color: var(--text-dark-charcoal);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-muted-emerald);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.hooligans-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--championship-gold);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-dark-charcoal);
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-matchday);
+  font-size: 0.8rem;
+  color: var(--bg-stadium-dark);
+  font-weight: 700;
+}
+
+.menu-pub-item {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-gold-light);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-hooligans);
+}
+
+.menu-pub-item:hover {
+  border-color: var(--championship-gold);
+}
+
+.pub-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.pub-name-text {
+  font-family: var(--font-display-athletic);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-dark-charcoal);
+}
+
+.pub-badge-pill {
+  font-family: var(--font-mono-matchday);
+  font-size: 0.75rem;
+  color: var(--bg-stadium-dark);
+  background: rgba(234, 179, 8, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.pub-desc-para {
+  color: var(--text-muted-emerald);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.hooligans-accordion {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-gold-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dark-charcoal);
+  font-family: var(--font-display-athletic);
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--championship-gold);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-matchday);
+  font-size: 1.2rem;
+  color: var(--championship-gold);
+  transition: transform 0.3s ease;
+}
+
+.hooligans-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.hooligans-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.hooligans-footer {
+  background: var(--bg-stadium-dark);
+  color: var(--bg-chalk-cream);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--championship-gold);
+}
+
+.hooligans-footer p {
+  color: var(--text-light-cream);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-matchday);
+  font-size: 0.85rem;
+  color: var(--championship-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-light-cream);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--championship-gold);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #8fad9d;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-matchday);
+  font-size: 0.75rem;
+  color: #8fad9d;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .pitch-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hooligans-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

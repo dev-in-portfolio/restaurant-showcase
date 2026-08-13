@@ -1,0 +1,633 @@
+/* Buona Vita Pub & Pizzeria — Warm Tuscan Brick & Hearth Tavern */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-terracotta-dark: #2a0b07;
+  --bg-hearth-slate: #1c0805;
+  --bg-flour-linen: #faf6f0;
+  --bg-card-linen: #ffffff;
+  
+  --terracotta-brick: #7a2518;
+  --oregano-green: #2c4a3e;
+  --tomato-red: #c0392b;
+  --crust-gold: #d4a359;
+  --crust-hover: #b88636;
+  --text-pure-white: #ffffff;
+  --text-dark-brick: #1f0907;
+  --text-muted-terracotta: #63524e;
+  --text-light-linen: #f3ece6;
+  
+  --border-brick-light: rgba(212, 163, 89, 0.25);
+  --border-brick-bold: rgba(212, 163, 89, 0.55);
+  
+  --font-serif-playfair: 'Playfair Display', serif;
+  --font-mono-hearth: 'Space Mono', monospace;
+  --font-body-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --speed-hearth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-hearth-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-flour-linen);
+  color: var(--text-dark-brick);
+  font-family: var(--font-body-sans);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .playfair-font {
+  font-family: var(--font-serif-playfair);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--terracotta-brick);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.7rem, 6.2vw, 4.6rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 2.3vw, 1.9rem); }
+
+p {
+  color: var(--text-muted-terracotta);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--terracotta-brick);
+  text-decoration: none;
+  transition: var(--speed-hearth);
+}
+
+a:hover, a:focus-visible {
+  color: var(--tomato-red);
+}
+
+:focus-visible {
+  outline: 2px solid var(--terracotta-brick);
+  outline-offset: 4px;
+}
+
+.skip-hearth-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--terracotta-brick);
+  color: var(--bg-flour-linen);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-hearth-btn:focus {
+  top: 1rem;
+}
+
+.vita-layout-container {
+  width: 90%;
+  max-width: var(--max-hearth-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.vita-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250, 246, 240, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(122, 37, 24, 0.18);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hearth-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-serif-playfair);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--terracotta-brick);
+}
+
+.brand-main-title span {
+  color: var(--crust-gold);
+  font-style: italic;
+}
+
+.brand-subline {
+  font-family: var(--font-body-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--oregano-green);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.vita-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.vita-nav-link {
+  font-family: var(--font-body-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted-terracotta);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.vita-nav-link:hover, .vita-nav-link.active {
+  color: var(--terracotta-brick);
+}
+
+.vita-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--terracotta-brick);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--terracotta-brick);
+  color: var(--bg-flour-linen);
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-hearth);
+}
+
+.btn-header-cta:hover {
+  background: var(--tomato-red);
+  color: var(--bg-flour-linen);
+  box-shadow: 0 4px 15px rgba(122, 37, 24, 0.35);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--terracotta-brick);
+  color: var(--terracotta-brick);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-vita-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: #f0e7dd;
+  border-bottom: 1px solid var(--terracotta-brick);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.mobile-vita-drawer.open {
+  display: flex;
+}
+
+/* Warm Tuscan Brick Hero */
+.terra-hero-stage {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--bg-flour-linen);
+  border-bottom: 1px solid rgba(122, 37, 24, 0.15);
+}
+
+.hero-centered-content {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.brick-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body-sans);
+  font-size: 0.78rem;
+  color: var(--terracotta-brick);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(122, 37, 24, 0.08);
+  border: 1px solid rgba(122, 37, 24, 0.3);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--terracotta-brick);
+  font-style: italic;
+}
+
+.hero-subtext-para {
+  font-size: 1.2rem;
+  color: var(--text-muted-terracotta);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.btn-brick-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--terracotta-brick);
+  color: var(--bg-flour-linen);
+  font-weight: 700;
+  font-family: var(--font-body-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-hearth);
+}
+
+.btn-brick-fill:hover {
+  background: var(--tomato-red);
+  color: var(--bg-flour-linen);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(122, 37, 24, 0.35);
+}
+
+.btn-brick-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--terracotta-brick);
+  border: 1px solid var(--terracotta-brick);
+  font-weight: 700;
+  font-family: var(--font-body-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-hearth);
+}
+
+.btn-brick-outline:hover {
+  border-color: var(--tomato-red);
+  background: rgba(122, 37, 24, 0.05);
+}
+
+.hero-banner-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(122, 37, 24, 0.18);
+  border: 2px solid rgba(122, 37, 24, 0.3);
+}
+
+.hero-banner-frame img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.hearth-features-section {
+  padding: 4.5rem 0;
+  background: #f3ece3;
+  border-bottom: 1px solid rgba(122, 37, 24, 0.15);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  color: var(--terracotta-brick);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.hearth-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.hearth-feature-card {
+  background: var(--bg-card-linen);
+  border: 1px solid rgba(122, 37, 24, 0.18);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-hearth);
+  display: flex;
+  flex-direction: column;
+}
+
+.hearth-feature-card:hover {
+  border-color: var(--terracotta-brick);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(122, 37, 24, 0.12);
+}
+
+.card-icon-slice {
+  font-size: 2.2rem;
+  color: var(--terracotta-brick);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--terracotta-brick);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-muted-terracotta);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.pizza-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--terracotta-brick);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--terracotta-brick);
+}
+
+.menu-category-title span {
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  color: var(--oregano-green);
+  font-weight: 700;
+}
+
+.menu-food-item {
+  background: var(--bg-card-linen);
+  border: 1px solid rgba(122, 37, 24, 0.15);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-hearth);
+}
+
+.menu-food-item:hover {
+  border-color: var(--terracotta-brick);
+}
+
+.food-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.food-name-text {
+  font-family: var(--font-serif-playfair);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--terracotta-brick);
+}
+
+.food-badge-pill {
+  font-family: var(--font-body-sans);
+  font-size: 0.75rem;
+  color: var(--terracotta-brick);
+  background: rgba(122, 37, 24, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.food-desc-para {
+  color: var(--text-muted-terracotta);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.hearth-accordion {
+  background: var(--bg-card-linen);
+  border: 1px solid rgba(122, 37, 24, 0.18);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--terracotta-brick);
+  font-family: var(--font-serif-playfair);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--tomato-red);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-body-sans);
+  font-size: 1.2rem;
+  color: var(--terracotta-brick);
+  transition: transform 0.3s ease;
+}
+
+.hearth-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.hearth-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.vita-footer {
+  background: var(--bg-terracotta-dark);
+  color: var(--bg-flour-linen);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--terracotta-brick);
+}
+
+.vita-footer p {
+  color: var(--text-light-linen);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: var(--bg-flour-linen);
+  font-size: 1.65rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-body-sans);
+  font-size: 0.85rem;
+  color: var(--crust-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-light-linen);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--crust-gold);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #9e8580;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-body-sans);
+  font-size: 0.75rem;
+  color: #9e8580;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .vita-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

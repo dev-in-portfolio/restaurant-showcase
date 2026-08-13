@@ -1,0 +1,120 @@
+{
+  "slug": "cafe-audire",
+  "generatedAt": "2026-08-12T02:38:30.122Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "azul-tequileria-and-cocina",
+    "babaloo-coffee-club",
+    "backyard-brew",
+    "bar-a-vins",
+    "blue-orchid-sushi-and-asian-bistro",
+    "bonzai-thai-cuisine",
+    "brawley-s-beverage",
+    "buona-vita-pub-and-pizzeria",
+    "caffeto-specialty-coffee",
+    "deepcuts-hifi"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "blue-orchid-sushi-and-asian-bistro",
+    "score": 0.4585495867768595,
+    "classSimilarity": 0.3333333333333333,
+    "cssClassSimilarity": 0.35,
+    "domSimilarity": 0.9752066115702479,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0.5
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "blue-orchid-sushi-and-asian-bistro",
+      "score": 0.4585495867768595,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "bonzai-thai-cuisine",
+      "score": 0.4585495867768595,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "caffeto-specialty-coffee",
+      "score": 0.4585495867768595,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "buona-vita-pub-and-pizzeria",
+      "score": 0.45169456921192325,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.3670886075949367,
+      "domSimilarity": 0.9274193548387096,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "brawley-s-beverage",
+      "score": 0.4345495867768595,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "backyard-brew",
+      "score": 0.3212831010452961,
+      "classSimilarity": 0.08571428571428572,
+      "cssClassSimilarity": 0.125,
+      "domSimilarity": 0.9349593495934959,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "azul-tequileria-and-cocina",
+      "score": 0.3059124281762077,
+      "classSimilarity": 0.013513513513513514,
+      "cssClassSimilarity": 0.046296296296296294,
+      "domSimilarity": 0.8740157480314961,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "babaloo-coffee-club",
+      "score": 0.2810278301289949,
+      "classSimilarity": 0.0410958904109589,
+      "cssClassSimilarity": 0.058823529411764705,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.25
+    },
+    {
+      "priorSlug": "bar-a-vins",
+      "score": 0.2640342021614749,
+      "classSimilarity": 0.013333333333333334,
+      "cssClassSimilarity": 0.038461538461538464,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "deepcuts-hifi",
+      "score": 0.23600545400545397,
+      "classSimilarity": 0.012987012987012988,
+      "cssClassSimilarity": 0.036036036036036036,
+      "domSimilarity": 0.8615384615384616,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    }
+  ]
+}

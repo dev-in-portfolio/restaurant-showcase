@@ -1,0 +1,120 @@
+{
+  "slug": "carmella-s-pizza-grill",
+  "generatedAt": "2026-08-12T03:16:53.506Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "backyard-brew",
+    "bar-a-vins",
+    "blue-orchid-sushi-and-asian-bistro",
+    "bonzai-thai-cuisine",
+    "brawley-s-beverage",
+    "buona-vita-pub-and-pizzeria",
+    "cafe-audire",
+    "caffeto-specialty-coffee",
+    "caribbean-hut",
+    "deepcuts-hifi"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "brawley-s-beverage",
+    "score": 0.5091139240506329,
+    "classSimilarity": 0.3333333333333333,
+    "cssClassSimilarity": 0.3670886075949367,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "brawley-s-beverage",
+      "score": 0.5091139240506329,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.3670886075949367,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "blue-orchid-sushi-and-asian-bistro",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "buona-vita-pub-and-pizzeria",
+      "score": 0.452599173553719,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 0.9504132231404959,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "bonzai-thai-cuisine",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "caffeto-specialty-coffee",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "caribbean-hut",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "cafe-audire",
+      "score": 0.4345495867768595,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 0.9752066115702479,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "backyard-brew",
+      "score": 0.3028928571428572,
+      "classSimilarity": 0.08571428571428572,
+      "cssClassSimilarity": 0.125,
+      "domSimilarity": 0.9583333333333334,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "bar-a-vins",
+      "score": 0.2699846153846154,
+      "classSimilarity": 0.013333333333333334,
+      "cssClassSimilarity": 0.038461538461538464,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "deepcuts-hifi",
+      "score": 0.2648897665433098,
+      "classSimilarity": 0.012987012987012988,
+      "cssClassSimilarity": 0.036036036036036036,
+      "domSimilarity": 0.8818897637795275,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    }
+  ]
+}

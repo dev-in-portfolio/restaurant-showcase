@@ -1,0 +1,120 @@
+{
+  "slug": "bar-a-vins",
+  "generatedAt": "2026-08-12T01:41:36.283Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "aqua-e-vino",
+    "aria-tuscan-grill",
+    "aroy-thai",
+    "assorted-table-wine-and-shop",
+    "astoria-cafe",
+    "azucar-cuban-restaurant",
+    "azul-tequileria-and-cocina",
+    "babaloo-coffee-club",
+    "backyard-brew",
+    "deepcuts-hifi"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "aqua-e-vino",
+    "score": 0.267961252272439,
+    "classSimilarity": 0.011904761904761904,
+    "cssClassSimilarity": 0.03669724770642202,
+    "domSimilarity": 0.8951612903225806,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0.5
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "aqua-e-vino",
+      "score": 0.267961252272439,
+      "classSimilarity": 0.011904761904761904,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8951612903225806,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "babaloo-coffee-club",
+      "score": 0.25398461538461536,
+      "classSimilarity": 0.013333333333333334,
+      "cssClassSimilarity": 0.038461538461538464,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "deepcuts-hifi",
+      "score": 0.24703153373770864,
+      "classSimilarity": 0.02631578947368421,
+      "cssClassSimilarity": 0.045454545454545456,
+      "domSimilarity": 0.8818897637795275,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "azul-tequileria-and-cocina",
+      "score": 0.24439561520680192,
+      "classSimilarity": 0.013513513513513514,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8951612903225806,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "aria-tuscan-grill",
+      "score": 0.24399997860634604,
+      "classSimilarity": 0.012048192771084338,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8951612903225806,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "assorted-table-wine-and-shop",
+      "score": 0.24399997860634604,
+      "classSimilarity": 0.012048192771084338,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8951612903225806,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "astoria-cafe",
+      "score": 0.24399997860634604,
+      "classSimilarity": 0.012048192771084338,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8951612903225806,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "azucar-cuban-restaurant",
+      "score": 0.24399997860634604,
+      "classSimilarity": 0.012048192771084338,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8951612903225806,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "backyard-brew",
+      "score": 0.2439846153846154,
+      "classSimilarity": 0.013333333333333334,
+      "cssClassSimilarity": 0.038461538461538464,
+      "domSimilarity": 0.9583333333333334,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "aroy-thai",
+      "score": 0.23381243171962435,
+      "classSimilarity": 0.012048192771084338,
+      "cssClassSimilarity": 0.03669724770642202,
+      "domSimilarity": 0.8527131782945736,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    }
+  ]
+}

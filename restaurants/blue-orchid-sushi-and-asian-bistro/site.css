@@ -1,0 +1,626 @@
+/* Blue Orchid Sushi & Asian Bistro — Modernist Kyoto Indigo Glass Showcase */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-sapphire-dark: #0a1128;
+  --bg-indigo-slate: #1c2541;
+  --bg-ice-light: #f0f7ff;
+  --bg-card-glass: rgba(255, 255, 255, 0.96);
+  
+  --electric-orchid: #6366f1;
+  --orchid-glow: #818cf8;
+  --orchid-deep: #4f46e5;
+  --text-pure-white: #ffffff;
+  --text-dark-navy: #0f172a;
+  --text-muted-slate: #475569;
+  --text-light-ice: #cbd5e1;
+  
+  --border-glass-light: rgba(99, 102, 241, 0.2);
+  --border-glass-glow: rgba(99, 102, 241, 0.5);
+  
+  --font-display-outfit: 'Outfit', sans-serif;
+  --font-mono-sushi: 'Space Mono', monospace;
+  --font-body-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --speed-kyoto: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-kyoto-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-sapphire-dark);
+  color: var(--text-pure-white);
+  font-family: var(--font-body-sans);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .outfit-font {
+  font-family: var(--font-display-outfit);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-pure-white);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.35rem, 2.2vw, 1.85rem); }
+
+p {
+  color: var(--text-light-ice);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--orchid-glow);
+  text-decoration: none;
+  transition: var(--speed-kyoto);
+}
+
+a:hover, a:focus-visible {
+  color: var(--text-pure-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--electric-orchid);
+  outline-offset: 4px;
+}
+
+.skip-kyoto-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--electric-orchid);
+  color: var(--text-pure-white);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-kyoto-btn:focus {
+  top: 1rem;
+}
+
+.orchid-layout-container {
+  width: 90%;
+  max-width: var(--max-kyoto-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.orchid-top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 17, 40, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-glass-light);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blue-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-outfit);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-pure-white);
+  letter-spacing: 0.02em;
+}
+
+.brand-main-title span {
+  color: var(--orchid-glow);
+}
+
+.brand-subline {
+  font-family: var(--font-mono-sushi);
+  font-size: 0.65rem;
+  color: var(--orchid-glow);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.orchid-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.orchid-nav-link {
+  font-family: var(--font-body-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light-ice);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.orchid-nav-link:hover, .orchid-nav-link.active {
+  color: var(--text-pure-white);
+}
+
+.orchid-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--electric-orchid);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--electric-orchid);
+  color: var(--text-pure-white);
+  font-family: var(--font-mono-sushi);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-kyoto);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+.btn-header-cta:hover {
+  background: var(--orchid-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-glass-light);
+  color: var(--text-pure-white);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-orchid-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-indigo-slate);
+  border-bottom: 1px solid var(--border-glass-glow);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.mobile-orchid-drawer.open {
+  display: flex;
+}
+
+/* Modernist Kyoto Indigo Glass Hero */
+.indigo-hero-stage {
+  padding: 4.5rem 0 3.5rem;
+  background: radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 60%), var(--bg-sapphire-dark);
+  border-bottom: 1px solid var(--border-glass-light);
+}
+
+.indigo-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.sapphire-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-sushi);
+  font-size: 0.78rem;
+  color: var(--orchid-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid var(--border-glass-glow);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--orchid-glow);
+}
+
+.hero-subtext-para {
+  font-size: 1.18rem;
+  color: var(--text-light-ice);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-orchid-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--electric-orchid);
+  color: var(--text-pure-white);
+  font-weight: 700;
+  font-family: var(--font-mono-sushi);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  transition: var(--speed-kyoto);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-orchid-glow:hover {
+  background: var(--orchid-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.6);
+}
+
+.btn-sapphire-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--text-pure-white);
+  border: 1px solid var(--border-glass-glow);
+  font-weight: 700;
+  font-family: var(--font-mono-sushi);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  transition: var(--speed-kyoto);
+}
+
+.btn-sapphire-outline:hover {
+  border-color: var(--electric-orchid);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.hero-glass-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-glass-glow);
+}
+
+.hero-glass-frame img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.sushi-matrix-section {
+  padding: 4.5rem 0;
+  background: var(--bg-indigo-slate);
+  border-bottom: 1px solid var(--border-glass-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-sushi);
+  font-size: 0.8rem;
+  color: var(--orchid-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.sushi-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.sushi-matrix-card {
+  background: rgba(10, 17, 40, 0.7);
+  border: 1px solid var(--border-glass-light);
+  border-radius: 12px;
+  padding: 2.25rem;
+  transition: var(--speed-kyoto);
+  display: flex;
+  flex-direction: column;
+}
+
+.sushi-matrix-card:hover {
+  border-color: var(--electric-orchid);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(99, 102, 241, 0.25);
+}
+
+.card-icon-emoji {
+  font-size: 2.2rem;
+  color: var(--orchid-glow);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--text-pure-white);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-light-ice);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.sushi-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--electric-orchid);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-pure-white);
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-sushi);
+  font-size: 0.8rem;
+  color: var(--orchid-glow);
+  font-weight: 700;
+}
+
+.menu-food-item {
+  background: rgba(28, 37, 65, 0.5);
+  border: 1px solid var(--border-glass-light);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-kyoto);
+}
+
+.menu-food-item:hover {
+  border-color: var(--electric-orchid);
+}
+
+.food-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.food-name-text {
+  font-family: var(--font-display-outfit);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-pure-white);
+}
+
+.food-badge-pill {
+  font-family: var(--font-mono-sushi);
+  font-size: 0.75rem;
+  color: var(--orchid-glow);
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid var(--border-glass-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.food-desc-para {
+  color: var(--text-light-ice);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.orchid-accordion {
+  background: rgba(28, 37, 65, 0.6);
+  border: 1px solid var(--border-glass-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-pure-white);
+  font-family: var(--font-display-outfit);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--orchid-glow);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-sushi);
+  font-size: 1.2rem;
+  color: var(--orchid-glow);
+  transition: transform 0.3s ease;
+}
+
+.orchid-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.orchid-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.orchid-footer {
+  background: #050a18;
+  color: var(--text-pure-white);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--electric-orchid);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  font-size: 1.6rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-sushi);
+  font-size: 0.85rem;
+  color: var(--orchid-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-light-ice);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--text-pure-white);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-sushi);
+  font-size: 0.75rem;
+  color: #64748b;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .indigo-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .orchid-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

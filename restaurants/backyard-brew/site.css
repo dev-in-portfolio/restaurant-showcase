@@ -1,0 +1,618 @@
+/* Backyard Brew — Botanical Garden Glasshouse Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bg-linen: #f4f1ea;
+  --bg-sage-light: #e6ebe6;
+  --bg-card-linen: #ffffff;
+  
+  --forest-sage: #2c4a3e;
+  --forest-sage-hover: #1e362d;
+  --moss-green: #4a6b5d;
+  --honey-amber: #d4a359;
+  --roasted-oak: #1e2622;
+  --oak-muted: #57635c;
+  
+  --border-sage-subtle: rgba(44, 74, 62, 0.18);
+  --border-sage-bold: rgba(44, 74, 62, 0.4);
+  
+  --font-serif-botanical: 'Marcellus', serif;
+  --font-body-clean: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono-rustic: 'Space Mono', monospace;
+  
+  --ease-spring: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --container-max-w: 1220px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-linen);
+  color: var(--roasted-oak);
+  font-family: var(--font-body-clean);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .serif-botanical {
+  font-family: var(--font-serif-botanical);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--roasted-oak);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.5rem, 6.2vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 3.1rem); }
+h3 { font-size: clamp(1.35rem, 2.3vw, 1.85rem); }
+
+p {
+  color: var(--oak-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--forest-sage);
+  text-decoration: none;
+  transition: var(--ease-spring);
+}
+
+a:hover, a:focus-visible {
+  color: var(--forest-sage-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--forest-sage);
+  outline-offset: 4px;
+}
+
+.skip-to-content-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--forest-sage);
+  color: var(--bg-linen);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-to-content-btn:focus {
+  top: 1rem;
+}
+
+.garden-layout-container {
+  width: 90%;
+  max-width: var(--container-max-w);
+  margin: 0 auto;
+}
+
+/* Header & Top Announcement Bar */
+.garden-top-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(244, 241, 234, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-sage-subtle);
+  padding: 1.15rem 0;
+}
+
+.banner-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.botanical-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-serif-botanical);
+  font-size: 1.75rem;
+  color: var(--roasted-oak);
+}
+
+.brand-main-title span {
+  color: var(--forest-sage);
+}
+
+.brand-location-code {
+  font-family: var(--font-mono-rustic);
+  font-size: 0.65rem;
+  color: var(--moss-green);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.garden-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.garden-nav-link {
+  font-family: var(--font-body-clean);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--oak-muted);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.garden-nav-link:hover, .garden-nav-link.active {
+  color: var(--forest-sage);
+}
+
+.garden-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--forest-sage);
+}
+
+.banner-cta-link {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--forest-sage);
+  color: var(--bg-linen);
+  font-family: var(--font-mono-rustic);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: var(--ease-spring);
+}
+
+.banner-cta-link:hover {
+  background: var(--forest-sage-hover);
+  color: var(--bg-linen);
+  box-shadow: 0 4px 15px rgba(44, 74, 62, 0.35);
+}
+
+.mobile-menu-trigger-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-sage-bold);
+  color: var(--roasted-oak);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-garden-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-sage-light);
+  border-bottom: 1px solid var(--border-sage-subtle);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(30, 38, 34, 0.15);
+}
+
+.mobile-garden-drawer.open {
+  display: flex;
+}
+
+/* Glasshouse Hero Section */
+.glasshouse-hero {
+  background: var(--bg-linen);
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--border-sage-subtle);
+}
+
+.hero-centered-content {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.sage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-rustic);
+  font-size: 0.8rem;
+  color: var(--forest-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: var(--bg-sage-light);
+  border: 1px solid var(--border-sage-bold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.glasshouse-title span {
+  color: var(--forest-sage);
+  font-style: italic;
+}
+
+.hero-subtext-lead {
+  font-size: 1.2rem;
+  color: var(--oak-muted);
+  margin-top: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-forest-sage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--forest-sage);
+  color: var(--bg-linen);
+  font-weight: 700;
+  font-family: var(--font-mono-rustic);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: var(--ease-spring);
+}
+
+.btn-forest-sage:hover {
+  background: var(--forest-sage-hover);
+  color: var(--bg-linen);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 74, 62, 0.35);
+}
+
+.btn-linen-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--roasted-oak);
+  border: 1px solid var(--border-sage-bold);
+  font-weight: 700;
+  font-family: var(--font-mono-rustic);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: var(--ease-spring);
+}
+
+.btn-linen-outline:hover {
+  border-color: var(--forest-sage);
+  color: var(--forest-sage);
+}
+
+.hero-banner-image {
+  margin-top: 3.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(30, 38, 34, 0.15);
+  border: 1px solid var(--border-sage-bold);
+}
+
+.hero-banner-image img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Units */
+.spec-units-section {
+  padding: 4.5rem 0;
+  background: var(--bg-sage-light);
+  border-bottom: 1px solid var(--border-sage-subtle);
+}
+
+.section-headline-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.section-kicker {
+  font-family: var(--font-mono-rustic);
+  font-size: 0.8rem;
+  color: var(--forest-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.spec-units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.garden-spec-unit {
+  background: var(--bg-card-linen);
+  border: 1px solid var(--border-sage-subtle);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--ease-spring);
+  display: flex;
+  flex-direction: column;
+}
+
+.garden-spec-unit:hover {
+  border-color: var(--forest-sage);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(30, 38, 34, 0.1);
+}
+
+.unit-icon-leaf {
+  font-size: 2.2rem;
+  color: var(--forest-sage);
+  margin-bottom: 1rem;
+}
+
+.unit-header-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  color: var(--roasted-oak);
+}
+
+.unit-text-desc {
+  font-size: 0.95rem;
+  color: var(--oak-muted);
+  flex-grow: 1;
+}
+
+/* Menu Display Layout */
+.garden-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-header {
+  font-size: 1.65rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--forest-sage);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--roasted-oak);
+}
+
+.menu-category-header span {
+  font-family: var(--font-mono-rustic);
+  font-size: 0.8rem;
+  color: var(--forest-sage);
+  font-weight: 700;
+}
+
+.menu-food-card {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--border-sage-subtle);
+}
+
+.card-top-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.food-title-text {
+  font-family: var(--font-serif-botanical);
+  font-size: 1.2rem;
+  color: var(--roasted-oak);
+}
+
+.food-tag-pill {
+  font-family: var(--font-mono-rustic);
+  font-size: 0.75rem;
+  color: var(--forest-sage);
+  text-transform: uppercase;
+  background: var(--bg-sage-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.food-description-text {
+  color: var(--oak-muted);
+  font-size: 0.95rem;
+}
+
+/* FAQ Accordion */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.garden-accordion {
+  background: var(--bg-card-linen);
+  border: 1px solid var(--border-sage-subtle);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-button {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--roasted-oak);
+  font-family: var(--font-serif-botanical);
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-button:hover {
+  color: var(--forest-sage);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-rustic);
+  font-size: 1.2rem;
+  color: var(--forest-sage);
+  transition: transform 0.3s ease;
+}
+
+.garden-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.garden-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.botanical-footer {
+  background: var(--roasted-oak);
+  color: var(--bg-linen);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--forest-sage);
+}
+
+.botanical-footer p {
+  color: #a8b3ac;
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: var(--bg-linen);
+  font-size: 1.5rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-section-title {
+  font-family: var(--font-mono-rustic);
+  font-size: 0.85rem;
+  color: var(--honey-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: #a8b3ac;
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--honey-amber);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #79857d;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-rustic);
+  font-size: 0.75rem;
+  color: #79857d;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .menu-dual-grid { grid-template-columns: 1fr; }
+  .footer-columns-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .garden-nav-group { display: none; }
+  .mobile-menu-trigger-btn { display: block; }
+  .footer-columns-grid { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

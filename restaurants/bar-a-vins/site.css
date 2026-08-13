@@ -1,0 +1,624 @@
+/* Bar à Vins — Parisian Minimalist Cellar Salon Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Playfair+Display:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-linen-raw: #f9f6f0;
+  --bg-bordeaux-dark: #1f080c;
+  --bg-card-linen: #ffffff;
+  --bg-rose-tint: #f3ece8;
+  
+  --bordeaux-wine: #4a121a;
+  --bordeaux-hover: #631a24;
+  --antique-brass: #d4af37;
+  --rose-velvet: #8c3b4a;
+  --text-charcoal: #2b2325;
+  --text-muted-bordeaux: #615255;
+  
+  --border-bordeaux-light: rgba(74, 18, 26, 0.18);
+  --border-bordeaux-bold: rgba(74, 18, 26, 0.4);
+  
+  --font-french-serif: 'Cormorant Garamond', serif;
+  --font-italic-serif: 'Playfair Display', serif;
+  --font-body-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --speed-salon: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-salon-width: 1220px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-linen-raw);
+  color: var(--text-charcoal);
+  font-family: var(--font-body-sans);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .french-serif {
+  font-family: var(--font-french-serif);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--bordeaux-wine);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.7rem, 6.5vw, 4.6rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+
+p {
+  color: var(--text-muted-bordeaux);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--bordeaux-wine);
+  text-decoration: none;
+  transition: var(--speed-salon);
+}
+
+a:hover, a:focus-visible {
+  color: var(--bordeaux-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--bordeaux-wine);
+  outline-offset: 4px;
+}
+
+.skip-salon-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--bordeaux-wine);
+  color: var(--bg-linen-raw);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-salon-link:focus {
+  top: 1rem;
+}
+
+.vins-wrapper-container {
+  width: 90%;
+  max-width: var(--max-salon-width);
+  margin: 0 auto;
+}
+
+/* Header & Top Bar Navigation */
+.vins-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(249, 246, 240, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-bordeaux-light);
+  padding: 1.15rem 0;
+}
+
+.header-inner-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bordeaux-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title-text {
+  font-family: var(--font-french-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--bordeaux-wine);
+}
+
+.brand-title-text span {
+  color: var(--antique-brass);
+  font-style: italic;
+}
+
+.brand-noda-subtext {
+  font-family: var(--font-body-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--rose-velvet);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.vins-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.vins-nav-item {
+  font-family: var(--font-body-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted-bordeaux);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.vins-nav-item:hover, .vins-nav-item.active {
+  color: var(--bordeaux-wine);
+}
+
+.vins-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bordeaux-wine);
+}
+
+.topbar-button-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--bordeaux-wine);
+  color: var(--bg-linen-raw);
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-salon);
+}
+
+.topbar-button-cta:hover {
+  background: var(--bordeaux-hover);
+  color: var(--bg-linen-raw);
+  box-shadow: 0 4px 15px rgba(74, 18, 26, 0.35);
+}
+
+.salon-drawer-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-bordeaux-bold);
+  color: var(--bordeaux-wine);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-salon-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-rose-tint);
+  border-bottom: 1px solid var(--border-bordeaux-light);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(31, 8, 12, 0.15);
+}
+
+.mobile-salon-drawer.open {
+  display: flex;
+}
+
+/* Parisian Minimalist Cellar Hero */
+.parisian-hero {
+  background: var(--bg-linen-raw);
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--border-bordeaux-light);
+}
+
+.parisian-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.bordeaux-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  color: var(--bordeaux-wine);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: var(--bg-rose-tint);
+  border: 1px solid var(--border-bordeaux-bold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-heading span {
+  color: var(--bordeaux-wine);
+  font-style: italic;
+}
+
+.hero-lead-paragraph {
+  font-size: 1.2rem;
+  color: var(--text-muted-bordeaux);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-button-group {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-bordeaux-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--bordeaux-wine);
+  color: var(--bg-linen-raw);
+  font-weight: 700;
+  font-family: var(--font-body-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-salon);
+}
+
+.btn-bordeaux-fill:hover {
+  background: var(--bordeaux-hover);
+  color: var(--bg-linen-raw);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 18, 26, 0.35);
+}
+
+.btn-bordeaux-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--bordeaux-wine);
+  border: 1px solid var(--border-bordeaux-bold);
+  font-weight: 700;
+  font-family: var(--font-body-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-salon);
+}
+
+.btn-bordeaux-outline:hover {
+  border-color: var(--bordeaux-wine);
+  background: rgba(74, 18, 26, 0.05);
+}
+
+.hero-arch-photo {
+  border-radius: 120px 120px 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(31, 8, 12, 0.18);
+  border: 2px solid var(--border-bordeaux-bold);
+}
+
+.hero-arch-photo img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.cellar-features-section {
+  padding: 4.5rem 0;
+  background: var(--bg-rose-tint);
+  border-bottom: 1px solid var(--border-bordeaux-light);
+}
+
+.section-editorial-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.editorial-tag {
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  color: var(--bordeaux-wine);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.cellar-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cellar-unit {
+  background: var(--bg-card-linen);
+  border: 1px solid var(--border-bordeaux-light);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-salon);
+  display: flex;
+  flex-direction: column;
+}
+
+.cellar-unit:hover {
+  border-color: var(--bordeaux-wine);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(31, 8, 12, 0.1);
+}
+
+.unit-icon-glass {
+  font-size: 2.2rem;
+  color: var(--bordeaux-wine);
+  margin-bottom: 1rem;
+}
+
+.unit-heading-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  color: var(--bordeaux-wine);
+}
+
+.unit-body-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted-bordeaux);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.wine-menu-section {
+  padding: 4.5rem 0;
+}
+
+.wine-menu-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.wine-category-title {
+  font-size: 1.65rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--bordeaux-wine);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--bordeaux-wine);
+}
+
+.wine-category-title span {
+  font-family: var(--font-body-sans);
+  font-size: 0.8rem;
+  color: var(--rose-velvet);
+  font-weight: 700;
+}
+
+.wine-food-row {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--border-bordeaux-light);
+}
+
+.row-top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.row-title-name {
+  font-family: var(--font-french-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bordeaux-wine);
+}
+
+.row-tag-badge {
+  font-family: var(--font-body-sans);
+  font-size: 0.75rem;
+  color: var(--bordeaux-wine);
+  text-transform: uppercase;
+  background: var(--bg-rose-tint);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.row-desc-text {
+  color: var(--text-muted-bordeaux);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-salon-group {
+  margin-top: 2rem;
+}
+
+.cellar-accordion {
+  background: var(--bg-card-linen);
+  border: 1px solid var(--border-bordeaux-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-header-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--bordeaux-wine);
+  font-family: var(--font-french-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-header-toggle:hover {
+  color: var(--bordeaux-hover);
+}
+
+.accordion-icon-cross {
+  font-family: var(--font-body-sans);
+  font-size: 1.2rem;
+  color: var(--bordeaux-wine);
+  transition: transform 0.3s ease;
+}
+
+.cellar-accordion.active .accordion-icon-cross {
+  transform: rotate(45deg);
+}
+
+.accordion-content-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.cellar-accordion.active .accordion-content-box {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.vins-footer {
+  background: var(--bg-bordeaux-dark);
+  color: var(--bg-linen-raw);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--bordeaux-wine);
+}
+
+.vins-footer p {
+  color: #bfa7ab;
+}
+
+.footer-four-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-pane .brand-title-text {
+  color: var(--bg-linen-raw);
+  font-size: 1.6rem;
+}
+
+.footer-brand-pane p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-column-title {
+  font-family: var(--font-body-sans);
+  font-size: 0.85rem;
+  color: var(--antique-brass);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-stack {
+  list-style: none;
+}
+
+.footer-links-stack li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-stack a {
+  color: #bfa7ab;
+  font-size: 0.9rem;
+}
+
+.footer-links-stack a:hover {
+  color: var(--antique-brass);
+}
+
+.footer-copyright-bar {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #8c7377;
+}
+
+.demo-concept-badge {
+  font-family: var(--font-body-sans);
+  font-size: 0.75rem;
+  color: #8c7377;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .parisian-hero-grid { grid-template-columns: 1fr; }
+  .wine-menu-layout { grid-template-columns: 1fr; }
+  .footer-four-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .vins-nav-links { display: none; }
+  .salon-drawer-toggle { display: block; }
+  .footer-four-grid { grid-template-columns: 1fr; }
+  .footer-copyright-bar { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

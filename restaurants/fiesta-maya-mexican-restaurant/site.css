@@ -1,0 +1,630 @@
+/* Fiesta Maya Mexican Restaurant — Opulent Mayan Stone & Sizzling Molcajete Vault */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,700&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-obsidian-dark: #090a0f;
+  --bg-parchment-warm: #fffbeb;
+  --bg-card-white: #ffffff;
+  
+  --jade-emerald: #047857;
+  --agave-gold: #eab308;
+  --terracotta-clay: #b45309;
+  --text-dark-obsidian: #090a0f;
+  --text-muted-slate: #4b5563;
+  --text-light-parchment: #fffbeb;
+  
+  --border-jade-light: rgba(4, 120, 87, 0.3);
+  --border-jade-bold: rgba(4, 120, 87, 0.85);
+  
+  --font-display-serif: 'Playfair Display', serif;
+  --font-sans-body: 'Outfit', sans-serif;
+  --font-mono-cantina: 'Space Mono', monospace;
+  
+  --speed-maya: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-maya-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-parchment-warm);
+  color: var(--text-dark-obsidian);
+  font-family: var(--font-sans-body);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .serif-font {
+  font-family: var(--font-display-serif);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-dark-obsidian);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.3rem); }
+h2 { font-size: clamp(2.0rem, 3.8vw, 3.1rem); }
+h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); }
+
+p {
+  color: var(--text-muted-slate);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--jade-emerald);
+  text-decoration: none;
+  transition: var(--speed-maya);
+}
+
+a:hover, a:focus-visible {
+  color: var(--agave-gold);
+}
+
+:focus-visible {
+  outline: 2px solid var(--agave-gold);
+  outline-offset: 4px;
+}
+
+.skip-maya-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--agave-gold);
+  color: var(--bg-obsidian-dark);
+  font-weight: 800;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-maya-btn:focus {
+  top: 1rem;
+}
+
+.maya-layout-container {
+  width: 90%;
+  max-width: var(--max-maya-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.maya-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(9, 10, 15, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--agave-gold);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.maya-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-serif);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.brand-main-title span {
+  color: var(--agave-gold);
+}
+
+.brand-subline {
+  font-family: var(--font-mono-cantina);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--agave-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.maya-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.maya-nav-link {
+  font-family: var(--font-sans-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-light-parchment);
+  padding: 0.25rem 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.maya-nav-link:hover, .maya-nav-link.active {
+  color: var(--agave-gold);
+}
+
+.maya-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--agave-gold);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--agave-gold);
+  color: var(--bg-obsidian-dark);
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-maya);
+}
+
+.btn-header-cta:hover {
+  background: #ffffff;
+  color: var(--jade-emerald);
+  box-shadow: 0 4px 15px rgba(234, 179, 8, 0.4);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--agave-gold);
+  color: var(--agave-gold);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-maya-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-obsidian-dark);
+  border-bottom: 3px solid var(--agave-gold);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.mobile-maya-drawer.open {
+  display: flex;
+}
+
+/* Mayan Hero Stage */
+.mayan-hero-stage {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--bg-parchment-warm);
+  border-bottom: 1px solid var(--border-jade-light);
+}
+
+.mayan-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.jade-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-cantina);
+  font-size: 0.78rem;
+  color: var(--jade-emerald);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(4, 120, 87, 0.12);
+  border: 1px solid rgba(4, 120, 87, 0.4);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--jade-emerald);
+  font-style: italic;
+}
+
+.hero-subtext-para {
+  font-size: 1.2rem;
+  color: var(--text-muted-slate);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-jade-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--jade-emerald);
+  color: #ffffff;
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-maya);
+}
+
+.btn-jade-fill:hover {
+  background: var(--agave-gold);
+  color: var(--bg-obsidian-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(4, 120, 87, 0.4);
+}
+
+.btn-jade-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--text-dark-obsidian);
+  border: 2px solid var(--text-dark-obsidian);
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-maya);
+}
+
+.btn-jade-outline:hover {
+  background: rgba(9, 10, 15, 0.08);
+}
+
+.mayan-frame-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(9, 10, 15, 0.22);
+  border: 3px solid var(--agave-gold);
+}
+
+.mayan-frame-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.maya-features-section {
+  padding: 4.5rem 0;
+  background: #f5eedc;
+  border-bottom: 1px solid var(--border-jade-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-cantina);
+  font-size: 0.8rem;
+  color: var(--jade-emerald);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.maya-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.maya-vault-card {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-jade-light);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-maya);
+  display: flex;
+  flex-direction: column;
+}
+
+.maya-vault-card:hover {
+  border-color: var(--agave-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(4, 120, 87, 0.18);
+}
+
+.card-icon-maya {
+  font-size: 2.2rem;
+  color: var(--jade-emerald);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--text-dark-obsidian);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-muted-slate);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.maya-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--agave-gold);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-dark-obsidian);
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-cantina);
+  font-size: 0.8rem;
+  color: var(--jade-emerald);
+  font-weight: 700;
+}
+
+.menu-maya-item {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-jade-light);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-maya);
+}
+
+.menu-maya-item:hover {
+  border-color: var(--jade-emerald);
+}
+
+.maya-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.maya-name-text {
+  font-family: var(--font-display-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark-obsidian);
+}
+
+.maya-badge-pill {
+  font-family: var(--font-mono-cantina);
+  font-size: 0.75rem;
+  color: var(--bg-obsidian-dark);
+  background: rgba(234, 179, 8, 0.22);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.maya-desc-para {
+  color: var(--text-muted-slate);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.maya-accordion {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-jade-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dark-obsidian);
+  font-family: var(--font-display-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--jade-emerald);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-cantina);
+  font-size: 1.2rem;
+  color: var(--jade-emerald);
+  transition: transform 0.3s ease;
+}
+
+.maya-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.maya-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.maya-footer {
+  background: var(--bg-obsidian-dark);
+  color: var(--bg-parchment-warm);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--agave-gold);
+}
+
+.maya-footer p {
+  color: var(--text-light-parchment);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: #ffffff;
+  font-size: 1.65rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-cantina);
+  font-size: 0.85rem;
+  color: var(--agave-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-light-parchment);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--agave-gold);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #fef08a;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-cantina);
+  font-size: 0.75rem;
+  color: #fef08a;
+  background: rgba(255,255,255,0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.25);
+}
+
+@media (max-width: 992px) {
+  .mayan-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .maya-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

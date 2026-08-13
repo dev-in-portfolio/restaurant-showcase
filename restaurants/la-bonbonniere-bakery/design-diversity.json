@@ -1,0 +1,120 @@
+{
+  "slug": "la-bonbonniere-bakery",
+  "generatedAt": "2026-08-13T15:37:10.112Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "ho-ho-cherry-house",
+    "home-brew-taproom-and-tunes",
+    "honeybear-bake-shop",
+    "ilios-crafted-greek",
+    "italo",
+    "jaipur-indian-restaurant",
+    "jazzy-cheesecakes",
+    "jeff-s-bucket-shop",
+    "jimmy-pearls",
+    "king-fish-poke"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "honeybear-bake-shop",
+    "score": 0.5436842105263158,
+    "classSimilarity": 0.4074074074074074,
+    "cssClassSimilarity": 0.42105263157894735,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "honeybear-bake-shop",
+      "score": 0.5436842105263158,
+      "classSimilarity": 0.4074074074074074,
+      "cssClassSimilarity": 0.42105263157894735,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "italo",
+      "score": 0.4755424954792043,
+      "classSimilarity": 0.35714285714285715,
+      "cssClassSimilarity": 0.3670886075949367,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "jazzy-cheesecakes",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "king-fish-poke",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "ho-ho-cherry-house",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "home-brew-taproom-and-tunes",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "ilios-crafted-greek",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "jaipur-indian-restaurant",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "jeff-s-bucket-shop",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "jimmy-pearls",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    }
+  ]
+}

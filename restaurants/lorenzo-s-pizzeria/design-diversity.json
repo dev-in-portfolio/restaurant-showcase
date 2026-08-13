@@ -1,0 +1,120 @@
+{
+  "slug": "lorenzo-s-pizzeria",
+  "generatedAt": "2026-08-13T16:37:01.202Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "king-fish-poke",
+    "la-bonbonniere-bakery",
+    "la-lima-sangucheria",
+    "la-poblanita-mexican-restaurant",
+    "la-unica-bar-and-grill",
+    "la-victoria-cocina-mexicana-and-bar",
+    "lempira-restaurant",
+    "let-s-meat-kbbq",
+    "libretto-s-pizzeria",
+    "lila-restaurant-and-lounge"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "king-fish-poke",
+    "score": 0.5091139240506329,
+    "classSimilarity": 0.3333333333333333,
+    "cssClassSimilarity": 0.3670886075949367,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "king-fish-poke",
+      "score": 0.5091139240506329,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.3670886075949367,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "lempira-restaurant",
+      "score": 0.5091139240506329,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.3670886075949367,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "la-bonbonniere-bakery",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "la-lima-sangucheria",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "la-poblanita-mexican-restaurant",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "la-victoria-cocina-mexicana-and-bar",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "libretto-s-pizzeria",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "lila-restaurant-and-lounge",
+      "score": 0.46449999999999997,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "la-unica-bar-and-grill",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "let-s-meat-kbbq",
+      "score": 0.4405,
+      "classSimilarity": 0.3333333333333333,
+      "cssClassSimilarity": 0.35,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    }
+  ]
+}

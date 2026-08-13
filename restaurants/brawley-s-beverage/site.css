@@ -1,0 +1,623 @@
+/* Brawley’s Beverage — Craft Taphouse & Cellar Stamp Vault */
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,600;0,700;1,600;1,700&family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-stout-dark: #1c1005;
+  --bg-oak-slate: #2b1704;
+  --bg-parchment-light: #fef3c7;
+  --bg-card-amber: rgba(28, 16, 5, 0.92);
+  
+  --amber-copper: #d97706;
+  --copper-glow: #f59e0b;
+  --copper-deep: #b45309;
+  --text-pure-white: #ffffff;
+  --text-light-parchment: #fde68a;
+  --text-muted-stout: #d1d5db;
+  
+  --border-amber-light: rgba(245, 158, 11, 0.25);
+  --border-amber-bold: rgba(245, 158, 11, 0.6);
+  
+  --font-display-bitter: 'Bitter', serif;
+  --font-mono-tap: 'Space Mono', monospace;
+  --font-body-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --speed-taproom: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-taproom-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-stout-dark);
+  color: var(--text-pure-white);
+  font-family: var(--font-body-sans);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .bitter-font {
+  font-family: var(--font-display-bitter);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-pure-white);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 3.1rem); }
+h3 { font-size: clamp(1.35rem, 2.3vw, 1.85rem); }
+
+p {
+  color: var(--text-muted-stout);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--copper-glow);
+  text-decoration: none;
+  transition: var(--speed-taproom);
+}
+
+a:hover, a:focus-visible {
+  color: var(--text-pure-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber-copper);
+  outline-offset: 4px;
+}
+
+.skip-taproom-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--amber-copper);
+  color: var(--bg-stout-dark);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-taproom-btn:focus {
+  top: 1rem;
+}
+
+.brawley-layout-container {
+  width: 90%;
+  max-width: var(--max-taproom-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.brawley-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(28, 16, 5, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-amber-light);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amber-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-bitter);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-pure-white);
+}
+
+.brand-main-title span {
+  color: var(--copper-glow);
+  font-style: italic;
+}
+
+.brand-subline {
+  font-family: var(--font-mono-tap);
+  font-size: 0.65rem;
+  color: var(--copper-glow);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.brawley-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.brawley-nav-link {
+  font-family: var(--font-body-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted-stout);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.brawley-nav-link:hover, .brawley-nav-link.active {
+  color: var(--text-pure-white);
+}
+
+.brawley-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--amber-copper);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--amber-copper);
+  color: var(--bg-stout-dark);
+  font-family: var(--font-mono-tap);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-taproom);
+}
+
+.btn-header-cta:hover {
+  background: var(--copper-glow);
+  color: var(--bg-stout-dark);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-amber-bold);
+  color: var(--text-pure-white);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-brawley-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-oak-slate);
+  border-bottom: 1px solid var(--border-amber-bold);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.mobile-brawley-drawer.open {
+  display: flex;
+}
+
+/* Craft Taphouse & Cellar Stamp Hero */
+.taproom-hero-stage {
+  padding: 4.5rem 0 3.5rem;
+  background: radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.15) 0%, transparent 60%), var(--bg-stout-dark);
+  border-bottom: 1px solid var(--border-amber-light);
+}
+
+.taproom-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.copper-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-tap);
+  font-size: 0.78rem;
+  color: var(--copper-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid var(--border-amber-bold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--copper-glow);
+  font-style: italic;
+}
+
+.hero-subtext-para {
+  font-size: 1.18rem;
+  color: var(--text-muted-stout);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-amber-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--amber-copper);
+  color: var(--bg-stout-dark);
+  font-weight: 700;
+  font-family: var(--font-mono-tap);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-taproom);
+}
+
+.btn-amber-fill:hover {
+  background: var(--copper-glow);
+  color: var(--bg-stout-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.35);
+}
+
+.btn-amber-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--text-pure-white);
+  border: 1px solid var(--border-amber-bold);
+  font-weight: 700;
+  font-family: var(--font-mono-tap);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-taproom);
+}
+
+.btn-amber-outline:hover {
+  border-color: var(--copper-glow);
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.barrel-frame-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--border-amber-bold);
+}
+
+.barrel-frame-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.taproom-features-section {
+  padding: 4.5rem 0;
+  background: var(--bg-oak-slate);
+  border-bottom: 1px solid var(--border-amber-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-tap);
+  font-size: 0.8rem;
+  color: var(--copper-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.vault-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cellar-vault-card {
+  background: var(--bg-card-amber);
+  border: 1px solid var(--border-amber-light);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-taproom);
+  display: flex;
+  flex-direction: column;
+}
+
+.cellar-vault-card:hover {
+  border-color: var(--copper-glow);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(217, 119, 6, 0.2);
+}
+
+.card-icon-mug {
+  font-size: 2.2rem;
+  color: var(--copper-glow);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--text-pure-white);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-muted-stout);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.taproom-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--amber-copper);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-pure-white);
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-tap);
+  font-size: 0.8rem;
+  color: var(--copper-glow);
+  font-weight: 700;
+}
+
+.menu-beer-item {
+  background: rgba(43, 23, 4, 0.6);
+  border: 1px solid var(--border-amber-light);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-taproom);
+}
+
+.menu-beer-item:hover {
+  border-color: var(--copper-glow);
+}
+
+.beer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.beer-name-text {
+  font-family: var(--font-display-bitter);
+  font-size: 1.25rem;
+  color: var(--text-pure-white);
+}
+
+.beer-badge-pill {
+  font-family: var(--font-mono-tap);
+  font-size: 0.75rem;
+  color: var(--copper-glow);
+  background: rgba(217, 119, 6, 0.15);
+  border: 1px solid var(--border-amber-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.beer-desc-para {
+  color: var(--text-muted-stout);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.vault-accordion {
+  background: rgba(43, 23, 4, 0.7);
+  border: 1px solid var(--border-amber-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-pure-white);
+  font-family: var(--font-display-bitter);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--copper-glow);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-tap);
+  font-size: 1.2rem;
+  color: var(--copper-glow);
+  transition: transform 0.3s ease;
+}
+
+.vault-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.vault-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.brawley-footer {
+  background: #0d0702;
+  color: var(--text-pure-white);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--amber-copper);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  font-size: 1.65rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-tap);
+  font-size: 0.85rem;
+  color: var(--copper-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-muted-stout);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--copper-glow);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #78716c;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-tap);
+  font-size: 0.75rem;
+  color: #78716c;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .taproom-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .brawley-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

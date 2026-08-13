@@ -1,0 +1,630 @@
+/* Costa del Sol — Honduran Coastal Sol & Central American Kitchen Vault */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-caribbean-espresso: #1a120b;
+  --bg-honduran-dark: #24180f;
+  --bg-corn-silk: #fffbeb;
+  --bg-card-white: #ffffff;
+  
+  --honduran-terracotta: #c2410c;
+  --caribbean-teal: #0d9488;
+  --plantain-amber: #d97706;
+  --text-dark-espresso: #1a120b;
+  --text-muted-brown: #66503e;
+  --text-light-cream: #fffbeb;
+  
+  --border-terracotta-light: rgba(194, 65, 12, 0.25);
+  --border-terracotta-bold: rgba(194, 65, 12, 0.7);
+  
+  --font-display-serif: 'Lora', Georgia, serif;
+  --font-sans-body: 'Outfit', sans-serif;
+  --font-mono-kitchen: 'Space Mono', monospace;
+  
+  --speed-costa: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-costa-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-corn-silk);
+  color: var(--text-dark-espresso);
+  font-family: var(--font-sans-body);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .latin-font {
+  font-family: var(--font-display-serif);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-dark-espresso);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.95rem, 4.1vw, 3.15rem); }
+h3 { font-size: clamp(1.4rem, 2.3vw, 1.9rem); }
+
+p {
+  color: var(--text-muted-brown);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--honduran-terracotta);
+  text-decoration: none;
+  transition: var(--speed-costa);
+}
+
+a:hover, a:focus-visible {
+  color: var(--caribbean-teal);
+}
+
+:focus-visible {
+  outline: 2px solid var(--honduran-terracotta);
+  outline-offset: 4px;
+}
+
+.skip-costa-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--honduran-terracotta);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-costa-btn:focus {
+  top: 1rem;
+}
+
+.costa-layout-container {
+  width: 90%;
+  max-width: var(--max-costa-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.costa-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(26, 18, 11, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--honduran-terracotta);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sol-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-serif);
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.brand-main-title span {
+  color: var(--honduran-terracotta);
+  font-style: italic;
+}
+
+.brand-subline {
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--honduran-terracotta);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.costa-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.costa-nav-link {
+  font-family: var(--font-sans-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light-cream);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.costa-nav-link:hover, .costa-nav-link.active {
+  color: var(--honduran-terracotta);
+}
+
+.costa-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--honduran-terracotta);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--honduran-terracotta);
+  color: #ffffff;
+  font-family: var(--font-sans-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-costa);
+}
+
+.btn-header-cta:hover {
+  background: #ffffff;
+  color: var(--bg-caribbean-espresso);
+  box-shadow: 0 4px 15px rgba(194, 65, 12, 0.4);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--honduran-terracotta);
+  color: var(--honduran-terracotta);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-costa-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-honduran-dark);
+  border-bottom: 3px solid var(--honduran-terracotta);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.mobile-costa-drawer.open {
+  display: flex;
+}
+
+/* Honduran Coastal Sol Hero */
+.honduran-hero-stage {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--bg-corn-silk);
+  border-bottom: 1px solid var(--border-terracotta-light);
+}
+
+.honduran-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.sun-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.78rem;
+  color: var(--honduran-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(194, 65, 12, 0.12);
+  border: 1px solid var(--border-terracotta-bold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--honduran-terracotta);
+  font-style: italic;
+}
+
+.hero-subtext-para {
+  font-size: 1.2rem;
+  color: var(--text-muted-brown);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-terracotta-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--honduran-terracotta);
+  color: #ffffff;
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-costa);
+}
+
+.btn-terracotta-fill:hover {
+  background: var(--bg-caribbean-espresso);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 18, 11, 0.4);
+}
+
+.btn-terracotta-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--text-dark-espresso);
+  border: 2px solid var(--text-dark-espresso);
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-costa);
+}
+
+.btn-terracotta-outline:hover {
+  background: rgba(26, 18, 11, 0.08);
+}
+
+.sun-frame-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(26, 18, 11, 0.25);
+  border: 3px solid var(--honduran-terracotta);
+}
+
+.sun-frame-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.costa-features-section {
+  padding: 4.5rem 0;
+  background: #f7eedb;
+  border-bottom: 1px solid var(--border-terracotta-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.8rem;
+  color: var(--honduran-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.costa-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.costa-vault-card {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-terracotta-light);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-costa);
+  display: flex;
+  flex-direction: column;
+}
+
+.costa-vault-card:hover {
+  border-color: var(--honduran-terracotta);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(26, 18, 11, 0.22);
+}
+
+.card-icon-latin {
+  font-size: 2.2rem;
+  color: var(--honduran-terracotta);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: var(--text-dark-espresso);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-muted-brown);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.costa-menu-section {
+  padding: 4.5rem 0;
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--honduran-terracotta);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-dark-espresso);
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.8rem;
+  color: var(--honduran-terracotta);
+  font-weight: 700;
+}
+
+.menu-latin-item {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-terracotta-light);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-costa);
+}
+
+.menu-latin-item:hover {
+  border-color: var(--honduran-terracotta);
+}
+
+.latin-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.latin-name-text {
+  font-family: var(--font-display-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark-espresso);
+}
+
+.latin-badge-pill {
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.75rem;
+  color: var(--bg-caribbean-espresso);
+  background: rgba(194, 65, 12, 0.18);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.latin-desc-para {
+  color: var(--text-muted-brown);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.costa-accordion {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border-terracotta-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-dark-espresso);
+  font-family: var(--font-display-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--honduran-terracotta);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-kitchen);
+  font-size: 1.2rem;
+  color: var(--honduran-terracotta);
+  transition: transform 0.3s ease;
+}
+
+.costa-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.costa-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.costa-footer {
+  background: var(--bg-caribbean-espresso);
+  color: var(--bg-corn-silk);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--honduran-terracotta);
+}
+
+.costa-footer p {
+  color: var(--text-light-cream);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: #ffffff;
+  font-size: 1.65rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.85rem;
+  color: var(--honduran-terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-light-cream);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--honduran-terracotta);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #a8998d;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-kitchen);
+  font-size: 0.75rem;
+  color: #a8998d;
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+@media (max-width: 992px) {
+  .honduran-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .costa-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
