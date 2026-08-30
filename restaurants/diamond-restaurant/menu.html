@@ -3,93 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Diamond Restaurant</title>
-  <meta name="description" content="Explore the full menu at Diamond Restaurant in Charlotte, NC. Starters, entrees, desserts, and drinks.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Menu Board | The Diamond Restaurant — Burgers, Dogs, Greek Plates &amp; Pies</title>
+  <meta name="description" content="The Diamond Restaurant menu board: Big Block burgers, Diamond Dogs, fried bologna, gyros, blue-plate specials, and banana pudding — with prices from the October 2025 menu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Bevan&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Diamond Restaurant</span>
-      </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link active">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+  <a href="#main-content" class="dm-skip">Skip to main content</a>
+
+  <header class="dm-header">
+    <div class="dm-shell dm-header-inner">
+      <a href="index.html" class="dm-logo">The <span class="tube">Diamond</span></a>
+      <nav class="dm-nav" aria-label="Main navigation">
+        <a href="index.html">The Diner</a>
+        <a href="menu.html" class="on">Menu Board</a>
+        <a href="since-1945.html">Since 1945</a>
+        <a href="late-night.html">Late Night</a>
+        <a href="plaza-midwood.html">Plaza Midwood</a>
+        <a href="visit.html">Visit</a>
       </nav>
+      <button class="dm-burger" type="button" aria-expanded="false" aria-controls="dm-drawer" aria-label="Toggle navigation menu">&#9776;</button>
     </div>
-    <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="menu.html" class="nav-link active">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link ">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
+    <nav id="dm-drawer" class="dm-drawer" aria-label="Mobile navigation">
+      <a href="index.html">The Diner</a>
+      <a href="menu.html" class="on">Menu Board</a>
+      <a href="since-1945.html">Since 1945</a>
+      <a href="late-night.html">Late Night</a>
+      <a href="plaza-midwood.html">Plaza Midwood</a>
+      <a href="visit.html">Visit</a>
     </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3.5rem;">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
-      <p class="hero-subtitle">Prepared fresh to order using regional ingredients and scratch-kitchen tradition.</p>
-    </div>
+  <main id="main-content">
 
-    <div class="feature-grid">
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE STARTER</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Artisan Starter</h3>
-        <p class="card-desc">Served fresh with house dip and artisan garnishes.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
-      </div>
+    <section class="dm-boardzone" aria-labelledby="board-title">
+      <div class="dm-shell">
+        <div class="dm-section-head">
+          <span class="dm-section-tag">The Board, In Plain Sight</span>
+          <h2 id="board-title" style="font-family:var(--font-slab);text-transform:uppercase;font-size:clamp(1.7rem,3.8vw,2.5rem);color:var(--midnight);">Three pages of menu. All of it readable.</h2>
+          <p class="dm-section-lede">Prices below are from the October 2025 menu as transcribed from the diner's own menu photos. The kitchen rotates specials — call (704) 375-8959 for today's board.</p>
+        </div>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Diamond Restaurant House Entrée</h3>
-        <p class="card-desc">Slow-prepared to tender perfection, served with seasonal sides.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$32.00</span>
-      </div>
+        <div class="dm-board">
+          <div class="dm-board-head">
+            <h2>What The Counter Serves</h2>
+            <p>Burgers &amp; Dogs · Starters · Greek Lane · Blue Plates · Pie</p>
+          </div>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE SPECIALTY</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Chef's Specialty Dish</h3>
-        <p class="card-desc">Accompanied by garlic herb pilaf and house reduction sauce.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$26.00</span>
-      </div>
+          <div class="dm-board-grid">
+            <div class="dm-cat">
+              <h3>Burgers</h3>
+              <div class="dm-line"><span class="dm-line-name">Big Block Burger<small>The two-thirds-pound legend</small></span><span class="dm-line-dots"></span><span class="dm-line-price">14.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Small Block Burger<small>Third-pound, all the way</small></span><span class="dm-line-dots"></span><span class="dm-line-price">11.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Full Blown Hemi</span><span class="dm-line-dots"></span><span class="dm-line-price">18.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Veggie Burger</span><span class="dm-line-dots"></span><span class="dm-line-price">14.99</span></div>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Signature Craft Beverage</h3>
-        <p class="card-desc">Hand-shaken with botanical juices and house syrups.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
+              <h3 style="margin-top:1.6rem;">Dogs</h3>
+              <div class="dm-line"><span class="dm-line-name">Diamond Dog<small>The twelve-incher</small></span><span class="dm-line-dots"></span><span class="dm-line-price">10.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Winky Dinky Dog<small>Pimento cheese &amp; chili</small></span><span class="dm-line-dots"></span><span class="dm-line-price">9.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Brian's Connecticut Dog</span><span class="dm-line-dots"></span><span class="dm-line-price">8.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Race Track Dog</span><span class="dm-line-dots"></span><span class="dm-line-price">8.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Corn Dog</span><span class="dm-line-dots"></span><span class="dm-line-price">8.99</span></div>
+
+              <h3 style="margin-top:1.6rem;">Starters</h3>
+              <div class="dm-line"><span class="dm-line-name">Chips &amp; Dip<small>Fresh-made chips, Vidalia onion dip</small></span><span class="dm-line-dots"></span><span class="dm-line-price">8.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Pimento Dip<small>Served with pita</small></span><span class="dm-line-dots"></span><span class="dm-line-price">10.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Diamond Fingers (8)<small>Tenders, fries, spicy ranch</small></span><span class="dm-line-dots"></span><span class="dm-line-price">14.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Wings (10)</span><span class="dm-line-dots"></span><span class="dm-line-price">18.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Fried Pickles</span><span class="dm-line-dots"></span><span class="dm-line-price">12.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Hush Puppy Basket (12)</span><span class="dm-line-dots"></span><span class="dm-line-price">8.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Boiled Peanuts</span><span class="dm-line-dots"></span><span class="dm-line-price">8.99</span></div>
+            </div>
+
+            <div class="dm-cat">
+              <h3>Sandwiches</h3>
+              <div class="dm-line"><span class="dm-line-name">Fried Balogna<small>All the way or Southern</small></span><span class="dm-line-dots"></span><span class="dm-line-price">9.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Plaza Pimento</span><span class="dm-line-dots"></span><span class="dm-line-price">10.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Salmon BLT</span><span class="dm-line-dots"></span><span class="dm-line-price">17.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">3 Carat Club</span><span class="dm-line-dots"></span><span class="dm-line-price">17.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Patty Melt</span><span class="dm-line-dots"></span><span class="dm-line-price">12.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Cheesesteak</span><span class="dm-line-dots"></span><span class="dm-line-price">14.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Gyros Pita</span><span class="dm-line-dots"></span><span class="dm-line-price">13.99</span></div>
+
+              <h3 style="margin-top:1.6rem;">Blue Plates &amp; Greek Lane</h3>
+              <div class="dm-line"><span class="dm-line-name">Beef Tips<small>Over rice</small></span><span class="dm-line-dots"></span><span class="dm-line-price">22.95</span></div>
+              <div class="dm-line"><span class="dm-line-name">Gyro Platter</span><span class="dm-line-dots"></span><span class="dm-line-price">21.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">NC Pork Platter</span><span class="dm-line-dots"></span><span class="dm-line-price">14.95</span></div>
+              <div class="dm-line"><span class="dm-line-name">Vegetable Plate (3 or 4)</span><span class="dm-line-dots"></span><span class="dm-line-price">14.99 / 18.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Greek Salad</span><span class="dm-line-dots"></span><span class="dm-line-price">18.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Chicken Parmesan</span><span class="dm-line-dots"></span><span class="dm-line-price">13.95</span></div>
+
+              <h3 style="margin-top:1.6rem;">Pie &amp; Pudding</h3>
+              <div class="dm-line"><span class="dm-line-name">Banana Pudding<small>'Nilla wafers, as it should be</small></span><span class="dm-line-dots"></span><span class="dm-line-price">6.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Peach Cobbler</span><span class="dm-line-dots"></span><span class="dm-line-price">7.99</span></div>
+              <div class="dm-line"><span class="dm-line-name">Daily Pie &amp; Daily Cake</span><span class="dm-line-dots"></span><span class="dm-line-price">6.99</span></div>
+            </div>
+          </div>
+
+          <div class="dm-board-foot">
+            <p>
+              Full bar: bottled and canned beer (including NC craft like Hop Drop, Triple C,
+              and Birdsong), wines by the glass and bottle, and a 6.99 mimosa. Late-night
+              menu runs from 9 PM.
+            </p>
+            <a href="tel:+17043758959" class="dm-btn dm-btn-cherry">Call Today's Board: (704) 375-8959</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="dm-section" aria-labelledby="dialect-title">
+      <div class="dm-shell">
+        <div class="dm-section-head">
+          <span class="dm-section-tag">Speak The Language</span>
+          <h2 id="dialect-title">All the way, or Southern.</h2>
+          <p class="dm-section-lede">Every burger and the fried bologna come with a choice the regulars make without looking at the menu.</p>
+        </div>
+        <div class="dm-tubes">
+          <article class="dm-tube">
+            <span class="dm-tube-mark">All The Way</span>
+            <h3>The Full Dress</h3>
+            <p>Lettuce, tomato, onion, pickle, mayo. The default order of decades of regulars.</p>
+          </article>
+          <article class="dm-tube">
+            <span class="dm-tube-mark">Southern</span>
+            <h3>The Carolina Dress</h3>
+            <p>Chili, mustard, onions, slaw. Messy in the best tradition.</p>
+          </article>
+          <article class="dm-tube">
+            <span class="dm-tube-mark">Your Way</span>
+            <h3>The Counter's Way</h3>
+            <p>Substitutions welcome — the griddle has heard every request since 1945.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  
-  <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Diamond Restaurant</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2109" style="color: var(--accent-color);">(704) 555-2109</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+  <footer class="dm-footer">
+    <div class="dm-shell">
+      <div class="dm-footer-grid">
+        <div>
+          <span class="dm-logo">The <span class="tube">Diamond</span></span>
+          <p class="dm-footer-blurb">Plaza Midwood's diner since 1945 — burgers all the way, Greek plates, a full bar, and banana pudding under the red neon at 1901 Commonwealth Ave.</p>
+        </div>
+        <div>
+          <h4>The Pages</h4>
+          <ul>
+            <li><a href="index.html">The Diner</a></li>
+            <li><a href="menu.html">Menu Board</a></li>
+            <li><a href="since-1945.html">Since 1945</a></li>
+            <li><a href="late-night.html">Late Night</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Practical</h4>
+          <ul>
+            <li><a href="plaza-midwood.html">Plaza Midwood</a></li>
+            <li><a href="visit.html">Visit — Hours &amp; Contact</a></li>
+            <li><a href="tel:+17043758959">(704) 375-8959</a></li>
+            <li><a href="https://www.instagram.com/diamondclt/">Instagram — @diamondclt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dm-footer-base">
+        <p>&copy; 2026 The Diamond Restaurant. All rights reserved.</p>
+        <span class="dm-demo-badge">Unofficial Portfolio Concept Rebuild · Built For Sales Demonstration</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    if (toggleBtn && drawer) {
-      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
-    }
-  </script>
+  <script src="site.js"></script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>

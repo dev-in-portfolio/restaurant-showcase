@@ -3,140 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diamond Restaurant | Authentic Artisanal Culinary & Dining Showcase in Charlotte, NC</title>
-  <meta name="description" content="Welcome to Diamond Restaurant in Charlotte, NC. Discover our authentic menu, reservations, and dining experience.">
+  <title>The Diamond Restaurant | Plaza Midwood Diner Since 1945 — Charlotte NC</title>
+  <meta name="description" content="The Diamond Restaurant has served Plaza Midwood from 1901 Commonwealth Ave since 1945 — burgers all the way, fried bologna, Greek plates, a full bar, and a neon sign you can't miss.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Bevan&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Diamond Restaurant</span>
-      </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+  <a href="#main-content" class="dm-skip">Skip to main content</a>
+
+  <header class="dm-header">
+    <div class="dm-shell dm-header-inner">
+      <a href="index.html" class="dm-logo">The <span class="tube">Diamond</span></a>
+      <nav class="dm-nav" aria-label="Main navigation">
+        <a href="index.html" class="on">The Diner</a>
+        <a href="menu.html">Menu Board</a>
+        <a href="since-1945.html">Since 1945</a>
+        <a href="late-night.html">Late Night</a>
+        <a href="plaza-midwood.html">Plaza Midwood</a>
+        <a href="visit.html">Visit</a>
       </nav>
+      <button class="dm-burger" type="button" aria-expanded="false" aria-controls="dm-drawer" aria-label="Toggle navigation menu">&#9776;</button>
     </div>
-    <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="menu.html" class="nav-link ">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link ">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
+    <nav id="dm-drawer" class="dm-drawer" aria-label="Mobile navigation">
+      <a href="index.html" class="on">The Diner</a>
+      <a href="menu.html">Menu Board</a>
+      <a href="since-1945.html">Since 1945</a>
+      <a href="late-night.html">Late Night</a>
+      <a href="plaza-midwood.html">Plaza Midwood</a>
+      <a href="visit.html">Visit</a>
     </nav>
   </header>
 
-  <main class="site-container">
-    <section class="hero-section">
-      <span class="hero-badge">Handcrafted Specialty • Regional Hospitality & Quality Ingredients</span>
-      <h1 class="hero-title">Diamond Restaurant</h1>
-      <p class="hero-subtitle">Authentic Artisanal Culinary & Dining Showcase in Charlotte, NC. Handcrafted culinary traditions in Charlotte, NC.</p>
-      <div class="hero-actions">
-        <a href="menu.html" class="btn-primary">Explore Culinary Menu →</a>
-        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
-      </div>
-    </section>
+  <main id="main-content">
 
-    <!-- Substantive Featured Offerings -->
-    <section>
-      <h2 class="section-title">Culinary Highlights</h2>
-      <div class="feature-grid">
-        
-        <div class="card">
-          <h3 class="card-title">Diamond Restaurant House Entrée</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
-        </div>
-        
-        <div class="card">
-          <h3 class="card-title">Handcrafted Artisan Starter</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
-        </div>
-        
-        <div class="card">
-          <h3 class="card-title">Chef's Specialty Dish</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
-        </div>
-        
-        <div class="card">
-          <h3 class="card-title">Signature Craft Beverage</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
+    <!-- Neon daylight hero -->
+    <section class="dm-hero" aria-labelledby="hero-word">
+      <div class="dm-shell">
+        <p class="dm-since">Plaza Midwood · Charlotte NC · Diner</p>
+        <h1 class="dm-hero-word" id="hero-word">The Diamond</h1>
+        <p class="dm-hero-sub">1901 Commonwealth Ave · Est. 1945 · Diamond Soda Grill</p>
+        <p class="dm-hero-copy">
+          Eighty years of burgers all the way, fried bologna, Greek plates, and banana
+          pudding — served under the red neon cursive that's been part of Charlotte's
+          skyline since the Diamond Soda Grill first lit up Commonwealth Avenue.
+        </p>
+        <div class="dm-hero-actions">
+          <a href="menu.html" class="dm-btn dm-btn-cherry">Read The Menu Board</a>
+          <a href="since-1945.html" class="dm-btn dm-btn-line">Eight Decades In</a>
         </div>
       </div>
     </section>
 
-    <!-- Restaurant Specific Interactive Module -->
-    <section class="interactive-module-box">
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.4rem;">Diamond Restaurant Interactive Flavor Explorer</h2>
-        <p style="color: var(--text-muted);">Select your culinary preference to explore custom chef recommendations.</p>
-      </div>
-
-      <div class="module-controls" id="module-controls">
-        <button class="module-btn active" onclick="setModuleOption('signature')">Chef Signatures</button>
-        <button class="module-btn" onclick="setModuleOption('seasonal')">Seasonal Fresh</button>
-        <button class="module-btn" onclick="setModuleOption('hearty')">Rich & Hearty</button>
-        <button class="module-btn" onclick="setModuleOption('beverage')">Drink Pairings</button>
-      </div>
-
-      <div class="module-output" id="module-output" aria-live="polite">
-        <h3 id="mod-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.3rem; margin-bottom: 0.4rem;">Diamond Restaurant House Entrée</h3>
-        <p id="mod-desc" style="color: var(--text-muted); font-size: 0.96rem;">Our prime house creation prepared to order with signature seasoning.</p>
+    <!-- Tube panels -->
+    <section class="dm-section" aria-labelledby="rooms-title">
+      <div class="dm-shell">
+        <div class="dm-section-head">
+          <span class="dm-section-tag">Pick Your Seat</span>
+          <h2 id="rooms-title">Counter, booths, or the patio.</h2>
+          <p class="dm-section-lede">The room hasn't changed its mind about what a diner should feel like — and the reviews haven't either.</p>
+        </div>
+        <div class="dm-tubes">
+          <article class="dm-tube">
+            <span class="dm-tube-mark">Counter</span>
+            <h3>Spinny Seats &amp; Hot Coffee</h3>
+            <p>The classic perches at the counter, three pages of menu in reach, coffee refills without asking.</p>
+            <a href="menu.html">Study The Board &rarr;</a>
+          </article>
+          <article class="dm-tube">
+            <span class="dm-tube-mark">Booths</span>
+            <h3>Lived-In &amp; Cozy</h3>
+            <p>Booths that have held eight decades of regulars — popular for lunch, popular for dinner, good for groups.</p>
+            <a href="visit.html">Plan A Table &rarr;</a>
+          </article>
+          <article class="dm-tube">
+            <span class="dm-tube-mark">Patio</span>
+            <h3>Front Row On Commonwealth</h3>
+            <p>The front patio watches the whole neighborhood go by — and it's dog-friendly, according to the regulars.</p>
+            <a href="plaza-midwood.html">See The Block &rarr;</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <div class="demo-disclosure-banner">
-      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Diamond Restaurant.
-    </div>
+    <!-- Midnight late-night band -->
+    <section class="dm-night" aria-labelledby="night-title">
+      <div class="dm-shell">
+        <div class="dm-night-flex">
+          <h2 id="night-title">The neon stays on late.</h2>
+          <a href="late-night.html" class="dm-btn dm-btn-cherry">The Late Shift</a>
+          <p>
+            A late-night menu runs from 9 PM, the full bar keeps pouring, and weekend
+            nights have been known to run past 3 AM. Call (704) 375-8959 to confirm
+            tonight's hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to order -->
+    <section class="dm-section" aria-labelledby="order-title">
+      <div class="dm-shell">
+        <div class="dm-section-head">
+          <span class="dm-section-tag">First Timer's Card</span>
+          <h2 id="order-title">Order it all the way.</h2>
+          <p class="dm-section-lede">That's not a suggestion — it's the local dialect. Here's how the regulars say it.</p>
+        </div>
+        <ul class="dm-diamond-list">
+          <li>
+            <div>
+              <h3>"All The Way"</h3>
+              <p>Lettuce, tomato, onion, pickle, and mayo on your burger — or your fried bologna sandwich, which reviewers call one of the best anywhere.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>"Southern Style"</h3>
+              <p>Chili, mustard, onions, and slaw. The Carolina answer to every topping question.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Chips &amp; Dip To Start</h3>
+              <p>Freshly made potato chips with the Vidalia onion dip — or the hot pimento dip with pita, per The Infatuation.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Banana Pudding To Finish</h3>
+              <p>Homestyle, with chewy, crumbly 'Nilla wafers. Every order should be capped off with it.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="dm-hero-actions" style="justify-content:flex-start;margin-top:2rem;">
+          <a href="menu.html" class="dm-btn dm-btn-night">The Full Board, With Prices</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  
-  <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Diamond Restaurant</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2109" style="color: var(--accent-color);">(704) 555-2109</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+  <footer class="dm-footer">
+    <div class="dm-shell">
+      <div class="dm-footer-grid">
+        <div>
+          <span class="dm-logo">The <span class="tube">Diamond</span></span>
+          <p class="dm-footer-blurb">Plaza Midwood's diner since 1945 — burgers all the way, Greek plates, a full bar, and banana pudding under the red neon at 1901 Commonwealth Ave.</p>
+        </div>
+        <div>
+          <h4>The Pages</h4>
+          <ul>
+            <li><a href="index.html">The Diner</a></li>
+            <li><a href="menu.html">Menu Board</a></li>
+            <li><a href="since-1945.html">Since 1945</a></li>
+            <li><a href="late-night.html">Late Night</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Practical</h4>
+          <ul>
+            <li><a href="plaza-midwood.html">Plaza Midwood</a></li>
+            <li><a href="visit.html">Visit — Hours &amp; Contact</a></li>
+            <li><a href="tel:+17043758959">(704) 375-8959</a></li>
+            <li><a href="https://www.instagram.com/diamondclt/">Instagram — @diamondclt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dm-footer-base">
+        <p>&copy; 2026 The Diamond Restaurant. All rights reserved.</p>
+        <span class="dm-demo-badge">Unofficial Portfolio Concept Rebuild · Built For Sales Demonstration</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    if (toggleBtn && drawer) {
-      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
-    }
-  </script>
+  <script src="site.js"></script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
-
-  <script>
-    const moduleData = {
-      signature: { title: "Diamond Restaurant House Entrée", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
-      seasonal: { title: "Handcrafted Artisan Starter", desc: "A vibrant, refreshing option crafted with fresh seasonal produce." },
-      hearty: { title: "Chef's Specialty Dish", desc: "Savory and deeply satisfying, slow-prepared in house." },
-      beverage: { title: "Signature Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
-    };
-
-    function setModuleOption(key) {
-      document.querySelectorAll('#module-controls .module-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      const data = moduleData[key];
-      document.getElementById('mod-title').innerText = data.title;
-      document.getElementById('mod-desc').innerText = data.desc;
-    }
-  </script>
 </body>
 </html>

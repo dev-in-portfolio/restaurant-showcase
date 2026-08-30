@@ -3,140 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thirsty Beaver Saloon | Authentic Artisanal Culinary & Dining Showcase in Charlotte, NC</title>
-  <meta name="description" content="Welcome to Thirsty Beaver Saloon in Charlotte, NC. Discover our authentic menu, reservations, and dining experience.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600;700&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>The Thirsty Beaver Saloon | Famous Plaza Midwood Dive Bar</title>
+  <meta name="description" content="The Thirsty Beaver Saloon at 1225 Central Ave in Charlotte. The legendary holdout dive bar wrapped by apartments, cold beer longnecks, jukebox, and Mick Jagger lore.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Thirsty Beaver Saloon</span>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="beaver-header">
+    <div class="beaver-container header-flex">
+      <a href="index.html" class="beaver-brand" aria-label="The Thirsty Beaver Saloon Homepage">
+        <span class="brand-title">THE THIRSTY <span>BEAVER</span></span>
+        <span class="brand-subline">CENTRAL AVENUE • 1225 CENTRAL AVE • PLAZA MIDWOOD • THE FAMOUS HOLDOUT SALOON</span>
       </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="beaver-nav-list">
+          <li><a href="index.html" class="beaver-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="beaver-nav-link">Beer &amp; Shots</a></li>
+          <li><a href="the-famous-holdout-saloon.html" class="beaver-nav-link">The Holdout Story</a></li>
+          <li><a href="honky-tonk-jukebox-and-dive-culture.html" class="beaver-nav-link">Jukebox &amp; Lore</a></li>
+          <li><a href="concept.html" class="beaver-nav-link">Our Heritage</a></li>
+          <li><a href="visit.html" class="beaver-nav-link">Hours &amp; Location</a></li>
+        </ul>
       </nav>
+
+      <a href="menu.html" class="btn-header-order">Beer &amp; Provisions</a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
     </div>
-    <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="menu.html" class="nav-link ">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link ">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
-    </nav>
+
+    <div class="mobile-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="beaver-nav-link active">Home</a>
+      <a href="menu.html" class="beaver-nav-link">Beer, Shots &amp; Provisions</a>
+      <a href="the-famous-holdout-saloon.html" class="beaver-nav-link">The Legendary Holdout Story</a>
+      <a href="honky-tonk-jukebox-and-dive-culture.html" class="beaver-nav-link">Jukebox, Mick Jagger &amp; Lore</a>
+      <a href="concept.html" class="beaver-nav-link">Our Plaza Midwood Heritage</a>
+      <a href="visit.html" class="beaver-nav-link">Hours, Cash Info &amp; Directions</a>
+    </div>
   </header>
 
-  <main class="site-container">
-    <section class="hero-section">
-      <span class="hero-badge">Handcrafted Specialty • Regional Hospitality & Quality Ingredients</span>
-      <h1 class="hero-title">Thirsty Beaver Saloon</h1>
-      <p class="hero-subtitle">Authentic Artisanal Culinary & Dining Showcase in Charlotte, NC. Handcrafted culinary traditions in Charlotte, NC.</p>
-      <div class="hero-actions">
-        <a href="menu.html" class="btn-primary">Explore Culinary Menu →</a>
-        <a href="reserve.html" class="btn-secondary">Reserve a Table</a>
-      </div>
-    </section>
+  <main id="main-content">
+    <!-- Hero Stage -->
+    <section class="beaver-hero-stage">
+      <div class="beaver-container hero-grid">
+        <div>
+          <span class="mono-kicker">1225 Central Avenue • Plaza Midwood Charlotte</span>
+          <h1 class="hero-title">Defiant Honky-Tonk, <span>Ice-Cold Cans.</span></h1>
+          <p class="hero-description">Welcome to The Thirsty Beaver Saloon, Charlotte’s most legendary and unyielding dive bar. Nationally famous for refusing to sell out to high-rise developers—forcing a massive apartment complex to be built directly around its one-story cinderblock walls—the Beaver remains an oasis of real country music, dollar bills pinned to the walls, cheap cold beer, and authentic neighborhood soul.</p>
+          
+          <div class="hero-btn-row">
+            <a href="menu.html" class="btn-fill">Saloon Beer List &rarr;</a>
+            <a href="the-famous-holdout-saloon.html" class="btn-outline">The Holdout Legend</a>
+          </div>
+        </div>
 
-    <!-- Substantive Featured Offerings -->
-    <section>
-      <h2 class="section-title">Culinary Highlights</h2>
-      <div class="feature-grid">
-        
-        <div class="card">
-          <h3 class="card-title">Thirsty Beaver Saloon House Entrée</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
-        </div>
-        
-        <div class="card">
-          <h3 class="card-title">Handcrafted Artisan Starter</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
-        </div>
-        
-        <div class="card">
-          <h3 class="card-title">Chef's Specialty Dish</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
-        </div>
-        
-        <div class="card">
-          <h3 class="card-title">Signature Craft Beverage</h3>
-          <p class="card-desc">Prepared fresh daily by our kitchen team using authentic regional techniques and fresh ingredients.</p>
+        <div class="hero-media-wrapper">
+          <div class="hero-frame">
+            <img src="images/beaver-hero.jpg" alt="The Thirsty Beaver Saloon standing defiant as apartment construction wraps around it in Charlotte">
+          </div>
+          <div class="beaver-hero-badge">
+            <div class="hero-badge-title">The Thirsty Beaver</div>
+            <div class="hero-badge-sub">1225 Central Ave • Plaza Midwood Charlotte</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Restaurant Specific Interactive Module -->
-    <section class="interactive-module-box">
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 0.4rem;">Thirsty Beaver Saloon Interactive Flavor Explorer</h2>
-        <p style="color: var(--text-muted);">Select your culinary preference to explore custom chef recommendations.</p>
-      </div>
+    <!-- Standards Feature Grid -->
+    <section class="beaver-standards-section">
+      <div class="beaver-container">
+        <div class="section-head-center">
+          <span class="mono-kicker">Dive Bar Tenets</span>
+          <h2>The Foundations of The Thirsty Beaver Saloon</h2>
+          <p>Cold longnecks, honest pours, cash on the bar, and zero corporate pretension.</p>
+        </div>
 
-      <div class="module-controls" id="module-controls">
-        <button class="module-btn active" onclick="setModuleOption('signature')">Chef Signatures</button>
-        <button class="module-btn" onclick="setModuleOption('seasonal')">Seasonal Fresh</button>
-        <button class="module-btn" onclick="setModuleOption('hearty')">Rich & Hearty</button>
-        <button class="module-btn" onclick="setModuleOption('beverage')">Drink Pairings</button>
-      </div>
+        <div class="standards-grid">
+          <article class="beaver-standard-card">
+            <span class="card-kicker">The Legend</span>
+            <h3 class="card-title">The Famous Holdout</h3>
+            <p class="card-desc">When commercial developers bought the surrounding city block, the Beaver stood its ground. A 323-unit luxury building wraps around the saloon in an iconic horseshoe shape.</p>
+            <a href="the-famous-holdout-saloon.html" class="card-action-link">Read The Complete Saga &rarr;</a>
+          </article>
 
-      <div class="module-output" id="module-output" aria-live="polite">
-        <h3 id="mod-title" style="font-family: var(--font-display); color: var(--accent-color); font-size: 1.3rem; margin-bottom: 0.4rem;">Thirsty Beaver Saloon House Entrée</h3>
-        <p id="mod-desc" style="color: var(--text-muted); font-size: 0.96rem;">Our prime house creation prepared to order with signature seasoning.</p>
+          <article class="beaver-standard-card">
+            <span class="card-kicker">The Icebox</span>
+            <h3 class="card-title">Cans &amp; Longnecks</h3>
+            <p class="card-desc">Grab a cold PBR tallboy, Miller High Life, Lonestar, or local Charlotte craft pint served in a foam koozie. Pair it with a shot of bourbon or tequila from our classic back bar.</p>
+            <a href="menu.html" class="card-action-link">Explore Beer &amp; Shots &rarr;</a>
+          </article>
+
+          <article class="beaver-standard-card">
+            <span class="card-kicker">The Soundtrack</span>
+            <h3 class="card-title">Real Honky-Tonk Jukebox</h3>
+            <p class="card-desc">Loaded with vintage outlaw country, classic rock, blues, and southern roots. No algorithm—just punch the buttons, drop quarters, and shoot a round of pool under the neon.</p>
+            <a href="honky-tonk-jukebox-and-dive-culture.html" class="card-action-link">Discover Dive Lore &rarr;</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <div class="demo-disclosure-banner">
-      ℹ️ <strong>Unofficial Demonstration Website:</strong> This site is an independent Level 0 presentation build created by Dark Star Consulting to showcase web design and interactive development capability for Thirsty Beaver Saloon.
-    </div>
+    <!-- Rich Editorial Highlight Banners -->
+    <section class="beaver-highlights-section">
+      <div class="beaver-container">
+        <!-- Banner 1: The Beaver Mural -->
+        <div class="beaver-highlight-banner">
+          <div class="highlight-story-text">
+            <span class="mono-kicker">The Central Ave Mascot</span>
+            <h2>The Beaver in Cowboy Boots</h2>
+            <p>Painted on our orange cinderblock exterior wall, our cartoon beaver mascot in blue cowboy boots and white ten-gallon hat pours out a cold one for everyone walking down Central Avenue. Framed against towering residential brick, it is Plaza Midwood’s favorite photo landmark and a symbol of independent Charlotte grit.</p>
+            <a href="the-famous-holdout-saloon.html" class="btn-fill">Explore The Architecture &rarr;</a>
+          </div>
+          <div class="highlight-media-frame">
+            <img src="images/beaver-mural.jpg" alt="The Thirsty Beaver cowboy mural and exterior in Plaza Midwood">
+          </div>
+        </div>
+
+        <!-- Banner 2: The Sign & Lore -->
+        <div class="beaver-highlight-banner reverse">
+          <div class="highlight-media-frame">
+            <img src="images/beaver-sign.jpg" alt="The hand-carved Thirsty Beaver Saloon sign with green shamrock">
+          </div>
+          <div class="highlight-story-text">
+            <span class="mono-kicker">Cultural Landmark</span>
+            <h2>Mick Jagger’s Unnoticed Beer</h2>
+            <p>In September 2021, Rolling Stones frontman Mick Jagger slipped into The Thirsty Beaver on a quiet Wednesday evening before their Bank of America Stadium show. Standing outside on our small patio sipping an ice-cold beer, he went completely unrecognized by local patrons until posting a viral photo the next morning.</p>
+            <a href="honky-tonk-jukebox-and-dive-culture.html" class="btn-fill">Read The Jagger Story &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="beaver-cta-section">
+      <div class="beaver-container">
+        <span class="mono-kicker">1225 Central Avenue • Plaza Midwood</span>
+        <h2>Pull Up a Stool at The Beaver Tonight</h2>
+        <p>Open 365 days a year from 12:00 PM noon until 2:00 AM. Cash friendly, outdoor bench seating, free pool, and legendary Plaza Midwood camaraderie.</p>
+        <a href="visit.html" class="btn-fill">Hours, Directions &amp; Cash Directives &rarr;</a>
+      </div>
+    </section>
   </main>
 
-  
-  <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Thirsty Beaver Saloon</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2091" style="color: var(--accent-color);">(704) 555-2091</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+  <footer class="beaver-footer">
+    <div class="beaver-container">
+      <div class="footer-four-columns">
+        <div class="footer-brand-box">
+          <span class="brand-title">THE THIRSTY <span>BEAVER</span></span>
+          <p>Charlotte’s world-famous holdout dive bar and honky-tonk. Ice-cold cans, outlaw country jukebox, pool, and honest camaraderie at 1225 Central Avenue.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Saloon</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Beer &amp; Shots</a></li>
+            <li><a href="the-famous-holdout-saloon.html">The Holdout Story</a></li>
+            <li><a href="honky-tonk-jukebox-and-dive-culture.html">Jukebox &amp; Lore</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Traditions</h4>
+          <ul class="footer-nav-list">
+            <li><a href="concept.html">Our Heritage</a></li>
+            <li><a href="visit.html">Hours &amp; Location</a></li>
+            <li><a href="visit.html#cash">Cash &amp; ATM</a></li>
+            <li><a href="visit.html#food">BYO Food Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Plaza Midwood Landmark</h4>
+          <p style="color: var(--text-dim); font-size: 0.9rem;">1225 Central Ave<br>Charlotte, NC 28204<br>Between Hawthorne &amp; Pecan</p>
+          <p style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--saloon-gold); font-weight: 700;">Phone: (704) 332-9207</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 The Thirsty Beaver Saloon. All rights reserved.</p>
+        <div class="demo-disclaimer">Unofficial Portfolio Concept Rebuild • Built for Sales Demonstration</div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    if (toggleBtn && drawer) {
-      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
-    }
-  </script>
+  <script src="site.js"></script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
-
-  <script>
-    const moduleData = {
-      signature: { title: "Thirsty Beaver Saloon House Entrée", desc: "Our acclaimed signature dish featuring prime ingredients and traditional fire cooking." },
-      seasonal: { title: "Handcrafted Artisan Starter", desc: "A vibrant, refreshing option crafted with fresh seasonal produce." },
-      hearty: { title: "Chef's Specialty Dish", desc: "Savory and deeply satisfying, slow-prepared in house." },
-      beverage: { title: "Signature Craft Beverage", desc: "Expertly crafted beverage paired specifically to complement our house cuts." }
-    };
-
-    function setModuleOption(key) {
-      document.querySelectorAll('#module-controls .module-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      const data = moduleData[key];
-      document.getElementById('mod-title').innerText = data.title;
-      document.getElementById('mod-desc').innerText = data.desc;
-    }
-  </script>
 </body>
 </html>

@@ -1,0 +1,636 @@
+/* Littl Madeleine — Korean-French Haute Pâtisserie & Madeleine Salon */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-blush-cream: #fff1f2;
+  --bg-salon-white: #ffffff;
+  --bg-card-blush: #fff5f6;
+  --bg-french-vanilla: #fef3c7;
+  
+  --deep-plum: #4c0519;
+  --rose-velvet: #881337;
+  --champagne-gold: #d97706;
+  --warm-honey: #b45309;
+  --text-dark-plum: #4c0519;
+  --text-muted-rose: #78350f;
+  --text-light-cream: #ffffff;
+  
+  --border-gold-light: rgba(217, 119, 6, 0.35);
+  --border-plum-bold: rgba(76, 5, 25, 0.85);
+  
+  --font-display-italiana: 'Italiana', serif;
+  --font-sans-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono-madeleine: 'Space Mono', monospace;
+  
+  --speed-madeleine: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-madeleine-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-blush-cream);
+  color: var(--text-dark-plum);
+  font-family: var(--font-sans-body);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .italiana-font {
+  font-family: var(--font-display-italiana);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--deep-plum);
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: clamp(2.6rem, 5.0vw, 4.4rem); }
+h2 { font-size: clamp(2.0rem, 3.8vw, 3.0rem); }
+h3 { font-size: clamp(1.4rem, 2.3vw, 2.0rem); }
+
+p {
+  color: #571c2a;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--champagne-gold);
+  text-decoration: none;
+  transition: var(--speed-madeleine);
+}
+
+a:hover, a:focus-visible {
+  color: var(--deep-plum);
+}
+
+:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 4px;
+}
+
+.skip-madeleine-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--deep-plum);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-madeleine-btn:focus {
+  top: 1rem;
+}
+
+.madeleine-layout-container {
+  width: 90%;
+  max-width: var(--max-madeleine-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.madeleine-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 241, 242, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--champagne-gold);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.madeleine-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-italiana);
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--deep-plum);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-main-title span {
+  color: var(--champagne-gold);
+}
+
+.brand-subline {
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--rose-velvet);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.madeleine-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.madeleine-nav-link {
+  font-family: var(--font-sans-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--deep-plum);
+  padding: 0.25rem 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.madeleine-nav-link:hover, .madeleine-nav-link.active {
+  color: var(--champagne-gold);
+}
+
+.madeleine-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--champagne-gold);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--deep-plum);
+  color: #ffffff;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-madeleine);
+}
+
+.btn-header-cta:hover {
+  background: var(--champagne-gold);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--champagne-gold);
+  color: var(--deep-plum);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-madeleine-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-blush-cream);
+  border-bottom: 2px solid var(--champagne-gold);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.mobile-madeleine-drawer.open {
+  display: flex;
+}
+
+/* Patisserie Hero Stage */
+.patisserie-hero-stage {
+  padding: 5rem 0 4rem;
+  background: radial-gradient(circle at top center, #ffe4e6 0%, #fff1f2 100%);
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.patisserie-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.madeleine-seal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.78rem;
+  color: var(--warm-honey);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--champagne-gold);
+}
+
+.hero-subtext-para {
+  font-size: 1.2rem;
+  color: #571c2a;
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-madeleine-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--deep-plum);
+  color: #ffffff;
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-madeleine);
+}
+
+.btn-madeleine-fill:hover {
+  background: var(--champagne-gold);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4);
+}
+
+.btn-madeleine-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--deep-plum);
+  border: 1px solid rgba(76, 5, 25, 0.35);
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-madeleine);
+}
+
+.btn-madeleine-outline:hover {
+  background: rgba(76, 5, 25, 0.06);
+  border-color: var(--deep-plum);
+}
+
+.madeleine-frame-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(76, 5, 25, 0.15);
+  border: 2px solid var(--champagne-gold);
+}
+
+.madeleine-frame-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Feature Spec Cards */
+.madeleine-features-section {
+  padding: 4.5rem 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.8rem;
+  color: var(--champagne-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.madeleine-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.madeleine-vault-card {
+  background: var(--bg-card-blush);
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-madeleine);
+  display: flex;
+  flex-direction: column;
+}
+
+.madeleine-vault-card:hover {
+  border-color: var(--champagne-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(217, 119, 6, 0.2);
+}
+
+.card-icon-gold {
+  font-size: 2.2rem;
+  color: var(--champagne-gold);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.55rem;
+  color: var(--deep-plum);
+  font-family: var(--font-display-italiana);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: #571c2a;
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.madeleine-menu-section {
+  padding: 4.5rem 0;
+  background: var(--bg-blush-cream);
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.75rem;
+  font-family: var(--font-display-italiana);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--champagne-gold);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--deep-plum);
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.8rem;
+  color: var(--rose-velvet);
+  font-weight: 700;
+}
+
+.menu-madeleine-item {
+  background: #ffffff;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-madeleine);
+}
+
+.menu-madeleine-item:hover {
+  border-color: var(--champagne-gold);
+}
+
+.madeleine-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.madeleine-name-text {
+  font-family: var(--font-display-italiana);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+}
+
+.madeleine-badge-pill {
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.75rem;
+  color: #ffffff;
+  background: var(--deep-plum);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.madeleine-desc-para {
+  color: #571c2a;
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.madeleine-accordion {
+  background: #ffffff;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--deep-plum);
+  font-family: var(--font-display-italiana);
+  font-size: 1.35rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--champagne-gold);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-madeleine);
+  font-size: 1.2rem;
+  color: var(--champagne-gold);
+  transition: transform 0.3s ease;
+}
+
+.madeleine-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.madeleine-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.madeleine-footer {
+  background: var(--deep-plum);
+  color: #ffffff;
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 2px solid var(--champagne-gold);
+}
+
+.madeleine-footer p {
+  color: #fce7f3;
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: #ffffff;
+  font-size: 1.85rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.85rem;
+  color: var(--champagne-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: #fce7f3;
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--champagne-gold);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #fce7f3;
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-madeleine);
+  font-size: 0.75rem;
+  color: var(--champagne-gold);
+  background: rgba(255,255,255,0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(217, 119, 6, 0.4);
+}
+
+@media (max-width: 992px) {
+  .patisserie-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .madeleine-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -3,93 +3,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Thirsty Beaver Saloon</title>
-  <meta name="description" content="Explore the full menu at Thirsty Beaver Saloon in Charlotte, NC. Starters, entrees, desserts, and drinks.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Beer, Shots &amp; Provisions | The Thirsty Beaver Saloon Charlotte</title>
+  <meta name="description" content="Explore The Thirsty Beaver Saloon drink list: ice-cold PBR tallboys, Miller High Life longnecks, shot and beer combos, Carolina craft drafts, and dive bar snacks.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Thirsty Beaver Saloon</span>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="beaver-header">
+    <div class="beaver-container header-flex">
+      <a href="index.html" class="beaver-brand" aria-label="The Thirsty Beaver Saloon Homepage">
+        <span class="brand-title">THE THIRSTY <span>BEAVER</span></span>
+        <span class="brand-subline">CENTRAL AVENUE • 1225 CENTRAL AVE • PLAZA MIDWOOD • THE FAMOUS HOLDOUT SALOON</span>
       </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link active">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link ">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="beaver-nav-list">
+          <li><a href="index.html" class="beaver-nav-link">Home</a></li>
+          <li><a href="menu.html" class="beaver-nav-link active">Beer &amp; Shots</a></li>
+          <li><a href="the-famous-holdout-saloon.html" class="beaver-nav-link">The Holdout Story</a></li>
+          <li><a href="honky-tonk-jukebox-and-dive-culture.html" class="beaver-nav-link">Jukebox &amp; Lore</a></li>
+          <li><a href="concept.html" class="beaver-nav-link">Our Heritage</a></li>
+          <li><a href="visit.html" class="beaver-nav-link">Hours &amp; Location</a></li>
+        </ul>
       </nav>
+
+      <a href="menu.html" class="btn-header-order">Beer &amp; Provisions</a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
     </div>
-    <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="menu.html" class="nav-link active">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link ">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
-    </nav>
+
+    <div class="mobile-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="beaver-nav-link">Home</a>
+      <a href="menu.html" class="beaver-nav-link active">Beer, Shots &amp; Provisions</a>
+      <a href="the-famous-holdout-saloon.html" class="beaver-nav-link">The Legendary Holdout Story</a>
+      <a href="honky-tonk-jukebox-and-dive-culture.html" class="beaver-nav-link">Jukebox, Mick Jagger &amp; Lore</a>
+      <a href="concept.html" class="beaver-nav-link">Our Plaza Midwood Heritage</a>
+      <a href="visit.html" class="beaver-nav-link">Hours, Cash Info &amp; Directions</a>
+    </div>
   </header>
 
-  <main class="site-container" style="padding-top: 3.5rem;">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <h1 class="hero-title" style="font-size: 2.8rem;">Culinary Offerings</h1>
-      <p class="hero-subtitle">Prepared fresh to order using regional ingredients and scratch-kitchen tradition.</p>
-    </div>
+  <main id="main-content">
+    <section class="beaver-hero-stage" style="padding: 4.5rem 0 3.5rem;">
+      <div class="beaver-container hero-grid">
+        <div>
+          <span class="mono-kicker">Open 12:00 PM – 2:00 AM • 365 Days A Year</span>
+          <h1 class="hero-title">Ice-Cold Longnecks, <span>Honest Pours.</span></h1>
+          <p class="hero-description">We keep it straightforward at The Thirsty Beaver: domestic tallboys chilled to the bone, generous shot-and-a-beer pairings, local Charlotte craft taps, salty dive snacks, and a warm welcome for outside food brought in from our Plaza Midwood neighbors.</p>
+          <div class="hero-btn-row">
+            <a href="#beers" class="btn-fill">Cold Cans &amp; Bottles &rarr;</a>
+            <a href="#shots" class="btn-outline">Shot &amp; Beer Combos</a>
+            <a href="#snacks" class="btn-outline">BYO Food Policy</a>
+          </div>
+        </div>
 
-    <div class="feature-grid">
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE STARTER</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Handcrafted Artisan Starter</h3>
-        <p class="card-desc">Served fresh with house dip and artisan garnishes.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$14.00</span>
+        <div class="hero-media-wrapper">
+          <div class="hero-frame">
+            <img src="images/beaver-sign.jpg" alt="Thirsty Beaver Saloon sign on Central Avenue">
+          </div>
+          <div class="beaver-hero-badge">
+            <div class="hero-badge-title">Saloon Drinks</div>
+            <div class="hero-badge-sub">Cold Longnecks, Shot Combos &amp; Dive Snacks</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CHEF SIGNATURE</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Thirsty Beaver Saloon House Entrée</h3>
-        <p class="card-desc">Slow-prepared to tender perfection, served with seasonal sides.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$32.00</span>
-      </div>
+    <!-- Menu Content -->
+    <section style="padding: 5rem 0; background: var(--bg-hearth-panel);">
+      <div class="beaver-container">
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">HOUSE SPECIALTY</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Chef's Specialty Dish</h3>
-        <p class="card-desc">Accompanied by garlic herb pilaf and house reduction sauce.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$26.00</span>
-      </div>
+        <!-- Category: Classic Beers -->
+        <div id="beers" class="menu-category-block">
+          <div class="menu-category-header">
+            <h2>Classic Cold Cans &amp; Longneck Bottles</h2>
+            <p style="color: var(--text-dim); margin-top: 0.3rem;">Served ice-cold with a saloon foam koozie.</p>
+          </div>
 
-      <div class="card">
-        <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 700;">CRAFT BEVERAGE</span>
-        <h3 class="card-title" style="margin-top: 0.4rem;">Signature Craft Beverage</h3>
-        <p class="card-desc">Hand-shaken with botanical juices and house syrups.</p>
-        <span style="display: block; margin-top: 1rem; font-weight: 700; color: var(--accent-color);">$13.50</span>
+          <div class="menu-items-grid">
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Pabst Blue Ribbon (PBR 16oz Tallboy)</span>
+                <span class="item-price">$3.50</span>
+              </div>
+              <p class="item-desc">The official staple of The Thirsty Beaver Saloon. Chilled straight from our reach-in coolers and served in an insulated koozie.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Miller High Life "Champagne of Beers"</span>
+                <span class="item-price">$3.50</span>
+              </div>
+              <p class="item-desc">Classic glass longneck bottle poured ice-cold. Crisp, effervescent, and timeless dive bar perfection.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Lone Star Beer (12oz Can)</span>
+                <span class="item-price">$4.00</span>
+              </div>
+              <p class="item-desc">The National Beer of Texas brought to Central Avenue. Light, refreshing, and custom-ordered for our country music crowd.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Modelo Especial / Corona Extra</span>
+                <span class="item-price">$5.00</span>
+              </div>
+              <p class="item-desc">Chilled Mexican imported lager served with a fresh lime wedge upon request.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Craft Taps -->
+        <div id="craft" class="menu-category-block">
+          <div class="menu-category-header">
+            <h2>Carolina Craft Beers on Tap &amp; Ciders</h2>
+            <p style="color: var(--text-dim); margin-top: 0.3rem;">Rotating fresh draft lines from Charlotte and regional breweries.</p>
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Sycamore Mountain Candy IPA (Draft)</span>
+                <span class="item-price">$7.00</span>
+              </div>
+              <p class="item-desc">Locally brewed Charlotte East Coast IPA bursting with candied citrus, pine aroma, and resinous hop finish.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">NoDa Brewing CAVU Blonde Ale (Draft)</span>
+                <span class="item-price">$6.50</span>
+              </div>
+              <p class="item-desc">Light, crisp, and refreshing local Charlotte craft ale with a clean malt backbone and subtle citrus hops.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Legion Juicy Jay IPA (Draft)</span>
+                <span class="item-price">$7.00</span>
+              </div>
+              <p class="item-desc">Plaza Midwood’s hometown favorite hazy IPA featuring notes of ripe mango, passionfruit, and bright tropical zest.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Bold Rock Hard Cider (Bottle)</span>
+                <span class="item-price">$6.00</span>
+              </div>
+              <p class="item-desc">Crisp, naturally gluten-free apple cider crafted from crushed Blue Ridge Mountain heritage apples.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Shot & Beer Combos -->
+        <div id="shots" class="menu-category-block">
+          <div class="menu-category-header">
+            <h2>Honky-Tonk Shot &amp; Beer Combos</h2>
+            <p style="color: var(--text-dim); margin-top: 0.3rem;">Pair an ice-cold can with a shot of whiskey or tequila.</p>
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">The Beaver Boilermaker</span>
+                <span class="item-price">$8.00</span>
+              </div>
+              <p class="item-desc">A frosty PBR tallboy can served with a hearty pour of Kentucky straight bourbon whiskey.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">The Central Avenue Special</span>
+                <span class="item-price">$8.50</span>
+              </div>
+              <p class="item-desc">A longneck Miller High Life bottle accompanied by a shot of 100% blue agave silver tequila.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Jameson Irish Whiskey Pour</span>
+                <span class="item-price">$7.00</span>
+              </div>
+              <p class="item-desc">Generous pour served neat, on the rocks, or as a quick shooter with a pickle-juice chaser.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Fireball Cinnamon Shot</span>
+                <span class="item-price">$5.00</span>
+              </div>
+              <p class="item-desc">Ice-cold cinnamon whiskey shot served straight from the saloon freezer.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Snacks & BYO -->
+        <div id="snacks" class="menu-category-block">
+          <div class="menu-category-header">
+            <h2>Dive Snacks &amp; Bring-Your-Own-Food Policy</h2>
+            <p style="color: var(--text-dim); margin-top: 0.3rem;">Satisfy your hunger right at the bar or bring in takeout.</p>
+          </div>
+
+          <div class="menu-items-grid">
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Hard-Boiled Pickled Eggs (2)</span>
+                <span class="item-price">$2.00</span>
+              </div>
+              <p class="item-desc">The classic southern tavern bar jar staple, seasoned in spiced vinegar brine and served with hot sauce.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Roasted Peanuts in the Shell</span>
+                <span class="item-price">$3.00</span>
+              </div>
+              <p class="item-desc">Salted in the shell. Crack them open, toss the shells in the bucket, and enjoy with a cold draft.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Smoked Beef Jerky Snack Stick</span>
+                <span class="item-price">$2.50</span>
+              </div>
+              <p class="item-desc">Savory peppered beef snack stick cured with hickory smoke.</p>
+            </div>
+
+            <div class="menu-item-row">
+              <div class="item-top-flex">
+                <span class="item-name">Bring Your Own Food (Always Free!)</span>
+                <span class="item-price">$0.00</span>
+              </div>
+              <p class="item-desc">We do not operate a commercial kitchen, so you are warmly invited to bring takeout pizzas, tacos, or burgers from any Plaza Midwood restaurant to enjoy at our bar.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
   </main>
 
-  
-  <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Thirsty Beaver Saloon</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2091" style="color: var(--accent-color);">(704) 555-2091</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+  <footer class="beaver-footer">
+    <div class="beaver-container">
+      <div class="footer-four-columns">
+        <div class="footer-brand-box">
+          <span class="brand-title">THE THIRSTY <span>BEAVER</span></span>
+          <p>Charlotte’s world-famous holdout dive bar and honky-tonk. Ice-cold cans, outlaw country jukebox, pool, and honest camaraderie at 1225 Central Avenue.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Saloon</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Beer &amp; Shots</a></li>
+            <li><a href="the-famous-holdout-saloon.html">The Holdout Story</a></li>
+            <li><a href="honky-tonk-jukebox-and-dive-culture.html">Jukebox &amp; Lore</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Traditions</h4>
+          <ul class="footer-nav-list">
+            <li><a href="concept.html">Our Heritage</a></li>
+            <li><a href="visit.html">Hours &amp; Location</a></li>
+            <li><a href="visit.html#cash">Cash &amp; ATM</a></li>
+            <li><a href="visit.html#food">BYO Food Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Plaza Midwood Landmark</h4>
+          <p style="color: var(--text-dim); font-size: 0.9rem;">1225 Central Ave<br>Charlotte, NC 28204<br>Between Hawthorne &amp; Pecan</p>
+          <p style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--saloon-gold); font-weight: 700;">Phone: (704) 332-9207</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 The Thirsty Beaver Saloon. All rights reserved.</p>
+        <div class="demo-disclaimer">Unofficial Portfolio Concept Rebuild • Built for Sales Demonstration</div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    if (toggleBtn && drawer) {
-      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
-    }
-  </script>
+  <script src="site.js"></script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>

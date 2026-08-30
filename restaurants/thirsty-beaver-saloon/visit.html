@@ -3,81 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit Us | Thirsty Beaver Saloon</title>
-  <meta name="description" content="Location, hours, and contact information for Thirsty Beaver Saloon in Charlotte, NC.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Hours, Cash Info &amp; Directions | The Thirsty Beaver Saloon</title>
+  <meta name="description" content="Plan your visit to The Thirsty Beaver Saloon on Central Ave: open 365 days a year 12pm-2am, cash and ATM details, BYO outside food guidelines, and parking.">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Thirsty Beaver Saloon</span>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="beaver-header">
+    <div class="beaver-container header-flex">
+      <a href="index.html" class="beaver-brand" aria-label="The Thirsty Beaver Saloon Homepage">
+        <span class="brand-title">THE THIRSTY <span>BEAVER</span></span>
+        <span class="brand-subline">CENTRAL AVENUE • 1225 CENTRAL AVE • PLAZA MIDWOOD • THE FAMOUS HOLDOUT SALOON</span>
       </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link active">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="beaver-nav-list">
+          <li><a href="index.html" class="beaver-nav-link">Home</a></li>
+          <li><a href="menu.html" class="beaver-nav-link">Beer &amp; Shots</a></li>
+          <li><a href="the-famous-holdout-saloon.html" class="beaver-nav-link">The Holdout Story</a></li>
+          <li><a href="honky-tonk-jukebox-and-dive-culture.html" class="beaver-nav-link">Jukebox &amp; Lore</a></li>
+          <li><a href="concept.html" class="beaver-nav-link">Our Heritage</a></li>
+          <li><a href="visit.html" class="beaver-nav-link active">Hours &amp; Location</a></li>
+        </ul>
       </nav>
+
+      <a href="menu.html" class="btn-header-order">Beer &amp; Provisions</a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        &#9776;
+      </button>
     </div>
-    <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="menu.html" class="nav-link ">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link active">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
-    </nav>
+
+    <div class="mobile-drawer" aria-label="Mobile Navigation">
+      <a href="index.html" class="beaver-nav-link">Home</a>
+      <a href="menu.html" class="beaver-nav-link">Beer, Shots &amp; Provisions</a>
+      <a href="the-famous-holdout-saloon.html" class="beaver-nav-link">The Legendary Holdout Story</a>
+      <a href="honky-tonk-jukebox-and-dive-culture.html" class="beaver-nav-link">Jukebox, Mick Jagger &amp; Lore</a>
+      <a href="concept.html" class="beaver-nav-link">Our Plaza Midwood Heritage</a>
+      <a href="visit.html" class="beaver-nav-link active">Hours, Cash Info &amp; Directions</a>
+    </div>
   </header>
 
-  <main class="site-container" style="padding-top: 3.5rem;">
-    <div style="text-align: center; margin-bottom: 3.5rem;">
-      <h1 class="hero-title" style="font-size: 2.8rem;">Visit & Contact</h1>
-      <p class="hero-subtitle">We look forward to hosting you in Charlotte, NC.</p>
-    </div>
+  <main id="main-content">
+    <section class="beaver-hero-stage" style="padding: 4.5rem 0 3.5rem;">
+      <div class="beaver-container hero-grid">
+        <div>
+          <span class="mono-kicker">1225 Central Avenue • Plaza Midwood Charlotte</span>
+          <h1 class="hero-title">Open Daily, <span>Three-Sixty-Five.</span></h1>
+          <p class="hero-description">Located on Central Avenue in the heart of Plaza Midwood, The Thirsty Beaver Saloon never closes for holidays. We are open from high noon to 2:00 AM every single day of the year. Pull up a stool, drop some quarters in the jukebox, and make yourself at home.</p>
+          <div class="hero-btn-row">
+            <a href="#schedule" class="btn-fill">Daily Hours &rarr;</a>
+            <a href="#cash" class="btn-outline">Cash &amp; ATM Info</a>
+          </div>
+        </div>
 
-    <div class="feature-grid">
-      <div class="card">
-        <h3 class="card-title">Location & Address</h3>
-        <p class="card-desc" style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Charlotte Metro Region, NC</p>
-        <p class="card-desc">Convenient parking available nearby.</p>
+        <div class="hero-media-wrapper">
+          <div class="hero-frame">
+            <img src="images/beaver-sign.jpg" alt="Visiting The Thirsty Beaver Saloon in Charlotte">
+          </div>
+          <div class="beaver-hero-badge">
+            <div class="hero-badge-title">Visit The Beaver</div>
+            <div class="hero-badge-sub">1225 Central Ave, Plaza Midwood</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3 class="card-title">Hours of Operation</h3>
-        <p class="card-desc" style="color: #fff; font-weight: 600;">Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      </div>
+    <!-- Operational Core Facts Grid -->
+    <section id="schedule" style="padding: 5.5rem 0; background: var(--bg-charcoal); border-bottom: 1px solid var(--border-gold);">
+      <div class="beaver-container">
+        <div class="standards-grid">
+          <!-- Hours -->
+          <article class="beaver-standard-card">
+            <span class="card-kicker">Year-Round Hours</span>
+            <h3 class="card-title">Open 365 Days</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem; color: var(--text-muted); font-size: 0.88rem;">
+              <li><strong>Monday – Sunday:</strong> 12:00 PM – 2:00 AM</li>
+              <li><strong>Holidays:</strong> Open every single holiday</li>
+              <li><strong>Last Call:</strong> 1:45 AM nightly</li>
+            </ul>
+          </article>
 
-      <div class="card">
-        <h3 class="card-title">Direct Contact</h3>
-        <p class="card-desc">Phone: <a href="tel:(704) 555-2091" style="color: var(--accent-color); font-weight: 700;">(704) 555-2091</a></p>
+          <!-- Location -->
+          <article class="beaver-standard-card">
+            <span class="card-kicker">Central Ave Address</span>
+            <h3 class="card-title">Plaza Midwood Location</h3>
+            <p class="card-desc"><strong>Address:</strong><br>1225 Central Ave<br>Charlotte, NC 28204<br>Between Hawthorne &amp; Pecan</p>
+            <p class="card-desc" style="margin-top: 0.6rem; color: var(--saloon-gold); font-family: var(--font-mono); font-weight: 700;">Phone: (704) 332-9207</p>
+          </article>
+
+          <!-- Format Policy -->
+          <article class="beaver-standard-card">
+            <span class="card-kicker">Bar Format</span>
+            <h3 class="card-title">21+ Dive Saloon</h3>
+            <p class="card-desc"><strong>Age:</strong> Strictly 21 and over with valid government-issued photo ID.<br><strong>Vibe:</strong> Casual, friendly, unpretentious, and dog-friendly on the patio.</p>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Cash & BYO Directives -->
+    <section style="padding: 5.5rem 0; background: var(--bg-hearth-panel);">
+      <div class="beaver-container">
+        
+        <!-- Cash Directive -->
+        <div id="cash" class="beaver-highlight-banner" style="margin-bottom: 3.5rem;">
+          <div class="highlight-story-text">
+            <span class="mono-kicker">Payment Directives</span>
+            <h2>Cash &amp; On-Site ATM</h2>
+            <p>Tips for smooth bar service at The Beaver:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-muted); font-size: 0.95rem;">
+              <li style="border-left: 2px solid var(--saloon-gold); padding-left: 1rem;"><strong>Cash Is King:</strong> Cash speeds up service during busy nights, concerts, and weekend afternoons.</li>
+              <li style="border-left: 2px solid var(--saloon-gold); padding-left: 1rem;"><strong>Indoor ATM:</strong> We have an on-site automated teller machine inside next to the jukebox.</li>
+              <li style="border-left: 2px solid var(--saloon-gold); padding-left: 1rem;"><strong>Credit Cards:</strong> Cards are accepted at the bar with standard tab pre-authorization.</li>
+            </ul>
+          </div>
+          <div class="highlight-media-frame">
+            <img src="images/beaver-mural.jpg" alt="Thirsty Beaver exterior">
+          </div>
+        </div>
+
+        <!-- Food & Transit Directive -->
+        <div id="food" class="beaver-highlight-banner reverse">
+          <div class="highlight-media-frame">
+            <img src="images/beaver-hero.jpg" alt="Thirsty Beaver holdout building">
+          </div>
+          <div class="highlight-story-text">
+            <span class="mono-kicker">Neighborhood Synergy</span>
+            <h2>Bring Your Own Food &amp; Transit</h2>
+            <p>Making the most of your trip to Plaza Midwood:</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; color: var(--text-muted); font-size: 0.95rem;">
+              <li style="border-left: 2px solid var(--tavern-brick); padding-left: 1rem;"><strong>Bring Outside Food:</strong> Feel free to bring takeout pizza, burritos, barbecue, or sandwiches from nearby Plaza Midwood eateries directly to our bar tables.</li>
+              <li style="border-left: 2px solid var(--tavern-brick); padding-left: 1rem;"><strong>Parking Options:</strong> Free public street parking is available along Central Avenue and adjacent residential streets.</li>
+              <li style="border-left: 2px solid var(--tavern-brick); padding-left: 1rem;"><strong>Rideshare &amp; Bus:</strong> Convenient rideshare drop-off zone directly on Central Ave, and CATS bus Route 9 stops nearby.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
-  
-  <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Thirsty Beaver Saloon</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2091" style="color: var(--accent-color);">(704) 555-2091</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+  <footer class="beaver-footer">
+    <div class="beaver-container">
+      <div class="footer-four-columns">
+        <div class="footer-brand-box">
+          <span class="brand-title">THE THIRSTY <span>BEAVER</span></span>
+          <p>Charlotte’s world-famous holdout dive bar and honky-tonk. Ice-cold cans, outlaw country jukebox, pool, and honest camaraderie at 1225 Central Avenue.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Saloon</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Beer &amp; Shots</a></li>
+            <li><a href="the-famous-holdout-saloon.html">The Holdout Story</a></li>
+            <li><a href="honky-tonk-jukebox-and-dive-culture.html">Jukebox &amp; Lore</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Traditions</h4>
+          <ul class="footer-nav-list">
+            <li><a href="concept.html">Our Heritage</a></li>
+            <li><a href="visit.html">Hours &amp; Location</a></li>
+            <li><a href="visit.html#cash">Cash &amp; ATM</a></li>
+            <li><a href="visit.html#food">BYO Food Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Plaza Midwood Landmark</h4>
+          <p style="color: var(--text-dim); font-size: 0.9rem;">1225 Central Ave<br>Charlotte, NC 28204<br>Between Hawthorne &amp; Pecan</p>
+          <p style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--saloon-gold); font-weight: 700;">Phone: (704) 332-9207</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 The Thirsty Beaver Saloon. All rights reserved.</p>
+        <div class="demo-disclaimer">Unofficial Portfolio Concept Rebuild • Built for Sales Demonstration</div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    if (toggleBtn && drawer) {
-      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
-    }
-  </script>
+  <script src="site.js"></script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>

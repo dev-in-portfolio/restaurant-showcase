@@ -1,0 +1,1375 @@
+{
+  "batch": "2026-08-30-premium-136",
+  "created_at": "2026-08-30T17:35:30.736Z",
+  "source_repository": "dev-in-portfolio/restaurants",
+  "source_branch": "main",
+  "source_commit_frozen": "f71681608fdfffd6844ab39796451265a6150bba",
+  "destination_repository": "dev-in-portfolio/restaurant-showcase",
+  "destination_branch": "main",
+  "destination_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7",
+  "count": 136,
+  "added": 134,
+  "replaced": 2,
+  "records": [
+    {
+      "restaurant_name": "The Brickyard",
+      "source_slug": "the-brickyard",
+      "source_path": "the-brickyard",
+      "showcase_slug": "the-brickyard",
+      "showcase_path": "restaurants/the-brickyard",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The ChangeBaker Place",
+      "source_slug": "the-changebaker-place",
+      "source_path": "the-changebaker-place",
+      "showcase_slug": "the-changebaker-place",
+      "showcase_path": "restaurants/the-changebaker-place",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Corner Pub",
+      "source_slug": "the-corner-pub",
+      "source_path": "the-corner-pub",
+      "showcase_slug": "the-corner-pub",
+      "showcase_path": "restaurants/the-corner-pub",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Craic",
+      "source_slug": "the-craic",
+      "source_path": "the-craic",
+      "showcase_slug": "the-craic",
+      "showcase_path": "restaurants/the-craic",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Diamond Restaurant",
+      "source_slug": "the-diamond-restaurant",
+      "source_path": "the-diamond-restaurant",
+      "showcase_slug": "diamond-restaurant",
+      "showcase_path": "restaurants/diamond-restaurant",
+      "operation": "replaced",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Milkbread",
+      "source_slug": "milkbread",
+      "source_path": "milkbread",
+      "showcase_slug": "milkbread",
+      "showcase_path": "restaurants/milkbread",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Miro Spanish Grille",
+      "source_slug": "miro-spanish-grille",
+      "source_path": "miro-spanish-grille",
+      "showcase_slug": "miro-spanish-grille",
+      "showcase_path": "restaurants/miro-spanish-grille",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Mother of Dragons",
+      "source_slug": "mother-of-dragons",
+      "source_path": "mother-of-dragons",
+      "showcase_slug": "mother-of-dragons",
+      "showcase_path": "restaurants/mother-of-dragons",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Must Be Nice",
+      "source_slug": "must-be-nice",
+      "source_path": "must-be-nice",
+      "showcase_slug": "must-be-nice",
+      "showcase_path": "restaurants/must-be-nice",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Nalan Indian Cuisine",
+      "source_slug": "nalan-indian-cuisine",
+      "source_path": "nalan-indian-cuisine",
+      "showcase_slug": "nalan-indian-cuisine",
+      "showcase_path": "restaurants/nalan-indian-cuisine",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Night Swim Coffee",
+      "source_slug": "night-swim-coffee",
+      "source_path": "night-swim-coffee",
+      "showcase_slug": "night-swim-coffee",
+      "showcase_path": "restaurants/night-swim-coffee",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Niki’s Food Shop",
+      "source_slug": "niki-s-food-shop",
+      "source_path": "niki-s-food-shop",
+      "showcase_slug": "niki-s-food-shop",
+      "showcase_path": "restaurants/niki-s-food-shop",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Ninety’s Dessert Bar",
+      "source_slug": "ninety-s-dessert-bar",
+      "source_path": "ninety-s-dessert-bar",
+      "showcase_slug": "ninety-s-dessert-bar",
+      "showcase_path": "restaurants/ninety-s-dessert-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "No Proof",
+      "source_slug": "no-proof",
+      "source_path": "no-proof",
+      "showcase_slug": "no-proof",
+      "showcase_path": "restaurants/no-proof",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "NoDa Bodega",
+      "source_slug": "noda-bodega",
+      "source_path": "noda-bodega",
+      "showcase_slug": "noda-bodega",
+      "showcase_path": "restaurants/noda-bodega",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Nora Mac’s Traditional Irish Pub",
+      "source_slug": "nora-mac-s-traditional-irish-pub",
+      "source_path": "nora-mac-s-traditional-irish-pub",
+      "showcase_slug": "nora-mac-s-traditional-irish-pub",
+      "showcase_path": "restaurants/nora-mac-s-traditional-irish-pub",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Oaklore Bar & Bottle Shop",
+      "source_slug": "oaklore-bar-and-bottle-shop",
+      "source_path": "oaklore-bar-and-bottle-shop",
+      "showcase_slug": "oaklore-bar-and-bottle-shop",
+      "showcase_path": "restaurants/oaklore-bar-and-bottle-shop",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Oh My Ganache, The Cheesecake Bar",
+      "source_slug": "oh-my-ganache-the-cheesecake-bar",
+      "source_path": "oh-my-ganache-the-cheesecake-bar",
+      "showcase_slug": "oh-my-ganache-the-cheesecake-bar",
+      "showcase_path": "restaurants/oh-my-ganache-the-cheesecake-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Oh My Soul",
+      "source_slug": "oh-my-soul",
+      "source_path": "oh-my-soul",
+      "showcase_slug": "oh-my-soul",
+      "showcase_path": "restaurants/oh-my-soul",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Olivelli Deli",
+      "source_slug": "olivelli-deli",
+      "source_path": "olivelli-deli",
+      "showcase_slug": "olivelli-deli",
+      "showcase_path": "restaurants/olivelli-deli",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Panda’s Den",
+      "source_slug": "panda-s-den",
+      "source_path": "panda-s-den",
+      "showcase_slug": "panda-s-den",
+      "showcase_path": "restaurants/panda-s-den",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Papi Queso",
+      "source_slug": "papi-queso",
+      "source_path": "papi-queso",
+      "showcase_slug": "papi-queso",
+      "showcase_path": "restaurants/papi-queso",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Papi Ricko Latin Kitchen & Lounge",
+      "source_slug": "papi-ricko-latin-kitchen-and-lounge",
+      "source_path": "papi-ricko-latin-kitchen-and-lounge",
+      "showcase_slug": "papi-ricko-latin-kitchen-and-lounge",
+      "showcase_path": "restaurants/papi-ricko-latin-kitchen-and-lounge",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Parkway House Family Restaurant",
+      "source_slug": "parkway-house-family-restaurant",
+      "source_path": "parkway-house-family-restaurant",
+      "showcase_slug": "parkway-house-family-restaurant",
+      "showcase_path": "restaurants/parkway-house-family-restaurant",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Passage to India Indian Cuisine",
+      "source_slug": "passage-to-india-indian-cuisine",
+      "source_path": "passage-to-india-indian-cuisine",
+      "showcase_slug": "passage-to-india-indian-cuisine",
+      "showcase_path": "restaurants/passage-to-india-indian-cuisine",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pho Huong Que",
+      "source_slug": "pho-huong-que",
+      "source_path": "pho-huong-que",
+      "showcase_slug": "pho-huong-que",
+      "showcase_path": "restaurants/pho-huong-que",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Picasso’s Sports Café",
+      "source_slug": "picasso-s-sports-cafe",
+      "source_path": "picasso-s-sports-cafe",
+      "showcase_slug": "picasso-s-sports-cafe",
+      "showcase_path": "restaurants/picasso-s-sports-cafe",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Persuasian Restaurant",
+      "source_slug": "persuasian-restaurant",
+      "source_path": "persuasian-restaurant",
+      "showcase_slug": "persuasian-restaurant",
+      "showcase_path": "restaurants/persuasian-restaurant",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pertinacious Coffee",
+      "source_slug": "pertinacious-coffee",
+      "source_path": "pertinacious-coffee",
+      "showcase_slug": "pertinacious-coffee",
+      "showcase_path": "restaurants/pertinacious-coffee",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Littl Madeleine",
+      "source_slug": "littl-madeleine",
+      "source_path": "littl-madeleine",
+      "showcase_slug": "littl-madeleine",
+      "showcase_path": "restaurants/littl-madeleine",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Laurel Park",
+      "source_slug": "laurel-park",
+      "source_path": "laurel-park",
+      "showcase_slug": "laurel-park",
+      "showcase_path": "restaurants/laurel-park",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pokebowl Ramen",
+      "source_slug": "pokebowl-ramen",
+      "source_path": "pokebowl-ramen",
+      "showcase_slug": "pokebowl-ramen",
+      "showcase_path": "restaurants/pokebowl-ramen",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Poppy’s Bagels & More",
+      "source_slug": "poppy-s-bagels-and-more",
+      "source_path": "poppy-s-bagels-and-more",
+      "showcase_slug": "poppy-s-bagels-and-more",
+      "showcase_path": "restaurants/poppy-s-bagels-and-more",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pho Quynh",
+      "source_slug": "pho-quynh",
+      "source_path": "pho-quynh",
+      "showcase_slug": "pho-quynh",
+      "showcase_path": "restaurants/pho-quynh",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Platform Coffee + Kitchen",
+      "source_slug": "platform-coffee-plus-kitchen",
+      "source_path": "platform-coffee-plus-kitchen",
+      "showcase_slug": "platform-coffee-plus-kitchen",
+      "showcase_path": "restaurants/platform-coffee-plus-kitchen",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Plot Twist",
+      "source_slug": "plot-twist",
+      "source_path": "plot-twist",
+      "showcase_slug": "plot-twist",
+      "showcase_path": "restaurants/plot-twist",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Puerta",
+      "source_slug": "puerta",
+      "source_path": "puerta",
+      "showcase_slug": "puerta",
+      "showcase_path": "restaurants/puerta",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pho Real",
+      "source_slug": "pho-real",
+      "source_path": "pho-real",
+      "showcase_slug": "pho-real",
+      "showcase_path": "restaurants/pho-real",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Prohibition",
+      "source_slug": "prohibition",
+      "source_path": "prohibition",
+      "showcase_slug": "prohibition",
+      "showcase_path": "restaurants/prohibition",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Punta Cana Caribbean Grill & Bar",
+      "source_slug": "punta-cana-caribbean-grill-and-bar",
+      "source_path": "punta-cana-caribbean-grill-and-bar",
+      "showcase_slug": "punta-cana-caribbean-grill-and-bar",
+      "showcase_path": "restaurants/punta-cana-caribbean-grill-and-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Queen Park Social",
+      "source_slug": "queen-park-social",
+      "source_path": "queen-park-social",
+      "showcase_slug": "queen-park-social",
+      "showcase_path": "restaurants/queen-park-social",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Queen City Bites & Crafts",
+      "source_slug": "queen-city-bites-and-crafts",
+      "source_path": "queen-city-bites-and-crafts",
+      "showcase_slug": "queen-city-bites-and-crafts",
+      "showcase_path": "restaurants/queen-city-bites-and-crafts",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Rai Lay Thai Cuisine",
+      "source_slug": "rai-lay-thai-cuisine",
+      "source_path": "rai-lay-thai-cuisine",
+      "showcase_slug": "rai-lay-thai-cuisine",
+      "showcase_path": "restaurants/rai-lay-thai-cuisine",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Red Sea Restaurant & Bar",
+      "source_slug": "red-sea-restaurant-and-bar",
+      "source_path": "red-sea-restaurant-and-bar",
+      "showcase_slug": "red-sea-restaurant-and-bar",
+      "showcase_path": "restaurants/red-sea-restaurant-and-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Red@28th",
+      "source_slug": "red-28th",
+      "source_path": "red-28th",
+      "showcase_slug": "red-28th",
+      "showcase_path": "restaurants/red-28th",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Ramen Bar Kazoku",
+      "source_slug": "ramen-bar-kazoku",
+      "source_path": "ramen-bar-kazoku",
+      "showcase_slug": "ramen-bar-kazoku",
+      "showcase_path": "restaurants/ramen-bar-kazoku",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Rhino Market & Deli",
+      "source_slug": "rhino-market-and-deli",
+      "source_path": "rhino-market-and-deli",
+      "showcase_slug": "rhino-market-and-deli",
+      "showcase_path": "restaurants/rhino-market-and-deli",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Riceblossom",
+      "source_slug": "riceblossom",
+      "source_path": "riceblossom",
+      "showcase_slug": "riceblossom",
+      "showcase_path": "restaurants/riceblossom",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Ricko’s Churro Bar",
+      "source_slug": "ricko-s-churro-bar",
+      "source_path": "ricko-s-churro-bar",
+      "showcase_slug": "ricko-s-churro-bar",
+      "showcase_path": "restaurants/ricko-s-churro-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Room Service",
+      "source_slug": "room-service",
+      "source_path": "room-service",
+      "showcase_slug": "room-service",
+      "showcase_path": "restaurants/room-service",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Roz Grill",
+      "source_slug": "roz-grill",
+      "source_path": "roz-grill",
+      "showcase_slug": "roz-grill",
+      "showcase_path": "restaurants/roz-grill",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Saffron Indian Cuisine",
+      "source_slug": "saffron-indian-cuisine",
+      "source_path": "saffron-indian-cuisine",
+      "showcase_slug": "saffron-indian-cuisine",
+      "showcase_path": "restaurants/saffron-indian-cuisine",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Sabores de Oaxaca",
+      "source_slug": "sabores-de-oaxaca",
+      "source_path": "sabores-de-oaxaca",
+      "showcase_slug": "sabores-de-oaxaca",
+      "showcase_path": "restaurants/sabores-de-oaxaca",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Salted Melon Market & Eatery",
+      "source_slug": "salted-melon-market-and-eatery",
+      "source_path": "salted-melon-market-and-eatery",
+      "showcase_slug": "salted-melon-market-and-eatery",
+      "showcase_path": "restaurants/salted-melon-market-and-eatery",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "RuRu’s Tacos + Tequila",
+      "source_slug": "ruru-s-tacos-plus-tequila",
+      "source_path": "ruru-s-tacos-plus-tequila",
+      "showcase_slug": "ruru-s-tacos-plus-tequila",
+      "showcase_path": "restaurants/ruru-s-tacos-plus-tequila",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Salud Cerveceria",
+      "source_slug": "salud-cerveceria",
+      "source_path": "salud-cerveceria",
+      "showcase_slug": "salud-cerveceria",
+      "showcase_path": "restaurants/salud-cerveceria",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Roppongi Ramen Bar",
+      "source_slug": "roppongi-ramen-bar",
+      "source_path": "roppongi-ramen-bar",
+      "showcase_slug": "roppongi-ramen-bar",
+      "showcase_path": "restaurants/roppongi-ramen-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Sea Level NC",
+      "source_slug": "sea-level-nc",
+      "source_path": "sea-level-nc",
+      "showcase_slug": "sea-level-nc",
+      "showcase_path": "restaurants/sea-level-nc",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Seoul Food Meat Company",
+      "source_slug": "seoul-food-meat-company",
+      "source_path": "seoul-food-meat-company",
+      "showcase_slug": "seoul-food-meat-company",
+      "showcase_path": "restaurants/seoul-food-meat-company",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Sharigato",
+      "source_slug": "sharigato",
+      "source_path": "sharigato",
+      "showcase_slug": "sharigato",
+      "showcase_path": "restaurants/sharigato",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Sanctuary Pub",
+      "source_slug": "sanctuary-pub",
+      "source_path": "sanctuary-pub",
+      "showcase_slug": "sanctuary-pub",
+      "showcase_path": "restaurants/sanctuary-pub",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Sheng Ramen",
+      "source_slug": "sheng-ramen",
+      "source_path": "sheng-ramen",
+      "showcase_slug": "sheng-ramen",
+      "showcase_path": "restaurants/sheng-ramen",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Sidelines Sports Bar & Billiards",
+      "source_slug": "sidelines-sports-bar-and-billiards",
+      "source_path": "sidelines-sports-bar-and-billiards",
+      "showcase_slug": "sidelines-sports-bar-and-billiards",
+      "showcase_path": "restaurants/sidelines-sports-bar-and-billiards",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "South End Hideaway",
+      "source_slug": "south-end-hideaway",
+      "source_path": "south-end-hideaway",
+      "showcase_slug": "south-end-hideaway",
+      "showcase_path": "restaurants/south-end-hideaway",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Southern Pecan Gulf Coast Kitchen",
+      "source_slug": "southern-pecan-gulf-coast-kitchen",
+      "source_path": "southern-pecan-gulf-coast-kitchen",
+      "showcase_slug": "southern-pecan-gulf-coast-kitchen",
+      "showcase_path": "restaurants/southern-pecan-gulf-coast-kitchen",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Southern Range Brewing",
+      "source_slug": "southern-range-brewing",
+      "source_path": "southern-range-brewing",
+      "showcase_slug": "southern-range-brewing",
+      "showcase_path": "restaurants/southern-range-brewing",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Somewhere CLT",
+      "source_slug": "somewhere-clt",
+      "source_path": "somewhere-clt",
+      "showcase_slug": "somewhere-clt",
+      "showcase_path": "restaurants/somewhere-clt",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Spaghett",
+      "source_slug": "spaghett",
+      "source_path": "spaghett",
+      "showcase_slug": "spaghett",
+      "showcase_path": "restaurants/spaghett",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Stable Hand",
+      "source_slug": "stable-hand",
+      "source_path": "stable-hand",
+      "showcase_slug": "stable-hand",
+      "showcase_path": "restaurants/stable-hand",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Substrate",
+      "source_slug": "substrate",
+      "source_path": "substrate",
+      "showcase_slug": "substrate",
+      "showcase_path": "restaurants/substrate",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Suffolk Punch Brewing",
+      "source_slug": "suffolk-punch-brewing",
+      "source_path": "suffolk-punch-brewing",
+      "showcase_slug": "suffolk-punch-brewing",
+      "showcase_path": "restaurants/suffolk-punch-brewing",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Sweet Lew’s BBQ",
+      "source_slug": "sweet-lew-s-bbq",
+      "source_path": "sweet-lew-s-bbq",
+      "showcase_slug": "sweet-lew-s-bbq",
+      "showcase_path": "restaurants/sweet-lew-s-bbq",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "SWIRL Dessert Bar",
+      "source_slug": "swirl-dessert-bar",
+      "source_path": "swirl-dessert-bar",
+      "showcase_slug": "swirl-dessert-bar",
+      "showcase_path": "restaurants/swirl-dessert-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Taipei Express",
+      "source_slug": "taipei-express",
+      "source_path": "taipei-express",
+      "showcase_slug": "taipei-express",
+      "showcase_path": "restaurants/taipei-express",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tabla Indian Restaurant",
+      "source_slug": "tabla-indian-restaurant",
+      "source_path": "tabla-indian-restaurant",
+      "showcase_slug": "tabla-indian-restaurant",
+      "showcase_path": "restaurants/tabla-indian-restaurant",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tap & Vine",
+      "source_slug": "tap-and-vine",
+      "source_path": "tap-and-vine",
+      "showcase_slug": "tap-and-vine",
+      "showcase_path": "restaurants/tap-and-vine",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Taqueria Los Altos",
+      "source_slug": "taqueria-los-altos",
+      "source_path": "taqueria-los-altos",
+      "showcase_slug": "taqueria-los-altos",
+      "showcase_path": "restaurants/taqueria-los-altos",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tacos Rick-O",
+      "source_slug": "tacos-rick-o",
+      "source_path": "tacos-rick-o",
+      "showcase_slug": "tacos-rick-o",
+      "showcase_path": "restaurants/tacos-rick-o",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tavern on the Tracks",
+      "source_slug": "tavern-on-the-tracks",
+      "source_path": "tavern-on-the-tracks",
+      "showcase_slug": "tavern-on-the-tracks",
+      "showcase_path": "restaurants/tavern-on-the-tracks",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Thai House",
+      "source_slug": "thai-house",
+      "source_path": "thai-house",
+      "showcase_slug": "thai-house",
+      "showcase_path": "restaurants/thai-house",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Taipei South",
+      "source_slug": "taipei-south",
+      "source_path": "taipei-south",
+      "showcase_slug": "taipei-south",
+      "showcase_path": "restaurants/taipei-south",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pasuta",
+      "source_slug": "pasuta",
+      "source_path": "pasuta",
+      "showcase_slug": "pasuta",
+      "showcase_path": "restaurants/pasuta",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Hobbyist",
+      "source_slug": "the-hobbyist",
+      "source_path": "the-hobbyist",
+      "showcase_slug": "the-hobbyist",
+      "showcase_path": "restaurants/the-hobbyist",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Lodge: A Sportsman's Grill",
+      "source_slug": "the-lodge-a-sportsman-s-grill",
+      "source_path": "the-lodge-a-sportsman-s-grill",
+      "showcase_slug": "the-lodge-a-sportsman-s-grill",
+      "showcase_path": "restaurants/the-lodge-a-sportsman-s-grill",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Olde Mecklenburg Brewery",
+      "source_slug": "the-olde-mecklenburg-brewery",
+      "source_path": "the-olde-mecklenburg-brewery",
+      "showcase_slug": "the-olde-mecklenburg-brewery",
+      "showcase_path": "restaurants/the-olde-mecklenburg-brewery",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Waterman Fish Bar",
+      "source_slug": "the-waterman-fish-bar",
+      "source_path": "the-waterman-fish-bar",
+      "showcase_slug": "the-waterman-fish-bar",
+      "showcase_path": "restaurants/the-waterman-fish-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Public House",
+      "source_slug": "the-public-house",
+      "source_path": "the-public-house",
+      "showcase_slug": "the-public-house",
+      "showcase_path": "restaurants/the-public-house",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Town Brewing Company",
+      "source_slug": "town-brewing-company",
+      "source_path": "town-brewing-company",
+      "showcase_slug": "town-brewing-company",
+      "showcase_path": "restaurants/town-brewing-company",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Teal Turnip",
+      "source_slug": "the-teal-turnip",
+      "source_path": "the-teal-turnip",
+      "showcase_slug": "the-teal-turnip",
+      "showcase_path": "restaurants/the-teal-turnip",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Story of Mi Cariño",
+      "source_slug": "the-story-of-mi-carino",
+      "source_path": "the-story-of-mi-carino",
+      "showcase_slug": "the-story-of-mi-carino",
+      "showcase_path": "restaurants/the-story-of-mi-carino",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Exchange Uptown",
+      "source_slug": "the-exchange-uptown",
+      "source_path": "the-exchange-uptown",
+      "showcase_slug": "the-exchange-uptown",
+      "showcase_path": "restaurants/the-exchange-uptown",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Thirsty Beaver Saloon",
+      "source_slug": "the-thirsty-beaver-saloon",
+      "source_path": "the-thirsty-beaver-saloon",
+      "showcase_slug": "thirsty-beaver-saloon",
+      "showcase_path": "restaurants/thirsty-beaver-saloon",
+      "operation": "replaced",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Gin Mill South End",
+      "source_slug": "the-gin-mill-south-end",
+      "source_path": "the-gin-mill-south-end",
+      "showcase_slug": "the-gin-mill-south-end",
+      "showcase_path": "restaurants/the-gin-mill-south-end",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Wafflery",
+      "source_slug": "the-wafflery",
+      "source_path": "the-wafflery",
+      "showcase_slug": "the-wafflery",
+      "showcase_path": "restaurants/the-wafflery",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Wine Shop at Rivergate",
+      "source_slug": "the-wine-shop-at-rivergate",
+      "source_path": "the-wine-shop-at-rivergate",
+      "showcase_slug": "the-wine-shop-at-rivergate",
+      "showcase_path": "restaurants/the-wine-shop-at-rivergate",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Wine Vault",
+      "source_slug": "the-wine-vault",
+      "source_path": "the-wine-vault",
+      "showcase_slug": "the-wine-vault",
+      "showcase_path": "restaurants/the-wine-vault",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Three Amigos Mexican Grill",
+      "source_slug": "three-amigos-mexican-grill",
+      "source_path": "three-amigos-mexican-grill",
+      "showcase_slug": "three-amigos-mexican-grill",
+      "showcase_path": "restaurants/three-amigos-mexican-grill",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tin Tin Café",
+      "source_slug": "tin-tin-cafe",
+      "source_path": "tin-tin-cafe",
+      "showcase_slug": "tin-tin-cafe",
+      "showcase_path": "restaurants/tin-tin-cafe",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tommy’s Pub",
+      "source_slug": "tommy-s-pub",
+      "source_path": "tommy-s-pub",
+      "showcase_slug": "tommy-s-pub",
+      "showcase_path": "restaurants/tommy-s-pub",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tryon House Restaurant — Woodlawn",
+      "source_slug": "tryon-house-restaurant-woodlawn",
+      "source_path": "tryon-house-restaurant-woodlawn",
+      "showcase_slug": "tryon-house-restaurant-woodlawn",
+      "showcase_path": "restaurants/tryon-house-restaurant-woodlawn",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tyber Creek Pub",
+      "source_slug": "tyber-creek-pub",
+      "source_path": "tyber-creek-pub",
+      "showcase_slug": "tyber-creek-pub",
+      "showcase_path": "restaurants/tyber-creek-pub",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Tropical Goodies",
+      "source_slug": "tropical-goodies",
+      "source_path": "tropical-goodies",
+      "showcase_slug": "tropical-goodies",
+      "showcase_path": "restaurants/tropical-goodies",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Two Buck Saloon",
+      "source_slug": "two-buck-saloon",
+      "source_path": "two-buck-saloon",
+      "showcase_slug": "two-buck-saloon",
+      "showcase_path": "restaurants/two-buck-saloon",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Verdant Bread",
+      "source_slug": "verdant-bread",
+      "source_path": "verdant-bread",
+      "showcase_slug": "verdant-bread",
+      "showcase_path": "restaurants/verdant-bread",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Vibe Café & Wine Bar",
+      "source_slug": "vibe-cafe-and-wine-bar",
+      "source_path": "vibe-cafe-and-wine-bar",
+      "showcase_slug": "vibe-cafe-and-wine-bar",
+      "showcase_path": "restaurants/vibe-cafe-and-wine-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Vin Master",
+      "source_slug": "vin-master",
+      "source_path": "vin-master",
+      "showcase_slug": "vin-master",
+      "showcase_path": "restaurants/vin-master",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "VINYL",
+      "source_slug": "vinyl",
+      "source_path": "vinyl",
+      "showcase_slug": "vinyl",
+      "showcase_path": "restaurants/vinyl",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "XOXO Cocktail Lounge",
+      "source_slug": "xoxo-cocktail-lounge",
+      "source_path": "xoxo-cocktail-lounge",
+      "showcase_slug": "xoxo-cocktail-lounge",
+      "showcase_path": "restaurants/xoxo-cocktail-lounge",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "YUGENN",
+      "source_slug": "yugenn",
+      "source_path": "yugenn",
+      "showcase_slug": "yugenn",
+      "showcase_path": "restaurants/yugenn",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "YUME Ramen Sushi & Bar",
+      "source_slug": "yume-ramen-sushi-and-bar",
+      "source_path": "yume-ramen-sushi-and-bar",
+      "showcase_slug": "yume-ramen-sushi-and-bar",
+      "showcase_path": "restaurants/yume-ramen-sushi-and-bar",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Yummm Donuts",
+      "source_slug": "yummm-donuts",
+      "source_path": "yummm-donuts",
+      "showcase_slug": "yummm-donuts",
+      "showcase_path": "restaurants/yummm-donuts",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Zafran Kabab Palace",
+      "source_slug": "zafran-kabab-palace",
+      "source_path": "zafran-kabab-palace",
+      "showcase_slug": "zafran-kabab-palace",
+      "showcase_path": "restaurants/zafran-kabab-palace",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Zapata’s Mexican Restaurant",
+      "source_slug": "zapata-s-mexican-restaurant",
+      "source_path": "zapata-s-mexican-restaurant",
+      "showcase_slug": "zapata-s-mexican-restaurant",
+      "showcase_path": "restaurants/zapata-s-mexican-restaurant",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Zinicola",
+      "source_slug": "zinicola",
+      "source_path": "zinicola",
+      "showcase_slug": "zinicola",
+      "showcase_path": "restaurants/zinicola",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Zio Casual Italian",
+      "source_slug": "zio-casual-italian",
+      "source_path": "zio-casual-italian",
+      "showcase_slug": "zio-casual-italian",
+      "showcase_path": "restaurants/zio-casual-italian",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "QC Social Lounge",
+      "source_slug": "qc-social-lounge",
+      "source_path": "qc-social-lounge",
+      "showcase_slug": "qc-social-lounge",
+      "showcase_path": "restaurants/qc-social-lounge",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Cedars Halal Market, Restaurant & Hookah",
+      "source_slug": "cedars-halal-market-restaurant-and-hookah",
+      "source_path": "cedars-halal-market-restaurant-and-hookah",
+      "showcase_slug": "cedars-halal-market-restaurant-and-hookah",
+      "showcase_path": "restaurants/cedars-halal-market-restaurant-and-hookah",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Central Tea House",
+      "source_slug": "central-tea-house",
+      "source_path": "central-tea-house",
+      "showcase_slug": "central-tea-house",
+      "showcase_path": "restaurants/central-tea-house",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Chin Garden",
+      "source_slug": "chin-garden",
+      "source_path": "chin-garden",
+      "showcase_slug": "chin-garden",
+      "showcase_path": "restaurants/chin-garden",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Crunch Bistro",
+      "source_slug": "crunch-bistro",
+      "source_path": "crunch-bistro",
+      "showcase_slug": "crunch-bistro",
+      "showcase_path": "restaurants/crunch-bistro",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Deli HN",
+      "source_slug": "deli-hn",
+      "source_path": "deli-hn",
+      "showcase_slug": "deli-hn",
+      "showcase_path": "restaurants/deli-hn",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Doña Ana Deli & Restaurant",
+      "source_slug": "dona-ana-deli-and-restaurant",
+      "source_path": "dona-ana-deli-and-restaurant",
+      "showcase_slug": "dona-ana-deli-and-restaurant",
+      "showcase_path": "restaurants/dona-ana-deli-and-restaurant",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "El Rinconcito Chilango Taqueria",
+      "source_slug": "el-rinconcito-chilango-taqueria",
+      "source_path": "el-rinconcito-chilango-taqueria",
+      "showcase_slug": "el-rinconcito-chilango-taqueria",
+      "showcase_path": "restaurants/el-rinconcito-chilango-taqueria",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "El Taco Deli",
+      "source_slug": "el-taco-deli",
+      "source_path": "el-taco-deli",
+      "showcase_slug": "el-taco-deli",
+      "showcase_path": "restaurants/el-taco-deli",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Freshwaters Southern New Orleans",
+      "source_slug": "freshwaters-southern-new-orleans",
+      "source_path": "freshwaters-southern-new-orleans",
+      "showcase_slug": "freshwaters-southern-new-orleans",
+      "showcase_path": "restaurants/freshwaters-southern-new-orleans",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Golden Bakery",
+      "source_slug": "golden-bakery",
+      "source_path": "golden-bakery",
+      "showcase_slug": "golden-bakery",
+      "showcase_path": "restaurants/golden-bakery",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Hasaki Grill & Sushi",
+      "source_slug": "hasaki-grill-and-sushi",
+      "source_path": "hasaki-grill-and-sushi",
+      "showcase_slug": "hasaki-grill-and-sushi",
+      "showcase_path": "restaurants/hasaki-grill-and-sushi",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Johnny Burrito",
+      "source_slug": "johnny-burrito",
+      "source_path": "johnny-burrito",
+      "showcase_slug": "johnny-burrito",
+      "showcase_path": "restaurants/johnny-burrito",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Pie in the Sky Pizza",
+      "source_slug": "pie-in-the-sky-pizza",
+      "source_path": "pie-in-the-sky-pizza",
+      "showcase_slug": "pie-in-the-sky-pizza",
+      "showcase_path": "restaurants/pie-in-the-sky-pizza",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Halfpenny’s Cafe",
+      "source_slug": "halfpenny-s-cafe",
+      "source_path": "halfpenny-s-cafe",
+      "showcase_slug": "halfpenny-s-cafe",
+      "showcase_path": "restaurants/halfpenny-s-cafe",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Nirvana II",
+      "source_slug": "nirvana-ii",
+      "source_path": "nirvana-ii",
+      "showcase_slug": "nirvana-ii",
+      "showcase_path": "restaurants/nirvana-ii",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Sandwich Club",
+      "source_slug": "the-sandwich-club",
+      "source_path": "the-sandwich-club",
+      "showcase_slug": "the-sandwich-club",
+      "showcase_path": "restaurants/the-sandwich-club",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Luce Ristorante",
+      "source_slug": "luce-ristorante",
+      "source_path": "luce-ristorante",
+      "showcase_slug": "luce-ristorante",
+      "showcase_path": "restaurants/luce-ristorante",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Indigo Tea & Coffee Co.",
+      "source_slug": "indigo-tea-and-coffee-co",
+      "source_path": "indigo-tea-and-coffee-co",
+      "showcase_slug": "indigo-tea-and-coffee-co",
+      "showcase_path": "restaurants/indigo-tea-and-coffee-co",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "Nefelie’s",
+      "source_slug": "nefelie-s",
+      "source_path": "nefelie-s",
+      "showcase_slug": "nefelie-s",
+      "showcase_path": "restaurants/nefelie-s",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    },
+    {
+      "restaurant_name": "The Local",
+      "source_slug": "the-local",
+      "source_path": "the-local",
+      "showcase_slug": "the-local",
+      "showcase_path": "restaurants/the-local",
+      "operation": "added",
+      "source_commit": "f71681608fdfffd6844ab39796451265a6150bba",
+      "showcase_commit_before_promotion": "66f40b6a3266e92193680a4248dcb9e5ff1286f7"
+    }
+  ]
+}

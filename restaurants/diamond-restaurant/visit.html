@@ -3,81 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit Us | Diamond Restaurant</title>
-  <meta name="description" content="Location, hours, and contact information for Diamond Restaurant in Charlotte, NC.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Visit | The Diamond Restaurant — 1901 Commonwealth Ave, Plaza Midwood</title>
+  <meta name="description" content="The Diamond Restaurant: 1901 Commonwealth Ave, Charlotte NC 28205. (704) 375-8959. Reservations accepted, patio seating, full bar, late-night menu from 9 PM — call to confirm tonight's hours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Bevan&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  
-  <header class="site-header">
-    <div class="site-container header-inner">
-      <a href="index.html" class="brand-wrapper">
-        <span class="brand-badge">🌿</span>
-        <span class="brand-title">Diamond Restaurant</span>
-      </a>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="menu.html" class="nav-link ">Menu</a>
-        <a href="story.html" class="nav-link ">Our Story</a>
-        <a href="experience.html" class="nav-link ">Experience</a>
-        <a href="reserve.html" class="nav-link ">Reservations</a>
-        <a href="visit.html" class="nav-link active">Visit Us</a>
-        <a href="reserve.html" class="nav-cta">Reserve Table</a>
+  <a href="#main-content" class="dm-skip">Skip to main content</a>
+
+  <header class="dm-header">
+    <div class="dm-shell dm-header-inner">
+      <a href="index.html" class="dm-logo">The <span class="tube">Diamond</span></a>
+      <nav class="dm-nav" aria-label="Main navigation">
+        <a href="index.html">The Diner</a>
+        <a href="menu.html">Menu Board</a>
+        <a href="since-1945.html">Since 1945</a>
+        <a href="late-night.html">Late Night</a>
+        <a href="plaza-midwood.html">Plaza Midwood</a>
+        <a href="visit.html" class="on">Visit</a>
       </nav>
+      <button class="dm-burger" type="button" aria-expanded="false" aria-controls="dm-drawer" aria-label="Toggle navigation menu">&#9776;</button>
     </div>
-    <nav class="mobile-drawer" id="mobile-drawer">
-      <a href="index.html" class="nav-link ">Home</a>
-      <a href="menu.html" class="nav-link ">Menu</a>
-      <a href="story.html" class="nav-link ">Our Story</a>
-      <a href="experience.html" class="nav-link ">Experience</a>
-      <a href="reserve.html" class="nav-link ">Reservations</a>
-      <a href="visit.html" class="nav-link active">Visit Us</a>
-      <a href="reserve.html" class="nav-cta" style="text-align: center; margin-top: 0.5rem;">Reserve Table</a>
+    <nav id="dm-drawer" class="dm-drawer" aria-label="Mobile navigation">
+      <a href="index.html">The Diner</a>
+      <a href="menu.html">Menu Board</a>
+      <a href="since-1945.html">Since 1945</a>
+      <a href="late-night.html">Late Night</a>
+      <a href="plaza-midwood.html">Plaza Midwood</a>
+      <a href="visit.html" class="on">Visit</a>
     </nav>
   </header>
 
-  <main class="site-container" style="padding-top: 3.5rem;">
-    <div style="text-align: center; margin-bottom: 3.5rem;">
-      <h1 class="hero-title" style="font-size: 2.8rem;">Visit & Contact</h1>
-      <p class="hero-subtitle">We look forward to hosting you in Charlotte, NC.</p>
-    </div>
+  <main id="main-content">
 
-    <div class="feature-grid">
-      <div class="card">
-        <h3 class="card-title">Location & Address</h3>
-        <p class="card-desc" style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Charlotte Metro Region, NC</p>
-        <p class="card-desc">Convenient parking available nearby.</p>
-      </div>
+    <section class="dm-section" style="padding-bottom:1rem;" aria-labelledby="visit-title">
+      <div class="dm-shell">
+        <div class="dm-section-head">
+          <span class="dm-section-tag">The Practical Page</span>
+          <h2 id="visit-title">Everything except the exact minute we close.</h2>
+          <p class="dm-section-lede">
+            Here's an honest note: public listings disagree about the Diamond's weekly
+            hours — one directory says noon to 9, while recent regulars report weekend
+            nights running past 3 AM with a late menu from 9 PM. Rather than guess, we
+            point at the phone. One call settles it.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3 class="card-title">Hours of Operation</h3>
-        <p class="card-desc" style="color: #fff; font-weight: 600;">Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      </div>
+        <div class="dm-visitgrid">
+          <article class="dm-card">
+            <h3>Hours — Honestly</h3>
+            <p>
+              Open daily, lunch through late night, with the late-night menu from 9 PM.
+              Weekend closes run latest — regulars report 3 AM and beyond.
+            </p>
+            <p>
+              <strong>Call (704) 375-8959 to confirm today's hours</strong> — the diner's
+              own line beats every listing.
+            </p>
+          </article>
 
-      <div class="card">
-        <h3 class="card-title">Direct Contact</h3>
-        <p class="card-desc">Phone: <a href="tel:(704) 555-2109" style="color: var(--accent-color); font-weight: 700;">(704) 555-2109</a></p>
+          <article class="dm-card">
+            <h3>Find The Neon</h3>
+            <p><strong>1901 Commonwealth Ave<br>Charlotte, NC 28205</strong></p>
+            <p>Plaza Midwood, on the corner the neighborhood knows. Small lot on site; street parking on the surrounding blocks fills up on weekend nights.</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Diamond%20Restaurant%201901%20Commonwealth%20Ave%20Charlotte%20NC%2028205">Directions in Google Maps &rarr;</a></p>
+          </article>
+
+          <article class="dm-card">
+            <h3>Reach The Diner</h3>
+            <ul class="dm-feats">
+              <li>Phone: <a href="tel:+17043758959">(704) 375-8959</a></li>
+              <li><a href="https://www.thediamondrestaurant.com/">thediamondrestaurant.com</a></li>
+              <li><a href="https://www.instagram.com/diamondclt/">Instagram — @diamondclt</a></li>
+              <li>Delivery available via major platforms</li>
+            </ul>
+          </article>
+
+          <article class="dm-card">
+            <h3>Good To Know</h3>
+            <ul class="dm-feats">
+              <li>Reservations accepted</li>
+              <li>Front patio on Commonwealth — dog-friendly per regulars</li>
+              <li>Full bar; $5 Saturday mimosas have been reported</li>
+              <li>Family friendly; kids' plates with two-side options</li>
+              <li>Good for groups; cozy room, so expect a short wait at peak</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="dm-hero-actions" style="justify-content:flex-start;margin-top:2.4rem;">
+          <a href="menu.html" class="dm-btn dm-btn-cherry">Study The Board While You Call</a>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  
-  <footer class="site-footer">
-    <div class="site-container">
-      <p style="margin-bottom: 0.5rem;"><strong>Diamond Restaurant</strong> • Charlotte Metro Region, NC • Phone: <a href="tel:(704) 555-2109" style="color: var(--accent-color);">(704) 555-2109</a></p>
-      <p style="font-size: 0.82rem; opacity: 0.8;">Hours: Mon-Thu: 11am-10pm | Fri-Sat: 11am-11pm | Sun: 10am-9pm</p>
-      <p style="margin-top: 1.5rem;"><a href="../../index.html" style="color: var(--accent-color); font-weight: 600;">← Return to Main Showroom Index</a></p>
+  <footer class="dm-footer">
+    <div class="dm-shell">
+      <div class="dm-footer-grid">
+        <div>
+          <span class="dm-logo">The <span class="tube">Diamond</span></span>
+          <p class="dm-footer-blurb">Plaza Midwood's diner since 1945 — burgers all the way, Greek plates, a full bar, and banana pudding under the red neon at 1901 Commonwealth Ave.</p>
+        </div>
+        <div>
+          <h4>The Pages</h4>
+          <ul>
+            <li><a href="index.html">The Diner</a></li>
+            <li><a href="menu.html">Menu Board</a></li>
+            <li><a href="since-1945.html">Since 1945</a></li>
+            <li><a href="late-night.html">Late Night</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Practical</h4>
+          <ul>
+            <li><a href="plaza-midwood.html">Plaza Midwood</a></li>
+            <li><a href="visit.html">Visit — Hours &amp; Contact</a></li>
+            <li><a href="tel:+17043758959">(704) 375-8959</a></li>
+            <li><a href="https://www.instagram.com/diamondclt/">Instagram — @diamondclt</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dm-footer-base">
+        <p>&copy; 2026 The Diamond Restaurant. All rights reserved.</p>
+        <span class="dm-demo-badge">Unofficial Portfolio Concept Rebuild · Built For Sales Demonstration</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    if (toggleBtn && drawer) {
-      toggleBtn.addEventListener('click', () => drawer.classList.toggle('active'));
-    }
-  </script>
+  <script src="site.js"></script>
   <script src="../../scripts/shared/comparison-button.js" defer></script>
   <script src="../../scripts/shared/darkstar-footer.js" defer></script>
 </body>

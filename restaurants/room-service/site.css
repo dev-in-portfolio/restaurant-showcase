@@ -1,0 +1,725 @@
+/* Room Service — Mid-Century Retro Hotel Lounge & Cocktail Parlor */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-velvet-dark: #181512;
+  --bg-card-lounge: #241f1a;
+  --bg-linen-silk: #fdfbf7;
+  
+  --champagne-gold: #e2ba70;
+  --olive-moss: #4a5d4e;
+  --keycard-wine: #9e2a2b;
+  --text-dark-espresso: #181512;
+  --text-muted-linen: #d6cfc7;
+  --text-light-linen: #fdfbf7;
+  
+  --border-gold-light: rgba(226, 186, 112, 0.35);
+  --border-champagne-bold: rgba(226, 186, 112, 0.85);
+  
+  --font-display-hotel: 'DM Serif Display', serif;
+  --font-sans-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono-roomservice: 'Space Mono', monospace;
+  
+  --speed-roomservice: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-roomservice-width: 1240px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-velvet-dark);
+  color: var(--text-light-linen);
+  font-family: var(--font-sans-body);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .serif-hotel-font {
+  font-family: var(--font-display-hotel);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text-light-linen);
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: clamp(2.4rem, 5.0vw, 4.3rem); }
+h2 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); }
+h3 { font-size: clamp(1.3rem, 2.2vw, 1.8rem); }
+
+p {
+  color: var(--text-muted-linen);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--champagne-gold);
+  text-decoration: none;
+  transition: var(--speed-roomservice);
+}
+
+a:hover, a:focus-visible {
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--champagne-gold);
+  outline-offset: 4px;
+}
+
+.skip-roomservice-btn {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--champagne-gold);
+  color: #000000;
+  font-weight: 800;
+  padding: 0.75rem 1.5rem;
+  z-index: 10000;
+  transition: top 0.2s ease;
+  border-radius: 4px;
+}
+
+.skip-roomservice-btn:focus {
+  top: 1rem;
+}
+
+.roomservice-layout-container {
+  width: 90%;
+  max-width: var(--max-roomservice-width);
+  margin: 0 auto;
+}
+
+/* Header Navigation */
+.roomservice-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(24, 21, 18, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--champagne-gold);
+  padding: 1.1rem 0;
+}
+
+.header-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.roomservice-brand {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.brand-main-title {
+  font-family: var(--font-display-hotel);
+  font-size: 1.95rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-main-title span {
+  color: var(--champagne-gold);
+  font-style: italic;
+}
+
+.brand-subline {
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--champagne-gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.roomservice-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.roomservice-nav-link {
+  font-family: var(--font-sans-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-light-linen);
+  padding: 0.25rem 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roomservice-nav-link:hover, .roomservice-nav-link.active {
+  color: var(--champagne-gold);
+}
+
+.roomservice-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--champagne-gold);
+}
+
+.btn-header-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  background: var(--champagne-gold);
+  color: #000000;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  font-weight: 800;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--speed-roomservice);
+  flex-shrink: 0;
+}
+
+.btn-header-cta:hover {
+  background: #ffffff;
+  color: var(--bg-velvet-dark);
+  box-shadow: 0 4px 15px rgba(226, 186, 112, 0.4);
+}
+
+.mobile-drawer-trigger {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--champagne-gold);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.mobile-roomservice-drawer {
+  display: none;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background: #181512;
+  border-bottom: 2px solid var(--champagne-gold);
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+.mobile-roomservice-drawer.open {
+  display: flex;
+}
+
+/* Lounge Hero Stage */
+.lounge-hero-stage {
+  padding: 5rem 0 4rem;
+  background: radial-gradient(circle at top center, #2e261f 0%, #181512 100%);
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.lounge-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.roomservice-seal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.78rem;
+  color: var(--champagne-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(226, 186, 112, 0.12);
+  border: 1px solid rgba(226, 186, 112, 0.35);
+  padding: 0.4rem 1.1rem;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-main-title span {
+  color: var(--champagne-gold);
+  font-style: italic;
+}
+
+.hero-subtext-para {
+  font-size: 1.2rem;
+  color: var(--text-muted-linen);
+  margin-top: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-action-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-roomservice-fill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: var(--champagne-gold);
+  color: #000000;
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-roomservice);
+}
+
+.btn-roomservice-fill:hover {
+  background: #ffffff;
+  color: var(--bg-velvet-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(226, 186, 112, 0.4);
+}
+
+.btn-roomservice-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 800;
+  font-family: var(--font-sans-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: var(--speed-roomservice);
+}
+
+.btn-roomservice-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+}
+
+.hero-media-wrapper {
+  position: relative;
+}
+
+.roomservice-frame-box {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--champagne-gold);
+}
+
+.roomservice-frame-box img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+.roomservice-hero-badge {
+  position: absolute;
+  bottom: -1.2rem;
+  right: -1rem;
+  background: #110e0c;
+  border: 1px solid var(--champagne-gold);
+  padding: 0.9rem 1.4rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+  z-index: 10;
+}
+
+.hero-badge-number {
+  font-family: var(--font-mono-roomservice);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--champagne-gold);
+  line-height: 1.2;
+}
+
+.hero-badge-label {
+  font-size: 0.72rem;
+  color: var(--text-muted-linen);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+/* Editorial Highlight Banners */
+.roomservice-highlight-section {
+  padding: 5rem 0;
+  background: #16120e;
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.roomservice-highlight-banner {
+  background: #201a14;
+  border: 1px solid rgba(226, 186, 112, 0.35);
+  border-radius: 12px;
+  padding: 3.5rem 3rem;
+  margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+.roomservice-highlight-banner:last-child {
+  margin-bottom: 0;
+}
+
+.roomservice-highlight-banner.reverse {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.highlight-media-frame {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--champagne-gold);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.55);
+}
+
+.highlight-media-frame img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.highlight-story-text h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  margin-bottom: 1.1rem;
+  color: #ffffff;
+}
+
+.highlight-story-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted-linen);
+}
+
+/* Feature Spec Cards */
+.roomservice-features-section {
+  padding: 4.5rem 0;
+  background: #1e1a15;
+  border-bottom: 1px solid var(--border-gold-light);
+}
+
+.headline-center-box {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.mono-kicker-tag {
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.8rem;
+  color: var(--champagne-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.roomservice-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.roomservice-vault-card {
+  background: var(--bg-card-lounge);
+  border: 1px solid rgba(226, 186, 112, 0.25);
+  border-radius: 8px;
+  padding: 2.25rem;
+  transition: var(--speed-roomservice);
+  display: flex;
+  flex-direction: column;
+}
+
+.roomservice-vault-card:hover {
+  border-color: var(--champagne-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(226, 186, 112, 0.25);
+}
+
+.card-icon-gold {
+  font-size: 2.2rem;
+  color: var(--champagne-gold);
+  margin-bottom: 1rem;
+}
+
+.card-title-head {
+  margin-bottom: 0.75rem;
+  font-size: 1.55rem;
+  color: #ffffff;
+  font-family: var(--font-display-hotel);
+}
+
+.card-body-text {
+  font-size: 0.95rem;
+  color: var(--text-muted-linen);
+  flex-grow: 1;
+}
+
+/* Menu Layout */
+.roomservice-menu-section {
+  padding: 4.5rem 0;
+  background: var(--bg-velvet-dark);
+}
+
+.menu-dual-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.menu-category-title {
+  font-size: 1.85rem;
+  font-family: var(--font-display-hotel);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--champagne-gold);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+}
+
+.menu-category-title span {
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.8rem;
+  color: var(--champagne-gold);
+  font-weight: 700;
+}
+
+.menu-roomservice-item {
+  background: var(--bg-card-lounge);
+  border: 1px solid rgba(226, 186, 112, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: var(--speed-roomservice);
+}
+
+.menu-roomservice-item:hover {
+  border-color: var(--champagne-gold);
+}
+
+.roomservice-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.roomservice-name-text {
+  font-family: var(--font-display-hotel);
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.roomservice-badge-pill {
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.75rem;
+  color: #000000;
+  background: var(--champagne-gold);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.roomservice-desc-para {
+  color: var(--text-muted-linen);
+  font-size: 0.95rem;
+}
+
+/* Accordions */
+.accordion-stack-container {
+  margin-top: 2rem;
+}
+
+.roomservice-accordion {
+  background: var(--bg-card-lounge);
+  border: 1px solid rgba(226, 186, 112, 0.25);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-trigger-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-display-hotel);
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-trigger-btn:hover {
+  color: var(--champagne-gold);
+}
+
+.accordion-symbol-icon {
+  font-family: var(--font-mono-roomservice);
+  font-size: 1.2rem;
+  color: var(--champagne-gold);
+  transition: transform 0.3s ease;
+}
+
+.roomservice-accordion.active .accordion-symbol-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-drawer-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.roomservice-accordion.active .accordion-drawer-content {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* Footer */
+.roomservice-footer {
+  background: #110e0c;
+  color: var(--text-light-linen);
+  padding: 4rem 0 2rem;
+  margin-top: auto;
+  border-top: 2px solid var(--champagne-gold);
+}
+
+.roomservice-footer p {
+  color: var(--text-muted-linen);
+}
+
+.footer-four-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-box .brand-main-title {
+  color: #ffffff;
+  font-size: 1.85rem;
+}
+
+.footer-brand-box p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-title-head {
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.85rem;
+  color: var(--champagne-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: var(--text-muted-linen);
+  font-size: 0.9rem;
+}
+
+.footer-links-list a:hover {
+  color: var(--champagne-gold);
+}
+
+.footer-bottom-flex {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted-linen);
+}
+
+.demo-disclaimer-badge {
+  font-family: var(--font-mono-roomservice);
+  font-size: 0.75rem;
+  color: var(--champagne-gold);
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(226, 186, 112, 0.4);
+}
+
+@media (max-width: 992px) {
+  .lounge-hero-grid { grid-template-columns: 1fr; }
+  .menu-dual-columns { grid-template-columns: 1fr; }
+  .roomservice-highlight-banner, .roomservice-highlight-banner.reverse { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-four-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .roomservice-nav-group { display: none; }
+  .mobile-drawer-trigger { display: block; }
+  .footer-four-columns { grid-template-columns: 1fr; }
+  .footer-bottom-flex { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
