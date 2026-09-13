@@ -1,0 +1,745 @@
+/* La Caridad Cocina Latina Stylesheet - Unique Namespace: .caridad- */
+:root {
+  --caridad-primary: #0e7490;
+  --caridad-primary-dark: #155e75;
+  --caridad-primary-light: #06b6d4;
+  --caridad-accent: #d97706;
+  --caridad-accent-hover: #b45309;
+  --caridad-coral: #ea580c;
+  --caridad-bg: #fffbeb;
+  --caridad-surface: #ffffff;
+  --caridad-surface-card: #fef3c7;
+  --caridad-text: #0f172a;
+  --caridad-text-muted: #475569;
+  --caridad-border: #fde68a;
+  --caridad-shadow: 0 4px 20px -2px rgba(14, 116, 144, 0.12);
+  --caridad-shadow-lg: 0 10px 25px -3px rgba(14, 116, 144, 0.2);
+  --caridad-radius: 12px;
+  --caridad-radius-lg: 20px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--caridad-bg);
+  color: var(--caridad-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .caridad-brand-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: var(--caridad-text);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--caridad-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--caridad-accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header & Navigation */
+.caridad-header {
+  background-color: var(--caridad-surface);
+  border-bottom: 2px solid var(--caridad-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.caridad-topbar {
+  background: linear-gradient(135deg, var(--caridad-primary-dark), var(--caridad-primary));
+  color: #ffffff;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caridad-topbar a {
+  color: #fef08a;
+  font-weight: 600;
+}
+
+.caridad-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caridad-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.caridad-logo-badge {
+  background-color: var(--caridad-accent);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+
+.caridad-logo-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--caridad-primary-dark);
+}
+
+.caridad-logo-sub {
+  font-size: 0.75rem;
+  color: var(--caridad-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+}
+
+.caridad-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.caridad-nav-links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--caridad-text);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.caridad-nav-links a:hover,
+.caridad-nav-links a.active {
+  color: var(--caridad-primary);
+  background-color: var(--caridad-surface-card);
+}
+
+.caridad-btn-cta {
+  background-color: var(--caridad-coral);
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.caridad-btn-cta:hover {
+  background-color: var(--caridad-accent-hover);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.caridad-mobile-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--caridad-primary);
+  color: var(--caridad-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.caridad-hero {
+  position: relative;
+  background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(14, 116, 144, 0.8)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.caridad-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.caridad-hero-pill {
+  display: inline-block;
+  background-color: var(--caridad-accent);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.caridad-hero h1 {
+  font-size: 2.75rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.caridad-hero p {
+  font-size: 1.15rem;
+  color: #f1f5f9;
+  max-width: 680px;
+  margin: 0 auto 30px auto;
+}
+
+.caridad-hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.caridad-btn-hero-primary {
+  background-color: var(--caridad-coral);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.caridad-btn-hero-primary:hover {
+  background-color: var(--caridad-accent-hover);
+  color: #ffffff;
+}
+
+.caridad-btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.caridad-btn-hero-secondary:hover {
+  background-color: #ffffff;
+  color: var(--caridad-primary-dark);
+}
+
+/* Page Header */
+.caridad-page-header {
+  background: linear-gradient(135deg, var(--caridad-primary-dark), var(--caridad-primary));
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.caridad-page-header h1 {
+  font-size: 2.25rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.caridad-page-header p {
+  font-size: 1.05rem;
+  color: #e0f2fe;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Main Container & Sections */
+.caridad-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.caridad-section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.caridad-section-title h2 {
+  font-size: 2.1rem;
+  color: var(--caridad-primary-dark);
+  margin-bottom: 10px;
+}
+
+.caridad-section-title p {
+  color: var(--caridad-text-muted);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Features & Cards Grid */
+.caridad-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.caridad-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 36px;
+}
+
+.caridad-card {
+  background-color: var(--caridad-surface);
+  border: 1px solid var(--caridad-border);
+  border-radius: var(--caridad-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--caridad-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.caridad-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--caridad-shadow-lg);
+}
+
+.caridad-card-image {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.caridad-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.caridad-card-badge {
+  align-self: flex-start;
+  background-color: var(--caridad-surface-card);
+  color: var(--caridad-accent-hover);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.caridad-card-body h3 {
+  font-size: 1.35rem;
+  color: var(--caridad-primary-dark);
+  margin-bottom: 10px;
+}
+
+.caridad-card-body p {
+  color: var(--caridad-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.caridad-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--caridad-border);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.caridad-price {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--caridad-coral);
+}
+
+/* Feature Spotlight Component */
+.caridad-spotlight {
+  background-color: var(--caridad-surface);
+  border-radius: var(--caridad-radius-lg);
+  border: 1px solid var(--caridad-border);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: var(--caridad-shadow);
+}
+
+.caridad-spotlight img {
+  border-radius: var(--caridad-radius);
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.caridad-spotlight-content h3 {
+  font-size: 1.85rem;
+  color: var(--caridad-primary-dark);
+  margin-bottom: 16px;
+}
+
+.caridad-spotlight-content p {
+  color: var(--caridad-text-muted);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.caridad-check-list {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.caridad-check-list li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--caridad-text);
+}
+
+.caridad-check-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--caridad-primary);
+  font-weight: 800;
+}
+
+/* Menu Tabs */
+.caridad-tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.caridad-tab-btn {
+  background-color: var(--caridad-surface);
+  border: 2px solid var(--caridad-primary);
+  color: var(--caridad-primary);
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.caridad-tab-btn:hover,
+.caridad-tab-btn.active {
+  background-color: var(--caridad-primary);
+  color: #ffffff;
+}
+
+.caridad-menu-group {
+  display: none;
+}
+
+.caridad-menu-group.active {
+  display: block;
+}
+
+.caridad-menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.caridad-menu-item {
+  background-color: var(--caridad-surface);
+  border: 1px solid var(--caridad-border);
+  border-radius: var(--caridad-radius);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.caridad-item-info h4 {
+  font-size: 1.15rem;
+  color: var(--caridad-primary-dark);
+  margin-bottom: 6px;
+}
+
+.caridad-item-info p {
+  color: var(--caridad-text-muted);
+  font-size: 0.875rem;
+}
+
+.caridad-item-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--caridad-coral);
+  white-space: nowrap;
+}
+
+/* Interactive Platter Calculator */
+.caridad-calculator-box {
+  background-color: var(--caridad-surface);
+  border: 2px solid var(--caridad-border);
+  border-radius: var(--caridad-radius-lg);
+  padding: 36px;
+  box-shadow: var(--caridad-shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.caridad-calc-row {
+  margin-bottom: 24px;
+}
+
+.caridad-calc-row label {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--caridad-primary-dark);
+  margin-bottom: 8px;
+}
+
+.caridad-range-control {
+  width: 100%;
+  accent-color: var(--caridad-primary);
+}
+
+.caridad-select-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--caridad-border);
+  background-color: var(--caridad-bg);
+  font-size: 1rem;
+  color: var(--caridad-text);
+  font-weight: 600;
+}
+
+.caridad-calc-results {
+  background-color: var(--caridad-surface-card);
+  border-radius: var(--caridad-radius);
+  padding: 20px;
+  margin-top: 24px;
+  border: 1px solid var(--caridad-border);
+}
+
+.caridad-result-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(217, 119, 6, 0.3);
+  font-size: 0.95rem;
+}
+
+.caridad-result-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--caridad-coral);
+}
+
+/* Accordion Component */
+.caridad-accordion {
+  border: 1px solid var(--caridad-border);
+  border-radius: var(--caridad-radius);
+  background-color: var(--caridad-surface);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.caridad-accordion-header {
+  padding: 18px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--caridad-primary-dark);
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.caridad-accordion-header:hover {
+  background-color: var(--caridad-surface-card);
+}
+
+.caridad-accordion-content {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: var(--caridad-text-muted);
+  font-size: 0.95rem;
+}
+
+.caridad-accordion.open .caridad-accordion-content {
+  padding: 16px 24px 24px 24px;
+  max-height: 300px;
+}
+
+.caridad-accordion-icon {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--caridad-primary);
+}
+
+/* Info Cards & Visit Section */
+.caridad-visit-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+}
+
+.caridad-info-card {
+  background-color: var(--caridad-surface);
+  border: 1px solid var(--caridad-border);
+  border-radius: var(--caridad-radius-lg);
+  padding: 32px;
+  box-shadow: var(--caridad-shadow);
+}
+
+.caridad-info-card h3 {
+  font-size: 1.4rem;
+  color: var(--caridad-primary-dark);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--caridad-border);
+}
+
+.caridad-info-item {
+  margin-bottom: 18px;
+}
+
+.caridad-info-item strong {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--caridad-accent-hover);
+  margin-bottom: 4px;
+}
+
+.caridad-info-item p {
+  color: var(--caridad-text);
+  font-size: 1rem;
+}
+
+/* Footer */
+.caridad-footer {
+  background-color: var(--caridad-primary-dark);
+  color: #ffffff;
+  padding: 60px 20px 24px 20px;
+}
+
+.caridad-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.caridad-footer-col h4 {
+  color: #fef08a;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.caridad-footer-col p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.caridad-footer-links {
+  list-style: none;
+}
+
+.caridad-footer-links li {
+  margin-bottom: 10px;
+}
+
+.caridad-footer-links a {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.caridad-footer-links a:hover {
+  color: #fef08a;
+}
+
+.caridad-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .caridad-spotlight {
+    grid-template-columns: 1fr;
+  }
+  .caridad-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .caridad-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .caridad-mobile-toggle {
+    display: block;
+  }
+  .caridad-nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--caridad-surface);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--caridad-border);
+  }
+  .caridad-nav-links.show {
+    display: flex;
+  }
+  .caridad-hero h1 {
+    font-size: 2rem;
+  }
+  .caridad-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

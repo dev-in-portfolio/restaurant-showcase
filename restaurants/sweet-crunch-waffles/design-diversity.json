@@ -1,0 +1,93 @@
+{
+  "slug": "sweet-crunch-waffles",
+  "generatedAt": "2026-09-10T18:04:24.761Z",
+  "recentCompared": 7,
+  "recentSlugs": [
+    "midwood-country-club",
+    "republica-restaurant-and-lounge",
+    "indigo-tea-and-coffee-co",
+    "nefelie-s",
+    "the-local",
+    "mortimer-s-cafe-and-pub",
+    "santa-fe-mexican-restaurant-central-ave",
+    "landmark-restaurant-diner",
+    "van-loi-chinese-barbecue",
+    "pho-an-hoa"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "pho-an-hoa",
+    "score": 0.2452833146696528,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.0070921985815602835,
+    "domSimilarity": 0.9473684210526315,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0.2
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "pho-an-hoa",
+      "score": 0.2452833146696528,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0070921985815602835,
+      "domSimilarity": 0.9473684210526315,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "van-loi-chinese-barbecue",
+      "score": 0.14606894771771994,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007042253521126761,
+      "domSimilarity": 0.5340314136125655,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "landmark-restaurant-diner",
+      "score": 0.14474078668904616,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007042253521126761,
+      "domSimilarity": 0.5284974093264249,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "republica-restaurant-and-lounge",
+      "score": 0.12647924882629108,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.008,
+      "domSimilarity": 0.29577464788732394,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.6666666666666666
+    },
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.11563678090575275,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006578947368421052,
+      "domSimilarity": 0.4744186046511628,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "mortimer-s-cafe-and-pub",
+      "score": 0.09023866030830653,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007874015748031496,
+      "domSimilarity": 0.3004694835680751,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "midwood-country-club",
+      "score": 0.08871644896543751,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.008130081300813009,
+      "domSimilarity": 0.2938388625592417,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    }
+  ]
+}

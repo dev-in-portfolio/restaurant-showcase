@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub One Hoagie House - Fourth Ward Uptown Charlotte Landmark Since 1992</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="subone-header">
+    <div class="subone-nav-container">
+      <a href="index.html" class="subone-brand">
+        <span class="subone-brand-title">Sub One Hoagie House</span>
+        <span class="subone-brand-subtitle">Fourth Ward Landmark &bull; Est. 1992</span>
+      </a>
+      <button class="subone-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="subone-nav" aria-label="Primary Navigation">
+        <ul class="subone-nav-list">
+          <li><a href="index.html" class="subone-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="subone-nav-link ">Hoagie Menu</a></li>
+          <li><a href="fourth-ward-heritage.html" class="subone-nav-link ">Heritage</a></li>
+          <li><a href="nj-steak-and-special-sauce.html" class="subone-nav-link ">NJ Steak &amp; Sauce</a></li>
+          <li><a href="hot-and-cold-hoagies.html" class="subone-nav-link ">Sub Lineup</a></li>
+          <li><a href="visit.html" class="subone-nav-link subone-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main>
+      <section class="subone-hero">
+        <div class="subone-hero-grid">
+          <div class="subone-hero-content">
+            <span class="subone-hero-badge">Fourth Ward Institution &bull; Est. 1992</span>
+            <h1 class="subone-hero-title">Uptown Charlotte’s <span>Original Hoagie House</span></h1>
+            <p class="subone-hero-lead">Founded by U.S. Army veteran Richard Jones in 1992, Sub One Hoagie House has served generations of Charlotteans with sizzling New Jersey steak subs, secret Special Sauce, and warm neighborhood hospitality.</p>
+            <div class="subone-hero-actions">
+              <a href="menu.html" class="subone-btn-primary">View Full Menu</a>
+              <a href="nj-steak-and-special-sauce.html" class="subone-btn-secondary">The Famous NJ Steak</a>
+            </div>
+          </div>
+          <div class="subone-hero-img-wrap">
+            <img src="images/hero.jpg" alt="Sizzling steak hoagie with melted cheese, lettuce, and tomatoes on Italian roll" width="600" height="400">
+          </div>
+        </div>
+      </section>
+
+      <section class="subone-features">
+        <div class="subone-feature-grid">
+          <div class="subone-feature-card">
+            <div class="subone-feature-tag">Iconic Signature</div>
+            <h2 class="subone-feature-title">New Jersey Steak Sub</h2>
+            <p class="subone-feature-desc">Chopped ribeye steak griddled hot with sweet onions, melted cheese, shredded lettuce, tomatoes, and secret Special Sauce.</p>
+          </div>
+          <div class="subone-feature-card">
+            <div class="subone-feature-tag">Over 30 Years</div>
+            <h2 class="subone-feature-title">Family &amp; Veteran Owned</h2>
+            <p class="subone-feature-desc">Proudly serving Fourth Ward neighbors and Uptown workers since September 1992 with steadfast quality.</p>
+          </div>
+          <div class="subone-feature-card">
+            <div class="subone-feature-tag">Made to Order</div>
+            <h2 class="subone-feature-title">The Italian &amp; Veggie Options</h2>
+            <p class="subone-feature-desc">Generous multi-meat deli cold cuts and wholesome soy-protein vegetarian subs prepared on fresh bakery rolls.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="subone-section">
+        <div class="subone-story-grid">
+          <div class="subone-story-img-wrap">
+            <img src="images/steak-sub.jpg" alt="Chopped steak cheesesteak sub with melted cheese on toasted Italian roll" width="600" height="380">
+          </div>
+          <div class="subone-story-content">
+            <span class="subone-section-eyebrow">A Queen City Cornerstone</span>
+            <h3>Real Griddle Flavors, No Shortcuts</h3>
+            <p>At Sub One Hoagie House, every hot sub begins on our seasoned flat-top griddle. We chop tender steak and chicken fresh to order, melt cheese into every crevice, and slide it onto bakery-fresh Italian rolls.</p>
+            <p>Topped with crisp shredded iceberg lettuce, vine-ripened tomatoes, oregano, oil, vinegar, and our unmistakable Special Sauce, it is a flavor combination that has kept Charlotte coming back for over three decades.</p>
+            <a href="nj-steak-and-special-sauce.html" class="subone-btn-primary" style="margin-top: 0.5rem;">Learn About Our Sauce</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="subone-section" style="background: #ffffff; border-top: 1px solid var(--subone-border); border-bottom: 1px solid var(--subone-border);">
+        <div class="subone-section-header">
+          <span class="subone-section-eyebrow">Office Luncheons &amp; Events</span>
+          <h2 class="subone-section-title">Party Platter &amp; Box Lunch Estimator</h2>
+          <p class="subone-section-subtitle">Planning a downtown corporate meeting or weekend game day tailgate? Calculate your sub requirements below.</p>
+        </div>
+
+        <div class="subone-calc-card">
+          <div class="subone-calc-controls">
+            <div class="subone-calc-field">
+              <label for="subone-guest-count">Headcount: <span id="subone-guest-display" style="color: var(--subone-primary); font-weight: 800;">20 People</span></label>
+              <input type="range" id="subone-guest-count" class="subone-range-slider" min="5" max="100" step="5" value="20">
+            </div>
+            <div class="subone-calc-field">
+              <label for="subone-platter-style">Serving Style</label>
+              <select id="subone-platter-style" class="subone-calc-select">
+                <option value="party">Party Platter (Cut into 3-inch Finger Subs)</option>
+                <option value="individual">Individual Full Box Lunches (Whole Hoagie)</option>
+              </select>
+            </div>
+          </div>
+          <div class="subone-calc-results">
+            <div class="subone-result-box">
+              <span class="num" id="subone-sub-total">15 Whole Hoagies (Cut &amp; Boxed)</span>
+              <span class="label">Total Hoagie Volume</span>
+            </div>
+            <div class="subone-result-box">
+              <span class="num" id="subone-chip-total">20 Bags Kettle Chips</span>
+              <span class="label">Assorted Chip Bags</span>
+            </div>
+            <div class="subone-result-box">
+              <span class="num" id="subone-tea-total">2 Gallons Sweet Tea</span>
+              <span class="label">Fresh Brewed Beverage</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+  <footer class="subone-footer">
+    <div class="subone-footer-container">
+      <div class="subone-footer-brand">
+        <h4>Sub One Hoagie House</h4>
+        <p>Serving Uptown Charlotte and the Historic Fourth Ward since September 1992. Veteran and family-owned home of the New Jersey Steak Sub and famous Special Sauce.</p>
+      </div>
+      <div class="subone-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="fourth-ward-heritage.html">Fourth Ward Heritage</a></li>
+          <li><a href="nj-steak-and-special-sauce.html">NJ Steak &amp; Sauce</a></li>
+          <li><a href="hot-and-cold-hoagies.html">Hot &amp; Cold Hoagies</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="subone-footer-hours">
+        <h5>Location &amp; Contact</h5>
+        <p style="color: #9297a1; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Fourth Ward:</strong> 516 N Graham St, Charlotte, NC 28202</p>
+        <p style="color: #9297a1; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 332-1555</p>
+        <p style="color: #9297a1; font-size: 0.88rem;">Mon - Fri: 10:30 AM - 7:00 PM<br>Saturday: 11:00 AM - 6:00 PM<br>Sunday: Closed</p>
+      </div>
+    </div>
+    <div class="subone-footer-bottom">
+      <p>&copy; 2026 Sub One Hoagie House. All rights reserved. Restaurant showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

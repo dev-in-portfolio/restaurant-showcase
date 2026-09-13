@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Cafe Menu | Lottie's Cafe Uptown Charlotte NC</title>
+  <meta name="description" content="View the complete menu at Lottie's Cafe in Queen City Quarter Charlotte: breakfast sandwiches, Beattie's bagels, Hugo's hash, paninis, espresso, and lattes.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="lottie-header">
+    <div class="lottie-topbar">
+      <span>Artisanal Cafe &amp; Espresso Bar | Queen City Quarter, 210 E Trade St</span>
+      <span>Morning Counter &amp; Call Ahead: <a href="tel:7047893135">(704) 789-3135</a></span>
+    </div>
+    <div class="lottie-nav-container">
+      <a href="index.html" class="lottie-logo-group">
+        <span class="lottie-logo-badge">LC</span>
+        <div>
+          <span class="lottie-logo-title">Lottie's Cafe</span>
+          <span class="lottie-logo-sub">Artisanal Coffee &amp; Kitchen</span>
+        </div>
+      </a>
+      <button class="lottie-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="lottie-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Full Menu</a>
+          <a href="all-day-breakfast-and-sandwiches.html">Breakfast &amp; Sandwiches</a>
+          <a href="espresso-bar-and-specialty-drinks.html">Espresso Bar</a>
+          <a href="morning-catering-and-coffee-boxes.html">Catering &amp; Coffee</a>
+          <a href="visit.html">Visit &amp; Hours</a>
+          <a href="tel:7047893135" class="lottie-nav-btn">Call (704) 789-3135</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="lottie-hero-compact">
+    <div class="lottie-container">
+      <span class="lottie-badge">Kitchen &amp; Espresso Bar</span>
+      <h1 style="font-size:2.6rem; font-weight:900; margin:15px 0;">Our Complete Cafe Menu</h1>
+      <p style="font-size:1.1rem; color:#f5f5f4; max-width:700px; margin:0 auto;">All-day breakfast handhelds, artisan bagels, fresh power bowls, crafted paninis, and specialty coffee.</p>
+    </div>
+  </section>
+
+  <main class="lottie-container" style="padding:40px 24px 60px;">
+    <!-- Interactive Filter Buttons -->
+    <div class="lottie-filters">
+      <button class="lottie-filter-btn active" data-filter="all">All Items</button>
+      <button class="lottie-filter-btn" data-filter="breakfast">Breakfast &amp; Sandwiches</button>
+      <button class="lottie-filter-btn" data-filter="bagels">Beattie's Bagels</button>
+      <button class="lottie-filter-btn" data-filter="lunch">Lunch Paninis &amp; Bowls</button>
+      <button class="lottie-filter-btn" data-filter="coffee">Espresso &amp; Lattes</button>
+      <button class="lottie-filter-btn" data-filter="bakery">Bakery &amp; Pastries</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="lottie-grid-3" id="menu-items-grid" style="gap:24px;">
+      <!-- Breakfast Handhelds -->
+      <div class="lottie-card lottie-menu-item" data-category="breakfast">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Bacon Egg &amp; Cheese Brioche</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$10.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Folded farm eggs, thick applewood bacon, melted sharp cheddar, and maple aioli on a toasted butter brioche bun.</p>
+        <span class="lottie-tag">House Signature</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="breakfast">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Hugo's Skillet Hash</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$13.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Crispy Yukon gold potatoes roasted with chorizo sausage, bell peppers, caramelized onions, topped with two sunny eggs and avocado crema.</p>
+        <span class="lottie-tag">Skillet Hash</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="breakfast">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Sausage Egg &amp; Gouda Croissant</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$11.00</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Savory sage pork sausage patty, fluffy egg, melted smoked gouda cheese, and honey mustard on a warm flaky butter croissant.</p>
+        <span class="lottie-tag">Bakery Sandwich</span>
+      </div>
+
+      <!-- Bagels -->
+      <div class="lottie-card lottie-menu-item" data-category="bagels">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Beattie's Lox &amp; Cream Cheese</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$13.95</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Toasted Everything Beattie's bagel, Nova cold-smoked salmon, whipped chive cream cheese, capers, shaved red onion, and fresh dill.</p>
+        <span class="lottie-tag">Bagel Benchmark</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="bagels">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Beattie's Avocado &amp; Tomato Bagel</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$9.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Toasted sesame bagel layered with fresh smashed avocado, ripe vine tomato slices, sea salt, lemon juice, and microgreens.</p>
+        <span class="lottie-tag">Vegetarian</span>
+      </div>
+
+      <!-- Lunch Paninis & Bowls -->
+      <div class="lottie-card lottie-menu-item" data-category="lunch">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Smoked Turkey &amp; Avocado Panini</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$13.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Herb-roasted turkey breast, fresh avocado, smoked provolone cheese, baby spinach, and sun-dried tomato pesto on grilled focaccia.</p>
+        <span class="lottie-tag">Lunch Favorite</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="lunch">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Tuscan Caprese Panini</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$12.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Fresh mozzarella, heirloom tomatoes, fresh basil leaves, extra virgin olive oil, and aged balsamic glaze pressed on crusty ciabatta.</p>
+        <span class="lottie-tag">Vegetarian</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="lunch">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Trade St. Power Grain Bowl</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$13.00</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Organic quinoa, roasted sweet potatoes, charred broccoli, chickpeas, avocado slices, pickled onions, and lemon tahini dressing.</p>
+        <span class="lottie-tag">Healthy Grain Bowl</span>
+      </div>
+
+      <!-- Coffee & Lattes -->
+      <div class="lottie-card lottie-menu-item" data-category="coffee">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Lavender Honey Latte</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$6.25</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Espresso, organic French lavender syrup, raw wildflower honey, and silky steamed whole or oat milk.</p>
+        <span class="lottie-tag">Specialty Latte</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="coffee">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Brown Sugar Shaken Espresso</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$6.00</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Espresso shaken over ice with brown sugar, ground cinnamon, and topped with creamy oat milk.</p>
+        <span class="lottie-tag">Iced Specialty</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="coffee">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Cold Brew Nitro Draft</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$5.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Single-origin beans steeped for 20 hours and infused with nitrogen for a cascading velvet head and natural sweetness.</p>
+        <span class="lottie-tag">Draft Nitro</span>
+      </div>
+
+      <!-- Bakery -->
+      <div class="lottie-card lottie-menu-item" data-category="bakery">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Almond Cream Croissant</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$5.25</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Twice-baked butter croissant filled with rich almond frangipane cream, dusted with toasted sliced almonds and powdered sugar.</p>
+        <span class="lottie-tag">Fresh Baked</span>
+      </div>
+
+      <div class="lottie-card lottie-menu-item" data-category="bakery">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#451a03; font-size:1.2rem;">Blueberry Lemon Scone</h3>
+          <span style="font-weight:700; color:#ea580c; font-size:1.1rem;">$4.50</span>
+        </div>
+        <p style="color:#57534e; font-size:0.95rem; margin-bottom:12px;">Tender house-baked butter scone studded with fresh blueberries, finished with tart lemon zest glaze.</p>
+        <span class="lottie-tag">Bakery Item</span>
+      </div>
+    </div>
+
+    <!-- Takeout CTA -->
+    <div style="text-align:center; margin-top:50px; background:#ffffff; border:1px solid #e7e5e4; border-radius:12px; padding:30px; box-shadow:var(--lottie-shadow);">
+      <h3 style="color:#451a03; font-size:1.5rem; margin-bottom:10px;">Order Ahead for Express Counter Pickup</h3>
+      <p style="color:#57534e; max-width:600px; margin:0 auto 20px;">Call our cafe counter directly to place morning drink orders and hot breakfast sandwiches.</p>
+      <a href="tel:7047893135" class="lottie-btn-primary">Call (704) 789-3135</a>
+    </div>
+  </main>
+
+  <footer class="lottie-footer">
+    <div class="lottie-footer-grid">
+      <div>
+        <h4 style="color:#fde68a;">Lottie's Cafe</h4>
+        <p>Uptown Charlotte's destination for artisanal coffee, handcrafted all-day breakfast sandwiches, scratch-made lunch paninis, power grain bowls, and corporate morning meeting catering.</p>
+        <p style="margin-top:12px;"><strong>210 E Trade St | Queen City Quarter | Charlotte, NC</strong></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="lottie-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="all-day-breakfast-and-sandwiches.html">Breakfast &amp; Sandwiches</a></li>
+          <li><a href="espresso-bar-and-specialty-drinks.html">Espresso &amp; Lattes</a></li>
+          <li><a href="morning-catering-and-coffee-boxes.html">Morning Catering</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cafe Hours</h4>
+        <ul class="lottie-footer-links">
+          <li>Monday - Saturday: 7:00 AM - 4:00 PM</li>
+          <li>Sunday: 8:00 AM - 4:00 PM</li>
+          <li>All-Day Breakfast &amp; Espresso Daily</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location &amp; Contact</h4>
+        <p>210 E Trade St<br>Charlotte, NC 28202</p>
+        <p style="margin-top:8px;">Phone: <a href="tel:7047893135" style="color:#fde68a; font-weight:700;">(704) 789-3135</a></p>
+        <p>Email: <a href="mailto:info@lottiesclt.com" style="color:#fde68a;">info@lottiesclt.com</a></p>
+      </div>
+    </div>
+    <div class="lottie-footer-bottom">
+      <p>&copy; 2026 Lottie's Cafe. All rights reserved. Uptown Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

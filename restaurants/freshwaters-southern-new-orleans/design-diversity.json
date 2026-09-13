@@ -1,0 +1,120 @@
+{
+  "slug": "freshwaters-southern-new-orleans",
+  "generatedAt": "2026-09-11T15:08:31.197Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "cuzcatlan-restaurant",
+    "bernardin-s",
+    "cowbell-burger-and-whiskey-bar",
+    "savu",
+    "mezzo-market",
+    "akahana-asian-bistro",
+    "china-bowl",
+    "guatelinda-restaurante-and-panaderia",
+    "island-flavors-ii",
+    "don-s-restaurant"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "island-flavors-ii",
+    "score": 0.32339622641509436,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.012578616352201259,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "island-flavors-ii",
+      "score": 0.32339622641509436,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012578616352201259,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "don-s-restaurant",
+      "score": 0.28617356153779994,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013245033112582781,
+      "domSimilarity": 0.8441558441558441,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "mezzo-market",
+      "score": 0.18614250878577063,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.00684931506849315,
+      "domSimilarity": 0.43455497382198954,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "akahana-asian-bistro",
+      "score": 0.18614250878577063,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.00684931506849315,
+      "domSimilarity": 0.43455497382198954,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "china-bowl",
+      "score": 0.18614250878577063,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.00684931506849315,
+      "domSimilarity": 0.43455497382198954,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "guatelinda-restaurante-and-panaderia",
+      "score": 0.18614250878577063,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.00684931506849315,
+      "domSimilarity": 0.43455497382198954,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "savu",
+      "score": 0.18606950950675116,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006578947368421052,
+      "domSimilarity": 0.43455497382198954,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "cuzcatlan-restaurant",
+      "score": 0.1010729172614629,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012048192771084338,
+      "domSimilarity": 0.4075829383886256,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "cowbell-burger-and-whiskey-bar",
+      "score": 0.08830188679245282,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012578616352201259,
+      "domSimilarity": 0.35377358490566035,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "bernardin-s",
+      "score": 0.08819834330418776,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012195121951219513,
+      "domSimilarity": 0.35377358490566035,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

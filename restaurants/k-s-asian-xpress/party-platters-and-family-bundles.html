@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Party Platters &amp; Family Bundles | K’s Asian Xpress Charlotte</title>
+  <meta name="description" content="Feed your family or office gathering with generous Asian party platters, Hibachi bundles, dumpling trays, and wing packs in East Charlotte NC.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="ksasian-header">
+    <div class="ksasian-topbar">
+      <span>Fast-Casual Asian Fusion &amp; Hibachi | 10102 Albemarle Rd, Charlotte, NC</span>
+      <span>Quick Takeout &amp; Express Counter: <a href="tel:9802019962">(980) 201-9962</a></span>
+    </div>
+    <div class="ksasian-nav-container">
+      <a href="index.html" class="ksasian-logo-group">
+        <span class="ksasian-logo-badge">KAX</span>
+        <div>
+          <span class="ksasian-logo-text">K’s Asian Xpress</span>
+          <span class="ksasian-logo-sub">Hibachi &bull; Wok &bull; Thai Fusion</span>
+        </div>
+      </a>
+      <button class="ksasian-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="ksasian-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="hibachi-grill-and-wok-specials.html">Hibachi & Wok</a>
+          <a href="thai-noodles-and-curry-bowls.html">Thai Specialties</a>
+          <a href="party-platters-and-family-bundles.html" class="active">Party Bundles</a>
+          <a href="visit.html">Visit & Hours</a>
+          <a href="tel:9802019962" class="ksasian-btn-cta">Call (980) 201-9962</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="ksasian-hero" style="padding: 50px 20px;">
+    <div class="ksasian-hero-inner">
+      <span class="ksasian-hero-pill">Group Feasts &amp; Catering</span>
+      <h1>Party Platters &amp; Family Bundles</h1>
+      <p>Elevate your gameday watch party, office lunch, or family weekend dinner with generous party-sized hibachi pans, wok trays, and crispy appetizer samplers.</p>
+    </div>
+  </section>
+
+  <main class="ksasian-container">
+    <div class="ksasian-section-title">
+      <h2>Curated Family &amp; Party Packages</h2>
+      <p>All packages are packaged hot and ready for convenient counter pickup.</p>
+    </div>
+
+    <div class="ksasian-grid-3">
+      <div class="ksasian-card">
+        <div class="ksasian-card-body">
+          <span class="ksasian-card-badge">Family Value</span>
+          <h3>Family Hibachi Feast (Feeds 4-6)</h3>
+          <p>Includes generous portions of Hibachi Steak &amp; Chicken, a large pan of egg fried rice, grilled zucchini &amp; mushrooms, 4 egg rolls, and 8 oz of Yum Yum sauce.</p>
+          <div class="ksasian-card-footer">
+            <span class="ksasian-price">$58.99</span>
+            <span style="font-size:0.85rem; color:var(--ksasian-text-muted);">Feeds 4-6</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ksasian-card">
+        <div class="ksasian-card-body">
+          <span class="ksasian-card-badge">Office / Party Platter</span>
+          <h3>Asian Wok &amp; Noodle Box (Feeds 8-10)</h3>
+          <p>Choose 2 large wok entrees (General Tso, Beef Broccoli, or Honey Sesame), 1 pan of Pad Thai or Lo Mein, 1 pan of Fried Rice, and 12 Crab Rangoon.</p>
+          <div class="ksasian-card-footer">
+            <span class="ksasian-price">$119.99</span>
+            <span style="font-size:0.85rem; color:var(--ksasian-text-muted);">Feeds 8-10</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ksasian-card">
+        <div class="ksasian-card-body">
+          <span class="ksasian-card-badge">Gameday Favorite</span>
+          <h3>Wing &amp; Dumpling Sampler (30 Pcs)</h3>
+          <p>15 Jumbo crispy wings in your choice of 2 sauces plus 15 pan-fried handmade pork potstickers with sweet chili and seasoned dumpling soy dips.</p>
+          <div class="ksasian-card-footer">
+            <span class="ksasian-price">$46.99</span>
+            <span style="font-size:0.85rem; color:var(--ksasian-text-muted);">Feeds 6-8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Catering Calculator -->
+    <div class="ksasian-section-title" style="margin-top:60px;">
+      <h2>Interactive Group Catering Estimator</h2>
+      <p>Estimate the package price, sides, and sauce quantities needed for your group size.</p>
+    </div>
+
+    <div class="ksasian-calc-box">
+      <div class="ksasian-calc-row">
+        <label for="calc-guests">Number of Guests: <span id="calc-guests-val" style="color:var(--ksasian-primary);">12 Guests</span></label>
+        <input type="range" id="calc-guests" min="6" max="60" step="2" value="12" class="ksasian-range-control">
+      </div>
+
+      <div class="ksasian-calc-row">
+        <label for="calc-package-type">Select Catering Entree Package</label>
+        <select id="calc-package-type" class="ksasian-select-control">
+          <option value="14.50" selected>Family Hibachi Feast ($14.50 / person - Steak, Chicken &amp; Fried Rice)</option>
+          <option value="13.50">Asian Wok &amp; Thai Combo ($13.50 / person - General Tso, Pad Thai &amp; Lo Mein)</option>
+          <option value="16.50">Ultimate Supreme Asian Banquet ($16.50 / person - Hibachi Trio &amp; Wok Specials)</option>
+        </select>
+      </div>
+
+      <div class="ksasian-calc-row">
+        <label for="calc-dimsum-addon">Add Appetizer / Dim Sum Starter Pack</label>
+        <select id="calc-dimsum-addon" class="ksasian-select-control">
+          <option value="0" selected>No Starter Add-On</option>
+          <option value="3.50">Add 2 Wings + 2 Dumplings per Person (+$3.50 / guest)</option>
+          <option value="2.50">Add Crab Rangoon + Spring Rolls per Person (+$2.50 / guest)</option>
+        </select>
+      </div>
+
+      <div class="ksasian-calc-results">
+        <div class="ksasian-result-line">
+          <span>Guest Capacity:</span>
+          <strong id="calc-feeds-count">Serves 12 Hungry Guests with Generous Entree Portions</strong>
+        </div>
+        <div class="ksasian-result-line">
+          <span>Included Rice &amp; Sauces:</span>
+          <strong id="calc-sides-info">Includes 2 Large Pan(s) of Fried Rice/Noodles + 2 Pint(s) of Yum Yum Sauce</strong>
+        </div>
+        <div class="ksasian-result-total">
+          <span>Estimated Total:</span>
+          <span id="calc-total-price">$174.00</span>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; text-align:center;">
+        <a href="tel:9802019962" class="ksasian-btn-hero-primary" style="display:inline-block; width:100%;">Call (980) 201-9962 to Place Catering Order</a>
+      </div>
+    </div>
+
+    <!-- Ordering Guidelines -->
+    <div class="ksasian-grid-2" style="margin-top:50px;">
+      <div class="ksasian-card" style="padding:28px;">
+        <h4 style="color:var(--ksasian-dark); margin-bottom:10px;">Pickup &amp; Advance Notice</h4>
+        <p style="color:var(--ksasian-text-muted); font-size:0.95rem;">Standard family bundles can be ordered with just 20-30 minutes notice. For large party platters for 20+ guests, please call at least 2-3 hours in advance so our kitchen can prepare fresh hot batches.</p>
+      </div>
+
+      <div class="ksasian-card" style="padding:28px;">
+        <h4 style="color:var(--ksasian-dark); margin-bottom:10px;">Custom Dietary Requests</h4>
+        <p style="color:var(--ksasian-text-muted); font-size:0.95rem;">We can customize catering pans for gluten-sensitive guests (using rice noodles and gluten-free tamari upon request) and vegetarian groups (tofu hibachi, vegetable lo mein, spring rolls).</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ksasian-footer">
+    <div class="ksasian-footer-grid">
+      <div class="ksasian-footer-col">
+        <h4 class="ksasian-brand-title">K’s Asian Xpress</h4>
+        <p>East Charlotte's destination for sizzling flat-top Japanese hibachi, wok-charred Chinese classics, street-style Thai curries and noodles, and crispy wings prepared fresh in minutes.</p>
+        <p><strong>Fast Takeout | Casual Dine-In | Family Bundles</strong></p>
+      </div>
+      <div class="ksasian-footer-col">
+        <h4>Navigation</h4>
+        <ul class="ksasian-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="hibachi-grill-and-wok-specials.html">Hibachi &amp; Wok</a></li>
+          <li><a href="thai-noodles-and-curry-bowls.html">Thai Specialties</a></li>
+          <li><a href="party-platters-and-family-bundles.html">Party Bundles</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="ksasian-footer-col">
+        <h4>Kitchen Hours</h4>
+        <ul class="ksasian-footer-links">
+          <li>Monday - Thursday: 11:00 AM - 9:30 PM</li>
+          <li>Friday - Saturday: 11:00 AM - 10:00 PM</li>
+          <li>Sunday: 12:00 PM - 9:00 PM</li>
+          <li>Fast Pickup &amp; Delivery Ready</li>
+        </ul>
+      </div>
+      <div class="ksasian-footer-col">
+        <h4>Contact &amp; Location</h4>
+        <p>10102 Albemarle Rd, Suite 3<br>Charlotte, NC 28227</p>
+        <p>Phone: <a href="tel:9802019962" style="color:#fef08a;">(980) 201-9962</a></p>
+        <p>Email: <a href="mailto:orders@ksasianxpressclt.com" style="color:#fef08a;">orders@ksasianxpressclt.com</a></p>
+      </div>
+    </div>
+    <div class="ksasian-footer-bottom">
+      <p>&copy; 2026 K’s Asian Xpress. All rights reserved. Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Coffee Cart &amp; Event Catering | Sugar &amp; Sip Charlotte</title>
+  <meta name="description" content="Book Sugar & Sip's mobile espresso bar cart for weddings, corporate meetings, and private events across Charlotte NC. Interactive instant event calculator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="sns-topbar">
+    <div class="sns-container sns-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>120 N Cedar St, Ste 725, Fourth Ward, Charlotte, NC 28202</span>
+        <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
+        <span>Mon-Fri: 7:00 AM - 4:00 PM &bull; Sat-Sun: 9:00 AM - 2:00 PM</span>
+      </div>
+      <div>
+        <span>Cafe &amp; Mobile Booking Hotline: </span>
+        <a href="tel:7049190143" class="sns-topbar-link">(704) 919-0143</a>
+      </div>
+    </div>
+  </div>
+  <header class="sns-navbar">
+    <div class="sns-nav-container">
+      <a href="index.html" class="sns-brand">
+        <div class="sns-brand-name">SUGAR <span>&amp; SIP</span></div>
+        <div class="sns-brand-tagline">Coffee &amp; Creative Workshop Space</div>
+      </a>
+      <ul class="sns-nav-links">
+        <li class="sns-nav-item"><a href="index.html">Home</a></li>
+<li class="sns-nav-item"><a href="menu.html">Drinks &amp; Bites</a></li>
+<li class="sns-nav-item"><a href="workshops-events.html">Workshops &amp; Space</a></li>
+<li class="sns-nav-item"><a href="catering-coffee-cart.html" class="active">Mobile Coffee Cart</a></li>
+<li class="sns-nav-item"><a href="about.html">Our Story</a></li>
+<li class="sns-nav-item"><a href="contact.html">Visit &amp; Hours</a></li>
+
+        <li><a href="tel:7049190143" class="sns-nav-cta">Call (704) 919-0143</a></li>
+      </ul>
+      <button class="sns-menu-toggle" id="snsMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="sns-mobile-menu" id="snsMobileMenu">
+      <ul class="sns-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Drinks &amp; Bites</a></li>
+<li><a href="workshops-events.html">Workshops &amp; Space</a></li>
+<li><a href="catering-coffee-cart.html" class="active">Mobile Coffee Cart</a></li>
+<li><a href="about.html">Our Story</a></li>
+<li><a href="contact.html">Visit &amp; Hours</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7049190143" class="sns-nav-cta" style="text-align: center;">Call (704) 919-0143</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="sns-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="sns-container" style="text-align: center; max-width: 840px;">
+      <span class="sns-hero-badge">Mobile Espresso Bar Across Charlotte</span>
+      <h1 class="sns-title-xl">Mobile Coffee Cart &amp; Event Planner</h1>
+      <p class="sns-lead">Bring our full-service craft espresso bar, signature lattes, and artisan pastry spreads directly to your wedding, corporate meeting, or brand pop-up.</p>
+    </div>
+  </section>
+
+  <section class="sns-section">
+    <div class="sns-container">
+      <div class="sns-section-header">
+        <span class="sns-eyebrow">Instant Event Estimator</span>
+        <h2 class="sns-title-lg">Mobile Coffee Cart Calculator</h2>
+        <p class="sns-lead">Select your guest count, service duration, and beverage tier to calculate instant pricing and portion estimates.</p>
+      </div>
+
+      <div class="sns-calc-panel">
+        <div class="sns-calc-grid">
+          <div>
+            <div class="sns-calc-group">
+              <label class="sns-calc-label" for="snsCalcGuests">
+                <span>Guest Count</span>
+                <span id="snsCalcGuestCountText" style="color: var(--sns-text-muted); font-weight: 600;">(20 to 250 guests)</span>
+              </label>
+              <select class="sns-calc-select" id="snsCalcGuests">
+                <option value="25">25 Guests (Intimate Office / Gathering)</option>
+                <option value="50" selected>50 Guests (Corporate Offsite / Bridal Shower)</option>
+                <option value="75">75 Guests (Wedding Cocktail Hour / Party)</option>
+                <option value="100">100 Guests (Company Milestone Event)</option>
+                <option value="150">150 Guests (Major Wedding Reception)</option>
+                <option value="200">200 Guests (Corporate Conference)</option>
+              </select>
+            </div>
+
+            <div class="sns-calc-group">
+              <label class="sns-calc-label" for="snsCalcDuration">
+                <span>Service Duration</span>
+                <span style="color: var(--sns-text-muted); font-weight: 600;">(Hours on-site)</span>
+              </label>
+              <select class="sns-calc-select" id="snsCalcDuration">
+                <option value="2" selected>2 Hours Unlimited Service (Standard)</option>
+                <option value="3">3 Hours Unlimited Service</option>
+                <option value="4">4 Hours Unlimited Service (Full Half-Day)</option>
+              </select>
+            </div>
+
+            <div class="sns-calc-group">
+              <label class="sns-calc-label" for="snsCalcPackage">
+                <span>Espresso Bar Package Tier</span>
+              </label>
+              <select class="sns-calc-select" id="snsCalcPackage">
+                <option value="espresso-classic" selected>Classic Espresso &amp; Brew Bar (Lattes, Cappuccinos, Americanos, Cold Brew)</option>
+                <option value="signature-specialty">Signature Specialty Latte &amp; Matcha Cart (Fruity Pebble, Matcha Splash, Chai)</option>
+                <option value="full-loft-workshop">Private Loft Workshop + Unlimited Espresso Bar (At 120 N Cedar St)</option>
+              </select>
+            </div>
+
+            <div class="sns-calc-group">
+              <label class="sns-calc-label">Bakery &amp; Small Bite Platter Add-Ons</label>
+              <div class="sns-checkbox-grid">
+                <label class="sns-checkbox-item">
+                  <input type="checkbox" class="sns-pastry-check" value="Belgian Pearl Waffle Platter (20 pcs)" data-price="75.00">
+                  <span>Pearl Waffles Platter (+$75)</span>
+                </label>
+                <label class="sns-checkbox-item">
+                  <input type="checkbox" class="sns-pastry-check" value="Gourmet Cinnamon Rolls (18 pcs)" data-price="85.00">
+                  <span>Cinnamon Rolls Tray (+$85)</span>
+                </label>
+                <label class="sns-checkbox-item">
+                  <input type="checkbox" class="sns-pastry-check" value="Stuffed Mini Bagels Platter (24 pcs)" data-price="70.00">
+                  <span>Stuffed Bagels Tray (+$70)</span>
+                </label>
+                <label class="sns-checkbox-item">
+                  <input type="checkbox" class="sns-pastry-check" value="Raspberry Cheesecake Bites (24 pcs)" data-price="65.00">
+                  <span>Cheesecake Bites (+$65)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sns-calc-group">
+              <label class="sns-calc-label">Barista Bar Upgrades</label>
+              <div class="sns-checkbox-grid">
+                <label class="sns-checkbox-item">
+                  <input type="checkbox" class="sns-addon-check" value="Custom Branded Drink Sleeves / Cups" data-price="1.50">
+                  <span>Branded Sleeves (+$1.50/guest)</span>
+                </label>
+                <label class="sns-checkbox-item">
+                  <input type="checkbox" class="sns-addon-check" value="Cold Foam &amp; Botanical Syrup Bar" data-price="2.00">
+                  <span>Cold Foam Bar (+$2.00/guest)</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--sns-text-muted); margin-top: 1rem;">
+              * Includes commercial double group espresso machine, professional baristas, compostable cups, oat &amp; whole milk, and setup/breakdown.
+            </div>
+          </div>
+
+          <div class="sns-calc-summary-card">
+            <div>
+              <div style="font-family: var(--sns-font-display); font-size: 1.4rem; font-weight: 800; color: var(--sns-rose); margin-bottom: 1.25rem;">
+                Coffee Cart Quote Summary
+              </div>
+              <div class="sns-summary-row">
+                <span>Guest Count:</span>
+                <strong id="snsCalcGuestDisplay">50 Guests</strong>
+              </div>
+              <div class="sns-summary-row">
+                <span>Estimated Drink Capacity:</span>
+                <strong id="snsCalcDrinksEstimated">~90 Handcrafted Drinks</strong>
+              </div>
+              <div class="sns-summary-row">
+                <span>Staffing &amp; Equipment:</span>
+                <strong id="snsCalcBaristas">2 Dedicated Baristas (2 hrs)</strong>
+              </div>
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #d8cec8; line-height: 1.5;" id="snsCalcDetails">
+                Classic Espresso &amp; Brew Bar for 50 guests over 2 hours. Pastries: None. Upgrades: Standard Whole/Oat Milk &amp; Syrups.
+              </div>
+            </div>
+
+            <div>
+              <div class="sns-summary-total">
+                <span style="font-weight: 700; font-size: 1.1rem;">Estimated Total:</span>
+                <span class="sns-summary-total-val" id="snsCalcTotalCost">$740.00</span>
+              </div>
+              
+              <div class="sns-calc-action-bar">
+                <a href="mailto:hello@sugarandsipclt.org" class="sns-btn sns-btn-primary" id="snsMailQuoteLink" style="width: 100%;">Email This Cart Request</a>
+                <button type="button" class="sns-btn sns-btn-outline-white" id="snsCopyQuoteBtn" style="width: 100%;">Copy Quote to Clipboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sns-section sns-section-white">
+    <div class="sns-container">
+      <div class="sns-section-header">
+        <span class="sns-eyebrow">Mobile Setup Details</span>
+        <h2 class="sns-title-lg">Everything We Bring On-Site</h2>
+        <p class="sns-lead">We handle every technical detail so you and your guests can simply enjoy exceptional coffee.</p>
+      </div>
+
+      <div class="sns-grid-3">
+        <div class="sns-card">
+          <h3 class="sns-title-md" style="color: var(--sns-espresso);">Custom Mobile Cart</h3>
+          <p style="color: var(--sns-text-muted); font-size: 0.92rem;">Self-contained handcrafted wood cart equipped with Italian espresso machine, water filtration, and under-counter refrigeration.</p>
+        </div>
+        <div class="sns-card">
+          <h3 class="sns-title-md" style="color: var(--sns-espresso);">Certified Baristas</h3>
+          <p style="color: var(--sns-text-muted); font-size: 0.92rem;">Courteous, skilled baristas who pour beautiful latte art and serve guests with speed and warm Queen City hospitality.</p>
+        </div>
+        <div class="sns-card">
+          <h3 class="sns-title-md" style="color: var(--sns-espresso);">Turnkey Clean Setup</h3>
+          <p style="color: var(--sns-text-muted); font-size: 0.92rem;">We arrive 45 minutes before service for power connection and calibration, leaving your space spotless upon departure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="sns-footer">
+    <div class="sns-container">
+      <div class="sns-footer-grid">
+        <div class="sns-footer-brand">
+          <h3>SUGAR <span>&amp; SIP</span></h3>
+          <p>Black-owned boutique craft coffee shop and creative community workshop space in Fourth Ward Uptown Charlotte. Specialty lattes, matcha tonics, artisan pastries, open mic nights, and mobile espresso bar catering.</p>
+        </div>
+        <div class="sns-footer-col">
+          <h4>Explore</h4>
+          <ul class="sns-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Craft Coffee &amp; Pastries</a></li>
+            <li><a href="workshops-events.html">Workshops &amp; Loft Space</a></li>
+            <li><a href="catering-coffee-cart.html">Mobile Espresso Cart</a></li>
+            <li><a href="about.html">Our Community Mission</a></li>
+            <li><a href="contact.html">Fourth Ward Location</a></li>
+          </ul>
+        </div>
+        <div class="sns-footer-col">
+          <h4>Cafe Hours</h4>
+          <ul class="sns-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Friday:</strong><br>7:00 AM - 4:00 PM</li>
+            <li><strong style="color: #fff;">Saturday - Sunday:</strong><br>9:00 AM - 2:00 PM</li>
+            <li><span style="color: var(--sns-rose); font-size: 0.85rem;">Evening Workshops &amp; Pop-Ups by Reservation</span></li>
+          </ul>
+        </div>
+        <div class="sns-footer-col">
+          <h4>Fourth Ward Location</h4>
+          <p style="margin-bottom: 0.75rem;">120 N Cedar St, Ste 725<br>Charlotte, NC 28202<br>Fourth Ward / Uptown West neighborhood.</p>
+          <p><strong style="color: var(--sns-rose);">Direct Phone:</strong><br><a href="tel:7049190143" style="color: #fff; font-weight: 700;">(704) 919-0143</a></p>
+          <p style="margin-top: 0.5rem;"><strong style="color: var(--sns-rose);">Inquiries:</strong><br><a href="mailto:hello@sugarandsipclt.org" style="color: #c4b8b2;">hello@sugarandsipclt.org</a></p>
+        </div>
+      </div>
+      <div class="sns-footer-bottom">
+        <div>&copy; 2026 Sugar &amp; Sip Coffee and Workshop. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Craft Coffee &bull; Creative Workshops &bull; Mobile Espresso Cart</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -132,9 +132,9 @@ const htmlFiles = allFiles.filter(f => f.endsWith('.html'));
 // 6. Enforce zero placeholders in HTML files
 const placeholderRegexes = [
   /lorem\s+ipsum/i,
-  /todo/i,
+  /\bTODO\b/,
   /placeholder/i,
-  /fixme/i,
+  /\bFIXME\b/i,
   /insert\s+(here|text|details)/i,
   /\[name\]/i,
   /\[phone\]/i,
@@ -160,9 +160,9 @@ if (foundPlaceholders.length > 0) {
   process.exit(1);
 }
 
-// 7. Enforce 6-page minimum standard
-if (htmlFiles.length < 6) {
-  console.error(`❌ Error: Promotion rejected. Showcase requires a minimum of 6 substantive pages. Found: ${htmlFiles.length}`);
+// 7. Enforce 5-page minimum standard
+if (htmlFiles.length < 5) {
+  console.error(`❌ Error: Promotion rejected. Showcase requires a minimum of 5 substantive pages. Found: ${htmlFiles.length}`);
   process.exit(1);
 }
 

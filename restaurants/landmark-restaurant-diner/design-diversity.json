@@ -1,0 +1,64 @@
+{
+  "slug": "landmark-restaurant-diner",
+  "generatedAt": "2026-09-10T17:56:15.975Z",
+  "recentCompared": 4,
+  "recentSlugs": [
+    "restaurant-slug",
+    "midwood-country-club",
+    "republica-restaurant-and-lounge",
+    "indigo-tea-and-coffee-co",
+    "nefelie-s",
+    "the-local",
+    "mortimer-s-cafe-and-pub",
+    "santa-fe-mexican-restaurant-central-ave"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+    "score": 0.1932739353669586,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.012987012987012988,
+    "domSimilarity": 0.7906976744186046,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.1932739353669586,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012987012987012988,
+      "domSimilarity": 0.7906976744186046,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "republica-restaurant-and-lounge",
+      "score": 0.07777439963054186,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0078125,
+      "domSimilarity": 0.31527093596059114,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "mortimer-s-cafe-and-pub",
+      "score": 0.07737104072398189,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007692307692307693,
+      "domSimilarity": 0.3137254901960784,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "midwood-country-club",
+      "score": 0.07426108374384237,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007936507936507936,
+      "domSimilarity": 0.30049261083743845,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

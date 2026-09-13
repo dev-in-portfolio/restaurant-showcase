@@ -1,0 +1,862 @@
+﻿:root {
+  --seoul-orange: #f97316;
+  --seoul-orange-dark: #ea580c;
+  --seoul-orange-light: #fb923c;
+  --seoul-crimson: #dc2626;
+  --seoul-crimson-dark: #b91c1c;
+  --seoul-gold: #eab308;
+  --seoul-gold-light: #fef08a;
+  --seoul-night: #18181b;
+  --seoul-night-dark: #09090b;
+  --seoul-night-light: #27272a;
+  --seoul-cream: #fafafa;
+  --seoul-cream-warm: #fefce8;
+  --seoul-white: #ffffff;
+  --seoul-border: #e4e4e7;
+  --seoul-border-dark: #d4d4d8;
+  --seoul-charcoal: #18181b;
+  --seoul-muted: #71717a;
+  --seoul-shadow-soft: 0 4px 18px rgba(24, 24, 27, 0.08);
+  --seoul-shadow-lift: 0 12px 30px rgba(249, 115, 22, 0.18);
+  --seoul-radius: 8px;
+  --font-seoul-display: "Syne", "Impact", sans-serif;
+  --font-seoul-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-seoul-mono: "DM Mono", monospace;
+  --seoul-transition: all 0.22s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-seoul-body);
+  background-color: var(--seoul-cream);
+  color: var(--seoul-charcoal);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Ticker */
+.seoul-ticker-bar {
+  background-color: var(--seoul-night-dark);
+  color: var(--seoul-cream);
+  padding: 0.55rem 1.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--seoul-orange);
+}
+
+.seoul-ticker-node {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seoul-ticker-node a {
+  color: var(--seoul-orange-light);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.seoul-ticker-node a:hover {
+  text-decoration: underline;
+}
+
+.seoul-masthead {
+  background-color: var(--seoul-white);
+  border-bottom: 2px solid var(--seoul-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--seoul-shadow-soft);
+}
+
+.seoul-nav-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0.95rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seoul-brand-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.seoul-brand-main {
+  font-family: var(--font-seoul-display);
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: var(--seoul-night);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.seoul-brand-main span {
+  color: var(--seoul-orange);
+}
+
+.seoul-brand-subline {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--seoul-crimson);
+}
+
+.seoul-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.seoul-nav-list a {
+  text-decoration: none;
+  color: var(--seoul-charcoal);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--seoul-radius);
+  transition: var(--seoul-transition);
+}
+
+.seoul-nav-list a:hover,
+.seoul-nav-list a.active {
+  color: var(--seoul-orange-dark);
+  background-color: var(--seoul-cream-warm);
+}
+
+.seoul-cta-button {
+  background-color: var(--seoul-orange) !important;
+  color: var(--seoul-white) !important;
+  padding: 0.55rem 1.25rem !important;
+  border-radius: var(--seoul-radius) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.seoul-cta-button:hover {
+  background-color: var(--seoul-orange-dark) !important;
+}
+
+.seoul-nav-toggle-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--seoul-border-dark);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--seoul-night);
+  border-radius: var(--seoul-radius);
+  cursor: pointer;
+}
+
+/* Hero Stage */
+.seoul-hero-billboard {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: var(--seoul-white);
+  padding: 6.5rem 1.5rem;
+  text-align: center;
+}
+
+.seoul-hero-billboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(24, 24, 27, 0.82) 0%, rgba(9, 9, 11, 0.92) 100%);
+  z-index: 1;
+}
+
+.seoul-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.seoul-hero-badge {
+  display: inline-block;
+  background-color: var(--seoul-crimson);
+  color: var(--seoul-white);
+  padding: 0.35rem 1.15rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 1.25rem;
+}
+
+.seoul-hero-inner h1 {
+  font-family: var(--font-seoul-display);
+  font-size: 3.6rem;
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+}
+
+.seoul-hero-tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--seoul-cream-warm);
+}
+
+.seoul-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.seoul-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: var(--seoul-radius);
+  transition: var(--seoul-transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn-neon-orange {
+  background-color: var(--seoul-orange);
+  color: var(--seoul-white);
+}
+
+.btn-neon-orange:hover {
+  background-color: var(--seoul-orange-dark);
+}
+
+.btn-gochujang {
+  background-color: var(--seoul-crimson);
+  color: var(--seoul-white);
+}
+
+.btn-gochujang:hover {
+  background-color: var(--seoul-crimson-dark);
+}
+
+.btn-outline-white {
+  border-color: var(--seoul-white);
+  color: var(--seoul-white);
+  background: transparent;
+}
+
+.btn-outline-white:hover {
+  background-color: var(--seoul-white);
+  color: var(--seoul-night);
+}
+
+/* Stat Ribbon */
+.seoul-stat-ribbon {
+  background-color: var(--seoul-night);
+  color: var(--seoul-white);
+  border-bottom: 3px solid var(--seoul-orange);
+  padding: 2rem 1.5rem;
+}
+
+.seoul-stat-grid {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.seoul-stat-card h3 {
+  font-family: var(--font-seoul-display);
+  color: var(--seoul-orange);
+  font-size: 1.8rem;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.seoul-stat-card p {
+  font-size: 0.92rem;
+  color: #a1a1aa;
+}
+
+/* Section Zones */
+.seoul-zone {
+  padding: 4.75rem 1.5rem;
+}
+
+.seoul-container {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.seoul-title-stack {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.25rem auto;
+}
+
+.seoul-tag-kicker {
+  color: var(--seoul-orange);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.seoul-heading-large {
+  font-family: var(--font-seoul-display);
+  font-size: 2.8rem;
+  color: var(--seoul-night);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.seoul-desc-lead {
+  font-size: 1.05rem;
+  color: var(--seoul-muted);
+}
+
+/* Street Cards Grid */
+.seoul-food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.seoul-dish-card {
+  background-color: var(--seoul-white);
+  border: 1px solid var(--seoul-border);
+  border-radius: var(--seoul-radius);
+  overflow: hidden;
+  box-shadow: var(--seoul-shadow-soft);
+  transition: var(--seoul-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.seoul-dish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--seoul-shadow-lift);
+  border-color: var(--seoul-orange);
+}
+
+.seoul-photo-box {
+  position: relative;
+  height: 235px;
+  overflow: hidden;
+}
+
+.seoul-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.seoul-dish-card:hover .seoul-photo-box img {
+  transform: scale(1.06);
+}
+
+.seoul-tag-pill {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--seoul-crimson);
+  color: var(--seoul-white);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.seoul-card-details {
+  padding: 1.65rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.seoul-dish-name {
+  font-family: var(--font-seoul-display);
+  font-size: 1.65rem;
+  color: var(--seoul-night);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.seoul-dish-blurb {
+  font-size: 0.95rem;
+  color: var(--seoul-muted);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.seoul-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--seoul-border);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.seoul-price-tag {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--seoul-crimson);
+  font-family: var(--font-seoul-mono);
+}
+
+/* Feature Spreads */
+.seoul-spread {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.seoul-spread.reverse-order {
+  flex-direction: row-reverse;
+}
+
+.seoul-visual-pane {
+  flex: 1;
+  border-radius: var(--seoul-radius);
+  overflow: hidden;
+  box-shadow: var(--seoul-shadow-lift);
+  border: 4px solid var(--seoul-white);
+}
+
+.seoul-visual-pane img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.seoul-story-pane {
+  flex: 1;
+}
+
+.seoul-story-pane h2 {
+  font-family: var(--font-seoul-display);
+  font-size: 2.5rem;
+  color: var(--seoul-night);
+  margin-bottom: 1rem;
+  line-height: 1.18;
+  text-transform: uppercase;
+}
+
+.seoul-story-pane p {
+  font-size: 1.05rem;
+  color: var(--seoul-muted);
+  margin-bottom: 1.4rem;
+}
+
+.seoul-bullets {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.seoul-bullets li {
+  padding-left: 1.6rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  font-size: 0.96rem;
+  color: var(--seoul-charcoal);
+}
+
+.seoul-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--seoul-orange);
+  top: 0.55rem;
+}
+
+/* Menu Tabs & Items */
+.seoul-tabs-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+
+.seoul-tab-item {
+  background-color: var(--seoul-white);
+  border: 1px solid var(--seoul-border-dark);
+  color: var(--seoul-charcoal);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--seoul-transition);
+}
+
+.seoul-tab-item:hover,
+.seoul-tab-item.active {
+  background-color: var(--seoul-orange);
+  color: var(--seoul-white);
+  border-color: var(--seoul-orange);
+}
+
+.seoul-menu-category {
+  margin-bottom: 3.5rem;
+}
+
+.seoul-category-heading {
+  font-family: var(--font-seoul-display);
+  font-size: 2.15rem;
+  color: var(--seoul-night);
+  border-bottom: 2px solid var(--seoul-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-transform: uppercase;
+}
+
+.seoul-category-heading span {
+  font-size: 0.92rem;
+  font-family: var(--font-seoul-body);
+  color: var(--seoul-muted);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.seoul-items-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.seoul-item-cell {
+  background: var(--seoul-white);
+  border: 1px solid var(--seoul-border);
+  border-radius: var(--seoul-radius);
+  padding: 1.35rem;
+  transition: var(--seoul-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.seoul-item-cell:hover {
+  border-color: var(--seoul-orange);
+  box-shadow: var(--seoul-shadow-soft);
+}
+
+.seoul-cell-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.seoul-item-title {
+  font-family: var(--font-seoul-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--seoul-night);
+  text-transform: uppercase;
+}
+
+.seoul-item-price {
+  font-family: var(--font-seoul-mono);
+  font-weight: 800;
+  color: var(--seoul-crimson);
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.seoul-item-desc {
+  font-size: 0.9rem;
+  color: var(--seoul-muted);
+  line-height: 1.48;
+}
+
+/* Accordion */
+.seoul-accordion-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.seoul-faq-item {
+  border: 1px solid var(--seoul-border);
+  border-radius: var(--seoul-radius);
+  background: var(--seoul-white);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.seoul-faq-trigger {
+  width: 100%;
+  padding: 1.15rem 1.35rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: var(--font-seoul-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--seoul-night);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--seoul-transition);
+  text-transform: uppercase;
+}
+
+.seoul-faq-trigger:hover {
+  background-color: var(--seoul-cream-warm);
+  color: var(--seoul-orange-dark);
+}
+
+.seoul-faq-arrow {
+  font-family: var(--font-seoul-mono);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--seoul-orange);
+  transition: transform 0.22s ease;
+}
+
+.seoul-faq-item.active .seoul-faq-arrow {
+  transform: rotate(45deg);
+}
+
+.seoul-faq-content {
+  padding: 0 1.35rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  font-size: 0.96rem;
+  color: var(--seoul-muted);
+}
+
+.seoul-faq-item.active .seoul-faq-content {
+  padding: 0 1.35rem 1.35rem 1.35rem;
+  max-height: 320px;
+}
+
+/* Location Card & Monarch Banner */
+.seoul-location-card {
+  background: var(--seoul-white);
+  border: 1px solid var(--seoul-border);
+  border-radius: var(--seoul-radius);
+  padding: 2.5rem;
+  box-shadow: var(--seoul-shadow-soft);
+}
+
+.seoul-datum-entry {
+  margin-bottom: 1.85rem;
+}
+
+.seoul-datum-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--seoul-orange);
+  letter-spacing: 0.14em;
+  margin-bottom: 0.35rem;
+}
+
+.seoul-datum-val {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--seoul-night);
+}
+
+.seoul-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.seoul-schedule-table td {
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--seoul-border);
+}
+
+.seoul-schedule-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  font-family: var(--font-seoul-mono);
+  color: var(--seoul-crimson);
+}
+
+/* Monarch Market Callout */
+.seoul-hall-banner {
+  background: linear-gradient(135deg, var(--seoul-night-dark) 0%, #1c1917 100%);
+  color: var(--seoul-white);
+  border-radius: var(--seoul-radius);
+  padding: 2.5rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid var(--seoul-orange);
+}
+
+.seoul-hall-banner-text h3 {
+  font-family: var(--font-seoul-display);
+  font-size: 1.7rem;
+  color: var(--seoul-orange-light);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.seoul-hall-banner-text p {
+  color: var(--seoul-cream-warm);
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.seoul-footer-base {
+  background-color: var(--seoul-night-dark);
+  color: #a1a1aa;
+  padding: 4.5rem 1.5rem 2rem 1.5rem;
+  border-top: 4px solid var(--seoul-orange);
+}
+
+.seoul-footer-grid {
+  max-width: 1220px;
+  margin: 0 auto 3rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 2.5rem;
+}
+
+.seoul-footer-col h4 {
+  font-family: var(--font-seoul-display);
+  color: var(--seoul-white);
+  font-size: 1.45rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.seoul-footer-col h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--seoul-orange);
+}
+
+.seoul-footer-links-list {
+  list-style: none;
+}
+
+.seoul-footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.seoul-footer-links-list a {
+  color: #d4d4d8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--seoul-transition);
+}
+
+.seoul-footer-links-list a:hover {
+  color: var(--seoul-orange-light);
+  padding-left: 4px;
+}
+
+.seoul-footer-bottom {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid #27272a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+  .seoul-spread,
+  .seoul-spread.reverse-order {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .seoul-hall-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .seoul-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .seoul-hero-inner h1 {
+    font-size: 2.45rem;
+  }
+  .seoul-ticker-bar {
+    justify-content: center;
+    text-align: center;
+  }
+  .seoul-nav-toggle-btn {
+    display: block;
+  }
+  .seoul-nav-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 1rem;
+    gap: 0.5rem;
+  }
+  .seoul-nav-list.active {
+    display: flex;
+  }
+  .seoul-nav-shell {
+    flex-wrap: wrap;
+  }
+  .seoul-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

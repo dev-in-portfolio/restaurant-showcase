@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Chinese-American Wok Menu | China Bowl Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="cbw-header">
+    <div class="cbw-header-inner">
+      <a href="index.html" class="cbw-brand">
+        <span class="cbw-brand-title">China Bowl</span>
+        <span class="cbw-brand-tagline">Charlotte Chinese Kitchen &amp; Wok</span>
+      </a>
+      <button class="cbw-mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="cbw-nav">
+        <a href="index.html" class="cbw-nav-link ">Home</a>
+        <a href="menu.html" class="cbw-nav-link active">Wok Menu</a>
+        <a href="family-specials.html" class="cbw-nav-link ">Family Feasts</a>
+        <a href="chef-combos.html" class="cbw-nav-link ">Combination Platters</a>
+        <a href="about.html" class="cbw-nav-link ">Our Story</a>
+        <a href="contact.html" class="cbw-nav-link ">Hours &amp; Location</a>
+        <a href="tel:7043475021" class="cbw-nav-cta">Call (704) 347-5021</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cbw-hero" style="min-height: 45vh; background-image: url('images/lo-mein-noodles.jpg');">
+      <div class="cbw-hero-overlay"></div>
+      <div class="cbw-hero-content">
+        <span class="cbw-hero-badge">Kitchen &amp; Sizzling Wok</span>
+        <h1 class="cbw-hero-title">China Bowl <span>Menu</span></h1>
+        <p class="cbw-hero-subtitle">
+          Sizzling chicken, beef, seafood, lo mein, fried rice, wings, and chef's specials prepared fresh daily.
+        </p>
+      </div>
+    </section>
+
+    <section class="cbw-section">
+      <div class="cbw-container">
+        <div class="cbw-menu-filter">
+          <button class="cbw-filter-btn active" data-filter="all">All Items</button>
+          <button class="cbw-filter-btn" data-filter="appetizers">Appetizers &amp; Wings</button>
+          <button class="cbw-filter-btn" data-filter="chicken-beef">Chicken &amp; Beef</button>
+          <button class="cbw-filter-btn" data-filter="rice-noodles">Rice &amp; Lo Mein</button>
+          <button class="cbw-filter-btn" data-filter="specialties">Chef Specialties</button>
+        </div>
+
+        <div class="cbw-grid-2">
+          <!-- Appetizers -->
+          <div class="cbw-menu-item" data-category="appetizers">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Golden Crab Rangoon (6 pcs)</span>
+              <span class="cbw-menu-price">$7.95</span>
+            </div>
+            <p class="cbw-menu-desc">Hand-wrapped crispy wonton pastry filled with sweet blue crab meat and seasoned cream cheese, served with sweet &amp; sour sauce.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag signature">House Signature</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="appetizers">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Crispy Whole Wings &amp; Fried Rice (4 pcs)</span>
+              <span class="cbw-menu-price">$11.50</span>
+            </div>
+            <p class="cbw-menu-desc">Seasoned jumbo whole chicken wings fried extra crispy, served over hot pork or chicken fried rice.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag gold">Top Pick</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="appetizers">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Steamed or Fried Pork Dumplings (8 pcs)</span>
+              <span class="cbw-menu-price">$8.50</span>
+            </div>
+            <p class="cbw-menu-desc">Handmade dumplings stuffed with seasoned minced pork and scallions, served with savory garlic ginger soy dipping sauce.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag">Handmade</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="appetizers">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Crispy Roast Pork Egg Rolls (2 pcs)</span>
+              <span class="cbw-menu-price">$4.25</span>
+            </div>
+            <p class="cbw-menu-desc">Deep-fried golden egg rolls packed with shredded cabbage, carrots, and savory roast pork with hot mustard and duck sauce.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag">Classic</span>
+            </div>
+          </div>
+
+          <!-- Chicken & Beef -->
+          <div class="cbw-menu-item" data-category="chicken-beef">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">General Tso's Chicken</span>
+              <span class="cbw-menu-price">$14.50</span>
+            </div>
+            <p class="cbw-menu-desc">Crisp battered dark meat chicken chunks tossed in our signature sweet and spicy garlic chili sauce with steamed broccoli.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag signature">Bestseller</span>
+              <span class="cbw-tag">Spicy</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="chicken-beef">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Sesame Crispy Beef</span>
+              <span class="cbw-menu-price">$16.50</span>
+            </div>
+            <p class="cbw-menu-desc">Thin strips of flank steak flash-fried crispy and coated in a glistening sweet sesame honey soy glaze with broccoli crowns.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag gold">Chef Choice</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="chicken-beef">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Beef with Fresh Broccoli</span>
+              <span class="cbw-menu-price">$15.50</span>
+            </div>
+            <p class="cbw-menu-desc">Tender flank steak slices wok-seared with fresh broccoli florets, carrots, and savory brown garlic oyster sauce.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag">Wok Classic</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="chicken-beef">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Sweet &amp; Sour Chicken</span>
+              <span class="cbw-menu-price">$13.95</span>
+            </div>
+            <p class="cbw-menu-desc">Golden crisp battered chicken breast nuggets served with tangy sweet and sour sauce, bell peppers, pineapple, and onions.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag">Family Favorite</span>
+            </div>
+          </div>
+
+          <!-- Rice & Noodles -->
+          <div class="cbw-menu-item" data-category="rice-noodles">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">House Special Fried Rice</span>
+              <span class="cbw-menu-price">$13.50</span>
+            </div>
+            <p class="cbw-menu-desc">Wok-charred jasmine rice tossed with roast pork, tender chicken, shrimp, egg, peas, carrots, and sweet green scallions.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag gold">Signature Rice</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="rice-noodles">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">House Special Lo Mein</span>
+              <span class="cbw-menu-price">$13.95</span>
+            </div>
+            <p class="cbw-menu-desc">Savory egg noodles tossed in high-flame wok with roast pork, chicken, shrimp, shredded cabbage, carrots, and scallions.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag signature">Top Lo Mein</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="rice-noodles">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Singapore Curry Mei Fun</span>
+              <span class="cbw-menu-price">$14.50</span>
+            </div>
+            <p class="cbw-menu-desc">Thin rice vermicelli noodles dry-wok tossed with fragrant yellow Madras curry, roast pork, shrimp, egg, and julienned vegetables.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag">Spicy Mei Fun</span>
+            </div>
+          </div>
+
+          <!-- Specialties -->
+          <div class="cbw-menu-item" data-category="specialties">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Happy Family Special</span>
+              <span class="cbw-menu-price">$17.95</span>
+            </div>
+            <p class="cbw-menu-desc">Jumbo shrimp, sea scallops, tender beef, chicken breast, and roast pork stir-fried with seasonal Chinese vegetables in rich brown sauce.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag signature">Chef Star</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="specialties">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Szechuan Spicy Triple Crown</span>
+              <span class="cbw-menu-price">$16.95</span>
+            </div>
+            <p class="cbw-menu-desc">Jumbo shrimp, tender beef, and chicken breast sautéed with broccoli, mushrooms, baby corn, and spicy Szechuan chili peppercorn paste.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag">Spicy Wok</span>
+            </div>
+          </div>
+
+          <div class="cbw-menu-item" data-category="specialties">
+            <div class="cbw-menu-header">
+              <span class="cbw-menu-name">Honey Walnut Crispy Shrimp</span>
+              <span class="cbw-menu-price">$17.50</span>
+            </div>
+            <p class="cbw-menu-desc">Lightly battered jumbo shrimp glazed in creamy sweet honey sauce, garnished with candied walnuts and steamed broccoli.</p>
+            <div class="cbw-dietary-tags">
+              <span class="cbw-tag gold">Customer Star</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="cbw-footer">
+    <div class="cbw-container">
+      <div class="cbw-footer-grid">
+        <div class="cbw-footer-col">
+          <div class="cbw-brand" style="margin-bottom: 1rem;">
+            <span class="cbw-brand-title" style="color: #fca5a5;">China Bowl</span>
+            <span class="cbw-brand-tagline" style="color: #fde68a;">Classic Chinese-American Kitchen</span>
+          </div>
+          <p style="color: var(--cbw-stone-200); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Charlotte's trusted neighborhood Chinese wok kitchen serving sizzling General Tso's chicken, house special fried rice, and family dinner feasts daily.
+          </p>
+          <p style="color: #fde68a; font-weight: 700; font-size: 0.95rem;">
+            3101 The Plaza, Charlotte, NC 28205<br>
+            Phone: (704) 347-5021
+          </p>
+        </div>
+        <div class="cbw-footer-col">
+          <h4>Explore</h4>
+          <ul class="cbw-footer-links">
+            <li><a href="index.html">Kitchen Home</a></li>
+            <li><a href="menu.html">Full Chinese Menu</a></li>
+            <li><a href="family-specials.html">Family Feast Calculator</a></li>
+            <li><a href="chef-combos.html">All-Day Combinations</a></li>
+          </ul>
+        </div>
+        <div class="cbw-footer-col">
+          <h4>Service</h4>
+          <ul class="cbw-footer-links">
+            <li><a href="about.html">About China Bowl</a></li>
+            <li><a href="contact.html">Directions &amp; Carryout</a></li>
+            <li><a href="family-specials.html">Party Tray Ordering</a></li>
+            <li><a href="contact.html">Curbside Pickup</a></li>
+          </ul>
+        </div>
+        <div class="cbw-footer-col">
+          <h4>Operating Hours</h4>
+          <ul class="cbw-footer-links">
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Sun - Thu: 11:30 AM - 9:00 PM</li>
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Fri - Sat: 11:30 AM - 9:30 PM</li>
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Lunch Specials: 11:30 AM - 3:00 PM</li>
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Fast Takeout &amp; Dine-In</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cbw-footer-bottom">
+        <p>&copy; 2026 China Bowl Charlotte. All Rights Reserved. Showcase Presentation.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

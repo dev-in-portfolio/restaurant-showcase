@@ -1,0 +1,809 @@
+/* Room 112 Stylesheet - Unique Namespace: .room112- */
+:root {
+  --room112-primary: #c026d3;
+  --room112-primary-dark: #86198f;
+  --room112-primary-light: #e879f9;
+  --room112-jade: #059669;
+  --room112-jade-light: #34d399;
+  --room112-dark: #09090b;
+  --room112-onyx: #18181b;
+  --room112-slate: #27272a;
+  --room112-bg: #fafafa;
+  --room112-surface: #ffffff;
+  --room112-surface-alt: #fdf4ff;
+  --room112-text: #09090b;
+  --room112-text-muted: #52525b;
+  --room112-border: #f5d0fe;
+  --room112-shadow-sm: 0 2px 8px rgba(192, 38, 211, 0.06);
+  --room112-shadow: 0 6px 20px -3px rgba(192, 38, 211, 0.14);
+  --room112-shadow-lg: 0 14px 32px -4px rgba(9, 9, 11, 0.25);
+  --room112-radius: 12px;
+  --room112-radius-lg: 20px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--room112-bg);
+  color: var(--room112-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .room112-brand-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  color: var(--room112-dark);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--room112-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--room112-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header & Topbar */
+.room112-header {
+  background-color: var(--room112-surface);
+  border-bottom: 2px solid var(--room112-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--room112-shadow-sm);
+}
+
+.room112-topbar {
+  background: linear-gradient(90deg, var(--room112-dark), var(--room112-onyx), var(--room112-primary-dark));
+  color: #ffffff;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room112-topbar a {
+  color: #fbcfe8;
+  font-weight: 700;
+}
+
+.room112-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room112-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.room112-logo-badge {
+  background: linear-gradient(135deg, var(--room112-primary), var(--room112-primary-dark));
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px rgba(192, 38, 211, 0.35);
+}
+
+.room112-logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--room112-dark);
+  display: block;
+  line-height: 1.15;
+}
+
+.room112-logo-sub {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--room112-primary);
+  font-weight: 700;
+  display: block;
+}
+
+.room112-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.room112-nav-links a {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--room112-text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.room112-nav-links a:hover,
+.room112-nav-links a.active {
+  color: var(--room112-primary);
+  background-color: var(--room112-surface-alt);
+}
+
+.room112-btn-cta {
+  background: linear-gradient(135deg, var(--room112-primary), var(--room112-primary-dark));
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(192, 38, 211, 0.28);
+}
+
+.room112-btn-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(192, 38, 211, 0.38);
+}
+
+.room112-mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--room112-border);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--room112-dark);
+}
+
+/* Hero Section */
+.room112-hero {
+  background: radial-gradient(circle at top center, #18181b, #09090b 80%);
+  color: #ffffff;
+  padding: 85px 20px 95px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--room112-primary);
+}
+
+.room112-hero::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(192, 38, 211, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.room112-hero-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.room112-hero-pill {
+  display: inline-block;
+  background-color: rgba(192, 38, 211, 0.2);
+  border: 1px solid rgba(192, 38, 211, 0.5);
+  color: #f5d0fe;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 22px;
+}
+
+.room112-hero h1 {
+  font-size: 3.1rem;
+  color: #ffffff;
+  margin-bottom: 22px;
+  line-height: 1.15;
+}
+
+.room112-hero p {
+  font-size: 1.18rem;
+  color: #e4e4e7;
+  max-width: 780px;
+  margin: 0 auto 34px auto;
+}
+
+.room112-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.room112-btn-hero-primary {
+  background: linear-gradient(135deg, var(--room112-primary), var(--room112-primary-dark));
+  color: #ffffff;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(192, 38, 211, 0.4);
+}
+
+.room112-btn-hero-primary:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(192, 38, 211, 0.5);
+}
+
+.room112-btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-size: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.room112-btn-hero-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+/* Layout Container */
+.room112-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.room112-section-title {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 45px auto;
+}
+
+.room112-section-title h2 {
+  font-size: 2.25rem;
+  color: var(--room112-dark);
+  margin-bottom: 12px;
+}
+
+.room112-section-title p {
+  color: var(--room112-text-muted);
+  font-size: 1.05rem;
+}
+
+/* Grids */
+.room112-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.room112-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* Cards */
+.room112-card {
+  background-color: var(--room112-surface);
+  border: 1px solid var(--room112-border);
+  border-radius: var(--room112-radius);
+  overflow: hidden;
+  box-shadow: var(--room112-shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.room112-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--room112-shadow);
+  border-color: #e879f9;
+}
+
+.room112-card-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.room112-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.room112-card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--room112-surface-alt);
+  color: var(--room112-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--room112-border);
+}
+
+.room112-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+  color: var(--room112-dark);
+}
+
+.room112-card p {
+  color: var(--room112-text-muted);
+  font-size: 0.95rem;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.room112-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--room112-border);
+}
+
+.room112-price {
+  font-weight: 800;
+  font-size: 1.18rem;
+  color: var(--room112-primary);
+}
+
+/* Spotlight Section */
+.room112-spotlight {
+  background-color: var(--room112-surface);
+  border: 1px solid var(--room112-border);
+  border-radius: var(--room112-radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  box-shadow: var(--room112-shadow);
+  margin-top: 50px;
+}
+
+.room112-spotlight-content {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.room112-spotlight-content h3 {
+  font-size: 2.1rem;
+  color: var(--room112-dark);
+  margin-bottom: 16px;
+}
+
+.room112-spotlight-content p {
+  color: var(--room112-text-muted);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+/* Menu Tabs */
+.room112-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.room112-tab-btn {
+  background-color: var(--room112-surface);
+  border: 1px solid var(--room112-border);
+  color: var(--room112-text);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.room112-tab-btn:hover,
+.room112-tab-btn.active {
+  background-color: var(--room112-primary);
+  color: #ffffff;
+  border-color: var(--room112-primary);
+  box-shadow: 0 4px 12px rgba(192, 38, 211, 0.25);
+}
+
+.room112-menu-group {
+  display: none;
+}
+
+.room112-menu-group.active {
+  display: block;
+}
+
+/* Menu Items */
+.room112-menu-item {
+  background-color: var(--room112-surface);
+  border: 1px solid var(--room112-border);
+  border-radius: var(--room112-radius);
+  padding: 22px;
+  box-shadow: var(--room112-shadow-sm);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room112-menu-item:hover {
+  border-color: #e879f9;
+  box-shadow: var(--room112-shadow);
+}
+
+.room112-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+
+.room112-item-header h4 {
+  font-size: 1.25rem;
+  color: var(--room112-dark);
+}
+
+.room112-item-price {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--room112-primary);
+  white-space: nowrap;
+}
+
+.room112-item-desc {
+  color: var(--room112-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.room112-item-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.room112-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.room112-tag-signature {
+  background-color: #fdf4ff;
+  color: var(--room112-primary);
+}
+
+.room112-tag-raw {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.room112-tag-spicy {
+  background-color: #ffe4e6;
+  color: #e11d48;
+}
+
+/* Calculator Box */
+.room112-calc-box {
+  background-color: var(--room112-surface);
+  border: 2px solid var(--room112-border);
+  border-radius: var(--room112-radius-lg);
+  padding: 36px;
+  box-shadow: var(--room112-shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.room112-calc-row {
+  margin-bottom: 24px;
+}
+
+.room112-calc-row label {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--room112-dark);
+  margin-bottom: 8px;
+}
+
+.room112-range-control {
+  width: 100%;
+  accent-color: var(--room112-primary);
+}
+
+.room112-select-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--room112-border);
+  background-color: var(--room112-bg);
+  font-size: 1rem;
+  color: var(--room112-text);
+  font-weight: 600;
+}
+
+.room112-calc-results {
+  background-color: var(--room112-surface-alt);
+  border-radius: var(--room112-radius);
+  padding: 20px;
+  margin-top: 24px;
+  border: 1px solid var(--room112-border);
+}
+
+.room112-result-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(192, 38, 211, 0.25);
+  font-size: 0.95rem;
+}
+
+.room112-result-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-weight: 900;
+  font-size: 1.45rem;
+  color: var(--room112-primary-dark);
+}
+
+/* Accordion */
+.room112-accordion {
+  border: 1px solid var(--room112-border);
+  border-radius: var(--room112-radius);
+  background-color: var(--room112-surface);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.room112-accordion-header {
+  padding: 18px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--room112-dark);
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.room112-accordion-header:hover {
+  background-color: var(--room112-surface-alt);
+}
+
+.room112-accordion-content {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: var(--room112-text-muted);
+  font-size: 0.95rem;
+}
+
+.room112-accordion.open .room112-accordion-content {
+  padding: 16px 24px 24px 24px;
+  max-height: 300px;
+}
+
+.room112-accordion-icon {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--room112-primary);
+}
+
+/* Visit Cards */
+.room112-visit-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+}
+
+.room112-info-card {
+  background-color: var(--room112-surface);
+  border: 1px solid var(--room112-border);
+  border-radius: var(--room112-radius-lg);
+  padding: 32px;
+  box-shadow: var(--room112-shadow-sm);
+}
+
+.room112-info-card h3 {
+  font-size: 1.5rem;
+  color: var(--room112-dark);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--room112-border);
+}
+
+.room112-info-item {
+  margin-bottom: 18px;
+}
+
+.room112-info-item strong {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--room112-primary);
+  margin-bottom: 4px;
+}
+
+.room112-info-item p {
+  color: var(--room112-text);
+  font-size: 1rem;
+}
+
+/* CTA Banner */
+.room112-cta-banner {
+  background: radial-gradient(circle at center, #18181b, #09090b);
+  color: #ffffff;
+  border-radius: var(--room112-radius-lg);
+  padding: 50px 30px;
+  text-align: center;
+  border: 2px solid rgba(192, 38, 211, 0.4);
+  box-shadow: var(--room112-shadow-lg);
+}
+
+.room112-cta-banner h2 {
+  font-size: 2.3rem;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.room112-cta-banner p {
+  color: #e4e4e7;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 28px auto;
+}
+
+.room112-cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.room112-footer {
+  background-color: #09090b;
+  color: #ffffff;
+  padding: 60px 20px 24px 20px;
+  border-top: 4px solid var(--room112-primary);
+}
+
+.room112-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.room112-footer-col h4 {
+  color: #f5d0fe;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.room112-footer-col p {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.room112-footer-links {
+  list-style: none;
+}
+
+.room112-footer-links li {
+  margin-bottom: 10px;
+}
+
+.room112-footer-links a {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+}
+
+.room112-footer-links a:hover {
+  color: #f5d0fe;
+}
+
+.room112-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #71717a;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .room112-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .room112-spotlight {
+    grid-template-columns: 1fr;
+  }
+  .room112-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .room112-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .room112-grid-3, .room112-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .room112-mobile-toggle {
+    display: block;
+  }
+  .room112-nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--room112-surface);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-bottom: 3px solid var(--room112-primary);
+  }
+  .room112-nav-links.show {
+    display: flex;
+  }
+  .room112-hero h1 {
+    font-size: 2.2rem;
+  }
+  .room112-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

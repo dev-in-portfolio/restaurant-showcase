@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Office Catering &amp; Breakfast Boxes | Halfpenny's Cafe Charlotte</title>
+  <meta name="description" content="Order office breakfast sandwich crates, corporate box lunches, and 96oz travel coffee boxes from Halfpenny's Cafe in 301 S Tryon Uptown Charlotte.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="halfpenny-header">
+    <div class="halfpenny-topbar">
+      <span>Concourse Cafe &amp; Deli | 301 S Tryon St Suite 30 (Lower Level)</span>
+      <span>Express Morning Counter: <a href="tel:7043429697">(704) 342-9697</a></span>
+    </div>
+    <div class="halfpenny-nav-container">
+      <a href="index.html" class="halfpenny-logo-group">
+        <span class="halfpenny-logo-badge">HC</span>
+        <div>
+          <span class="halfpenny-logo-title">Halfpenny's Cafe</span>
+          <span class="halfpenny-logo-sub">Tryon St Concourse &amp; Deli</span>
+        </div>
+      </a>
+      <button class="halfpenny-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="halfpenny-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="concourse-breakfast-and-omelets.html">Breakfast &amp; Omelets</a>
+          <a href="artisan-deli-and-specialty-subs.html">Deli &amp; Sandwiches</a>
+          <a href="office-catering-and-breakfast-boxes.html" class="active">Catering &amp; Boxes</a>
+          <a href="visit.html">Visit &amp; Hours</a>
+          <a href="tel:7043429697" class="halfpenny-nav-btn">Call (704) 342-9697</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="halfpenny-hero-compact">
+    <div class="halfpenny-container">
+      <span class="halfpenny-badge">Corporate Tower Catering</span>
+      <h1 style="font-size:2.6rem; font-weight:900; margin:15px 0;">Office Catering &amp; Breakfast Boxes</h1>
+      <p style="font-size:1.1rem; color:#cbd5e1; max-width:720px; margin:0 auto;">Reliable breakfast sandwich platters, executive boxed deli lunches, and hot coffee travelers for South Tryon towers.</p>
+    </div>
+  </section>
+
+  <main class="halfpenny-container" style="padding:60px 24px;">
+    <!-- Interactive Estimator & Overview -->
+    <div class="halfpenny-grid-2" style="gap:40px; margin-bottom:60px; align-items:start;">
+      <div>
+        <span class="halfpenny-tag">Serving Uptown Offices</span>
+        <h2 style="font-size:2rem; color:#0f172a; margin:15px 0; font-weight:800;">Convenient Concourse Catering</h2>
+        <p style="color:#4b5563; line-height:1.7; margin-bottom:15px;">
+          Halfpenny's Cafe is the trusted catering partner for legal practices, banking groups, and corporate departments throughout Uptown Charlotte.
+        </p>
+        <p style="color:#4b5563; line-height:1.7; margin-bottom:20px;">
+          Whether you need 15 hot breakfast biscuits for a 7:30 AM client presentation or individual deli box lunches for a noon board meeting, we ensure every order is fresh, labeled, and complete with all condiments and paper goods.
+        </p>
+        
+        <div class="halfpenny-calc-box">
+          <h3 style="color:#0f172a; font-size:1.3rem; margin-bottom:12px;">Interactive Corporate Catering Calculator</h3>
+          <p style="color:#4b5563; font-size:0.9rem; margin-bottom:14px;">Select your group size and meeting format:</p>
+          
+          <label style="font-weight:600; font-size:0.9rem; color:#374151;">Expected Attendees:</label>
+          <select id="hp-calc-guests" class="halfpenny-calc-select">
+            <option value="10">10 Attendees</option>
+            <option value="15">15 Attendees</option>
+            <option value="20" selected>20 Attendees</option>
+            <option value="30">30 Attendees</option>
+            <option value="50">50 Attendees</option>
+          </select>
+
+          <label style="font-weight:600; font-size:0.9rem; color:#374151;">Package Format:</label>
+          <select id="hp-calc-type" class="halfpenny-calc-select">
+            <option value="breakfast" selected>Hot Breakfast Biscuit Crate &amp; Coffee Box</option>
+            <option value="deli">Executive Deli Boxed Lunches</option>
+            <option value="buffet">Full Morning Boardroom Buffet Spread</option>
+          </select>
+
+          <div id="hp-calc-output" class="halfpenny-calc-res">
+            <!-- Populated via site.js -->
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img src="images/artisan-coffee-latte.jpg" alt="Hot coffee travelers and morning catering at Halfpenny's Cafe" style="width:100%; height:360px; object-fit:cover; border-radius:12px; box-shadow:var(--halfpenny-shadow-lg); margin-bottom:25px;">
+        <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; box-shadow:var(--halfpenny-shadow);">
+          <h4 style="color:#0f172a; font-size:1.15rem; margin-bottom:8px;">How to Place Tower Orders</h4>
+          <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:14px;">
+            Please call our concourse counter at least 2 to 12 hours in advance for group trays. Pickup is fast and simple on the lower level of 301 S Tryon.
+          </p>
+          <a href="tel:7043429697" class="halfpenny-btn-primary" style="display:block; text-align:center;">Call Catering: (704) 342-9697</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Package Trays Grid -->
+    <h2 style="font-size:1.9rem; color:#0f172a; text-align:center; margin-bottom:35px;">Signature Office Platters</h2>
+
+    <div class="halfpenny-grid-3" style="gap:28px; margin-bottom:60px;">
+      <div class="halfpenny-card">
+        <h3 style="color:#0f172a; margin-bottom:8px;">Hot Biscuit Breakfast Crate (12 Biscuits)</h3>
+        <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">12 made-to-order buttermilk biscuit sandwiches (6 Bacon Egg &amp; Cheddar, 4 Sausage Egg &amp; Cheese, 2 Egg &amp; Cheese) individually wrapped.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:12px;">
+          <span style="font-weight:700; color:#b45309; font-size:1.2rem;">$85.00</span>
+          <span class="halfpenny-tag">12 Biscuits</span>
+        </div>
+      </div>
+
+      <div class="halfpenny-card">
+        <h3 style="color:#0f172a; margin-bottom:8px;">96oz Traveler Coffee Box</h3>
+        <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Serves 8 - 10 cups. Insulated coffee container filled with freshly brewed medium or dark roast. Includes 10 cups, sleeves, sugars, and creamers.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:12px;">
+          <span style="font-weight:700; color:#b45309; font-size:1.2rem;">$26.00</span>
+          <span class="halfpenny-tag">96oz Carafe</span>
+        </div>
+      </div>
+
+      <div class="halfpenny-card">
+        <h3 style="color:#0f172a; margin-bottom:8px;">Executive Deli Lunch Box (Per Person)</h3>
+        <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Choice of deli sandwich (Club, Tarragon Chicken Salad, Turkey Avocado, or Tuna Melt), bag of kettle chips, kosher pickle, and fresh baked cookie.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:12px;">
+          <span style="font-weight:700; color:#b45309; font-size:1.2rem;">$15.50 / person</span>
+          <span class="halfpenny-tag">Min 8 Boxes</span>
+        </div>
+      </div>
+
+      <div class="halfpenny-card">
+        <h3 style="color:#0f172a; margin-bottom:8px;">Fresh Bagel &amp; Pastry Platter (16pc)</h3>
+        <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">8 assorted sliced bagels with cream cheese tubs, plus 8 fresh baked butter croissants and blueberry muffins with fruit preserves.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:12px;">
+          <span style="font-weight:700; color:#b45309; font-size:1.2rem;">$48.00</span>
+          <span class="halfpenny-tag">16 Pieces</span>
+        </div>
+      </div>
+
+      <div class="halfpenny-card">
+        <h3 style="color:#0f172a; margin-bottom:8px;">Crispy Hashbrown Party Pan</h3>
+        <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Serves 10 - 12 guests. Half deep hotel pan of crispy golden seasoned hashbrown potatoes, accompanied by ketchup and hot sauce bottles.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:12px;">
+          <span style="font-weight:700; color:#b45309; font-size:1.2rem;">$38.00</span>
+          <span class="halfpenny-tag">Side Pan</span>
+        </div>
+      </div>
+
+      <div class="halfpenny-card">
+        <h3 style="color:#0f172a; margin-bottom:8px;">Fresh Seasonal Fruit Bowl</h3>
+        <p style="color:#4b5563; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Serves 10 - 12 guests. Large catering bowl filled with cut cantaloupe, honeydew melon, fresh pineapple, strawberries, and red grapes.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:12px;">
+          <span style="font-weight:700; color:#b45309; font-size:1.2rem;">$45.00</span>
+          <span class="halfpenny-tag">Fresh Fruit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="halfpenny-banner-strip">
+      <h2 style="color:#ffffff; font-size:2rem; margin-bottom:12px;">Plan Your Office Meeting Breakfast</h2>
+      <p style="color:#cbd5e1; max-width:650px; margin:0 auto 20px;">Contact our staff directly to arrange convenient concourse pickup or tower delivery.</p>
+      <a href="tel:7043429697" class="halfpenny-btn-primary">Call (704) 342-9697</a>
+    </div>
+  </main>
+
+  <footer class="halfpenny-footer">
+    <div class="halfpenny-footer-grid">
+      <div>
+        <h4 style="color:#f59e0b;">Halfpenny's Cafe</h4>
+        <p>Uptown Charlotte's beloved concourse breakfast &amp; deli destination inside 301 S Tryon St. Scratch-made buttermilk biscuits, custom omelets, artisan triple-decker clubs, tarragon chicken salad, and corporate catering.</p>
+        <p style="margin-top:12px;"><strong>301 S Tryon St, Suite 30 | Lower Concourse Level | Charlotte, NC</strong></p>
+      </div>
+      <div>
+        <h4>Menu Navigation</h4>
+        <ul class="halfpenny-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="concourse-breakfast-and-omelets.html">Breakfast &amp; Omelets</a></li>
+          <li><a href="artisan-deli-and-specialty-subs.html">Deli &amp; Specialty Subs</a></li>
+          <li><a href="office-catering-and-breakfast-boxes.html">Office Catering</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Weekday Hours</h4>
+        <ul class="halfpenny-footer-links">
+          <li>Monday - Thursday: 7:00 AM - 3:30 PM</li>
+          <li>Friday: 7:00 AM - 3:00 PM</li>
+          <li>Saturday - Sunday: Closed</li>
+          <li>Fast Concourse Pickup Daily</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location &amp; Contact</h4>
+        <p>301 S Tryon St, Suite 30<br>Charlotte, NC 28282</p>
+        <p style="margin-top:8px;">Phone: <a href="tel:7043429697" style="color:#f59e0b; font-weight:700;">(704) 342-9697</a></p>
+        <p>Email: <a href="mailto:info@halfpennyscafe.com" style="color:#f59e0b;">info@halfpennyscafe.com</a></p>
+      </div>
+    </div>
+    <div class="halfpenny-footer-bottom">
+      <p>&copy; 2026 Halfpenny's Cafe. All rights reserved. Uptown Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "slug": "pho-an-hoa",
+  "generatedAt": "2026-09-10T18:01:13.735Z",
+  "recentCompared": 6,
+  "recentSlugs": [
+    "restaurant-slug",
+    "midwood-country-club",
+    "republica-restaurant-and-lounge",
+    "indigo-tea-and-coffee-co",
+    "nefelie-s",
+    "the-local",
+    "mortimer-s-cafe-and-pub",
+    "santa-fe-mexican-restaurant-central-ave",
+    "landmark-restaurant-diner",
+    "van-loi-chinese-barbecue"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "van-loi-chinese-barbecue",
+    "score": 0.16189140702229707,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.013986013986013986,
+    "domSimilarity": 0.49214659685863876,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0.5
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "van-loi-chinese-barbecue",
+      "score": 0.16189140702229707,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013986013986013986,
+      "domSimilarity": 0.49214659685863876,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "landmark-restaurant-diner",
+      "score": 0.12066741548606834,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013986013986013986,
+      "domSimilarity": 0.48704663212435234,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "mortimer-s-cafe-and-pub",
+      "score": 0.11701985252410663,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007751937984496124,
+      "domSimilarity": 0.3121951219512195,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.10845964432284541,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013071895424836602,
+      "domSimilarity": 0.4372093023255814,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "republica-restaurant-and-lounge",
+      "score": 0.09588208181294411,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007874015748031496,
+      "domSimilarity": 0.3073170731707317,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.25
+    },
+    {
+      "priorSlug": "midwood-country-club",
+      "score": 0.07546049261083744,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.008,
+      "domSimilarity": 0.3054187192118227,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

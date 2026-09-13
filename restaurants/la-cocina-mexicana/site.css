@@ -1,0 +1,690 @@
+/* La Cocina Mexicana - Authentic Culinary Heritage Stylesheet */
+:root {
+  --cocina-primary: #b83a24;
+  --cocina-primary-dark: #8c2715;
+  --cocina-secondary: #d9822b;
+  --cocina-secondary-light: #f5ad58;
+  --cocina-accent: #2d5a27;
+  --cocina-accent-light: #47803f;
+  --cocina-bg: #faf5ee;
+  --cocina-surface: #ffffff;
+  --cocina-surface-alt: #f3eae0;
+  --cocina-text: #1e2022;
+  --cocina-text-muted: #5c6269;
+  --cocina-border: #e6dacb;
+  --cocina-shadow: 0 4px 20px rgba(184, 58, 36, 0.08);
+  --cocina-shadow-lg: 0 12px 32px rgba(184, 58, 36, 0.14);
+  --cocina-radius: 12px;
+  --cocina-radius-sm: 6px;
+  --cocina-font-heading: 'Outfit', Georgia, serif;
+  --cocina-font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cocina-bg);
+  color: var(--cocina-text);
+  font-family: var(--cocina-font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header & Navigation */
+.cocina-header {
+  background: var(--cocina-surface);
+  border-bottom: 2px solid var(--cocina-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.cocina-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cocina-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.cocina-brand-title {
+  font-family: var(--cocina-font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cocina-primary);
+  letter-spacing: -0.02em;
+}
+
+.cocina-brand-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--cocina-secondary);
+  font-weight: 600;
+}
+
+.cocina-nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.cocina-nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cocina-text);
+  padding: 0.5rem 0.25rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.cocina-nav-link:hover,
+.cocina-nav-link.active {
+  color: var(--cocina-primary);
+}
+
+.cocina-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--cocina-primary);
+  border-radius: 2px;
+}
+
+.cocina-nav-cta {
+  background: var(--cocina-primary);
+  color: #ffffff !important;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--cocina-radius-sm);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cocina-nav-cta:hover {
+  background: var(--cocina-primary-dark);
+  transform: translateY(-1px);
+}
+
+.cocina-nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--cocina-border);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--cocina-radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--cocina-primary);
+}
+
+/* Hero Section */
+.cocina-hero {
+  position: relative;
+  padding: 5rem 1.5rem 4rem;
+  background: linear-gradient(135deg, rgba(184, 58, 36, 0.05) 0%, rgba(217, 130, 43, 0.08) 100%);
+  border-bottom: 1px solid var(--cocina-border);
+  overflow: hidden;
+}
+
+.cocina-hero-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.cocina-hero-badge {
+  display: inline-block;
+  background: var(--cocina-surface-alt);
+  color: var(--cocina-primary-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid var(--cocina-border);
+  margin-bottom: 1rem;
+}
+
+.cocina-hero-title {
+  font-family: var(--cocina-font-heading);
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--cocina-text);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.cocina-hero-title span {
+  color: var(--cocina-primary);
+}
+
+.cocina-hero-lead {
+  font-size: 1.15rem;
+  color: var(--cocina-text-muted);
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+.cocina-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cocina-btn-primary {
+  background: var(--cocina-primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--cocina-radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cocina-btn-primary:hover {
+  background: var(--cocina-primary-dark);
+  transform: translateY(-2px);
+}
+
+.cocina-btn-secondary {
+  background: transparent;
+  color: var(--cocina-primary);
+  border: 2px solid var(--cocina-primary);
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--cocina-radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cocina-btn-secondary:hover {
+  background: var(--cocina-primary);
+  color: #ffffff;
+}
+
+.cocina-hero-img-wrap {
+  position: relative;
+  border-radius: var(--cocina-radius);
+  overflow: hidden;
+  box-shadow: var(--cocina-shadow-lg);
+  border: 4px solid var(--cocina-surface);
+}
+
+.cocina-hero-img-wrap img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cocina-hero-img-wrap:hover img {
+  transform: scale(1.03);
+}
+
+/* Feature Highlights */
+.cocina-features {
+  max-width: 1200px;
+  margin: -2rem auto 4rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.cocina-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.cocina-feature-card {
+  background: var(--cocina-surface);
+  padding: 1.75rem;
+  border-radius: var(--cocina-radius);
+  border: 1px solid var(--cocina-border);
+  box-shadow: var(--cocina-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cocina-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cocina-shadow-lg);
+}
+
+.cocina-feature-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cocina-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.cocina-feature-title {
+  font-family: var(--cocina-font-heading);
+  font-size: 1.25rem;
+  color: var(--cocina-text);
+  margin-bottom: 0.5rem;
+}
+
+.cocina-feature-desc {
+  font-size: 0.9rem;
+  color: var(--cocina-text-muted);
+}
+
+/* Section Common */
+.cocina-section {
+  padding: 4.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cocina-section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+
+.cocina-section-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--cocina-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cocina-section-title {
+  font-family: var(--cocina-font-heading);
+  font-size: 2.3rem;
+  color: var(--cocina-text);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.cocina-section-subtitle {
+  font-size: 1rem;
+  color: var(--cocina-text-muted);
+}
+
+/* Menu Grid */
+.cocina-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cocina-filter-btn {
+  background: var(--cocina-surface);
+  border: 1px solid var(--cocina-border);
+  color: var(--cocina-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cocina-filter-btn:hover,
+.cocina-filter-btn.active {
+  background: var(--cocina-primary);
+  color: #ffffff;
+  border-color: var(--cocina-primary);
+}
+
+.cocina-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.cocina-menu-item {
+  background: var(--cocina-surface);
+  border-radius: var(--cocina-radius);
+  border: 1px solid var(--cocina-border);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--cocina-shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cocina-menu-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--cocina-secondary);
+}
+
+.cocina-menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--cocina-border);
+  padding-bottom: 0.5rem;
+}
+
+.cocina-menu-item-name {
+  font-family: var(--cocina-font-heading);
+  font-size: 1.2rem;
+  color: var(--cocina-primary-dark);
+  font-weight: 700;
+}
+
+.cocina-menu-item-price {
+  font-weight: 800;
+  color: var(--cocina-secondary);
+  font-size: 1.1rem;
+}
+
+.cocina-menu-item-desc {
+  font-size: 0.9rem;
+  color: var(--cocina-text-muted);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.cocina-menu-item-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cocina-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--cocina-surface-alt);
+  color: var(--cocina-primary);
+}
+
+.cocina-badge-spice {
+  background: #fde8e4;
+  color: var(--cocina-primary);
+}
+
+.cocina-badge-gf {
+  background: #eaf3e8;
+  color: var(--cocina-accent);
+}
+
+/* Two Column Showcase */
+.cocina-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.cocina-story-content h3 {
+  font-family: var(--cocina-font-heading);
+  font-size: 2rem;
+  color: var(--cocina-text);
+  margin-bottom: 1rem;
+}
+
+.cocina-story-content p {
+  color: var(--cocina-text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.cocina-story-img-wrap {
+  border-radius: var(--cocina-radius);
+  overflow: hidden;
+  box-shadow: var(--cocina-shadow-lg);
+  border: 4px solid var(--cocina-surface);
+}
+
+.cocina-story-img-wrap img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* Interactive Calculator */
+.cocina-calc-card {
+  background: var(--cocina-surface);
+  border: 2px solid var(--cocina-border);
+  border-radius: var(--cocina-radius);
+  padding: 2.5rem;
+  box-shadow: var(--cocina-shadow);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cocina-calc-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cocina-calc-field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--cocina-text);
+}
+
+.cocina-range-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--cocina-surface-alt);
+  accent-color: var(--cocina-primary);
+  outline: none;
+}
+
+.cocina-calc-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--cocina-radius-sm);
+  border: 1px solid var(--cocina-border);
+  font-size: 1rem;
+  background: var(--cocina-surface);
+  color: var(--cocina-text);
+}
+
+.cocina-calc-results {
+  background: var(--cocina-surface-alt);
+  border-radius: var(--cocina-radius-sm);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.cocina-result-box .num {
+  font-family: var(--cocina-font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--cocina-primary);
+  display: block;
+}
+
+.cocina-result-box .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cocina-text-muted);
+}
+
+/* Visit & Contact Information Cards */
+.cocina-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cocina-contact-card {
+  background: var(--cocina-surface);
+  border: 1px solid var(--cocina-border);
+  border-radius: var(--cocina-radius);
+  padding: 2rem;
+  box-shadow: var(--cocina-shadow);
+}
+
+.cocina-contact-card h3 {
+  font-family: var(--cocina-font-heading);
+  font-size: 1.35rem;
+  color: var(--cocina-primary);
+  margin-bottom: 1rem;
+}
+
+.cocina-hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted var(--cocina-border);
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.cocina-footer {
+  background: #181a1b;
+  color: #e0deda;
+  padding: 4rem 1.5rem 2rem;
+  border-top: 4px solid var(--cocina-primary);
+}
+
+.cocina-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cocina-footer-brand h4 {
+  font-family: var(--cocina-font-heading);
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cocina-footer-brand p {
+  color: #99938a;
+  font-size: 0.9rem;
+  max-width: 360px;
+}
+
+.cocina-footer-nav h5,
+.cocina-footer-hours h5 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cocina-footer-nav ul {
+  list-style: none;
+}
+
+.cocina-footer-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.cocina-footer-nav a {
+  color: #99938a;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.cocina-footer-nav a:hover {
+  color: var(--cocina-secondary);
+}
+
+.cocina-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid #2d2b29;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #77726b;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cocina-hero-grid,
+  .cocina-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .cocina-footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .cocina-hero-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cocina-nav-toggle {
+    display: block;
+  }
+  .cocina-nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--cocina-surface);
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--cocina-border);
+  }
+  .cocina-nav-list.is-open {
+    display: flex;
+  }
+  .cocina-calc-controls {
+    grid-template-columns: 1fr;
+  }
+  .cocina-calc-results {
+    grid-template-columns: 1fr;
+  }
+}

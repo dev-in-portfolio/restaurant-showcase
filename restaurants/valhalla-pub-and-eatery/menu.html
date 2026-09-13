@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tavern Menu | Valhalla Pub &amp; Eatery Uptown Charlotte</title>
+  <meta name="description" content="Explore the full menu at Valhalla Pub & Eatery in Charlotte NC: Norwegian meatballs, Viking blend burgers, fish & chips, smoked wings, and craft beers on tap.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="valhalla-header">
+    <div class="valhalla-topbar">
+      <span>Viking &amp; Scandinavian Pub | Historic Brevard Court, 317 S Church St</span>
+      <span>Patio &amp; Takeout Counter: <a href="tel:7043323273">(704) 332-3273</a></span>
+    </div>
+    <div class="valhalla-nav-container">
+      <a href="index.html" class="valhalla-logo-group">
+        <span class="valhalla-logo-badge">VP</span>
+        <div>
+          <span class="valhalla-logo-text">Valhalla Pub</span>
+          <span class="valhalla-logo-sub">Scandinavian Eatery &amp; Taproom</span>
+        </div>
+      </a>
+      <button class="valhalla-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="valhalla-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Full Menu</a>
+          <a href="scandinavian-pub-fare-and-meatballs.html">Nordic Comfort</a>
+          <a href="brevard-court-patio-and-taproom.html">Brevard Patio</a>
+          <a href="feast-platters-and-gameday-packages.html">Feast Platters</a>
+          <a href="visit.html">Visit &amp; Hours</a>
+          <a href="tel:7043323273" class="valhalla-btn-cta">Call (704) 332-3273</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="valhalla-hero" style="padding: 50px 20px;">
+    <div class="valhalla-hero-inner">
+      <span class="valhalla-hero-pill">Made From Scratch Daily</span>
+      <h1>Full Tavern &amp; Taproom Menu</h1>
+      <p>Hearty Scandinavian classics, proprietary blend burgers, crispy pub favorites, shareable boards, and ice-cold craft beers.</p>
+    </div>
+  </section>
+
+  <main class="valhalla-container">
+    <div class="valhalla-tabs">
+      <button class="valhalla-tab-btn active" data-target="tab-scandinavian">Nordic Specialties</button>
+      <button class="valhalla-tab-btn" data-target="tab-burgers">Viking Burgers &amp; Sandwiches</button>
+      <button class="valhalla-tab-btn" data-target="tab-pubfare">Pub Classics &amp; Fish</button>
+      <button class="valhalla-tab-btn" data-target="tab-wings">Smoked Wings &amp; Boards</button>
+      <button class="valhalla-tab-btn" data-target="tab-drinks">Craft Taps &amp; Cocktails</button>
+    </div>
+
+    <!-- Group 1: Scandinavian -->
+    <div class="valhalla-menu-group active" id="tab-scandinavian">
+      <div class="valhalla-section-title">
+        <h2>Scandinavian Specialties &amp; Comfort Fare</h2>
+        <p>Traditional Norse family recipes prepared from scratch in our Uptown kitchen.</p>
+      </div>
+
+      <div class="valhalla-grid-2">
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Norwegian Meatball Plate</h4>
+            <span class="valhalla-item-price">$16.50</span>
+          </div>
+          <p class="valhalla-item-desc">Seasoned ground beef and pork meatballs simmered in rich Nordic cream gravy, served with Yukon gold mashed potatoes and imported Swedish lingonberry jam.</p>
+          <div class="valhalla-item-tags">
+            <span class="valhalla-tag valhalla-tag-nordic">Nordic Classic</span>
+            <span class="valhalla-tag valhalla-tag-signature">House Favorite</span>
+          </div>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Scandinavian Smoked Salmon Toast</h4>
+            <span class="valhalla-item-price">$14.50</span>
+          </div>
+          <p class="valhalla-item-desc">House-cured Atlantic smoked salmon on toasted dark rye bread with lemon-herb dill cream cheese, shaved red onions, and nonpareil capers.</p>
+          <div class="valhalla-item-tags">
+            <span class="valhalla-tag valhalla-tag-nordic">Smørrebrød Style</span>
+          </div>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Lodbrok’s Lamb Burger</h4>
+            <span class="valhalla-item-price">$16.99</span>
+          </div>
+          <p class="valhalla-item-desc">Seasoned ground pasture-raised lamb patty topped with creamy feta cheese, baby arugula, pickled red onion, and cucumber tzatziki on toasted brioche.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Nordic Pork Shank (Braised)</h4>
+            <span class="valhalla-item-price">$21.00</span>
+          </div>
+          <p class="valhalla-item-desc">Slow-braised bone-in pork shank glazed with apple cider and mustard demi-glace, served over braised red cabbage and roasted fingerling potatoes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 2: Burgers -->
+    <div class="valhalla-menu-group" id="tab-burgers">
+      <div class="valhalla-section-title">
+        <h2>Viking Blend Burgers &amp; Handhelds</h2>
+        <p>Served with hand-cut sea salt pub fries or house remoulade slaw.</p>
+      </div>
+
+      <div class="valhalla-grid-2">
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>The Odin Viking Burger</h4>
+            <span class="valhalla-item-price">$15.50</span>
+          </div>
+          <p class="valhalla-item-desc">Custom beef-pork blend patty, thick melted smoked gouda, applewood smoked bacon, stout-braised caramelized onions, and garlic aioli on brioche.</p>
+          <div class="valhalla-item-tags">
+            <span class="valhalla-tag valhalla-tag-signature">Bestseller</span>
+          </div>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>The Thor Jalapeno Smash Burger</h4>
+            <span class="valhalla-item-price">$15.99</span>
+          </div>
+          <p class="valhalla-item-desc">Double smashed patties with pepper jack cheese, crispy fried pickled jalapenos, smoked bacon, and fiery habanero bacon jam.</p>
+          <div class="valhalla-item-tags">
+            <span class="valhalla-tag valhalla-tag-spicy">Fiery Heat</span>
+          </div>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Crispy Viking Fried Chicken Sandwich</h4>
+            <span class="valhalla-item-price">$14.50</span>
+          </div>
+          <p class="valhalla-item-desc">Buttermilk fried chicken breast tossed in hot honey or sweet lingonberry BBQ sauce with crunchy dill pickles on buttered brioche.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Brevard Court B.L.T. &amp; Gouda</h4>
+            <span class="valhalla-item-price">$13.50</span>
+          </div>
+          <p class="valhalla-item-desc">Thick-cut applewood bacon, crisp romaine, ripe beefsteak tomatoes, melted smoked gouda, and roasted garlic herb mayo on sourdough.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 3: Pub Fare -->
+    <div class="valhalla-menu-group" id="tab-pubfare">
+      <div class="valhalla-section-title">
+        <h2>Pub Classics &amp; North Sea Fish</h2>
+        <p>Hearty comfort food made fresh to order.</p>
+      </div>
+
+      <div class="valhalla-grid-2">
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>North Sea Beer-Battered Fish &amp; Chips</h4>
+            <span class="valhalla-item-price">$16.00</span>
+          </div>
+          <p class="valhalla-item-desc">Crispy golden Atlantic cod fillets dipped in local craft IPA batter, served with sea salt pub fries, house caper tartar sauce, and lemon wedge.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Bangers &amp; Mash with Onion Gravy</h4>
+            <span class="valhalla-item-price">$15.50</span>
+          </div>
+          <p class="valhalla-item-desc">Two grilled artisan pork sausages over Yukon gold mashed potatoes smothered in rich caramelized Guinness onion gravy.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Tavern Shepherd’s Pie</h4>
+            <span class="valhalla-item-price">$15.99</span>
+          </div>
+          <p class="valhalla-item-desc">Ground lamb and beef stewed with sweet peas, carrots, and sweet corn in savory herb gravy, topped with toasted cheddar mashed potatoes.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Cast Iron Mac &amp; Beer Cheese</h4>
+            <span class="valhalla-item-price">$12.50</span>
+          </div>
+          <p class="valhalla-item-desc">Cavatappi pasta baked with local craft ale cheddar cheese fondue, topped with toasted pretzel breadcrumbs and scallions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 4: Wings & Boards -->
+    <div class="valhalla-menu-group" id="tab-wings">
+      <div class="valhalla-section-title">
+        <h2>Smoked Wings &amp; Shared Tavern Boards</h2>
+        <p>Perfect for sharing over a pint on the Brevard Court patio.</p>
+      </div>
+
+      <div class="valhalla-grid-2">
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Hickory-Smoked Jumbo Wings (8 pcs / 16 pcs)</h4>
+            <span class="valhalla-item-price">$12.99 / $22.99</span>
+          </div>
+          <p class="valhalla-item-desc">Slow-smoked and flash-crisped wings tossed in your choice: Viking Dry Rub, Lingonberry Sweet BBQ, Garlic Parmesan, or Fiery Habanero.</p>
+          <div class="valhalla-item-tags">
+            <span class="valhalla-tag valhalla-tag-signature">Tavern Smoked</span>
+          </div>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Brevard Giant Bavarian Pretzel Board</h4>
+            <span class="valhalla-item-price">$13.50</span>
+          </div>
+          <p class="valhalla-item-desc">Warm, butter-brushed jumbo soft pretzel served on a wooden board with warm beer cheese fondue and coarse whole grain mustard.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Valhalla Tavern Poutine</h4>
+            <span class="valhalla-item-price">$11.99</span>
+          </div>
+          <p class="valhalla-item-desc">Hand-cut pub fries smothered in melted Wisconsin white cheddar cheese curds, rich meatball gravy, and crispy bacon crumbles.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Crispy Cheese Curds with Lingonberry Dip</h4>
+            <span class="valhalla-item-price">$9.50</span>
+          </div>
+          <p class="valhalla-item-desc">Beer-battered Wisconsin cheddar curds fried golden with tart sweet lingonberry jam dipping sauce.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group 5: Drinks -->
+    <div class="valhalla-menu-group" id="tab-drinks">
+      <div class="valhalla-section-title">
+        <h2>Rotating Craft Taps &amp; Nordic Cocktails</h2>
+        <p>10 rotating Carolina draft lines, handcrafted cocktails, and authentic Scandinavian meads.</p>
+      </div>
+
+      <div class="valhalla-grid-2">
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Odin’s Old Fashioned</h4>
+            <span class="valhalla-item-price">$12.50</span>
+          </div>
+          <p class="valhalla-item-desc">Bourbon, spiced lingonberry syrup, Angostura bitters, and flamed orange peel over a hand-carved ice sphere.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Valkyrie Mule</h4>
+            <span class="valhalla-item-price">$11.50</span>
+          </div>
+          <p class="valhalla-item-desc">Vodka, Scandinavian cloudberry liqueur, spicy ginger beer, and fresh lime in a chilled copper mug.</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Local Rotating Carolina Craft Pint</h4>
+            <span class="valhalla-item-price">$7.00 - $8.50</span>
+          </div>
+          <p class="valhalla-item-desc">Featuring 10 rotating draft handles from Charlotte and North Carolina craft breweries (IPA, Pilsner, Stout, Sour).</p>
+        </div>
+
+        <div class="valhalla-menu-item">
+          <div class="valhalla-item-header">
+            <h4>Traditional Honey Mead (Goblet)</h4>
+            <span class="valhalla-item-price">$9.00</span>
+          </div>
+          <p class="valhalla-item-desc">Semi-sweet fermented honey wine infused with wild chamomile and orange blossom.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Order CTA -->
+    <div class="valhalla-cta-banner" style="margin-top:50px;">
+      <h2>Craving Hearty Comfort &amp; Cold Craft Beer?</h2>
+      <p>Visit us in Brevard Court or call ahead for quick tavern takeout pickup at 317 S Church St.</p>
+      <div class="valhalla-cta-btns">
+        <a href="tel:7043323273" class="valhalla-btn-hero-primary">Call (704) 332-3273</a>
+        <a href="feast-platters-and-gameday-packages.html" class="valhalla-btn-hero-secondary">View Feast Platters</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="valhalla-footer">
+    <div class="valhalla-footer-grid">
+      <div class="valhalla-footer-col">
+        <h4 class="valhalla-brand-title">Valhalla Pub &amp; Eatery</h4>
+        <p>Uptown Charlotte's Scandinavian-inspired Viking tavern in historic Brevard Court. Scratch-made Norwegian meatballs, custom Viking blend burgers, craft Carolina beers on tap, and lively courtyard patio dining.</p>
+        <p><strong>Nordic Scratch Kitchen | 10 Rotating Craft Taps | Brevard Court Patio</strong></p>
+      </div>
+      <div class="valhalla-footer-col">
+        <h4>Navigation</h4>
+        <ul class="valhalla-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="scandinavian-pub-fare-and-meatballs.html">Nordic Comfort</a></li>
+          <li><a href="brevard-court-patio-and-taproom.html">Brevard Court Patio</a></li>
+          <li><a href="feast-platters-and-gameday-packages.html">Feast Platters</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="valhalla-footer-col">
+        <h4>Pub &amp; Kitchen Hours</h4>
+        <ul class="valhalla-footer-links">
+          <li>Monday - Thursday: 11:00 AM - 11:00 PM</li>
+          <li>Friday - Saturday: 11:00 AM - 12:00 AM</li>
+          <li>Sunday: 10:00 AM - 10:00 PM (Brunch &amp; Game Watch)</li>
+          <li>Kitchen closes 1 hour before bar</li>
+        </ul>
+      </div>
+      <div class="valhalla-footer-col">
+        <h4>Contact &amp; Location</h4>
+        <p>317 S Church St (Brevard Court)<br>Charlotte, NC 28202</p>
+        <p>Phone: <a href="tel:7043323273" style="color:#fef08a;">(704) 332-3273</a></p>
+        <p>Email: <a href="mailto:contact@valhallapub.com" style="color:#fef08a;">contact@valhallapub.com</a></p>
+      </div>
+    </div>
+    <div class="valhalla-footer-bottom">
+      <p>&copy; 2026 Valhalla Pub &amp; Eatery. All rights reserved. Uptown Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

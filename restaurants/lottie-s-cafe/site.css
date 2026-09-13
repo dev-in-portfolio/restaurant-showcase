@@ -1,0 +1,449 @@
+/* Lottie's Cafe - Custom Stylesheet */
+:root {
+  --lottie-primary: #451a03;
+  --lottie-primary-light: #78350f;
+  --lottie-accent: #ea580c;
+  --lottie-accent-light: #f97316;
+  --lottie-cream: #fef3c7;
+  --lottie-gold: #f59e0b;
+  --lottie-bg-light: #fdfbf7;
+  --lottie-bg-card: #ffffff;
+  --lottie-text-main: #292524;
+  --lottie-text-muted: #57534e;
+  --lottie-text-light: #a8a29e;
+  --lottie-border: #e7e5e4;
+  --lottie-border-accent: #fed7aa;
+  --lottie-shadow: 0 4px 14px rgba(69, 26, 3, 0.08);
+  --lottie-shadow-lg: 0 10px 30px rgba(69, 26, 3, 0.14);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--lottie-text-main);
+  background-color: var(--lottie-bg-light);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--lottie-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #c2410c;
+}
+
+/* Header & Navigation */
+.lottie-header {
+  background-color: var(--lottie-primary);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+.lottie-topbar {
+  background-color: #2e1002;
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(249, 115, 22, 0.25);
+  color: #fed7aa;
+}
+
+.lottie-topbar a {
+  color: #fde68a;
+  font-weight: 600;
+}
+
+.lottie-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lottie-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.lottie-logo-badge {
+  background: linear-gradient(135deg, var(--lottie-accent), var(--lottie-gold));
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.3rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);
+}
+
+.lottie-logo-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  display: block;
+}
+
+.lottie-logo-sub {
+  font-size: 0.75rem;
+  color: #fed7aa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.lottie-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lottie-nav-links a {
+  color: #f5f5f4;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.lottie-nav-links a:hover, .lottie-nav-links a.active {
+  color: #ffffff;
+  background-color: var(--lottie-primary-light);
+}
+
+.lottie-nav-btn {
+  background: linear-gradient(135deg, var(--lottie-accent), var(--lottie-accent-light));
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.4);
+}
+
+.lottie-nav-btn:hover {
+  filter: brightness(1.1);
+}
+
+.lottie-mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Hero Sections */
+.lottie-hero {
+  background: linear-gradient(rgba(69, 26, 3, 0.85), rgba(69, 26, 3, 0.92)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.lottie-hero-compact {
+  background: linear-gradient(rgba(69, 26, 3, 0.88), rgba(69, 26, 3, 0.94)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.lottie-badge {
+  display: inline-block;
+  background: rgba(234, 88, 12, 0.2);
+  border: 1px solid var(--lottie-accent-light);
+  color: #fed7aa;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.lottie-tag {
+  display: inline-block;
+  background-color: #ffedd5;
+  color: #9a3412;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lottie-btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--lottie-accent), var(--lottie-accent-light));
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+}
+
+.lottie-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.45);
+  color: #ffffff;
+}
+
+.lottie-btn-outline {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.lottie-btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Layout Containers */
+.lottie-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.lottie-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.lottie-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.lottie-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Cards */
+.lottie-card {
+  background-color: var(--lottie-bg-card);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--lottie-shadow);
+  border: 1px solid var(--lottie-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lottie-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lottie-shadow-lg);
+}
+
+.lottie-feature-card {
+  background-color: var(--lottie-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--lottie-shadow);
+  border: 1px solid var(--lottie-border);
+}
+
+.lottie-feature-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.lottie-feature-body {
+  padding: 22px;
+}
+
+/* Filter Buttons */
+.lottie-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.lottie-filter-btn {
+  background-color: #f5f5f4;
+  border: 1px solid var(--lottie-border);
+  color: var(--lottie-text-muted);
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lottie-filter-btn:hover, .lottie-filter-btn.active {
+  background-color: var(--lottie-primary);
+  color: #ffffff;
+  border-color: var(--lottie-primary);
+}
+
+/* Banner Strip */
+.lottie-banner-strip {
+  background: linear-gradient(135deg, var(--lottie-primary), var(--lottie-primary-light));
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: var(--lottie-shadow-lg);
+}
+
+/* Calculator Box */
+.lottie-calc-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 2px solid var(--lottie-border-accent);
+  padding: 28px;
+  box-shadow: var(--lottie-shadow);
+}
+
+.lottie-calc-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--lottie-border);
+  font-size: 1rem;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  background-color: #fdfbf7;
+}
+
+.lottie-calc-res {
+  background-color: #fff7ed;
+  border-left: 4px solid var(--lottie-accent);
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 18px;
+}
+
+/* Footer */
+.lottie-footer {
+  background-color: var(--lottie-primary);
+  color: #fed7aa;
+  padding: 60px 24px 24px;
+  margin-top: 60px;
+  border-top: 3px solid var(--lottie-accent);
+}
+
+.lottie-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 36px;
+}
+
+.lottie-footer h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.lottie-footer-links {
+  list-style: none;
+}
+
+.lottie-footer-links li {
+  margin-bottom: 10px;
+}
+
+.lottie-footer-links a {
+  color: #f5f5f4;
+  font-size: 0.95rem;
+}
+
+.lottie-footer-links a:hover {
+  color: #fed7aa;
+}
+
+.lottie-footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #d6d3d1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .lottie-grid-3, .lottie-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lottie-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .lottie-mobile-toggle {
+    display: block;
+  }
+  .lottie-nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--lottie-primary);
+    padding: 16px 24px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+  .lottie-nav-links.show {
+    display: flex;
+  }
+  .lottie-grid-2, .lottie-grid-3, .lottie-footer-grid, .lottie-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .lottie-topbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+}

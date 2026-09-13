@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Box Lunches &amp; Catering | Kicks Deli | Uptown Charlotte</title>
+  <meta name="description" content="Order executive boxed lunches and sandwich platters from Kicks Deli for your Uptown Charlotte office. Dutch Crunch subs, chips, cookies, and instant quote calculator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="kck-topbar">
+    <div class="kck-container kck-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>101 N Tryon St (Inside Monarch Market), Uptown Charlotte, NC 28202</span>
+        <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
+        <span>Tue-Thu: 7:30AM-9PM &bull; Fri-Sat: 11AM-10PM &bull; Sun-Mon: 11AM-9PM</span>
+      </div>
+      <div>
+        <span>Call-Ahead &amp; Catering Hotline: </span>
+        <a href="tel:7049106143" class="kck-topbar-link">(704) 910-6143</a>
+      </div>
+    </div>
+  </div>
+  <header class="kck-navbar">
+    <div class="kck-nav-container">
+      <a href="index.html" class="kck-brand">
+        <div class="kck-brand-name">KICKS <span>DELI</span></div>
+        <div class="kck-brand-tagline">Dutch Crunch Gourmet Sandwiches &bull; Monarch Market</div>
+      </a>
+      <ul class="kck-nav-links">
+        <li class="kck-nav-item"><a href="index.html">Home</a></li>
+<li class="kck-nav-item"><a href="menu.html">Sandwich Menu</a></li>
+<li class="kck-nav-item"><a href="dutch-crunch.html">Dutch Crunch</a></li>
+<li class="kck-nav-item"><a href="catering-box-lunches.html" class="active">Box Lunches &amp; Catering</a></li>
+<li class="kck-nav-item"><a href="about.html">Our Story</a></li>
+<li class="kck-nav-item"><a href="contact.html">Location &amp; Hours</a></li>
+
+        <li><a href="tel:7049106143" class="kck-nav-cta">Call (704) 910-6143</a></li>
+      </ul>
+      <button class="kck-menu-toggle" id="kckMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="kck-mobile-menu" id="kckMobileMenu">
+      <ul class="kck-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Sandwich Menu</a></li>
+<li><a href="dutch-crunch.html">Dutch Crunch</a></li>
+<li><a href="catering-box-lunches.html" class="active">Box Lunches &amp; Catering</a></li>
+<li><a href="about.html">Our Story</a></li>
+<li><a href="contact.html">Location &amp; Hours</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7049106143" class="kck-nav-cta" style="text-align: center;">Call (704) 910-6143</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="kck-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="kck-container" style="text-align: center; max-width: 840px;">
+      <span class="kck-hero-badge">Uptown Charlotte Office Lunches &amp; Platters</span>
+      <h1 class="kck-title-xl">Corporate Catering &amp; Boxed Lunches</h1>
+      <p class="kck-lead">Treat your team, board members, and conference attendees to artisan Dutch Crunch sandwich boxes, fresh party platters, and scratch deli sides.</p>
+    </div>
+  </section>
+
+  <section class="kck-section">
+    <div class="kck-container">
+      <div class="kck-section-header">
+        <span class="kck-eyebrow">Instant Quote Estimator</span>
+        <h2 class="kck-title-lg">Uptown Office Lunch Calculator</h2>
+        <p class="kck-lead">Select your group size and package tier to calculate instant per-person costs, package inclusions, and estimated totals.</p>
+      </div>
+
+      <div class="kck-calc-panel">
+        <div class="kck-calc-grid">
+          <div>
+            <div class="kck-calc-group">
+              <label class="kck-calc-label" for="kckCalcGuests">
+                <span>Guest Count</span>
+                <span id="kckCalcGuestCountText" style="color: var(--kck-text-muted); font-weight: 600;">(10 to 150 guests)</span>
+              </label>
+              <select class="kck-calc-select" id="kckCalcGuests">
+                <option value="12">12 Guests (Small Department Meeting)</option>
+                <option value="20" selected>20 Guests (Corporate Floor Lunch)</option>
+                <option value="35">35 Guests (Executive Boardroom Briefing)</option>
+                <option value="50">50 Guests (Company-Wide Lunch &amp; Learn)</option>
+                <option value="75">75 Guests (Quarterly Team Celebration)</option>
+                <option value="100">100 Guests (Conference / All-Hands)</option>
+                <option value="150">150 Guests (Major Corporate Event)</option>
+              </select>
+            </div>
+
+            <div class="kck-calc-group">
+              <label class="kck-calc-label" for="kckCalcPackage">
+                <span>Catering Tier</span>
+                <span style="color: var(--kck-text-muted); font-weight: 600;">(Per Person)</span>
+              </label>
+              <select class="kck-calc-select" id="kckCalcPackage">
+                <option value="executive-boxed-lunch" selected>Executive Individually Boxed Lunches ($16.50/person)</option>
+                <option value="grail-sandwich-platter">Grail Mini Hoagie Party Platters ($14.50/person)</option>
+                <option value="vip-boardroom-spread">VIP Boardroom Deli Buffet ($21.00/person)</option>
+              </select>
+            </div>
+
+            <div class="kck-calc-group">
+              <label class="kck-calc-label" for="kckCalcBread">
+                <span>Bread Style Selection</span>
+              </label>
+              <select class="kck-calc-select" id="kckCalcBread">
+                <option value="Dutch Crunch &amp; Seeded Hoagie Mix" selected>Dutch Crunch &amp; Seeded Hoagie Mix (Recommended)</option>
+                <option value="100% Dutch Crunch Rolls">100% Signature Dutch Crunch Rolls</option>
+                <option value="Assorted Subs &amp; Herb Wraps">Assorted Subs &amp; Herb Wheat Wraps</option>
+              </select>
+            </div>
+
+            <div class="kck-calc-group">
+              <label class="kck-calc-label">Add-On Side &amp; Dessert Trays</label>
+              <div class="kck-checkbox-grid">
+                <label class="kck-checkbox-item">
+                  <input type="checkbox" class="kck-side-check" value="Pesto Pasta Salad Bowl (Serves 15)" data-price="42.00">
+                  <span>Pasta Salad Bowl (+$42)</span>
+                </label>
+                <label class="kck-checkbox-item">
+                  <input type="checkbox" class="kck-side-check" value="Fresh Cut Fruit Platter (Serves 15)" data-price="48.00">
+                  <span>Fruit Platter (+$48)</span>
+                </label>
+                <label class="kck-checkbox-item">
+                  <input type="checkbox" class="kck-side-check" value="Extra Chocolate Chip Cookie Tray (24 pcs)" data-price="36.00">
+                  <span>Cookie Platter (+$36)</span>
+                </label>
+                <label class="kck-checkbox-item">
+                  <input type="checkbox" class="kck-side-check" value="Gourmet Pickle Spear Bucket" data-price="18.00">
+                  <span>Pickle Bucket (+$18)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="kck-calc-group">
+              <label class="kck-calc-label">Beverage Add-Ons</label>
+              <div class="kck-checkbox-grid">
+                <label class="kck-checkbox-item">
+                  <input type="checkbox" class="kck-drink-check" value="Assorted Chilled Sodas &amp; Water" data-price="2.25">
+                  <span>Sodas &amp; Water (+$2.25/person)</span>
+                </label>
+                <label class="kck-checkbox-item">
+                  <input type="checkbox" class="kck-drink-check" value="Fresh Fruit Smoothie Pitchers" data-price="4.50">
+                  <span>Smoothie Pitchers (+$4.50/person)</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--kck-text-muted); margin-top: 1rem;">
+              * Individual boxes are labeled with each guest name and sandwich contents. Includes napkins and mints.
+            </div>
+          </div>
+
+          <div class="kck-calc-summary-card">
+            <div>
+              <div style="font-family: var(--kck-font-display); font-size: 1.4rem; font-weight: 800; color: var(--kck-gold); margin-bottom: 1.25rem;">
+                Catering Quote Summary
+              </div>
+              <div class="kck-summary-row">
+                <span>Guest Count:</span>
+                <strong id="kckCalcGuestDisplay">20 Guests</strong>
+              </div>
+              <div class="kck-summary-row">
+                <span>Individual Box Meals:</span>
+                <strong id="kckCalcBoxCount">20 Boxed Meals</strong>
+              </div>
+              <div class="kck-summary-row">
+                <span>Equivalent Party Trays:</span>
+                <strong id="kckCalcPlatterCount">2 Large Party Platter(s)</strong>
+              </div>
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #c5cbd4; line-height: 1.5;" id="kckCalcDetails">
+                Executive Individually Boxed Lunches for 20 guests. Bread Style: Dutch Crunch &amp; Seeded Hoagie Mix. Includes: Gourmet Sub on Dutch Crunch, Kettle Chips, Pickle Spear &amp; Chocolate Chip Cookie. Extra Deli Trays: Standard Chips/Pickles. Beverage Add-ons: None.
+              </div>
+            </div>
+
+            <div>
+              <div class="kck-summary-total">
+                <span style="font-weight: 700; font-size: 1.1rem;">Estimated Total:</span>
+                <span class="kck-summary-total-val" id="kckCalcTotalCost">$330.00</span>
+              </div>
+              
+              <div class="kck-calc-action-bar">
+                <a href="mailto:kicksdeli@gmail.com" class="kck-btn kck-btn-gold" id="kckMailQuoteLink" style="width: 100%;">Email This Catering Request</a>
+                <button type="button" class="kck-btn kck-btn-outline" id="kckCopyQuoteBtn" style="width: 100%;">Copy Quote to Clipboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kck-section kck-section-light">
+    <div class="kck-container">
+      <div class="kck-section-header">
+        <span class="kck-eyebrow">Platter Breakdown</span>
+        <h2 class="kck-title-lg">A La Carte Catering Platters</h2>
+        <p class="kck-lead">Mix and match half trays and full trays for buffets and casual office mixers.</p>
+      </div>
+
+      <div class="kck-grid-3">
+        <div class="kck-card">
+          <h3 class="kck-title-md" style="color: var(--kck-red);">The One Italian Mini Sub Platter</h3>
+          <p style="color: var(--kck-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">16 cut half-subs of prosciutto, capicola, salami, provolone, and balsamic.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--kck-red); border-top: 1px solid var(--kck-border); padding-top: 0.75rem;">$75.00</div>
+        </div>
+
+        <div class="kck-card">
+          <h3 class="kck-title-md" style="color: var(--kck-red);">Jake's Sky High Club Platter</h3>
+          <p style="color: var(--kck-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">16 cut half-subs of turkey, ham, bacon, American cheddar, and herb aioli.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--kck-red); border-top: 1px solid var(--kck-border); padding-top: 0.75rem;">$78.00</div>
+        </div>
+
+        <div class="kck-card">
+          <h3 class="kck-title-md" style="color: var(--kck-red);">Katie's Chicken Salad &amp; Caprese Platter</h3>
+          <p style="color: var(--kck-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Assortment of apple cranberry chicken salad and fresh mozzarella caprese.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--kck-red); border-top: 1px solid var(--kck-border); padding-top: 0.75rem;">$72.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="kck-footer">
+    <div class="kck-container">
+      <div class="kck-footer-grid">
+        <div class="kck-footer-brand">
+          <h3>KICKS <span>DELI</span></h3>
+          <p>Uptown Charlotte's premier sneakerhead-inspired gourmet craft deli located inside Monarch Market at Trade &amp; Tryon. Famous for stacked artisanal cold cuts on authentic San Francisco-style Dutch Crunch bread, scratch dressings, and corporate office boxed lunches.</p>
+        </div>
+        <div class="kck-footer-col">
+          <h4>Explore</h4>
+          <ul class="kck-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Full Deli Menu</a></li>
+            <li><a href="dutch-crunch.html">Dutch Crunch Bread Guide</a></li>
+            <li><a href="catering-box-lunches.html">Corporate Box Lunches</a></li>
+            <li><a href="about.html">Sneakers &amp; Sandwiches</a></li>
+            <li><a href="contact.html">Monarch Market Location</a></li>
+          </ul>
+        </div>
+        <div class="kck-footer-col">
+          <h4>Deli Hours</h4>
+          <ul class="kck-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Tuesday - Thursday:</strong><br>7:30 AM - 9:00 PM (Breakfast Available)</li>
+            <li><strong style="color: #fff;">Friday - Saturday:</strong><br>11:00 AM - 10:00 PM</li>
+            <li><strong style="color: #fff;">Sunday - Monday:</strong><br>11:00 AM - 9:00 PM</li>
+          </ul>
+        </div>
+        <div class="kck-footer-col">
+          <h4>Uptown Location</h4>
+          <p style="margin-bottom: 0.75rem;">101 N Tryon St<br>Monarch Market Food Hall<br>Charlotte, NC 28202</p>
+          <p><strong style="color: var(--kck-gold);">Direct Phone:</strong><br><a href="tel:7049106143" style="color: #fff; font-weight: 700;">(704) 910-6143</a></p>
+          <p style="margin-top: 0.5rem;"><strong style="color: var(--kck-gold);">Catering Email:</strong><br><a href="mailto:kicksdeli@gmail.com" style="color: #c5cbd4;">kicksdeli@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="kck-footer-bottom">
+        <div>&copy; 2026 Kicks Deli. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Dutch Crunch Artisanal Sandwiches &bull; Monarch Market &bull; Corporate Box Lunches</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

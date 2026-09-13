@@ -1,0 +1,120 @@
+{
+  "slug": "savu",
+  "generatedAt": "2026-09-10T19:34:10.352Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "johnny-burrito",
+    "nirvana-ii",
+    "the-sandwich-club",
+    "crunch-bistro",
+    "luce-ristorante",
+    "hasaki-grill-and-sushi",
+    "cedar-street-tavern",
+    "cuzcatlan-restaurant",
+    "bernardin-s",
+    "cowbell-burger-and-whiskey-bar"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "crunch-bistro",
+    "score": 0.1007760989010989,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.006944444444444444,
+    "domSimilarity": 0.41208791208791207,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "crunch-bistro",
+      "score": 0.1007760989010989,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006944444444444444,
+      "domSimilarity": 0.41208791208791207,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "hasaki-grill-and-sushi",
+      "score": 0.10023565573770492,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006944444444444444,
+      "domSimilarity": 0.4098360655737705,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "luce-ristorante",
+      "score": 0.09918540918540919,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006993006993006993,
+      "domSimilarity": 0.40540540540540543,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "the-sandwich-club",
+      "score": 0.0991722972972973,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006944444444444444,
+      "domSimilarity": 0.40540540540540543,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "johnny-burrito",
+      "score": 0.09627182633317602,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006134969325153374,
+      "domSimilarity": 0.3942307692307692,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "nirvana-ii",
+      "score": 0.09576235854675402,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.00684931506849315,
+      "domSimilarity": 0.391304347826087,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "cowbell-burger-and-whiskey-bar",
+      "score": 0.0694975230007077,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006369426751592357,
+      "domSimilarity": 0.2824074074074074,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "bernardin-s",
+      "score": 0.06944444444444443,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006172839506172839,
+      "domSimilarity": 0.2824074074074074,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "cedar-street-tavern",
+      "score": 0.06665490196078433,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0058823529411764705,
+      "domSimilarity": 0.27111111111111114,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "cuzcatlan-restaurant",
+      "score": 0.06508246481143226,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006097560975609756,
+      "domSimilarity": 0.2643171806167401,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

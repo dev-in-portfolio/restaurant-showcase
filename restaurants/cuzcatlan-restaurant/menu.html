@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salvadoran Menu | Cuzcatlan Restaurant Charlotte NC</title>
+  <meta name="description" content="Explore the full Salvadoran menu at Cuzcatlan Restaurant in Charlotte NC. Handmade pupusas, yuca frita, platanos con crema, sopas caseras, and fresh aguas frescas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="cuz-topbar">
+    <div class="cuz-topbar-inner">
+      <div class="cuz-topbar-items">
+        <span>4800 Central Ave, Charlotte, NC 28205</span>
+        <span>&bull;</span>
+        <span>East Charlotte Central Corridor</span>
+      </div>
+      <div class="cuz-topbar-items">
+        <span>Open Daily: 9:00 AM – 10:00 PM</span>
+        <span>&bull;</span>
+        <a href="tel:7045689161" class="cuz-topbar-link">(704) 568-9161</a>
+      </div>
+    </div>
+  </div>
+  <header class="cuz-header">
+    <div class="cuz-nav-container">
+      <a href="index.html" class="cuz-brand">
+        <div class="cuz-brand-title">CUZCATLAN <span>RESTAURANTE</span></div>
+        <div class="cuz-brand-sub">AUTENTICA COCINA SALVADORENA &bull; CHARLOTTE, NC</div>
+      </a>
+      <button class="cuz-mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul class="cuz-nav-links">
+          <li><a href="index.html" class="cuz-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="cuz-nav-link active">Menu</a></li>
+          <li><a href="about.html" class="cuz-nav-link ">About Us</a></li>
+          <li><a href="specials.html" class="cuz-nav-link ">Specials</a></li>
+          <li><a href="catering.html" class="cuz-nav-link ">Pupusa Platters</a></li>
+          <li><a href="contact.html" class="cuz-nav-link ">Contact &amp; Hours</a></li>
+          <li><a href="tel:7045689161" class="cuz-nav-link cuz-nav-cta">Call (704) 568-9161</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <header class="cuz-page-header">
+    <div class="cuz-container" style="padding:0;">
+      <h1 class="cuz-page-header-title">NUESTRO MENU SALVADORENO</h1>
+      <p class="cuz-page-header-desc">Traditional home-style Salvadoran dishes, hand-patted pupusas, robust soups, and natural tropical refreshments.</p>
+    </div>
+  </header>
+
+  <main class="cuz-container">
+    <div class="cuz-menu-tabs">
+      <button class="cuz-tab-btn active" data-category="all">Todos los Platillos (All)</button>
+      <button class="cuz-tab-btn" data-category="pupusas">Pupusas Hechas a Mano</button>
+      <button class="cuz-tab-btn" data-category="antojitos">Antojitos y Entradas</button>
+      <button class="cuz-tab-btn" data-category="sopas">Sopas y Caldos</button>
+      <button class="cuz-tab-btn" data-category="platos">Platos Fuertes</button>
+      <button class="cuz-tab-btn" data-category="desayunos">Desayunos Tipicos</button>
+      <button class="cuz-tab-btn" data-category="bebidas">Aguas Frescas y Bebidas</button>
+    </div>
+
+    <!-- PUPUSAS -->
+    <div class="cuz-menu-section" data-category="pupusas">
+      <div class="cuz-menu-section-header">
+        <h2 class="cuz-menu-section-title">PUPUSAS HECHAS A MANO</h2>
+        <span class="cuz-menu-section-note">Masa de Maiz (Corn) $3.50 | Masa de Arroz (Rice) $4.00</span>
+      </div>
+
+      <div class="cuz-interactive-box" style="margin-top:0;">
+        <h3 class="cuz-widget-title">PUPUSA FLAVOR EXPLORER</h3>
+        <p class="cuz-widget-desc">Click any traditional filling below to learn about the authentic Salvadoran ingredients and pairing notes.</p>
+
+        <div class="cuz-flavor-grid">
+          <div class="cuz-flavor-card selected" data-name="Pupusa Revuelta" data-ingredients="Pork Chicharron, Refried Black Beans, and Quesillo Cheese" data-notes="The undisputed national favorite of El Salvador. Perfectly balanced savory pork, earthy beans, and melting cheese.">
+            <div class="cuz-flavor-name">Revuelta</div>
+            <div class="cuz-flavor-sub">Pork, Beans &amp; Cheese</div>
+          </div>
+
+          <div class="cuz-flavor-card" data-name="Pupusa de Queso con Loroco" data-ingredients="Melted Salvadoran Quesillo and Edible Loroco Flower Buds" data-notes="Loroco is a fragrant wild vine flower native to Central America with an herbaceous, artichoke-like profile.">
+            <div class="cuz-flavor-name">Queso con Loroco</div>
+            <div class="cuz-flavor-sub">Cheese &amp; Loroco Flower</div>
+          </div>
+
+          <div class="cuz-flavor-card" data-name="Pupusa de Frijol con Queso" data-ingredients="Slow-Simmered Refried Beans and Melty Salvadoran Cheese" data-notes="Creamy, vegetarian favorite with rich savory depth and stringy melted quesillo.">
+            <div class="cuz-flavor-name">Frijol con Queso</div>
+            <div class="cuz-flavor-sub">Beans &amp; Melted Cheese</div>
+          </div>
+
+          <div class="cuz-flavor-card" data-name="Pupusa de Chicharron" data-ingredients="Finely Seasoned Fried Pork Belly Paste and Spices" data-notes="Tender seasoned pork paste ground with garlic, sweet peppers, and tomato aromatics.">
+            <div class="cuz-flavor-name">Chicharron</div>
+            <div class="cuz-flavor-sub">Seasoned Pork Meat</div>
+          </div>
+
+          <div class="cuz-flavor-card" data-name="Pupusa de Calabaza / Ayote" data-ingredients="Finely Grated Green Zucchini Squash and Salvadoran Cheese" data-notes="Light, moist, and tender squash filling that melts wonderfully into the quesillo.">
+            <div class="cuz-flavor-name">Ayote con Queso</div>
+            <div class="cuz-flavor-sub">Zucchini &amp; Cheese</div>
+          </div>
+
+          <div class="cuz-flavor-card" data-name="Pupusa de Camaron" data-ingredients="Chopped Gulf Shrimp, Garlic Butter, and Melted Quesillo" data-notes="Coastal specialty with tender chopped shrimp sauteed in butter with sweet peppers. ($4.50 ea)">
+            <div class="cuz-flavor-name">Camaron con Queso</div>
+            <div class="cuz-flavor-sub">Shrimp &amp; Cheese</div>
+          </div>
+        </div>
+
+        <div id="cuzFlavorDetail" style="margin-top:20px; padding:16px; background-color:var(--cuz-bg); border-left:4px solid var(--cuz-terracotta); border-radius:var(--cuz-radius-sm);">
+          <strong>Pupusa Revuelta</strong>: Pork Chicharron, Refried Black Beans, and Quesillo Cheese<br>
+          <span style="color:#615a52; font-size:0.88rem;">The undisputed national favorite of El Salvador. Perfectly balanced savory pork, earthy beans, and melting cheese.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANTOJITOS & ENTRADAS -->
+    <div class="cuz-menu-section" data-category="antojitos">
+      <div class="cuz-menu-section-header">
+        <h2 class="cuz-menu-section-title">ANTOJITOS Y ENTRADAS</h2>
+        <span class="cuz-menu-section-note">Shareable Salvadoran street food classics</span>
+      </div>
+      <div class="cuz-menu-list">
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Yuca con Chicharron</h3>
+            <span class="cuz-item-price">$12.99</span>
+          </div>
+          <div class="cuz-item-sub">Fried or Boiled Cassava with Pork</div>
+          <p class="cuz-item-desc">Generous plate of golden cassava root chunks topped with crispy fried pork chicharron, spicy pickled curtido, tomato sauce, and radish slices.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Pastelitos de Carne (3)</h3>
+            <span class="cuz-item-price">$8.99</span>
+          </div>
+          <div class="cuz-item-sub">Crispy Achiote Masa Turnovers</div>
+          <p class="cuz-item-desc">Three crispy golden corn masa patties tinted with achiote, stuffed with seasoned minced beef and diced potatoes. Served with curtido slaw.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Tamales de Elote con Crema</h3>
+            <span class="cuz-item-price">$4.50</span>
+          </div>
+          <div class="cuz-item-sub">Sweet Fresh Corn Tamales</div>
+          <p class="cuz-item-desc">Freshly ground sweet yellow corn tamale steamed in natural corn husks, served with a dollop of thick Salvadoran crema.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Tamales de Pollo Salvadorenos</h3>
+            <span class="cuz-item-price">$4.50</span>
+          </div>
+          <div class="cuz-item-sub">Banana Leaf Steamed Chicken Tamale</div>
+          <p class="cuz-item-desc">Silk-soft seasoned corn masa filled with tender shredded chicken, potatoes, chickpeas, and olives wrapped in authentic fragrant plantain leaves.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOPAS Y CALDOS -->
+    <div class="cuz-menu-section" data-category="sopas">
+      <div class="cuz-menu-section-header">
+        <h2 class="cuz-menu-section-title">SOPAS Y CALDOS CASEROS</h2>
+        <span class="cuz-menu-section-note">Served with warm handmade corn tortillas, fresh cilantro, onion &amp; lime</span>
+      </div>
+      <div class="cuz-menu-list">
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Sopa de Res (Beef Shank Stew)</h3>
+            <span class="cuz-item-price">$16.50</span>
+          </div>
+          <div class="cuz-item-sub">Hearty Weekend Special (Available Daily)</div>
+          <p class="cuz-item-desc">Rich marrow beef shank slow-simmered with sweet corn on the cob, yuca root, green plantain, chayote squash, and tender green cabbage.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Sopa de Gallina India</h3>
+            <span class="cuz-item-price">$17.00</span>
+          </div>
+          <div class="cuz-item-sub">Free-Range Farm Hen Soup</div>
+          <p class="cuz-item-desc">Clear golden herbal hen broth served alongside grilled roasted chicken quarter, seasoned rice, fresh salad, and handmade tortillas.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Sopa de Mariscos Cuzcatleca</h3>
+            <span class="cuz-item-price">$18.99</span>
+          </div>
+          <div class="cuz-item-sub">Coastal Seafood Coconut Stew</div>
+          <p class="cuz-item-desc">Generous seafood combination of blue crab, jumbo shrimp, green mussels, tender calamari, and white fish in an aromatic coconut tomato broth.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Sopa de Pata (Mondongo)</h3>
+            <span class="cuz-item-price">$16.50</span>
+          </div>
+          <div class="cuz-item-sub">Traditional Beef Tripe &amp; Tendon Stew</div>
+          <p class="cuz-item-desc">Savory tendon and tripe simmered with yuca, green beans, cabbage, corn, and fresh mint. A deeply comforting Latin weekend classic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLATOS FUERTES -->
+    <div class="cuz-menu-section" data-category="platos">
+      <div class="cuz-menu-section-header">
+        <h2 class="cuz-menu-section-title">PLATOS FUERTES Y CARNES</h2>
+        <span class="cuz-menu-section-note">Served with seasoned rice, refried beans, fresh house salad, and warm tortillas</span>
+      </div>
+      <div class="cuz-menu-list">
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Carne Asada Cuzcatleca</h3>
+            <span class="cuz-item-price">$17.50</span>
+          </div>
+          <div class="cuz-item-sub">Citrus-Marinated Grilled Flank Steak</div>
+          <p class="cuz-item-desc">Tender flank steak marinated in citrus and garlic, chargrilled and served with grilled spring onions, chirmol relish, avocado slice, and Salvadoran cheese.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Pollo Encebollado</h3>
+            <span class="cuz-item-price">$14.50</span>
+          </div>
+          <div class="cuz-item-sub">Braised Chicken with Caramelized Sweet Onions</div>
+          <p class="cuz-item-desc">Pan-seared chicken breast or dark meat quarters braised in a savory tomato and Worcestershire pan sauce with mountains of sweet caramelized onions.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Mojarra Frita Entera</h3>
+            <span class="cuz-item-price">$16.99</span>
+          </div>
+          <div class="cuz-item-sub">Whole Crispy Fried Tilapia</div>
+          <p class="cuz-item-desc">Whole fresh tilapia seasoned with lime, garlic, and sea salt, fried until super crisp on the outside and flaky inside. Served with chimichurri and lime.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Bistec Salvadoreno</h3>
+            <span class="cuz-item-price">$16.50</span>
+          </div>
+          <div class="cuz-item-sub">Thin Sliced Beef Steak in Tomato &amp; Pepper Sauce</div>
+          <p class="cuz-item-desc">Tender steak cutlets sauteed with sweet bell peppers, ripe tomatoes, and onions in our hearty house pan reduction.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESAYUNOS TIPICOS -->
+    <div class="cuz-menu-section" data-category="desayunos">
+      <div class="cuz-menu-section-header">
+        <h2 class="cuz-menu-section-title">DESAYUNOS TIPICOS SALVADORENOS</h2>
+        <span class="cuz-menu-section-note">Served daily from 9:00 AM to 12:00 PM (and all day upon request)</span>
+      </div>
+      <div class="cuz-menu-list">
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Desayuno Tipico Cuzcatlan</h3>
+            <span class="cuz-item-price">$11.99</span>
+          </div>
+          <div class="cuz-item-sub">The Grand Salvadoran Breakfast</div>
+          <p class="cuz-item-desc">Two eggs prepared any style (revueltos or estrellados), sweet fried plantains, refried black beans, Salvadoran crema, fresh hard cheese (cuajada), and 2 handmade tortillas.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Desayuno con Carne Asada</h3>
+            <span class="cuz-item-price">$15.50</span>
+          </div>
+          <div class="cuz-item-sub">Steak &amp; Eggs Salvadoran Style</div>
+          <p class="cuz-item-desc">Juicy grilled steak accompanied by two eggs, fried plantains, refried beans, Salvadoran cheese, crema, and warm tortillas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS NATURALES -->
+    <div class="cuz-menu-section" data-category="bebidas">
+      <div class="cuz-menu-section-header">
+        <h2 class="cuz-menu-section-title">AGUAS FRESCAS Y BEBIDAS TIPICAS</h2>
+        <span class="cuz-menu-section-note">Freshly made from scratch daily with real fruits and seeds</span>
+      </div>
+      <div class="cuz-menu-list">
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Horchata de Morro Salvadorena</h3>
+            <span class="cuz-item-price">$4.50</span>
+          </div>
+          <div class="cuz-item-sub">Ground Morro Seeds, Cinnamon &amp; Vanilla</div>
+          <p class="cuz-item-desc">Unlike Mexican rice horchata, Salvadoran horchata is prepared from roasted ground morro seeds, sesame, cocoa, and spices. Rich, nutty, and completely unique.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Agua de Guanabana (Soursop)</h3>
+            <span class="cuz-item-price">$4.50</span>
+          </div>
+          <div class="cuz-item-sub">Fresh Pureed Tropical Soursop</div>
+          <p class="cuz-item-desc">Creamy, fragrant tropical soursop fruit blended chilled with cane sugar and a hint of lime.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Agua de Tamarindo &amp; Jamaica</h3>
+            <span class="cuz-item-price">$4.00</span>
+          </div>
+          <div class="cuz-item-sub">Tart Tamarind Pulp or Hibiscus Flower Tea</div>
+          <p class="cuz-item-desc">Crisp, refreshing sweet and sour natural infusions served over crushed ice.</p>
+        </div>
+
+        <div class="cuz-menu-item">
+          <div class="cuz-item-header">
+            <h3 class="cuz-item-name">Kolashanpan &amp; Cervezas Latinas</h3>
+            <span class="cuz-item-price">$3.50 - $5.50</span>
+          </div>
+          <div class="cuz-item-sub">National Salvadoran Soda &amp; Ice Cold Beers</div>
+          <p class="cuz-item-desc">Iconic Salvadoran cream-flavored soda Kolashanpan in glass bottles, alongside ice-cold Corona, Modelo Especial, Negra Modelo, and Pilsener de El Salvador.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="cuz-footer">
+    <div class="cuz-footer-grid">
+      <div class="cuz-footer-col">
+        <h4>Restaurante Cuzcatlan</h4>
+        <p>Authentic Salvadoran home cooking in the heart of East Charlotte. Hand-patted corn and rice masa pupusas, crispy yuca con chicharron, rich weekend sopas de res, and natural tropical aguas frescas.</p>
+        <p><strong>Direct Telephone:</strong> <a href="tel:7045689161" style="color:var(--cuz-maize);">(704) 568-9161</a></p>
+      </div>
+      <div class="cuz-footer-col">
+        <h4>Location &amp; Community</h4>
+        <p>4800 Central Ave<br>Charlotte, NC 28205</p>
+        <p>Proudly serving East Charlotte, Plaza Midwood, and the greater Queen City Latin community with fresh scratch recipes daily.</p>
+      </div>
+      <div class="cuz-footer-col">
+        <h4>Hours of Operation</h4>
+        <p><strong>Monday – Sunday:</strong> 9:00 AM – 10:00 PM<br>
+        <strong>Breakfast:</strong> 9:00 AM – 12:00 PM<br>
+        <strong>Lunch &amp; Dinner:</strong> 11:00 AM – 10:00 PM<br>
+        <strong>Dine-In &amp; Takeout:</strong> Open 7 Days a Week</p>
+      </div>
+      <div class="cuz-footer-col">
+        <h4>Quick Navigation</h4>
+        <ul class="cuz-footer-links">
+          <li><a href="menu.html">Full Salvadoran Menu</a></li>
+          <li><a href="specials.html">Daily Combos &amp; Weekend Soups</a></li>
+          <li><a href="catering.html">Pupusa Party Platters &amp; Catering</a></li>
+          <li><a href="about.html">Our Family Tradition &amp; Masa Heritage</a></li>
+          <li><a href="contact.html">Directions &amp; Contact Info</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cuz-footer-bottom">
+      <div>&copy; 2026 Cuzcatlan Restaurant. All rights reserved. Charlotte, NC.</div>
+      <div>Pupuseria Tradicional &bull; Antojitos Salvadorenos &bull; Aguas Frescas</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

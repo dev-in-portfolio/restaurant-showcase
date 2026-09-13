@@ -1,0 +1,449 @@
+/* Basil Thai Cuisine - Custom Stylesheet */
+:root {
+  --basil-primary: #064e3b;
+  --basil-primary-light: #047857;
+  --basil-primary-dark: #022c22;
+  --basil-accent: #d97706;
+  --basil-accent-light: #f59e0b;
+  --basil-gold: #fbbf24;
+  --basil-bg-light: #f8fafc;
+  --basil-bg-card: #ffffff;
+  --basil-text-main: #0f172a;
+  --basil-text-muted: #475569;
+  --basil-text-light: #94a3b8;
+  --basil-border: #e2e8f0;
+  --basil-border-gold: #fde68a;
+  --basil-shadow: 0 4px 14px rgba(6, 78, 59, 0.08);
+  --basil-shadow-lg: 0 10px 30px rgba(6, 78, 59, 0.15);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--basil-text-main);
+  background-color: var(--basil-bg-light);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--basil-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #b45309;
+}
+
+/* Header & Navigation */
+.basil-header {
+  background-color: var(--basil-primary-dark);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+.basil-topbar {
+  background-color: #011d17;
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+  color: #cbd5e1;
+}
+
+.basil-topbar a {
+  color: var(--basil-gold);
+  font-weight: 600;
+}
+
+.basil-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basil-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.basil-logo-badge {
+  background: linear-gradient(135deg, var(--basil-primary-light), var(--basil-accent));
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.3rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(4, 120, 87, 0.4);
+}
+
+.basil-logo-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  display: block;
+}
+
+.basil-logo-sub {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.basil-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.basil-nav-links a {
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.basil-nav-links a:hover, .basil-nav-links a.active {
+  color: #ffffff;
+  background-color: var(--basil-primary-light);
+}
+
+.basil-nav-btn {
+  background: linear-gradient(135deg, var(--basil-accent), var(--basil-accent-light));
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.4);
+}
+
+.basil-nav-btn:hover {
+  filter: brightness(1.08);
+}
+
+.basil-mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Hero Sections */
+.basil-hero {
+  background: linear-gradient(rgba(2, 44, 34, 0.85), rgba(2, 44, 34, 0.92)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.basil-hero-compact {
+  background: linear-gradient(rgba(2, 44, 34, 0.88), rgba(2, 44, 34, 0.93)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+.basil-badge {
+  display: inline-block;
+  background: rgba(251, 191, 36, 0.2);
+  border: 1px solid var(--basil-gold);
+  color: var(--basil-gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.basil-tag {
+  display: inline-block;
+  background-color: #ecfdf5;
+  color: #065f46;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.basil-btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--basil-accent), var(--basil-accent-light));
+  color: #0f172a;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+}
+
+.basil-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.45);
+  color: #0f172a;
+}
+
+.basil-btn-outline {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.basil-btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Layout Containers */
+.basil-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.basil-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.basil-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.basil-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Cards */
+.basil-card {
+  background-color: var(--basil-bg-card);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--basil-shadow);
+  border: 1px solid var(--basil-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.basil-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--basil-shadow-lg);
+}
+
+.basil-feature-card {
+  background-color: var(--basil-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--basil-shadow);
+  border: 1px solid var(--basil-border);
+}
+
+.basil-feature-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.basil-feature-body {
+  padding: 22px;
+}
+
+/* Filter Buttons */
+.basil-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.basil-filter-btn {
+  background-color: #f1f5f9;
+  border: 1px solid var(--basil-border);
+  color: var(--basil-text-muted);
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.basil-filter-btn:hover, .basil-filter-btn.active {
+  background-color: var(--basil-primary);
+  color: #ffffff;
+  border-color: var(--basil-primary);
+}
+
+/* Banner Strip */
+.basil-banner-strip {
+  background: linear-gradient(135deg, var(--basil-primary), var(--basil-primary-dark));
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: var(--basil-shadow-lg);
+}
+
+/* Calculator Box */
+.basil-calc-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 2px solid var(--basil-border-gold);
+  padding: 28px;
+  box-shadow: var(--basil-shadow);
+}
+
+.basil-calc-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--basil-border);
+  font-size: 1rem;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  background-color: #f8fafc;
+}
+
+.basil-calc-res {
+  background-color: #fef3c7;
+  border-left: 4px solid var(--basil-accent);
+  padding: 16px;
+  border-radius: 6px;
+  margin-top: 18px;
+}
+
+/* Footer */
+.basil-footer {
+  background-color: var(--basil-primary-dark);
+  color: #cbd5e1;
+  padding: 60px 24px 24px;
+  margin-top: 60px;
+  border-top: 3px solid var(--basil-gold);
+}
+
+.basil-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 36px;
+}
+
+.basil-footer h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.basil-footer-links {
+  list-style: none;
+}
+
+.basil-footer-links li {
+  margin-bottom: 10px;
+}
+
+.basil-footer-links a {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.basil-footer-links a:hover {
+  color: var(--basil-gold);
+}
+
+.basil-footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .basil-grid-3, .basil-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .basil-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .basil-mobile-toggle {
+    display: block;
+  }
+  .basil-nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--basil-primary-dark);
+    padding: 16px 24px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+  .basil-nav-links.show {
+    display: flex;
+  }
+  .basil-grid-2, .basil-grid-3, .basil-footer-grid, .basil-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .basil-topbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+}

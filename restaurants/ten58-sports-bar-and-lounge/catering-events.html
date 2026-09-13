@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailgate Catering &amp; Event Platters | Ten58 Sports Bar &amp; Lounge</title>
+  <meta name="description" content="Calculate and plan your stadium tailgate catering with Ten58 Sports Bar in Uptown Charlotte. Wing platters, slider trays, dips, and instant party cost estimator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="t58-topbar">
+    <div class="t58-container t58-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>430 W 4th St, Uptown Charlotte, NC 28202 (Across from Truist Field)</span>
+        <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
+        <span>Mon-Thu: 12PM-12AM &bull; Fri: 12PM-1AM &bull; Sat: 11:30AM-1AM &bull; Sun: 11:30AM-12AM</span>
+      </div>
+      <div>
+        <span>Table Reservations &amp; VIP Inquiries: </span>
+        <a href="tel:9802071058" class="t58-topbar-link">(980) 207-1058</a>
+      </div>
+    </div>
+  </div>
+  <header class="t58-navbar">
+    <div class="t58-nav-container">
+      <a href="index.html" class="t58-brand">
+        <div class="t58-brand-name">TEN<span>58</span> <em>LOUNGE</em></div>
+        <div class="t58-brand-tagline">Uptown Charlotte Premier Sports Bar</div>
+      </a>
+      <ul class="t58-nav-links">
+        <li class="t58-nav-item"><a href="index.html">Home</a></li>
+<li class="t58-nav-item"><a href="menu.html">Game Day Menu</a></li>
+<li class="t58-nav-item"><a href="vip-gameday.html">VIP & Watch Parties</a></li>
+<li class="t58-nav-item"><a href="catering-events.html" class="active">Tailgate & Catering</a></li>
+<li class="t58-nav-item"><a href="about.html">TD Story</a></li>
+<li class="t58-nav-item"><a href="contact.html">Location & Hours</a></li>
+
+        <li><a href="tel:9802071058" class="t58-nav-cta">Call (980) 207-1058</a></li>
+      </ul>
+      <button class="t58-menu-toggle" id="t58MenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="t58-mobile-menu" id="t58MobileMenu">
+      <ul class="t58-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Game Day Menu</a></li>
+<li><a href="vip-gameday.html">VIP & Watch Parties</a></li>
+<li><a href="catering-events.html" class="active">Tailgate & Catering</a></li>
+<li><a href="about.html">TD Story</a></li>
+<li><a href="contact.html">Location & Hours</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:9802071058" class="t58-nav-cta" style="text-align: center;">Call (980) 207-1058</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="t58-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="t58-container" style="text-align: center; max-width: 840px;">
+      <span class="t58-hero-badge">Tailgate Platters &amp; Corporate Buffets</span>
+      <h1 class="t58-title-xl">Gameday Tailgate &amp; Catering Planner</h1>
+      <p class="t58-lead">Bring the championship taste of Ten58 directly to your Panthers tailgate lot, Uptown corporate office, or luxury stadium suite with hot, pre-packaged platters.</p>
+    </div>
+  </section>
+
+  <section class="t58-section">
+    <div class="t58-container">
+      <div class="t58-section-header">
+        <span class="t58-eyebrow">Instant Party Estimator</span>
+        <h2 class="t58-title-lg">Tailgate &amp; VIP Party Calculator</h2>
+        <p class="t58-lead">Select your group size and package tier to calculate platter portions and budget estimates.</p>
+      </div>
+
+      <div class="t58-calc-panel">
+        <div class="t58-calc-grid">
+          <div>
+            <div class="t58-calc-group">
+              <label class="t58-calc-label" for="t58CalcGuests">
+                <span>Party Size</span>
+                <span id="t58CalcGuestCountText" style="color: var(--t58-text-muted); font-weight: 600;">(8 to 100 guests)</span>
+              </label>
+              <select class="t58-calc-select" id="t58CalcGuests">
+                <option value="8">8 Guests (Small Tailgate Crew)</option>
+                <option value="16" selected>16 Guests (Game Day Squad)</option>
+                <option value="25">25 Guests (VIP Suite Party)</option>
+                <option value="40">40 Guests (Corporate Tailgate)</option>
+                <option value="60">60 Guests (Company Watch Party)</option>
+                <option value="100">100 Guests (Major Sports Celebration)</option>
+              </select>
+            </div>
+
+            <div class="t58-calc-group">
+              <label class="t58-calc-label" for="t58CalcPackage">
+                <span>Catering Tier</span>
+                <span style="color: var(--t58-text-muted); font-weight: 600;">(Per Person)</span>
+              </label>
+              <select class="t58-calc-select" id="t58CalcPackage">
+                <option value="touchdown-buffet" selected>Touchdown Gameday Buffet ($28.00/person) - Wings, Sliders, Nachos</option>
+                <option value="vip-lounge-package">All-Pro VIP Lounge Package ($42.00/person) - Wings, Tacos, Dips, Sliders</option>
+                <option value="hall-of-fame-banquet">Hall of Fame Championship Spread ($58.00/person) - Crab Cakes, Ribs, Crawfish</option>
+              </select>
+            </div>
+
+            <div class="t58-calc-group">
+              <label class="t58-calc-label">Add-On Starter &amp; Dip Platters</label>
+              <div class="t58-checkbox-grid">
+                <label class="t58-checkbox-item">
+                  <input type="checkbox" class="t58-app-check" value="Sick 'Em Collard Green Dip Platter" data-price="45.00">
+                  <span>Collard Green Dip Tray (+$45)</span>
+                </label>
+                <label class="t58-checkbox-item">
+                  <input type="checkbox" class="t58-app-check" value="Carolina Crawfish Dip Platter" data-price="55.00">
+                  <span>Crawfish Dip Tray (+$55)</span>
+                </label>
+                <label class="t58-checkbox-item">
+                  <input type="checkbox" class="t58-app-check" value="Kickin' Cauliflower Wings Tray" data-price="40.00">
+                  <span>Cauliflower Wings Tray (+$40)</span>
+                </label>
+                <label class="t58-checkbox-item">
+                  <input type="checkbox" class="t58-app-check" value="Churro Bites Dessert Tray" data-price="35.00">
+                  <span>Churro Bites Tray (+$35)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="t58-calc-group">
+              <label class="t58-calc-label">Beverage Upgrades</label>
+              <div class="t58-checkbox-grid">
+                <label class="t58-checkbox-item">
+                  <input type="checkbox" class="t58-drink-check" value="Craft Beer Buckets (2 Cans/Person)" data-price="12.00">
+                  <span>Craft Beer (+$12.00/person)</span>
+                </label>
+                <label class="t58-checkbox-item">
+                  <input type="checkbox" class="t58-drink-check" value="Full Open Bar Package" data-price="25.00">
+                  <span>Full Bar (+$25.00/person)</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--t58-text-muted); margin-top: 1rem;">
+              * All tailgate orders include heavy-duty disposable plates, napkins, wing wet-wipes, ranch, blue cheese, and serving utensils.
+            </div>
+          </div>
+
+          <div class="t58-calc-summary-card">
+            <div>
+              <div style="font-family: var(--t58-font-display); font-size: 1.4rem; font-weight: 800; color: var(--t58-gold); margin-bottom: 1.25rem;">
+                Party Estimate Summary
+              </div>
+              <div class="t58-summary-row">
+                <span>Guest Count:</span>
+                <strong id="t58CalcGuestDisplay">16 Guests</strong>
+              </div>
+              <div class="t58-summary-row">
+                <span>Recommended Wing Trays:</span>
+                <strong id="t58CalcWingPlatters">2 Jumbo Wing Platter(s)</strong>
+              </div>
+              <div class="t58-summary-row">
+                <span>Slider / Taco Trays:</span>
+                <strong id="t58CalcSliderPlatters">2 Slider / Taco Tray(s)</strong>
+              </div>
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #cbd5e1; line-height: 1.5;" id="t58CalcDetails">
+                Touchdown Gameday Buffet for 16 guests. Inclusions: TD Wings (50 ct), Smash Burger Sliders &amp; Nacho Bar. Extra Platters: None. Beverage Add-ons: Standard Cash Bar.
+              </div>
+            </div>
+
+            <div>
+              <div class="t58-summary-total">
+                <span style="font-weight: 700; font-size: 1.1rem;">Estimated Total:</span>
+                <span class="t58-summary-total-val" id="t58CalcTotalCost">$448.00</span>
+              </div>
+              
+              <div class="t58-calc-action-bar">
+                <a href="mailto:events@ten58clt.com" class="t58-btn t58-btn-gold" id="t58MailQuoteLink" style="width: 100%;">Email This Booking Request</a>
+                <button type="button" class="t58-btn t58-btn-outline" id="t58CopyQuoteBtn" style="width: 100%;">Copy Quote to Clipboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="t58-section t58-section-card">
+    <div class="t58-container">
+      <div class="t58-section-header">
+        <span class="t58-eyebrow">A La Carte Party Trays</span>
+        <h2 class="t58-title-lg">Individual Tailgate Platters</h2>
+        <p class="t58-lead">Pick and choose individual half pans and full trays for customized tailgate setups.</p>
+      </div>
+
+      <div class="t58-grid-3">
+        <div class="t58-card">
+          <h3 class="t58-title-md" style="color: var(--t58-blue);">50-Piece TD Wing Platter</h3>
+          <p style="color: var(--t58-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Crispy jumbo wings with choice of 2 sauces, celery, carrots, ranch, and blue cheese.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--t58-gold); border-top: 1px solid var(--t58-border); padding-top: 0.75rem;">$85.00</div>
+        </div>
+
+        <div class="t58-card">
+          <h3 class="t58-title-md" style="color: var(--t58-blue);">24-Pack Smash Burger Sliders</h3>
+          <p style="color: var(--t58-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Seared mini Angus patties with cheddar, bacon relish, and caramelized onions.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--t58-gold); border-top: 1px solid var(--t58-border); padding-top: 0.75rem;">$95.00</div>
+        </div>
+
+        <div class="t58-card">
+          <h3 class="t58-title-md" style="color: var(--t58-blue);">Loaded Stadium Nacho Kit</h3>
+          <p style="color: var(--t58-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Warm queso, chips, brisket or chicken, pico, jalapenos, and sour cream (serves 12-15).</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--t58-gold); border-top: 1px solid var(--t58-border); padding-top: 0.75rem;">$75.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="t58-footer">
+    <div class="t58-container">
+      <div class="t58-footer-grid">
+        <div class="t58-footer-brand">
+          <h3>TEN<span>58</span> SPORTS BAR &amp; LOUNGE</h3>
+          <p>Founded by Carolina Panthers legend Thomas Davis (#58) and inspired by championship greatness. Uptown Charlotte's premier destination for elevated game day dining, 30+ 4K screens, VIP booths, and electric sports atmosphere.</p>
+        </div>
+        <div class="t58-footer-col">
+          <h4>Explore</h4>
+          <ul class="t58-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Food &amp; Cocktails Menu</a></li>
+            <li><a href="vip-gameday.html">VIP Booth Reservations</a></li>
+            <li><a href="catering-events.html">Tailgate Party Packages</a></li>
+            <li><a href="about.html">Thomas Davis Legacy</a></li>
+            <li><a href="contact.html">Directions &amp; Stadium Access</a></li>
+          </ul>
+        </div>
+        <div class="t58-footer-col">
+          <h4>Hours of Operation</h4>
+          <ul class="t58-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Thursday:</strong><br>12:00 PM - 12:00 AM</li>
+            <li><strong style="color: #fff;">Friday:</strong><br>12:00 PM - 1:00 AM</li>
+            <li><strong style="color: #fff;">Saturday:</strong><br>11:30 AM - 1:00 AM</li>
+            <li><strong style="color: #fff;">Sunday:</strong><br>11:30 AM - 12:00 AM</li>
+          </ul>
+        </div>
+        <div class="t58-footer-col">
+          <h4>Uptown Location</h4>
+          <p style="margin-bottom: 0.75rem;">430 W 4th St<br>Charlotte, NC 28202<br>Directly across from Truist Field &bull; Steps from Bank of America Stadium.</p>
+          <p><strong style="color: var(--t58-gold);">Direct Phone:</strong><br><a href="tel:9802071058" style="color: #fff; font-weight: 700;">(980) 207-1058</a></p>
+          <p style="margin-top: 0.5rem;"><strong style="color: var(--t58-gold);">Events &amp; Bookings:</strong><br><a href="mailto:events@ten58clt.com" style="color: #cbd5e1;">events@ten58clt.com</a></p>
+        </div>
+      </div>
+      <div class="t58-footer-bottom">
+        <div>&copy; 2026 Ten58 Sports Bar &amp; Lounge. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Uptown Sports Bar &bull; VIP Booths &bull; Game Day Headquarters</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

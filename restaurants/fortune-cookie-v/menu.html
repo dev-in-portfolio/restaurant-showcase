@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Takeout Menu - Chef Specials, Wok Entrees, Noodles & Wings | Fortune Cookie V Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="fcv-header">
+    <div class="fcv-nav-container">
+      <a href="index.html" class="fcv-brand">
+        <span class="fcv-brand-name">Fortune Cookie <span>V</span></span>
+        <span class="fcv-brand-sub">New York Style Chinese Takeout</span>
+      </a>
+      <ul class="fcv-nav-links">
+        <li><a href="index.html" class="fcv-nav-link ">Home</a></li>
+        <li><a href="menu.html" class="fcv-nav-link active">Menu</a></li>
+        <li><a href="wok-tradition.html" class="fcv-nav-link ">Wok Tradition</a></li>
+        <li><a href="party-catering.html" class="fcv-nav-link ">Party Catering</a></li>
+        <li><a href="about.html" class="fcv-nav-link ">About</a></li>
+        <li><a href="contact.html" class="fcv-nav-link ">Order & Visit</a></li>
+      </ul>
+      <a href="tel:7045630882" class="fcv-nav-cta">Call (704) 563-0882</a>
+      <button class="fcv-mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="fcv-drawer-overlay"></div>
+  <div class="fcv-drawer">
+    <button class="fcv-drawer-close" aria-label="Close Navigation Menu">✕</button>
+    <ul class="fcv-drawer-links">
+      <li><a href="index.html" class="fcv-drawer-link ">Home</a></li>
+      <li><a href="menu.html" class="fcv-drawer-link active">Full Menu</a></li>
+      <li><a href="wok-tradition.html" class="fcv-drawer-link ">Wok Tradition</a></li>
+      <li><a href="party-catering.html" class="fcv-drawer-link ">Party Catering</a></li>
+      <li><a href="about.html" class="fcv-drawer-link ">About Us</a></li>
+      <li><a href="contact.html" class="fcv-drawer-link ">Order & Visit</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="tel:7045630882" class="fcv-btn-primary" style="display: block; text-align: center;">Call (704) 563-0882</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="fcv-section" style="padding-top: 3.5rem;">
+      <div class="fcv-container">
+        <div class="fcv-section-head">
+          <span class="fcv-section-tag">Authentic Menu</span>
+          <h1 class="fcv-section-title">Fortune Cookie V Full Menu</h1>
+          <p class="fcv-section-subtitle">All combination platters include Pork Fried Rice and an Egg Roll. Custom spice levels available on request (Mild, Medium, Hot, Extra Spicy).</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="fcv-filter-bar">
+          <button class="fcv-filter-btn active" data-filter="all">All Items</button>
+          <button class="fcv-filter-btn" data-filter="specialties">Chef's Specialties</button>
+          <button class="fcv-filter-btn" data-filter="wok">Wok Entrees</button>
+          <button class="fcv-filter-btn" data-filter="rice-noodles">Fried Rice & Noodles</button>
+          <button class="fcv-filter-btn" data-filter="appetizers">Appetizers & Wings</button>
+          <button class="fcv-filter-btn" data-filter="soups">Soups & Steamed</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="fcv-menu-grid">
+          <!-- Chef Specialties -->
+          <div class="fcv-menu-card" data-category="specialties">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">General Tso's Chicken</h2>
+              <span class="fcv-menu-price">$12.95</span>
+            </div>
+            <p class="fcv-menu-desc">Crispy chicken chunks glazed in spicy tangy garlic chili sauce, broccoli florets, served with pork fried rice and egg roll.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Spicy Specialty</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="specialties">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Sesame Chicken</h2>
+              <span class="fcv-menu-price">$12.95</span>
+            </div>
+            <p class="fcv-menu-desc">Crispy tender chicken breast tossed in sweet honey brown sauce, toasted white sesame seeds, and steamed broccoli.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Chef Choice</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="specialties">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Orange Glazed Beef</h2>
+              <span class="fcv-menu-price">$13.95</span>
+            </div>
+            <p class="fcv-menu-desc">Crispy seared flank steak strips tossed with sun-dried orange peel, roasted red chilies, and tangy citrus glaze.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Spicy</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="specialties">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Triple Crown Delight</h2>
+              <span class="fcv-menu-price">$14.50</span>
+            </div>
+            <p class="fcv-menu-desc">Plump shrimp, marinated flank steak, and chicken breast stir-fried with snap peas, mushrooms, water chestnuts, and baby corn in rich brown garlic gravy.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">House Favorite</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="specialties">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Dragon & Phoenix</h2>
+              <span class="fcv-menu-price">$14.95</span>
+            </div>
+            <p class="fcv-menu-desc">Two dishes in one: spicy General Tso's chicken paired alongside jumbo shrimp stir-fried with garden vegetables in white wine sauce.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Signature Duo</span></div>
+          </div>
+
+          <!-- Wok Entrees -->
+          <div class="fcv-menu-card" data-category="wok">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Beef with Broccoli</h2>
+              <span class="fcv-menu-price">$13.50</span>
+            </div>
+            <p class="fcv-menu-desc">High-heat seared flank steak, crisp broccoli florets, and sliced carrots in savory ginger-oyster brown sauce.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Wok Classic</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="wok">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Sweet & Sour Chicken Platter</h2>
+              <span class="fcv-menu-price">$11.95</span>
+            </div>
+            <p class="fcv-menu-desc">Golden fried crispy chicken tenders served with sweet pineapple-cherry dipping sauce, pork fried rice, and egg roll.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Classic Platter</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="wok">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Szechuan Spicy Pork</h2>
+              <span class="fcv-menu-price">$12.50</span>
+            </div>
+            <p class="fcv-menu-desc">Sliced roast pork tossed with bell peppers, bamboo shoots, wood ear mushrooms, and hot garlic chili paste.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Spicy</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="wok">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Hunan Chicken with Vegetables</h2>
+              <span class="fcv-menu-price">$12.25</span>
+            </div>
+            <p class="fcv-menu-desc">Sliced white meat chicken stir-fried with broccoli, baby corn, straw mushrooms, and red peppers in dark Hunan chili sauce.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Spicy</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="wok">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Shrimp with Lobster Sauce</h2>
+              <span class="fcv-menu-price">$13.95</span>
+            </div>
+            <p class="fcv-menu-desc">Jumbo shrimp simmered in savory minced pork egg-flower garlic gravy with green peas and scallions.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Traditional</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="wok">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Moo Shu Pork (with 4 Pancakes)</h2>
+              <span class="fcv-menu-price">$12.75</span>
+            </div>
+            <p class="fcv-menu-desc">Shredded pork, cabbage, scrambled egg, wood ear mushrooms, and scallions stir-fried and wrapped in thin Mandarin crepes with hoisin sauce.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Hand Wrapped</span></div>
+          </div>
+
+          <!-- Rice & Noodles -->
+          <div class="fcv-menu-card" data-category="rice-noodles">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">House Special Fried Rice</h2>
+              <span class="fcv-menu-price">$11.50</span>
+            </div>
+            <p class="fcv-menu-desc">Jasmine rice wok-tossed with roasted pork, chicken, plump shrimp, egg, peas, carrots, and sweet green onion.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Best Seller</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="rice-noodles">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">House Special Lo Mein</h2>
+              <span class="fcv-menu-price">$11.95</span>
+            </div>
+            <p class="fcv-menu-desc">Soft egg noodles tossed with shrimp, chicken, roast pork, shredded Napa cabbage, and savory dark soy broth.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Popular</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="rice-noodles">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Singapore Mei Fun (Curry Rice Noodles)</h2>
+              <span class="fcv-menu-price">$12.50</span>
+            </div>
+            <p class="fcv-menu-desc">Thin rice vermicelli noodles dry-wok tossed with aromatic yellow Madras curry, shrimp, pork, egg, and crisp vegetables.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Spicy Delight</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="rice-noodles">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Beef Chow Fun (Flat Rice Noodles)</h2>
+              <span class="fcv-menu-price">$13.25</span>
+            </div>
+            <p class="fcv-menu-desc">Wide flat rice noodles dry-fried over extreme heat with tender beef slices, bean sprouts, and scallions.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Wok Hei Special</span></div>
+          </div>
+
+          <!-- Appetizers & Wings -->
+          <div class="fcv-menu-card" data-category="appetizers">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Crab Rangoon Cheese Wontons (8 pcs)</h2>
+              <span class="fcv-menu-price">$6.95</span>
+            </div>
+            <p class="fcv-menu-desc">Golden fried wonton pastry envelopes filled with sweet cream cheese, real crabmeat, and scallions with sweet-sour dip.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Top Appetizer</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="appetizers">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Honey Garlic Chicken Wings (8 pcs)</h2>
+              <span class="fcv-menu-price">$9.95</span>
+            </div>
+            <p class="fcv-menu-desc">Crisp jumbo fried chicken wings generously coated in our signature sticky honey garlic reduction.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">East CLT Famous</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="appetizers">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Crispy Pork Egg Rolls (2 pcs)</h2>
+              <span class="fcv-menu-price">$3.50</span>
+            </div>
+            <p class="fcv-menu-desc">Hand-rolled crispy egg roll wrappers packed with seasoned roast pork, shredded cabbage, and celery.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Classic</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="appetizers">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Steamed or Pan-Fried Pork Dumplings (8 pcs)</h2>
+              <span class="fcv-menu-price">$7.95</span>
+            </div>
+            <p class="fcv-menu-desc">Handmade dough dumplings stuffed with ground pork, ginger, and chives, served with savory ginger dipping sauce.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Handmade</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="appetizers">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Barbecue Spare Ribs (5 pcs)</h2>
+              <span class="fcv-menu-price">$10.50</span>
+            </div>
+            <p class="fcv-menu-desc">Slow-roasted pork spare ribs glazed in sweet char siu barbecue sauce with caramelized edges.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Oven Roasted</span></div>
+          </div>
+
+          <!-- Soups & Steamed Healthy -->
+          <div class="fcv-menu-card" data-category="soups">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Hot & Sour Soup (Pt / Qt)</h2>
+              <span class="fcv-menu-price">$3.50 / $6.00</span>
+            </div>
+            <p class="fcv-menu-desc">Spicy and tangy thick broth with shredded pork, silken tofu, wood ear mushrooms, bamboo shoots, and egg ribbons.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag highlight">Spicy</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="soups">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Wonton Soup with Roast Pork</h2>
+              <span class="fcv-menu-price">$3.25 / $5.50</span>
+            </div>
+            <p class="fcv-menu-desc">Delicate pork wontons in clear golden chicken broth with sliced char siu pork and scallions.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Traditional</span></div>
+          </div>
+
+          <div class="fcv-menu-card" data-category="soups">
+            <div class="fcv-menu-header">
+              <h2 class="fcv-menu-title">Steamed Chicken with Mixed Vegetables (Diet)</h2>
+              <span class="fcv-menu-price">$11.95</span>
+            </div>
+            <p class="fcv-menu-desc">Sliced lean chicken breast steamed with broccoli, snow peas, mushrooms, and carrots. Served with brown sauce on the side and white rice.</p>
+            <div style="margin-top: 0.5rem;"><span class="fcv-tag">Healthy / Gluten-Conscious</span></div>
+          </div>
+        </div>
+
+        <!-- Call to action -->
+        <div style="margin-top: 3.5rem; text-align: center; background: var(--fcv-card-bg); border: 1px solid var(--fcv-border); border-radius: var(--fcv-radius); padding: 2rem;">
+          <h3 style="font-family: var(--fcv-font-serif); font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Ready to Place Your Pickup Order?</h3>
+          <p style="color: var(--fcv-text-muted); margin-bottom: 1.5rem;">Call Fortune Cookie V directly for fast 15-minute pickup at 7320 The Plaza Ste A.</p>
+          <a href="tel:7045630882" class="fcv-btn-primary">Call (704) 563-0882</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="fcv-footer">
+    <div class="fcv-container">
+      <div class="fcv-footer-grid">
+        <div>
+          <div class="fcv-brand-name" style="margin-bottom: 0.8rem;">Fortune Cookie <span style="color: var(--fcv-gold);">V</span></div>
+          <p class="fcv-footer-text">East Charlotte's destination for high-heat wok cooking, classic New York style Chinese specialties, crispy golden appetizers, and generous family party pans.</p>
+          <p class="fcv-footer-text" style="color: var(--fcv-gold); font-weight: 600;">Complimentary fortune cookies with every order.</p>
+        </div>
+        <div>
+          <div class="fcv-footer-heading">Explore</div>
+          <ul class="fcv-footer-links">
+            <li><a href="index.html" class="fcv-footer-link">Home</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Full Takeout Menu</a></li>
+            <li><a href="wok-tradition.html" class="fcv-footer-link">Wok Hei Tradition</a></li>
+            <li><a href="party-catering.html" class="fcv-footer-link">Office & Event Catering</a></li>
+            <li><a href="about.html" class="fcv-footer-link">Our Story</a></li>
+            <li><a href="contact.html" class="fcv-footer-link">Hours & Directions</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fcv-footer-heading">House Favorites</div>
+          <ul class="fcv-footer-links">
+            <li><a href="menu.html" class="fcv-footer-link">General Tso's Chicken</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Crispy Sesame Beef</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Honey Garlic Wings</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">House Special Lo Mein</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Crab Rangoon Cheese Wontons</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Singapore Mei Fun</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fcv-footer-heading">Location & Hours</div>
+          <p class="fcv-footer-text">
+            <strong>Address:</strong> 7320 The Plaza Ste A<br>
+            Charlotte, NC 28215 (Newell)
+          </p>
+          <p class="fcv-footer-text">
+            <strong>Phone:</strong> <a href="tel:7045630882" style="color: var(--fcv-gold); text-decoration: none;">(704) 563-0882</a>
+          </p>
+          <p class="fcv-footer-text" style="font-size: 0.85rem;">
+            Mon-Thu: 10:30 AM - 9:00 PM<br>
+            Fri: 10:30 AM - 10:00 PM<br>
+            Sat: 11:30 AM - 10:00 PM<br>
+            Sun: 11:30 AM - 9:00 PM
+          </p>
+        </div>
+      </div>
+      <div class="fcv-footer-bottom">
+        <p>&copy; 2026 Fortune Cookie V. Authentic New York Style Chinese Kitchen in East Charlotte. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

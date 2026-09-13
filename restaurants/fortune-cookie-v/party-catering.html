@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Office & Event Party Catering - Half & Full Wok Pans with Calculator | Fortune Cookie V Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="fcv-header">
+    <div class="fcv-nav-container">
+      <a href="index.html" class="fcv-brand">
+        <span class="fcv-brand-name">Fortune Cookie <span>V</span></span>
+        <span class="fcv-brand-sub">New York Style Chinese Takeout</span>
+      </a>
+      <ul class="fcv-nav-links">
+        <li><a href="index.html" class="fcv-nav-link ">Home</a></li>
+        <li><a href="menu.html" class="fcv-nav-link ">Menu</a></li>
+        <li><a href="wok-tradition.html" class="fcv-nav-link ">Wok Tradition</a></li>
+        <li><a href="party-catering.html" class="fcv-nav-link active">Party Catering</a></li>
+        <li><a href="about.html" class="fcv-nav-link ">About</a></li>
+        <li><a href="contact.html" class="fcv-nav-link ">Order & Visit</a></li>
+      </ul>
+      <a href="tel:7045630882" class="fcv-nav-cta">Call (704) 563-0882</a>
+      <button class="fcv-mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="fcv-drawer-overlay"></div>
+  <div class="fcv-drawer">
+    <button class="fcv-drawer-close" aria-label="Close Navigation Menu">✕</button>
+    <ul class="fcv-drawer-links">
+      <li><a href="index.html" class="fcv-drawer-link ">Home</a></li>
+      <li><a href="menu.html" class="fcv-drawer-link ">Full Menu</a></li>
+      <li><a href="wok-tradition.html" class="fcv-drawer-link ">Wok Tradition</a></li>
+      <li><a href="party-catering.html" class="fcv-drawer-link active">Party Catering</a></li>
+      <li><a href="about.html" class="fcv-drawer-link ">About Us</a></li>
+      <li><a href="contact.html" class="fcv-drawer-link ">Order & Visit</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="tel:7045630882" class="fcv-btn-primary" style="display: block; text-align: center;">Call (704) 563-0882</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="fcv-hero">
+      <div class="fcv-container">
+        <div class="fcv-hero-grid">
+          <div>
+            <div class="fcv-hero-badge">East Charlotte Catering</div>
+            <h1 class="fcv-hero-title">Feed the Crowd with <span>Party Pans</span> & Feasts.</h1>
+            <p class="fcv-hero-desc">From corporate boardroom lunches and medical office staff meals to birthday celebrations and game day parties, Fortune Cookie V delivers sizzling half and full pans of hot Chinese favorites designed to feed 10 to 300 guests.</p>
+            <div class="fcv-badges-row">
+              <div class="fcv-feature-chip">
+                <strong>Half Pans (10-15 Guests)</strong>
+                <span>Convenient sharing size</span>
+              </div>
+              <div class="fcv-feature-chip">
+                <strong>Full Pans (20-30 Guests)</strong>
+                <span>Maximum group value</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="images/crispy-appetizers.jpg" alt="Platters of crispy egg rolls, golden crab rangoon wontons, and dumplings for party catering" style="width: 100%; border-radius: var(--fcv-radius); border: 1px solid var(--fcv-border); box-shadow: var(--fcv-shadow); display: block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Catering Calculator -->
+    <section class="fcv-section">
+      <div class="fcv-container">
+        <div class="fcv-section-head">
+          <span class="fcv-section-tag">Interactive Tool</span>
+          <h2 class="fcv-section-title">Wok Party & Catering Cost Estimator</h2>
+          <p class="fcv-section-subtitle">Select your estimated guest count, catering package, and party add-ons to see real-time portions, pan counts, and pricing.</p>
+        </div>
+
+        <div class="fcv-calc-container">
+          <!-- Controls -->
+          <div class="fcv-calc-card">
+            <h3 style="font-family: var(--fcv-font-serif); font-size: 1.3rem; color: #fff; margin-bottom: 1.5rem; border-bottom: 1px solid var(--fcv-border); padding-bottom: 0.75rem;">1. Select Your Event Options</h3>
+            
+            <div class="fcv-form-group">
+              <label for="fcv-guests" class="fcv-form-label">Guest Headcount (10 to 300 people):</label>
+              <input type="number" id="fcv-guests" class="fcv-form-control" value="25" min="10" max="300" step="5">
+            </div>
+
+            <div class="fcv-form-group">
+              <label for="fcv-package" class="fcv-form-label">Select Catering Package Tier:</label>
+              <select id="fcv-package" class="fcv-form-control">
+                <option value="classic">Classic Takeout Buffet ($12.50 / person) - General Tso, Sweet & Sour, Pork Fried Rice, Egg Rolls</option>
+                <option value="wokmaster" selected>Wok Master Feast ($16.50 / person) - Beef Broccoli, General Tso, Honey Wings, Lo Mein, Fried Rice, Rangoon</option>
+                <option value="imperial">Imperial Dragon Banquet ($21.00 / person) - Sesame Beef, Triple Delight, Honey Wings, House Lo Mein, Singapore Mei Fun, Dumplings & Rangoon</option>
+              </select>
+            </div>
+
+            <h4 style="color: var(--fcv-gold); font-size: 1rem; margin: 1.5rem 0 0.75rem;">Optional Party Pan Add-ons:</h4>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <label style="display: flex; align-items: center; gap: 0.75rem; color: #fff; cursor: pointer; font-size: 0.92rem;">
+                <input type="checkbox" id="fcv-extra-lomein" style="width: 18px; height: 18px; accent-color: var(--fcv-crimson);">
+                Add Extra Full Pan House Special Lo Mein (+$45.00)
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; color: #fff; cursor: pointer; font-size: 0.92rem;">
+                <input type="checkbox" id="fcv-extra-wings" style="width: 18px; height: 18px; accent-color: var(--fcv-crimson);">
+                Add Extra Full Pan Honey Garlic Wings 50pcs (+$65.00)
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; color: #fff; cursor: pointer; font-size: 0.92rem;">
+                <input type="checkbox" id="fcv-extra-rangoon" style="width: 18px; height: 18px; accent-color: var(--fcv-crimson);">
+                Add Extra Platter Crab Rangoon 40pcs (+$35.00)
+              </label>
+            </div>
+
+            <button type="button" id="fcv-calc-btn" class="fcv-btn-primary" style="width: 100%; text-align: center;">Recalculate Estimate</button>
+          </div>
+
+          <!-- Breakdown Summary -->
+          <div class="fcv-calc-card" style="background: var(--fcv-bg-secondary); border-color: var(--fcv-border-glow);">
+            <h3 style="font-family: var(--fcv-font-serif); font-size: 1.3rem; color: var(--fcv-gold); margin-bottom: 1.5rem; border-bottom: 1px solid var(--fcv-border); padding-bottom: 0.75rem;">2. Estimated Catering Invoice</h3>
+
+            <div class="fcv-calc-row">
+              <span>Headcount:</span>
+              <strong id="fcv-out-guests">25 Guests</strong>
+            </div>
+
+            <div class="fcv-calc-row">
+              <span>Selected Tier:</span>
+              <strong id="fcv-out-pkg-name" style="font-size: 0.85rem; text-align: right; max-width: 60%;">Wok Master Feast ($16.50/person)</strong>
+            </div>
+
+            <div class="fcv-calc-row">
+              <span>Base Package Cost:</span>
+              <strong id="fcv-out-pkg-cost">$412.50</strong>
+            </div>
+
+            <div class="fcv-calc-row">
+              <span>Add-ons Total:</span>
+              <strong id="fcv-out-addons-cost">$0.00</strong>
+            </div>
+
+            <div class="fcv-calc-row">
+              <span>Subtotal:</span>
+              <strong id="fcv-out-subtotal">$412.50</strong>
+            </div>
+
+            <div class="fcv-calc-row">
+              <span>NC Sales Tax (7.25%):</span>
+              <strong id="fcv-out-tax">$29.91</strong>
+            </div>
+
+            <div class="fcv-calc-row total">
+              <span>Estimated Total:</span>
+              <span class="amount" id="fcv-out-total">$442.41</span>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.35); border-radius: 8px; padding: 1rem; margin: 1.5rem 0;">
+              <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--fcv-gold); font-weight: 700; margin-bottom: 0.35rem;">Included Pan Breakdown:</div>
+              <p id="fcv-out-pans-summary" style="font-size: 0.85rem; color: var(--fcv-text-muted); line-height: 1.5;">3 Entree Pans (Beef Broccoli, General Tso, Honey Garlic Wings), 2 Pans Lo Mein & Fried Rice, Crab Rangoon (50 pcs)</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <a href="contact.html" id="fcv-email-order" class="fcv-btn-primary" style="text-align: center; text-decoration: none;">Send Pre-Filled Catering Request</a>
+              <a href="tel:7045630882" class="fcv-btn-outline" style="text-align: center;">Call (704) 563-0882 to Confirm</a>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--fcv-text-muted); text-align: center; margin-top: 1rem;">*Please give 24-48 hours advance notice for catering orders over 50 guests. Disposable chafing dishes and warmers available on request.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A La Carte Catering Pans Section -->
+    <section class="fcv-section bg-secondary">
+      <div class="fcv-container">
+        <div class="fcv-section-head">
+          <span class="fcv-section-tag">A La Carte Menu</span>
+          <h2 class="fcv-section-title">Individual Half & Full Catering Pans</h2>
+          <p class="fcv-section-subtitle">Build your own custom party lineup with our a la carte catering pan options.</p>
+        </div>
+
+        <div class="fcv-grid-3">
+          <div class="fcv-card">
+            <div class="fcv-card-body">
+              <h3 style="font-family: var(--fcv-font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;">General Tso's Chicken Pan</h3>
+              <p style="color: var(--fcv-text-muted); font-size: 0.88rem; margin-bottom: 1rem;">Crispy glazed dark/white meat chicken with broccoli florets.</p>
+              <div style="display: flex; justify-content: space-between; font-weight: 700;">
+                <span style="color: var(--fcv-text); font-size: 0.88rem;">Half Pan (10-12): <strong style="color: var(--fcv-gold);">$55</strong></span>
+                <span style="color: var(--fcv-text); font-size: 0.88rem;">Full Pan (20-25): <strong style="color: var(--fcv-gold);">$105</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fcv-card">
+            <div class="fcv-card-body">
+              <h3 style="font-family: var(--fcv-font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;">Beef with Broccoli Pan</h3>
+              <p style="color: var(--fcv-text-muted); font-size: 0.88rem; margin-bottom: 1rem;">High-heat seared flank steak with crisp broccoli florets.</p>
+              <div style="display: flex; justify-content: space-between; font-weight: 700;">
+                <span style="color: var(--fcv-text); font-size: 0.88rem;">Half Pan (10-12): <strong style="color: var(--fcv-gold);">$60</strong></span>
+                <span style="color: var(--fcv-text); font-size: 0.88rem;">Full Pan (20-25): <strong style="color: var(--fcv-gold);">$115</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fcv-card">
+            <div class="fcv-card-body">
+              <h3 style="font-family: var(--fcv-font-serif); font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;">House Lo Mein / Fried Rice Pan</h3>
+              <p style="color: var(--fcv-text-muted); font-size: 0.88rem; margin-bottom: 1rem;">Egg noodles or fried rice with pork, chicken, shrimp, and veggies.</p>
+              <div style="display: flex; justify-content: space-between; font-weight: 700;">
+                <span style="color: var(--fcv-text); font-size: 0.88rem;">Half Pan (12-15): <strong style="color: var(--fcv-gold);">$45</strong></span>
+                <span style="color: var(--fcv-text); font-size: 0.88rem;">Full Pan (25-30): <strong style="color: var(--fcv-gold);">$85</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="fcv-footer">
+    <div class="fcv-container">
+      <div class="fcv-footer-grid">
+        <div>
+          <div class="fcv-brand-name" style="margin-bottom: 0.8rem;">Fortune Cookie <span style="color: var(--fcv-gold);">V</span></div>
+          <p class="fcv-footer-text">East Charlotte's destination for high-heat wok cooking, classic New York style Chinese specialties, crispy golden appetizers, and generous family party pans.</p>
+          <p class="fcv-footer-text" style="color: var(--fcv-gold); font-weight: 600;">Complimentary fortune cookies with every order.</p>
+        </div>
+        <div>
+          <div class="fcv-footer-heading">Explore</div>
+          <ul class="fcv-footer-links">
+            <li><a href="index.html" class="fcv-footer-link">Home</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Full Takeout Menu</a></li>
+            <li><a href="wok-tradition.html" class="fcv-footer-link">Wok Hei Tradition</a></li>
+            <li><a href="party-catering.html" class="fcv-footer-link">Office & Event Catering</a></li>
+            <li><a href="about.html" class="fcv-footer-link">Our Story</a></li>
+            <li><a href="contact.html" class="fcv-footer-link">Hours & Directions</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fcv-footer-heading">House Favorites</div>
+          <ul class="fcv-footer-links">
+            <li><a href="menu.html" class="fcv-footer-link">General Tso's Chicken</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Crispy Sesame Beef</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Honey Garlic Wings</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">House Special Lo Mein</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Crab Rangoon Cheese Wontons</a></li>
+            <li><a href="menu.html" class="fcv-footer-link">Singapore Mei Fun</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fcv-footer-heading">Location & Hours</div>
+          <p class="fcv-footer-text">
+            <strong>Address:</strong> 7320 The Plaza Ste A<br>
+            Charlotte, NC 28215 (Newell)
+          </p>
+          <p class="fcv-footer-text">
+            <strong>Phone:</strong> <a href="tel:7045630882" style="color: var(--fcv-gold); text-decoration: none;">(704) 563-0882</a>
+          </p>
+          <p class="fcv-footer-text" style="font-size: 0.85rem;">
+            Mon-Thu: 10:30 AM - 9:00 PM<br>
+            Fri: 10:30 AM - 10:00 PM<br>
+            Sat: 11:30 AM - 10:00 PM<br>
+            Sun: 11:30 AM - 9:00 PM
+          </p>
+        </div>
+      </div>
+      <div class="fcv-footer-bottom">
+        <p>&copy; 2026 Fortune Cookie V. Authentic New York Style Chinese Kitchen in East Charlotte. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Kilimanjaro Kitchen Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="kili-header">
+    <div class="kili-nav-container">
+      <a href="index.html" class="kili-brand">
+        <span class="kili-brand-title">Kilimanjaro Kitchen</span>
+        <span class="kili-brand-subtitle">100% Halal Somali &bull; The Plaza</span>
+      </a>
+      <button class="kili-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="kili-nav" aria-label="Primary Navigation">
+        <ul class="kili-nav-list">
+          <li><a href="index.html" class="kili-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="kili-nav-link active">Menu</a></li>
+          <li><a href="somali-and-east-african-tradition.html" class="kili-nav-link ">Tradition</a></li>
+          <li><a href="lamb-shank-and-goat.html" class="kili-nav-link ">Lamb Shank &amp; Goat</a></li>
+          <li><a href="chapati-malawax-and-sambusas.html" class="kili-nav-link ">Chapati &amp; Sambusas</a></li>
+          <li><a href="visit.html" class="kili-nav-link kili-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main class="kili-section">
+      <div class="kili-section-header">
+        <span class="kili-section-eyebrow">100% Halal Selections</span>
+        <h1 class="kili-section-title">Kilimanjaro Kitchen Menu</h1>
+        <p class="kili-section-subtitle">Tender slow-cooked lamb shanks, braised goat, sizzling suqaar, freshly griddled breads, and crispy sambusas.</p>
+      </div>
+
+      <div class="hhs-filter-tabs kili-filter-tabs" role="tablist" aria-label="Menu Filter Tabs">
+        <button type="button" class="kili-filter-btn active" data-filter="all">All Selections</button>
+        <button type="button" class="kili-filter-btn" data-filter="entrees">Halal Entrees</button>
+        <button type="button" class="kili-filter-btn" data-filter="suqaar">Sautéed Suqaar</button>
+        <button type="button" class="kili-filter-btn" data-filter="breads">Breads &amp; Crepes</button>
+        <button type="button" class="kili-filter-btn" data-filter="apps">Sambusas &amp; Drinks</button>
+      </div>
+
+      <div class="kili-menu-grid">
+        <div class="kili-menu-item" data-category="entrees">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Waslad (Braised Lamb Shank)</span>
+            <span class="kili-menu-item-price">$18.95</span>
+          </div>
+          <p class="kili-menu-item-desc">Giant whole bone-in lamb shank slow-cooked in rich rosemary, garlic, and Xawaash broth. Served with fragrant spiced basmati rice, a fresh banana, and house salad.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge kili-badge-gold">House Signature</span>
+            <span class="kili-badge">Fall Off Bone</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="entrees">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Hilib Ari (Somali Goat Platter)</span>
+            <span class="kili-menu-item-price">$17.50</span>
+          </div>
+          <p class="kili-menu-item-desc">Tender cuts of bone-in halal goat meat braised with whole cloves and cumin seeds, served over aromatic basmati rice with spicy green Basbaas sauce.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge kili-badge-gold">Traditional Hit</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="suqaar">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Beef Suqaar Plate</span>
+            <span class="kili-menu-item-price">$14.95</span>
+          </div>
+          <p class="kili-menu-item-desc">Lean bite-sized halal beef flash-sautéed with colorful bell peppers, red onions, garlic, and mild turmeric sauce with choice of rice or chapati.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge">Sautéed Hot</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="suqaar">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Chicken Suqaar</span>
+            <span class="kili-menu-item-price">$13.95</span>
+          </div>
+          <p class="kili-menu-item-desc">Diced tender chicken breast simmered with sweet onions, green peppers, ginger, and aromatic Somali herbs.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge">High Protein</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="breads">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Fresh Griddled Chapati</span>
+            <span class="kili-menu-item-price">$3.50</span>
+          </div>
+          <p class="kili-menu-item-desc">Flaky, multi-layered East African flatbread griddled with butter, perfect for tearing and dipping into savory meat gravies.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge kili-badge-brown">Baked Fresh</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="breads">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Sweet Malawax Crepes (2)</span>
+            <span class="kili-menu-item-price">$4.25</span>
+          </div>
+          <p class="kili-menu-item-desc">Traditional Somali sweet pancake crepes spiced with ground cardamom, ginger, and sugar, served warm with honey drizzle.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge kili-badge-gold">Sweet Treat</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="apps">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Crispy Halal Sambusas (3)</span>
+            <span class="kili-menu-item-price">$6.00</span>
+          </div>
+          <p class="kili-menu-item-desc">Crispy fried triangular pastry pockets filled with seasoned ground beef, onions, and jalapeños, served with tangy green Basbaas sauce.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge kili-badge-gold">Appetizer Favorite</span>
+          </div>
+        </div>
+
+        <div class="kili-menu-item" data-category="apps">
+          <div class="kili-menu-item-header">
+            <span class="kili-menu-item-name">Spiced Somali Milk Tea</span>
+            <span class="kili-menu-item-price">$3.50</span>
+          </div>
+          <p class="kili-menu-item-desc">Sweetened black tea brewed with crushed cardamom pods, whole cinnamon bark, cloves, and whole milk.</p>
+          <div class="kili-menu-item-badges">
+            <span class="kili-badge">Warm &amp; Comforting</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+  <footer class="kili-footer">
+    <div class="kili-footer-container">
+      <div class="kili-footer-brand">
+        <h4>Kilimanjaro Kitchen</h4>
+        <p>100% Halal authentic Somali and East African cuisine at 4450 The Plaza in Charlotte. Famous for braised lamb shank, slow-cooked goat, warm chapati, and sweet malawax crepes.</p>
+      </div>
+      <div class="kili-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="somali-and-east-african-tradition.html">East African Tradition</a></li>
+          <li><a href="lamb-shank-and-goat.html">Lamb Shank &amp; Goat</a></li>
+          <li><a href="chapati-malawax-and-sambusas.html">Chapati &amp; Sambusas</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="kili-footer-hours">
+        <h5>Location &amp; Hours</h5>
+        <p style="color: #9d9991; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>The Plaza:</strong> 4450 The Plaza, Suite F</p>
+        <p style="color: #9d9991; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 531-9005</p>
+        <p style="color: #9d9991; font-size: 0.88rem;">Tue - Sun: 12:00 PM - 9:00 PM<br>Monday: Closed</p>
+      </div>
+    </div>
+    <div class="kili-footer-bottom">
+      <p>&copy; 2026 Kilimanjaro Kitchen. All rights reserved. Culinary showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

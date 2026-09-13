@@ -1,0 +1,120 @@
+{
+  "slug": "cowbell-burger-and-whiskey-bar",
+  "generatedAt": "2026-09-10T19:30:49.969Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "halfpenny-s-cafe",
+    "johnny-burrito",
+    "nirvana-ii",
+    "the-sandwich-club",
+    "crunch-bistro",
+    "luce-ristorante",
+    "hasaki-grill-and-sushi",
+    "cedar-street-tavern",
+    "cuzcatlan-restaurant",
+    "bernardin-s"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "bernardin-s",
+    "score": 0.32813253012048194,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.030120481927710843,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "bernardin-s",
+      "score": 0.32813253012048194,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.030120481927710843,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "cedar-street-tavern",
+      "score": 0.3048286843839227,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.028735632183908046,
+      "domSimilarity": 0.9044585987261147,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "cuzcatlan-restaurant",
+      "score": 0.29524068322981367,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.02976190476190476,
+      "domSimilarity": 0.8633540372670807,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "crunch-bistro",
+      "score": 0.15250900473933648,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.02,
+      "domSimilarity": 0.2796208530805687,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "hasaki-grill-and-sushi",
+      "score": 0.15219245283018867,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.02,
+      "domSimilarity": 0.2783018867924528,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "luce-ristorante",
+      "score": 0.15160446590980367,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.020134228187919462,
+      "domSimilarity": 0.2757009345794392,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "the-sandwich-club",
+      "score": 0.1515682242990654,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.02,
+      "domSimilarity": 0.2757009345794392,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "johnny-burrito",
+      "score": 0.14906068183506227,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.01775147928994083,
+      "domSimilarity": 0.26778242677824265,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "nirvana-ii",
+      "score": 0.14842753891771682,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.019736842105263157,
+      "domSimilarity": 0.26291079812206575,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "halfpenny-s-cafe",
+      "score": 0.10222333000997008,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.01694915254237288,
+      "domSimilarity": 0.4068627450980392,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

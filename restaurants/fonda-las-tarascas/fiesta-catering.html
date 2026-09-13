@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Taquizas &amp; Catering para Fiestas | Fonda Las Tarascas Charlotte</title>
+  <meta name="description" content="Fonda Las Tarascas en 6308 The Plaza, Charlotte NC: Aut&eacute;ntica comida mexicana de Michoac&aacute;n, carnitas de cazo, birria con consom&eacute;, tortillas hechas a mano y taquizas.">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <header class="flt-header">
+    <div class="flt-nav-container">
+      <a href="index.html" class="flt-brand">
+        <span class="flt-brand-name">Fonda <span>Las Tarascas</span></span>
+        <span class="flt-brand-sub">Cocina Tradicional de Michoac&aacute;n &bull; Charlotte</span>
+      </a>
+      <ul class="flt-nav-links">
+        <li><a href="index.html" class="flt-nav-link ">Inicio</a></li>
+        <li><a href="menu.html" class="flt-nav-link ">Men&uacute;</a></li>
+        <li><a href="michoacan-heritage.html" class="flt-nav-link ">Tradici&oacute;n Michoacana</a></li>
+        <li><a href="fiesta-catering.html" class="flt-nav-link active">Taquizas &amp; Catering</a></li>
+        <li><a href="about.html" class="flt-nav-link ">Nuestra Fonda</a></li>
+        <li><a href="contact.html" class="flt-nav-link ">Ubicaci&oacute;n &amp; Preguntas</a></li>
+      </ul>
+      <a href="fiesta-catering.html" class="flt-nav-cta">Cotizar Taquiza</a>
+      <button class="flt-mobile-toggle" aria-label="Abrir Men&uacute; de Navegaci&oacute;n">&#9776;</button>
+    </div>
+  </header>
+  <div class="flt-drawer-overlay"></div>
+  <aside class="flt-drawer">
+    <button class="flt-drawer-close" aria-label="Cerrar Men&uacute; de Navegaci&oacute;n">&times;</button>
+    <div class="flt-brand" style="margin-bottom: 2rem;">
+      <span class="flt-brand-name">Fonda <span>Las Tarascas</span></span>
+      <span class="flt-brand-sub">6308 The Plaza &bull; Charlotte NC</span>
+    </div>
+    <ul class="flt-drawer-links">
+      <li><a href="index.html" class="flt-drawer-link ">Inicio</a></li>
+      <li><a href="menu.html" class="flt-drawer-link ">Men&uacute;</a></li>
+      <li><a href="michoacan-heritage.html" class="flt-drawer-link ">Tradici&oacute;n Michoacana</a></li>
+      <li><a href="fiesta-catering.html" class="flt-drawer-link active">Taquizas &amp; Catering</a></li>
+      <li><a href="about.html" class="flt-drawer-link ">Nuestra Fonda</a></li>
+      <li><a href="contact.html" class="flt-drawer-link ">Ubicaci&oacute;n &amp; Preguntas</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--flt-border);">
+      <p style="font-size: 0.85rem; color: var(--flt-text-muted); margin-bottom: 0.5rem;"><strong>Direcci&oacute;n:</strong> 6308 The Plaza, Charlotte, NC 28215</p>
+      <p style="font-size: 0.85rem; color: var(--flt-text-muted); margin-bottom: 1rem;"><strong>Tel&eacute;fono:</strong> (980) 237-4215</p>
+      <a href="tel:9802374215" class="flt-btn-primary" style="width: 100%; text-align: center; display: block;">Llamar a la Fonda</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="flt-section bg-secondary" style="padding: 3.5rem 0 2rem;">
+      <div class="flt-container">
+        <div class="flt-section-head" style="margin-bottom: 1.5rem;">
+          <span class="flt-section-tag">Calculadora Interactiva de Taquizas</span>
+          <h1 class="flt-section-title">Taquizas para Fiestas &amp; Catering</h1>
+          <p class="flt-section-subtitle">
+            Calcula en tiempo real el costo exacto de tu taquiza, carnitas por libra, guisados, arroz, frijoles y barriles de aguas frescas con pedido directo por correo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flt-section">
+      <div class="flt-container">
+        <div class="flt-calc-container">
+          <!-- Form -->
+          <div class="flt-calc-card">
+            <h2 style="font-family: var(--flt-font-serif); color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;">
+              1. Configuraci&oacute;n del Evento
+            </h2>
+
+            <div class="flt-form-group">
+              <label for="calc-guests" class="flt-form-label">N&uacute;mero Estimado de Invitados</label>
+              <input type="number" id="calc-guests" class="flt-form-control" value="20" min="10" max="200" step="5">
+              <p style="font-size: 0.8rem; color: var(--flt-text-muted); margin-top: 0.25rem;">Recomendado: 10 a 200 personas</p>
+            </div>
+
+            <div class="flt-form-group">
+              <label for="calc-package" class="flt-form-label">Paquete de Catering Principal</label>
+              <select id="calc-package" class="flt-form-control">
+                <option value="16.00" selected>Taquiza Tarasca (.00 / persona) - 3 Carnes, Tortillas, Arroz, Frijoles y Salsas</option>
+                <option value="20.00">Banquete Michoacano (.00 / persona) - Carnitas de Cazo, Birria con Consom&eacute;, Sopes, Arroz y Frijoles</option>
+                <option value="25.00">Gran Fiesta Familiar (.00 / persona) - Men&uacute; Completo, Carnitas, Birria, Antojitos, Aguas Frescas y Churros</option>
+              </select>
+            </div>
+
+            <div class="flt-form-group">
+              <label for="calc-extra-carnitas" class="flt-form-label">Agregar Libras Adicionales de Carnitas (.00 / lb)</label>
+              <select id="calc-extra-carnitas" class="flt-form-control">
+                <option value="0" selected>Sin libras extras (Incluido en paquete)</option>
+                <option value="2">+2 lbs de Carnitas (+44.00)</option>
+                <option value="4">+4 lbs de Carnitas (+88.00)</option>
+                <option value="6">+6 lbs de Carnitas (+132.00)</option>
+                <option value="8">+8 lbs de Carnitas (+176.00)</option>
+              </select>
+            </div>
+
+            <div class="flt-form-group">
+              <label for="calc-extra-birria" class="flt-form-label">Agregar Libras Extras de Birria de Res + Consom&eacute; (.00 / lb)</label>
+              <select id="calc-extra-birria" class="flt-form-control">
+                <option value="0" selected>Sin birria extra</option>
+                <option value="2">+2 lbs de Birria + Consom&eacute; (+48.00)</option>
+                <option value="4">+4 lbs de Birria + Consom&eacute; (+96.00)</option>
+                <option value="6">+6 lbs de Birria + Consom&eacute; (+144.00)</option>
+              </select>
+            </div>
+
+            <div class="flt-form-group">
+              <label for="calc-aguas-barrel" class="flt-form-label">Barriles de Aguas Frescas (5 Galones - .00 c/u)</label>
+              <select id="calc-aguas-barrel" class="flt-form-control">
+                <option value="0" selected>Sin barriles de agua</option>
+                <option value="1">1 Barril (5 Galones Horchata o Jamaica) - .00</option>
+                <option value="2">2 Barriles (10 Galones Surtidos) - .00</option>
+                <option value="3">3 Barriles (15 Galones Surtidos) - .00</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="flt-calc-card" style="background: #1C1815; border-color: var(--flt-terracotta);">
+            <div class="flt-card-flex" style="margin-bottom: 1rem;">
+              <span class="flt-tag highlight">Cotizaci&oacute;n Inmediata</span>
+              <span class="flt-tag">Sin Compromiso</span>
+            </div>
+            <h2 style="font-family: var(--flt-font-serif); color: var(--flt-gold); font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem;">
+              Resumen de Taquiza
+            </h2>
+
+            <div class="flt-calc-row">
+              <span>N&uacute;mero de Invitados:</span>
+              <strong id="out-guests" style="color: #fff;">20</strong>
+            </div>
+            <div class="flt-calc-row">
+              <span>Costo Base del Paquete:</span>
+              <strong id="out-pkg-cost">.00</strong>
+            </div>
+            <div class="flt-calc-row">
+              <span>Carnitas Adicionales:</span>
+              <strong id="out-carnitas-cost">.00</strong>
+            </div>
+            <div class="flt-calc-row">
+              <span>Birria Adicional:</span>
+              <strong id="out-birria-cost">.00</strong>
+            </div>
+            <div class="flt-calc-row">
+              <span>Barriles de Aguas Frescas:</span>
+              <strong id="out-aguas-cost">.00</strong>
+            </div>
+            <div class="flt-calc-row" style="border-top: 1px solid var(--flt-border); padding-top: 0.75rem; margin-top: 0.75rem;">
+              <span>Subtotal Alimentos:</span>
+              <strong id="out-subtotal">.00</strong>
+            </div>
+            <div class="flt-calc-row">
+              <span>Servicio y Empaque Especial (15%):</span>
+              <strong id="out-tax-tip">.00</strong>
+            </div>
+            <div class="flt-calc-row total">
+              <span>Total Estimado:</span>
+              <span id="out-grand-total" class="amount">.00</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <a href="mailto:catering@fondalastarascas.com" id="btn-request-taquiza" class="flt-btn-primary" style="width: 100%; text-align: center; display: block;">
+                Generar Solicitud por Correo
+              </a>
+              <p style="font-size: 0.8rem; color: var(--flt-text-muted); text-align: center; margin-top: 0.75rem;">
+                O ll&aacute;manos directamente al: <a href="tel:9802374215" style="color: var(--flt-gold); font-weight: 700;">(980) 237-4215</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tiers Overview -->
+        <div style="margin-top: 4rem;">
+          <div class="flt-section-head">
+            <span class="flt-section-tag">Detalles de Paquetes</span>
+            <h2 class="flt-section-title">&iquest;Qu&eacute; Incluye Cada Paquete de Catering?</h2>
+          </div>
+
+          <div class="flt-grid-3">
+            <div class="flt-card">
+              <div class="flt-card-body">
+                <span class="flt-tag highlight" style="margin-bottom: 0.75rem;">Taquiza Tarasca</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--flt-text-muted); font-weight: normal;">/ persona</span></div>
+                <ul style="color: var(--flt-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>3 Carnes: Carnitas, Pastor y Asada</li>
+                  <li>Tortillas de ma&iacute;z calientes y abundantes</li>
+                  <li>Arroz rojo mexicano y frijoles refritos</li>
+                  <li>Barra de salsas, limones, cilantro y cebolla</li>
+                  <li>Platos, tenedores y servilletas incluidas</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flt-card" style="border-color: var(--flt-terracotta);">
+              <div class="flt-card-body">
+                <span class="flt-tag highlight" style="margin-bottom: 0.75rem;">Banquete Michoacano</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--flt-gold); margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--flt-text-muted); font-weight: normal;">/ persona</span></div>
+                <ul style="color: var(--flt-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Carnitas de cazo de cobre y Birria de Res con consom&eacute;</li>
+                  <li>Minisopes tradicionales con frijol y queso Cotija</li>
+                  <li>Arroz rojo, frijoles charros y chiles toreados</li>
+                  <li>Salsas artesanales molcajeteadas y nopales asados</li>
+                  <li>Tortillas hechas a mano para el evento</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flt-card">
+              <div class="flt-card-body">
+                <span class="flt-tag highlight" style="margin-bottom: 0.75rem;">Gran Fiesta Familiar</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--flt-text-muted); font-weight: normal;">/ persona</span></div>
+                <ul style="color: var(--flt-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Selecci&oacute;n completa de 4 guisados y carnes premium</li>
+                  <li>Sopes, gorditas y quesadillas de comal</li>
+                  <li>Barriles de Aguas Frescas (Horchata y Jamaica)</li>
+                  <li>Postre: Churros calientes con cajeta quemada</li>
+                  <li>Servicio completo para montar en bandejas t&eacute;rmicas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="flt-footer">
+    <div class="flt-container">
+      <div class="flt-footer-grid">
+        <div>
+          <div class="flt-brand" style="margin-bottom: 1rem;">
+            <span class="flt-brand-name">Fonda <span>Las Tarascas</span></span>
+            <span class="flt-brand-sub">East Charlotte &bull; The Plaza</span>
+          </div>
+          <p class="flt-footer-text">
+            Aut&eacute;ntica cocina tradicional de Michoac&aacute;n en Charlotte. Carnitas en cazo de cobre, tortillas hechas a mano en comal, birria de res con consom&eacute;, sopes, huaraches y aguas frescas naturales.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <span class="flt-tag highlight">Tortillas a Mano</span>
+            <span class="flt-tag highlight">Carnitas de Cazo</span>
+            <span class="flt-tag">Abierto 7 D&iacute;as</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="flt-footer-heading">Navegaci&oacute;n</h4>
+          <ul class="flt-footer-links">
+            <li><a href="index.html" class="flt-footer-link">Inicio &amp; Experiencia</a></li>
+            <li><a href="menu.html" class="flt-footer-link">Men&uacute; Tradicional</a></li>
+            <li><a href="michoacan-heritage.html" class="flt-footer-link">Herencia Michoacana</a></li>
+            <li><a href="fiesta-catering.html" class="flt-footer-link">Calculadora de Taquizas</a></li>
+            <li><a href="about.html" class="flt-footer-link">Historia Familiar</a></li>
+            <li><a href="contact.html" class="flt-footer-link">Ubicaci&oacute;n &amp; Preguntas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="flt-footer-heading">Horario</h4>
+          <ul class="flt-footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color:#fff;">Lunes &ndash; Domingo:</strong> 10:00 AM &ndash; 9:00 PM</li>
+            <li><strong style="color: var(--flt-gold);">Fin de Semana:</strong> Pozole y Menudo Fresco</li>
+            <li><strong style="color:#fff;">Servicio:</strong> Comedor, Para Llevar y Taquizas</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="flt-footer-heading">Ubicaci&oacute;n</h4>
+          <p class="flt-footer-text">
+            6308 The Plaza, Charlotte, NC 28215<br>
+            East Charlotte Plaza Corridor.<br>
+            Tel&eacute;fono: <a href="tel:9802374215" style="color: var(--flt-gold); font-weight: 700;">(980) 237-4215</a>
+          </p>
+          <p style="font-size: 0.8rem; color: var(--flt-text-muted);">
+            Estacionamiento gratuito en plaza comercial disponible.
+          </p>
+        </div>
+      </div>
+      <div class="flt-footer-bottom">
+        <p>&copy; 2026 Fonda Las Tarascas Charlotte. Todos los derechos reservados. Tradici&oacute;n Culinaria de Michoac&aacute;n.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

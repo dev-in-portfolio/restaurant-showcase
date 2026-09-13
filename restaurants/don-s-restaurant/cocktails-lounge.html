@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lounge, Mixology & VIP Reservations | Don's Restaurant Charlotte</title>
+  <meta name="description" content="Book VIP booth service, cocktail flights, and bottle packages at Don's Restaurant in Uptown Charlotte. Smoked bourbon, artisanal mixology, and nightlife.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="don-topbar">
+    <div class="don-topbar-info">
+      <span>321 N Caldwell St, Charlotte, NC 28202</span>
+      <span>Wed-Thu: 5PM-11PM | Fri: 5PM-1AM | Sat: 11AM-4PM & 5PM-1AM | Sun: 11AM-5PM</span>
+    </div>
+    <div>
+      <a href="tel:+17043762909" class="don-topbar-link">Reservations: (704) 376-2909</a>
+    </div>
+  </div>
+  <header class="don-navbar">
+    <div class="don-nav-container">
+      <a href="index.html" class="don-brand">
+        <span class="don-brand-name">Don's <span>Restaurant</span></span>
+        <span class="don-brand-tagline">Uptown Charlotte - Fine Southern Dining</span>
+      </a>
+      <ul class="don-nav-links">
+        <li class="don-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="don-nav-item"><a href="menu.html" class="">Dinner Menu</a></li>
+        <li class="don-nav-item"><a href="brunch.html" class="">Soul Brunch</a></li>
+        <li class="don-nav-item"><a href="cocktails-lounge.html" class="active">Lounge & VIP</a></li>
+        <li class="don-nav-item"><a href="about.html" class="">The Experience</a></li>
+        <li class="don-nav-item"><a href="contact.html" class="">Visit & Hours</a></li>
+        <li class="don-nav-item"><a href="tel:+17043762909" class="don-nav-cta">Call (704) 376-2909</a></li>
+      </ul>
+      <button class="don-menu-toggle" id="donMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="don-mobile-menu" id="donMobileMenu">
+      <ul class="don-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="">Dinner Menu</a></li>
+        <li><a href="brunch.html" class="">Soul Brunch</a></li>
+        <li><a href="cocktails-lounge.html" class="active">Lounge & VIP</a></li>
+        <li><a href="about.html" class="">The Experience</a></li>
+        <li><a href="contact.html" class="">Visit & Hours</a></li>
+        <li><a href="tel:+17043762909" class="don-nav-cta" style="display:inline-block; margin-top:0.5rem;">Reserve Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="don-section-sm don-section-darker">
+    <div class="don-container" style="text-align: center;">
+      <span class="don-eyebrow">Nightlife & Mixology</span>
+      <h1 class="don-title-xl">The Cocktail Vault & VIP Lounge</h1>
+      <p class="don-lead">Elevate your evening in Uptown Charlotte with bespoke cocktail service, dedicated VIP booths, and luxury dining packages.</p>
+    </div>
+  </section>
+
+  <!-- Interactive VIP Planner Section -->
+  <section class="don-section">
+    <div class="don-container">
+      <div class="don-section-header">
+        <span class="don-eyebrow">Interactive Concierge Tool</span>
+        <h2 class="don-title-lg">VIP Table & Lounge Experience Planner</h2>
+        <p class="don-lead">Configure your group size, dining tier, and premium beverage add-ons to instantly calculate your evening investment, required deposit, and email a booking request directly to our concierge.</p>
+      </div>
+
+      <div class="don-vip-panel">
+        <div class="don-vip-grid">
+          <!-- Controls Column -->
+          <div>
+            <div class="don-vip-group">
+              <label for="donVipGuests" class="don-vip-label">
+                <span>Guest Count</span>
+                <span id="donDisplayGuests" style="color: var(--don-copper-primary);">4 Guests</span>
+              </label>
+              <select id="donVipGuests" class="don-vip-select">
+                <option value="2">2 Guests (Intimate Date Night)</option>
+                <option value="4" selected>4 Guests (Standard Party Table)</option>
+                <option value="6">6 Guests (Executive Dining Booth)</option>
+                <option value="8">8 Guests (Celebration Party)</option>
+                <option value="12">12 Guests (VIP Lounge Suite)</option>
+                <option value="16">16+ Guests (Private Area Buyout)</option>
+              </select>
+            </div>
+
+            <div class="don-vip-group">
+              <label for="donVipTier" class="don-vip-label">Experience Tier</label>
+              <select id="donVipTier" class="don-vip-select">
+                <option value="prime-table" selected>Prime Table Experience ($75/person) - 3-Course Dinner & Signature Drink</option>
+                <option value="executive-booth">Executive Velvet Booth ($110/person) - 4-Course Dinner & Craft Cocktail Pairing</option>
+                <option value="velvet-lounge">Ultra-VIP Lounge Suite ($160/person) - Premium Tasting, Champagne & Dedicated Host</option>
+              </select>
+            </div>
+
+            <div class="don-vip-group">
+              <label for="donVipOccasion" class="don-vip-label">Occasion / Timing</label>
+              <select id="donVipOccasion" class="don-vip-select">
+                <option value="Evening Dinner & Cocktails">Evening Dinner & Cocktails (Wed-Sat)</option>
+                <option value="Weekend Soul Brunch & Mimosas">Weekend Soul Brunch & Mimosas (Sat-Sun)</option>
+                <option value="Late Night Lounge & Bottle Service">Late Night Lounge & Bottle Service (Fri-Sat 10PM-1AM)</option>
+                <option value="Birthday / Anniversary Celebration">Birthday / Anniversary Celebration</option>
+                <option value="Corporate Entertaining">Corporate Entertaining & Client Dinner</option>
+              </select>
+            </div>
+
+            <div class="don-vip-group">
+              <label class="don-vip-label">Bottle Service & Cocktail Flight Add-Ons</label>
+              <div class="don-vip-options-grid">
+                <label class="don-vip-check">
+                  <input type="checkbox" class="don-bottle-check" value="Smoked Bourbon Flight" data-price="45"> Smoked Bourbon Flight (+$45)
+                </label>
+                <label class="don-vip-check">
+                  <input type="checkbox" class="don-bottle-check" value="Veuve Clicquot Champagne" data-price="180"> Veuve Clicquot Bottle (+$180)
+                </label>
+                <label class="don-vip-check">
+                  <input type="checkbox" class="don-bottle-check" value="Don Julio 1942 Tequila" data-price="450"> Don Julio 1942 (+$450)
+                </label>
+                <label class="don-vip-check">
+                  <input type="checkbox" class="don-bottle-check" value="Craft Mimosa Tower (Brunch)" data-price="95"> Mimosa Tower (+$95)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="don-vip-summary-card">
+            <div>
+              <h3 style="font-family: var(--don-font-display); font-size: 1.35rem; color: var(--don-copper-primary); margin-bottom: 1.25rem;">Reservation Summary</h3>
+              
+              <div class="don-summary-line">
+                <span>Seating Category:</span>
+                <strong id="donDisplaySeating" style="color: #ffffff;">Main Dining Room Booth</strong>
+              </div>
+              <div class="don-summary-line">
+                <span>Selected Package:</span>
+                <strong id="donDisplayPackage" style="color: #ffffff;">Prime Dining Table</strong>
+              </div>
+              <div class="don-summary-line">
+                <span>Beverage Enhancements:</span>
+                <strong id="donDisplayBottles" style="color: #ffffff;">None Selected</strong>
+              </div>
+              
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--don-text-muted); line-height: 1.5;" id="donVipSummaryText">
+                Prime Dining Table for 4 guests. Seating: Main Dining Room Booth. Standard 3-course experience.
+              </div>
+            </div>
+
+            <div>
+              <div class="don-summary-total">
+                <div>
+                  <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--don-text-muted);">Estimated Total:</div>
+                  <span class="don-summary-total-val" id="donTotalCost">$300.00</span>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--don-text-muted);">Hold Deposit:</div>
+                  <span style="font-size: 1.3rem; font-weight: 700; color: #ffffff;" id="donDepositAmount">$90.00</span>
+                </div>
+              </div>
+
+              <div class="don-vip-actions">
+                <a href="mailto:info@donscharlotte.com" id="donMailQuoteLink" class="don-btn don-btn-primary" style="width: 100%;">Email VIP Concierge</a>
+                <button type="button" id="donCopyQuoteBtn" class="don-btn don-btn-outline" style="width: 100%;">Copy Quote Summary</button>
+                <a href="tel:+17043762909" class="don-btn don-btn-secondary" style="width: 100%;">Call (704) 376-2909 Directly</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Cocktail Roster -->
+  <section class="don-section don-section-darker">
+    <div class="don-container">
+      <div class="don-section-header">
+        <span class="don-eyebrow">Mixology Masterpieces</span>
+        <h2 class="don-title-lg">Crafted In The Vault</h2>
+      </div>
+
+      <div class="don-grid-3">
+        <div class="don-card">
+          <h3 class="don-title-md">Lavender 75</h3>
+          <p class="don-dish-price" style="margin-bottom: 0.75rem;">$16</p>
+          <p style="font-size: 0.9rem; color: var(--don-text-muted); margin-bottom: 1rem;">Empress 1908 botanical gin, organic French lavender syrup, fresh lemon juice, topped with chilled prosecco.</p>
+          <span class="don-tag">Floral & Refreshing</span>
+        </div>
+
+        <div class="don-card">
+          <h3 class="don-title-md">Smoked Don's Old Fashioned</h3>
+          <p class="don-dish-price" style="margin-bottom: 0.75rem;">$18</p>
+          <p style="font-size: 0.9rem; color: var(--don-text-muted); margin-bottom: 1rem;">Woodford Reserve bourbon, spiced brown sugar syrup, Angostura bitters, smoked with toasted cherrywood chips.</p>
+          <span class="don-tag">Smoked Tableside</span>
+        </div>
+
+        <div class="don-card">
+          <h3 class="don-title-md">Uptown Lemon Drop</h3>
+          <p class="don-dish-price" style="margin-bottom: 0.75rem;">$16</p>
+          <p style="font-size: 0.9rem; color: var(--don-text-muted); margin-bottom: 1rem;">Ketel One Citroen vodka, fresh lemon cordial, muddled blackberries, and an organic raw sugar rim.</p>
+          <span class="don-tag">Crisp & Sweet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="don-footer">
+    <div class="don-container">
+      <div class="don-footer-grid">
+        <div class="don-footer-brand">
+          <h3>Don's <span>Charlotte</span></h3>
+          <p>Uptown Charlotte's destination for upscale Southern gastronomy, elevated weekend soul brunch, and refined cocktail lounge culture in the historic First Ward.</p>
+        </div>
+        <div class="don-footer-col">
+          <h4>Navigation</h4>
+          <ul class="don-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Dinner Menu</a></li>
+            <li><a href="brunch.html">Weekend Soul Brunch</a></li>
+            <li><a href="cocktails-lounge.html">Lounge & VIP Planner</a></li>
+            <li><a href="about.html">The Story</a></li>
+            <li><a href="contact.html">Reservations & Directions</a></li>
+          </ul>
+        </div>
+        <div class="don-footer-col">
+          <h4>Operating Hours</h4>
+          <ul class="don-footer-links">
+            <li>Wednesday - Thursday: 5:00 PM - 11:00 PM</li>
+            <li>Friday: 5:00 PM - 1:00 AM</li>
+            <li>Saturday: 11:00 AM - 4:00 PM & 5:00 PM - 1:00 AM</li>
+            <li>Sunday Brunch: 11:00 AM - 5:00 PM</li>
+            <li>Mon - Tue: Closed (Private Buyouts)</li>
+          </ul>
+        </div>
+        <div class="don-footer-col">
+          <h4>Contact Concierge</h4>
+          <ul class="don-footer-links">
+            <li>321 N Caldwell St</li>
+            <li>Charlotte, NC 28202</li>
+            <li><a href="tel:+17043762909">(704) 376-2909</a></li>
+            <li><a href="mailto:info@donscharlotte.com">info@donscharlotte.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="don-footer-bottom">
+        <p>&copy; 2026 Don's Restaurant. All Rights Reserved. Uptown Charlotte, NC.</p>
+        <p>321 N Caldwell St, Charlotte, NC 28202</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

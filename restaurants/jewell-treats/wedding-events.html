@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Cupcake Towers & Event Catering | Jewell Treats Charlotte</title>
+  <meta name="description" content="Calculate and order luxury wedding cupcake towers, custom dessert tables, and party favors from Jewell Treats in Charlotte, NC. All-natural gourmet pastries.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="jwt-topbar">
+    <div class="jwt-topbar-info">
+      <span>301 E 4th St, Charlotte, NC 28202 (Uptown Charlotte)</span>
+      <span>Mon-Fri: 9AM-6PM | Sat: 10AM-5PM | Sun: Event Deliveries</span>
+    </div>
+    <div>
+      <a href="tel:+19802022530" class="jwt-topbar-link">Order Call: (980) 202-2530</a>
+    </div>
+  </div>
+  <header class="jwt-navbar">
+    <div class="jwt-nav-container">
+      <a href="index.html" class="jwt-brand">
+        <span class="jwt-brand-name">Jewell <span>Treats</span></span>
+        <span class="jwt-brand-tagline">Artisan Gemstone Cupcakes & Desserts</span>
+      </a>
+      <ul class="jwt-nav-links">
+        <li class="jwt-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="jwt-nav-item"><a href="menu.html" class="">Gemstone Menu</a></li>
+        <li class="jwt-nav-item"><a href="wedding-events.html" class="active">Towers & Events</a></li>
+        <li class="jwt-nav-item"><a href="natural-ingredients.html" class="">All-Natural Craft</a></li>
+        <li class="jwt-nav-item"><a href="about.html" class="">Our Story</a></li>
+        <li class="jwt-nav-item"><a href="contact.html" class="">Visit & Pickup</a></li>
+        <li class="jwt-nav-item"><a href="tel:+19802022530" class="jwt-nav-cta">Call (980) 202-2530</a></li>
+      </ul>
+      <button class="jwt-menu-toggle" id="jwtMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="jwt-mobile-menu" id="jwtMobileMenu">
+      <ul class="jwt-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="">Gemstone Menu</a></li>
+        <li><a href="wedding-events.html" class="active">Towers & Events</a></li>
+        <li><a href="natural-ingredients.html" class="">All-Natural Craft</a></li>
+        <li><a href="about.html" class="">Our Story</a></li>
+        <li><a href="contact.html" class="">Visit & Pickup</a></li>
+        <li><a href="tel:+19802022530" class="jwt-nav-cta" style="display:inline-block; margin-top:0.5rem;">Call To Order</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="jwt-section-sm jwt-section-dark">
+    <div class="jwt-container" style="text-align: center;">
+      <span class="jwt-eyebrow">Weddings, Galas & Celebrations</span>
+      <h1 class="jwt-title-xl">Cupcake Towers & Event Catering</h1>
+      <p class="jwt-lead">Elevate your special day with our signature tiered acrylic and gold dessert stands, personalized favor boxes, and artisan cutting cakes.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Event Calculator -->
+  <section class="jwt-section">
+    <div class="jwt-container">
+      <div class="jwt-section-header">
+        <span class="jwt-eyebrow">Instant Quote Estimator</span>
+        <h2 class="jwt-title-lg">Gemstone Cupcake Tower Calculator</h2>
+        <p class="jwt-lead">Select your estimated guest count, choose your favorite presentation format, and customize gemstone flavor selections to calculate your exact pastry requirements and estimated investment.</p>
+      </div>
+
+      <div class="jwt-calc-panel">
+        <div class="jwt-calc-grid">
+          <!-- Controls Column -->
+          <div>
+            <div class="jwt-calc-group">
+              <label for="jwtCalcGuests" class="jwt-calc-label">
+                <span>Estimated Guest Count</span>
+                <span id="jwtCalcGuestCountDisplay" style="color: var(--jwt-plum);">50 Guests</span>
+              </label>
+              <select id="jwtCalcGuests" class="jwt-calc-select">
+                <option value="24">24 Guests (Intimate Gathering / Shower)</option>
+                <option value="50" selected>50 Guests (Birthday / Small Reception)</option>
+                <option value="75">75 Guests (Celebration Gala)</option>
+                <option value="100">100 Guests (Classic Wedding Reception)</option>
+                <option value="150">150 Guests (Large Wedding / Corporate Event)</option>
+                <option value="200">200 Guests (Grand Ballroom Reception)</option>
+                <option value="250">250+ Guests (Major Corporate Gala)</option>
+              </select>
+            </div>
+
+            <div class="jwt-calc-group">
+              <label for="jwtCalcFormat" class="jwt-calc-label">Display & Service Format</label>
+              <select id="jwtCalcFormat" class="jwt-calc-select">
+                <option value="standard-tower" selected>Tiered Clear Acrylic Tower ($4.25/cupcake) - Multi-Level Buffet Display</option>
+                <option value="individual-boxes">Individual Ribbon-Tied Gift Favor Boxes ($4.95/cupcake) - Clear Window Boxes</option>
+                <option value="luxury-gold">Luxury Gold Stand Display + 6" Top Cake ($5.50/cupcake) - Premium Wedding Setup</option>
+              </select>
+            </div>
+
+            <div class="jwt-calc-group">
+              <label class="jwt-calc-label">Select Gemstone Flavors (Pick up to 4)</label>
+              <div class="jwt-checkbox-grid">
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-flavor-check" value="Ruby Red Velvet" checked> Ruby Red Velvet
+                </label>
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-flavor-check" value="Strawberry Sapphire" checked> Strawberry Sapphire
+                </label>
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-flavor-check" value="Chocolate Diamond" checked> Chocolate Diamond
+                </label>
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-flavor-check" value="14 Karat Cake"> 14 Karat Carrot
+                </label>
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-flavor-check" value="Platinum Sweet Potato"> Sweet Potato
+                </label>
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-flavor-check" value="Key Lime Jadeite"> Key Lime Jadeite
+                </label>
+              </div>
+            </div>
+
+            <div class="jwt-calc-group">
+              <label class="jwt-calc-label">Special Event Enhancements</label>
+              <div class="jwt-checkbox-grid">
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-addon-check" value="6-Inch Matching Cutting Cake" data-price="45.00"> 6" Cutting Cake (+$45)
+                </label>
+                <label class="jwt-checkbox-item">
+                  <input type="checkbox" class="jwt-addon-check" value="Tier Stand Rental & Setup" data-price="65.00"> Stand Rental & Setup (+$65)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="jwt-calc-summary-card">
+            <div>
+              <h3 style="font-family: var(--jwt-font-display); font-size: 1.4rem; color: var(--jwt-gold); margin-bottom: 1.25rem;">Event Order Allocation</h3>
+              
+              <div class="jwt-summary-row">
+                <span>Total Cupcakes Calculated:</span>
+                <strong id="jwtCalcTotalCupcakes">63 Cupcakes</strong>
+              </div>
+              <div class="jwt-summary-row">
+                <span>Display Structure:</span>
+                <strong id="jwtCalcTowerTiers">4-Tier Display Tower</strong>
+              </div>
+              
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #fadceb; line-height: 1.5;" id="jwtCalcDetails">
+                Tiered Clear Acrylic Dessert Tower for 50 guests (63 handcrafted cupcakes). Flavors: Ruby Red Velvet, Strawberry Sapphire, Chocolate Diamond.
+              </div>
+            </div>
+
+            <div>
+              <div class="jwt-summary-total">
+                <span style="font-size: 1.1rem; font-weight: 600;">Estimated Package Total:</span>
+                <span class="jwt-summary-total-val" id="jwtCalcTotalCost">$267.75</span>
+              </div>
+
+              <div class="jwt-calc-action-bar">
+                <a href="mailto:jewelltreats@yahoo.com" id="jwtMailQuoteLink" class="jwt-btn jwt-btn-gold" style="width: 100%;">Email Event Inquiry</a>
+                <button type="button" id="jwtCopyQuoteBtn" class="jwt-btn jwt-btn-outline" style="width: 100%;">Copy Quote Summary</button>
+                <a href="tel:+19802022530" class="jwt-btn jwt-btn-primary" style="width: 100%;">Call (980) 202-2530 To Reserve</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Display Setups -->
+  <section class="jwt-section jwt-section-light">
+    <div class="jwt-container">
+      <div class="jwt-section-header">
+        <span class="jwt-eyebrow">Pastry Presentation</span>
+        <h2 class="jwt-title-lg">Signature Display Options</h2>
+      </div>
+
+      <div class="jwt-grid-3">
+        <div class="jwt-card">
+          <h3 class="jwt-title-md" style="color: var(--jwt-plum);">Tiered Acrylic Towers</h3>
+          <p style="font-size: 0.92rem; color: var(--jwt-text-muted); margin-bottom: 1rem;">Architectural clear acrylic stands accommodating 4 to 7 levels of Gemstone cupcakes. Clean, modern, and visually spectacular for dessert tables.</p>
+          <span class="jwt-tag">Modern Elegant</span>
+        </div>
+
+        <div class="jwt-card">
+          <h3 class="jwt-title-md" style="color: var(--jwt-plum);">Custom Favor Packaging</h3>
+          <p style="font-size: 0.92rem; color: var(--jwt-text-muted); margin-bottom: 1rem;">Single and duo clear-window cupcake boxes tied with satin ribbon in your event's color palette. Ideal for wedding guest take-home gifts.</p>
+          <span class="jwt-tag">Take-Home Favors</span>
+        </div>
+
+        <div class="jwt-card">
+          <h3 class="jwt-title-md" style="color: var(--jwt-plum);">Cutting Cake & Cupcake Fusion</h3>
+          <p style="font-size: 0.92rem; color: var(--jwt-text-muted); margin-bottom: 1rem;">A matching 6-inch custom cutting cake placed at the apex of the tower for ceremonial cake cutting, surrounded by individual cupcakes for guests.</p>
+          <span class="jwt-tag">Wedding Favorite</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="jwt-footer">
+    <div class="jwt-container">
+      <div class="jwt-footer-grid">
+        <div class="jwt-footer-brand">
+          <h3>Jewell <span>Treats</span></h3>
+          <p>Charlotte's boutique pastry destination for handcrafted, all-natural Gemstone Collection cupcakes, Southern pies, and bespoke wedding dessert tables.</p>
+        </div>
+        <div class="jwt-footer-col">
+          <h4>Explore</h4>
+          <ul class="jwt-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Gemstone Menu</a></li>
+            <li><a href="wedding-events.html">Events & Towers</a></li>
+            <li><a href="natural-ingredients.html">Natural Ingredients</a></li>
+            <li><a href="about.html">Our Pastry Story</a></li>
+            <li><a href="contact.html">Ordering & Pickup</a></li>
+          </ul>
+        </div>
+        <div class="jwt-footer-col">
+          <h4>Bakery Hours</h4>
+          <ul class="jwt-footer-links">
+            <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+            <li>Saturday: 10:00 AM - 5:00 PM</li>
+            <li>Sunday: Event Deliveries Only</li>
+            <li>Curbside & Uptown Delivery Available</li>
+          </ul>
+        </div>
+        <div class="jwt-footer-col">
+          <h4>Contact Us</h4>
+          <ul class="jwt-footer-links">
+            <li>301 E 4th St</li>
+            <li>Charlotte, NC 28202</li>
+            <li><a href="tel:+19802022530">(980) 202-2530</a></li>
+            <li><a href="mailto:jewelltreats@yahoo.com">jewelltreats@yahoo.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="jwt-footer-bottom">
+        <p>&copy; 2026 Jewell Treats LLC. All Rights Reserved. Uptown Charlotte, NC.</p>
+        <p>301 E 4th St, Charlotte, NC 28202</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

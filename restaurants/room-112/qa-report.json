@@ -1,0 +1,263 @@
+{
+  "slug": "room-112",
+  "generatedAt": "2026-09-10T18:46:48.501Z",
+  "htmlPages": [
+    "index.html",
+    "menu.html",
+    "modern-asian-bistro-and-wok.html",
+    "signature-rolls-and-sashimi-lounge.html",
+    "sushi-platters-and-executive-dining.html",
+    "visit.html"
+  ],
+  "cssFiles": [
+    "site.css"
+  ],
+  "jsFiles": [
+    "site.js"
+  ],
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "Minimum substantive HTML page count",
+      "passed": true,
+      "detail": "6 HTML pages found; minimum is 5"
+    },
+    {
+      "name": "index.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit/contact page exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS balance site.css",
+      "passed": true,
+      "detail": "balanced"
+    },
+    {
+      "name": "JavaScript parse site.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "index.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "menu.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "modern-asian-bistro-and-wok.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "modern-asian-bistro-and-wok.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "modern-asian-bistro-and-wok.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "modern-asian-bistro-and-wok.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "modern-asian-bistro-and-wok.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "modern-asian-bistro-and-wok.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "signature-rolls-and-sashimi-lounge.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "signature-rolls-and-sashimi-lounge.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "signature-rolls-and-sashimi-lounge.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "signature-rolls-and-sashimi-lounge.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "signature-rolls-and-sashimi-lounge.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "signature-rolls-and-sashimi-lounge.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sushi-platters-and-executive-dining.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sushi-platters-and-executive-dining.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sushi-platters-and-executive-dining.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sushi-platters-and-executive-dining.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "sushi-platters-and-executive-dining.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "sushi-platters-and-executive-dining.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "visit.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "visit.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No exact duplicate HTML pages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Creative Brief",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Claim Ledger",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Add-On Preservation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Cross-Demo Diversity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cross-demo design diversity",
+      "passed": true,
+      "detail": "PASS room-112: closest recent design 'red-ginger' scored 0.273."
+    }
+  ]
+}

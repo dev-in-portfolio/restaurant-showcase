@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinner & Culinary Menu | Don's Restaurant Uptown Charlotte</title>
+  <meta name="description" content="View the full dinner and craft cocktail menu at Don's Restaurant in Charlotte, NC. Shrimp & grits, red velvet chicken & waffles, salmon bites, seafood gumbo, and craft cocktails.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="don-topbar">
+    <div class="don-topbar-info">
+      <span>321 N Caldwell St, Charlotte, NC 28202</span>
+      <span>Wed-Thu: 5PM-11PM | Fri: 5PM-1AM | Sat: 11AM-4PM & 5PM-1AM | Sun: 11AM-5PM</span>
+    </div>
+    <div>
+      <a href="tel:+17043762909" class="don-topbar-link">Reservations: (704) 376-2909</a>
+    </div>
+  </div>
+  <header class="don-navbar">
+    <div class="don-nav-container">
+      <a href="index.html" class="don-brand">
+        <span class="don-brand-name">Don's <span>Restaurant</span></span>
+        <span class="don-brand-tagline">Uptown Charlotte - Fine Southern Dining</span>
+      </a>
+      <ul class="don-nav-links">
+        <li class="don-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="don-nav-item"><a href="menu.html" class="active">Dinner Menu</a></li>
+        <li class="don-nav-item"><a href="brunch.html" class="">Soul Brunch</a></li>
+        <li class="don-nav-item"><a href="cocktails-lounge.html" class="">Lounge & VIP</a></li>
+        <li class="don-nav-item"><a href="about.html" class="">The Experience</a></li>
+        <li class="don-nav-item"><a href="contact.html" class="">Visit & Hours</a></li>
+        <li class="don-nav-item"><a href="tel:+17043762909" class="don-nav-cta">Call (704) 376-2909</a></li>
+      </ul>
+      <button class="don-menu-toggle" id="donMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="don-mobile-menu" id="donMobileMenu">
+      <ul class="don-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="active">Dinner Menu</a></li>
+        <li><a href="brunch.html" class="">Soul Brunch</a></li>
+        <li><a href="cocktails-lounge.html" class="">Lounge & VIP</a></li>
+        <li><a href="about.html" class="">The Experience</a></li>
+        <li><a href="contact.html" class="">Visit & Hours</a></li>
+        <li><a href="tel:+17043762909" class="don-nav-cta" style="display:inline-block; margin-top:0.5rem;">Reserve Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="don-section-sm don-section-darker">
+    <div class="don-container" style="text-align: center;">
+      <span class="don-eyebrow">Culinary Selections</span>
+      <h1 class="don-title-xl">Dinner & Small Plates Menu</h1>
+      <p class="don-lead">Upscale Southern fare prepared from scratch daily with fresh coastal seafood and prime regional meats.</p>
+    </div>
+  </section>
+
+  <section class="don-section">
+    <div class="don-container">
+      <!-- Filter Bar -->
+      <div class="don-filter-bar">
+        <button class="don-filter-btn active" data-category="all">Full Menu</button>
+        <button class="don-filter-btn" data-category="starters">Small Plates & Starters</button>
+        <button class="don-filter-btn" data-category="entrees">Chef Entrees</button>
+        <button class="don-filter-btn" data-category="seafood">Seafood & Grits</button>
+        <button class="don-filter-btn" data-category="sides">Artisanal Sides</button>
+        <button class="don-filter-btn" data-category="cocktails">Craft Cocktails</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="don-grid-3">
+        <!-- Starters -->
+        <div class="don-dish-card don-menu-item" data-category="starters">
+          <div class="don-dish-img">
+            <img src="images/salmon-bites.jpg" alt="Crispy Salmon Bites">
+            <span class="don-dish-badge">Appetizer</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Crispy Salmon Bites</h3>
+              <span class="don-dish-price">$19</span>
+            </div>
+            <p class="don-dish-desc">Bite-sized Atlantic salmon tossed in Cajun blackened seasonings, flash-fried and served with spicy herb remoulade sauce.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Wild Caught</span>
+              <span class="don-tag">Gluten Sensitive</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="starters">
+          <div class="don-dish-img">
+            <img src="images/hero-dining.jpg" alt="Creamy Collard Green Dip">
+            <span class="don-dish-badge">Chef Favorite</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Creamy Collard Green Dip</h3>
+              <span class="don-dish-price">$16</span>
+            </div>
+            <p class="don-dish-desc">Slow-braised collard greens baked in a rich blend of smoked gouda, cream cheese, and garlic herbs, served warm with house wonton crisps.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Smoked Gouda</span>
+              <span class="don-tag">Warm Dip</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="starters">
+          <div class="don-dish-img">
+            <img src="images/shrimp-grits.jpg" alt="Cajun Mambo Shrimp">
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Cajun Mambo Shrimp</h3>
+              <span class="don-dish-price">$18</span>
+            </div>
+            <p class="don-dish-desc">Crispy fried Gulf shrimp tossed in our spicy-sweet Washington DC inspired mambo glaze with scallions and sesame seeds.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Sweet & Spicy</span>
+              <span class="don-tag">Crispy Gulf Shrimp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entrees -->
+        <div class="don-dish-card don-menu-item" data-category="entrees">
+          <div class="don-dish-img">
+            <img src="images/chicken-waffles.jpg" alt="Chicken & Red Velvet Waffles">
+            <span class="don-dish-badge">Signature</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Chicken & Red Velvet Waffle</h3>
+              <span class="don-dish-price">$28</span>
+            </div>
+            <p class="don-dish-desc">Buttermilk-brined southern fried chicken breast served over a fresh Belgian red velvet waffle with warm bourbon vanilla maple drizzle.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Red Velvet</span>
+              <span class="don-tag">Southern Fried</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="entrees">
+          <div class="don-dish-img">
+            <img src="images/hero-dining.jpg" alt="Braised Prime Short Rib">
+            <span class="don-dish-badge">Prime Beef</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Braised Prime Short Rib</h3>
+              <span class="don-dish-price">$38</span>
+            </div>
+            <p class="don-dish-desc">Six-hour slow-braised beef short rib in red wine demi-glace over truffle cheddar mashed potatoes and roasted heirloom carrots.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Truffle Mash</span>
+              <span class="don-tag">Demi-Glace</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="entrees">
+          <div class="don-dish-img">
+            <img src="images/hero-dining.jpg" alt="Don's Soulful Gumbo">
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Don's Soulful Gumbo</h3>
+              <span class="don-dish-price">$30</span>
+            </div>
+            <p class="don-dish-desc">Dark roux gumbo loaded with blue crab, gulf shrimp, andouille sausage, pulled chicken, and okra, served with fragrant Carolina gold rice.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Blue Crab</span>
+              <span class="don-tag">Andouille Sausage</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seafood & Grits -->
+        <div class="don-dish-card don-menu-item" data-category="seafood">
+          <div class="don-dish-img">
+            <img src="images/shrimp-grits.jpg" alt="Don's Shrimp and Grits">
+            <span class="don-dish-badge">Best Seller</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Don's Shrimp & Grits</h3>
+              <span class="don-dish-price">$32</span>
+            </div>
+            <p class="don-dish-desc">Sautéed jumbo Gulf shrimp over creamy stone-ground cheddar grits bathed in a savory andouille pan gravy with bell peppers and green onions.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Cheddar Grits</span>
+              <span class="don-tag">Pan Gravy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="seafood">
+          <div class="don-dish-img">
+            <img src="images/salmon-bites.jpg" alt="Blackened Salmon and Grits">
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Blackened Salmon & Gouda Grits</h3>
+              <span class="don-dish-price">$34</span>
+            </div>
+            <p class="don-dish-desc">Pan-seared Atlantic salmon fillet with Cajun crust over smoked gouda grits and a creamed spinach reduction.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Atlantic Salmon</span>
+              <span class="don-tag">Smoked Gouda</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="seafood">
+          <div class="don-dish-img">
+            <img src="images/hero-dining.jpg" alt="Jefe's Whole Red Snapper">
+            <span class="don-dish-badge">Specialty</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Jefe's Crispy Red Snapper</h3>
+              <span class="don-dish-price">$42</span>
+            </div>
+            <p class="don-dish-desc">Crispy whole red snapper served head-on with creole tomato pepper relish, coconut rice, and sautéed garlic green beans.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Whole Fish</span>
+              <span class="don-tag">Creole Relish</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sides -->
+        <div class="don-dish-card don-menu-item" data-category="sides">
+          <div class="don-dish-img">
+            <img src="images/hero-dining.jpg" alt="Artisanal Southern Sides">
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Southern Side Selections</h3>
+              <span class="don-dish-price">$8 - $12</span>
+            </div>
+            <p class="don-dish-desc">Smoked Turkey Collard Greens ($9), Truffle Cheddar Mac & Cheese ($12), Candied Yams ($8), Stone-Ground Grits ($8), Garlic Mashed Potatoes ($8).</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Made From Scratch</span>
+              <span class="don-tag">Family Style</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cocktails -->
+        <div class="don-dish-card don-menu-item" data-category="cocktails">
+          <div class="don-dish-img">
+            <img src="images/craft-cocktails.jpg" alt="Lavender 75 Cocktail">
+            <span class="don-dish-badge">Signature Cocktail</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Lavender 75</h3>
+              <span class="don-dish-price">$16</span>
+            </div>
+            <p class="don-dish-desc">Botanical gin, fresh lemon juice, house-steeped French lavender syrup, topped with prosecco and a lemon twist.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Prosecco</span>
+              <span class="don-tag">Botanical Gin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="don-dish-card don-menu-item" data-category="cocktails">
+          <div class="don-dish-img">
+            <img src="images/craft-cocktails.jpg" alt="Smoked Bourbon Old Fashioned">
+            <span class="don-dish-badge">Vault Pick</span>
+          </div>
+          <div class="don-dish-body">
+            <div class="don-dish-header">
+              <h3 class="don-dish-name">Smoked Don's Old Fashioned</h3>
+              <span class="don-dish-price">$18</span>
+            </div>
+            <p class="don-dish-desc">Woodford Reserve bourbon, spiced demerara syrup, Angostura & orange bitters, smoked with cherrywood tableside.</p>
+            <div class="don-dish-tags">
+              <span class="don-tag">Cherrywood Smoked</span>
+              <span class="don-tag">Woodford Reserve</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reservation Box -->
+      <div class="don-info-box" style="margin-top: 4rem; text-align: center; padding: 2.5rem;">
+        <h3 style="font-family: var(--don-font-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 0.75rem;">Planning An Upscale Evening?</h3>
+        <p style="margin-bottom: 1.5rem; color: var(--don-text-muted);">Reserve a table in our main dining room or book a private VIP lounge booth for your celebration.</p>
+        <a href="tel:+17043762909" class="don-btn don-btn-primary">Call (704) 376-2909 for Table Reservations</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="don-footer">
+    <div class="don-container">
+      <div class="don-footer-grid">
+        <div class="don-footer-brand">
+          <h3>Don's <span>Charlotte</span></h3>
+          <p>Uptown Charlotte's destination for upscale Southern gastronomy, elevated weekend soul brunch, and refined cocktail lounge culture in the historic First Ward.</p>
+        </div>
+        <div class="don-footer-col">
+          <h4>Navigation</h4>
+          <ul class="don-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Dinner Menu</a></li>
+            <li><a href="brunch.html">Weekend Soul Brunch</a></li>
+            <li><a href="cocktails-lounge.html">Lounge & VIP Planner</a></li>
+            <li><a href="about.html">The Story</a></li>
+            <li><a href="contact.html">Reservations & Directions</a></li>
+          </ul>
+        </div>
+        <div class="don-footer-col">
+          <h4>Operating Hours</h4>
+          <ul class="don-footer-links">
+            <li>Wednesday - Thursday: 5:00 PM - 11:00 PM</li>
+            <li>Friday: 5:00 PM - 1:00 AM</li>
+            <li>Saturday: 11:00 AM - 4:00 PM & 5:00 PM - 1:00 AM</li>
+            <li>Sunday Brunch: 11:00 AM - 5:00 PM</li>
+            <li>Mon - Tue: Closed (Private Buyouts)</li>
+          </ul>
+        </div>
+        <div class="don-footer-col">
+          <h4>Contact Concierge</h4>
+          <ul class="don-footer-links">
+            <li>321 N Caldwell St</li>
+            <li>Charlotte, NC 28202</li>
+            <li><a href="tel:+17043762909">(704) 376-2909</a></li>
+            <li><a href="mailto:info@donscharlotte.com">info@donscharlotte.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="don-footer-bottom">
+        <p>&copy; 2026 Don's Restaurant. All Rights Reserved. Uptown Charlotte, NC.</p>
+        <p>321 N Caldwell St, Charlotte, NC 28202</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

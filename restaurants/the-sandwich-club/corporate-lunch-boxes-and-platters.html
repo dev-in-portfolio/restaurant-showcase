@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Catering | The Sandwich Club Uptown Charlotte</title>
+  <meta name="description" content="The Sandwich Club at 435 S Tryon St, Uptown Charlotte. Over 30 signature sandwiches, triple-decker clubs, Grand Brie croissant melt, scratch breakfast, and corporate catering.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="tsc-announcement">
+    <span>Uptown Charlotte's 30+ Signature Sandwich Landmark &bull; Open Mon-Fri 7am-3pm &bull; Breakfast Biscuits & Boxed Lunches!</span>
+    <a href="visit.html">Find 435 S Tryon St &rarr;</a>
+  </div>
+  <header class="tsc-navbar">
+    <div class="tsc-nav-container">
+      <a href="index.html" class="tsc-brand">
+        <span class="tsc-brand-name">The Sandwich Club</span>
+        <span class="tsc-brand-tagline">435 S Tryon St &bull; Uptown Charlotte</span>
+      </a>
+      <button class="tsc-mobile-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul class="tsc-nav-links">
+        <li><a href="index.html" class="tsc-nav-link">Home</a></li>
+<li><a href="menu.html" class="tsc-nav-link">Full Menu</a></li>
+<li><a href="triple-decker-clubs-and-gourmet-melts.html" class="tsc-nav-link">Clubs & Melts</a></li>
+<li><a href="morning-breakfast-and-biscuit-bar.html" class="tsc-nav-link">Breakfast & Biscuits</a></li>
+<li><a href="corporate-lunch-boxes-and-platters.html" class="tsc-nav-link active">Corporate Catering</a></li>
+<li><a href="visit.html" class="tsc-nav-link">Visit & Location</a></li>
+
+        <li><a href="tel:7043441975" class="tsc-nav-link tsc-nav-cta">Call (704) 344-1975</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    
+    <div class="tsc-container">
+      <div class="tsc-section-header">
+        <span class="tsc-badge">Corporate Catering</span>
+        <h1 class="tsc-title">Corporate Boxed Lunches &amp; Party Platters</h1>
+        <p class="tsc-subtitle">Individually labeled gourmet boxed lunches and beautifully arranged sandwich platters delivered right to your Uptown corporate office.</p>
+      </div>
+
+      <div class="tsc-grid-2" style="margin-bottom: 48px;">
+        <div class="tsc-card" style="padding: 28px;">
+          <span class="tsc-badge tsc-badge-burgundy" style="margin-bottom: 12px;">Top Corporate Choice</span>
+          <h2 class="tsc-card-title" style="font-size: 1.5rem; margin-bottom: 12px;">Classic Boxed Lunches</h2>
+          <p style="color: var(--tsc-text-muted); font-size: 0.95rem; margin-bottom: 16px;">
+            Each individual box is neatly labeled with the recipient's name and sandwich choice for effortless distribution in boardrooms and meeting spaces.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--tsc-slate);">
+            <li>&bull; Choice of signature sandwich, wrap, or triple-stack club</li>
+            <li>&bull; Bag of gourmet Dirty kettle chips</li>
+            <li>&bull; Locally baked Sweet Girl gourmet cookie</li>
+            <li>&bull; Whole crisp deli garlic dill pickle spear</li>
+            <li>&bull; Napkin, wet wipe, and wrapped mint</li>
+          </ul>
+        </div>
+
+        <div class="tsc-card" style="padding: 28px;">
+          <span class="tsc-badge tsc-badge-green" style="margin-bottom: 12px;">Buffet Style</span>
+          <h2 class="tsc-card-title" style="font-size: 1.5rem; margin-bottom: 12px;">Executive Sandwich Platters</h2>
+          <p style="color: var(--tsc-text-muted); font-size: 0.95rem; margin-bottom: 16px;">
+            Artfully garnished platters of assorted halved specialty sandwiches and pinwheel wraps served with bulk chip baskets and deli salads.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--tsc-slate);">
+            <li>&bull; Assortment: The Club, Grand Brie, Gobbler, Italian, Roast Beef</li>
+            <li>&bull; Side salads: Red bliss potato salad, pasta salad, or fruit bowl</li>
+            <li>&bull; Cookie &amp; brownie dessert platters</li>
+            <li>&bull; Gallons of fresh Southern sweet tea and lemonade</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Catering Calculator -->
+      <div class="tsc-builder-card">
+        <div class="tsc-section-header" style="margin-bottom: 24px;">
+          <h2 class="tsc-title" style="font-size: 1.8rem;">Corporate Catering Estimator</h2>
+          <p class="tsc-subtitle" style="font-size: 1rem;">Estimate your office catering order for seamless tower delivery.</p>
+        </div>
+
+        <div class="tsc-grid-3">
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 6px; color: var(--tsc-slate);">Guest Count</label>
+            <input type="number" id="tsc-cat-guests" min="5" max="300" value="20" style="width: 100%; padding: 12px; border: 2px solid var(--tsc-border); border-radius: var(--tsc-radius); font-size: 1.1rem; font-weight: 700;">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 6px; color: var(--tsc-slate);">Catering Format</label>
+            <select id="tsc-cat-tier" style="width: 100%; padding: 12px; border: 2px solid var(--tsc-border); border-radius: var(--tsc-radius); font-size: 1rem; font-weight: 700;">
+              <option value="classic">Classic Boxed Lunch ($14.50/person)</option>
+              <option value="deluxe">Deluxe Box with Gourmet Side Salad ($17.00/person)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: var(--tsc-slate);">Beverage Add-On</label>
+            <label style="display: flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer;">
+              <input type="checkbox" id="tsc-cat-drinks" style="width: 20px; height: 20px;">
+              <span>Include Sweet Tea &amp; Lemonade ($2.50/person)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="tsc-summary-panel">
+          <div class="tsc-summary-metrics">
+            <div class="tsc-metric-item">
+              <span class="tsc-metric-label">Estimated Invoice</span>
+              <span id="tsc-cat-total" class="tsc-metric-val">$290.00</span>
+            </div>
+          </div>
+          <div style="flex-basis: 100%; border-top: 1px solid #44403c; padding-top: 16px; margin-top: 10px;">
+            <p id="tsc-cat-summary" style="color: #d6d3d1; font-size: 0.95rem;">Includes 20 individually labeled custom deli boxed lunches with signature sandwiches, gourmet chips, homemade Sweet Girl cookies, dill pickle spears, napkins, and cutlery.</p>
+          </div>
+          <div style="flex-basis: 100%; margin-top: 16px;">
+            <a href="tel:7043441975" class="tsc-btn tsc-btn-primary">Call (704) 344-1975 to Book Office Catering</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  
+  <footer class="tsc-footer">
+    <div class="tsc-container">
+      <div class="tsc-footer-grid">
+        <div>
+          <h4 class="tsc-footer-title">The Sandwich Club</h4>
+          <p style="color: #d6d3d1; font-size: 0.95rem; margin-bottom: 16px;">
+            Charlotte's independent deli institution on S Tryon Street since 1993. Over 30 signature handcrafted sandwiches, triple-decker clubs, croissant melts, and early morning breakfast biscuits.
+          </p>
+          <span class="tsc-badge tsc-badge-green">Local Uptown Legend</span>
+        </div>
+        <div>
+          <h4 class="tsc-footer-title">Showcase Navigation</h4>
+          <ul class="tsc-footer-links">
+            <li><a href="index.html" class="tsc-footer-link">Home & Overview</a></li>
+            <li><a href="menu.html" class="tsc-footer-link">Full Deli & Breakfast Menu</a></li>
+            <li><a href="triple-decker-clubs-and-gourmet-melts.html" class="tsc-footer-link">Triple-Decker Clubs & Melts</a></li>
+            <li><a href="morning-breakfast-and-biscuit-bar.html" class="tsc-footer-link">Morning Breakfast Bar</a></li>
+            <li><a href="corporate-lunch-boxes-and-platters.html" class="tsc-footer-link">Corporate Boxed Lunches</a></li>
+            <li><a href="visit.html" class="tsc-footer-link">Location Across From The Green</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="tsc-footer-title">Location & Hours</h4>
+          <div class="tsc-footer-contact-item">
+            <strong>Address</strong>
+            435 S Tryon St<br>
+            (Across from The Green & Ratcliffe)<br>
+            Charlotte, NC 28202
+          </div>
+          <div class="tsc-footer-contact-item">
+            <strong>Operating Hours</strong>
+            Monday &ndash; Friday: 7:00 AM &ndash; 3:00 PM<br>
+            Saturday &ndash; Sunday: Closed
+          </div>
+        </div>
+        <div>
+          <h4 class="tsc-footer-title">Direct Orders & Catering</h4>
+          <div class="tsc-footer-contact-item">
+            <strong>Call-Ahead Phone Line</strong>
+            <a href="tel:7043441975" style="color: #fed7aa; text-decoration: none; font-weight: 700;">(704) 344-1975</a>
+          </div>
+          <div class="tsc-footer-contact-item">
+            <strong>Online Ordering & Pickup</strong>
+            <span>Order through sandwichclub2go.com or call ahead for swift counter pickup.</span>
+          </div>
+        </div>
+      </div>
+      <div class="tsc-footer-bottom">
+        <p>&copy; 2026 The Sandwich Club. Proudly fueling Uptown Charlotte since 1993. Showcase demo created with zero emojis.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All-Day Breakfast, Paninis &amp; Bowls Menu | Arbol Eatery Charlotte</title>
+  <meta name="description" content="Arbol Eatery in Uptown Charlotte: Latin-inspired artisanal cafe in Carillon Tower offering scratch-made breakfast burritos, authentic Cubanos, superfood grain bowls, and specialty espresso.">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <header class="arb-header">
+    <div class="arb-nav-container">
+      <a href="index.html" class="arb-brand">
+        <span class="arb-brand-name">Arbol Eatery</span>
+        <span class="arb-brand-sub">Artisanal Latin Cafe &bull; Carillon Tower</span>
+      </a>
+      <ul class="arb-nav-links">
+        <li><a href="index.html" class="arb-nav-link ">Home</a></li>
+        <li><a href="menu.html" class="arb-nav-link active">Menu</a></li>
+        <li><a href="espresso-bar.html" class="arb-nav-link ">Espresso &amp; Drinks</a></li>
+        <li><a href="catering-corporate.html" class="arb-nav-link ">Corporate Catering</a></li>
+        <li><a href="about.html" class="arb-nav-link ">Our Story</a></li>
+        <li><a href="contact.html" class="arb-nav-link ">Visit &amp; Contact</a></li>
+      </ul>
+      <a href="catering-corporate.html" class="arb-nav-cta">Order Catering</a>
+      <button class="arb-mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </header>
+  <div class="arb-drawer-overlay"></div>
+  <aside class="arb-drawer">
+    <button class="arb-drawer-close" aria-label="Close Drawer Menu">&times;</button>
+    <div class="arb-brand">
+      <span class="arb-brand-name">Arbol Eatery</span>
+      <span class="arb-brand-sub">Uptown Charlotte Cafe</span>
+    </div>
+    <ul class="arb-drawer-links">
+      <li><a href="index.html" class="arb-drawer-link ">Home</a></li>
+      <li><a href="menu.html" class="arb-drawer-link active">Menu</a></li>
+      <li><a href="espresso-bar.html" class="arb-drawer-link ">Espresso &amp; Drinks</a></li>
+      <li><a href="catering-corporate.html" class="arb-drawer-link ">Corporate Catering</a></li>
+      <li><a href="about.html" class="arb-drawer-link ">Our Story</a></li>
+      <li><a href="contact.html" class="arb-drawer-link ">Visit &amp; Contact</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--arb-border);">
+      <p style="font-size: 0.85rem; color: var(--arb-text-muted); margin-bottom: 0.5rem;"><strong>Location:</strong> 227 W Trade St, Ste 125</p>
+      <p style="font-size: 0.85rem; color: var(--arb-text-muted); margin-bottom: 1rem;"><strong>Phone:</strong> (704) 930-2320</p>
+      <a href="tel:7049302320" class="arb-btn-primary" style="width: 100%; text-align: center;">Call Cafe</a>
+    </div>
+  </aside>
+
+  <section class="arb-section" style="padding-top: 3.5rem;">
+    <div class="arb-container">
+      <div class="arb-section-header">
+        <span class="arb-tagline">Scratch Kitchen &amp; Espresso Bar</span>
+        <h1 class="arb-title">Food &amp; Beverage Menu</h1>
+        <p class="arb-subtitle">Artisan breakfast burritos, hot pressed paninis, nutrient-packed superfood grain bowls, and specialty Latin coffee drinks.</p>
+      </div>
+
+      <div class="arb-menu-filter-bar">
+        <button class="arb-filter-btn active" data-filter="all">All Items</button>
+        <button class="arb-filter-btn" data-filter="breakfast">Breakfast &amp; Parfaits</button>
+        <button class="arb-filter-btn" data-filter="paninis">Paninis &amp; Sandwiches</button>
+        <button class="arb-filter-btn" data-filter="bowls">Bowls &amp; Salads</button>
+        <button class="arb-filter-btn" data-filter="drinks">Specialty Coffee &amp; Smoothies</button>
+      </div>
+
+      <div class="arb-menu-grid">
+        <!-- Breakfast -->
+        <div class="arb-menu-card" data-category="breakfast">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Uptown Breakfast Burrito</h3>
+              <span class="arb-menu-item-price">$10.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Fluffy scrambled eggs, spiced chorizo or applewood bacon, crispy breakfast potatoes, cheddar jack cheese, black beans, and house salsa verde in a warm flour tortilla.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Morning Favorite</span>
+            <span class="arb-tag">Chorizo or Bacon</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="breakfast">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Avocado &amp; Poached Egg Toast</h3>
+              <span class="arb-menu-item-price">$11.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Thick-cut grilled sourdough, fresh crushed avocado, blistered heirloom cherry tomatoes, crumbled cotija cheese, everything seasoning, and a pasture-raised egg.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Artisan Toast</span>
+            <span class="arb-tag">Vegetarian</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="breakfast">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Tropical A?ai Superfood Bowl</h3>
+              <span class="arb-menu-item-price">$12.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Organic blended a?ai berry puree topped with gluten-free oat granola, fresh strawberries, sliced bananas, blueberries, organic chia seeds, and raw wildflower honey.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Superfood</span>
+            <span class="arb-tag">Gluten Free</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="breakfast">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Greek Yogurt Berry Parfait</h3>
+              <span class="arb-menu-item-price">$7.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Creamy vanilla Greek yogurt layered with house-toasted almond granola, fresh mixed berries, and a drizzle of organic agave nectar.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag">Grab &amp; Go</span>
+            <span class="arb-tag">High Protein</span>
+          </div>
+        </div>
+
+        <!-- Paninis & Sandwiches -->
+        <div class="arb-menu-card" data-category="paninis">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Traditional Cubano Panini</h3>
+              <span class="arb-menu-item-price">$13.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Slow-roasted citrus-garlic mojo pork, shaved sweet ham, melted Swiss cheese, crunchy dill pickles, and yellow mustard pressed on buttered Cuban bread.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">House Signature</span>
+            <span class="arb-tag">Pressed Crisp</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="paninis">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Adobo Chicken Torta Panini</h3>
+              <span class="arb-menu-item-price">$13.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Grilled adobo chicken breast, fresh avocado mash, seasoned black bean puree, queso fresco, pickled red onions, and cilantro lime crema on pressed telera bread.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Customer Favorite</span>
+            <span class="arb-tag">Adobo Spiced</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="paninis">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">La Carolina Pulled Pork</h3>
+              <span class="arb-menu-item-price">$13.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Tender slow-cooked pulled pork, tangy house slaw, smoky chipotle barbecue drizzle, and pickled jalape?os on a toasted golden brioche bun.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag">Latin-Carolina Fusion</span>
+            <span class="arb-tag">Smoky &amp; Tangy</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="paninis">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Chimichurri Steak Panini</h3>
+              <span class="arb-menu-item-price">$15.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Char-grilled marinated flank steak, melted provolone cheese, caramelized sweet onions, saut?ed sweet peppers, and vibrant house-made herb chimichurri.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Premium Steak</span>
+            <span class="arb-tag">Fresh Chimichurri</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="paninis">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Roasted Veggie &amp; Hummus Wrap</h3>
+              <span class="arb-menu-item-price">$12.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Roasted zucchini, sweet bell peppers, baby spinach, garlic herb hummus, kalamata olives, and crumbled feta in a grilled spinach herb tortilla.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag">Vegetarian</span>
+            <span class="arb-tag">Plant Powered</span>
+          </div>
+        </div>
+
+        <!-- Bowls & Salads -->
+        <div class="arb-menu-card" data-category="bowls">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Mojo Chicken &amp; Quinoa Bowl</h3>
+              <span class="arb-menu-item-price">$14.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Tri-color organic quinoa, mojo-marinated grilled chicken breast, sliced ripe avocado, roasted sweet potato wedges, black beans, cotija, and citrus cilantro dressing.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Nutrient Dense</span>
+            <span class="arb-tag">Gluten Free</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="bowls">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Latin Caesar Salad</h3>
+              <span class="arb-menu-item-price">$12.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Crisp chopped romaine hearts, roasted sweet corn, black beans, crispy spiced tortilla strips, shaved parmesan, and creamy chipotle lime caesar dressing.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag">Fresh Crunch</span>
+            <span class="arb-tag">Add Chicken +$4</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="bowls">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Chimichurri Flank Steak Bowl</h3>
+              <span class="arb-menu-item-price">$16.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Grilled steak over warm brown rice and black beans, charred corn pico, pickled red onions, sliced avocado, plantain crisps, and fresh herb chimichurri.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">High Protein</span>
+            <span class="arb-tag">Signature Bowl</span>
+          </div>
+        </div>
+
+        <!-- Drinks -->
+        <div class="arb-menu-card" data-category="drinks">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Tres Leches Latte</h3>
+              <span class="arb-menu-item-price">$6.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Double shot espresso, sweetened condensed milk, evaporated milk, and silky steamed whole milk dusted with freshly ground cinnamon.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Signature Drink</span>
+            <span class="arb-tag">Hot or Iced</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="drinks">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Dulce de Leche Macchiato</h3>
+              <span class="arb-menu-item-price">$6.25</span>
+            </div>
+            <p class="arb-menu-item-desc">Velvety steamed oat or whole milk marked with rich espresso, layered with artisanal caramel dulce de leche drizzle.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag">Artisan Caramel</span>
+            <span class="arb-tag">Hot or Iced</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="drinks">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Horchata Cold Brew</h3>
+              <span class="arb-menu-item-price">$6.00</span>
+            </div>
+            <p class="arb-menu-item-desc">Slow-steeped Colombian cold brew coffee topped with scratch-made cinnamon rice milk horchata sweet cold foam.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag highlight">Cold Brew Specialty</span>
+            <span class="arb-tag">Horchata Foam</span>
+          </div>
+        </div>
+
+        <div class="arb-menu-card" data-category="drinks">
+          <div>
+            <div class="arb-menu-header">
+              <h3 class="arb-menu-item-name">Mango Passionfruit Smoothie</h3>
+              <span class="arb-menu-item-price">$7.50</span>
+            </div>
+            <p class="arb-menu-item-desc">Fresh ripe mango, real passionfruit puree, banana, organic coconut water, and a splash of fresh lime juice blended smooth.</p>
+          </div>
+          <div class="arb-menu-tags">
+            <span class="arb-tag">Dairy Free</span>
+            <span class="arb-tag">100% Real Fruit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="arb-footer">
+    <div class="arb-container">
+      <div class="arb-footer-grid">
+        <div>
+          <div class="arb-brand" style="margin-bottom: 1rem;">
+            <span class="arb-brand-name">Arbol Eatery</span>
+            <span class="arb-brand-sub">Artisanal Latin Cafe &bull; Charlotte NC</span>
+          </div>
+          <p class="arb-footer-text">
+            Latin-inspired artisanal breakfast, pressed paninis, superfood grain bowls, and specialty espresso bar inside Carillon Tower at 227 W Trade Street.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <span class="arb-tag highlight">Carillon Tower</span>
+            <span class="arb-tag highlight">Latin Espresso</span>
+            <span class="arb-tag">Uptown CLT</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="arb-footer-heading">Explore</h4>
+          <ul class="arb-footer-links">
+            <li><a href="index.html" class="arb-footer-link">Home Experience</a></li>
+            <li><a href="menu.html" class="arb-footer-link">Paninis &amp; Bowls Menu</a></li>
+            <li><a href="espresso-bar.html" class="arb-footer-link">Tres Leches &amp; Coffee Bar</a></li>
+            <li><a href="catering-corporate.html" class="arb-footer-link">Corporate Catering Estimator</a></li>
+            <li><a href="about.html" class="arb-footer-link">Latin Roots &amp; Story</a></li>
+            <li><a href="contact.html" class="arb-footer-link">Location &amp; Hours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="arb-footer-heading">Hours</h4>
+          <ul class="arb-footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color:#fff;">Mon - Fri:</strong> 7:00 AM - 3:00 PM</li>
+            <li><strong style="color:#fff;">Breakfast:</strong> 7:00 AM - 10:30 AM</li>
+            <li><strong style="color:#fff;">Lunch:</strong> 10:30 AM - 3:00 PM</li>
+            <li><strong style="color:#fff;">Sat - Sun:</strong> Closed (Catering Available)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="arb-footer-heading">Visit Us</h4>
+          <p class="arb-footer-text" style="margin-bottom: 0.5rem;">
+            <strong>Arbol Eatery</strong><br>
+            227 W. Trade St, Suite 125<br>
+            Charlotte, NC 28202
+          </p>
+          <p class="arb-footer-text">
+            <strong>Phone:</strong> <a href="tel:7049302320" style="color: var(--arb-gold); font-weight: 700;">(704) 930-2320</a><br>
+            <strong>Email:</strong> <a href="mailto:catering@arboleatery.com" style="color: var(--arb-gold);">catering@arboleatery.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="arb-footer-bottom">
+        <p>&copy; 2026 Arbol Eatery Charlotte. All rights reserved. Located in the Carillon Tower concourse.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

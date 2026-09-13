@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cocina Mexicana - Traditional Mexican Taqueria & Kitchen in Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="cocina-header">
+    <div class="cocina-nav-container">
+      <a href="index.html" class="cocina-brand">
+        <span class="cocina-brand-title">La Cocina Mexicana</span>
+        <span class="cocina-brand-subtitle">Taqueria &amp; Cocina Tradicional</span>
+      </a>
+      <button class="cocina-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="cocina-nav" aria-label="Primary Navigation">
+        <ul class="cocina-nav-list">
+          <li><a href="index.html" class="cocina-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="cocina-nav-link ">Menu</a></li>
+          <li><a href="traditional-mexican-craft.html" class="cocina-nav-link ">Mexican Craft</a></li>
+          <li><a href="tacos-and-specialties.html" class="cocina-nav-link ">Tacos &amp; Specialties</a></li>
+          <li><a href="aguas-frescas-and-sides.html" class="cocina-nav-link ">Aguas &amp; Sides</a></li>
+          <li><a href="visit.html" class="cocina-nav-link cocina-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main>
+      <section class="cocina-hero">
+        <div class="cocina-hero-grid">
+          <div class="cocina-hero-content">
+            <span class="cocina-hero-badge">Traditional Mexican Kitchen &bull; Charlotte, NC</span>
+            <h1 class="cocina-hero-title">Authentic Heritage Flavors, <span>Pressed Daily</span></h1>
+            <p class="cocina-hero-lead">Experience the vibrant culinary soul of Mexico with stone-ground heirloom corn tortillas, 12-hour slow-cooked birria de res, and refreshing house-brewed aguas frescas.</p>
+            <div class="cocina-hero-actions">
+              <a href="menu.html" class="cocina-btn-primary">Explore Full Menu</a>
+              <a href="traditional-mexican-craft.html" class="cocina-btn-secondary">Our Masa Craft</a>
+            </div>
+          </div>
+          <div class="cocina-hero-img-wrap">
+            <img src="images/hero.jpg" alt="Traditional Mexican food feast with tacos, salsas, and fresh lime" width="600" height="420">
+          </div>
+        </div>
+      </section>
+
+      <section class="cocina-features">
+        <div class="cocina-feature-grid">
+          <div class="cocina-feature-card">
+            <div class="cocina-feature-tag">Heirloom Masa</div>
+            <h2 class="cocina-feature-title">Nixtamal Corn Tortillas</h2>
+            <p class="cocina-feature-desc">Pressed on the comal upon every order for tender, aromatic tacos that honor ancestral techniques.</p>
+          </div>
+          <div class="cocina-feature-card">
+            <div class="cocina-feature-tag">Slow Braised</div>
+            <h2 class="cocina-feature-title">Birria &amp; Carnitas</h2>
+            <p class="cocina-feature-desc">Rich chili-infused consom&eacute; and golden Michoac&aacute;n-style pork braised with Mexican canela and orange peel.</p>
+          </div>
+          <div class="cocina-feature-card">
+            <div class="cocina-feature-tag">Natural Refreshment</div>
+            <h2 class="cocina-feature-title">House Aguas Frescas</h2>
+            <p class="cocina-feature-desc">Daily small-batch Horchata, steeped Agua de Jamaica, and zesty Tamarindo crafted from real whole ingredients.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cocina-section">
+        <div class="cocina-story-grid">
+          <div class="cocina-story-img-wrap">
+            <img src="images/tacos.jpg" alt="Authentic street tacos on warm corn tortillas with cilantro and diced onions" width="600" height="380">
+          </div>
+          <div class="cocina-story-content">
+            <span class="cocina-section-eyebrow">Signature Specialties</span>
+            <h3>Street Tacos Rooted in Tradition</h3>
+            <p>At La Cocina Mexicana, we believe that great tacos begin with great tortillas. We source heirloom corn and press each tortilla fresh on the hot griddle.</p>
+            <p>From tender marinated Al Pastor with roasted pineapple to rich Carne Asada grilled over high heat, every plate is finished with hand-minced cilantro, sweet white onions, and our signature roasted tomatillo salsas.</p>
+            <a href="tacos-and-specialties.html" class="cocina-btn-primary" style="margin-top: 1rem;">View Taco Lineup</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cocina-section" style="background: var(--cocina-surface); border-top: 1px solid var(--cocina-border); border-bottom: 1px solid var(--cocina-border);">
+        <div class="cocina-section-header">
+          <span class="cocina-section-eyebrow">Event &amp; Family Catering</span>
+          <h2 class="cocina-section-title">Interactive Party Platter Estimator</h2>
+          <p class="cocina-section-subtitle">Planning a family gathering, tailgate, or office luncheon? Calculate your taco platter and side requirements below.</p>
+        </div>
+
+        <div class="cocina-calc-card">
+          <div class="cocina-calc-controls">
+            <div class="cocina-calc-field">
+              <label for="cocina-guest-count">Estimated Number of Guests: <span id="cocina-guest-display" style="color: var(--cocina-primary); font-weight: 800;">20 Guests</span></label>
+              <input type="range" id="cocina-guest-count" class="cocina-range-slider" min="10" max="100" step="5" value="20">
+            </div>
+            <div class="cocina-calc-field">
+              <label for="cocina-platter-style">Appetite / Serving Style</label>
+              <select id="cocina-platter-style" class="cocina-calc-select">
+                <option value="standard">Standard Buffet (3 Tacos / Person)</option>
+                <option value="hearty">Hearty Appetite (4 Tacos / Person)</option>
+              </select>
+            </div>
+          </div>
+          <div class="cocina-calc-results">
+            <div class="cocina-result-box">
+              <span class="num" id="cocina-taco-total">60 Tacos</span>
+              <span class="label">Hand-Pressed Tacos</span>
+            </div>
+            <div class="cocina-result-box">
+              <span class="num" id="cocina-side-total">7.0 lbs (Rice &amp; Beans)</span>
+              <span class="label">Fresh Sides Total</span>
+            </div>
+            <div class="cocina-result-box">
+              <span class="num" id="cocina-salsa-total">3 Pints Salsa &amp; Chips</span>
+              <span class="label">House Salsas &amp; Totopos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+  <footer class="cocina-footer">
+    <div class="cocina-footer-container">
+      <div class="cocina-footer-brand">
+        <h4>La Cocina Mexicana</h4>
+        <p>Honoring traditional Mexican culinary heritage with heirloom corn masa, slow-simmered regional braises, and hand-crafted aguas frescas in Charlotte, NC.</p>
+      </div>
+      <div class="cocina-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="traditional-mexican-craft.html">Traditional Craft</a></li>
+          <li><a href="tacos-and-specialties.html">Tacos &amp; Specialties</a></li>
+          <li><a href="aguas-frescas-and-sides.html">Aguas Frescas &amp; Sides</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="cocina-footer-hours">
+        <h5>Hours &amp; Location</h5>
+        <p style="color: #99938a; font-size: 0.9rem; margin-bottom: 0.5rem;">Charlotte, North Carolina</p>
+        <p style="color: #99938a; font-size: 0.9rem;">Mon - Sat: 11:00 AM - 9:30 PM<br>Sunday: 11:00 AM - 8:00 PM</p>
+      </div>
+    </div>
+    <div class="cocina-footer-bottom">
+      <p>&copy; 2026 La Cocina Mexicana. All rights reserved. Culinary showcase demo for Charlotte dining.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

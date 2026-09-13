@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Food &amp; Drink Menu | Basil Thai Cuisine Uptown Charlotte</title>
+  <meta name="description" content="View the full menu at Basil Thai Cuisine Charlotte: appetizers, Basil rolls, coconut curries, Pad Thai, Pad See Eu, Basil Duck, sea bass, and craft cocktails.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="basil-header">
+    <div class="basil-topbar">
+      <span>Contemporary Thai Cuisine | 210 N Church St, Uptown Charlotte</span>
+      <span>Lunch &amp; Dinner Reservations: <a href="tel:7043327212">(704) 332-7212</a></span>
+    </div>
+    <div class="basil-nav-container">
+      <a href="index.html" class="basil-logo-group">
+        <span class="basil-logo-badge">BT</span>
+        <div>
+          <span class="basil-logo-title">Basil Thai Cuisine</span>
+          <span class="basil-logo-sub">Contemporary Thai &amp; Bar</span>
+        </div>
+      </a>
+      <button class="basil-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="basil-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Full Menu</a>
+          <a href="chef-specialties-and-curries.html">Chef Curries &amp; Duck</a>
+          <a href="wok-noodles-and-street-fare.html">Wok &amp; Noodles</a>
+          <a href="executive-lunch-and-catering.html">Lunch &amp; Catering</a>
+          <a href="visit.html">Visit &amp; Hours</a>
+          <a href="tel:7043327212" class="basil-nav-btn">Call (704) 332-7212</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="basil-hero-compact">
+    <div class="basil-container">
+      <span class="basil-badge">Culinary Menu</span>
+      <h1 style="font-size:2.6rem; font-weight:900; margin:15px 0;">Our Complete Menu</h1>
+      <p style="font-size:1.1rem; color:#cbd5e1; max-width:700px; margin:0 auto;">Handcrafted curries, sizzling wok noodles, signature duck creations, and refreshing specialty drinks.</p>
+    </div>
+  </section>
+
+  <main class="basil-container" style="padding:40px 24px 60px;">
+    <!-- Interactive Filter Buttons -->
+    <div class="basil-filters">
+      <button class="basil-filter-btn active" data-filter="all">All Items</button>
+      <button class="basil-filter-btn" data-filter="starters">Appetizers &amp; Rolls</button>
+      <button class="basil-filter-btn" data-filter="specialties">Chef Specialties &amp; Duck</button>
+      <button class="basil-filter-btn" data-filter="curries">Traditional Curries</button>
+      <button class="basil-filter-btn" data-filter="noodles">Wok Noodles &amp; Rice</button>
+      <button class="basil-filter-btn" data-filter="lunch">Lunch Express</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="basil-grid-3" id="menu-items-grid" style="gap:24px;">
+      <!-- Starters -->
+      <div class="basil-card basil-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Fresh Basil Rolls (2pc)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$8.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Delicate rice paper filled with tender shrimp, crisp lettuce, cucumber, rice vermicelli, cilantro, and fresh Thai basil. Served with warm crushed peanut dipping sauce.</p>
+        <span class="basil-tag">House Specialty</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Chicken Satay Skewers (4pc)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$10.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Grilled marinated chicken tenderloin skewers basted in turmeric and coconut milk. Served with roasted peanut sauce and fresh cucumber vinaigrette relish.</p>
+        <span class="basil-tag">Grilled Classic</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Crispy Fried Wontons (6pc)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$8.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Crispy golden wonton pastry parcels packed with seasoned minced pork and scallions, served with sweet plum dipping sauce.</p>
+        <span class="basil-tag">Crispy Starter</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Tom Kha Coconut Soup</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">Cup $7.00 / Bowl $12.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Aromatic galangal and lemongrass infused coconut broth with sliced chicken breast, button mushrooms, kaffir lime leaves, and fresh lime juice.</p>
+        <span class="basil-tag">Aromatic Soup</span>
+      </div>
+
+      <!-- Specialties -->
+      <div class="basil-card basil-menu-item" data-category="specialties">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Crispy Basil Duck</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$27.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Half roasted duck crisped to perfection, carved and sautéed with fresh garlic, Thai bird chilis, sweet onions, bell peppers, and fragrant holy basil leaves.</p>
+        <span class="basil-tag">Chef's Signature</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="specialties">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Crispy Chilean Sea Bass</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$32.00</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Pan-seared Chilean sea bass filet over steamed bok choy and baby carrots, finished with a choice of sweet chili garlic reduction or ginger tamarind glaze.</p>
+        <span class="basil-tag">Premium Seafood</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="specialties">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Grilled Lamb Lollipops</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$29.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Herb-crusted lamb chops flame-grilled to medium, resting over roasted asparagus and fingerling potatoes, dressed with aromatic massaman curry reduction.</p>
+        <span class="basil-tag">Specialty Feature</span>
+      </div>
+
+      <!-- Curries -->
+      <div class="basil-card basil-menu-item" data-category="curries">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Masaman Curry</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Rich Southern Thai curry infused with cardamom, cinnamon, and cloves in coconut cream with tender Idaho potatoes, sweet onions, and roasted cashew nuts.</p>
+        <span class="basil-tag">Rich &amp; Nutty</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="curries">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Panang Curry</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Thick, savory red curry paste simmered with coconut milk, green bell peppers, shredded kaffir lime leaves, and choice of chicken, beef, or tofu.</p>
+        <span class="basil-tag">Creamy Spice</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="curries">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Green Coconut Curry</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Spicy green chili curry with crisp bamboo shoots, Thai eggplant, bell peppers, and fresh holy basil in silky coconut milk with jasmine rice.</p>
+        <span class="basil-tag">Spicy &amp; Fresh</span>
+      </div>
+
+      <!-- Noodles & Rice -->
+      <div class="basil-card basil-menu-item" data-category="noodles">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Pad Thai</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Wok-seared thin rice noodles with farm egg, bean sprouts, crushed peanuts, scallions, and signature tamarind sauce. Choice of chicken, shrimp, beef, or tofu.</p>
+        <span class="basil-tag">Bestseller</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="noodles">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Pad See Eu</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Wide rice noodles wok-charred with sweet dark soy sauce, fresh Chinese broccoli (gai lan), farm egg, and savory garlic white pepper sauce.</p>
+        <span class="basil-tag">Wok Charred</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="noodles">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Drunken Noodles (Pad Kee Mao)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Broad rice noodles stir-fried with hot Thai bird chilis, fresh basil leaves, tomatoes, sweet onions, and crisp red bell peppers.</p>
+        <span class="basil-tag">Spicy Street Noodles</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="noodles">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Basil Fried Rice</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$17.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Fragrant jasmine rice wok-fried with fresh garlic, bird chilis, onions, bell peppers, egg, and holy basil leaves. Choice of protein.</p>
+        <span class="basil-tag">Fragrant Rice</span>
+      </div>
+
+      <!-- Lunch Express -->
+      <div class="basil-card basil-menu-item" data-category="lunch">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Executive Lunch Pad Thai Set</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$14.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Express portion of classic chicken or tofu Pad Thai, served with one crispy spring roll and house ginger salad. Available Mon-Thu 11:30 AM - 2:00 PM.</p>
+        <span class="basil-tag">Lunch Special</span>
+      </div>
+
+      <div class="basil-card basil-menu-item" data-category="lunch">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#064e3b; font-size:1.2rem;">Curry Express Combo Bento</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$15.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Choice of Red, Green, or Masaman Curry with chicken or tofu, steamed jasmine rice, fried wonton, and ginger salad.</p>
+        <span class="basil-tag">Lunch Special</span>
+      </div>
+    </div>
+
+    <!-- Carryout CTA -->
+    <div style="text-align:center; margin-top:50px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:30px; box-shadow:var(--basil-shadow);">
+      <h3 style="color:#064e3b; font-size:1.5rem; margin-bottom:10px;">Carryout Orders &amp; Reservations</h3>
+      <p style="color:#475569; max-width:600px; margin:0 auto 20px;">Contact our dining room directly to place pickup orders or coordinate table arrangements.</p>
+      <a href="tel:7043327212" class="basil-btn-primary">Call (704) 332-7212</a>
+    </div>
+  </main>
+
+  <footer class="basil-footer">
+    <div class="basil-footer-grid">
+      <div>
+        <h4 style="color:#fbbf24;">Basil Thai Cuisine</h4>
+        <p>Uptown Charlotte's distinguished venue for modern Thai cuisine, scratch-crafted coconut curries, artisanal wok noodles, signature Crispy Basil Duck, and an upscale cocktail lounge.</p>
+        <p style="margin-top:12px;"><strong>210 N Church St | Fourth Ward Corridor | Charlotte, NC</strong></p>
+      </div>
+      <div>
+        <h4>Menu &amp; Highlights</h4>
+        <ul class="basil-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="chef-specialties-and-curries.html">Chef Curries &amp; Duck</a></li>
+          <li><a href="wok-noodles-and-street-fare.html">Wok &amp; Street Noodles</a></li>
+          <li><a href="executive-lunch-and-catering.html">Executive Lunch &amp; Catering</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dining Hours</h4>
+        <ul class="basil-footer-links">
+          <li><strong>Lunch:</strong> Mon - Thu: 11:30 AM - 2:00 PM</li>
+          <li><strong>Dinner:</strong> Mon - Sun: 5:00 PM - 9:00 PM</li>
+          <li>Full Bar &amp; Carryout Available Daily</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location &amp; Contact</h4>
+        <p>210 N Church St<br>Charlotte, NC 28202</p>
+        <p style="margin-top:8px;">Phone: <a href="tel:7043327212" style="color:#fbbf24; font-weight:700;">(704) 332-7212</a></p>
+        <p>Email: <a href="mailto:info@eatatbasil.com" style="color:#fbbf24;">info@eatatbasil.com</a></p>
+      </div>
+    </div>
+    <div class="basil-footer-bottom">
+      <p>&copy; 2026 Basil Thai Cuisine. All rights reserved. Uptown Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

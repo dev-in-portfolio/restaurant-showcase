@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impeckable Chicken - Hand-Breaded Crispy Chicken at Monarch Market Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="impeck-header">
+    <div class="impeck-nav-container">
+      <a href="index.html" class="impeck-brand">
+        <span class="impeck-brand-title">Impeckable Chicken</span>
+        <span class="impeck-brand-subtitle">Monarch Market &bull; Uptown Charlotte</span>
+      </a>
+      <button class="impeck-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="impeck-nav" aria-label="Primary Navigation">
+        <ul class="impeck-nav-list">
+          <li><a href="index.html" class="impeck-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="impeck-nav-link ">Menu</a></li>
+          <li><a href="buttermilk-craft-and-brine.html" class="impeck-nav-link ">Brine &amp; Craft</a></li>
+          <li><a href="sandwiches-and-tenders.html" class="impeck-nav-link ">Sandwiches &amp; Tenders</a></li>
+          <li><a href="wings-sides-and-sauces.html" class="impeck-nav-link ">Wings &amp; Sauces</a></li>
+          <li><a href="visit.html" class="impeck-nav-link impeck-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main>
+      <section class="impeck-hero">
+        <div class="impeck-hero-grid">
+          <div class="impeck-hero-content">
+            <span class="impeck-hero-badge">Monarch Market &bull; 101 N Tryon St Uptown</span>
+            <h1 class="impeck-hero-title">Crispy, Juicy, <span>Impeckable Flavor</span></h1>
+            <p class="impeck-hero-lead">Charlotte’s ultimate fried chicken experience. Double-dredged chicken tenders, gourmet brioche sandwiches, jumbo wings, and seasoned waffle fries fried golden to order.</p>
+            <div class="impeck-hero-actions">
+              <a href="menu.html" class="impeck-btn-primary">Explore Full Menu</a>
+              <a href="sandwiches-and-tenders.html" class="impeck-btn-secondary">The Sandwich Lineup</a>
+            </div>
+          </div>
+          <div class="impeck-hero-img-wrap">
+            <img src="images/hero.jpg" alt="Towering crispy buttermilk fried chicken sandwich with pickles on toasted brioche" width="600" height="420">
+          </div>
+        </div>
+      </section>
+
+      <section class="impeck-features">
+        <div class="impeck-feature-grid">
+          <div class="impeck-feature-card">
+            <div class="impeck-feature-tag">24-Hour Brine</div>
+            <h2 class="impeck-feature-title">Spiced Buttermilk Soak</h2>
+            <p class="impeck-feature-desc">Every piece of chicken is submerged in herb-infused buttermilk for maximum tenderness and deep moisture.</p>
+          </div>
+          <div class="impeck-feature-card">
+            <div class="impeck-feature-tag">Double Dredged</div>
+            <h2 class="impeck-feature-title">Ultra-Crunch Crust</h2>
+            <p class="impeck-feature-desc">Seasoned flour dredge with secret spices creating a shatteringly crisp exterior that locks in savory juices.</p>
+          </div>
+          <div class="impeck-feature-card">
+            <div class="impeck-feature-tag">Scratch Crafted</div>
+            <h2 class="impeck-feature-title">Signature Sauces</h2>
+            <p class="impeck-feature-desc">House Impeckable Sauce, Hot Honey drizzle, Carolina Gold, and Garlic Herb Ranch crafted daily.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="impeck-section">
+        <div class="impeck-story-grid">
+          <div class="impeck-story-img-wrap">
+            <img src="images/tenders.jpg" alt="Golden crispy hand-breaded chicken tenders with dipping sauce" width="600" height="380">
+          </div>
+          <div class="impeck-story-content">
+            <span class="impeck-section-eyebrow">Monarch Market Sensation</span>
+            <h3>Hand-Breaded Tenders Done Right</h3>
+            <p>At Impeckable Chicken, we refuse to cut corners. We use whole whole-muscle tenderloins, seasoned flour, and hot frying oil calibrated to perfection so every bite delivers a distinct crunch followed by steaming, juicy chicken.</p>
+            <p>Served with our hot seasoned waffle fries and your choice of house-crafted dipping sauces, it is comfort food elevated for Uptown Charlotte food lovers.</p>
+            <a href="wings-sides-and-sauces.html" class="impeck-btn-primary" style="margin-top: 0.5rem;">Explore Sauces &amp; Wings</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="impeck-section" style="background: #ffffff; border-top: 1px solid var(--impeck-border); border-bottom: 1px solid var(--impeck-border);">
+        <div class="impeck-section-header">
+          <span class="impeck-section-eyebrow">Corporate Lunch &amp; Game Day Catering</span>
+          <h2 class="impeck-section-title">Office Tender Platter Estimator</h2>
+          <p class="impeck-section-subtitle">Hosting an office gathering, team celebration, or weekend tailgate? Calculate your crispy tender and side requirements below.</p>
+        </div>
+
+        <div class="impeck-calc-card">
+          <div class="impeck-calc-controls">
+            <div class="impeck-calc-field">
+              <label for="impeck-guest-count">Headcount: <span id="impeck-guest-display" style="color: var(--impeck-primary); font-weight: 800;">20 People</span></label>
+              <input type="range" id="impeck-guest-count" class="impeck-range-slider" min="5" max="80" step="5" value="20">
+            </div>
+            <div class="impeck-calc-field">
+              <label for="impeck-platter-style">Platter Style</label>
+              <select id="impeck-platter-style" class="impeck-calc-select">
+                <option value="tenders-only">Crispy Tender Box (4 Tenders / Person)</option>
+                <option value="tenders-wings">Combo Feast (3 Tenders + 2 Jumbo Wings / Person)</option>
+              </select>
+            </div>
+          </div>
+          <div class="impeck-calc-results">
+            <div class="impeck-result-box">
+              <span class="num" id="impeck-tender-total">80 Crispy Tenders</span>
+              <span class="label">Hand-Breaded Tenders</span>
+            </div>
+            <div class="impeck-result-box">
+              <span class="num" id="impeck-fry-total">7.0 lbs Seasoned Waffle Fries</span>
+              <span class="label">Crisp Hot Sides</span>
+            </div>
+            <div class="impeck-result-box">
+              <span class="num" id="impeck-sauce-total">40 Dipping Sauce Cups</span>
+              <span class="label">House Dipping Sauces</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+  <footer class="impeck-footer">
+    <div class="impeck-footer-container">
+      <div class="impeck-footer-brand">
+        <h4>Impeckable Chicken</h4>
+        <p>Hand-breaded buttermilk chicken tenders, towering brioche sandwiches, jumbo crispy wings, and seasoned waffle fries inside Monarch Market in Uptown Charlotte, NC.</p>
+      </div>
+      <div class="impeck-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="buttermilk-craft-and-brine.html">Brine &amp; Craft</a></li>
+          <li><a href="sandwiches-and-tenders.html">Sandwiches &amp; Tenders</a></li>
+          <li><a href="wings-sides-and-sauces.html">Wings, Sides &amp; Sauces</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="impeck-footer-hours">
+        <h5>Location &amp; Hours</h5>
+        <p style="color: #9698a3; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Monarch Market:</strong> 101 N Tryon St, Charlotte, NC 28202</p>
+        <p style="color: #9698a3; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 910-1500</p>
+        <p style="color: #9698a3; font-size: 0.88rem;">Sun - Thu: 11:00 AM - 9:00 PM<br>Fri - Sat: 11:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+    <div class="impeck-footer-bottom">
+      <p>&copy; 2026 Impeckable Chicken. All rights reserved. Culinary showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemstone Cupcake & Dessert Menu | Jewell Treats Charlotte</title>
+  <meta name="description" content="View the full artisan dessert menu at Jewell Treats in Charlotte, NC. Ruby Red Velvet, Strawberry Sapphire, 14 Karat Cake, Southern pies, and vegan cupcakes.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="jwt-topbar">
+    <div class="jwt-topbar-info">
+      <span>301 E 4th St, Charlotte, NC 28202 (Uptown Charlotte)</span>
+      <span>Mon-Fri: 9AM-6PM | Sat: 10AM-5PM | Sun: Event Deliveries</span>
+    </div>
+    <div>
+      <a href="tel:+19802022530" class="jwt-topbar-link">Order Call: (980) 202-2530</a>
+    </div>
+  </div>
+  <header class="jwt-navbar">
+    <div class="jwt-nav-container">
+      <a href="index.html" class="jwt-brand">
+        <span class="jwt-brand-name">Jewell <span>Treats</span></span>
+        <span class="jwt-brand-tagline">Artisan Gemstone Cupcakes & Desserts</span>
+      </a>
+      <ul class="jwt-nav-links">
+        <li class="jwt-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="jwt-nav-item"><a href="menu.html" class="active">Gemstone Menu</a></li>
+        <li class="jwt-nav-item"><a href="wedding-events.html" class="">Towers & Events</a></li>
+        <li class="jwt-nav-item"><a href="natural-ingredients.html" class="">All-Natural Craft</a></li>
+        <li class="jwt-nav-item"><a href="about.html" class="">Our Story</a></li>
+        <li class="jwt-nav-item"><a href="contact.html" class="">Visit & Pickup</a></li>
+        <li class="jwt-nav-item"><a href="tel:+19802022530" class="jwt-nav-cta">Call (980) 202-2530</a></li>
+      </ul>
+      <button class="jwt-menu-toggle" id="jwtMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="jwt-mobile-menu" id="jwtMobileMenu">
+      <ul class="jwt-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="active">Gemstone Menu</a></li>
+        <li><a href="wedding-events.html" class="">Towers & Events</a></li>
+        <li><a href="natural-ingredients.html" class="">All-Natural Craft</a></li>
+        <li><a href="about.html" class="">Our Story</a></li>
+        <li><a href="contact.html" class="">Visit & Pickup</a></li>
+        <li><a href="tel:+19802022530" class="jwt-nav-cta" style="display:inline-block; margin-top:0.5rem;">Call To Order</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="jwt-section-sm jwt-section-dark">
+    <div class="jwt-container" style="text-align: center;">
+      <span class="jwt-eyebrow">Handcrafted With Real Ingredients</span>
+      <h1 class="jwt-title-xl">The Gemstone Collection Menu</h1>
+      <p class="jwt-lead">All cupcakes are baked fresh in small batches using natural colors, European butter, and organic flavor extracts.</p>
+    </div>
+  </section>
+
+  <section class="jwt-section">
+    <div class="jwt-container">
+      <!-- Filter Bar -->
+      <div class="jwt-filter-bar">
+        <button class="jwt-filter-btn active" data-category="all">Full Menu</button>
+        <button class="jwt-filter-btn" data-category="gemstone">Gemstone Cupcakes</button>
+        <button class="jwt-filter-btn" data-category="pies">Southern Pies & Cobblers</button>
+        <button class="jwt-filter-btn" data-category="cookies">Artisan Cookies</button>
+        <button class="jwt-filter-btn" data-category="dietary">Vegan & Gluten-Sensitive</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="jwt-grid-3">
+        <!-- Gemstone Cupcakes -->
+        <div class="jwt-dish-card jwt-menu-item" data-category="gemstone">
+          <div class="jwt-dish-img">
+            <img src="images/red-velvet-gem.jpg" alt="Ruby Red Velvet Cupcake">
+            <span class="jwt-dish-badge">Signature</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Ruby Red Velvet</h3>
+              <span class="jwt-dish-price">Single: $4.25 | Dozen: $48</span>
+            </div>
+            <p class="jwt-dish-desc">Classic Southern buttermilk cocoa sponge naturally colored with beet extract, topped with rich whipped cream cheese frosting.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">No Dyes</span>
+              <span class="jwt-tag">Cream Cheese</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="gemstone">
+          <div class="jwt-dish-img">
+            <img src="images/strawberry-sapphire.jpg" alt="Pink Strawberry Sapphire Cupcake">
+            <span class="jwt-dish-badge">Fruit Infused</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Strawberry Sapphire</h3>
+              <span class="jwt-dish-price">Single: $4.50 | Dozen: $50</span>
+            </div>
+            <p class="jwt-dish-desc">Real strawberry reduction cake filled with scratch strawberry preserves and crowned with fresh strawberry buttercream.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Real Strawberries</span>
+              <span class="jwt-tag">Fruit Compote</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="gemstone">
+          <div class="jwt-dish-img">
+            <img src="images/chocolate-diamond.jpg" alt="Chocolate Diamond Sundae">
+            <span class="jwt-dish-badge">Decadent</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Chocolate Diamond</h3>
+              <span class="jwt-dish-price">Single: $4.50 | Dozen: $50</span>
+            </div>
+            <p class="jwt-dish-desc">Dark chocolate fudge cake filled with Belgian chocolate ganache and finished with vanilla bean buttercream and chocolate drizzle.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Belgian Ganache</span>
+              <span class="jwt-tag">Rich Chocolate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="gemstone">
+          <div class="jwt-dish-img">
+            <img src="images/hero-cupcakes.jpg" alt="14 Karat Carrot Cake Cupcake">
+            <span class="jwt-dish-badge">Spiced</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">14 Karat Carrot Cake</h3>
+              <span class="jwt-dish-price">Single: $4.50 | Dozen: $50</span>
+            </div>
+            <p class="jwt-dish-desc">Freshly grated organic carrots, crushed pineapple, cinnamon, nutmeg, and toasted Georgia pecans with vanilla cream cheese frosting.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Toasted Pecans</span>
+              <span class="jwt-tag">Real Carrots</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="gemstone">
+          <div class="jwt-dish-img">
+            <img src="images/hero-cupcakes.jpg" alt="Platinum Sweet Potato Cupcake">
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Platinum Sweet Potato</h3>
+              <span class="jwt-dish-price">Single: $4.50 | Dozen: $50</span>
+            </div>
+            <p class="jwt-dish-desc">Roasted Carolina sweet potato cake spiced with ginger and nutmeg, topped with toasted marshmallow meringue buttercream.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Carolina Sweet Potato</span>
+              <span class="jwt-tag">Marshmallow Meringue</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="gemstone">
+          <div class="jwt-dish-img">
+            <img src="images/hero-cupcakes.jpg" alt="Key Lime Jadeite Cupcake">
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Key Lime Jadeite</h3>
+              <span class="jwt-dish-price">Single: $4.25 | Dozen: $48</span>
+            </div>
+            <p class="jwt-dish-desc">Zesty Florida key lime cake filled with tart lime curd and piped with graham cracker crust buttercream.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Fresh Key Lime</span>
+              <span class="jwt-tag">Graham Cracker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Southern Pies & Cobblers -->
+        <div class="jwt-dish-card jwt-menu-item" data-category="pies">
+          <div class="jwt-dish-img">
+            <img src="images/natural-baking.jpg" alt="Southern Peach Cobbler">
+            <span class="jwt-dish-badge">Heritage Recipe</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Southern Peach Cobbler</h3>
+              <span class="jwt-dish-price">Pan: $38.00 (Serves 8-10)</span>
+            </div>
+            <p class="jwt-dish-desc">Spiced brown sugar sliced peaches baked under our flaky, buttery golden biscuit crust. Baked to order.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Family Recipe</span>
+              <span class="jwt-tag">Brown Sugar Glaze</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="pies">
+          <div class="jwt-dish-img">
+            <img src="images/natural-baking.jpg" alt="Southern Sweet Potato Pie">
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Sweet Potato Pie (9-inch)</h3>
+              <span class="jwt-dish-price">$26.00</span>
+            </div>
+            <p class="jwt-dish-desc">Smooth, custard-style sweet potato filling spiced with nutmeg and pure Madagascar vanilla in a hand-crimped butter pastry crust.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Handmade Crust</span>
+              <span class="jwt-tag">All-Natural</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cookies -->
+        <div class="jwt-dish-card jwt-menu-item" data-category="cookies">
+          <div class="jwt-dish-img">
+            <img src="images/hero-cupcakes.jpg" alt="Gourmet Cookie Box">
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Artisan Cookie Dozen</h3>
+              <span class="jwt-dish-price">$28.00</span>
+            </div>
+            <p class="jwt-dish-desc">Assortment of Brown Butter Chocolate Chip, Oatmeal Raisin Pecan, and Red Velvet Crinkle cookies baked fresh daily.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Brown Butter</span>
+              <span class="jwt-tag">12-Pack</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dietary -->
+        <div class="jwt-dish-card jwt-menu-item" data-category="dietary">
+          <div class="jwt-dish-img">
+            <img src="images/red-velvet-gem.jpg" alt="Vegan Ruby Red Velvet Cupcake">
+            <span class="jwt-dish-badge">Plant-Based</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Vegan Ruby Red Velvet</h3>
+              <span class="jwt-dish-price">Single: $4.75 | Dozen: $54</span>
+            </div>
+            <p class="jwt-dish-desc">100% dairy-free and egg-free red velvet cake naturally colored with beet juice, topped with vegan cream cheese frosting.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">100% Vegan</span>
+              <span class="jwt-tag">Dairy Free</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jwt-dish-card jwt-menu-item" data-category="dietary">
+          <div class="jwt-dish-img">
+            <img src="images/chocolate-diamond.jpg" alt="Gluten-Sensitive Chocolate Diamond Cupcake">
+            <span class="jwt-dish-badge">Gluten Sensitive</span>
+          </div>
+          <div class="jwt-dish-body">
+            <div class="jwt-dish-header">
+              <h3 class="jwt-dish-name">Gluten-Free Chocolate Diamond</h3>
+              <span class="jwt-dish-price">Single: $4.75 | Dozen: $54</span>
+            </div>
+            <p class="jwt-dish-desc">Rich almond flour and rice flour dark cocoa cake filled with chocolate ganache and vanilla buttercream.</p>
+            <div class="jwt-dish-tags">
+              <span class="jwt-tag">Gluten Free</span>
+              <span class="jwt-tag">Almond Flour</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Call Box -->
+      <div class="jwt-info-box" style="margin-top: 4rem; text-align: center; padding: 2.5rem;">
+        <h3 style="font-family: var(--jwt-font-display); font-size: 1.6rem; color: var(--jwt-plum); margin-bottom: 0.5rem;">Order Your Custom Dozen Today</h3>
+        <p style="margin-bottom: 1.5rem; color: var(--jwt-text-dark);">Call our bakery team directly to place custom flavor assortments or reserve pickup for your weekend celebration.</p>
+        <a href="tel:+19802022530" class="jwt-btn jwt-btn-primary">Call (980) 202-2530 Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="jwt-footer">
+    <div class="jwt-container">
+      <div class="jwt-footer-grid">
+        <div class="jwt-footer-brand">
+          <h3>Jewell <span>Treats</span></h3>
+          <p>Charlotte's boutique pastry destination for handcrafted, all-natural Gemstone Collection cupcakes, Southern pies, and bespoke wedding dessert tables.</p>
+        </div>
+        <div class="jwt-footer-col">
+          <h4>Explore</h4>
+          <ul class="jwt-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Gemstone Menu</a></li>
+            <li><a href="wedding-events.html">Events & Towers</a></li>
+            <li><a href="natural-ingredients.html">Natural Ingredients</a></li>
+            <li><a href="about.html">Our Pastry Story</a></li>
+            <li><a href="contact.html">Ordering & Pickup</a></li>
+          </ul>
+        </div>
+        <div class="jwt-footer-col">
+          <h4>Bakery Hours</h4>
+          <ul class="jwt-footer-links">
+            <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+            <li>Saturday: 10:00 AM - 5:00 PM</li>
+            <li>Sunday: Event Deliveries Only</li>
+            <li>Curbside & Uptown Delivery Available</li>
+          </ul>
+        </div>
+        <div class="jwt-footer-col">
+          <h4>Contact Us</h4>
+          <ul class="jwt-footer-links">
+            <li>301 E 4th St</li>
+            <li>Charlotte, NC 28202</li>
+            <li><a href="tel:+19802022530">(980) 202-2530</a></li>
+            <li><a href="mailto:jewelltreats@yahoo.com">jewelltreats@yahoo.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="jwt-footer-bottom">
+        <p>&copy; 2026 Jewell Treats LLC. All Rights Reserved. Uptown Charlotte, NC.</p>
+        <p>301 E 4th St, Charlotte, NC 28202</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

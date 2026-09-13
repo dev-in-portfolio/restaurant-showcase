@@ -1,0 +1,120 @@
+{
+  "slug": "sub-one-hoagie-house",
+  "generatedAt": "2026-09-10T18:16:56.580Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "santa-fe-mexican-restaurant-central-ave",
+    "landmark-restaurant-diner",
+    "van-loi-chinese-barbecue",
+    "pho-an-hoa",
+    "sweet-crunch-waffles",
+    "kuya-omakase-2-0",
+    "seoul-good-clt",
+    "pasta-crush",
+    "la-cocina-mexicana",
+    "phil-s-deli-to-go"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "phil-s-deli-to-go",
+    "score": 0.3258142957746479,
+    "classSimilarity": 0.020833333333333332,
+    "cssClassSimilarity": 0.032,
+    "domSimilarity": 0.9647887323943662,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "phil-s-deli-to-go",
+      "score": 0.3258142957746479,
+      "classSimilarity": 0.020833333333333332,
+      "cssClassSimilarity": 0.032,
+      "domSimilarity": 0.9647887323943662,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "la-cocina-mexicana",
+      "score": 0.30943741379310347,
+      "classSimilarity": 0.020833333333333332,
+      "cssClassSimilarity": 0.032,
+      "domSimilarity": 0.896551724137931,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.09156646442360727,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006802721088435374,
+      "domSimilarity": 0.3738738738738739,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "landmark-restaurant-diner",
+      "score": 0.08234816141027405,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0072992700729927005,
+      "domSimilarity": 0.33490566037735847,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "pho-an-hoa",
+      "score": 0.08198529411764705,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007352941176470588,
+      "domSimilarity": 0.3333333333333333,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "van-loi-chinese-barbecue",
+      "score": 0.08159165600027674,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0072992700729927005,
+      "domSimilarity": 0.33175355450236965,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "seoul-good-clt",
+      "score": 0.07982314455121652,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007462686567164179,
+      "domSimilarity": 0.3242009132420091,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "sweet-crunch-waffles",
+      "score": 0.07911899777132438,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007462686567164179,
+      "domSimilarity": 0.3212669683257919,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "pasta-crush",
+      "score": 0.07911899777132438,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007462686567164179,
+      "domSimilarity": 0.3212669683257919,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "kuya-omakase-2-0",
+      "score": 0.07742830527646549,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007518796992481203,
+      "domSimilarity": 0.3141592920353982,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

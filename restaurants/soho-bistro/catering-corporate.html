@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Catering &amp; Office Platters | Soho Bistro | Uptown Charlotte, NC</title>
+  <meta name="description" content="Calculate and plan your Uptown Charlotte office catering with Soho Bistro. High-flame wok platters, executive bento boxes, and interactive instant quote planner.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="sho-topbar">
+    <div class="sho-container sho-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>214 N Tryon St #110, Uptown Charlotte, NC 28202</span>
+        <span style="margin: 0 0.75rem; opacity: 0.4;">|</span>
+        <span>Mon-Fri: 11:00 AM - 9:00 PM &bull; Sat: 4:30 PM - 9:30 PM</span>
+      </div>
+      <div>
+        <span>Order Call-Ahead / Takeout: </span>
+        <a href="tel:7043335189" class="sho-topbar-link">(704) 333-5189</a>
+      </div>
+    </div>
+  </div>
+  <header class="sho-navbar">
+    <div class="sho-nav-container">
+      <a href="index.html" class="sho-brand">
+        <div class="sho-brand-name">SOHO <span>BISTRO</span></div>
+        <div class="sho-brand-tagline">Uptown Chinese &amp; Pan-Asian Cuisine</div>
+      </a>
+      <ul class="sho-nav-links">
+        <li class="sho-nav-item"><a href="index.html">Home</a></li>
+<li class="sho-nav-item"><a href="menu.html">Dinner Menu</a></li>
+<li class="sho-nav-item"><a href="lunch-specials.html">Lunch Specials</a></li>
+<li class="sho-nav-item"><a href="catering-corporate.html" class="active">Corporate Catering</a></li>
+<li class="sho-nav-item"><a href="about.html">Our Story</a></li>
+<li class="sho-nav-item"><a href="contact.html">Contact & Hours</a></li>
+
+        <li><a href="tel:7043335189" class="sho-nav-cta">Call (704) 333-5189</a></li>
+      </ul>
+      <button class="sho-menu-toggle" id="shoMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="sho-mobile-menu" id="shoMobileMenu">
+      <ul class="sho-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Dinner Menu</a></li>
+<li><a href="lunch-specials.html">Lunch Specials</a></li>
+<li><a href="catering-corporate.html" class="active">Corporate Catering</a></li>
+<li><a href="about.html">Our Story</a></li>
+<li><a href="contact.html">Contact & Hours</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7043335189" class="sho-nav-cta" style="text-align: center;">Call (704) 333-5189</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="sho-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="sho-container" style="text-align: center; max-width: 840px;">
+      <span class="sho-hero-badge">Uptown Charlotte Office Buffets &amp; Bento Boxes</span>
+      <h1 class="sho-title-xl">Corporate Catering &amp; Party Platters</h1>
+      <p class="sho-lead">Serve your team, clients, and conference attendees restaurant-caliber Pan-Asian cuisine. Freshly cooked, neatly packaged with serving utensils, and delivered hot.</p>
+    </div>
+  </section>
+
+  <section class="sho-section">
+    <div class="sho-container">
+      <div class="sho-section-header">
+        <span class="sho-eyebrow">Instant Quote Estimator</span>
+        <h2 class="sho-title-lg">Uptown Corporate Lunch Calculator</h2>
+        <p class="sho-lead">Select your guest count and package tier to get an instant calculation of food portions, tray quantities, and estimated pricing.</p>
+      </div>
+
+      <div class="sho-calc-panel">
+        <div class="sho-calc-grid">
+          <div>
+            <div class="sho-calc-group">
+              <label class="sho-calc-label" for="shoCalcGuests">
+                <span>Guest Count</span>
+                <span id="shoCalcGuestCountText" style="color: var(--sho-text-muted); font-weight: 600;">(10 to 150 guests)</span>
+              </label>
+              <select class="sho-calc-select" id="shoCalcGuests">
+                <option value="12">12 Guests (Small Team Meeting)</option>
+                <option value="20" selected>20 Guests (Department Lunch)</option>
+                <option value="35">35 Guests (Executive Briefing)</option>
+                <option value="50">50 Guests (Corporate Floor Buffet)</option>
+                <option value="75">75 Guests (Quarterly Celebration)</option>
+                <option value="100">100 Guests (Company Banquet)</option>
+                <option value="150">150 Guests (Major Corporate Event)</option>
+              </select>
+            </div>
+
+            <div class="sho-calc-group">
+              <label class="sho-calc-label" for="shoCalcPackage">
+                <span>Catering Package Tier</span>
+                <span style="color: var(--sho-text-muted); font-weight: 600;">(Per Person)</span>
+              </label>
+              <select class="sho-calc-select" id="shoCalcPackage">
+                <option value="express-bento" selected>Executive Bento Boxes ($15.50/person) - Individually Packaged</option>
+                <option value="bistro-buffet">Uptown Bistro Wok Buffet ($19.50/person) - Multi-Entree Platters</option>
+                <option value="executive-banquet">Grand Pan-Asian Banquet ($25.00/person) - Premium Seafood &amp; Beef</option>
+              </select>
+            </div>
+
+            <div class="sho-calc-group">
+              <label class="sho-calc-label">Appetizer &amp; Dim Sum Add-On Platters</label>
+              <div class="sho-checkbox-grid">
+                <label class="sho-checkbox-item">
+                  <input type="checkbox" class="sho-app-check" value="Crab Wontons Platter (24 pcs)" data-price="36.00">
+                  <span>Crab Wontons Tray (+$36)</span>
+                </label>
+                <label class="sho-checkbox-item">
+                  <input type="checkbox" class="sho-app-check" value="Pork Potstickers Platter (30 pcs)" data-price="42.00">
+                  <span>Potstickers Tray (+$42)</span>
+                </label>
+                <label class="sho-checkbox-item">
+                  <input type="checkbox" class="sho-app-check" value="Crispy Spring Rolls Platter (24 pcs)" data-price="32.00">
+                  <span>Spring Rolls Tray (+$32)</span>
+                </label>
+                <label class="sho-checkbox-item">
+                  <input type="checkbox" class="sho-app-check" value="Steamed Edamame Platter" data-price="24.00">
+                  <span>Edamame Tray (+$24)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sho-calc-group">
+              <label class="sho-calc-label">Beverage Add-Ons</label>
+              <div class="sho-checkbox-grid">
+                <label class="sho-checkbox-item">
+                  <input type="checkbox" class="sho-drink-check" value="Fresh Brewed Iced Green Tea" data-price="2.00">
+                  <span>Iced Tea (+$2.00/person)</span>
+                </label>
+                <label class="sho-checkbox-item">
+                  <input type="checkbox" class="sho-drink-check" value="Assorted Chilled Sodas &amp; Water" data-price="2.25">
+                  <span>Sodas &amp; Water (+$2.25/person)</span>
+                </label>
+              </div>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--sho-text-muted); margin-top: 1rem;">
+              * Includes eco-friendly plates, wrapped fork &amp; napkin sets, chopsticks, soy sauce packets, and heavy-duty serving tongs.
+            </div>
+          </div>
+
+          <div class="sho-calc-summary-card">
+            <div>
+              <div style="font-family: var(--sho-font-display); font-size: 1.4rem; font-weight: 800; color: var(--sho-gold); margin-bottom: 1.25rem;">
+                Catering Quote Summary
+              </div>
+              <div class="sho-summary-row">
+                <span>Target Guest Count:</span>
+                <strong id="shoCalcGuestDisplay">20 Guests</strong>
+              </div>
+              <div class="sho-summary-row">
+                <span>Recommended Entree Pans:</span>
+                <strong id="shoCalcEntreePans">2 Full Entree Pan(s)</strong>
+              </div>
+              <div class="sho-summary-row">
+                <span>Steamed / Fried Rice:</span>
+                <strong id="shoCalcRicePans">1 Rice Pan(s)</strong>
+              </div>
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #cfd4dc; line-height: 1.5;" id="shoCalcDetails">
+                Executive Bento Box Lunches for 20 guests. Entrees: Sesame Chicken &amp; Beef Chow Fun. Appetizer Add-ons: Spring Rolls Included. Beverages: None.
+              </div>
+            </div>
+
+            <div>
+              <div class="sho-summary-total">
+                <span style="font-weight: 700; font-size: 1.1rem;">Estimated Total:</span>
+                <span class="sho-summary-total-val" id="shoCalcTotalCost">$310.00</span>
+              </div>
+              
+              <div class="sho-calc-action-bar">
+                <a href="mailto:info@sohobistroclt.com" class="sho-btn sho-btn-gold" id="shoMailQuoteLink" style="width: 100%;">Email This Catering Request</a>
+                <button type="button" class="sho-btn sho-btn-outline" id="shoCopyQuoteBtn" style="width: 100%;">Copy Quote to Clipboard</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sho-section sho-section-light">
+    <div class="sho-container">
+      <div class="sho-section-header">
+        <span class="sho-eyebrow">A La Carte Party Pans</span>
+        <h2 class="sho-title-lg">Wok Tray Capacities &amp; Selections</h2>
+        <p class="sho-lead">Customize your buffet with individual half pans (serves 8-10) or full pans (serves 18-20).</p>
+      </div>
+
+      <div class="sho-grid-3">
+        <div class="sho-card">
+          <h3 class="sho-title-md" style="color: var(--sho-crimson);">Crispy Sesame Chicken Pan</h3>
+          <p style="color: var(--sho-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">White meat chicken in golden honey sesame glaze with broccoli.</p>
+          <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; border-top: 1px solid var(--sho-border); padding-top: 0.75rem;">
+            <span>Half Pan: $65.00</span>
+            <span>Full Pan: $125.00</span>
+          </div>
+        </div>
+
+        <div class="sho-card">
+          <h3 class="sho-title-md" style="color: var(--sho-crimson);">Dry-Fried Beef Chow Fun Pan</h3>
+          <p style="color: var(--sho-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Seared flat rice noodles with flank steak, scallions, and sprouts.</p>
+          <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; border-top: 1px solid var(--sho-border); padding-top: 0.75rem;">
+            <span>Half Pan: $68.00</span>
+            <span>Full Pan: $130.00</span>
+          </div>
+        </div>
+
+        <div class="sho-card">
+          <h3 class="sho-title-md" style="color: var(--sho-crimson);">Honey Walnut Shrimp Pan</h3>
+          <p style="color: var(--sho-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Jumbo crispy prawns in citrus honey cream with candied walnuts.</p>
+          <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; border-top: 1px solid var(--sho-border); padding-top: 0.75rem;">
+            <span>Half Pan: $78.00</span>
+            <span>Full Pan: $150.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sho-section-sm">
+    <div class="sho-container">
+      <div class="sho-info-box">
+        <h4>Ordering Guidelines &amp; Uptown Delivery</h4>
+        <p>We recommend placing catering orders at least 24 hours in advance for groups over 25. Same-day emergency corporate orders can frequently be accommodated by calling our hotline directly at <strong>(704) 333-5189</strong>. Delivery is available throughout Uptown, South End, Midtown, and surrounding Charlotte business hubs.</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="sho-footer">
+    <div class="sho-container">
+      <div class="sho-footer-grid">
+        <div class="sho-footer-brand">
+          <h3>SOHO <span>BISTRO</span></h3>
+          <p>Uptown Charlotte's premier destination for masterfully executed high-flame wok classics, fresh handmade dumplings, express weekday lunches, and corporate catering on North Tryon Street.</p>
+        </div>
+        <div class="sho-footer-col">
+          <h4>Explore</h4>
+          <ul class="sho-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Dinner Menu &amp; Chef Wok</a></li>
+            <li><a href="lunch-specials.html">Express Lunch Combos</a></li>
+            <li><a href="catering-corporate.html">Office Party Catering</a></li>
+            <li><a href="about.html">Our Culinary Heritage</a></li>
+            <li><a href="contact.html">Directions &amp; Hours</a></li>
+          </ul>
+        </div>
+        <div class="sho-footer-col">
+          <h4>Hours of Operation</h4>
+          <ul class="sho-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Friday:</strong><br>11:00 AM - 9:00 PM</li>
+            <li><strong style="color: #fff;">Saturday:</strong><br>4:30 PM - 9:30 PM</li>
+            <li><strong style="color: #fff;">Sunday:</strong><br>Closed</li>
+          </ul>
+        </div>
+        <div class="sho-footer-col">
+          <h4>Uptown Location</h4>
+          <p style="margin-bottom: 0.75rem;">214 N Tryon St #110<br>Charlotte, NC 28202<br>Convenient parking deck validation &amp; street access.</p>
+          <p><strong style="color: var(--sho-gold);">Direct Phone:</strong><br><a href="tel:7043335189" style="color: #fff; font-weight: 700;">(704) 333-5189</a></p>
+          <p style="margin-top: 0.5rem;"><strong style="color: var(--sho-gold);">Email:</strong><br><a href="mailto:info@sohobistroclt.com" style="color: #cfd4dc;">info@sohobistroclt.com</a></p>
+        </div>
+      </div>
+      <div class="sho-footer-bottom">
+        <div>&copy; 2026 Soho Bistro. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Modern Pan-Asian Dining &bull; Fast Delivery &bull; Corporate Platters</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

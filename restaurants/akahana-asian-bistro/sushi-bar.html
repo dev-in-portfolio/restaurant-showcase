@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi & Sashimi Bar, Party Platters & Calculator | Akahana Asian Bistro Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="akh-header">
+    <div class="akh-header-inner">
+      <a href="index.html" class="akh-brand">
+        <span class="akh-brand-title">Akahana</span>
+        <span class="akh-brand-tagline">Asian Bistro &amp; Sushi Bar</span>
+      </a>
+      <button class="akh-mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="akh-nav">
+        <a href="index.html" class="akh-nav-link ">Home</a>
+        <a href="menu.html" class="akh-nav-link ">Bistro Menu</a>
+        <a href="sushi-bar.html" class="akh-nav-link active">Sushi &amp; Platters</a>
+        <a href="lunch-combos.html" class="akh-nav-link ">Lunch Specials</a>
+        <a href="about.html" class="akh-nav-link ">About Us</a>
+        <a href="contact.html" class="akh-nav-link ">Hours &amp; Location</a>
+        <a href="tel:7048179365" class="akh-nav-cta">Call (704) 817-9365</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="akh-hero" style="min-height: 50vh; background-image: url('images/specialty-rolls.jpg');">
+      <div class="akh-hero-overlay"></div>
+      <div class="akh-hero-content">
+        <span class="akh-hero-badge">Craft Sushi &amp; Sashimi</span>
+        <h1 class="akh-hero-title">Sushi Bar &amp; <span>Party Platters</span></h1>
+        <p class="akh-hero-subtitle">
+          Artfully rolled maki, fresh sashimi cuts, nigiri sets, and customizable party platters for all occasions.
+        </p>
+      </div>
+    </section>
+
+    <section class="akh-section">
+      <div class="akh-container">
+        <div class="akh-section-header">
+          <p class="akh-subtitle">Pristine Cuts</p>
+          <h2 class="akh-title">Chef's Sushi &amp; Sashimi Selection</h2>
+          <p class="akh-desc">
+            Hand-sliced raw sashimi and nigiri pieces seasoned with seasoned sushi rice and wasabi.
+          </p>
+        </div>
+
+        <div class="akh-grid-3">
+          <div class="akh-card">
+            <div class="akh-card-body">
+              <h3 class="akh-card-title" style="color: var(--akh-crimson);">Sushi Regular Combo</h3>
+              <p class="akh-card-desc">7 pieces of chef-selected nigiri (tuna, salmon, yellowtail, white fish, shrimp) plus a California roll and miso soup.</p>
+              <div class="akh-card-footer">
+                <span class="akh-card-price">$24.00</span>
+                <span class="akh-tag signature">Popular</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="akh-card">
+            <div class="akh-card-body">
+              <h3 class="akh-card-title" style="color: var(--akh-jade-dark);">Sashimi Deluxe Board</h3>
+              <p class="akh-card-desc">15 pieces of premium thick-cut sashimi: Maguro tuna, Scottish salmon, Hamachi, Tai red snapper, and Escolar white tuna.</p>
+              <div class="akh-card-footer">
+                <span class="akh-card-price">$32.00</span>
+                <span class="akh-tag jade">Gluten-Friendly</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="akh-card">
+            <div class="akh-card-body">
+              <h3 class="akh-card-title" style="color: var(--akh-crimson);">Love Boat for Two</h3>
+              <p class="akh-card-desc">10 pieces of nigiri, 12 pieces of sashimi, Akahana Volcano Roll, and a Chef Specialty Dragon Roll presented on a decorative wooden boat.</p>
+              <div class="akh-card-footer">
+                <span class="akh-card-price">$68.00</span>
+                <span class="akh-tag signature">Feeds 2-3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Sushi Platter Calculator -->
+    <section class="akh-section akh-section-alt">
+      <div class="akh-container">
+        <div class="akh-section-header">
+          <p class="akh-subtitle">Party Planning Made Easy</p>
+          <h2 class="akh-title">Sushi Party Platter &amp; Catering Calculator</h2>
+          <p class="akh-desc">
+            Hosting a gathering, office luncheon, or game night in Plaza Midwood? Configure your sushi platter below for an instant price estimate.
+          </p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="akh-calc-box">
+            <div class="akh-grid-2">
+              <div class="akh-calc-group">
+                <label for="akh-calc-guests" class="akh-calc-label">Number of Guests</label>
+                <select id="akh-calc-guests" class="akh-select">
+                  <option value="4" selected>4 Guests (Small Party Platter)</option>
+                  <option value="6">6 Guests (Family Feast)</option>
+                  <option value="8">8 Guests (Office Lunch Platter)</option>
+                  <option value="12">12 Guests (Large Event Boat)</option>
+                  <option value="16">16 Guests (Grand Catering Display)</option>
+                </select>
+              </div>
+
+              <div class="akh-calc-group">
+                <label for="akh-calc-platter" class="akh-calc-label">Platter Style</label>
+                <select id="akh-calc-platter" class="akh-select">
+                  <option value="maki-sampler">Classic Maki Roll Sampler ($14 / guest)</option>
+                  <option value="sushi-sashimi-deluxe" selected>Sushi &amp; Sashimi Deluxe ($24 / guest)</option>
+                  <option value="chef-omakase-boat">Chef Omakase Specialty Boat ($35 / guest)</option>
+                  <option value="bistro-party-spread">Bistro Spread (Sushi + Dim Sum + Pad Thai) ($45 / guest)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="akh-calc-group">
+              <label class="akh-calc-label">Optional Platter Enhancements</label>
+              <div class="akh-checkbox-grid">
+                <label class="akh-checkbox-label">
+                  <input type="checkbox" class="akh-calc-addon" value="22"> Extra Volcano Roll (+ $22)
+                </label>
+                <label class="akh-checkbox-label">
+                  <input type="checkbox" class="akh-calc-addon" value="16"> Gyoza &amp; Shumai Dim Sum Box (+ $16)
+                </label>
+                <label class="akh-checkbox-label">
+                  <input type="checkbox" class="akh-calc-addon" value="12"> Edamame &amp; Seaweed Salad Bowl (+ $12)
+                </label>
+                <label class="akh-checkbox-label">
+                  <input type="checkbox" class="akh-calc-addon" value="14"> Family Miso Soup Tureen (+ $14)
+                </label>
+              </div>
+            </div>
+
+            <div class="akh-calc-result">
+              <div>
+                <span class="akh-calc-total-label">Estimated Platter Total:</span>
+                <p style="font-size: 0.8rem; color: var(--akh-slate-500); margin-top: 0.25rem;">Includes pickled ginger, wasabi, soy sauce, and chopsticks.</p>
+              </div>
+              <div class="akh-calc-total-val" id="akh-calc-total">$96</div>
+            </div>
+
+            <div style="margin-top: 1.75rem; text-align: center;">
+              <a href="contact.html" class="akh-btn akh-btn-primary">Order Carryout / Catering Platter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="akh-footer">
+    <div class="akh-container">
+      <div class="akh-footer-grid">
+        <div class="akh-footer-col">
+          <div class="akh-brand" style="margin-bottom: 1rem;">
+            <span class="akh-brand-title" style="color: #fda4af;">Akahana Asian Bistro</span>
+            <span class="akh-brand-tagline" style="color: #5eead4;">Plaza Midwood Sushi &amp; Pan-Asian</span>
+          </div>
+          <p style="color: var(--akh-slate-200); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Plaza Midwood's beloved neighborhood destination for master sushi rolls, steaming pho noodle soups, rich Thai curries, and comforting wok classics.
+          </p>
+          <p style="color: #fda4af; font-weight: 700; font-size: 0.95rem;">
+            1308 The Plaza, Charlotte, NC 28205<br>
+            Phone: (704) 817-9365
+          </p>
+        </div>
+        <div class="akh-footer-col">
+          <h4>Explore</h4>
+          <ul class="akh-footer-links">
+            <li><a href="index.html">Bistro Home</a></li>
+            <li><a href="menu.html">Full Pan-Asian Menu</a></li>
+            <li><a href="sushi-bar.html">Sushi &amp; Sashimi Bar</a></li>
+            <li><a href="lunch-combos.html">Weekday Lunch Combos</a></li>
+          </ul>
+        </div>
+        <div class="akh-footer-col">
+          <h4>Community</h4>
+          <ul class="akh-footer-links">
+            <li><a href="about.html">Our Story &amp; Kitchen</a></li>
+            <li><a href="contact.html">Hours &amp; Directions</a></li>
+            <li><a href="sushi-bar.html">Party Platters</a></li>
+            <li><a href="contact.html">Takeout &amp; Catering</a></li>
+          </ul>
+        </div>
+        <div class="akh-footer-col">
+          <h4>Operating Hours</h4>
+          <ul class="akh-footer-links">
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Sun - Thu: 11:30 AM - 9:30 PM</li>
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Fri - Sat: 11:30 AM - 10:00 PM</li>
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Lunch Specials: 11:30 AM - 3:00 PM</li>
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Dine-In &amp; Express Carryout</li>
+          </ul>
+        </div>
+      </div>
+      <div class="akh-footer-bottom">
+        <p>&copy; 2026 Akahana Asian Bistro Charlotte. All Rights Reserved. Showcase Presentation.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

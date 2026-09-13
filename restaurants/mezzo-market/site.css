@@ -1,0 +1,744 @@
+/* Mezzo Market - Artisan Mediterranean Deli, Pizzeria & Provisions */
+:root {
+  --mzo-terracotta: #c2410c;
+  --mzo-terracotta-dark: #9a3412;
+  --mzo-terracotta-light: #ea580c;
+  --mzo-olive: #4d7c0f;
+  --mzo-olive-dark: #365314;
+  --mzo-olive-light: #65a30d;
+  --mzo-sand-50: #faf7f2;
+  --mzo-sand-100: #f3eee6;
+  --mzo-sand-200: #e5ded2;
+  --mzo-sand-300: #d6ccbe;
+  --mzo-charcoal: #1c1917;
+  --mzo-stone-800: #292524;
+  --mzo-stone-600: #57534e;
+  --mzo-stone-400: #a8a29e;
+  --mzo-white: #ffffff;
+  --mzo-border: #e5ded2;
+  --mzo-border-accent: rgba(194, 65, 12, 0.25);
+  --mzo-shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.05);
+  --mzo-shadow-md: 0 6px 20px rgba(28, 25, 23, 0.08);
+  --mzo-shadow-lg: 0 12px 32px rgba(28, 25, 23, 0.12);
+  --mzo-font-heading: 'DM Serif Display', Georgia, serif;
+  --mzo-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mzo-radius-sm: 6px;
+  --mzo-radius-md: 12px;
+  --mzo-radius-lg: 20px;
+  --mzo-radius-full: 9999px;
+  --mzo-transition: all 0.25s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--mzo-sand-50);
+  color: var(--mzo-charcoal);
+  font-family: var(--mzo-font-sans);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mzo-font-heading);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--mzo-charcoal);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--mzo-transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header & Navigation */
+.mzo-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--mzo-border);
+}
+
+.mzo-header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mzo-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.mzo-brand-title {
+  font-family: var(--mzo-font-heading);
+  font-size: 1.85rem;
+  color: var(--mzo-terracotta);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mzo-brand-tagline {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mzo-olive-dark);
+  font-weight: 700;
+}
+
+.mzo-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.mzo-nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--mzo-stone-600);
+  padding: 0.35rem 0.5rem;
+  position: relative;
+}
+
+.mzo-nav-link:hover,
+.mzo-nav-link.active {
+  color: var(--mzo-terracotta);
+}
+
+.mzo-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background-color: var(--mzo-terracotta);
+  border-radius: 2px;
+}
+
+.mzo-nav-cta {
+  background-color: var(--mzo-terracotta);
+  color: var(--mzo-white) !important;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--mzo-radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: var(--mzo-shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mzo-nav-cta:hover {
+  background-color: var(--mzo-terracotta-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--mzo-shadow-md);
+}
+
+.mzo-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mzo-mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--mzo-charcoal);
+  margin: 5px 0;
+  transition: var(--mzo-transition);
+}
+
+/* Hero Section */
+.mzo-hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.mzo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 25, 23, 0.45) 0%, rgba(28, 25, 23, 0.75) 100%);
+}
+
+.mzo-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 840px;
+  text-align: center;
+  margin: 0 auto;
+  color: var(--mzo-white);
+}
+
+.mzo-hero-badge {
+  display: inline-block;
+  padding: 0.4rem 1.15rem;
+  background-color: rgba(250, 247, 242, 0.95);
+  color: var(--mzo-terracotta-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--mzo-radius-full);
+  margin-bottom: 1.25rem;
+  box-shadow: var(--mzo-shadow-sm);
+}
+
+.mzo-hero-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--mzo-white);
+  margin-bottom: 1.25rem;
+}
+
+.mzo-hero-title em {
+  font-style: italic;
+  color: #fdba74;
+}
+
+.mzo-hero-subtitle {
+  font-size: 1.18rem;
+  color: #f3f4f6;
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.mzo-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.mzo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.65rem;
+  border-radius: var(--mzo-radius-full);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--mzo-transition);
+  border: 1px solid transparent;
+}
+
+.mzo-btn-primary {
+  background-color: var(--mzo-terracotta);
+  color: var(--mzo-white);
+  box-shadow: var(--mzo-shadow-sm);
+}
+
+.mzo-btn-primary:hover {
+  background-color: var(--mzo-terracotta-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--mzo-shadow-md);
+}
+
+.mzo-btn-olive {
+  background-color: var(--mzo-olive);
+  color: var(--mzo-white);
+  box-shadow: var(--mzo-shadow-sm);
+}
+
+.mzo-btn-olive:hover {
+  background-color: var(--mzo-olive-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--mzo-shadow-md);
+}
+
+.mzo-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--mzo-charcoal);
+}
+
+.mzo-btn-secondary:hover {
+  background-color: var(--mzo-white);
+  transform: translateY(-2px);
+  box-shadow: var(--mzo-shadow-md);
+}
+
+/* Sections & Layout */
+.mzo-section {
+  padding: 5.5rem 1.5rem;
+  position: relative;
+}
+
+.mzo-section-alt {
+  background-color: var(--mzo-sand-100);
+}
+
+.mzo-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.mzo-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.mzo-subtitle {
+  color: var(--mzo-olive-dark);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.mzo-title {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.mzo-desc {
+  color: var(--mzo-stone-600);
+  font-size: 1.05rem;
+}
+
+/* Grids & Cards */
+.mzo-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.mzo-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.mzo-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.mzo-card {
+  background-color: var(--mzo-white);
+  border: 1px solid var(--mzo-border);
+  border-radius: var(--mzo-radius-md);
+  overflow: hidden;
+  box-shadow: var(--mzo-shadow-sm);
+  transition: var(--mzo-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.mzo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--mzo-shadow-lg);
+  border-color: var(--mzo-border-accent);
+}
+
+.mzo-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.mzo-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mzo-card:hover .mzo-card-img {
+  transform: scale(1.04);
+}
+
+.mzo-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(250, 247, 242, 0.95);
+  color: var(--mzo-terracotta-dark);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--mzo-radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: var(--mzo-shadow-sm);
+}
+
+.mzo-card-body {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mzo-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.mzo-card-desc {
+  color: var(--mzo-stone-600);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.mzo-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--mzo-sand-100);
+}
+
+.mzo-card-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--mzo-terracotta);
+}
+
+/* Menu Items & Filters */
+.mzo-menu-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.mzo-filter-btn {
+  background-color: var(--mzo-white);
+  border: 1px solid var(--mzo-border);
+  color: var(--mzo-stone-600);
+  padding: 0.6rem 1.35rem;
+  border-radius: var(--mzo-radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--mzo-transition);
+}
+
+.mzo-filter-btn:hover,
+.mzo-filter-btn.active {
+  background-color: var(--mzo-terracotta);
+  color: var(--mzo-white);
+  border-color: var(--mzo-terracotta);
+  box-shadow: var(--mzo-shadow-sm);
+}
+
+.mzo-menu-item {
+  background-color: var(--mzo-white);
+  border: 1px solid var(--mzo-border);
+  border-radius: var(--mzo-radius-md);
+  padding: 1.5rem;
+  transition: var(--mzo-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.mzo-menu-item:hover {
+  border-color: var(--mzo-border-accent);
+  box-shadow: var(--mzo-shadow-md);
+}
+
+.mzo-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.mzo-menu-name {
+  font-family: var(--mzo-font-heading);
+  font-size: 1.3rem;
+  color: var(--mzo-charcoal);
+}
+
+.mzo-menu-price {
+  font-weight: 800;
+  color: var(--mzo-terracotta);
+  font-size: 1.15rem;
+}
+
+.mzo-menu-desc {
+  color: var(--mzo-stone-600);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.mzo-dietary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mzo-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--mzo-radius-sm);
+  background-color: var(--mzo-sand-100);
+  color: var(--mzo-stone-600);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mzo-tag.signature {
+  background-color: #ffedd5;
+  color: var(--mzo-terracotta-dark);
+}
+
+.mzo-tag.olive {
+  background-color: #ecfccb;
+  color: var(--mzo-olive-dark);
+}
+
+/* Interactive Calculator */
+.mzo-calc-box {
+  background-color: var(--mzo-white);
+  border: 1px solid var(--mzo-border);
+  border-radius: var(--mzo-radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--mzo-shadow-md);
+}
+
+.mzo-calc-group {
+  margin-bottom: 1.75rem;
+}
+
+.mzo-calc-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--mzo-charcoal);
+}
+
+.mzo-select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--mzo-sand-50);
+  border: 1px solid var(--mzo-border);
+  border-radius: var(--mzo-radius-sm);
+  color: var(--mzo-charcoal);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.mzo-select:focus {
+  border-color: var(--mzo-terracotta);
+}
+
+.mzo-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+}
+
+.mzo-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--mzo-sand-50);
+  padding: 0.75rem 1rem;
+  border-radius: var(--mzo-radius-sm);
+  border: 1px solid var(--mzo-border);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--mzo-transition);
+}
+
+.mzo-checkbox-label:hover {
+  border-color: var(--mzo-terracotta);
+  background-color: var(--mzo-white);
+}
+
+.mzo-calc-result {
+  background-color: var(--mzo-sand-100);
+  border: 1px solid var(--mzo-border);
+  border-radius: var(--mzo-radius-md);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mzo-calc-total-label {
+  font-size: 1rem;
+  color: var(--mzo-stone-600);
+}
+
+.mzo-calc-total-val {
+  font-family: var(--mzo-font-heading);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--mzo-terracotta);
+}
+
+/* Info Cards */
+.mzo-info-card {
+  background-color: var(--mzo-white);
+  border: 1px solid var(--mzo-border);
+  border-radius: var(--mzo-radius-md);
+  padding: 2rem;
+  box-shadow: var(--mzo-shadow-sm);
+}
+
+.mzo-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--mzo-sand-100);
+  font-size: 0.95rem;
+}
+
+.mzo-info-row:last-child {
+  border-bottom: none;
+}
+
+.mzo-info-label {
+  color: var(--mzo-stone-600);
+  font-weight: 600;
+}
+
+.mzo-info-val {
+  font-weight: 700;
+  color: var(--mzo-charcoal);
+  text-align: right;
+}
+
+/* Footer */
+.mzo-footer {
+  background-color: var(--mzo-stone-800);
+  color: var(--mzo-sand-100);
+  padding: 4.5rem 1.5rem 2rem;
+  border-top: 1px solid var(--mzo-stone-600);
+}
+
+.mzo-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.mzo-footer-col h4 {
+  font-family: var(--mzo-font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  color: var(--mzo-white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mzo-footer-links {
+  list-style: none;
+}
+
+.mzo-footer-links li {
+  margin-bottom: 0.65rem;
+}
+
+.mzo-footer-links a {
+  color: var(--mzo-sand-200);
+  font-size: 0.92rem;
+}
+
+.mzo-footer-links a:hover {
+  color: #fdba74;
+}
+
+.mzo-footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--mzo-stone-400);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .mzo-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--mzo-sand-50);
+    flex-direction: column;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--mzo-border);
+    gap: 1rem;
+  }
+  .mzo-nav.active {
+    display: flex;
+  }
+  .mzo-mobile-toggle {
+    display: block;
+  }
+  .mzo-hero-title {
+    font-size: 2.6rem;
+  }
+  .mzo-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mzo-hero-title {
+    font-size: 2.1rem;
+  }
+  .mzo-title {
+    font-size: 2rem;
+  }
+  .mzo-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .mzo-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .mzo-btn {
+    width: 100%;
+  }
+}

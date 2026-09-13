@@ -1,0 +1,263 @@
+{
+  "slug": "la-cocina-mexicana",
+  "generatedAt": "2026-09-10T18:14:18.392Z",
+  "htmlPages": [
+    "aguas-frescas-and-sides.html",
+    "index.html",
+    "menu.html",
+    "tacos-and-specialties.html",
+    "traditional-mexican-craft.html",
+    "visit.html"
+  ],
+  "cssFiles": [
+    "site.css"
+  ],
+  "jsFiles": [
+    "site.js"
+  ],
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "Minimum substantive HTML page count",
+      "passed": true,
+      "detail": "6 HTML pages found; minimum is 5"
+    },
+    {
+      "name": "index.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit/contact page exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS balance site.css",
+      "passed": true,
+      "detail": "balanced"
+    },
+    {
+      "name": "JavaScript parse site.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aguas-frescas-and-sides.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aguas-frescas-and-sides.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aguas-frescas-and-sides.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aguas-frescas-and-sides.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "aguas-frescas-and-sides.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "aguas-frescas-and-sides.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "index.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "menu.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tacos-and-specialties.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tacos-and-specialties.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tacos-and-specialties.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tacos-and-specialties.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "tacos-and-specialties.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "tacos-and-specialties.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "traditional-mexican-craft.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "traditional-mexican-craft.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "traditional-mexican-craft.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "traditional-mexican-craft.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "traditional-mexican-craft.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "traditional-mexican-craft.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "visit.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "visit.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No exact duplicate HTML pages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Creative Brief",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Claim Ledger",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Add-On Preservation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Cross-Demo Diversity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cross-demo design diversity",
+      "passed": true,
+      "detail": "PASS la-cocina-mexicana: closest recent design 'mortimer-s-cafe-and-pub' scored 0.096."
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deli Menu - Phil’s Deli To Go Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="pdeli-header">
+    <div class="pdeli-nav-container">
+      <a href="index.html" class="pdeli-brand">
+        <span class="pdeli-brand-title">Phil’s Deli To Go</span>
+        <span class="pdeli-brand-subtitle">New York Delicatessen &bull; Est. 1979</span>
+      </a>
+      <button class="pdeli-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="pdeli-nav" aria-label="Primary Navigation">
+        <ul class="pdeli-nav-list">
+          <li><a href="index.html" class="pdeli-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="pdeli-nav-link active">Deli Menu</a></li>
+          <li><a href="new-york-deli-tradition.html" class="pdeli-nav-link ">Deli Tradition</a></li>
+          <li><a href="reubens-and-pastrami.html" class="pdeli-nav-link ">Reubens &amp; Pastrami</a></li>
+          <li><a href="matzo-soup-and-sides.html" class="pdeli-nav-link ">Soup &amp; Sides</a></li>
+          <li><a href="visit.html" class="pdeli-nav-link pdeli-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main class="pdeli-section">
+      <div class="pdeli-section-header">
+        <span class="pdeli-section-eyebrow">Classic Delicatessen</span>
+        <h1 class="pdeli-section-title">Phil’s Deli Menu</h1>
+        <p class="pdeli-section-subtitle">Overstuffed hot deli sandwiches, cold sliced meats, fresh salads, comforting soups, and breakfast specialties.</p>
+      </div>
+
+      <div class="pdeli-filter-tabs" role="tablist" aria-label="Menu Filter Tabs">
+        <button type="button" class="pdeli-filter-btn active" data-filter="all">All Selections</button>
+        <button type="button" class="pdeli-filter-btn" data-filter="hot">Hot Overstuffed</button>
+        <button type="button" class="pdeli-filter-btn" data-filter="cold">Cold Deli Classics</button>
+        <button type="button" class="pdeli-filter-btn" data-filter="soup">Soups &amp; Salads</button>
+        <button type="button" class="pdeli-filter-btn" data-filter="breakfast">Breakfast &amp; Bagels</button>
+      </div>
+
+      <div class="pdeli-menu-grid">
+        <div class="pdeli-menu-item" data-category="hot">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">The Famous Charlotte Reuben</span>
+            <span class="pdeli-menu-item-price">$15.95</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Hot steamed corned beef, melted imported Swiss, barrel sauerkraut, and Russian dressing griddled golden on seeded Jewish rye bread.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge pdeli-badge-gold">House Specialty</span>
+            <span class="pdeli-badge">Served with Pickle &amp; Side</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="hot">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Hot NYC Pastrami on Rye</span>
+            <span class="pdeli-menu-item-price">$15.50</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Peppercorn and coriander cured brisket steamed tender, sliced thin, piled half-pound high with spicy brown deli mustard.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge pdeli-badge-gold">Deli Legend</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="hot">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">The Rachel (Turkey Reuben)</span>
+            <span class="pdeli-menu-item-price">$14.95</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Roasted breast of turkey, house coleslaw, Swiss cheese, and Russian dressing grilled crisp on marble rye.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge">Grilled Hot</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="cold">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Phil’s Homemade Chicken Salad</span>
+            <span class="pdeli-menu-item-price">$13.25</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Poached all-white chicken breast tossed with diced celery, Hellmann’s mayonnaise, and seasonings on toasted whole wheat or croissant.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge pdeli-badge-green">Scratch Made Daily</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="cold">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Triple Decker Club</span>
+            <span class="pdeli-menu-item-price">$14.75</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Roasted turkey breast, crisp smoked bacon, lettuce, tomato, and mayo layered on three slices of toasted sourdough.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge">Lunch Classic</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="soup">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Grandma’s Matzo Ball Soup</span>
+            <span class="pdeli-menu-item-price">$7.95 / $9.95</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Rich golden chicken broth, tender chicken morsels, diced carrots, celery, fresh dill, and a giant fluffy matzo dumpling.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge pdeli-badge-gold">Comfort Classic</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="soup">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Deli Chef Salad</span>
+            <span class="pdeli-menu-item-price">$13.95</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Crisp romaine and mixed greens topped with turkey, ham, Swiss, cheddar, hard-boiled egg, cucumbers, tomatoes, and house vinaigrette.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge pdeli-badge-green">Fresh &amp; Hearty</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="breakfast">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Nova Lox &amp; Cream Cheese Bagel</span>
+            <span class="pdeli-menu-item-price">$14.50</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Smoked Atlantic salmon, whipped cream cheese, sliced red onion, capers, and ripe tomato on a toasted New York bagel.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge">Served All Morning</span>
+          </div>
+        </div>
+
+        <div class="pdeli-menu-item" data-category="breakfast">
+          <div class="pdeli-menu-item-header">
+            <span class="pdeli-menu-item-name">Western Deli Omelet</span>
+            <span class="pdeli-menu-item-price">$12.50</span>
+          </div>
+          <p class="pdeli-menu-item-desc">Three farm-fresh eggs folded with diced ham, bell peppers, onions, and American cheese, served with home fries and buttered toast.</p>
+          <div class="pdeli-menu-item-badges">
+            <span class="pdeli-badge">Breakfast Special</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+  <footer class="pdeli-footer">
+    <div class="pdeli-footer-container">
+      <div class="pdeli-footer-brand">
+        <h4>Phil’s Deli To Go</h4>
+        <p>A Charlotte tradition since 1979 founded by Phil Levine. Serving hot pastrami, famous grilled Reubens, fluffy matzo ball soup, and overstuffed deli classics.</p>
+      </div>
+      <div class="pdeli-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="new-york-deli-tradition.html">Deli Tradition</a></li>
+          <li><a href="reubens-and-pastrami.html">Reubens &amp; Pastrami</a></li>
+          <li><a href="matzo-soup-and-sides.html">Matzo Soup &amp; Sides</a></li>
+          <li><a href="visit.html">Locations &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="pdeli-footer-hours">
+        <h5>Locations &amp; Contact</h5>
+        <p style="color: #9cb1c9; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Providence Road:</strong> 4223 Providence Rd #6</p>
+        <p style="color: #9cb1c9; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 366-8811</p>
+        <p style="color: #9cb1c9; font-size: 0.88rem;">Mon - Sat: 7:00 AM - 8:00 PM<br>Sunday: 8:00 AM - 3:00 PM</p>
+      </div>
+    </div>
+    <div class="pdeli-footer-bottom">
+      <p>&copy; 2026 Phil’s Deli To Go. All rights reserved. Delicatessen showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

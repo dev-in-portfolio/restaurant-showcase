@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caribbean Catering & Party Trays | Island Flavors II Charlotte</title>
+  <meta name="description" content="Calculate and order Jamaican catering in Charlotte, NC. Jerk chicken pans, braised oxtail trays, curry goat, rasta pasta, and fresh sorrel for 15 to 200+ guests.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="isl-topbar">
+    <div class="isl-topbar-info">
+      <span>6307 The Plaza, Suite A2, Charlotte, NC 28215</span>
+      <span>Mon-Thu: 10:30 AM - 9:00 PM | Fri-Sat: 10:30 AM - 10:00 PM | Sun: 11:00 AM - 8:00 PM</span>
+    </div>
+    <div>
+      <a href="tel:+19802257071" class="isl-topbar-link">Order Call: (980) 225-7071</a>
+    </div>
+  </div>
+  <header class="isl-navbar">
+    <div class="isl-nav-container">
+      <a href="index.html" class="isl-brand">
+        <span class="isl-brand-name">Island Flavors <span>II</span></span>
+        <span class="isl-brand-tagline">Authentic Jamaican Kitchen</span>
+      </a>
+      <ul class="isl-nav-links">
+        <li class="isl-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="isl-nav-item"><a href="menu.html" class="">Caribbean Menu</a></li>
+        <li class="isl-nav-item"><a href="catering-parties.html" class="active">Catering & Feasts</a></li>
+        <li class="isl-nav-item"><a href="breakfast-specials.html" class="">Breakfast & Lunch</a></li>
+        <li class="isl-nav-item"><a href="about.html" class="">Our Story</a></li>
+        <li class="isl-nav-item"><a href="contact.html" class="">Visit & Hours</a></li>
+        <li class="isl-nav-item"><a href="tel:+19802257071" class="isl-nav-cta">Call (980) 225-7071</a></li>
+      </ul>
+      <button class="isl-menu-toggle" id="islMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="isl-mobile-menu" id="islMobileMenu">
+      <ul class="isl-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="">Caribbean Menu</a></li>
+        <li><a href="catering-parties.html" class="active">Catering & Feasts</a></li>
+        <li><a href="breakfast-specials.html" class="">Breakfast & Lunch</a></li>
+        <li><a href="about.html" class="">Our Story</a></li>
+        <li><a href="contact.html" class="">Visit & Hours</a></li>
+        <li><a href="tel:+19802257071" class="isl-nav-cta" style="display:inline-block; margin-top:0.5rem;">Call To Order</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="isl-section-sm isl-section-dark">
+    <div class="isl-container" style="text-align: center;">
+      <span class="isl-eyebrow">Events, Weddings & Celebrations</span>
+      <h1 class="isl-title-xl">Caribbean Catering & Feasts</h1>
+      <p class="isl-lead">Bring authentic Kingston and Montego Bay flavors to your next gathering with our half-pan and full-pan catering service.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <section class="isl-section">
+    <div class="isl-container">
+      <div class="isl-section-header">
+        <span class="isl-eyebrow">Instant Quote Estimator</span>
+        <h2 class="isl-title-lg">Caribbean Feast & Catering Calculator</h2>
+        <p class="isl-lead">Select your estimated guest count, choose your favorite island package, and customize side dishes and beverages to calculate your exact catering requirements and estimated quote.</p>
+      </div>
+
+      <div class="isl-calc-panel">
+        <div class="isl-calc-grid">
+          <!-- Controls Column -->
+          <div class="isl-calc-controls">
+            <div class="isl-calc-group">
+              <label for="islCalcGuests" class="isl-calc-label">
+                <span>Estimated Guest Count</span>
+                <span id="islCalcGuestCountDisplay" style="color: var(--isl-papaya);">20 Guests</span>
+              </label>
+              <select id="islCalcGuests" class="isl-calc-select">
+                <option value="15">15 Guests (Intimate Gathering)</option>
+                <option value="20" selected>20 Guests (Small Party)</option>
+                <option value="35">35 Guests (Office / Celebration)</option>
+                <option value="50">50 Guests (Family Reunion)</option>
+                <option value="75">75 Guests (Large Gathering)</option>
+                <option value="100">100 Guests (Wedding / Banquet)</option>
+                <option value="150">150+ Guests (Festival / Corporate)</option>
+              </select>
+            </div>
+
+            <div class="isl-calc-group">
+              <label for="islCalcPackage" class="isl-calc-label">Catering Feast Package</label>
+              <select id="islCalcPackage" class="isl-calc-select">
+                <option value="yardie" selected>Yardie Classic ($16.50/person) - Pit Jerk & Brown Stew Chicken</option>
+                <option value="reggae">Reggae Island Trio ($21.00/person) - Jerk Chicken, Braised Oxtails & Curry Goat</option>
+                <option value="caribbean-royale">Caribbean Royale ($26.50/person) - Braised Oxtails, Jerk Salmon Rasta Pasta & Jerk Chicken</option>
+              </select>
+            </div>
+
+            <div class="isl-calc-group">
+              <label class="isl-calc-label">Included & Additional Sides (2 included, extra sides +$3/guest)</label>
+              <div class="isl-checkbox-grid">
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-side-check" value="Jamaican Rice & Peas" checked> Rice & Peas
+                </label>
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-side-check" value="Steamed Cabbage" checked> Steamed Cabbage
+                </label>
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-side-check" value="Sweet Fried Plantains"> Fried Plantains
+                </label>
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-side-check" value="Baked Macaroni & Cheese"> Baked Mac & Cheese
+                </label>
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-side-check" value="Festival Sweet Dumplings"> Festival Dumplings
+                </label>
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-side-check" value="White Rice & Gravy"> White Rice
+                </label>
+              </div>
+            </div>
+
+            <div class="isl-calc-group">
+              <label class="isl-calc-label">Beverage Gallon Add-Ons ($18/gallon, ~10-12 servings/gal)</label>
+              <div class="isl-checkbox-grid">
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-drink-check" value="Homemade Sorrel Ginger"> Fresh Sorrel Ginger
+                </label>
+                <label class="isl-checkbox-item">
+                  <input type="checkbox" class="isl-drink-check" value="Tropical Fruit Punch"> Island Fruit Punch
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="isl-calc-summary-card">
+            <div>
+              <h3 style="font-family: var(--isl-font-display); font-size: 1.4rem; margin-bottom: 1.25rem; color: var(--isl-gold-primary);">Catering Allocation Breakdown</h3>
+              
+              <div class="isl-summary-row">
+                <span>Entree Pan Requirement:</span>
+                <strong id="islCalcEntreePans">1 Full Pan(s)</strong>
+              </div>
+              <div class="isl-summary-row">
+                <span>Side Dish Pan Requirement:</span>
+                <strong id="islCalcSidePans">2 Full Pan(s)</strong>
+              </div>
+              <div class="isl-summary-row">
+                <span>Beverage Gallons:</span>
+                <strong id="islCalcDrinkGallons">0 Gallon(s)</strong>
+              </div>
+              
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #b7d6cb; line-height: 1.4;" id="islCalcDetails">
+                Yardie Classic Feast for 20 guests. Entrees: Pit-Smoked Jerk Chicken & Brown Stew Chicken. Sides: Rice & Peas, Steamed Cabbage.
+              </div>
+            </div>
+
+            <div>
+              <div class="isl-summary-total">
+                <span style="font-size: 1.1rem; font-weight: 600;">Estimated Package Total:</span>
+                <span class="isl-summary-total-val" id="islCalcTotalCost">$330.00</span>
+              </div>
+
+              <div class="isl-calc-action-bar">
+                <a href="mailto:islandflavors.clt@gmail.com" id="islMailQuoteLink" class="isl-btn isl-btn-primary" style="width: 100%;">Email This Catering Request</a>
+                <button type="button" id="islCopyQuoteBtn" class="isl-btn isl-btn-outline" style="width: 100%;">Copy Quote Summary</button>
+                <a href="tel:+19802257071" class="isl-btn isl-btn-papaya" style="width: 100%;">Call (980) 225-7071 to Reserve Date</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A La Carte Tray Pricing Table -->
+  <section class="isl-section isl-section-light">
+    <div class="isl-container">
+      <div class="isl-section-header">
+        <span class="isl-eyebrow">A La Carte Pan Menu</span>
+        <h2 class="isl-title-lg">Individual Half-Pan & Full-Pan Trays</h2>
+        <p class="isl-lead">Prefer to build your own custom combination of pans? Order specific meats and sides directly by the tray.</p>
+      </div>
+
+      <div class="isl-grid-2">
+        <div class="isl-card">
+          <h3 class="isl-title-md" style="color: var(--isl-green-deep); border-bottom: 2px solid var(--isl-gold-primary); padding-bottom: 0.5rem;">Catering Meats & Entrees</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Pit-Smoked Jerk Chicken</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Quartered chicken smoked with hardwood</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $75 | Full: $140</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Slow-Braised Oxtails & Butter Beans</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Tender beef in rich browning gravy</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $120 | Full: $230</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Tender Jamaican Curry Goat</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Authentic Betapac curry with pimento</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $105 | Full: $195</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Jerk Salmon Rasta Pasta</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Creamy garlic jerk penne with salmon</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $95 | Full: $180</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <strong>Brown Stew Chicken</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Simmered with onions & bell peppers</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $65 | Full: $120</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="isl-card">
+          <h3 class="isl-title-md" style="color: var(--isl-green-deep); border-bottom: 2px solid var(--isl-gold-primary); padding-bottom: 0.5rem;">Catering Sides & Starters</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Traditional Rice & Peas</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Simmered in coconut milk, thyme & scallion</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $40 | Full: $75</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Fried Sweet Plantains</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Ripe golden plantain slices</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $45 | Full: $80</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Steamed Seasoned Cabbage</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Tender cabbage with carrots and bell peppers</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $35 | Full: $65</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--isl-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Southern Caribbean Mac & Cheese</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Baked three-cheese elbow pasta</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">Half: $50 | Full: $90</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <strong>Cocktail Beef Cocktail Patties (24 Pcs)</strong>
+                <p style="font-size: 0.85rem; color: var(--isl-text-muted);">Flaky mini pastry turnovers</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="color: var(--isl-papaya); font-weight: 700;">$48 per tray</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="isl-footer">
+    <div class="isl-container">
+      <div class="isl-footer-grid">
+        <div class="isl-footer-brand">
+          <h3>Island Flavors <span>II</span></h3>
+          <p>East Charlotte's home for authentic Jamaican culinary craft. Slow-simmered oxtails, authentic jerk pit barbecued chicken, savory curry goat, and morning island breakfasts prepared with island pride.</p>
+        </div>
+        <div class="isl-footer-col">
+          <h4>Explore</h4>
+          <ul class="isl-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="catering-parties.html">Catering Services</a></li>
+            <li><a href="breakfast-specials.html">Breakfast Specials</a></li>
+            <li><a href="about.html">Heritage & Story</a></li>
+            <li><a href="contact.html">Location & Contact</a></li>
+          </ul>
+        </div>
+        <div class="isl-footer-col">
+          <h4>Hours</h4>
+          <ul class="isl-footer-links">
+            <li>Mon - Thu: 10:30 AM - 9:00 PM</li>
+            <li>Fri - Sat: 10:30 AM - 10:00 PM</li>
+            <li>Sunday: 11:00 AM - 8:00 PM</li>
+            <li>Dine-In, Takeout & Catering</li>
+          </ul>
+        </div>
+        <div class="isl-footer-col">
+          <h4>Contact Us</h4>
+          <ul class="isl-footer-links">
+            <li>6307 The Plaza, Suite A2</li>
+            <li>Charlotte, NC 28215</li>
+            <li><a href="tel:+19802257071">(980) 225-7071</a></li>
+            <li><a href="mailto:islandflavors.clt@gmail.com">islandflavors.clt@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="isl-footer-bottom">
+        <p>&copy; 2026 Island Flavors II. All Rights Reserved. East Charlotte Jamaican Kitchen & Catering.</p>
+        <p>6307 The Plaza, Charlotte, NC 28215</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

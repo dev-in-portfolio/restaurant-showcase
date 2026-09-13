@@ -1,0 +1,263 @@
+{
+  "slug": "johnny-burrito",
+  "generatedAt": "2026-09-10T19:11:32.678Z",
+  "htmlPages": [
+    "famous-burritos-and-bowls.html",
+    "index.html",
+    "menu.html",
+    "salsa-bar-and-concourse-catering.html",
+    "tuesday-friday-tamale-tradition.html",
+    "visit.html"
+  ],
+  "cssFiles": [
+    "site.css"
+  ],
+  "jsFiles": [
+    "site.js"
+  ],
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "Minimum substantive HTML page count",
+      "passed": true,
+      "detail": "6 HTML pages found; minimum is 5"
+    },
+    {
+      "name": "index.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit/contact page exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS balance site.css",
+      "passed": true,
+      "detail": "balanced"
+    },
+    {
+      "name": "JavaScript parse site.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "famous-burritos-and-bowls.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "famous-burritos-and-bowls.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "famous-burritos-and-bowls.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "famous-burritos-and-bowls.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "famous-burritos-and-bowls.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "famous-burritos-and-bowls.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "index.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "menu.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "salsa-bar-and-concourse-catering.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "salsa-bar-and-concourse-catering.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "salsa-bar-and-concourse-catering.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "salsa-bar-and-concourse-catering.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "salsa-bar-and-concourse-catering.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "salsa-bar-and-concourse-catering.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tuesday-friday-tamale-tradition.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tuesday-friday-tamale-tradition.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tuesday-friday-tamale-tradition.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "tuesday-friday-tamale-tradition.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "tuesday-friday-tamale-tradition.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "tuesday-friday-tamale-tradition.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "visit.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "visit.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No exact duplicate HTML pages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Creative Brief",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Claim Ledger",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Add-On Preservation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Cross-Demo Diversity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cross-demo design diversity",
+      "passed": true,
+      "detail": "PASS johnny-burrito: closest recent design 'french-quarter-restaurant' scored 0.076."
+    }
+  ]
+}

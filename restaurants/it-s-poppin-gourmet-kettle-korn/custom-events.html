@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popcorn Bars, Wedding Favors & Corporate Gifting | It's Poppin! Charlotte</title>
+  <meta name="description" content="Calculate and order custom gourmet popcorn bars, personalized wedding favor bags, and corporate gift tins from It's Poppin! in Charlotte, NC.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="pop-topbar">
+    <div class="pop-topbar-info">
+      <span>224 E 7th St, Charlotte, NC 28202 (The Market at 7th Street)</span>
+      <span>Mon-Thu: 10AM-6PM | Fri-Sat: 10AM-8PM | Sun: 11AM-5PM</span>
+    </div>
+    <div>
+      <a href="tel:+17043276044" class="pop-topbar-link">Order Desk: (704) 327-6044</a>
+    </div>
+  </div>
+  <header class="pop-navbar">
+    <div class="pop-nav-container">
+      <a href="index.html" class="pop-brand">
+        <span class="pop-brand-name">It's Poppin! <span>Kettle Korn</span></span>
+        <span class="pop-brand-tagline">Over 60 Artisan Flavors & Fruit Waters</span>
+      </a>
+      <ul class="pop-nav-links">
+        <li class="pop-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="pop-nav-item"><a href="menu.html" class="">60+ Flavors Menu</a></li>
+        <li class="pop-nav-item"><a href="custom-events.html" class="active">Popcorn Bars & Favors</a></li>
+        <li class="pop-nav-item"><a href="fruit-waters.html" class="">Fruit Waters</a></li>
+        <li class="pop-nav-item"><a href="about.html" class="">Our Story</a></li>
+        <li class="pop-nav-item"><a href="contact.html" class="">Visit & Hours</a></li>
+        <li class="pop-nav-item"><a href="tel:+17043276044" class="pop-nav-cta">Call (704) 327-6044</a></li>
+      </ul>
+      <button class="pop-menu-toggle" id="popMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="pop-mobile-menu" id="popMobileMenu">
+      <ul class="pop-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="">60+ Flavors Menu</a></li>
+        <li><a href="custom-events.html" class="active">Popcorn Bars & Favors</a></li>
+        <li><a href="fruit-waters.html" class="">Fruit Waters</a></li>
+        <li><a href="about.html" class="">Our Story</a></li>
+        <li><a href="contact.html" class="">Visit & Hours</a></li>
+        <li><a href="tel:+17043276044" class="pop-nav-cta" style="display:inline-block; margin-top:0.5rem;">Call To Order</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="pop-section-sm pop-section-dark">
+    <div class="pop-container" style="text-align: center;">
+      <span class="pop-eyebrow">Weddings, Birthdays & Corporate Favors</span>
+      <h1 class="pop-title-xl">Gourmet Popcorn Bars & Favors</h1>
+      <p class="pop-lead">Make your celebration unforgettable with custom-labeled favor bags, bulk party gallons, or a full DIY Popcorn Buffet.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Event Calculator -->
+  <section class="pop-section">
+    <div class="pop-container">
+      <div class="pop-section-header">
+        <span class="pop-eyebrow">Instant Quote Estimator</span>
+        <h2 class="pop-title-lg">Event & Popcorn Bar Calculator</h2>
+        <p class="pop-lead">Select your estimated guest count, choose your favorite packaging format, and add custom label design or fruit water stations to calculate your exact requirements and estimated cost.</p>
+      </div>
+
+      <div class="pop-calc-panel">
+        <div class="pop-calc-grid">
+          <!-- Controls Column -->
+          <div>
+            <div class="pop-calc-group">
+              <label for="popCalcGuests" class="pop-calc-label">
+                <span>Estimated Guest Count</span>
+                <span id="popCalcGuestDisplay" style="color: var(--pop-coral);">50 Guests</span>
+              </label>
+              <select id="popCalcGuests" class="pop-calc-select">
+                <option value="25">25 Guests (Intimate Party / Shower)</option>
+                <option value="50" selected>50 Guests (Birthday / Graduation)</option>
+                <option value="75">75 Guests (Office Party / Fellowship)</option>
+                <option value="100">100 Guests (Wedding / Gala)</option>
+                <option value="150">150 Guests (Large Wedding Reception)</option>
+                <option value="200">200 Guests (Corporate Conference)</option>
+                <option value="300">300+ Guests (Festival / University Event)</option>
+              </select>
+            </div>
+
+            <div class="pop-calc-group">
+              <label for="popCalcStyle" class="pop-calc-label">Packaging & Service Style</label>
+              <select id="popCalcStyle" class="pop-calc-select">
+                <option value="party-bags" selected>Individual Sealed Favor Bags ($4.50/guest) - Pre-Portioned & Fresh</option>
+                <option value="popcorn-bar">Full Popcorn Bar Buffet ($5.75/guest) - Bulk Troughs, Tongs, Scoops & Bags</option>
+                <option value="gift-tins">1-Gallon Custom Gift Tins ($9.50/guest) - Premium Reusable Designer Metal Tins</option>
+              </select>
+            </div>
+
+            <div class="pop-calc-group">
+              <label class="pop-calc-label">Select Event Flavors (Choose up to 4)</label>
+              <div class="pop-checkbox-grid">
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-flavor-check" value="Southern Fried Chicken" checked> Fried Chicken
+                </label>
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-flavor-check" value="Cookies & Cream" checked> Cookies & Cream
+                </label>
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-flavor-check" value="Classic Kettle Korn" checked> Classic Kettle Korn
+                </label>
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-flavor-check" value="Buffalo Hot Wings"> Buffalo Hot Wings
+                </label>
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-flavor-check" value="Strawberry Cheesecake"> Strawberry Cheesecake
+                </label>
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-flavor-check" value="Caramel Pecan Crunch"> Caramel Pecan Crunch
+                </label>
+              </div>
+            </div>
+
+            <div class="pop-calc-group">
+              <label class="pop-calc-label">Event Enhancements & Add-Ons</label>
+              <div class="pop-checkbox-grid">
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-addon-check" value="Custom Logo / Monogram Stickers" data-price="0.60" data-per-guest="true"> Custom Sticker Labels (+$0.60/guest)
+                </label>
+                <label class="pop-checkbox-item">
+                  <input type="checkbox" class="pop-addon-check" value="Fruit Water Dispenser Station" data-price="95.00" data-per-guest="false"> Fruit Water Station (+$95 flat)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="pop-calc-summary-card">
+            <div>
+              <h3 style="font-family: var(--pop-font-display); font-size: 1.4rem; color: var(--pop-gold); margin-bottom: 1.25rem;">Event Order Allocation</h3>
+              
+              <div class="pop-summary-row">
+                <span>Total Favor Units:</span>
+                <strong id="popCalcBagsDisplay">50 Favor Units</strong>
+              </div>
+              <div class="pop-summary-row">
+                <span>Total Gallons Required:</span>
+                <strong id="popCalcGallonsDisplay">7 Gallons Total</strong>
+              </div>
+              
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #dfd0f5; line-height: 1.5;" id="popCalcDetails">
+                Individual Sealed Favor Bags for 50 guests. Flavors: Southern Fried Chicken, Cookies & Cream, Classic Kettle Korn.
+              </div>
+            </div>
+
+            <div>
+              <div class="pop-summary-total">
+                <span style="font-size: 1.1rem; font-weight: 600;">Estimated Total:</span>
+                <span class="pop-summary-total-val" id="popCalcTotalCost">$225.00</span>
+              </div>
+
+              <div class="pop-calc-action-bar">
+                <a href="mailto:info@itspoppingourmetkettlekorn.com" id="popMailQuoteLink" class="pop-btn pop-btn-primary" style="width: 100%;">Email Event Inquiry</a>
+                <button type="button" id="popCopyQuoteBtn" class="pop-btn pop-btn-outline" style="width: 100%;">Copy Quote Summary</button>
+                <a href="tel:+17043276044" class="pop-btn pop-btn-coral" style="width: 100%;">Call (704) 327-6044 To Reserve</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pop-footer">
+    <div class="pop-container">
+      <div class="pop-footer-grid">
+        <div class="pop-footer-brand">
+          <h3>It's Poppin! <span>Gourmet Kettle Korn</span></h3>
+          <p>Uptown Charlotte's premier artisan snackmaker located at The Market at 7th Street. Over 60 handcrafted popcorn flavors, fresh fruit waters with unlimited refills, and custom event favors.</p>
+        </div>
+        <div class="pop-footer-col">
+          <h4>Explore</h4>
+          <ul class="pop-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Flavor Menu</a></li>
+            <li><a href="custom-events.html">Events & Popcorn Bars</a></li>
+            <li><a href="fruit-waters.html">Handcrafted Waters</a></li>
+            <li><a href="about.html">Our Family Story</a></li>
+            <li><a href="contact.html">Market Hours & Parking</a></li>
+          </ul>
+        </div>
+        <div class="pop-footer-col">
+          <h4>Market Hours</h4>
+          <ul class="pop-footer-links">
+            <li>Monday - Thursday: 10:00 AM - 6:00 PM</li>
+            <li>Friday - Saturday: 10:00 AM - 8:00 PM</li>
+            <li>Sunday: 11:00 AM - 5:00 PM</li>
+            <li>90-Minute Parking Validation Available</li>
+          </ul>
+        </div>
+        <div class="pop-footer-col">
+          <h4>Connect</h4>
+          <ul class="pop-footer-links">
+            <li>224 E 7th St (Market at 7th St)</li>
+            <li>Charlotte, NC 28202</li>
+            <li><a href="tel:+17043276044">(704) 327-6044</a></li>
+            <li><a href="mailto:info@itspoppingourmetkettlekorn.com">info@itspoppingourmetkettlekorn.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pop-footer-bottom">
+        <p>&copy; 2026 It's Poppin! Gourmet Kettle Korn LLC. All Rights Reserved. Charlotte, NC.</p>
+        <p>The Market at 7th Street, Uptown Charlotte</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

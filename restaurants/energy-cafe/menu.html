@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuel Menu &amp; Healthy Dining | Energy Cafe | Uptown Charlotte</title>
+  <meta name="description" content="Explore Energy Cafe's full menu of healthy grain bowls, Popeye Wraps, fresh rotisserie chicken, high-performance smoothies, and breakfast fuel in Uptown Charlotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="nrg-topbar">
+    <div class="nrg-container nrg-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>Two Uptown Locations: 101 S Tryon St (BOA Plaza) &bull; 550 S Tryon St (Duke Energy)</span>
+        <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
+        <span>Mon-Thu: 7AM-2PM &bull; Fri: 7AM-1PM</span>
+      </div>
+      <div>
+        <span>Express Order / BOA Plaza: </span>
+        <a href="tel:7049101094" class="nrg-topbar-link">(704) 910-1094</a>
+      </div>
+    </div>
+  </div>
+  <header class="nrg-navbar">
+    <div class="nrg-nav-container">
+      <a href="index.html" class="nrg-brand">
+        <div class="nrg-brand-name">ENERGY <span>CAFE</span></div>
+        <div class="nrg-brand-tagline">Clean Fuel &bull; Fresh Protein &bull; Uptown Charlotte</div>
+      </a>
+      <ul class="nrg-nav-links">
+        <li class="nrg-nav-item"><a href="index.html">Home</a></li>
+<li class="nrg-nav-item"><a href="menu.html" class="active">Fuel Menu</a></li>
+<li class="nrg-nav-item"><a href="smoothies-bowls.html">Smoothies &amp; A&ccedil;ai</a></li>
+<li class="nrg-nav-item"><a href="catering-corporate.html">Healthy Catering</a></li>
+<li class="nrg-nav-item"><a href="about.html">Our Philosophy</a></li>
+<li class="nrg-nav-item"><a href="contact.html">Uptown Locations</a></li>
+
+        <li><a href="tel:7049101094" class="nrg-nav-cta">Call (704) 910-1094</a></li>
+      </ul>
+      <button class="nrg-menu-toggle" id="nrgMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="nrg-mobile-menu" id="nrgMobileMenu">
+      <ul class="nrg-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html" class="active">Fuel Menu</a></li>
+<li><a href="smoothies-bowls.html">Smoothies &amp; A&ccedil;ai</a></li>
+<li><a href="catering-corporate.html">Healthy Catering</a></li>
+<li><a href="about.html">Our Philosophy</a></li>
+<li><a href="contact.html">Uptown Locations</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7049101094" class="nrg-nav-cta" style="text-align: center;">Call (704) 910-1094</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="nrg-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="nrg-container" style="text-align: center; max-width: 820px;">
+      <span class="nrg-hero-badge">Clean Nutrition &bull; Whole Ingredients</span>
+      <h1 class="nrg-title-xl">Power Bowls, Wraps &amp; Smoothies</h1>
+      <p class="nrg-lead">Crafted fresh daily with all-natural proteins, organic grains, raw greens, and house scratch dressings at both South Tryon locations.</p>
+      <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="tel:7049101094" class="nrg-btn nrg-btn-primary">Call BOA Plaza: (704) 910-1094</a>
+        <a href="tel:9803550240" class="nrg-btn nrg-btn-lime">Call Duke Energy: (980) 355-0240</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="nrg-section">
+    <div class="nrg-container">
+      <div class="nrg-filter-bar">
+        <button class="nrg-filter-btn active" data-category="all">Full Menu</button>
+        <button class="nrg-filter-btn" data-category="bowls">Power Grain Bowls</button>
+        <button class="nrg-filter-btn" data-category="wraps">Energy Wraps &amp; Paninis</button>
+        <button class="nrg-filter-btn" data-category="smoothies">Performance Smoothies</button>
+        <button class="nrg-filter-btn" data-category="breakfast">Breakfast Fuel (7:00-10:30)</button>
+      </div>
+
+      <div class="nrg-grid-3" id="nrgMenuContainer">
+        <!-- Power Bowls -->
+        <div class="nrg-dish-card nrg-menu-item" data-category="bowls">
+          <div class="nrg-dish-img">
+            <img src="images/quinoa-bowl.jpg" alt="Organic Quinoa Power Bowl with grilled chicken and avocado">
+            <span class="nrg-dish-badge">Top Seller</span>
+          </div>
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Organic Quinoa Power Bowl</h3>
+              <div class="nrg-dish-price">$14.50</div>
+            </div>
+            <p class="nrg-dish-desc">Warm tri-color organic quinoa, all-natural grilled chicken breast, fresh avocado, roasted sweet potato, broccoli florets, toasted pepitas, and green goddess tahini dressing.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Gluten-Free</span>
+              <span class="nrg-tag">38g Protein</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="bowls">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Mediterranean Falafel Bowl</h3>
+              <div class="nrg-dish-price">$13.75</div>
+            </div>
+            <p class="nrg-dish-desc">House-baked golden herb falafels, organic quinoa, house hummus, cucumber tomato Israeli salad, kalamata olives, pickled red onions, and lemon herb dressing.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Vegetarian / Vegan</span>
+              <span class="nrg-tag">House Hummus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="bowls">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Rotisserie Citrus Cobb Bowl</h3>
+              <div class="nrg-dish-price">$14.25</div>
+            </div>
+            <p class="nrg-dish-desc">Chopped romaine and baby spinach, hand-pulled rotisserie chicken, hard-boiled egg, avocado, cherry tomatoes, nitrate-free bacon crumbles, blue cheese, and citrus herb vinaigrette.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Keto Friendly</span>
+              <span class="nrg-tag">42g Protein</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wraps & Paninis -->
+        <div class="nrg-dish-card nrg-menu-item" data-category="wraps">
+          <div class="nrg-dish-img">
+            <img src="images/popeye-wrap.jpg" alt="The famous Popeye Wrap">
+            <span class="nrg-dish-badge">Uptown Icon</span>
+          </div>
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">The Famous Popeye Wrap</h3>
+              <div class="nrg-dish-price">$12.95</div>
+            </div>
+            <p class="nrg-dish-desc">Green spinach herb tortilla, grilled chicken breast, fresh baby spinach, vine ripe tomatoes, crumbled feta cheese, and house lemon herb vinaigrette.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">House Specialty</span>
+              <span class="nrg-tag">Lean Protein</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="wraps">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Chipotle Turkey Avocado Panini</h3>
+              <div class="nrg-dish-price">$13.50</div>
+            </div>
+            <p class="nrg-dish-desc">Slow-roasted turkey breast, fresh avocado, melted provolone, roasted red peppers, and smoky chipotle Greek yogurt aioli pressed hot on sprouted whole grain sourdough.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Pressed Warm</span>
+              <span class="nrg-tag">Avocado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="wraps">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Buffalo Cauliflower Crunch Wrap</h3>
+              <div class="nrg-dish-price">$12.50</div>
+            </div>
+            <p class="nrg-dish-desc">Crispy roasted cauliflower tossed in tangy cayenne buffalo sauce with shredded carrots, celery, romaine, and house vegan buttermilk ranch in a whole wheat wrap.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Plant-Based</span>
+              <span class="nrg-tag">Spicy Buffalo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smoothies -->
+        <div class="nrg-dish-card nrg-menu-item" data-category="smoothies">
+          <div class="nrg-dish-img">
+            <img src="images/acai-smoothie.jpg" alt="The Hulk superfood smoothie">
+            <span class="nrg-dish-badge">Super Green</span>
+          </div>
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">The Hulk Superfood Smoothie</h3>
+              <div class="nrg-dish-price">$8.50</div>
+            </div>
+            <p class="nrg-dish-desc">Organic spinach, baby kale, mango, banana, unsweetened almond milk, chia seeds, and 20g organic vanilla plant protein.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">20g Protein</span>
+              <span class="nrg-tag">No Added Sugar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="smoothies">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Java Diesel Energy Shake</h3>
+              <div class="nrg-dish-price">$8.75</div>
+            </div>
+            <p class="nrg-dish-desc">House cold brew coffee, natural peanut butter, ripe banana, dark cocoa nibs, oats, and 25g chocolate whey protein.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Caffeine Boost</span>
+              <span class="nrg-tag">25g Protein</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="smoothies">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Recharge A&ccedil;ai Superfruit Bowl</h3>
+              <div class="nrg-dish-price">$10.50</div>
+            </div>
+            <p class="nrg-dish-desc">Thick blended organic a&ccedil;ai berry base topped with gluten-free granola, sliced strawberries, blueberries, banana, chia seeds, and local honey drizzle.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">A&ccedil;ai Bowl</span>
+              <span class="nrg-tag">Antioxidants</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakfast Fuel -->
+        <div class="nrg-dish-card nrg-menu-item" data-category="breakfast">
+          <div class="nrg-dish-img">
+            <img src="images/breakfast-toast.jpg" alt="Avocado toast on whole grain bread">
+            <span class="nrg-dish-badge">Morning Fuel</span>
+          </div>
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Loaded Smashed Avocado Toast</h3>
+              <div class="nrg-dish-price">$8.50</div>
+            </div>
+            <p class="nrg-dish-desc">Thick sprouted multigrain toast, crushed Haas avocado, cherry tomato relish, microgreens, hemp hearts, red pepper flakes, and extra virgin olive oil.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Healthy Fats</span>
+              <span class="nrg-tag">Breakfast</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="breakfast">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Egg White &amp; Turkey Bacon Wrap</h3>
+              <div class="nrg-dish-price">$8.95</div>
+            </div>
+            <p class="nrg-dish-desc">Scrambled organic egg whites, crispy turkey bacon, baby spinach, and melted Swiss cheese in a whole wheat wrap with fire-roasted salsa.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">High Protein</span>
+              <span class="nrg-tag">Under 350 Cal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nrg-dish-card nrg-menu-item" data-category="breakfast">
+          <div class="nrg-dish-body">
+            <div class="nrg-dish-header">
+              <h3 class="nrg-dish-name">Steel-Cut Protein Oatmeal</h3>
+              <div class="nrg-dish-price">$6.95</div>
+            </div>
+            <p class="nrg-dish-desc">Warm slow-simmered steel-cut oats folded with vanilla protein, cinnamon, toasted walnuts, and fresh wild blueberries.</p>
+            <div class="nrg-dish-tags">
+              <span class="nrg-tag">Warm Oats</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nrg-info-box" style="margin-top: 3.5rem;">
+        <h4>Nutritional Transparency</h4>
+        <p>All meals are prepared with zero artificial preservatives or refined syrups. Caloric counts and macronutrient breakdowns are available on in-store digital boards. Custom gluten-free and dairy-free substitutions are gladly accommodated.</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="nrg-footer">
+    <div class="nrg-container">
+      <div class="nrg-footer-grid">
+        <div class="nrg-footer-brand">
+          <h3>ENERGY <span>CAFE</span></h3>
+          <p>Powering Uptown Charlotte's corporate workforce, financial professionals, and urban athletes with clean, nutrient-rich functional food. Warm grain bowls, signature Popeye Wraps, fresh rotisserie chicken, and high-performance smoothies.</p>
+        </div>
+        <div class="nrg-footer-col">
+          <h4>Explore</h4>
+          <ul class="nrg-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Power Bowls &amp; Wraps</a></li>
+            <li><a href="smoothies-bowls.html">Smoothies &amp; Superfruit</a></li>
+            <li><a href="catering-corporate.html">Healthy Box Catering</a></li>
+            <li><a href="about.html">Clean Nutrition Mission</a></li>
+            <li><a href="contact.html">Uptown Locations &amp; Hours</a></li>
+          </ul>
+        </div>
+        <div class="nrg-footer-col">
+          <h4>Uptown Hours</h4>
+          <ul class="nrg-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Thursday:</strong><br>7:00 AM - 2:00 PM</li>
+            <li><strong style="color: #fff;">Friday:</strong><br>7:00 AM - 1:00 PM</li>
+            <li><strong style="color: #fff;">Saturday - Sunday:</strong><br>Closed (Catering By Pre-Order)</li>
+          </ul>
+        </div>
+        <div class="nrg-footer-col">
+          <h4>Dual Locations</h4>
+          <p style="margin-bottom: 0.5rem;"><strong style="color: var(--nrg-lime);">Bank of America Plaza:</strong><br>101 S Tryon St, Ste 1 &bull; <a href="tel:7049101094" style="color: #fff;">(704) 910-1094</a></p>
+          <p style="margin-bottom: 0.5rem;"><strong style="color: var(--nrg-lime);">Duke Energy Center:</strong><br>550 S Tryon St, Ste 120 &bull; <a href="tel:9803550240" style="color: #fff;">(980) 355-0240</a></p>
+          <p><strong style="color: var(--nrg-lime);">Catering Email:</strong><br><a href="mailto:catering@energycafecharlotte.com" style="color: #94a3b8;">catering@energycafecharlotte.com</a></p>
+        </div>
+      </div>
+      <div class="nrg-footer-bottom">
+        <div>&copy; 2026 Energy Cafe. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Nutrient-Dense Dining &bull; Fast Casual Wellness &bull; Corporate Box Lunches</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

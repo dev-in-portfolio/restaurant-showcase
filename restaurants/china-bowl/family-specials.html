@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Dinner Feasts, Party Trays & Calculator | China Bowl Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="cbw-header">
+    <div class="cbw-header-inner">
+      <a href="index.html" class="cbw-brand">
+        <span class="cbw-brand-title">China Bowl</span>
+        <span class="cbw-brand-tagline">Charlotte Chinese Kitchen &amp; Wok</span>
+      </a>
+      <button class="cbw-mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="cbw-nav">
+        <a href="index.html" class="cbw-nav-link ">Home</a>
+        <a href="menu.html" class="cbw-nav-link ">Wok Menu</a>
+        <a href="family-specials.html" class="cbw-nav-link active">Family Feasts</a>
+        <a href="chef-combos.html" class="cbw-nav-link ">Combination Platters</a>
+        <a href="about.html" class="cbw-nav-link ">Our Story</a>
+        <a href="contact.html" class="cbw-nav-link ">Hours &amp; Location</a>
+        <a href="tel:7043475021" class="cbw-nav-cta">Call (704) 347-5021</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cbw-hero" style="min-height: 50vh; background-image: url('images/family-platter.jpg');">
+      <div class="cbw-hero-overlay"></div>
+      <div class="cbw-hero-content">
+        <span class="cbw-hero-badge">Family Value &amp; Group Feasts</span>
+        <h1 class="cbw-hero-title">Family Feasts &amp; <span>Party Trays</span></h1>
+        <p class="cbw-hero-subtitle">
+          Multi-dish banquet combinations, generous half-pans, and party catering for family dinners, birthdays, and office lunches.
+        </p>
+      </div>
+    </section>
+
+    <section class="cbw-section">
+      <div class="cbw-container">
+        <div class="cbw-section-header">
+          <p class="cbw-subtitle">Complete Dinners</p>
+          <h2 class="cbw-title">Popular Family Dinner Packages</h2>
+          <p class="cbw-desc">
+            Packed with customer-favorite entrées, golden egg rolls, crab rangoon, and large fried rice containers.
+          </p>
+        </div>
+
+        <div class="cbw-grid-3">
+          <div class="cbw-card">
+            <div class="cbw-card-body">
+              <h3 class="cbw-card-title" style="color: var(--cbw-red);">Family Dinner for 2-3</h3>
+              <p class="cbw-card-desc">Includes Sweet &amp; Sour Chicken, Beef with Broccoli, Large Pork Fried Rice, 2 Egg Rolls, 4 Crab Rangoons, and fortune cookies.</p>
+              <div class="cbw-card-footer">
+                <span class="cbw-card-price">$36.95</span>
+                <span class="cbw-tag signature">Value Pack</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cbw-card">
+            <div class="cbw-card-body">
+              <h3 class="cbw-card-title" style="color: var(--cbw-gold-dark);">Family Dinner for 4-5</h3>
+              <p class="cbw-card-desc">General Tso's Chicken, Beef with Broccoli, Sweet &amp; Sour Pork, House Special Lo Mein, Extra Large Fried Rice, 4 Egg Rolls, 6 Crab Rangoons.</p>
+              <div class="cbw-card-footer">
+                <span class="cbw-card-price">$59.95</span>
+                <span class="cbw-tag gold">Most Popular</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cbw-card">
+            <div class="cbw-card-body">
+              <h3 class="cbw-card-title" style="color: var(--cbw-red);">Dragon Banquet for 6-8</h3>
+              <p class="cbw-card-desc">General Tso's Chicken, Happy Family, Sesame Beef, House Special Lo Mein, 2 XL Fried Rice, 8 Whole Wings, 8 Egg Rolls, 8 Crab Rangoons.</p>
+              <div class="cbw-card-footer">
+                <span class="cbw-card-price">$98.00</span>
+                <span class="cbw-tag signature">Feast Size</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Family Calculator -->
+    <section class="cbw-section cbw-section-alt">
+      <div class="cbw-container">
+        <div class="cbw-section-header">
+          <p class="cbw-subtitle">Instant Group Estimator</p>
+          <h2 class="cbw-title">Family Feast &amp; Party Tray Calculator</h2>
+          <p class="cbw-desc">
+            Planning dinner for the family or catering an office event in Charlotte? Calculate your custom banquet order below.
+          </p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="cbw-calc-box">
+            <div class="cbw-grid-2">
+              <div class="cbw-calc-group">
+                <label for="cbw-calc-guests" class="cbw-calc-label">Number of People</label>
+                <select id="cbw-calc-guests" class="cbw-select">
+                  <option value="4" selected>4 People (Standard Family Dinner)</option>
+                  <option value="6">6 People (Extended Family)</option>
+                  <option value="8">8 People (Party Feast)</option>
+                  <option value="12">12 People (Office Lunch Gathering)</option>
+                  <option value="18">18 People (Large Event Spread)</option>
+                </select>
+              </div>
+
+              <div class="cbw-calc-group">
+                <label for="cbw-calc-feast" class="cbw-calc-label">Feast Package Tier</label>
+                <select id="cbw-calc-feast" class="cbw-select">
+                  <option value="family-dinner-a">Classic Family Dinner ($12 / person)</option>
+                  <option value="family-dinner-b" selected>Deluxe General Tso Feast ($16 / person)</option>
+                  <option value="dragon-banquet">Dragon Seafood &amp; Beef Banquet ($22 / person)</option>
+                  <option value="catering-party-trays">Grand Party Trays (Half &amp; Full Pans) ($28 / person)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cbw-calc-group">
+              <label class="cbw-calc-label">Optional Add-On Trays</label>
+              <div class="cbw-checkbox-grid">
+                <label class="cbw-checkbox-label">
+                  <input type="checkbox" class="cbw-calc-addon" value="24"> Half Pan Crispy Wings (15 pcs) (+ $24)
+                </label>
+                <label class="cbw-checkbox-label">
+                  <input type="checkbox" class="cbw-calc-addon" value="18"> Dozen Crab Rangoon Box (12 pcs) (+ $18)
+                </label>
+                <label class="cbw-checkbox-label">
+                  <input type="checkbox" class="cbw-calc-addon" value="22"> Extra Half Pan Lo Mein Noodles (+ $22)
+                </label>
+                <label class="cbw-checkbox-label">
+                  <input type="checkbox" class="cbw-calc-addon" value="12"> Large Wonton Soup Tureen (+ $12)
+                </label>
+              </div>
+            </div>
+
+            <div class="cbw-calc-result">
+              <div>
+                <span class="cbw-calc-total-label">Estimated Feast Total:</span>
+                <p style="font-size: 0.8rem; color: var(--cbw-stone-600); margin-top: 0.25rem;">Includes fortune cookies, sauces, paper plates, and utensils upon request.</p>
+              </div>
+              <div class="cbw-calc-total-val" id="cbw-calc-total">$64</div>
+            </div>
+
+            <div style="margin-top: 1.75rem; text-align: center;">
+              <a href="contact.html" class="cbw-btn cbw-btn-primary">Call to Place Family Feast Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="cbw-footer">
+    <div class="cbw-container">
+      <div class="cbw-footer-grid">
+        <div class="cbw-footer-col">
+          <div class="cbw-brand" style="margin-bottom: 1rem;">
+            <span class="cbw-brand-title" style="color: #fca5a5;">China Bowl</span>
+            <span class="cbw-brand-tagline" style="color: #fde68a;">Classic Chinese-American Kitchen</span>
+          </div>
+          <p style="color: var(--cbw-stone-200); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Charlotte's trusted neighborhood Chinese wok kitchen serving sizzling General Tso's chicken, house special fried rice, and family dinner feasts daily.
+          </p>
+          <p style="color: #fde68a; font-weight: 700; font-size: 0.95rem;">
+            3101 The Plaza, Charlotte, NC 28205<br>
+            Phone: (704) 347-5021
+          </p>
+        </div>
+        <div class="cbw-footer-col">
+          <h4>Explore</h4>
+          <ul class="cbw-footer-links">
+            <li><a href="index.html">Kitchen Home</a></li>
+            <li><a href="menu.html">Full Chinese Menu</a></li>
+            <li><a href="family-specials.html">Family Feast Calculator</a></li>
+            <li><a href="chef-combos.html">All-Day Combinations</a></li>
+          </ul>
+        </div>
+        <div class="cbw-footer-col">
+          <h4>Service</h4>
+          <ul class="cbw-footer-links">
+            <li><a href="about.html">About China Bowl</a></li>
+            <li><a href="contact.html">Directions &amp; Carryout</a></li>
+            <li><a href="family-specials.html">Party Tray Ordering</a></li>
+            <li><a href="contact.html">Curbside Pickup</a></li>
+          </ul>
+        </div>
+        <div class="cbw-footer-col">
+          <h4>Operating Hours</h4>
+          <ul class="cbw-footer-links">
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Sun - Thu: 11:30 AM - 9:00 PM</li>
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Fri - Sat: 11:30 AM - 9:30 PM</li>
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Lunch Specials: 11:30 AM - 3:00 PM</li>
+            <li style="color: var(--cbw-stone-200); font-size: 0.9rem;">Fast Takeout &amp; Dine-In</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cbw-footer-bottom">
+        <p>&copy; 2026 China Bowl Charlotte. All Rights Reserved. Showcase Presentation.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

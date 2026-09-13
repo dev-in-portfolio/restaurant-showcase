@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Pan-Asian & Sushi Menu | Akahana Asian Bistro Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="akh-header">
+    <div class="akh-header-inner">
+      <a href="index.html" class="akh-brand">
+        <span class="akh-brand-title">Akahana</span>
+        <span class="akh-brand-tagline">Asian Bistro &amp; Sushi Bar</span>
+      </a>
+      <button class="akh-mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="akh-nav">
+        <a href="index.html" class="akh-nav-link ">Home</a>
+        <a href="menu.html" class="akh-nav-link active">Bistro Menu</a>
+        <a href="sushi-bar.html" class="akh-nav-link ">Sushi &amp; Platters</a>
+        <a href="lunch-combos.html" class="akh-nav-link ">Lunch Specials</a>
+        <a href="about.html" class="akh-nav-link ">About Us</a>
+        <a href="contact.html" class="akh-nav-link ">Hours &amp; Location</a>
+        <a href="tel:7048179365" class="akh-nav-cta">Call (704) 817-9365</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="akh-hero" style="min-height: 45vh; background-image: url('images/sushi-platter.jpg');">
+      <div class="akh-hero-overlay"></div>
+      <div class="akh-hero-content">
+        <span class="akh-hero-badge">Kitchen &amp; Sushi Bar</span>
+        <h1 class="akh-hero-title">Bistro <span>Menu</span></h1>
+        <p class="akh-hero-subtitle">
+          Fresh sushi rolls, nigiri &amp; sashimi, dim sum appetizers, comforting noodles, and rich Asian curries.
+        </p>
+      </div>
+    </section>
+
+    <section class="akh-section">
+      <div class="akh-container">
+        <div class="akh-menu-filter">
+          <button class="akh-filter-btn active" data-filter="all">All Selections</button>
+          <button class="akh-filter-btn" data-filter="starters">Appetizers &amp; Dim Sum</button>
+          <button class="akh-filter-btn" data-filter="sushi">Specialty Rolls</button>
+          <button class="akh-filter-btn" data-filter="noodles">Noodles &amp; Soups</button>
+          <button class="akh-filter-btn" data-filter="wok">Wok &amp; Curries</button>
+        </div>
+
+        <div class="akh-grid-2">
+          <!-- Starters -->
+          <div class="akh-menu-item" data-category="starters">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Wasabi Shumai</span>
+              <span class="akh-menu-price">$9.50</span>
+            </div>
+            <p class="akh-menu-desc">Steamed pork and shrimp dumplings wrapped in wasabi-infused dough, served with citrus ginger soy dip.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag signature">Signature Dim Sum</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="starters">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Handmade Pork Gyoza</span>
+              <span class="akh-menu-price">$8.50</span>
+            </div>
+            <p class="akh-menu-desc">Pan-seared Japanese pork potstickers with scallions and garlic cabbage, served with sesame soy vinegar.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag">Pan-Seared</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="starters">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Crispy Crab Wontons</span>
+              <span class="akh-menu-price">$9.00</span>
+            </div>
+            <p class="akh-menu-desc">Golden crisp wontons filled with blue crab meat, cream cheese, and scallions with sweet chili dipping sauce.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag">Crowd Favorite</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="starters">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Salt &amp; Pepper Calamari</span>
+              <span class="akh-menu-price">$12.50</span>
+            </div>
+            <p class="akh-menu-desc">Lightly battered squid tossed with wok-seared jalapeños, scallions, garlic flakes, and spicy five-spice sea salt.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag jade">Crispy / Seafood</span>
+            </div>
+          </div>
+
+          <!-- Sushi -->
+          <div class="akh-menu-item" data-category="sushi">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Akahana Volcano Roll</span>
+              <span class="akh-menu-price">$17.50</span>
+            </div>
+            <p class="akh-menu-desc">Spicy yellowfin tuna and cucumber roll topped with warm baked spicy scallops, blue crab, eel sauce, and tempura flakes.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag signature">House Signature</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="sushi">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Plaza Midwood Monster Roll</span>
+              <span class="akh-menu-price">$16.50</span>
+            </div>
+            <p class="akh-menu-desc">Jumbo tempura shrimp and cream cheese, topped with spicy tuna, sliced avocado, sweet unagi sauce, and sriracha mayo.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag signature">Top Seller</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="sushi">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Godzilla Specialty Roll</span>
+              <span class="akh-menu-price">$15.50</span>
+            </div>
+            <p class="akh-menu-desc">Spicy salmon, cream cheese, and asparagus lightly flash-fried in crispy tempura batter, finished with masago and scallions.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag">Flash Fried</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="sushi">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Sexy Salmon Roll</span>
+              <span class="akh-menu-price">$16.00</span>
+            </div>
+            <p class="akh-menu-desc">Fresh salmon, avocado, and cucumber inside, wrapped with seared Scottish salmon belly, yuzu truffle sauce, and microgreens.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag jade">Raw / Premium</span>
+            </div>
+          </div>
+
+          <!-- Noodles -->
+          <div class="akh-menu-item" data-category="noodles">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Vietnamese Beef Pho</span>
+              <span class="akh-menu-price">$16.00</span>
+            </div>
+            <p class="akh-menu-desc">Slow-simmered 14-hour bone broth, rice noodles, thin brisket slices, onions, cilantro, served with lime, jalapeños, and fresh Thai basil.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag signature">Signature Soup</span>
+              <span class="akh-tag">GF Friendly</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="noodles">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Nabeyaki Japanese Udon</span>
+              <span class="akh-menu-price">$17.00</span>
+            </div>
+            <p class="akh-menu-desc">Thick wheat udon noodles in rich dashi broth served with tender chicken, shiitake mushrooms, poached egg, and crispy jumbo tempura shrimp.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag">Japanese Hearth</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="noodles">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Classic Pad Thai</span>
+              <span class="akh-menu-price">$15.50</span>
+            </div>
+            <p class="akh-menu-desc">Wok-tossed rice noodles with egg, bean sprouts, scallions, crushed roasted peanuts, lime wedge, and choice of chicken, beef, or shrimp.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag jade">Thai Classic</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="noodles">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Drunken Noodles (Pad Kee Mao)</span>
+              <span class="akh-menu-price">$16.00</span>
+            </div>
+            <p class="akh-menu-desc">Wide flat rice noodles wok-charred with Thai bird's eye chili, sweet basil, bell peppers, onions, and spicy garlic sauce.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag signature">Spicy Wok</span>
+            </div>
+          </div>
+
+          <!-- Wok & Curries -->
+          <div class="akh-menu-item" data-category="wok">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Thai Red Coconut Curry</span>
+              <span class="akh-menu-price">$16.50</span>
+            </div>
+            <p class="akh-menu-desc">Aromatic red chili coconut curry with bamboo shoots, bell peppers, zucchini, fresh Thai basil, and steamed jasmine rice.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag signature">Curry House</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="wok">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">General Tso's Crispy Chicken</span>
+              <span class="akh-menu-price">$16.00</span>
+            </div>
+            <p class="akh-menu-desc">Tender crispy chicken tossed in sweet spicy ginger chili glaze, served with steamed broccoli crowns and jasmine rice.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag">Crispy Wok</span>
+            </div>
+          </div>
+
+          <div class="akh-menu-item" data-category="wok">
+            <div class="akh-menu-header">
+              <span class="akh-menu-name">Crispy Honey Walnut Shrimp</span>
+              <span class="akh-menu-price">$19.50</span>
+            </div>
+            <p class="akh-menu-desc">Jumbo tempura shrimp tossed in velvety sweet honey aioli glaze, topped with candied walnuts and steamed broccoli.</p>
+            <div class="akh-dietary-tags">
+              <span class="akh-tag jade">Bistro Star</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="akh-footer">
+    <div class="akh-container">
+      <div class="akh-footer-grid">
+        <div class="akh-footer-col">
+          <div class="akh-brand" style="margin-bottom: 1rem;">
+            <span class="akh-brand-title" style="color: #fda4af;">Akahana Asian Bistro</span>
+            <span class="akh-brand-tagline" style="color: #5eead4;">Plaza Midwood Sushi &amp; Pan-Asian</span>
+          </div>
+          <p style="color: var(--akh-slate-200); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Plaza Midwood's beloved neighborhood destination for master sushi rolls, steaming pho noodle soups, rich Thai curries, and comforting wok classics.
+          </p>
+          <p style="color: #fda4af; font-weight: 700; font-size: 0.95rem;">
+            1308 The Plaza, Charlotte, NC 28205<br>
+            Phone: (704) 817-9365
+          </p>
+        </div>
+        <div class="akh-footer-col">
+          <h4>Explore</h4>
+          <ul class="akh-footer-links">
+            <li><a href="index.html">Bistro Home</a></li>
+            <li><a href="menu.html">Full Pan-Asian Menu</a></li>
+            <li><a href="sushi-bar.html">Sushi &amp; Sashimi Bar</a></li>
+            <li><a href="lunch-combos.html">Weekday Lunch Combos</a></li>
+          </ul>
+        </div>
+        <div class="akh-footer-col">
+          <h4>Community</h4>
+          <ul class="akh-footer-links">
+            <li><a href="about.html">Our Story &amp; Kitchen</a></li>
+            <li><a href="contact.html">Hours &amp; Directions</a></li>
+            <li><a href="sushi-bar.html">Party Platters</a></li>
+            <li><a href="contact.html">Takeout &amp; Catering</a></li>
+          </ul>
+        </div>
+        <div class="akh-footer-col">
+          <h4>Operating Hours</h4>
+          <ul class="akh-footer-links">
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Sun - Thu: 11:30 AM - 9:30 PM</li>
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Fri - Sat: 11:30 AM - 10:00 PM</li>
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Lunch Specials: 11:30 AM - 3:00 PM</li>
+            <li style="color: var(--akh-slate-200); font-size: 0.9rem;">Dine-In &amp; Express Carryout</li>
+          </ul>
+        </div>
+      </div>
+      <div class="akh-footer-bottom">
+        <p>&copy; 2026 Akahana Asian Bistro Charlotte. All Rights Reserved. Showcase Presentation.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

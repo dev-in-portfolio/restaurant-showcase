@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Taproom Party Calculator | Hippin' Hops Brewstillery Charlotte</title>
+  <meta name="description" content="Hippin' Hops Brewstillery in Uptown Charlotte: Black-owned craft brewery, on-site distillery, artisan baked oysters, Cajun seafood rolls, and taproom private events.">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <header class="hhp-header">
+    <div class="hhp-nav-container">
+      <a href="index.html" class="hhp-brand">
+        <span class="hhp-brand-name">Hippin' Hops</span>
+        <span class="hhp-brand-sub">Brewstillery &bull; Charlotte NC</span>
+      </a>
+      <ul class="hhp-nav-links">
+        <li><a href="index.html" class="hhp-nav-link ">Home</a></li>
+        <li><a href="menu.html" class="hhp-nav-link ">Oyster Bar &amp; Food</a></li>
+        <li><a href="brews-spirits.html" class="hhp-nav-link ">Brews &amp; Spirits</a></li>
+        <li><a href="brewery-events.html" class="hhp-nav-link active">Events &amp; Catering</a></li>
+        <li><a href="about.html" class="hhp-nav-link ">Our Story</a></li>
+        <li><a href="contact.html" class="hhp-nav-link ">Visit &amp; Contact</a></li>
+      </ul>
+      <a href="brewery-events.html" class="hhp-nav-cta">Plan An Event</a>
+      <button class="hhp-mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </header>
+  <div class="hhp-drawer-overlay"></div>
+  <aside class="hhp-drawer">
+    <button class="hhp-drawer-close" aria-label="Close Drawer Menu">&times;</button>
+    <div class="hhp-brand">
+      <span class="hhp-brand-name">Hippin' Hops</span>
+      <span class="hhp-brand-sub">Brewstillery &bull; Charlotte</span>
+    </div>
+    <ul class="hhp-drawer-links">
+      <li><a href="index.html" class="hhp-drawer-link ">Home</a></li>
+      <li><a href="menu.html" class="hhp-drawer-link ">Oyster Bar &amp; Food</a></li>
+      <li><a href="brews-spirits.html" class="hhp-drawer-link ">Brews &amp; Spirits</a></li>
+      <li><a href="brewery-events.html" class="hhp-drawer-link active">Events &amp; Catering</a></li>
+      <li><a href="about.html" class="hhp-drawer-link ">Our Story</a></li>
+      <li><a href="contact.html" class="hhp-drawer-link ">Visit &amp; Contact</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--hhp-border);">
+      <p style="font-size: 0.85rem; color: var(--hhp-text-muted); margin-bottom: 0.5rem;"><strong>Location:</strong> 650 E Brooklyn Village Ave, Ste D</p>
+      <p style="font-size: 0.85rem; color: var(--hhp-text-muted); margin-bottom: 1rem;"><strong>Phone:</strong> (704) 910-2016</p>
+      <a href="tel:7049102016" class="hhp-btn-primary" style="width: 100%; text-align: center;">Call Taproom</a>
+    </div>
+  </aside>
+
+  <section class="hhp-section" style="padding-top: 3.5rem;">
+    <div class="hhp-container">
+      <div class="hhp-section-header">
+        <span class="hhp-tagline">Private Gatherings &amp; Taproom Buyouts</span>
+        <h1 class="hhp-title">Host Your Event at Hippin' Hops</h1>
+        <p class="hhp-subtitle">From corporate happy hours and sports watch parties to birthday feasts with dozens of baked oysters, we provide custom catering and craft beverage packages.</p>
+      </div>
+
+      <div class="hhp-grid-3" style="margin-bottom: 4rem;">
+        <div class="hhp-card-item">
+          <div class="hhp-card-body">
+            <div class="hhp-card-badge">15 to 30 Guests</div>
+            <h3 class="hhp-card-title">Taproom Mixer</h3>
+            <p class="hhp-card-text">Reserved communal high-top tables in our main taproom, custom beer flights, appetizer platters of Shrimp Deviled Eggs and Jumbo Craft Wings.</p>
+          </div>
+        </div>
+        <div class="hhp-card-item">
+          <div class="hhp-card-body">
+            <div class="hhp-card-badge">25 to 60 Guests</div>
+            <h3 class="hhp-card-title">Patio &amp; Lounge Reception</h3>
+            <p class="hhp-card-text">Semi-private indoor lounge and covered outdoor urban patio space with dedicated bartender, custom oyster bar station, and cocktail packages.</p>
+          </div>
+        </div>
+        <div class="hhp-card-item">
+          <div class="hhp-card-body">
+            <div class="hhp-card-badge">Up to 150 Guests</div>
+            <h3 class="hhp-card-title">Full Brewstillery Buyout</h3>
+            <p class="hhp-card-text">Exclusive private access to the entire brewery, taproom, distillery bar, DJ booth, AV screens, and complete culinary oyster spread.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Calculator -->
+      <div class="hhp-calc-container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="hhp-tagline">Transparent Event Estimator</span>
+          <h2 class="hhp-title" style="font-size: 1.85rem;">Taproom Party &amp; Oyster Feast Calculator</h2>
+          <p style="color: var(--hhp-text-muted); font-size: 0.95rem;">Customize your guest count, drink tiers, and seafood platters for an instant event estimate.</p>
+        </div>
+
+        <div class="hhp-calc-grid">
+          <div>
+            <div class="hhp-calc-form-group">
+              <label for="calc-guests" class="hhp-calc-label">Estimated Guest Count: <span id="out-guests" style="color: var(--hhp-gold); font-size: 1.1rem;">25</span> guests</label>
+              <input type="range" id="calc-guests" min="10" max="120" step="5" value="25" class="hhp-calc-input" style="padding: 0.4rem 0;">
+            </div>
+
+            <div class="hhp-calc-form-group">
+              <label for="calc-drink-pkg" class="hhp-calc-label">Beverage Service Tier</label>
+              <select id="calc-drink-pkg" class="hhp-calc-select">
+                <option value="25">Draft Beer &amp; Hard Seltzers ($25 / person)</option>
+                <option value="35">Beer, House Cider &amp; Select Wines ($35 / person)</option>
+                <option value="48" selected>Full Brewstillery Cocktails &amp; Spirits ($48 / person)</option>
+                <option value="0">Non-Alcoholic Beverages Only ($0 / host tab)</option>
+              </select>
+            </div>
+
+            <div class="hhp-calc-form-group">
+              <label for="calc-oyster-dozens" class="hhp-calc-label">Artisan Baked Oyster Dozens ($32 / doz)</label>
+              <select id="calc-oyster-dozens" class="hhp-calc-select">
+                <option value="0">None (Food ? La Carte)</option>
+                <option value="2">2 Dozen (24 Charbroiled Oysters)</option>
+                <option value="4" selected>4 Dozen (48 Charbroiled Oysters)</option>
+                <option value="6">6 Dozen (72 Charbroiled Oysters)</option>
+                <option value="8">8 Dozen (96 Charbroiled Oysters)</option>
+                <option value="12">12 Dozen (144 Charbroiled Oysters)</option>
+              </select>
+            </div>
+
+            <div class="hhp-calc-form-group">
+              <label for="calc-seafood-platters" class="hhp-calc-label">Cajun Seafood &amp; Wing Party Platters ($85 / platter)</label>
+              <select id="calc-seafood-platters" class="hhp-calc-select">
+                <option value="0">None</option>
+                <option value="2" selected>2 Platters (Catfish Nuggs, Sliders &amp; Wings)</option>
+                <option value="4">4 Platters (Full Seafood Spread &amp; Hushpuppies)</option>
+                <option value="6">6 Platters (Colossal Party Feast)</option>
+              </select>
+            </div>
+
+            <div class="hhp-calc-form-group">
+              <label for="calc-private-space" class="hhp-calc-label">Venue Space Reservation Tier</label>
+              <select id="calc-private-space" class="hhp-calc-select">
+                <option value="0">Standard Reserved Tables ($0 space fee)</option>
+                <option value="150" selected>Semi-Private Patio &amp; Lounge ($150 fee)</option>
+                <option value="600">Full Private Taproom Buyout ($600 fee)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hhp-calc-summary">
+            <div>
+              <h3 style="font-family: var(--hhp-font-heading); font-size: 1.3rem; margin-bottom: 1.25rem; color: #fff;">Estimated Breakdown</h3>
+              <div class="hhp-calc-row">
+                <span>Beverage Package:</span>
+                <span id="out-drink-cost">$1,200.00</span>
+              </div>
+              <div class="hhp-calc-row">
+                <span>Baked Oysters:</span>
+                <span id="out-oyster-cost">$128.00</span>
+              </div>
+              <div class="hhp-calc-row">
+                <span>Seafood &amp; Wing Platters:</span>
+                <span id="out-seafood-cost">$170.00</span>
+              </div>
+              <div class="hhp-calc-row">
+                <span>Venue Space Tier:</span>
+                <span id="out-space-cost">$150.00</span>
+              </div>
+              <div class="hhp-calc-row">
+                <span>Subtotal:</span>
+                <span id="out-subtotal">$1,648.00</span>
+              </div>
+              <div class="hhp-calc-row">
+                <span>Hospitality Gratuity (20%):</span>
+                <span id="out-gratuity">$329.60</span>
+              </div>
+              <div class="hhp-calc-total-row">
+                <span class="hhp-calc-total-label">Estimated Total</span>
+                <span id="out-grand-total" class="hhp-calc-total-val">$1,977.60</span>
+              </div>
+              <p class="hhp-calc-note">*Final event quotes subject to date confirmation and tax. 20% gratuity included for staff service.</p>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <a id="btn-request-quote" href="mailto:events@hippinhopsbrewery.com" class="hhp-btn-primary" style="width: 100%; text-align: center;">Request Date &amp; Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="hhp-section" style="padding-bottom: 0;">
+        <div class="hhp-section-header">
+          <span class="hhp-tagline">Event Questions</span>
+          <h2 class="hhp-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="hhp-accordion">
+          <div class="hhp-accordion-item open">
+            <button class="hhp-accordion-btn">
+              <span>How do I reserve a date for my group?</span>
+              <span class="hhp-accordion-icon">+</span>
+            </button>
+            <div class="hhp-accordion-content">
+              Use our calculator above to generate your preliminary estimate and click "Request Date &amp; Quote" to email our events team directly at events@hippinhopsbrewery.com, or call our taproom at (704) 910-2016 during open hours. We recommend booking at least 2 weeks in advance for weekend gatherings.
+            </div>
+          </div>
+
+          <div class="hhp-accordion-item">
+            <button class="hhp-accordion-btn">
+              <span>Can we bring outside cakes or decorations?</span>
+              <span class="hhp-accordion-icon">+</span>
+            </button>
+            <div class="hhp-accordion-content">
+              Yes! You are welcome to bring birthday cakes, cupcakes, and tabletop decorations. We ask that confetti and glitter not be used. Our team can provide refrigeration and cake cutting utensils upon request.
+            </div>
+          </div>
+
+          <div class="hhp-accordion-item">
+            <button class="hhp-accordion-btn">
+              <span>Is audio-visual equipment available for presentations?</span>
+              <span class="hhp-accordion-icon">+</span>
+            </button>
+            <div class="hhp-accordion-content">
+              For full buyouts and private lounge reservations, we have high-definition flat-screen displays with HDMI / wireless casting capabilities and taproom microphone setups suitable for speeches, toasts, or sports watch parties.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="hhp-footer">
+    <div class="hhp-container">
+      <div class="hhp-footer-grid">
+        <div>
+          <div class="hhp-brand" style="margin-bottom: 1rem;">
+            <span class="hhp-brand-name">Hippin' Hops</span>
+            <span class="hhp-brand-sub">Brewstillery &bull; Charlotte NC</span>
+          </div>
+          <p class="hhp-footer-text">
+            Charlotte's premier Black-owned craft brewstillery and artisanal oyster bar. House-brewed craft beers, small-batch distilled spirits, and Gulf &amp; Atlantic seafood in Uptown Charlotte.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <span class="hhp-tag highlight">Black-Owned</span>
+            <span class="hhp-tag highlight">Craft Brewstillery</span>
+            <span class="hhp-tag">Second Ward</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="hhp-footer-heading">Explore</h4>
+          <ul class="hhp-footer-links">
+            <li><a href="index.html" class="hhp-footer-link">Home Experience</a></li>
+            <li><a href="menu.html" class="hhp-footer-link">Baked Oyster Bar</a></li>
+            <li><a href="brews-spirits.html" class="hhp-footer-link">Tap List &amp; Distilled Spirits</a></li>
+            <li><a href="brewery-events.html" class="hhp-footer-link">Party &amp; Event Calculator</a></li>
+            <li><a href="about.html" class="hhp-footer-link">Brewery Heritage</a></li>
+            <li><a href="contact.html" class="hhp-footer-link">Directions &amp; Hours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="hhp-footer-heading">Hours</h4>
+          <ul class="hhp-footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color:#fff;">Wed - Thu:</strong> 5:00 PM - 11:00 PM</li>
+            <li><strong style="color:#fff;">Friday:</strong> 5:00 PM - 12:00 AM</li>
+            <li><strong style="color:#fff;">Saturday:</strong> 12:00 PM - 12:00 AM</li>
+            <li><strong style="color:#fff;">Sunday:</strong> 12:00 PM - 11:00 PM</li>
+            <li><strong style="color:#fff;">Mon - Tue:</strong> Closed</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="hhp-footer-heading">Visit Us</h4>
+          <p class="hhp-footer-text" style="margin-bottom: 0.5rem;">
+            <strong>Hippin' Hops Brewstillery</strong><br>
+            650 E. Brooklyn Village Ave, Suite D<br>
+            Charlotte, NC 28202
+          </p>
+          <p class="hhp-footer-text">
+            <strong>Phone:</strong> <a href="tel:7049102016" style="color: var(--hhp-gold); font-weight: 700;">(704) 910-2016</a><br>
+            <strong>Email:</strong> <a href="mailto:events@hippinhopsbrewery.com" style="color: var(--hhp-gold);">events@hippinhopsbrewery.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="hhp-footer-bottom">
+        <p>&copy; 2026 Hippin' Hops Brewstillery Charlotte. All rights reserved. Must be 21+ to consume alcoholic beverages. 20% gratuity included on taproom checks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{
+  "slug": "pasta-crush",
+  "generatedAt": "2026-09-10T18:11:44.038Z",
+  "recentCompared": 8,
+  "recentSlugs": [
+    "nefelie-s",
+    "the-local",
+    "mortimer-s-cafe-and-pub",
+    "santa-fe-mexican-restaurant-central-ave",
+    "landmark-restaurant-diner",
+    "van-loi-chinese-barbecue",
+    "pho-an-hoa",
+    "sweet-crunch-waffles",
+    "kuya-omakase-2-0",
+    "seoul-good-clt"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "sweet-crunch-waffles",
+    "score": 0.28653440270156183,
+    "classSimilarity": 0.009708737864077669,
+    "cssClassSimilarity": 0.014492753623188406,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0.5
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "sweet-crunch-waffles",
+      "score": 0.28653440270156183,
+      "classSimilarity": 0.009708737864077669,
+      "cssClassSimilarity": 0.014492753623188406,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "seoul-good-clt",
+      "score": 0.27878455130632335,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007194244604316547,
+      "domSimilarity": 0.9868421052631579,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "kuya-omakase-2-0",
+      "score": 0.2743132096372196,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007246376811594203,
+      "domSimilarity": 0.9681528662420382,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "pho-an-hoa",
+      "score": 0.26928331466965283,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0070921985815602835,
+      "domSimilarity": 0.9473684210526315,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "van-loi-chinese-barbecue",
+      "score": 0.17006894771771994,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007042253521126761,
+      "domSimilarity": 0.5340314136125655,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "landmark-restaurant-diner",
+      "score": 0.14474078668904616,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007042253521126761,
+      "domSimilarity": 0.5284974093264249,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.11563678090575275,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006578947368421052,
+      "domSimilarity": 0.4744186046511628,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "mortimer-s-cafe-and-pub",
+      "score": 0.11423866030830654,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007874015748031496,
+      "domSimilarity": 0.3004694835680751,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    }
+  ]
+}

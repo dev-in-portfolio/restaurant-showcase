@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Dining &amp; Events | Bernardin's at the Ratcliffe</title>
+  <meta name="description" content="Host private dinners, corporate executive banquets, and wedding rehearsals at Bernardin's at the Ratcliffe in Uptown Charlotte. The Wine Salon, Ratcliffe Room, and terrace rentals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="ber-topbar">
+    <div class="ber-topbar-inner">
+      <div class="ber-topbar-items">
+        <span>435 S Tryon St #100, Charlotte, NC 28202</span>
+        <span>&bull;</span>
+        <span>At The Historic Ratcliffe Overlooking The Green</span>
+      </div>
+      <div class="ber-topbar-items">
+        <span>Lunch: Mon-Fri 11am-2pm | Dinner: Mon-Sat 5pm-10pm</span>
+        <span>&bull;</span>
+        <a href="tel:7043323188" class="ber-topbar-link">(704) 332-3188</a>
+      </div>
+    </div>
+  </div>
+  <header class="ber-header">
+    <div class="ber-nav-container">
+      <a href="index.html" class="ber-brand">
+        <div class="ber-brand-title">BERNARDIN'S <span>AT THE RATCLIFFE</span></div>
+        <div class="ber-brand-sub">FINE DINING &bull; UPTOWN CHARLOTTE</div>
+      </a>
+      <button class="ber-mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul class="ber-nav-links">
+          <li><a href="index.html" class="ber-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="ber-nav-link ">Menu</a></li>
+          <li><a href="about.html" class="ber-nav-link ">About Us</a></li>
+          <li><a href="private-dining.html" class="ber-nav-link active">Private Dining</a></li>
+          <li><a href="wine-and-cocktails.html" class="ber-nav-link ">Wine Cellar</a></li>
+          <li><a href="contact.html" class="ber-nav-link ">Contact &amp; Hours</a></li>
+          <li><a href="tel:7043323188" class="ber-nav-link ber-nav-cta">Reserve (704) 332-3188</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <header class="ber-page-header">
+    <div class="cst-container" style="padding:0;">
+      <h1 class="ber-page-header-title">PRIVATE DINING &amp; SPECIAL EVENTS</h1>
+      <p class="ber-page-header-desc">Exclusive private salons, tailored tasting menus, and dedicated sommelier service for life's momentous occasions.</p>
+    </div>
+  </header>
+
+  <main class="ber-container">
+    <div class="ber-grid-3" style="margin-bottom:50px;">
+      <div class="ber-card">
+        <div class="ber-card-body">
+          <span class="ber-card-badge">Intimate Salon</span>
+          <h3 class="ber-card-title">The Wine Salon</h3>
+          <p class="ber-card-text">Surrounded by our premier temperature-controlled wine displays, this private enclave offers executive seclusion for up to 14 seated guests. Ideal for board meetings and intimate celebrations.</p>
+        </div>
+      </div>
+
+      <div class="ber-card">
+        <div class="ber-card-body">
+          <span class="ber-card-badge">Grand Room</span>
+          <h3 class="ber-card-title">The Ratcliffe Dining Room</h3>
+          <p class="ber-card-text">A stately private dining suite accommodating up to 35 seated guests or 50 standing reception attendees with custom audio/visual integration and dedicated bar service.</p>
+        </div>
+      </div>
+
+      <div class="ber-card">
+        <div class="ber-card-body">
+          <span class="ber-card-badge">Alfresco Setting</span>
+          <h3 class="ber-card-title">The Green Garden Terrace</h3>
+          <p class="ber-card-text">Exclusive terrace buyouts overlooking the park for cocktail mixers and outdoor seated dinners of up to 45 guests amidst romantic garden ambient lighting.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Event Calculator -->
+    <div class="ber-section-header">
+      <span class="ber-section-tag">Private Dining Planning</span>
+      <h2 class="ber-section-title">EVENT INVESTMENT ESTIMATOR</h2>
+      <p class="ber-section-desc">Select your estimated guest count, menu tier, and beverage pairing preferences to generate an instant estimate.</p>
+    </div>
+
+    <div class="ber-interactive-box">
+      <div class="ber-calc-grid">
+        <div class="ber-input-group">
+          <label for="berGuestCount">Guest Count</label>
+          <select id="berGuestCount" class="ber-select">
+            <option value="8">8 Guests (Executive Dinner)</option>
+            <option value="14" selected>14 Guests (The Wine Salon)</option>
+            <option value="25">25 Guests (Private Banquet)</option>
+            <option value="40">40 Guests (Terrace Reception)</option>
+            <option value="75">75 Guests (Full Venue Buyout)</option>
+          </select>
+        </div>
+
+        <div class="ber-input-group">
+          <label for="berCourseCount">Prix Fixe Menu Tier</label>
+          <select id="berCourseCount" class="ber-select">
+            <option value="85">3-Course Custom Menu ($85 / guest)</option>
+            <option value="110" selected>4-Course Chef's Signature ($110 / guest)</option>
+            <option value="145">5-Course Grand Tasting Menu ($145 / guest)</option>
+          </select>
+        </div>
+
+        <div class="ber-input-group">
+          <label for="berWineTier">Sommelier Wine Pairing</label>
+          <select id="berWineTier" class="ber-select">
+            <option value="0">Beverages A La Carte</option>
+            <option value="55" selected>Cellar Standard Pairings ($55 / guest)</option>
+            <option value="90">Reserve Grand Cru Pairings ($90 / guest)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ber-calc-result">
+        <div>
+          <div class="ber-calc-total-label">Estimated Event Investment</div>
+          <div id="berCalcBreakdown" style="font-size:0.85rem; color:#b7cce4;">14 Guests | Dinner: $1,540 | Wine Pairings: $770 | Tax &amp; Gratuity est: $508</div>
+        </div>
+        <div id="berCalcTotal" class="ber-calc-total-val">$2,818</div>
+      </div>
+
+      <div style="margin-top:24px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="tel:7043323188" class="ber-btn ber-btn-dark">Call (704) 332-3188 to Inquire</a>
+        <a href="mailto:events@bernardinsfinedining.com?subject=Private%20Dining%20Inquiry" class="ber-btn ber-btn-gold">Email Event Director</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ber-footer">
+    <div class="ber-footer-grid">
+      <div class="ber-footer-col">
+        <h4>Bernardin's Fine Dining</h4>
+        <p>Uptown Charlotte's premier destination for contemporary American and French-Asian fine dining. Overlooking the serene garden sculptures of The Green from the landmark Ratcliffe building.</p>
+        <p><strong>Direct Reservations:</strong> <a href="tel:7043323188" style="color:var(--ber-gold);">(704) 332-3188</a></p>
+      </div>
+      <div class="ber-footer-col">
+        <h4>Location &amp; Landmark</h4>
+        <p>435 S Tryon St, Suite 100<br>Charlotte, NC 28202</p>
+        <p>Situated at the base of The Ratcliffe in Uptown Charlotte's cultural district, adjacent to the Levine Center for the Arts and The Green park.</p>
+      </div>
+      <div class="ber-footer-col">
+        <h4>Hours of Operation</h4>
+        <p><strong>Lunch:</strong> Monday – Friday: 11:00 AM – 2:00 PM<br>
+        <strong>Dinner:</strong> Monday – Saturday: 5:00 PM – 10:00 PM<br>
+        <strong>Sunday:</strong> Reserved for Private Dining &amp; Receptions</p>
+      </div>
+      <div class="ber-footer-col">
+        <h4>Salon &amp; Cellar</h4>
+        <ul class="ber-footer-links">
+          <li><a href="menu.html">Dinner &amp; Tasting Menus</a></li>
+          <li><a href="wine-and-cocktails.html">Sommelier Wine List &amp; Cellar</a></li>
+          <li><a href="private-dining.html">Private Dining &amp; Rehearsals</a></li>
+          <li><a href="about.html">Ratcliffe Heritage &amp; Philosophy</a></li>
+          <li><a href="contact.html">Directions, Valet &amp; Parking</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ber-footer-bottom">
+      <div>&copy; 2026 Bernardin's Restaurant at the Ratcliffe. All rights reserved. Charlotte, NC.</div>
+      <div>Modern American Haute Cuisine &bull; French Nuance &bull; Sommelier Wine Cellar</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

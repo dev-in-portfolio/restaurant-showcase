@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinner Menu | Soho Bistro | Uptown Charlotte, NC</title>
+  <meta name="description" content="Browse Soho Bistro's complete dinner menu featuring wok chef specialties, Dim Sum starters, poultry, beef, seafood, rice, and noodle classics in Uptown Charlotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="sho-topbar">
+    <div class="sho-container sho-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>214 N Tryon St #110, Uptown Charlotte, NC 28202</span>
+        <span style="margin: 0 0.75rem; opacity: 0.4;">|</span>
+        <span>Mon-Fri: 11:00 AM - 9:00 PM &bull; Sat: 4:30 PM - 9:30 PM</span>
+      </div>
+      <div>
+        <span>Order Call-Ahead / Takeout: </span>
+        <a href="tel:7043335189" class="sho-topbar-link">(704) 333-5189</a>
+      </div>
+    </div>
+  </div>
+  <header class="sho-navbar">
+    <div class="sho-nav-container">
+      <a href="index.html" class="sho-brand">
+        <div class="sho-brand-name">SOHO <span>BISTRO</span></div>
+        <div class="sho-brand-tagline">Uptown Chinese &amp; Pan-Asian Cuisine</div>
+      </a>
+      <ul class="sho-nav-links">
+        <li class="sho-nav-item"><a href="index.html">Home</a></li>
+<li class="sho-nav-item"><a href="menu.html" class="active">Dinner Menu</a></li>
+<li class="sho-nav-item"><a href="lunch-specials.html">Lunch Specials</a></li>
+<li class="sho-nav-item"><a href="catering-corporate.html">Corporate Catering</a></li>
+<li class="sho-nav-item"><a href="about.html">Our Story</a></li>
+<li class="sho-nav-item"><a href="contact.html">Contact & Hours</a></li>
+
+        <li><a href="tel:7043335189" class="sho-nav-cta">Call (704) 333-5189</a></li>
+      </ul>
+      <button class="sho-menu-toggle" id="shoMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="sho-mobile-menu" id="shoMobileMenu">
+      <ul class="sho-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html" class="active">Dinner Menu</a></li>
+<li><a href="lunch-specials.html">Lunch Specials</a></li>
+<li><a href="catering-corporate.html">Corporate Catering</a></li>
+<li><a href="about.html">Our Story</a></li>
+<li><a href="contact.html">Contact & Hours</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7043335189" class="sho-nav-cta" style="text-align: center;">Call (704) 333-5189</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="sho-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="sho-container" style="text-align: center; max-width: 800px;">
+      <span class="sho-hero-badge">Wok Classics &amp; Chef Creations</span>
+      <h1 class="sho-title-xl">Full Dinner &amp; Specialty Menu</h1>
+      <p class="sho-lead">Each dish is cooked to order in blistering high-temperature woks using fresh whole ingredients, house sauces, and time-honored Asian culinary traditions.</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="tel:7043335189" class="sho-btn sho-btn-gold">Call In Takeout: (704) 333-5189</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sho-section">
+    <div class="sho-container">
+      <div class="sho-filter-bar">
+        <button class="sho-filter-btn active" data-category="all">Full Menu (All Items)</button>
+        <button class="sho-filter-btn" data-category="starters">Dim Sum &amp; Starters</button>
+        <button class="sho-filter-btn" data-category="poultry">Poultry Specialties</button>
+        <button class="sho-filter-btn" data-category="beef">Beef &amp; Pork</button>
+        <button class="sho-filter-btn" data-category="seafood">Seafood</button>
+        <button class="sho-filter-btn" data-category="noodles">Noodles &amp; Fried Rice</button>
+        <button class="sho-filter-btn" data-category="vegetables">Vegetarian &amp; Tofu</button>
+      </div>
+
+      <div class="sho-grid-3" id="shoMenuContainer">
+        <!-- Starters -->
+        <div class="sho-dish-card sho-menu-item" data-category="starters">
+          <div class="sho-dish-img">
+            <img src="images/dim-sum.jpg" alt="Pan-fried pork potstickers with ginger soy dipping sauce">
+            <span class="sho-dish-badge">Handmade Daily</span>
+          </div>
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Pan-Seared Potstickers</h3>
+              <div class="sho-dish-price">$8.95</div>
+            </div>
+            <p class="sho-dish-desc">Six handmade dumplings filled with seasoned ground pork, scallions, and napa cabbage, seared crisp on the bottom and steamed tender with ginger-soy dipping sauce.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Dim Sum</span>
+              <span class="sho-tag">Pork or Vegetable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="starters">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Crispy Crab Wontons (6)</h3>
+              <div class="sho-dish-price">$8.50</div>
+            </div>
+            <p class="sho-dish-desc">Golden crisp wonton pockets stuffed with rich crab meat, cream cheese, scallions, and sweet onion served with house sweet and sour dipping reduction.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Crispy</span>
+              <span class="sho-tag">Crowd Favorite</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="starters">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Traditional Hot &amp; Sour Soup</h3>
+              <div class="sho-dish-price">$4.50 / $8.00</div>
+            </div>
+            <p class="sho-dish-desc">Velvety broth simmered with silken tofu, wood ear mushrooms, bamboo shoots, egg ribbons, white pepper, and aged black vinegar.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Spicy &amp; Tangy</span>
+              <span class="sho-tag">Cup or Bowl</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="starters">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Golden Vegetable Spring Rolls (2)</h3>
+              <div class="sho-dish-price">$4.95</div>
+            </div>
+            <p class="sho-dish-desc">Crispy golden wrappers packed with julienned cabbage, carrots, shiitake mushrooms, and glass noodles with hot mustard and duck sauce.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Vegetarian</span>
+              <span class="sho-tag">Crisp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poultry -->
+        <div class="sho-dish-card sho-menu-item" data-category="poultry">
+          <div class="sho-dish-img">
+            <img src="images/sesame-chicken.jpg" alt="Crispy Sesame Chicken with honey glaze and broccoli">
+            <span class="sho-dish-badge">Top Seller</span>
+          </div>
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Crispy Sesame Chicken</h3>
+              <div class="sho-dish-price">$16.95</div>
+            </div>
+            <p class="sho-dish-desc">White meat chicken breast lightly battered and wok-glazed in sweet amber sesame reduction, topped with roasted white sesame seeds and steamed broccoli.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Signature</span>
+              <span class="sho-tag">Sweet Glaze</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="poultry">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">General Tso's Chicken</h3>
+              <div class="sho-dish-price">$16.95</div>
+            </div>
+            <p class="sho-dish-desc">Crispy chicken morsels seared with whole dried chili peppers, fresh minced garlic, ginger, and our tangy spicy house glaze over steamed crown broccoli.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Spicy</span>
+              <span class="sho-tag">Classic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="poultry">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Kung Pao Chicken</h3>
+              <div class="sho-dish-price">$16.50</div>
+            </div>
+            <p class="sho-dish-desc">Diced tender chicken breast wok-tossed with roasted crunchy peanuts, red bell peppers, zucchini, celery, and scorched Szechuan chilies.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Spicy Szechuan</span>
+              <span class="sho-tag">Peanuts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="poultry">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Moo Shu Chicken</h3>
+              <div class="sho-dish-price">$17.25</div>
+            </div>
+            <p class="sho-dish-desc">Stir-fried shredded chicken, wood ear mushrooms, fluffy scrambled eggs, and crunchy cabbage served with hoisin sauce and 4 warm handmade Chinese crepes.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Wrap &amp; Roll</span>
+              <span class="sho-tag">Handmade Crepes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beef & Pork -->
+        <div class="sho-dish-card sho-menu-item" data-category="beef">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Tangerine Peel Beef</h3>
+              <div class="sho-dish-price">$18.95</div>
+            </div>
+            <p class="sho-dish-desc">Crispy prime flank steak strips seared with sun-dried tangerine peel, sun-dried chilies, garlic, and rich aromatic citrus-infused dark sauce.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Crispy Beef</span>
+              <span class="sho-tag">Citrus Chili</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="beef">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Mongolian Flank Steak</h3>
+              <div class="sho-dish-price">$18.50</div>
+            </div>
+            <p class="sho-dish-desc">Thinly sliced marinated flank steak seared over high flame with fresh scallion batons and sweet yellow onions in savory caramelized garlic soy over crispy rice noodles.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Savory Garlic</span>
+              <span class="sho-tag">Wok Hei</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="beef">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Sweet &amp; Sour Pork</h3>
+              <div class="sho-dish-price">$16.25</div>
+            </div>
+            <p class="sho-dish-desc">Tender pork medallions battered golden and tossed with fresh sweet pineapple chunks, bell peppers, and sweet onions in balanced fruit sauce.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Sweet &amp; Tangy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seafood -->
+        <div class="sho-dish-card sho-menu-item" data-category="seafood">
+          <div class="sho-dish-img">
+            <img src="images/walnut-shrimp.jpg" alt="Honey Walnut Shrimp with crispy prawns and candied walnuts">
+            <span class="sho-dish-badge">House Favorite</span>
+          </div>
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Honey Walnut Shrimp</h3>
+              <div class="sho-dish-price">$18.95</div>
+            </div>
+            <p class="sho-dish-desc">Jumbo crispy tempura prawns folded in sweet citrus-infused cream sauce and topped with glazed roasted walnuts over steamed broccoli.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Gourmet Seafood</span>
+              <span class="sho-tag">Candied Walnuts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="seafood">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Crispy Salt &amp; Pepper Calamari</h3>
+              <div class="sho-dish-price">$17.95</div>
+            </div>
+            <p class="sho-dish-desc">Tender squid rings flashed golden crisp, tossed with sea salt, cracked Szechuan peppercorns, scallions, and fresh minced jalapeño peppers.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Crispy Seared</span>
+              <span class="sho-tag">Peppercorn Spice</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noodles & Rice -->
+        <div class="sho-dish-card sho-menu-item" data-category="noodles">
+          <div class="sho-dish-img">
+            <img src="images/chow-fun.jpg" alt="Dry-Fried Beef Chow Fun with wide flat rice noodles and scallions">
+            <span class="sho-dish-badge">Wok Masterpiece</span>
+          </div>
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Dry-Fried Beef Chow Fun</h3>
+              <div class="sho-dish-price">$17.50</div>
+            </div>
+            <p class="sho-dish-desc">Wide flat rice noodles seared at high heat with tender flank steak slices, crunchy bean sprouts, sweet yellow onions, and dark seasoned soy.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Wok Hei</span>
+              <span class="sho-tag">Wide Noodles</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="noodles">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Singapore Curry Mei Fun</h3>
+              <div class="sho-dish-price">$16.95</div>
+            </div>
+            <p class="sho-dish-desc">Thin rice vermicelli noodles dry-wok tossed with roasted char siu pork, baby shrimp, bell peppers, bean sprouts, and aromatic Madras yellow curry.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Curry Flavor</span>
+              <span class="sho-tag">Thin Noodles</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="noodles">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Soho Bistro House Fried Rice</h3>
+              <div class="sho-dish-price">$15.95</div>
+            </div>
+            <p class="sho-dish-desc">Wok-tossed jasmine rice with succulent shrimp, roasted pork, diced chicken, farm eggs, green peas, carrots, and scallions.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">House Combination</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vegetarian & Tofu -->
+        <div class="sho-dish-card sho-menu-item" data-category="vegetables">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Ma Po Tofu</h3>
+              <div class="sho-dish-price">$14.95</div>
+            </div>
+            <p class="sho-dish-desc">Silken tofu cubes simmered in bold fermented chili bean paste with minced garlic, scallions, and toasted tongue-tingling Szechuan peppercorn oil.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Spicy Szechuan</span>
+              <span class="sho-tag">Vegetarian Option</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="vegetables">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">Dry-Sautéed String Beans</h3>
+              <div class="sho-dish-price">$14.50</div>
+            </div>
+            <p class="sho-dish-desc">Fresh tender string beans blistered in a hot wok with preserved mustard greens, minced garlic, ginger, and savory vegetarian stir sauce.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Blistered Wok</span>
+              <span class="sho-tag">Vegetarian</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sho-dish-card sho-menu-item" data-category="vegetables">
+          <div class="sho-dish-body">
+            <div class="sho-dish-header">
+              <h3 class="sho-dish-name">General Tso's Crispy Tofu</h3>
+              <div class="sho-dish-price">$14.95</div>
+            </div>
+            <p class="sho-dish-desc">Golden crisp organic firm tofu triangles glazed in tangy spicy General Tso's reduction with steamed broccoli and red peppers.</p>
+            <div class="sho-dish-tags">
+              <span class="sho-tag">Vegetarian</span>
+              <span class="sho-tag">Crispy Tofu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sho-info-box" style="margin-top: 3rem;">
+        <h4>Dietary Accommodations &amp; Spice Adjustments</h4>
+        <p>All dinner entrees are served with your choice of Steamed Jasmine White Rice or Brown Rice. Dishes marked spicy can be tailored from mild to extra hot upon request. Gluten-sensitive and vegetarian preparations are gladly accommodated.</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="sho-footer">
+    <div class="sho-container">
+      <div class="sho-footer-grid">
+        <div class="sho-footer-brand">
+          <h3>SOHO <span>BISTRO</span></h3>
+          <p>Uptown Charlotte's premier destination for masterfully executed high-flame wok classics, fresh handmade dumplings, express weekday lunches, and corporate catering on North Tryon Street.</p>
+        </div>
+        <div class="sho-footer-col">
+          <h4>Explore</h4>
+          <ul class="sho-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Dinner Menu &amp; Chef Wok</a></li>
+            <li><a href="lunch-specials.html">Express Lunch Combos</a></li>
+            <li><a href="catering-corporate.html">Office Party Catering</a></li>
+            <li><a href="about.html">Our Culinary Heritage</a></li>
+            <li><a href="contact.html">Directions &amp; Hours</a></li>
+          </ul>
+        </div>
+        <div class="sho-footer-col">
+          <h4>Hours of Operation</h4>
+          <ul class="sho-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Friday:</strong><br>11:00 AM - 9:00 PM</li>
+            <li><strong style="color: #fff;">Saturday:</strong><br>4:30 PM - 9:30 PM</li>
+            <li><strong style="color: #fff;">Sunday:</strong><br>Closed</li>
+          </ul>
+        </div>
+        <div class="sho-footer-col">
+          <h4>Uptown Location</h4>
+          <p style="margin-bottom: 0.75rem;">214 N Tryon St #110<br>Charlotte, NC 28202<br>Convenient parking deck validation &amp; street access.</p>
+          <p><strong style="color: var(--sho-gold);">Direct Phone:</strong><br><a href="tel:7043335189" style="color: #fff; font-weight: 700;">(704) 333-5189</a></p>
+          <p style="margin-top: 0.5rem;"><strong style="color: var(--sho-gold);">Email:</strong><br><a href="mailto:info@sohobistroclt.com" style="color: #cfd4dc;">info@sohobistroclt.com</a></p>
+        </div>
+      </div>
+      <div class="sho-footer-bottom">
+        <div>&copy; 2026 Soho Bistro. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Modern Pan-Asian Dining &bull; Fast Delivery &bull; Corporate Platters</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

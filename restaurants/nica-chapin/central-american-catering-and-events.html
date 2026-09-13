@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central American Catering & Feast Trays | Nica Chapin Charlotte</title>
+  <meta name="description" content="Order catering pans of Gallo Pinto, Carne Asada, Nacatamales by the dozen, Pepian stews, and traditional cacao for parties and events in Charlotte NC.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="nicachapin-header">
+    <div class="nicachapin-topbar">
+      <span>Authentic Nicaraguan & Guatemalan Kitchen | 4833 Central Ave, Charlotte, NC</span>
+      <span>Call for Takeout & Catering: <a href="tel:7045688889">(704) 568-8889</a></span>
+    </div>
+    <div class="nicachapin-nav-container">
+      <a href="index.html" class="nicachapin-logo-group">
+        <span class="nicachapin-logo-badge">NC</span>
+        <div>
+          <span class="nicachapin-logo-text">Nica Chapin</span>
+          <span class="nicachapin-logo-sub">Tradicion Centroamericana</span>
+        </div>
+      </a>
+      <button class="nicachapin-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="nicachapin-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="nicaraguan-vigoron-and-nacatamales.html">Nica Heritage</a>
+          <a href="guatemalan-pepian-and-hilachas.html">Chapin Kitchen</a>
+          <a href="central-american-catering-and-events.html" class="active">Feasts & Catering</a>
+          <a href="visit.html">Visit & Hours</a>
+          <a href="tel:7045688889" class="nicachapin-btn-cta">Call (704) 568-8889</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="nicachapin-page-header">
+    <h1>Central American Feasts & Catering</h1>
+    <p>Bring authentic homestyle warmth to birthdays, quincea?eras, church gatherings, and corporate luncheons.</p>
+  </section>
+
+  <main class="nicachapin-container">
+    <div class="nicachapin-section-title">
+      <h2>Interactive Central American Feast Calculator</h2>
+      <p>Estimate party pans, fresh banana-leaf nacatamales, and traditional beverage gallons for your gathering.</p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="nicachapin-calculator-box">
+      <div class="nicachapin-calc-row">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <label for="calc-guests" style="margin: 0;">Number of Guests:</label>
+          <span id="calc-guests-val" style="font-weight: 800; color: var(--nicachapin-primary); font-size: 1.15rem;">20 Guests</span>
+        </div>
+        <input type="range" id="calc-guests" class="nicachapin-range-control" min="10" max="150" value="20" step="5">
+      </div>
+
+      <div class="nicachapin-calc-row">
+        <label for="calc-specialty">Main Specialty Feature:</label>
+        <select id="calc-specialty" class="nicachapin-select-control">
+          <option value="9.50">Traditional Nacatamales Gigantes ($9.50 / guest)</option>
+          <option value="8.50">Guatemalan Pepi?n de Pollo Feast ($8.50 / guest)</option>
+          <option value="9.00">Nica Carne Asada with Queso Frito ($9.00 / guest)</option>
+          <option value="8.00">Hilachas de Res Shredded Beef Stew ($8.00 / guest)</option>
+          <option value="11.00">Grand Central American Combo (Nacatamal + Pepian) ($11.00 / guest)</option>
+        </select>
+      </div>
+
+      <div class="nicachapin-calc-row">
+        <label for="calc-sides">Side Dishes & Beverage Package:</label>
+        <select id="calc-sides" class="nicachapin-select-control">
+          <option value="3.50">Gallo Pinto + Sweet Maduros ($3.50 / guest)</option>
+          <option value="4.50">Gallo Pinto + Maduros + Gallons of Cacao con Leche ($4.50 / guest)</option>
+          <option value="6.00">Deluxe: Gallo Pinto + Maduros + Queso Frito + Cacao + Rellenitos ($6.00 / guest)</option>
+        </select>
+      </div>
+
+      <div class="nicachapin-calc-results">
+        <div class="nicachapin-result-line">
+          <span>Banana-Leaf Main Features:</span>
+          <strong id="calc-nacatamal-count">20 Fresh Steamed Nacatamales</strong>
+        </div>
+        <div class="nicachapin-result-line">
+          <span>Recommended Side Trays:</span>
+          <strong id="calc-pinto-pans">2 Pan(s) of Gallo Pinto / Rice</strong>
+        </div>
+        <div class="nicachapin-result-line">
+          <span>Serving Utensils & Warming Setup:</span>
+          <strong>Included Free</strong>
+        </div>
+        <div class="nicachapin-result-total">
+          <span>Estimated Feast Total:</span>
+          <span id="calc-total-price">$260.00</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 24px;">
+        <p style="font-size: 0.875rem; color: var(--nicachapin-text-muted); margin-bottom: 12px;">Estimates are for planning purposes. Large tray orders should be placed 24-48 hours in advance.</p>
+        <a href="tel:7045688889" class="nicachapin-btn-cta">Call (704) 568-8889 to Reserve Catering</a>
+      </div>
+    </div>
+
+    <!-- Pre-Set Party Packages -->
+    <div class="nicachapin-section-title" style="margin-top: 60px;">
+      <h2>Popular Catering Packages</h2>
+      <p>Standardized trays designed for effortless host planning.</p>
+    </div>
+
+    <div class="nicachapin-grid-3">
+      <div class="nicachapin-card">
+        <div class="nicachapin-card-body">
+          <span class="nicachapin-card-badge">Serves 12-15</span>
+          <h3>El Lago de Atitl?n Feast</h3>
+          <p>Full tray of Guatemalan Pepi?n de Pollo, full tray of white rice, 30 handmade corn tortillas, and half tray of Rellenitos de Pl?tano.</p>
+          <div class="nicachapin-card-footer">
+            <span class="nicachapin-price">$165.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nicachapin-card">
+        <div class="nicachapin-card-body">
+          <span class="nicachapin-card-badge">Serves 20-25</span>
+          <h3>La Gran Sultana Nica</h3>
+          <p>20 giant steamed Nacatamales, full tray of Gallo Pinto, full platter of golden Queso Frito, sweet maduros, and 2 gallons of cold Cacao.</p>
+          <div class="nicachapin-card-footer">
+            <span class="nicachapin-price">$295.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nicachapin-card">
+        <div class="nicachapin-card-body">
+          <span class="nicachapin-card-badge">Serves 40-50</span>
+          <h3>La Uni?n Centroamericana</h3>
+          <p>Two trays of Carne Asada, two trays of Pepi?n de Pollo, two trays of Gallo Pinto, 30 Nacatamales, cabbage curtido, and 4 gallons of beverages.</p>
+          <div class="nicachapin-card-footer">
+            <span class="nicachapin-price">$580.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="nicachapin-footer">
+    <div class="nicachapin-footer-grid">
+      <div class="nicachapin-footer-col">
+        <h4 class="nicachapin-brand-title">Nica Chapin</h4>
+        <p>Celebrating the culinary bridge between Nicaragua and Guatemala on Central Avenue in Charlotte. From banana-leaf steamed nacatamales and crispy vigoron to Mayan pepian and handmade garnachas.</p>
+        <p><strong>Dine-In | Takeout | Party Catering Pans</strong></p>
+      </div>
+      <div class="nicachapin-footer-col">
+        <h4>Navigation</h4>
+        <ul class="nicachapin-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="nicaraguan-vigoron-and-nacatamales.html">Nica Heritage</a></li>
+          <li><a href="guatemalan-pepian-and-hilachas.html">Chapin Kitchen</a></li>
+          <li><a href="central-american-catering-and-events.html">Feasts & Catering</a></li>
+          <li><a href="visit.html">Visit & Hours</a></li>
+        </ul>
+      </div>
+      <div class="nicachapin-footer-col">
+        <h4>Hours of Operation</h4>
+        <ul class="nicachapin-footer-links">
+          <li>Tuesday - Thursday: 10:00 AM - 8:30 PM</li>
+          <li>Friday - Saturday: 9:00 AM - 9:30 PM</li>
+          <li>Sunday: 9:00 AM - 8:00 PM</li>
+          <li>Monday: Closed</li>
+        </ul>
+      </div>
+      <div class="nicachapin-footer-col">
+        <h4>Contact & Location</h4>
+        <p>4833 Central Ave<br>Charlotte, NC 28205</p>
+        <p>Phone: <a href="tel:7045688889" style="color:#fef08a;">(704) 568-8889</a></p>
+        <p>Email: <a href="mailto:info@nicachapinclt.com" style="color:#fef08a;">info@nicachapinclt.com</a></p>
+      </div>
+    </div>
+    <div class="nicachapin-footer-bottom">
+      <p>&copy; 2026 Nica Chapin. All rights reserved. Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

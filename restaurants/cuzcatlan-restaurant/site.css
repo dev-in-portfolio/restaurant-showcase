@@ -1,0 +1,882 @@
+/* ==========================================================================
+   Cuzcatlan Restaurant - Custom Namespaced Stylesheet (.cuz-*)
+   ========================================================================== */
+
+:root {
+  --cuz-primary: #103b74;
+  --cuz-primary-dark: #0a264d;
+  --cuz-primary-light: #1c549e;
+  --cuz-terracotta: #d95d39;
+  --cuz-terracotta-hover: #b84725;
+  --cuz-maize: #e09f29;
+  --cuz-maize-light: #fbeed1;
+  --cuz-verde: #2d7a46;
+  --cuz-bg: #fdfbf7;
+  --cuz-bg-alt: #f7f2ea;
+  --cuz-card-bg: #ffffff;
+  --cuz-text: #211e1b;
+  --cuz-text-muted: #615a52;
+  --cuz-border: #e6ded2;
+  --cuz-shadow: 0 4px 18px rgba(16, 59, 116, 0.07);
+  --cuz-shadow-lg: 0 10px 30px rgba(16, 59, 116, 0.12);
+  --cuz-font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --cuz-font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --cuz-radius-sm: 8px;
+  --cuz-radius: 14px;
+  --cuz-radius-lg: 22px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--cuz-font-body);
+  background-color: var(--cuz-bg);
+  color: var(--cuz-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar & Header
+   -------------------------------------------------------------------------- */
+.cuz-topbar {
+  background-color: var(--cuz-primary-dark);
+  color: #c7d8ef;
+  font-size: 0.86rem;
+  padding: 9px 16px;
+  border-bottom: 2px solid var(--cuz-maize);
+}
+
+.cuz-topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cuz-topbar-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cuz-topbar-link {
+  color: var(--cuz-maize);
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.cuz-topbar-link:hover {
+  color: #ffffff;
+}
+
+.cuz-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--cuz-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cuz-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.cuz-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.cuz-brand-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--cuz-primary);
+  line-height: 1;
+}
+
+.cuz-brand-title span {
+  color: var(--cuz-terracotta);
+}
+
+.cuz-brand-sub {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cuz-text-muted);
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.cuz-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.cuz-nav-link {
+  color: var(--cuz-text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 4px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.cuz-nav-link:hover,
+.cuz-nav-link.active {
+  color: var(--cuz-terracotta);
+}
+
+.cuz-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--cuz-terracotta);
+  border-radius: 2px;
+}
+
+.cuz-nav-cta {
+  background-color: var(--cuz-primary);
+  color: #ffffff !important;
+  padding: 10px 20px !important;
+  border-radius: var(--cuz-radius-sm);
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.cuz-nav-cta:hover {
+  background-color: var(--cuz-primary-light) !important;
+  transform: translateY(-1px);
+}
+
+.cuz-mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--cuz-border);
+  color: var(--cuz-primary);
+  font-size: 1.5rem;
+  padding: 6px 12px;
+  border-radius: var(--cuz-radius-sm);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Hero & Page Headers
+   -------------------------------------------------------------------------- */
+.cuz-hero {
+  position: relative;
+  background: linear-gradient(rgba(10, 38, 77, 0.82), rgba(10, 38, 77, 0.78)), url('images/hero-pupusas.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 95px 20px 85px;
+  text-align: center;
+}
+
+.cuz-hero-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.cuz-hero-badge {
+  display: inline-block;
+  background-color: rgba(224, 159, 41, 0.2);
+  border: 1px solid var(--cuz-maize);
+  color: var(--cuz-maize);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.cuz-hero-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+.cuz-hero-lead {
+  font-size: 1.15rem;
+  color: #dbe7f7;
+  margin-bottom: 32px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cuz-hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cuz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: var(--cuz-radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cuz-btn-primary {
+  background-color: var(--cuz-terracotta);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(217, 93, 57, 0.3);
+}
+
+.cuz-btn-primary:hover {
+  background-color: var(--cuz-terracotta-hover);
+  transform: translateY(-2px);
+}
+
+.cuz-btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.cuz-btn-outline:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.cuz-btn-dark {
+  background-color: var(--cuz-primary);
+  color: #ffffff;
+}
+
+.cuz-btn-dark:hover {
+  background-color: var(--cuz-primary-light);
+}
+
+/* Page Header */
+.cuz-page-header {
+  background: linear-gradient(rgba(10, 38, 77, 0.9), rgba(10, 38, 77, 0.85)), url('images/pupusas-platter.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 65px 20px;
+  text-align: center;
+  border-bottom: 4px solid var(--cuz-maize);
+}
+
+.cuz-page-header-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.cuz-page-header-desc {
+  font-size: 1.05rem;
+  color: #d1e2f7;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Layout & Sections
+   -------------------------------------------------------------------------- */
+.cuz-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 65px 20px;
+}
+
+.cuz-section-alt {
+  background-color: var(--cuz-bg-alt);
+}
+
+.cuz-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.cuz-section-tag {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--cuz-terracotta);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cuz-section-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: var(--cuz-primary);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.cuz-section-desc {
+  color: var(--cuz-text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+}
+
+/* --------------------------------------------------------------------------
+   Cards, Grids & Highlights
+   -------------------------------------------------------------------------- */
+.cuz-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.cuz-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 36px;
+  align-items: center;
+}
+
+.cuz-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.cuz-card {
+  background-color: var(--cuz-card-bg);
+  border: 1px solid var(--cuz-border);
+  border-radius: var(--cuz-radius);
+  overflow: hidden;
+  box-shadow: var(--cuz-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cuz-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--cuz-shadow-lg);
+}
+
+.cuz-card-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.cuz-card-body {
+  padding: 26px;
+}
+
+.cuz-card-badge {
+  display: inline-block;
+  background-color: var(--cuz-maize-light);
+  color: #8c5b05;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.cuz-card-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cuz-primary);
+  margin-bottom: 6px;
+}
+
+.cuz-card-sub {
+  font-size: 0.85rem;
+  color: var(--cuz-terracotta);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cuz-card-text {
+  color: var(--cuz-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.cuz-card-price {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--cuz-terracotta);
+}
+
+/* Feature Ribbons */
+.cuz-ribbon-bar {
+  background-color: var(--cuz-primary);
+  color: #ffffff;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cuz-ribbon-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.cuz-ribbon-item {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0 10px;
+}
+
+.cuz-ribbon-item:last-child {
+  border-right: none;
+}
+
+.cuz-ribbon-num {
+  font-family: var(--cuz-font-heading);
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--cuz-maize);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cuz-ribbon-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #d1e2f7;
+}
+
+/* --------------------------------------------------------------------------
+   Menu Tabs & Item Layouts
+   -------------------------------------------------------------------------- */
+.cuz-menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 42px;
+}
+
+.cuz-tab-btn {
+  background-color: #ffffff;
+  border: 1px solid var(--cuz-border);
+  color: var(--cuz-text);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 22px;
+  border-radius: var(--cuz-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cuz-tab-btn:hover,
+.cuz-tab-btn.active {
+  background-color: var(--cuz-primary);
+  color: #ffffff;
+  border-color: var(--cuz-primary);
+}
+
+.cuz-menu-section {
+  margin-bottom: 52px;
+}
+
+.cuz-menu-section-header {
+  border-bottom: 3px solid var(--cuz-maize);
+  padding-bottom: 12px;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cuz-menu-section-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--cuz-primary);
+}
+
+.cuz-menu-section-note {
+  font-size: 0.88rem;
+  color: var(--cuz-text-muted);
+  font-style: italic;
+}
+
+.cuz-menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.cuz-menu-item {
+  background-color: #ffffff;
+  border: 1px solid var(--cuz-border);
+  border-radius: var(--cuz-radius);
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.cuz-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.cuz-item-name {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--cuz-primary);
+}
+
+.cuz-item-price {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--cuz-terracotta);
+  white-space: nowrap;
+}
+
+.cuz-item-sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cuz-verde);
+  margin-bottom: 8px;
+}
+
+.cuz-item-desc {
+  font-size: 0.88rem;
+  color: var(--cuz-text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Widgets & Pupusa Builder
+   -------------------------------------------------------------------------- */
+.cuz-interactive-box {
+  background-color: #ffffff;
+  border: 2px solid var(--cuz-border);
+  border-radius: var(--cuz-radius);
+  padding: 34px;
+  box-shadow: var(--cuz-shadow);
+  margin: 30px 0;
+}
+
+.cuz-widget-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--cuz-primary);
+  margin-bottom: 8px;
+}
+
+.cuz-widget-desc {
+  color: var(--cuz-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 26px;
+}
+
+.cuz-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.cuz-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cuz-input-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cuz-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cuz-select,
+.cuz-input {
+  padding: 11px 14px;
+  border: 1px solid var(--cuz-border);
+  border-radius: var(--cuz-radius-sm);
+  font-family: var(--cuz-font-body);
+  font-size: 0.95rem;
+  background-color: var(--cuz-bg);
+  color: var(--cuz-text);
+}
+
+.cuz-calc-result {
+  background-color: var(--cuz-primary);
+  color: #ffffff;
+  padding: 22px;
+  border-radius: var(--cuz-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cuz-calc-total-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c7d8ef;
+}
+
+.cuz-calc-total-val {
+  font-family: var(--cuz-font-heading);
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--cuz-maize);
+}
+
+/* Flavor Explorer Cards */
+.cuz-flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.cuz-flavor-card {
+  border: 1px solid var(--cuz-border);
+  border-radius: var(--cuz-radius-sm);
+  padding: 16px;
+  text-align: center;
+  background-color: var(--cuz-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cuz-flavor-card:hover,
+.cuz-flavor-card.selected {
+  border-color: var(--cuz-terracotta);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 93, 57, 0.12);
+}
+
+.cuz-flavor-name {
+  font-weight: 700;
+  color: var(--cuz-primary);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.cuz-flavor-sub {
+  font-size: 0.78rem;
+  color: var(--cuz-terracotta);
+  font-weight: 600;
+}
+
+/* Info Cards */
+.cuz-info-card {
+  background-color: #ffffff;
+  border: 1px solid var(--cuz-border);
+  border-top: 4px solid var(--cuz-terracotta);
+  border-radius: var(--cuz-radius);
+  padding: 28px;
+  box-shadow: var(--cuz-shadow);
+}
+
+.cuz-info-title {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--cuz-primary);
+  margin-bottom: 14px;
+}
+
+.cuz-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cuz-info-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--cuz-border);
+  padding-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.cuz-info-list li span.label {
+  font-weight: 600;
+  color: var(--cuz-primary);
+}
+
+.cuz-info-list li span.val {
+  color: var(--cuz-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.cuz-footer {
+  background-color: var(--cuz-primary-dark);
+  color: #c7d8ef;
+  border-top: 4px solid var(--cuz-maize);
+  padding: 60px 20px 20px;
+}
+
+.cuz-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.cuz-footer-col h4 {
+  font-family: var(--cuz-font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.cuz-footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--cuz-maize);
+}
+
+.cuz-footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #b3c7e0;
+}
+
+.cuz-footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cuz-footer-links a {
+  color: #b3c7e0;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.cuz-footer-links a:hover {
+  color: var(--cuz-maize);
+  padding-left: 4px;
+}
+
+.cuz-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: #8da4c2;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .cuz-hero-title {
+    font-size: 2.8rem;
+  }
+  .cuz-nav-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    border-bottom: 3px solid var(--cuz-terracotta);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  .cuz-nav-links.open {
+    display: flex;
+  }
+  .cuz-mobile-toggle {
+    display: block;
+  }
+  .cuz-ribbon-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
+  }
+  .cuz-ribbon-item:last-child {
+    border-bottom: none;
+  }
+}

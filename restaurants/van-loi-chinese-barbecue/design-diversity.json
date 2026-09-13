@@ -1,0 +1,74 @@
+{
+  "slug": "van-loi-chinese-barbecue",
+  "generatedAt": "2026-09-10T17:58:30.374Z",
+  "recentCompared": 5,
+  "recentSlugs": [
+    "restaurant-slug",
+    "midwood-country-club",
+    "republica-restaurant-and-lounge",
+    "indigo-tea-and-coffee-co",
+    "nefelie-s",
+    "the-local",
+    "mortimer-s-cafe-and-pub",
+    "santa-fe-mexican-restaurant-central-ave",
+    "landmark-restaurant-diner"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "landmark-restaurant-diner",
+    "score": 0.22429054054054054,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.013888888888888888,
+    "domSimilarity": 0.918918918918919,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 0
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "landmark-restaurant-diner",
+      "score": 0.22429054054054054,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013888888888888888,
+      "domSimilarity": 0.918918918918919,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.2085974025974026,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012987012987012988,
+      "domSimilarity": 0.8545454545454545,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "mortimer-s-cafe-and-pub",
+      "score": 0.11811652703731912,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007692307692307693,
+      "domSimilarity": 0.31683168316831684,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "republica-restaurant-and-lounge",
+      "score": 0.0985272854477612,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0078125,
+      "domSimilarity": 0.31840796019900497,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.25
+    },
+    {
+      "priorSlug": "midwood-country-club",
+      "score": 0.07497867803837953,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007936507936507936,
+      "domSimilarity": 0.3034825870646766,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

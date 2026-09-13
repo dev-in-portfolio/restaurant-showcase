@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poppin Sushi & Poke - Fresh Poke Bowls & Specialty Sushi in Uptown Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="poppin-header">
+    <div class="poppin-nav-container">
+      <a href="index.html" class="poppin-brand">
+        <span class="poppin-brand-title">Poppin Sushi &amp; Poke</span>
+        <span class="poppin-brand-subtitle">Fresh Poke &amp; Specialty Maki</span>
+      </a>
+      <button class="poppin-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="poppin-nav" aria-label="Primary Navigation">
+        <ul class="poppin-nav-list">
+          <li><a href="index.html" class="poppin-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="poppin-nav-link ">Menu</a></li>
+          <li><a href="poke-craft-and-quality.html" class="poppin-nav-link ">Poke Craft</a></li>
+          <li><a href="specialty-sushi-rolls.html" class="poppin-nav-link ">Specialty Rolls</a></li>
+          <li><a href="appetizers-and-sides.html" class="poppin-nav-link ">Starters &amp; Sides</a></li>
+          <li><a href="visit.html" class="poppin-nav-link poppin-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main>
+      <section class="poppin-hero">
+        <div class="poppin-hero-grid">
+          <div class="poppin-hero-content">
+            <span class="poppin-hero-badge">Uptown Charlotte &bull; 210 N Church St</span>
+            <h1 class="poppin-hero-title">Fresh Ocean Flavors, <span>Rolled to Order</span></h1>
+            <p class="poppin-hero-lead">Experience Charlotte’s premier fast-casual poke bar and sushi kitchen. Savor sustainably sourced ahi tuna, Atlantic salmon, house-made sauces, and creative specialty maki.</p>
+            <div class="poppin-hero-actions">
+              <a href="menu.html" class="poppin-btn-primary">View Full Menu</a>
+              <a href="poke-craft-and-quality.html" class="poppin-btn-secondary">Our Fresh Craft</a>
+            </div>
+          </div>
+          <div class="poppin-hero-img-wrap">
+            <img src="images/hero.jpg" alt="Vibrant fresh poke bowl loaded with salmon, avocado, edamame, and sesame toppings" width="600" height="420">
+          </div>
+        </div>
+      </section>
+
+      <section class="poppin-features">
+        <div class="poppin-feature-grid">
+          <div class="poppin-feature-card">
+            <div class="poppin-feature-tag">Sustainably Sourced</div>
+            <h2 class="poppin-feature-title">Sushi-Grade Catch</h2>
+            <p class="poppin-feature-desc">Yellowfin ahi tuna, rich Atlantic salmon, and tender yellowtail sliced fresh each morning.</p>
+          </div>
+          <div class="poppin-feature-card">
+            <div class="poppin-feature-tag">Custom Crafted</div>
+            <h2 class="poppin-feature-title">Build Your Own Poke</h2>
+            <p class="poppin-feature-desc">Choose your base, premium proteins, fresh mix-ins, house ponzu dressings, and crunchy toppers.</p>
+          </div>
+          <div class="poppin-feature-card">
+            <div class="poppin-feature-tag">Chef Maki</div>
+            <h2 class="poppin-feature-title">Specialty Sushi Rolls</h2>
+            <p class="poppin-feature-desc">From the fiery Poppin Crunch to the Uptown Dragon, our maki combines crunch, spice, and freshness.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="poppin-section">
+        <div class="poppin-story-grid">
+          <div class="poppin-story-img-wrap">
+            <img src="images/poke.jpg" alt="Ahi tuna and salmon poke bowl topped with avocado and seaweed salad" width="600" height="380">
+          </div>
+          <div class="poppin-story-content">
+            <span class="poppin-section-eyebrow">Pure Refreshment</span>
+            <h3>Wholesome Nutrition Packed with Flavor</h3>
+            <p>At Poppin Sushi &amp; Poke, healthy eating never means compromising on vibrant taste. Our Hawaiian-inspired poke bowls are layered with nutrient-rich proteins, crisp cucumbers, creamy avocado, and antioxidant-loaded seaweed salad.</p>
+            <p>Paired with our scratch citrus shoyu, spicy sesame mayo, or roasted unagi drizzle, every bowl is a colorful masterpiece tailored to your palate.</p>
+            <a href="specialty-sushi-rolls.html" class="poppin-btn-primary" style="margin-top: 0.5rem;">Explore Signature Rolls</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="poppin-section" style="background: #ffffff; border-top: 1px solid var(--poppin-border); border-bottom: 1px solid var(--poppin-border);">
+        <div class="poppin-section-header">
+          <span class="poppin-section-eyebrow">Corporate &amp; Party Catering</span>
+          <h2 class="poppin-section-title">Uptown Sushi &amp; Poke Platter Estimator</h2>
+          <p class="poppin-section-subtitle">Hosting a team lunch, client meeting, or celebration? Calculate your party sushi platter and poke bowl counts below.</p>
+        </div>
+
+        <div class="poppin-calc-card">
+          <div class="poppin-calc-controls">
+            <div class="poppin-calc-field">
+              <label for="poppin-guest-count">Number of Guests: <span id="poppin-guest-display" style="color: var(--poppin-primary); font-weight: 800;">15 Guests</span></label>
+              <input type="range" id="poppin-guest-count" class="poppin-range-slider" min="5" max="60" step="5" value="15">
+            </div>
+            <div class="poppin-calc-field">
+              <label for="poppin-platter-style">Menu Focus</label>
+              <select id="poppin-platter-style" class="poppin-calc-select">
+                <option value="balanced">Balanced Mix (Sushi Rolls &amp; Mini Poke Bowls)</option>
+                <option value="rolls">Maki Platter Focus (Assorted Specialty Rolls)</option>
+              </select>
+            </div>
+          </div>
+          <div class="poppin-calc-results">
+            <div class="poppin-result-box">
+              <span class="num" id="poppin-roll-total">90 Specialty Roll Pieces</span>
+              <span class="label">Chef Maki Cuts</span>
+            </div>
+            <div class="poppin-result-box">
+              <span class="num" id="poppin-poke-total">11 Mini Poke Bowls</span>
+              <span class="label">Custom Poke Cups</span>
+            </div>
+            <div class="poppin-result-box">
+              <span class="num" id="poppin-gyoza-total">30 Pan-Seared Gyoza</span>
+              <span class="label">Warm Starters</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+  <footer class="poppin-footer">
+    <div class="poppin-footer-container">
+      <div class="poppin-footer-brand">
+        <h4>Poppin Sushi &amp; Poke</h4>
+        <p>Fresh-catch poke bowls, creative chef-crafted maki rolls, and Japanese street starters in the heart of Uptown Charlotte, North Carolina.</p>
+      </div>
+      <div class="poppin-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="poke-craft-and-quality.html">Poke Craft &amp; Quality</a></li>
+          <li><a href="specialty-sushi-rolls.html">Specialty Rolls</a></li>
+          <li><a href="appetizers-and-sides.html">Starters &amp; Sides</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="poppin-footer-hours">
+        <h5>Location &amp; Contact</h5>
+        <p style="color: #8fa5ac; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Uptown Charlotte:</strong> 210 N Church St, Suite B</p>
+        <p style="color: #8fa5ac; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 372-2828</p>
+        <p style="color: #8fa5ac; font-size: 0.88rem;">Mon - Fri: 11:00 AM - 8:30 PM<br>Saturday: 12:00 PM - 8:00 PM<br>Sunday: Closed</p>
+      </div>
+    </div>
+    <div class="poppin-footer-bottom">
+      <p>&copy; 2026 Poppin Sushi &amp; Poke. All rights reserved. Restaurant showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

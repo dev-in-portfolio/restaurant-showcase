@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Catering Platters & Trays | La Caridad Cocina Latina Charlotte</title>
+  <meta name="description" content="Calculate and order catering trays of Pernil Asado, Ropa Vieja, Arroz con Gandules, and sweet plantains for family parties and corporate events in Charlotte NC.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="caridad-header">
+    <div class="caridad-topbar">
+      <span>Authentic Dominican & Cuban Kitchen | 4421 N Sharon Amity Rd, Charlotte, NC</span>
+      <span>Call for Takeout & Catering: <a href="tel:7045378890">(704) 537-8890</a></span>
+    </div>
+    <div class="caridad-nav-container">
+      <a href="index.html" class="caridad-logo-group">
+        <span class="caridad-logo-badge">LC</span>
+        <div>
+          <span class="caridad-logo-text">La Caridad</span>
+          <span class="caridad-logo-sub">Cocina Latina Charlotte</span>
+        </div>
+      </a>
+      <button class="caridad-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="caridad-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="ropa-vieja-and-lechon-asado.html">Meats & Pernil</a>
+          <a href="mofongo-and-caribbean-specialties.html">Mofongo & Seafood</a>
+          <a href="family-catering-and-platters.html" class="active">Party Platters</a>
+          <a href="visit.html">Visit & Hours</a>
+          <a href="tel:7045378890" class="caridad-btn-cta">Call (704) 537-8890</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="caridad-page-header">
+    <h1>Family Feasts & Catering Platters</h1>
+    <p>Bring the warmth of Caribbean hospitality to your next gathering, birthday celebration, or office lunch with generous party pans.</p>
+  </section>
+
+  <main class="caridad-container">
+    <div class="caridad-section-title">
+      <h2>Instant Catering Estimator</h2>
+      <p>Select your guest count and package options to calculate instant serving tray recommendations and price estimates.</p>
+    </div>
+
+    <!-- Interactive Calculator -->
+    <div class="caridad-calculator-box">
+      <div class="caridad-calc-row">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <label for="calc-guests" style="margin: 0;">Number of Guests:</label>
+          <span id="calc-guests-val" style="font-weight: 800; color: var(--caridad-primary); font-size: 1.15rem;">25 Guests</span>
+        </div>
+        <input type="range" id="calc-guests" class="caridad-range-control" min="10" max="150" value="25" step="5">
+      </div>
+
+      <div class="caridad-calc-row">
+        <label for="calc-protein">Primary Meat Selection:</label>
+        <select id="calc-protein" class="caridad-select-control">
+          <option value="7.50">Roast Pernil Asado al Horno ($7.50 / guest)</option>
+          <option value="8.50">Traditional Ropa Vieja Shredded Beef ($8.50 / guest)</option>
+          <option value="6.50">Pollo Guisado Stewed Chicken ($6.50 / guest)</option>
+          <option value="7.25">Masitas de Cerdo Crispy Pork ($7.25 / guest)</option>
+          <option value="9.00">Combo Feast: Pernil + Pollo Guisado ($9.00 / guest)</option>
+        </select>
+      </div>
+
+      <div class="caridad-calc-row">
+        <label for="calc-side">Side Dish Package:</label>
+        <select id="calc-side" class="caridad-select-control">
+          <option value="3.50">Arroz con Gandules + Sweet Maduros ($3.50 / guest)</option>
+          <option value="4.00">Moros y Cristianos + Yuca con Mojo ($4.00 / guest)</option>
+          <option value="4.50">Deluxe: Arroz Moro + Maduros + House Garden Salad ($4.50 / guest)</option>
+        </select>
+      </div>
+
+      <div class="caridad-calc-results">
+        <div class="caridad-result-line">
+          <span>Recommended Main Protein Trays:</span>
+          <strong id="calc-pans">2 Large Tray(s)</strong>
+        </div>
+        <div class="caridad-result-line">
+          <span>Recommended Side Trays:</span>
+          <strong id="calc-sides-pans">2 Medium Pan(s)</strong>
+        </div>
+        <div class="caridad-result-line">
+          <span>Serving Utensils & Warming Racks:</span>
+          <strong>Included Free</strong>
+        </div>
+        <div class="caridad-result-total">
+          <span>Estimated Total:</span>
+          <span id="calc-total-price">$275.00</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 24px;">
+        <p style="font-size: 0.875rem; color: var(--caridad-text-muted); margin-bottom: 12px;">Estimates are for planning purposes. Call us directly to lock in your date and exact preferences.</p>
+        <a href="tel:7045378890" class="caridad-btn-cta">Call (704) 537-8890 to Confirm Catering</a>
+      </div>
+    </div>
+
+    <!-- Pre-Set Party Packages -->
+    <div class="caridad-section-title" style="margin-top: 60px;">
+      <h2>Popular Catering Packages</h2>
+      <p>Standardized trays designed for quick ordering and balanced variety.</p>
+    </div>
+
+    <div class="caridad-grid-3">
+      <div class="caridad-card">
+        <div class="caridad-card-body">
+          <span class="caridad-card-badge">Serves 10-12</span>
+          <h3>El Bohio Fiesta</h3>
+          <p>Half tray of Pernil Asado, half tray of Arroz con Gandules, sweet maduros, and a platter of fresh green salad with house vinaigrette.</p>
+          <div class="caridad-card-footer">
+            <span class="caridad-price">$135.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caridad-card">
+        <div class="caridad-card-body">
+          <span class="caridad-card-badge">Serves 20-25</span>
+          <h3>La Habana Celebration</h3>
+          <p>Full tray of Ropa Vieja flank steak, full tray of Moros y Cristianos, half tray of Yuca con Mojo, and 25 crispy beef empanadas.</p>
+          <div class="caridad-card-footer">
+            <span class="caridad-price">$285.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="caridad-card">
+        <div class="caridad-card-body">
+          <span class="caridad-card-badge">Serves 40-50</span>
+          <h3>El Gran Quisqueya</h3>
+          <p>Two full trays of Pernil Asado, two full trays of Arroz con Gandules, one full tray of Pollo Guisado, two pans of Maduros, and 40 empanadas.</p>
+          <div class="caridad-card-footer">
+            <span class="caridad-price">$540.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="caridad-footer">
+    <div class="caridad-footer-grid">
+      <div class="caridad-footer-col">
+        <h4 class="caridad-brand-title">La Caridad Cocina Latina</h4>
+        <p>Bringing authentic Caribbean homestyle flavors to East Charlotte. From slow-roasted pernil asado and shredded ropa vieja to plantain mofongo and golden empanadas.</p>
+        <p><strong>Dine-In | Takeout | Catering Trays</strong></p>
+      </div>
+      <div class="caridad-footer-col">
+        <h4>Navigation</h4>
+        <ul class="caridad-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="ropa-vieja-and-lechon-asado.html">Meats & Pernil</a></li>
+          <li><a href="mofongo-and-caribbean-specialties.html">Mofongo & Seafood</a></li>
+          <li><a href="family-catering-and-platters.html">Party Platters</a></li>
+          <li><a href="visit.html">Visit & Hours</a></li>
+        </ul>
+      </div>
+      <div class="caridad-footer-col">
+        <h4>Hours of Operation</h4>
+        <ul class="caridad-footer-links">
+          <li>Monday - Thursday: 10:00 AM - 8:30 PM</li>
+          <li>Friday - Saturday: 10:00 AM - 9:30 PM</li>
+          <li>Sunday: 11:00 AM - 7:30 PM</li>
+        </ul>
+      </div>
+      <div class="caridad-footer-col">
+        <h4>Contact & Location</h4>
+        <p>4421 N Sharon Amity Rd<br>Charlotte, NC 28205</p>
+        <p>Phone: <a href="tel:7045378890" style="color:#fef08a;">(704) 537-8890</a></p>
+        <p>Email: <a href="mailto:info@lacaridadcharlotte.com" style="color:#fef08a;">info@lacaridadcharlotte.com</a></p>
+      </div>
+    </div>
+    <div class="caridad-footer-bottom">
+      <p>&copy; 2026 La Caridad Cocina Latina. All rights reserved. Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

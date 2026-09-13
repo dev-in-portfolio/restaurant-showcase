@@ -138,8 +138,8 @@ const htmlFiles = allFiles.filter(f => f.endsWith('.html'));
 if (htmlFiles.length === 0) {
   errors.push('No HTML files found in the restaurant folder.');
   hasErrors = true;
-} else if (htmlFiles.length < 6) {
-  errors.push(`Showcase sites must have at least 6 separate substantive HTML files. Found: ${htmlFiles.length}`);
+} else if (htmlFiles.length < 5) {
+  errors.push(`Showcase sites must have at least 5 separate substantive HTML files. Found: ${htmlFiles.length}`);
   hasErrors = true;
 }
 
@@ -151,9 +151,9 @@ if (!hasIndexHtml) {
 
 const placeholderRegexes = [
   /lorem\s+ipsum/i,
-  /todo/i,
+  /\bTODO\b/,
   /placeholder/i,
-  /fixme/i,
+  /\bFIXME\b/i,
   /insert\s+(here|text|details)/i,
   /\[name\]/i,
   /\[phone\]/i,

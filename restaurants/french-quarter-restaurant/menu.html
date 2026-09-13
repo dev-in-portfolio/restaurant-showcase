@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Food &amp; Drink Menu | French Quarter Restaurant Charlotte NC</title>
+  <meta name="description" content="Explore the full menu at French Quarter Restaurant in Brevard Court Charlotte: authentic Cajun gumbo, Creole shrimp, salt &amp; pepper wings, sandwiches, and draft beer.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="fq-header">
+    <div class="fq-topbar">
+      <span>New Orleans Cajun &amp; Creole Pub | Established 1986 | Brevard Court</span>
+      <span>Daily Lunch &amp; Patio Service: <a href="tel:7043771715">(704) 377-1715</a></span>
+    </div>
+    <div class="fq-nav-container">
+      <a href="index.html" class="fq-logo-group">
+        <span class="fq-logo-badge">FQ</span>
+        <div>
+          <span class="fq-logo-title">French Quarter</span>
+          <span class="fq-logo-sub">Restaurant &amp; Pub Charlotte</span>
+        </div>
+      </a>
+      <button class="fq-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="fq-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Full Menu</a>
+          <a href="cajun-and-creole-specialties.html">Cajun &amp; Creole</a>
+          <a href="brevard-court-courtyard-dining.html">Courtyard Patio</a>
+          <a href="gameday-tailgates-and-catering.html">Gameday &amp; Catering</a>
+          <a href="visit.html">Visit &amp; Hours</a>
+          <a href="tel:7043771715" class="fq-nav-btn">Call (704) 377-1715</a>
+        </nav>
+    </div>
+  </header>
+
+  <section class="fq-hero-compact">
+    <div class="fq-container">
+      <span class="fq-badge">Handcrafted Pub Kitchen</span>
+      <h1 style="font-size:2.6rem; font-weight:900; margin:15px 0;">Our Complete Food &amp; Drink Menu</h1>
+      <p style="font-size:1.1rem; color:#cbd5e1; max-width:700px; margin:0 auto;">Authentic New Orleans comfort cuisine, hearty tavern subs, crisp salads, and chilled Carolina craft brews.</p>
+    </div>
+  </section>
+
+  <main class="fq-container" style="padding:40px 24px 60px;">
+    <!-- Interactive Filter Buttons -->
+    <div class="fq-filters">
+      <button class="fq-filter-btn active" data-filter="all">All Items</button>
+      <button class="fq-filter-btn" data-filter="cajun">Cajun &amp; Creole</button>
+      <button class="fq-filter-btn" data-filter="wings">Famous Wings</button>
+      <button class="fq-filter-btn" data-filter="sandwiches">Po'Boys &amp; Sandwiches</button>
+      <button class="fq-filter-btn" data-filter="entrees">Entrees &amp; Pasta</button>
+      <button class="fq-filter-btn" data-filter="starters">Appetizers &amp; Sides</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="fq-grid-3" id="menu-items-grid" style="gap:24px;">
+      <!-- Cajun Items -->
+      <div class="fq-card fq-menu-item" data-category="cajun">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Authentic Louisiana Gumbo</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">Cup $7.50 / Bowl $12.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Dark chocolate roux slow-simmered with smoked andouille sausage, pulled chicken, okra, holy trinity vegetables, and steamed long-grain white rice.</p>
+        <span class="fq-pill-tag">Scratch Simmered</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="cajun">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Shrimp &amp; Crawfish Creole</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Plump Gulf shrimp and sweet Louisiana crawfish tails simmered in a spiced piquant tomato-herb Creole reduction served over rice with warm French bread.</p>
+        <span class="fq-pill-tag">New Orleans Classic</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="cajun">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Red Beans &amp; Rice with Andouille</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$15.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Creamy simmered red kidney beans seasoned with smoked ham hocks and cajun spices, topped with grilled andouille sausage links and scallions.</p>
+        <span class="fq-pill-tag">Comfort Heritage</span>
+      </div>
+
+      <!-- Wings Items -->
+      <div class="fq-card fq-menu-item" data-category="wings">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Famous Salt &amp; Pepper Wings (10pc)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$15.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Our renowned crispy chicken wings wok-tossed with coarse sea salt, black pepper, cracked red pepper flakes, and sauteed sliced jalapenos.</p>
+        <span class="fq-pill-tag">Signature Recipe</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="wings">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Cajun Dry Rub Wings (10pc)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$15.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Crispy jumbo wings dusted in a savory blackened Cajun spice blend of paprika, garlic, thyme, and cayenne. Served with house ranch.</p>
+        <span class="fq-pill-tag">Spicy Kick</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="wings">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Bourbon BBQ Glazed Wings (10pc)</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$15.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Tossed in our sweet and smoky Kentucky bourbon molasses barbecue glaze, finished with toasted sesame seeds and fresh scallions.</p>
+        <span class="fq-pill-tag">Sweet &amp; Smoky</span>
+      </div>
+
+      <!-- Sandwiches Items -->
+      <div class="fq-card fq-menu-item" data-category="sandwiches">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">The Monte Cristo</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$14.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Triple-decker layered with smoked ham, roasted turkey, and Swiss cheese on egg-battered French bread, grilled golden with raspberry dipping preserves.</p>
+        <span class="fq-pill-tag">Customer Favorite</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="sandwiches">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Blackened Shrimp Po'Boy</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$16.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Plump shrimp seared in cast iron with blackening seasoning, dressed with shredded lettuce, sliced tomatoes, pickles, and spicy remoulade on a Leidenheimer roll.</p>
+        <span class="fq-pill-tag">New Orleans Sub</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="sandwiches">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">French Dip Au Jus</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$15.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Shaved prime roast beef piled high on a toasted French baguette with melted provolone cheese and piping hot house beef au jus for dipping.</p>
+        <span class="fq-pill-tag">Pub Classic</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="sandwiches">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Church Street Burger</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$14.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Half-pound Angus beef patty grilled to order on a toasted brioche bun with sharp cheddar cheese, crisp lettuce, tomato, onion, and pub secret spread.</p>
+        <span class="fq-pill-tag">Angus Beef</span>
+      </div>
+
+      <!-- Entrees & Pasta Items -->
+      <div class="fq-card fq-menu-item" data-category="entrees">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Cajun Chicken Pasta</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$17.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Pan-seared blackened chicken breast, sweet bell peppers, red onions, and penne pasta folded in our signature cajun spiced garlic Parmesan cream sauce.</p>
+        <span class="fq-pill-tag">Bestselling Pasta</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="entrees">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Blackened Catfish Filet</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$18.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Cast iron seared farm-raised catfish filet coated in Creole spices, served over yellow rice with seasoned green beans and fresh lemon caper butter.</p>
+        <span class="fq-pill-tag">Southern Seafood</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="entrees">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Marinated Beef Tips with Rice</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$17.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Tender sirloin steak tips marinated in garlic, soy, and herbs, sauteed with portobello mushrooms and onions, served over buttered rice.</p>
+        <span class="fq-pill-tag">House Specialty</span>
+      </div>
+
+      <!-- Starters & Sides -->
+      <div class="fq-card fq-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Crispy Fried Pickles</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$9.50</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Crinkle cut dill pickle chips tossed in seasoned cornmeal batter, fried golden and served with homemade spicy Cajun ranch dipping sauce.</p>
+        <span class="fq-pill-tag">Pub Starter</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Loaded Pub Fries</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$10.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Crispy skin-on French fries smothered in melted Monterey Jack and cheddar cheeses, crisp bacon crumbles, jalapenos, and chopped scallions with sour cream.</p>
+        <span class="fq-pill-tag">Sharing Plate</span>
+      </div>
+
+      <div class="fq-card fq-menu-item" data-category="starters">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#1e0a45; font-size:1.2rem;">Brevard House Salad</h3>
+          <span style="font-weight:700; color:#d97706; font-size:1.1rem;">$8.95</span>
+        </div>
+        <p style="color:#4b5563; font-size:0.95rem; margin-bottom:12px;">Crisp mixed greens, grape tomatoes, English cucumbers, shredded carrots, garlic butter croutons, and your choice of house balsamic, ranch, or blue cheese.</p>
+        <span class="fq-pill-tag">Fresh Greens</span>
+      </div>
+    </div>
+
+    <!-- Takeout CTA -->
+    <div style="text-align:center; margin-top:50px; background:#f3f4f6; border:1px solid #e5e7eb; border-radius:12px; padding:30px;">
+      <h3 style="color:#1e0a45; font-size:1.5rem; margin-bottom:10px;">Ready to Place an Order for Pickup?</h3>
+      <p style="color:#4b5563; max-width:600px; margin:0 auto 20px;">Give our kitchen counter a direct call for fast carryout preparation and curbside pickup near Brevard Court.</p>
+      <a href="tel:7043771715" class="fq-btn-primary">Call (704) 377-1715</a>
+    </div>
+  </main>
+
+  <footer class="fq-footer">
+    <div class="fq-footer-grid">
+      <div>
+        <h4 style="color:#f59e0b;">French Quarter Restaurant</h4>
+        <p>Serving Uptown Charlotte for over 35 years from historic Brevard Court. Authentic Louisiana Cajun &amp; Creole specialties, legendary Salt &amp; Pepper wings, handcrafted sandwiches, and open-air courtyard patio hospitality.</p>
+        <p style="margin-top:12px;"><strong>Established 1986 | Brevard Court Entrance | Charlotte, NC</strong></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="fq-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="cajun-and-creole-specialties.html">Cajun &amp; Creole Specialties</a></li>
+          <li><a href="brevard-court-courtyard-dining.html">Courtyard Patio Dining</a></li>
+          <li><a href="gameday-tailgates-and-catering.html">Gameday &amp; Catering</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours of Operation</h4>
+        <ul class="fq-footer-links">
+          <li>Monday - Thursday: 11:00 AM - 10:00 PM</li>
+          <li>Friday - Saturday: 11:00 AM - 11:00 PM</li>
+          <li>Sunday: 12:00 PM - 9:00 PM (Gamedays Open Early)</li>
+          <li>Kitchen open daily for lunch &amp; dinner</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Location</h4>
+        <p>321 S Church St (Brevard Court)<br>Charlotte, NC 28202</p>
+        <p style="margin-top:8px;">Phone: <a href="tel:7043771715" style="color:#f59e0b; font-weight:700;">(704) 377-1715</a></p>
+        <p>Email: <a href="mailto:info@frenchquartercharlotte.com" style="color:#f59e0b;">info@frenchquartercharlotte.com</a></p>
+      </div>
+    </div>
+    <div class="fq-footer-bottom">
+      <p>&copy; 2026 French Quarter Restaurant. All rights reserved. Uptown Charlotte, North Carolina.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

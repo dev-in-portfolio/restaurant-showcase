@@ -1,0 +1,263 @@
+{
+  "slug": "luce-ristorante",
+  "generatedAt": "2026-09-10T19:17:57.560Z",
+  "htmlPages": [
+    "handmade-pastas-and-tuscan-classics.html",
+    "index.html",
+    "menu.html",
+    "private-dining-and-plaza-events.html",
+    "visit.html",
+    "wine-cellar-and-aperitivo-cocktails.html"
+  ],
+  "cssFiles": [
+    "site.css"
+  ],
+  "jsFiles": [
+    "site.js"
+  ],
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "Minimum substantive HTML page count",
+      "passed": true,
+      "detail": "6 HTML pages found; minimum is 5"
+    },
+    {
+      "name": "index.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit/contact page exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS balance site.css",
+      "passed": true,
+      "detail": "balanced"
+    },
+    {
+      "name": "JavaScript parse site.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "handmade-pastas-and-tuscan-classics.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "handmade-pastas-and-tuscan-classics.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "handmade-pastas-and-tuscan-classics.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "handmade-pastas-and-tuscan-classics.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "handmade-pastas-and-tuscan-classics.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "handmade-pastas-and-tuscan-classics.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "index.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "menu.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private-dining-and-plaza-events.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private-dining-and-plaza-events.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private-dining-and-plaza-events.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "private-dining-and-plaza-events.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "private-dining-and-plaza-events.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "private-dining-and-plaza-events.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "visit.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "visit.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "wine-cellar-and-aperitivo-cocktails.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "wine-cellar-and-aperitivo-cocktails.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "wine-cellar-and-aperitivo-cocktails.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "wine-cellar-and-aperitivo-cocktails.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "wine-cellar-and-aperitivo-cocktails.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "wine-cellar-and-aperitivo-cocktails.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No exact duplicate HTML pages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Creative Brief",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Claim Ledger",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Add-On Preservation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Cross-Demo Diversity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cross-demo design diversity",
+      "passed": true,
+      "detail": "PASS luce-ristorante: closest recent design 'the-sandwich-club' scored 0.323."
+    }
+  ]
+}

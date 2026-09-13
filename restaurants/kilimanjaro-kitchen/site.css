@@ -1,0 +1,680 @@
+﻿/* Kilimanjaro Kitchen - East African Culinary Stylesheet */
+:root {
+  --kili-primary: #c85a17;
+  --kili-primary-dark: #8f3807;
+  --kili-secondary: #df9b12;
+  --kili-secondary-light: #f7b733;
+  --kili-brown: #5c3a21;
+  --kili-dark: #1a1918;
+  --kili-bg: #fcf9f2;
+  --kili-surface: #ffffff;
+  --kili-surface-alt: #f5eedf;
+  --kili-text: #232220;
+  --kili-text-muted: #615f5a;
+  --kili-border: #e6dac6;
+  --kili-shadow: 0 4px 18px rgba(200, 90, 23, 0.08);
+  --kili-shadow-lg: 0 12px 30px rgba(200, 90, 23, 0.14);
+  --kili-radius: 12px;
+  --kili-radius-sm: 6px;
+  --kili-font-heading: 'Fraunces', Georgia, serif;
+  --kili-font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--kili-bg);
+  color: var(--kili-text);
+  font-family: var(--kili-font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header & Navigation */
+.kili-header {
+  background: var(--kili-surface);
+  border-bottom: 2px solid var(--kili-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.kili-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kili-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.kili-brand-title {
+  font-family: var(--kili-font-heading);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--kili-primary);
+  letter-spacing: -0.01em;
+}
+
+.kili-brand-subtitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--kili-secondary);
+  font-weight: 700;
+}
+
+.kili-nav-list {
+  display: flex;
+  gap: 1.4rem;
+  list-style: none;
+  align-items: center;
+}
+
+.kili-nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--kili-text);
+  padding: 0.45rem 0.25rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.kili-nav-link:hover,
+.kili-nav-link.active {
+  color: var(--kili-primary);
+}
+
+.kili-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--kili-primary);
+  border-radius: 2px;
+}
+
+.kili-nav-cta {
+  background: var(--kili-primary);
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--kili-radius-sm);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.kili-nav-cta:hover {
+  background: var(--kili-primary-dark);
+  transform: translateY(-1px);
+}
+
+.kili-nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--kili-primary);
+  color: var(--kili-primary);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--kili-radius-sm);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Hero Section */
+.kili-hero {
+  position: relative;
+  padding: 5rem 1.5rem 4rem;
+  background: linear-gradient(135deg, rgba(200, 90, 23, 0.07) 0%, rgba(223, 155, 18, 0.08) 100%);
+  border-bottom: 1px solid var(--kili-border);
+}
+
+.kili-hero-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.kili-hero-badge {
+  display: inline-block;
+  background: var(--kili-surface-alt);
+  color: var(--kili-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid var(--kili-border);
+  margin-bottom: 1rem;
+}
+
+.kili-hero-title {
+  font-family: var(--kili-font-heading);
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--kili-dark);
+  margin-bottom: 1.25rem;
+}
+
+.kili-hero-title span {
+  color: var(--kili-primary);
+}
+
+.kili-hero-lead {
+  font-size: 1.15rem;
+  color: var(--kili-text-muted);
+  margin-bottom: 2rem;
+  max-width: 530px;
+}
+
+.kili-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.kili-btn-primary {
+  background: var(--kili-primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--kili-radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.kili-btn-primary:hover {
+  background: var(--kili-primary-dark);
+  transform: translateY(-2px);
+}
+
+.kili-btn-secondary {
+  background: transparent;
+  color: var(--kili-primary);
+  border: 2px solid var(--kili-primary);
+  font-weight: 700;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--kili-radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kili-btn-secondary:hover {
+  background: var(--kili-primary);
+  color: #ffffff;
+}
+
+.kili-hero-img-wrap {
+  border-radius: var(--kili-radius);
+  overflow: hidden;
+  box-shadow: var(--kili-shadow-lg);
+  border: 4px solid var(--kili-surface);
+}
+
+.kili-hero-img-wrap img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Feature Highlights */
+.kili-features {
+  max-width: 1200px;
+  margin: -2rem auto 4rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.kili-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.kili-feature-card {
+  background: var(--kili-surface);
+  padding: 1.75rem;
+  border-radius: var(--kili-radius);
+  border: 1px solid var(--kili-border);
+  box-shadow: var(--kili-shadow);
+  border-top: 4px solid var(--kili-secondary);
+}
+
+.kili-feature-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--kili-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.kili-feature-title {
+  font-family: var(--kili-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--kili-dark);
+  margin-bottom: 0.45rem;
+}
+
+.kili-feature-desc {
+  font-size: 0.9rem;
+  color: var(--kili-text-muted);
+}
+
+/* Section Common */
+.kili-section {
+  padding: 4.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kili-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.kili-section-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--kili-primary);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.kili-section-title {
+  font-family: var(--kili-font-heading);
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--kili-dark);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.kili-section-subtitle {
+  font-size: 1rem;
+  color: var(--kili-text-muted);
+}
+
+/* Menu Grid */
+.kili-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.kili-filter-btn {
+  background: var(--kili-surface);
+  border: 1px solid var(--kili-border);
+  color: var(--kili-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kili-filter-btn:hover,
+.kili-filter-btn.active {
+  background: var(--kili-primary);
+  color: #ffffff;
+  border-color: var(--kili-primary);
+}
+
+.kili-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.kili-menu-item {
+  background: var(--kili-surface);
+  border-radius: var(--kili-radius);
+  border: 1px solid var(--kili-border);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--kili-shadow);
+}
+
+.kili-menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--kili-border);
+  padding-bottom: 0.5rem;
+}
+
+.kili-menu-item-name {
+  font-family: var(--kili-font-heading);
+  font-size: 1.2rem;
+  color: var(--kili-primary);
+  font-weight: 700;
+}
+
+.kili-menu-item-price {
+  font-weight: 800;
+  color: var(--kili-secondary);
+  font-size: 1.1rem;
+}
+
+.kili-menu-item-desc {
+  font-size: 0.9rem;
+  color: var(--kili-text-muted);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.kili-menu-item-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.kili-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--kili-surface-alt);
+  color: var(--kili-primary);
+}
+
+.kili-badge-gold {
+  background: #fdf3df;
+  color: #9c5d00;
+}
+
+.kili-badge-brown {
+  background: #f4eae1;
+  color: var(--kili-brown);
+}
+
+/* Two Column Showcase */
+.kili-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.kili-story-content h3 {
+  font-family: var(--kili-font-heading);
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: var(--kili-dark);
+  margin-bottom: 1rem;
+}
+
+.kili-story-content p {
+  color: var(--kili-text-muted);
+  margin-bottom: 1.15rem;
+  font-size: 0.98rem;
+}
+
+.kili-story-img-wrap {
+  border-radius: var(--kili-radius);
+  overflow: hidden;
+  box-shadow: var(--kili-shadow-lg);
+  border: 4px solid var(--kili-surface);
+}
+
+.kili-story-img-wrap img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* Interactive Calculator */
+.kili-calc-card {
+  background: var(--kili-surface);
+  border: 1px solid var(--kili-border);
+  border-top: 5px solid var(--kili-primary);
+  border-radius: var(--kili-radius);
+  padding: 2.5rem;
+  box-shadow: var(--kili-shadow);
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.kili-calc-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.kili-calc-field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--kili-dark);
+}
+
+.kili-range-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--kili-surface-alt);
+  accent-color: var(--kili-primary);
+  outline: none;
+}
+
+.kili-calc-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--kili-radius-sm);
+  border: 1px solid var(--kili-border);
+  font-size: 0.95rem;
+  background: var(--kili-surface);
+  color: var(--kili-text);
+}
+
+.kili-calc-results {
+  background: var(--kili-surface-alt);
+  border-radius: var(--kili-radius-sm);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.kili-result-box .num {
+  font-family: var(--kili-font-heading);
+  font-size: 1.95rem;
+  font-weight: 800;
+  color: var(--kili-primary);
+  display: block;
+}
+
+.kili-result-box .label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--kili-text-muted);
+}
+
+/* Contact / Visit Info Cards */
+.kili-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.kili-contact-card {
+  background: var(--kili-surface);
+  border: 1px solid var(--kili-border);
+  border-radius: var(--kili-radius);
+  padding: 2rem;
+  box-shadow: var(--kili-shadow);
+  border-top: 4px solid var(--kili-primary);
+}
+
+.kili-contact-card h3 {
+  font-family: var(--kili-font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--kili-primary);
+  margin-bottom: 0.9rem;
+}
+
+.kili-hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted var(--kili-border);
+  font-size: 0.92rem;
+}
+
+/* Footer */
+.kili-footer {
+  background: var(--kili-dark);
+  color: #cbc8c2;
+  padding: 4rem 1.5rem 2rem;
+  border-top: 4px solid var(--kili-primary);
+}
+
+.kili-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.kili-footer-brand h4 {
+  font-family: var(--kili-font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.kili-footer-brand p {
+  color: #9d9991;
+  font-size: 0.88rem;
+  max-width: 360px;
+}
+
+.kili-footer-nav h5,
+.kili-footer-hours h5 {
+  color: #ffffff;
+  font-size: 0.92rem;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.kili-footer-nav ul {
+  list-style: none;
+}
+
+.kili-footer-nav li {
+  margin-bottom: 0.45rem;
+}
+
+.kili-footer-nav a {
+  color: #9d9991;
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+}
+
+.kili-footer-nav a:hover {
+  color: var(--kili-secondary-light);
+}
+
+.kili-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.75rem;
+  border-top: 1px solid #302d29;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #736f66;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .kili-hero-grid,
+  .kili-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .kili-footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .kili-hero-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .kili-nav-toggle {
+    display: block;
+  }
+  .kili-nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--kili-surface);
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border-bottom: 2px solid var(--kili-border);
+  }
+  .kili-nav-list.is-open {
+    display: flex;
+  }
+  .kili-calc-controls {
+    grid-template-columns: 1fr;
+  }
+  .kili-calc-results {
+    grid-template-columns: 1fr;
+  }
+}

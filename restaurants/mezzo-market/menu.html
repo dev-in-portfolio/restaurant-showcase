@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Food, Pizza & Hearth Menu | Mezzo Market Charlotte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="mzo-header">
+    <div class="mzo-header-inner">
+      <a href="index.html" class="mzo-brand">
+        <span class="mzo-brand-title">Mezzo Market</span>
+        <span class="mzo-brand-tagline">Mediterranean Deli &amp; Pizzeria</span>
+      </a>
+      <button class="mzo-mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="mzo-nav">
+        <a href="index.html" class="mzo-nav-link ">Home</a>
+        <a href="menu.html" class="mzo-nav-link active">Food &amp; Pizza Menu</a>
+        <a href="market-provisions.html" class="mzo-nav-link ">Market &amp; Provisions</a>
+        <a href="catering-events.html" class="mzo-nav-link ">Catering &amp; Events</a>
+        <a href="about.html" class="mzo-nav-link ">About Us</a>
+        <a href="contact.html" class="mzo-nav-link ">Contact &amp; Hours</a>
+        <a href="tel:7045953273" class="mzo-nav-cta">Call (704) 595-3273</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mzo-hero" style="min-height: 45vh; background-image: url('images/woodfired-pizza.jpg');">
+      <div class="mzo-hero-overlay"></div>
+      <div class="mzo-hero-content">
+        <span class="mzo-hero-badge">Kitchen, Hearth &amp; Deli</span>
+        <h1 class="mzo-hero-title">Our Food &amp; <em>Pizza Menu</em></h1>
+        <p class="mzo-hero-subtitle">
+          Artisan Mediterranean deli sandwiches, hearth wood-fired pizzas, savory phyllo pastries, and mezze shareables.
+        </p>
+      </div>
+    </section>
+
+    <section class="mzo-section">
+      <div class="mzo-container">
+        <div class="mzo-menu-filter">
+          <button class="mzo-filter-btn active" data-filter="all">All Items</button>
+          <button class="mzo-filter-btn" data-filter="sandwiches">Artisan Sandwiches</button>
+          <button class="mzo-filter-btn" data-filter="pizzas">Wood-Fired Pizzas</button>
+          <button class="mzo-filter-btn" data-filter="hearth">Hearth &amp; Burek</button>
+          <button class="mzo-filter-btn" data-filter="mezze">Mezze &amp; Salads</button>
+        </div>
+
+        <div class="mzo-grid-2">
+          <!-- Sandwiches -->
+          <div class="mzo-menu-item" data-category="sandwiches">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Lamb Shank Sandwich</span>
+              <span class="mzo-menu-price">$18.50</span>
+            </div>
+            <p class="mzo-menu-desc">Slow-braised tender lamb shank, house-whipped garlic cucumber tzatziki, wild baby arugula, and pickled red onions on warm artisan focaccia.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag signature">Signature</span>
+              <span class="mzo-tag">House Bread</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="sandwiches">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Pesto Chicken Focaccia</span>
+              <span class="mzo-menu-price">$16.00</span>
+            </div>
+            <p class="mzo-menu-desc">Grilled herb-marinated chicken breast, house basil pesto, fresh mozzarella di bufala, heirloom tomato slices, and balsamic glaze.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag olive">Popular</span>
+              <span class="mzo-tag">Poultry</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="sandwiches">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Mezzo Mediterranean Cubano</span>
+              <span class="mzo-menu-price">$16.50</span>
+            </div>
+            <p class="mzo-menu-desc">Slow-roasted pork shoulder, prosciutto cotto, melted Swiss cheese, dill pickle coins, and spicy Dijon aioli pressed on crusty artisan ciabatta.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag">Hot Pressed</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="sandwiches">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Roasted Eggplant &amp; Halloumi</span>
+              <span class="mzo-menu-price">$15.50</span>
+            </div>
+            <p class="mzo-menu-desc">Charred eggplant rounds, seared Cypriot halloumi cheese, roasted red pepper ajvar, baby spinach, and lemon oregano vinaigrette.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag olive">Vegetarian</span>
+            </div>
+          </div>
+
+          <!-- Pizzas -->
+          <div class="mzo-menu-item" data-category="pizzas">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Quattro Formaggi &amp; Hot Honey</span>
+              <span class="mzo-menu-price">$21.00</span>
+            </div>
+            <p class="mzo-menu-desc">Blistered sourdough crust with creamy mozzarella, gorgonzola dolce, ricotta impastata, parmesan, fresh thyme, and habanero hot honey drizzle.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag signature">Chef Specialty</span>
+              <span class="mzo-tag">Vegetarian</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="pizzas">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Chorizo &amp; Sweet Pepper Pizza</span>
+              <span class="mzo-menu-price">$22.00</span>
+            </div>
+            <p class="mzo-menu-desc">San Marzano tomato sauce, artisan Spanish chorizo, sweet piquillo peppers, caramelized red onions, fresh mozzarella, and smoked paprika oil.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag signature">Favorite</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="pizzas">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Roasted Mediterranean Veggie</span>
+              <span class="mzo-menu-price">$20.00</span>
+            </div>
+            <p class="mzo-menu-desc">Zucchini ribbons, roasted cherry tomatoes, artichoke hearts, Kalamata olives, whipped goat cheese, fresh oregano, and garlic olive oil.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag olive">Vegetarian</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="pizzas">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">The Mezzo Meat Classic</span>
+              <span class="mzo-menu-price">$23.00</span>
+            </div>
+            <p class="mzo-menu-desc">San Marzano sauce, soppressata salami, house fennel sausage, smoked speck ham, mozzarella, pecorino romano, and fresh basil.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag">Hearty</span>
+            </div>
+          </div>
+
+          <!-- Hearth & Burek -->
+          <div class="mzo-menu-item" data-category="hearth">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Georgian Khachapuri</span>
+              <span class="mzo-menu-price">$17.00</span>
+            </div>
+            <p class="mzo-menu-desc">Traditional boat-shaped hearth dough baked with molten sulguni and mozzarella cheese, finished with a fresh farm egg yolk and sea-salted butter.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag signature">Hearth Star</span>
+              <span class="mzo-tag">Vegetarian</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="hearth">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Traditional Beef Burek</span>
+              <span class="mzo-menu-price">$14.50</span>
+            </div>
+            <p class="mzo-menu-desc">Golden crisp spiral phyllo pastry layered with seasoned minced beef, caramelized onions, black pepper, and served with tangy yogurt dip.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag signature">Balkan Classic</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="hearth">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Spinach &amp; Greek Feta Burek</span>
+              <span class="mzo-menu-price">$13.50</span>
+            </div>
+            <p class="mzo-menu-desc">Delicate hand-stretched phyllo spirals filled with organic baby spinach, barrel-aged Greek feta, dill, and extra virgin olive oil.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag olive">Vegetarian</span>
+            </div>
+          </div>
+
+          <!-- Mezze & Salads -->
+          <div class="mzo-menu-item" data-category="mezze">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Grand Mediterranean Mezze Board</span>
+              <span class="mzo-menu-price">$24.00</span>
+            </div>
+            <p class="mzo-menu-desc">Silky roasted garlic hummus, smoky Serbian ajvar red pepper spread, marinated Castelvetrano olives, whipped feta dip, and warm hearth pita.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag signature">Shareable</span>
+              <span class="mzo-tag olive">Vegetarian</span>
+            </div>
+          </div>
+
+          <div class="mzo-menu-item" data-category="mezze">
+            <div class="mzo-menu-header">
+              <span class="mzo-menu-name">Plaza Midwood Greek Grain Salad</span>
+              <span class="mzo-menu-price">$15.00</span>
+            </div>
+            <p class="mzo-menu-desc">Farro grain, Persian cucumbers, heirloom tomatoes, Kalamata olives, shaved radish, crushed pistachio, Greek feta, and lemon herb dressing.</p>
+            <div class="mzo-dietary-tags">
+              <span class="mzo-tag olive">Healthy / Veg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="mzo-footer">
+    <div class="mzo-container">
+      <div class="mzo-footer-grid">
+        <div class="mzo-footer-col">
+          <div class="mzo-brand" style="margin-bottom: 1rem;">
+            <span class="mzo-brand-title" style="color: #fdba74;">Mezzo Market</span>
+            <span class="mzo-brand-tagline" style="color: #d6ccbe;">Plaza Midwood Market &amp; Hearth</span>
+          </div>
+          <p style="color: var(--mzo-sand-200); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Plaza Midwood's artisan Mediterranean deli, hearth pizzeria, and specialty grocery market serving authentic European comforts daily.
+          </p>
+          <p style="color: #fdba74; font-weight: 700; font-size: 0.95rem;">
+            2212 The Plaza, Charlotte, NC 28205<br>
+            Phone: (704) 595-3273 | Email: info@mezzomarketclt.com
+          </p>
+        </div>
+        <div class="mzo-footer-col">
+          <h4>Explore</h4>
+          <ul class="mzo-footer-links">
+            <li><a href="index.html">Market Home</a></li>
+            <li><a href="menu.html">Full Food &amp; Pizza Menu</a></li>
+            <li><a href="market-provisions.html">Specialty Provisions</a></li>
+            <li><a href="catering-events.html">Plaza Midwood Catering</a></li>
+          </ul>
+        </div>
+        <div class="mzo-footer-col">
+          <h4>Community</h4>
+          <ul class="mzo-footer-links">
+            <li><a href="about.html">Our Heritage Story</a></li>
+            <li><a href="contact.html">Directions &amp; Parking</a></li>
+            <li><a href="market-provisions.html">Natural Wines &amp; Deli</a></li>
+            <li><a href="contact.html">Private Patio Gatherings</a></li>
+          </ul>
+        </div>
+        <div class="mzo-footer-col">
+          <h4>Market Hours</h4>
+          <ul class="mzo-footer-links">
+            <li style="color: var(--mzo-sand-200); font-size: 0.9rem;">Tue - Thu: 11:00 AM - 10:00 PM</li>
+            <li style="color: var(--mzo-sand-200); font-size: 0.9rem;">Friday: 11:00 AM - 11:00 PM</li>
+            <li style="color: var(--mzo-sand-200); font-size: 0.9rem;">Saturday: 10:00 AM - 11:00 PM</li>
+            <li style="color: var(--mzo-sand-200); font-size: 0.9rem;">Sunday: 10:00 AM - 9:00 PM</li>
+            <li style="color: var(--mzo-sand-200); font-size: 0.9rem;">Monday: Closed (Baking &amp; Restock)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mzo-footer-bottom">
+        <p>&copy; 2026 Mezzo Market Charlotte. All Rights Reserved. Showcase Presentation.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

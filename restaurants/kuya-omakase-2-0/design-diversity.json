@@ -1,0 +1,93 @@
+{
+  "slug": "kuya-omakase-2-0",
+  "generatedAt": "2026-09-10T18:06:55.570Z",
+  "recentCompared": 7,
+  "recentSlugs": [
+    "republica-restaurant-and-lounge",
+    "indigo-tea-and-coffee-co",
+    "nefelie-s",
+    "the-local",
+    "mortimer-s-cafe-and-pub",
+    "santa-fe-mexican-restaurant-central-ave",
+    "landmark-restaurant-diner",
+    "van-loi-chinese-barbecue",
+    "pho-an-hoa",
+    "sweet-crunch-waffles"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "pho-an-hoa",
+    "score": 0.30205595996360324,
+    "classSimilarity": 0,
+    "cssClassSimilarity": 0.007142857142857143,
+    "domSimilarity": 0.9171974522292994,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "pho-an-hoa",
+      "score": 0.30205595996360324,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007142857142857143,
+      "domSimilarity": 0.9171974522292994,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "sweet-crunch-waffles",
+      "score": 0.2503132096372196,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007246376811594203,
+      "domSimilarity": 0.9681528662420382,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.2
+    },
+    {
+      "priorSlug": "van-loi-chinese-barbecue",
+      "score": 0.16681285280069474,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.0070921985815602835,
+      "domSimilarity": 0.5204081632653061,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "landmark-restaurant-diner",
+      "score": 0.13014056531703588,
+      "classSimilarity": 0.00980392156862745,
+      "cssClassSimilarity": 0.014285714285714285,
+      "domSimilarity": 0.5151515151515151,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "santa-fe-mexican-restaurant-central-ave",
+      "score": 0.11306080674292593,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.006622516556291391,
+      "domSimilarity": 0.4636363636363636,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "mortimer-s-cafe-and-pub",
+      "score": 0.11260157273918742,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.007936507936507936,
+      "domSimilarity": 0.29357798165137616,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.5
+    },
+    {
+      "priorSlug": "republica-restaurant-and-lounge",
+      "score": 0.09153521751997633,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.008064516129032258,
+      "domSimilarity": 0.2889908256880734,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0.25
+    }
+  ]
+}

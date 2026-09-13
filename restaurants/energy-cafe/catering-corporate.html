@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Healthy Catering &amp; Box Lunches | Energy Cafe Charlotte</title>
+  <meta name="description" content="Calculate and order corporate healthy wrap boxed lunches, grain bowl buffets, and smoothie carafes from Energy Cafe for your Uptown Charlotte office.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="nrg-topbar">
+    <div class="nrg-container nrg-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>Two Uptown Locations: 101 S Tryon St (BOA Plaza) &bull; 550 S Tryon St (Duke Energy)</span>
+        <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
+        <span>Mon-Thu: 7AM-2PM &bull; Fri: 7AM-1PM</span>
+      </div>
+      <div>
+        <span>Express Order / BOA Plaza: </span>
+        <a href="tel:7049101094" class="nrg-topbar-link">(704) 910-1094</a>
+      </div>
+    </div>
+  </div>
+  <header class="nrg-navbar">
+    <div class="nrg-nav-container">
+      <a href="index.html" class="nrg-brand">
+        <div class="nrg-brand-name">ENERGY <span>CAFE</span></div>
+        <div class="nrg-brand-tagline">Clean Fuel &bull; Fresh Protein &bull; Uptown Charlotte</div>
+      </a>
+      <ul class="nrg-nav-links">
+        <li class="nrg-nav-item"><a href="index.html">Home</a></li>
+<li class="nrg-nav-item"><a href="menu.html">Fuel Menu</a></li>
+<li class="nrg-nav-item"><a href="smoothies-bowls.html">Smoothies &amp; A&ccedil;ai</a></li>
+<li class="nrg-nav-item"><a href="catering-corporate.html" class="active">Healthy Catering</a></li>
+<li class="nrg-nav-item"><a href="about.html">Our Philosophy</a></li>
+<li class="nrg-nav-item"><a href="contact.html">Uptown Locations</a></li>
+
+        <li><a href="tel:7049101094" class="nrg-nav-cta">Call (704) 910-1094</a></li>
+      </ul>
+      <button class="nrg-menu-toggle" id="nrgMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="nrg-mobile-menu" id="nrgMobileMenu">
+      <ul class="nrg-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Fuel Menu</a></li>
+<li><a href="smoothies-bowls.html">Smoothies &amp; A&ccedil;ai</a></li>
+<li><a href="catering-corporate.html" class="active">Healthy Catering</a></li>
+<li><a href="about.html">Our Philosophy</a></li>
+<li><a href="contact.html">Uptown Locations</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7049101094" class="nrg-nav-cta" style="text-align: center;">Call (704) 910-1094</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="nrg-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="nrg-container" style="text-align: center; max-width: 840px;">
+      <span class="nrg-hero-badge">Uptown Charlotte Corporate Wellness</span>
+      <h1 class="nrg-title-xl">Healthy Corporate Catering &amp; Box Lunches</h1>
+      <p class="nrg-lead">Power your team with vibrant, individually labeled wellness meals, wrap platters, custom grain bowl bars, and fresh fruit smoothie carafes.</p>
+    </div>
+  </section>
+
+  <section class="nrg-section">
+    <div class="nrg-container">
+      <div class="nrg-section-header">
+        <span class="nrg-eyebrow">Instant Quote Estimator</span>
+        <h2 class="nrg-title-lg">Uptown Office Wellness Calculator</h2>
+        <p class="nrg-lead">Select your group size and package tier to calculate instant pricing, portions, and budget estimates.</p>
+      </div>
+
+      <div class="nrg-calc-panel">
+        <div class="nrg-calc-grid">
+          <div>
+            <div class="nrg-calc-group">
+              <label class="nrg-calc-label" for="nrgCalcGuests">
+                <span>Guest Count</span>
+                <span id="nrgCalcGuestCountText" style="color: var(--nrg-text-muted); font-weight: 600;">(10 to 200 guests)</span>
+              </label>
+              <select class="nrg-calc-select" id="nrgCalcGuests">
+                <option value="12">12 Guests (Executive Briefing)</option>
+                <option value="20" selected>20 Guests (Department Lunch)</option>
+                <option value="35">35 Guests (Team Wellness Workshop)</option>
+                <option value="50">50 Guests (Corporate Floor Feast)</option>
+                <option value="75">75 Guests (Quarterly All-Hands)</option>
+                <option value="100">100 Guests (Company Milestone Event)</option>
+                <option value="150">150 Guests (Major Corporate Conference)</option>
+              </select>
+            </div>
+
+            <div class="nrg-calc-group">
+              <label class="nrg-calc-label" for="nrgCalcPackage">
+                <span>Catering Package Tier</span>
+                <span style="color: var(--nrg-text-muted); font-weight: 600;">(Per Person)</span>
+              </label>
+              <select class="nrg-calc-select" id="nrgCalcPackage">
+                <option value="executive-wrap-box" selected>Executive Healthy Wrap Box Lunches ($15.75/person)</option>
+                <option value="power-bowl-buffet">Custom Superfood Grain Bowl Buffet ($17.50/person)</option>
+                <option value="vip-wellness-banquet">All-Inclusive Executive Wellness Feast ($23.00/person)</option>
+              </select>
+            </div>
+
+            <div class="nrg-calc-group">
+              <label class="nrg-calc-label">Add-On Smoothie Flights (Per Person)</label>
+              <div class="nrg-checkbox-grid">
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-smoothie-check" value="The Hulk Superfood Smoothie Flight" data-price="4.50">
+                  <span>The Hulk Green Smoothie (+$4.50)</span>
+                </label>
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-smoothie-check" value="Java Diesel Energy Shake Flight" data-price="4.75">
+                  <span>Java Diesel Shake (+$4.75)</span>
+                </label>
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-smoothie-check" value="Recharge Berry A&ccedil;ai Flight" data-price="4.50">
+                  <span>Berry A&ccedil;ai Flight (+$4.50)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="nrg-calc-group">
+              <label class="nrg-calc-label">Add-On Shareable Snack Platters</label>
+              <div class="nrg-checkbox-grid">
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-side-check" value="Organic Quinoa Salad Bowl (Serves 15)" data-price="45.00">
+                  <span>Quinoa Salad Bowl (+$45)</span>
+                </label>
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-side-check" value="House Hummus &amp; Veggie Platter (Serves 15)" data-price="40.00">
+                  <span>Hummus &amp; Veggie Tray (+$40)</span>
+                </label>
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-side-check" value="Fresh Fruit Skewers Platter (20 pcs)" data-price="42.00">
+                  <span>Fruit Skewers Tray (+$42)</span>
+                </label>
+                <label class="nrg-checkbox-item">
+                  <input type="checkbox" class="nrg-side-check" value="Protein Fuel Bar Assortment (18 pcs)" data-price="38.00">
+                  <span>Fuel Bars Tray (+$38)</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="font-size: 0.85rem; color: var(--nrg-text-muted); margin-top: 1rem;">
+              * Individual lunch boxes are clearly labeled with employee names and dietary markers (GF, Vegan, Nut-Free).
+            </div>
+          </div>
+
+          <div class="nrg-calc-summary-card">
+            <div>
+              <div style="font-family: var(--nrg-font-display); font-size: 1.4rem; font-weight: 800; color: var(--nrg-lime); margin-bottom: 1.25rem;">
+                Catering Quote Summary
+              </div>
+              <div class="nrg-summary-row">
+                <span>Guest Count:</span>
+                <strong id="nrgCalcGuestDisplay">20 Guests</strong>
+              </div>
+              <div class="nrg-summary-row">
+                <span>Individual Box Meals:</span>
+                <strong id="nrgCalcBoxCount">20 Boxed Meals</strong>
+              </div>
+              <div class="nrg-summary-row">
+                <span>Equivalent Platter Trays:</span>
+                <strong id="nrgCalcSaladPlatters">2 Large Salad/Grain Platter(s)</strong>
+              </div>
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #cbd5e1; line-height: 1.5;" id="nrgCalcDetails">
+                Executive Healthy Wrap Box Lunches for 20 guests. Includes: Signature Popeye or Turkey Avocado Wrap, Organic Quinoa Salad Cup, Apple &amp; House Energy Bar. Smoothie Flights: None. Side Trays: Standard Included Sides.
+              </div>
+            </div>
+
+            <div>
+              <div class="nrg-summary-total">
+                <span style="font-weight: 700; font-size: 1.1rem;">Estimated Total:</span>
+                <span class="nrg-summary-total-val" id="nrgCalcTotalCost">$315.00</span>
+              </div>
+              
+              <div class="nrg-calc-action-bar">
+                <a href="mailto:catering@energycafecharlotte.com" class="nrg-btn nrg-btn-lime" id="nrgMailQuoteLink" style="width: 100%;">Email This Catering Request</a>
+                <button type="button" class="nrg-btn nrg-btn-outline-white" id="nrgCopyQuoteBtn" style="width: 100%;">Copy Quote to Clipboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nrg-section nrg-section-light">
+    <div class="nrg-container">
+      <div class="nrg-section-header">
+        <span class="nrg-eyebrow">A La Carte Trays</span>
+        <h2 class="nrg-title-lg">Catering Platter Capacities</h2>
+        <p class="nrg-lead">Customize your buffet with individual wrap pinwheel trays and giant grain salad bowls.</p>
+      </div>
+
+      <div class="nrg-grid-3">
+        <div class="nrg-card">
+          <h3 class="nrg-title-md" style="color: var(--nrg-green);">Popeye Wrap Pinwheel Platter</h3>
+          <p style="color: var(--nrg-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">24 bite-sized pinwheels of grilled chicken, baby spinach, feta, and lemon herb dressing.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--nrg-green); border-top: 1px solid var(--nrg-border); padding-top: 0.75rem;">$68.00</div>
+        </div>
+
+        <div class="nrg-card">
+          <h3 class="nrg-title-md" style="color: var(--nrg-green);">Giant Organic Quinoa Power Bowl</h3>
+          <p style="color: var(--nrg-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">Serves 12-15 with tri-color quinoa, roasted chicken, avocado, sweet potato, and green goddess dressing.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--nrg-green); border-top: 1px solid var(--nrg-border); padding-top: 0.75rem;">$75.00</div>
+        </div>
+
+        <div class="nrg-card">
+          <h3 class="nrg-title-md" style="color: var(--nrg-green);">Mediterranean Falafel Platter</h3>
+          <p style="color: var(--nrg-text-muted); font-size: 0.92rem; margin-bottom: 1rem;">30 warm herb falafels, cucumber tomato salad, house hummus, and warm pita wedges.</p>
+          <div style="font-weight: 800; font-size: 1.25rem; color: var(--nrg-green); border-top: 1px solid var(--nrg-border); padding-top: 0.75rem;">$65.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="nrg-footer">
+    <div class="nrg-container">
+      <div class="nrg-footer-grid">
+        <div class="nrg-footer-brand">
+          <h3>ENERGY <span>CAFE</span></h3>
+          <p>Powering Uptown Charlotte's corporate workforce, financial professionals, and urban athletes with clean, nutrient-rich functional food. Warm grain bowls, signature Popeye Wraps, fresh rotisserie chicken, and high-performance smoothies.</p>
+        </div>
+        <div class="nrg-footer-col">
+          <h4>Explore</h4>
+          <ul class="nrg-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Power Bowls &amp; Wraps</a></li>
+            <li><a href="smoothies-bowls.html">Smoothies &amp; Superfruit</a></li>
+            <li><a href="catering-corporate.html">Healthy Box Catering</a></li>
+            <li><a href="about.html">Clean Nutrition Mission</a></li>
+            <li><a href="contact.html">Uptown Locations &amp; Hours</a></li>
+          </ul>
+        </div>
+        <div class="nrg-footer-col">
+          <h4>Uptown Hours</h4>
+          <ul class="nrg-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Thursday:</strong><br>7:00 AM - 2:00 PM</li>
+            <li><strong style="color: #fff;">Friday:</strong><br>7:00 AM - 1:00 PM</li>
+            <li><strong style="color: #fff;">Saturday - Sunday:</strong><br>Closed (Catering By Pre-Order)</li>
+          </ul>
+        </div>
+        <div class="nrg-footer-col">
+          <h4>Dual Locations</h4>
+          <p style="margin-bottom: 0.5rem;"><strong style="color: var(--nrg-lime);">Bank of America Plaza:</strong><br>101 S Tryon St, Ste 1 &bull; <a href="tel:7049101094" style="color: #fff;">(704) 910-1094</a></p>
+          <p style="margin-bottom: 0.5rem;"><strong style="color: var(--nrg-lime);">Duke Energy Center:</strong><br>550 S Tryon St, Ste 120 &bull; <a href="tel:9803550240" style="color: #fff;">(980) 355-0240</a></p>
+          <p><strong style="color: var(--nrg-lime);">Catering Email:</strong><br><a href="mailto:catering@energycafecharlotte.com" style="color: #94a3b8;">catering@energycafecharlotte.com</a></p>
+        </div>
+      </div>
+      <div class="nrg-footer-bottom">
+        <div>&copy; 2026 Energy Cafe. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Nutrient-Dense Dining &bull; Fast Casual Wellness &bull; Corporate Box Lunches</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

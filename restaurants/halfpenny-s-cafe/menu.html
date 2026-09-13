@@ -3,253 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Breakfast &amp; Lunch Menu | Halfpenny’s Cafe Charlotte</title>
-  <meta name="description" content="Explore the full menu at Halfpenny’s Cafe in Two Wells Fargo Center, Uptown Charlotte: all-day breakfast biscuits, 3-egg omelets, deli paninis, and soups.">
+  <title>Full Cafe &amp; Deli Menu | Halfpenny's Cafe Uptown Charlotte</title>
+  <meta name="description" content="Explore the full menu at Halfpenny's Cafe in 301 S Tryon Charlotte: breakfast biscuits, custom 3-egg omelets, deli sandwiches, tarragon chicken salad, and coffee.">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <header class="hp-header">
-    <div class="hp-container header-flex">
-      <a href="index.html" class="hp-brand" aria-label="Halfpenny’s Cafe Homepage">
-        <span class="brand-title">HALFPENNY’S <span>CAFE</span></span>
-        <span class="brand-subline">301 S TRYON ST • TWO WELLS FARGO • MOM &amp; POP DINER</span>
-      </a>
-
-      <nav aria-label="Main Navigation">
-        <ul class="hp-nav-list">
-          <li><a href="index.html" class="hp-nav-link">Home</a></li>
-          <li><a href="menu.html" class="hp-nav-link active">Cafe Menu</a></li>
-          <li><a href="all-day-breakfast.html" class="hp-nav-link">All-Day Breakfast</a></li>
-          <li><a href="deli-lunch.html" class="hp-nav-link">Deli Paninis</a></li>
-          <li><a href="coffee-sweets.html" class="hp-nav-link">Coffee &amp; Sweets</a></li>
-          <li><a href="visit.html" class="hp-nav-link">Hours &amp; Location</a></li>
-        </ul>
-      </nav>
-
-      <a href="visit.html" class="btn-header-order">Order Pickup</a>
-
-      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        &#9776;
-      </button>
+  <header class="halfpenny-header">
+    <div class="halfpenny-topbar">
+      <span>Concourse Cafe &amp; Deli | 301 S Tryon St Suite 30 (Lower Level)</span>
+      <span>Express Morning Counter: <a href="tel:7043429697">(704) 342-9697</a></span>
     </div>
-
-    <div class="mobile-drawer" aria-label="Mobile Navigation">
-      <a href="index.html" class="hp-nav-link">Home</a>
-      <a href="menu.html" class="hp-nav-link active">Full Breakfast &amp; Lunch Menu</a>
-      <a href="all-day-breakfast.html" class="hp-nav-link">All-Day Breakfast Biscuits &amp; Omelets</a>
-      <a href="deli-lunch.html" class="hp-nav-link">Handcrafted Deli Paninis &amp; Soups</a>
-      <a href="coffee-sweets.html" class="hp-nav-link">Espresso, House Coffee &amp; Ice Cream</a>
-      <a href="visit.html" class="hp-nav-link">Hours, Two Wells Fargo Access &amp; Pickup</a>
+    <div class="halfpenny-nav-container">
+      <a href="index.html" class="halfpenny-logo-group">
+        <span class="halfpenny-logo-badge">HC</span>
+        <div>
+          <span class="halfpenny-logo-title">Halfpenny's Cafe</span>
+          <span class="halfpenny-logo-sub">Tryon St Concourse &amp; Deli</span>
+        </div>
+      </a>
+      <button class="halfpenny-mobile-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      <nav class="halfpenny-nav-links" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Full Menu</a>
+          <a href="concourse-breakfast-and-omelets.html">Breakfast &amp; Omelets</a>
+          <a href="artisan-deli-and-specialty-subs.html">Deli &amp; Sandwiches</a>
+          <a href="office-catering-and-breakfast-boxes.html">Catering &amp; Boxes</a>
+          <a href="visit.html">Visit &amp; Hours</a>
+          <a href="tel:7043429697" class="halfpenny-nav-btn">Call (704) 342-9697</a>
+        </nav>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="hp-hero-stage" style="padding: 4.5rem 0 3.5rem;">
-      <div class="hp-container hero-grid">
-        <div>
-          <span class="mono-kicker">Two Wells Fargo Plaza Suite 30</span>
-          <h1 class="hero-title">All-Day Breakfast, <span>Handcrafted Deli.</span></h1>
-          <p class="hero-description">From hot Southern buttermilk biscuits and 3-egg griddle omelets in the morning to pressed paninis and scratch soups for lunch, everything is cooked to order.</p>
-          <div class="hero-btn-row">
-            <a href="#breakfast" class="btn-fill">All-Day Breakfast &rarr;</a>
-            <a href="#lunch" class="btn-outline">Deli Sandwiches</a>
-            <a href="#coffee" class="btn-outline">Coffee &amp; Sweets</a>
-          </div>
+  <section class="halfpenny-hero-compact">
+    <div class="halfpenny-container">
+      <span class="halfpenny-badge">Concourse Cafe &amp; Deli</span>
+      <h1 style="font-size:2.6rem; font-weight:900; margin:15px 0;">Our Complete Cafe Menu</h1>
+      <p style="font-size:1.1rem; color:#cbd5e1; max-width:700px; margin:0 auto;">Scratch morning biscuits, customized omelets, handcrafted deli subs, crisp salads, and fresh coffee.</p>
+    </div>
+  </section>
+
+  <main class="halfpenny-container" style="padding:40px 24px 60px;">
+    <!-- Interactive Filter Buttons -->
+    <div class="halfpenny-filters">
+      <button class="halfpenny-filter-btn active" data-filter="all">All Items</button>
+      <button class="halfpenny-filter-btn" data-filter="biscuits">Breakfast Biscuits &amp; Handhelds</button>
+      <button class="halfpenny-filter-btn" data-filter="omelets">Custom Omelets &amp; Platters</button>
+      <button class="halfpenny-filter-btn" data-filter="deli">Artisan Deli Sandwiches</button>
+      <button class="halfpenny-filter-btn" data-filter="salads">Fresh Salads &amp; Bowls</button>
+      <button class="halfpenny-filter-btn" data-filter="coffee">Espresso &amp; Coffee</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="halfpenny-grid-3" id="menu-items-grid" style="gap:24px;">
+      <!-- Biscuits & Handhelds -->
+      <div class="halfpenny-card halfpenny-menu-item" data-category="biscuits">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Southern Bacon Egg &amp; Cheese</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$7.50</span>
         </div>
-
-        <div class="hero-media-wrapper">
-          <div class="hero-card-frame">
-            <img src="images/halfpenny-hero-breakfast.jpg" alt="All-day breakfast sandwich at Halfpenny’s Cafe">
-          </div>
-          <div class="hp-hero-badge">
-            <div class="hero-badge-title">Cafe Menu</div>
-            <div class="hero-badge-sub">All-Day Breakfast &bull; Deli Paninis</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu Categories -->
-    <section style="padding: 5rem 0; background-color: var(--morning-cream);">
-      <div class="hp-container">
-
-        <!-- Category 1: All-Day Breakfast -->
-        <div id="breakfast" class="menu-category-block">
-          <div class="menu-category-header">
-            <h2>All-Day Breakfast Sandwiches &amp; Griddle Plates</h2>
-            <p style="color: var(--text-muted); margin-top: 0.35rem;">Breads: Southern Buttermilk Biscuit, Toasted Croissant, Bagel, English Muffin, or Sourdough.</p>
-          </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Halfpenny Biscuit Classic</span>
-                <span class="item-price">$5.50</span>
-              </div>
-              <p class="item-desc">Fresh-baked flaky Southern biscuit with fried egg, choice of thick bacon or country sausage patty, and melted American cheese.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Croissant Club Breakfast</span>
-                <span class="item-price">$6.75</span>
-              </div>
-              <p class="item-desc">Buttery toasted croissant with fried egg, sugar-cured ham, baby Swiss cheese, and fresh sliced tomatoes.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Halfpenny Western Omelet Platter</span>
-                <span class="item-price">$10.50</span>
-              </div>
-              <p class="item-desc">Three farm-fresh eggs with diced ham, green bell peppers, sweet onions, and cheddar cheese, served with hash browns and toast.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Spinach &amp; Feta Veggie Omelet</span>
-                <span class="item-price">$9.50</span>
-              </div>
-              <p class="item-desc">Three eggs folded with baby spinach, crumbled feta, tomatoes, and mushrooms, served with golden hash browns.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 2: Deli Sandwiches & Paninis -->
-        <div id="lunch" class="menu-category-block">
-          <div class="menu-category-header">
-            <h2>Handcrafted Deli Sandwiches, Paninis &amp; Melts</h2>
-            <p style="color: var(--text-muted); margin-top: 0.35rem;">Served with potato chips and kosher pickle spear.</p>
-          </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Uptown Turkey Bacon Club</span>
-                <span class="item-price">$10.50</span>
-              </div>
-              <p class="item-desc">Oven-roasted turkey breast, crispy bacon, provolone cheese, romaine lettuce, tomato, and herb mayo on toasted sourdough.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Hot Pastrami &amp; Swiss on Rye</span>
-                <span class="item-price">$11.00</span>
-              </div>
-              <p class="item-desc">Thin-sliced seasoned pastrami grilled hot with melted Swiss cheese and spicy deli mustard on grilled marble rye.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Classic Albacore Tuna Melt</span>
-                <span class="item-price">$9.50</span>
-              </div>
-              <p class="item-desc">Scratch white albacore tuna salad with melted cheddar cheese and sliced tomato pressed hot on sourdough.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Grilled Chicken Pesto Panini</span>
-                <span class="item-price">$10.50</span>
-              </div>
-              <p class="item-desc">Marinated chicken breast, basil pesto spread, melted mozzarella, and roasted sweet peppers on pressed ciabatta.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 3: Soups, Salads, Coffee & Ice Cream -->
-        <div id="coffee" class="menu-category-block">
-          <div class="menu-category-header">
-            <h2>Soups, Salads, Espresso &amp; Ice Cream</h2>
-            <p style="color: var(--text-muted); margin-top: 0.35rem;">Made in-house daily.</p>
-          </div>
-
-          <div class="menu-items-grid">
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Uptown Chef Salad</span>
-                <span class="item-price">$9.50</span>
-              </div>
-              <p class="item-desc">Crisp garden greens topped with sliced roast turkey, ham, hard-boiled egg, sharp cheddar, tomatoes, and house dressing.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Scratch Soup of the Day</span>
-                <span class="item-price">$4.50 (Cup) &bull; $6.50 (Bowl)</span>
-              </div>
-              <p class="item-desc">Rotating daily: Creamy Broccoli Cheddar, Homestyle Chicken Noodle, or Loaded Baked Potato with crackers.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Specialty Espresso Latte / Cappuccino</span>
-                <span class="item-price">$4.25</span>
-              </div>
-              <p class="item-desc">Freshly pulled double shot of espresso with velvety steamed milk and vanilla, caramel, or mocha syrup.</p>
-            </div>
-
-            <div class="menu-item-row">
-              <div class="item-top-flex">
-                <span class="item-name">Hand-Dipped Ice Cream Cone</span>
-                <span class="item-price">$3.75 (Single) &bull; $5.25 (Double)</span>
-              </div>
-              <p class="item-desc">Rich and creamy hand-dipped ice cream served in a crisp waffle cone or cup with chocolate sprinkles.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="hp-footer">
-    <div class="hp-container">
-      <div class="footer-four-columns">
-        <div class="footer-brand-box">
-          <span class="brand-title">HALFPENNY’S <span>CAFE</span></span>
-          <p>Uptown Charlotte&rsquo;s beloved subterranean Mom &amp; Pop cafe in Two Wells Fargo Center, serving all-day breakfast biscuits, hot deli paninis, espresso, and ice cream since 1999.</p>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Cafe Menu</h4>
-          <ul class="footer-nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html" class="active">Full Menu</a></li>
-            <li><a href="all-day-breakfast.html">All-Day Breakfast</a></li>
-            <li><a href="deli-lunch.html">Deli Paninis</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Information</h4>
-          <ul class="footer-nav-list">
-            <li><a href="coffee-sweets.html">Coffee &amp; Sweets</a></li>
-            <li><a href="visit.html">Hours &amp; Location</a></li>
-            <li><a href="visit.html#subterranean">Subterranean Access</a></li>
-            <li><a href="visit.html#catering">Office Catering</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Two Wells Fargo</h4>
-          <p style="color: #94a3b8; font-size: 0.9rem;">301 S. Tryon St., Suite 30<br>Charlotte, NC 28282<br>Lower Plaza Level</p>
-          <p style="margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.88rem; color: var(--pecan-gold); font-weight: 700;">Phone: (704) 342-9697</p>
-          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: #64748b;">Mon–Fri 7:00 AM – 3:30 PM • Closed Weekends</p>
-        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Fluffy scrambled egg, thick applewood bacon, and melted sharp cheddar on a scratch-made buttermilk biscuit.</p>
+        <span class="halfpenny-tag">House Benchmark</span>
       </div>
 
-      <div class="footer-bottom-bar">
-        <p>&copy; 2026 Halfpenny’s Cafe. All rights reserved.</p>
-        <div class="demo-disclaimer">Unofficial Portfolio Concept Rebuild • Built for Sales Demonstration</div>
+      <div class="halfpenny-card halfpenny-menu-item" data-category="biscuits">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Country Sausage &amp; Egg Biscuit</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$7.25</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Savory sage pork sausage patty and folded egg with melted American cheese on a warm golden biscuit.</p>
+        <span class="halfpenny-tag">Southern Classic</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="biscuits">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Egg White &amp; Avocado Wrap (GF)</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$8.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Fluffy egg whites, fresh avocado, baby spinach, and Swiss cheese wrapped in a gluten-free spinach tortilla.</p>
+        <span class="halfpenny-tag">Gluten-Free</span>
+      </div>
+
+      <!-- Omelets & Platters -->
+      <div class="halfpenny-card halfpenny-menu-item" data-category="omelets">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Western 3-Egg Omelet</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$11.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Three farm eggs folded with diced smoked ham, green bell peppers, sweet onions, and cheddar cheese. Served with hashbrowns and toast.</p>
+        <span class="halfpenny-tag">Omelet Platter</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="omelets">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Garden Veggie &amp; Feta Omelet</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$11.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Mushrooms, baby spinach, diced tomatoes, onions, and crumbled Greek feta cheese, served with crispy potatoes and biscuit.</p>
+        <span class="halfpenny-tag">Vegetarian</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="omelets">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Tryon Power Breakfast Platter</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$12.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Two eggs any style, choice of three bacon strips or two sausage patties, crispy seasoned hashbrowns, and a buttermilk biscuit with jelly.</p>
+        <span class="halfpenny-tag">Full Platter</span>
+      </div>
+
+      <!-- Deli Sandwiches -->
+      <div class="halfpenny-card halfpenny-menu-item" data-category="deli">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Tryon Triple Decker Club</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$12.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Sliced roast turkey, smoked ham, bacon, Swiss cheese, lettuce, tomato, and mayonnaise layered on toasted sourdough with kettle chips.</p>
+        <span class="halfpenny-tag">Bestseller</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="deli">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Tarragon Chicken Salad Croissant</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$11.95</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">House-poached chicken salad with fresh tarragon, dried cranberries, and celery on a flaky butter croissant with side pasta salad.</p>
+        <span class="halfpenny-tag">House Specialty</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="deli">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Hot Pastrami &amp; Swiss on Rye</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$12.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Warm sliced New York pastrami, melted Swiss cheese, and spicy stone-ground brown mustard on grilled marbled rye with deli pickle spear.</p>
+        <span class="halfpenny-tag">Hot Deli</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="deli">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Turkey Avocado Bacon Melt</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$12.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Sliced turkey breast, applewood bacon, fresh avocado, melted provolone, and herb aioli grilled warm on multigrain bread.</p>
+        <span class="halfpenny-tag">Warm Melt</span>
+      </div>
+
+      <!-- Salads & Bowls -->
+      <div class="halfpenny-card halfpenny-menu-item" data-category="salads">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Halfpenny's Chef Salad</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$12.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Crisp mixed greens, sliced turkey, ham, cheddar and Swiss cheeses, hard-boiled egg, cucumbers, tomatoes, and house ranch dressing.</p>
+        <span class="halfpenny-tag">Chef Salad</span>
+      </div>
+
+      <!-- Coffee -->
+      <div class="halfpenny-card halfpenny-menu-item" data-category="coffee">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Fresh Brewed Drip Coffee</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$3.00</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Locally roasted medium and dark roast beans brewed fresh continuously all morning. Whole milk, half &amp; half, and oat milk available.</p>
+        <span class="halfpenny-tag">Fresh Brew</span>
+      </div>
+
+      <div class="halfpenny-card halfpenny-menu-item" data-category="coffee">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+          <h3 style="color:#0f172a; font-size:1.2rem;">Iced Caramel Vanilla Latte</h3>
+          <span style="font-weight:700; color:#b45309; font-size:1.1rem;">$5.50</span>
+        </div>
+        <p style="color:#475569; font-size:0.95rem; margin-bottom:12px;">Double espresso shot poured over ice with vanilla bean syrup, whole or oat milk, and rich salted caramel drizzle.</p>
+        <span class="halfpenny-tag">Iced Latte</span>
       </div>
     </div>
-  </footer>
 
+    <!-- Takeout CTA -->
+    <div style="text-align:center; margin-top:50px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:30px; box-shadow:var(--halfpenny-shadow);">
+      <h3 style="color:#0f172a; font-size:1.5rem; margin-bottom:10px;">Call Ahead for Fast Concourse Pickup</h3>
+      <p style="color:#475569; max-width:600px; margin:0 auto 20px;">Avoid the morning rush by calling your breakfast or deli order ahead directly to Suite 30.</p>
+      <a href="tel:7043429697" class="halfpenny-btn-primary">Call (704) 342-9697</a>
+    </div>
+  </main>
+
+  <footer class="halfpenny-footer">
+    <div class="halfpenny-footer-grid">
+      <div>
+        <h4 style="color:#f59e0b;">Halfpenny's Cafe</h4>
+        <p>Uptown Charlotte's beloved concourse breakfast &amp; deli destination inside 301 S Tryon St. Scratch-made buttermilk biscuits, custom omelets, artisan triple-decker clubs, tarragon chicken salad, and corporate catering.</p>
+        <p style="margin-top:12px;"><strong>301 S Tryon St, Suite 30 | Lower Concourse Level | Charlotte, NC</strong></p>
+      </div>
+      <div>
+        <h4>Menu Navigation</h4>
+        <ul class="halfpenny-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="concourse-breakfast-and-omelets.html">Breakfast &amp; Omelets</a></li>
+          <li><a href="artisan-deli-and-specialty-subs.html">Deli &amp; Specialty Subs</a></li>
+          <li><a href="office-catering-and-breakfast-boxes.html">Office Catering</a></li>
+          <li><a href="visit.html">Visit &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Weekday Hours</h4>
+        <ul class="halfpenny-footer-links">
+          <li>Monday - Thursday: 7:00 AM - 3:30 PM</li>
+          <li>Friday: 7:00 AM - 3:00 PM</li>
+          <li>Saturday - Sunday: Closed</li>
+          <li>Fast Concourse Pickup Daily</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location &amp; Contact</h4>
+        <p>301 S Tryon St, Suite 30<br>Charlotte, NC 28282</p>
+        <p style="margin-top:8px;">Phone: <a href="tel:7043429697" style="color:#f59e0b; font-weight:700;">(704) 342-9697</a></p>
+        <p>Email: <a href="mailto:info@halfpennyscafe.com" style="color:#f59e0b;">info@halfpennyscafe.com</a></p>
+      </div>
+    </div>
+    <div class="halfpenny-footer-bottom">
+      <p>&copy; 2026 Halfpenny's Cafe. All rights reserved. Uptown Charlotte, North Carolina.</p>
+    </div>
+  </footer>
   <script src="site.js"></script>
-  <script src="../../scripts/shared/comparison-button.js" defer></script>
-  <script src="../../scripts/shared/darkstar-footer.js" defer></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
 </body>
 </html>

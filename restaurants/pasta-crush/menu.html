@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasta Menu | Pasta Crush Charlotte NC</title>
+  <meta name="description" content="Explore the full fresh pasta menu at Pasta Crush in Uptown Charlotte. Signature bowls, build-your-own pasta bar, garlic cheese toast, and sides.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <!-- Top Ticker Strip -->
+  <aside class="crush-ticker-strip">
+    <div class="crush-ticker-item">
+      <span>Inside Monarch Market: 101 N. Tryon St., Charlotte, NC 28202</span>
+    </div>
+    <div class="crush-ticker-item">
+      <span>Fresh Semolina Pasta Saut&#233;ed to Order</span>
+    </div>
+    <div class="crush-ticker-item">
+      <span>Call Our Pasta Counter: <a href="tel:9802052274">(980) 205-2274</a></span>
+    </div>
+  </aside>
+
+  <!-- Sticky Masthead -->
+  <header class="crush-masthead">
+    <div class="crush-nav-container">
+      <a href="index.html" class="crush-brand-mark">
+        <span class="crush-brand-name">Pasta Crush</span>
+        <span class="crush-brand-sub">Fresh Pasta Bar &amp; Bowls</span>
+      </a>
+      <button class="crush-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+      <nav>
+        <ul class="crush-nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Pasta Menu</a></li>
+          <li><a href="the-fresh-pasta-craft.html">Pasta Craft</a></li>
+          <li><a href="signature-bowls-and-custom-pasta.html">Bowls &amp; Builds</a></li>
+          <li><a href="monarch-market-hall.html">Monarch Market</a></li>
+          <li><a href="visit.html" class="crush-btn-action">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="crush-hero-stage" style="background-image: url('images/pasta-creamy-fettuccine.jpg'); padding: 4.5rem 1.5rem;">
+    <div class="crush-hero-content">
+      <span class="crush-hero-badge">Saut&#233;ed Fresh to Order</span>
+      <h1>Our Fresh Pasta Menu</h1>
+      <p class="crush-hero-tagline">Chef-crafted signature bowls, custom pasta bar combinations, crispy starters, and fresh market sides.</p>
+    </div>
+  </section>
+
+  <!-- Menu Catalog with Filter Tabs -->
+  <section class="crush-section">
+    <div class="crush-container">
+      <div class="crush-tabs-shelf">
+        <button class="crush-tab-btn active" data-division="all">All Items</button>
+        <button class="crush-tab-btn" data-division="signature-bowls">Signature Bowls</button>
+        <button class="crush-tab-btn" data-division="custom-pasta">Build Your Own</button>
+        <button class="crush-tab-btn" data-division="starters-drinks">Starters &amp; Sides</button>
+      </div>
+
+      <!-- Division 1: Signature Bowls -->
+      <section class="crush-menu-division" data-division="signature-bowls">
+        <div class="crush-division-heading">
+          <h2>Signature Pasta Bowls</h2>
+          <span>Curated Chef Compositions</span>
+        </div>
+        <div class="crush-menu-grid">
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Cajun Shrimp &amp; Chicken Fettuccine</span>
+              <span class="crush-tile-price">$16.50</span>
+            </div>
+            <p class="crush-tile-detail">Blackened jumbo shrimp, grilled chicken breast, and sweet bell peppers tossed in spicy garlic Cajun cream sauce over semolina fettuccine.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Butter Chicken Tikka Alfredo</span>
+              <span class="crush-tile-price">$15.95</span>
+            </div>
+            <p class="crush-tile-detail">Aromatic spiced Indian tikka masala blended with creamy parmesan alfredo, grilled chicken breast, penne rigate, and fresh cilantro.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Creamy Truffle Pesto Penne</span>
+              <span class="crush-tile-price">$14.95</span>
+            </div>
+            <p class="crush-tile-detail">Genovese sweet basil pesto cream, saut&#233;ed button mushrooms, roasted garlic, and white truffle oil drizzle with shaved parmesan.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Classic Spaghetti &amp; Meatballs</span>
+              <span class="crush-tile-price">$13.95</span>
+            </div>
+            <p class="crush-tile-detail">Tender house-made beef and pork meatballs simmered in slow-cooked San Marzano marinara over spaghetti with fresh basil.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Garlic Butter Chicken Bowl</span>
+              <span class="crush-tile-price">$14.50</span>
+            </div>
+            <p class="crush-tile-detail">Seared chicken breast, roasted garlic cloves, baby spinach, and bowtie farfalle tossed in white wine garlic butter sauce.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Veggie Power Quinoa Pasta Bowl</span>
+              <span class="crush-tile-price">$13.50</span>
+            </div>
+            <p class="crush-tile-detail">Saut&#233;ed broccoli florets, cherry tomatoes, zucchini, and mushrooms in roasted garlic olive oil over penne pasta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Division 2: Build Your Own Pasta -->
+      <section class="crush-menu-division" data-division="custom-pasta">
+        <div class="crush-division-heading">
+          <h2>Build-Your-Own Pasta Bar</h2>
+          <span>Choose Your Pasta, Sauce &amp; Mix-Ins ($11.95 Base)</span>
+        </div>
+        <div class="crush-menu-grid">
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Step 1: Choose Your Pasta</span>
+              <span class="crush-tile-price">Included</span>
+            </div>
+            <p class="crush-tile-detail">Fettuccine (wide ribbon), Penne Rigate (ridged tube), Spaghetti (classic strand), Bowtie Farfalle, or Certified Gluten-Free Penne.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Step 2: Choose Your Sauce</span>
+              <span class="crush-tile-price">Included</span>
+            </div>
+            <p class="crush-tile-detail">Cajun Garlic Cream, Tikka Masala Alfredo, Creamy Basil Pesto, San Marzano Marinara, Garlic Butter Parmesan, or Truffle Alfredo (+$1.50).</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Step 3: Add Premium Proteins</span>
+              <span class="crush-tile-price">+$3.50 - $5.50</span>
+            </div>
+            <p class="crush-tile-detail">Grilled Chicken Breast (+$3.50), Black Tiger Shrimp (+$5.00), Italian Meatballs (+$4.50), Crispy Bacon Crumbles (+$3.00), or Sautéed Tofu (+$3.00).</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Step 4: Fresh Vegetable Mix-Ins</span>
+              <span class="crush-tile-price">+$1.00 each</span>
+            </div>
+            <p class="crush-tile-detail">Button Mushrooms, Baby Spinach, Roasted Cherry Tomatoes, Broccoli Florets, Sliced Bell Peppers, Caramelized Onions, or Kalamata Olives.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Division 3: Starters & Sides -->
+      <section class="crush-menu-division" data-division="starters-drinks">
+        <div class="crush-division-heading">
+          <h2>Starters, Breads &amp; Refreshments</h2>
+          <span>Crispy Bites &amp; Market Sides</span>
+        </div>
+        <div class="crush-menu-grid">
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Crispy Mozzarella Sticks</span>
+              <span class="crush-tile-price">$7.50 (5 pcs)</span>
+            </div>
+            <p class="crush-tile-detail">Golden breaded mozzarella cheese sticks fried crisp and served with warm San Marzano marinara dipping sauce.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Garlic Cheese Toast</span>
+              <span class="crush-tile-price">$5.50</span>
+            </div>
+            <p class="crush-tile-detail">Toasted rustic Italian bread smothered in roasted garlic herb butter, melted mozzarella, and fresh parsley.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Crispy Popcorn Chicken Bites</span>
+              <span class="crush-tile-price">$8.50</span>
+            </div>
+            <p class="crush-tile-detail">Bite-sized crispy fried chicken tossed in Italian seasoning with house garlic parmesan dip.</p>
+          </div>
+
+          <div class="crush-menu-tile">
+            <div class="crush-tile-header">
+              <span class="crush-tile-title">Creamy Tomato Basil Soup</span>
+              <span class="crush-tile-price">$5.95</span>
+            </div>
+            <p class="crush-tile-detail">Velvety slow-simmered tomato soup with sweet cream, garlic, basil, and crunchy sourdough croutons.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="crush-footer">
+    <div class="crush-footer-grid">
+      <div class="crush-footer-col">
+        <h4>Pasta Crush</h4>
+        <p style="color: var(--crush-cream-warm); font-size: 0.95rem; margin-bottom: 1rem;">Uptown Charlotte&#39;s premier fast-casual fresh pasta bar inside Monarch Market at One South Tryon.</p>
+        <p style="color: var(--crush-gold-light); font-size: 0.9rem;">101 N. Tryon St., Charlotte, NC 28202</p>
+      </div>
+      <div class="crush-footer-col">
+        <h4>Navigation</h4>
+        <ul class="crush-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Pasta Menu</a></li>
+          <li><a href="the-fresh-pasta-craft.html">Pasta Craft</a></li>
+          <li><a href="signature-bowls-and-custom-pasta.html">Bowls &amp; Builds</a></li>
+          <li><a href="monarch-market-hall.html">Monarch Market</a></li>
+          <li><a href="visit.html">Visit &amp; Contact</a></li>
+        </ul>
+      </div>
+      <div class="crush-footer-col">
+        <h4>Counter Hours</h4>
+        <ul class="crush-footer-links">
+          <li>Mon - Thu: 11:00 AM - 9:00 PM</li>
+          <li>Fri - Sat: 11:00 AM - 10:00 PM</li>
+          <li>Sunday: 11:00 AM - 9:00 PM</li>
+          <li>Food Hall Seating &amp; Takeout</li>
+        </ul>
+      </div>
+      <div class="crush-footer-col">
+        <h4>Direct Contact</h4>
+        <p style="font-size: 0.92rem; margin-bottom: 0.5rem; color: var(--crush-cream-warm);">Call our counter for quick pickup:</p>
+        <p style="font-family: var(--font-crush-mono); font-size: 1.25rem; font-weight: 700; color: var(--crush-gold-light); margin-bottom: 1rem;">
+          <a href="tel:9802052274" style="color: inherit; text-decoration: none;">(980) 205-2274</a>
+        </p>
+        <p style="font-size: 0.85rem; color: #94a3b8;">Inside Monarch Market at Trade &amp; Tryon.</p>
+      </div>
+    </div>
+    <div class="crush-footer-subline">
+      <span>&copy; 2026 Pasta Crush. All rights reserved. 101 N. Tryon St., Charlotte, NC.</span>
+      <span>Fast-Casual Fresh Pasta Bar &amp; Bowls</span>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

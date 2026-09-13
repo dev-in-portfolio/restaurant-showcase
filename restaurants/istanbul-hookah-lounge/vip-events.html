@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP Table Reservations & Event Calculator | Istanbul Hookah Lounge Charlotte</title>
+  <meta name="description" content="Istanbul Hookah Lounge in Uptown Charlotte's historic Brevard Court: Authentic Turkish hookah, artisanal shisha, hand-carved fruit heads, Turkish coffee, and mezze.">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <header class="ihl-header">
+    <div class="ihl-nav-container">
+      <a href="index.html" class="ihl-brand">
+        <span class="ihl-brand-name">Istanbul <span>Hookah Lounge</span></span>
+        <span class="ihl-brand-sub">Historic Brevard Court &bull; Uptown Charlotte</span>
+      </a>
+      <ul class="ihl-nav-links">
+        <li><a href="index.html" class="ihl-nav-link ">Home</a></li>
+        <li><a href="menu.html" class="ihl-nav-link ">Flavors &amp; Menu</a></li>
+        <li><a href="shisha-experience.html" class="ihl-nav-link ">The Experience</a></li>
+        <li><a href="vip-events.html" class="ihl-nav-link active">VIP &amp; Events</a></li>
+        <li><a href="about.html" class="ihl-nav-link ">Our Story</a></li>
+        <li><a href="contact.html" class="ihl-nav-link ">Visit &amp; FAQs</a></li>
+      </ul>
+      <a href="vip-events.html" class="ihl-nav-cta">Reserve VIP Table</a>
+      <button class="ihl-mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </header>
+  <div class="ihl-drawer-overlay"></div>
+  <aside class="ihl-drawer">
+    <button class="ihl-drawer-close" aria-label="Close Navigation Menu">&times;</button>
+    <div class="ihl-brand" style="margin-bottom: 2rem;">
+      <span class="ihl-brand-name">Istanbul <span>Hookah</span></span>
+      <span class="ihl-brand-sub">Brevard Court &bull; Charlotte NC</span>
+    </div>
+    <ul class="ihl-drawer-links">
+      <li><a href="index.html" class="ihl-drawer-link ">Home</a></li>
+      <li><a href="menu.html" class="ihl-drawer-link ">Flavors &amp; Menu</a></li>
+      <li><a href="shisha-experience.html" class="ihl-drawer-link ">The Experience</a></li>
+      <li><a href="vip-events.html" class="ihl-drawer-link active">VIP &amp; Events</a></li>
+      <li><a href="about.html" class="ihl-drawer-link ">Our Story</a></li>
+      <li><a href="contact.html" class="ihl-drawer-link ">Visit &amp; FAQs</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--ihl-border);">
+      <p style="font-size: 0.85rem; color: var(--ihl-text-muted); margin-bottom: 0.5rem;"><strong>Address:</strong> 138 Brevard Ct, Charlotte, NC 28202</p>
+      <p style="font-size: 0.85rem; color: var(--ihl-text-muted); margin-bottom: 1rem;"><strong>Phone:</strong> (704) 333-5175</p>
+      <a href="tel:7043335175" class="ihl-btn-primary" style="width: 100%; text-align: center; display: block;">Call Lounge Host</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="ihl-section bg-secondary" style="padding: 3.5rem 0 2rem;">
+      <div class="ihl-container">
+        <div class="ihl-section-head" style="margin-bottom: 1.5rem;">
+          <span class="ihl-section-tag">Interactive VIP Reservation Estimator</span>
+          <h1 class="ihl-section-title">VIP Tables &amp; Private Celebrations</h1>
+          <p class="ihl-section-subtitle">
+            Configure reserved leather sectional booths, premium hookah setups, custom fruit bowls, and mezze catering with real-time pricing and direct booking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ihl-section">
+      <div class="ihl-container">
+        <div class="ihl-calc-container">
+          <!-- Controls -->
+          <div class="ihl-calc-card">
+            <h2 style="font-family: var(--ihl-font-serif); color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;">
+              1. Party Size &amp; Package Tier
+            </h2>
+
+            <div class="ihl-form-group">
+              <label for="calc-guests" class="ihl-form-label">Number of Guests in Party</label>
+              <input type="number" id="calc-guests" class="ihl-form-control" value="4" min="2" max="30" step="1">
+              <p style="font-size: 0.8rem; color: var(--ihl-text-muted); margin-top: 0.25rem;">Capacity: 2 to 30 guests (21+ only)</p>
+            </div>
+
+            <div class="ihl-form-group">
+              <label for="calc-tier" class="ihl-form-label">VIP Experience Tier</label>
+              <select id="calc-tier" class="ihl-form-control">
+                <option value="35.00" selected>Bosphorus Classic (.00 / person) - Reserved Table, 1 Hookah per 3 Guests &amp; Tea</option>
+                <option value="55.00">Sultan's VIP Lounge (.00 / person) - 1 Hookah per 2 Guests, Fruit Heads, Ice Tips &amp; Mezze Platter</option>
+                <option value="75.00">Grand Bazaar Celebration (.00 / person) - Unlimited Hookahs, Top Shelf Tobacco, Full Mezze &amp; Baklava Feast</option>
+              </select>
+            </div>
+
+            <div class="ihl-form-group">
+              <label for="calc-fruit-heads" class="ihl-form-label">Add Fresh Carved Fruit Heads (.00 ea)</label>
+              <select id="calc-fruit-heads" class="ihl-form-control">
+                <option value="0" selected>Standard Clay Vortex Bowls</option>
+                <option value="1">+1 Fresh Pineapple Head (+.00)</option>
+                <option value="2">+2 Fresh Pineapple Heads (+.00)</option>
+                <option value="3">+3 Fresh Pineapple Heads (+.00)</option>
+                <option value="4">+4 Fresh Pineapple Heads (+.00)</option>
+              </select>
+            </div>
+
+            <div class="ihl-form-group">
+              <label for="calc-ice-tips" class="ihl-form-label">Add Sub-Zero Frozen Ice Tip Hoses (.00 ea)</label>
+              <select id="calc-ice-tips" class="ihl-form-control">
+                <option value="0" selected>Standard Sanitary Silicone Hoses</option>
+                <option value="1">+1 Frozen Ice Tip (+.00)</option>
+                <option value="2">+2 Frozen Ice Tips (+.00)</option>
+                <option value="3">+3 Frozen Ice Tips (+.00)</option>
+                <option value="4">+4 Frozen Ice Tips (+.00)</option>
+              </select>
+            </div>
+
+            <div class="ihl-form-group">
+              <label for="calc-tea-service" class="ihl-form-label">Turkish Beverage Service Add-On</label>
+              <select id="calc-tea-service" class="ihl-form-control">
+                <option value="0" selected>None (Included in selected tier)</option>
+                <option value="25.00">Unlimited Turkish Samovar Tea Service (+.00)</option>
+                <option value="35.00">Sand-Brewed Coffee &amp; Artisan Mocktail Round (+.00)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Summary Card -->
+          <div class="ihl-calc-card" style="background: #111728; border-color: var(--ihl-gold);">
+            <div class="ihl-card-flex" style="margin-bottom: 1rem;">
+              <span class="ihl-tag highlight">Instant Estimate</span>
+              <span class="ihl-tag">No Upfront Payment</span>
+            </div>
+            <h2 style="font-family: var(--ihl-font-serif); color: var(--ihl-gold); font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem;">
+              VIP Reservation Summary
+            </h2>
+
+            <div class="ihl-calc-row">
+              <span>Party Headcount:</span>
+              <strong id="out-guests" style="color: #fff;">4</strong>
+            </div>
+            <div class="ihl-calc-row">
+              <span>Package Base Cost:</span>
+              <strong id="out-tier-cost">.00</strong>
+            </div>
+            <div class="ihl-calc-row">
+              <span>Fruit Bowl Upgrades:</span>
+              <strong id="out-fruit-cost">.00</strong>
+            </div>
+            <div class="ihl-calc-row">
+              <span>Ice Tip Attachments:</span>
+              <strong id="out-ice-cost">.00</strong>
+            </div>
+            <div class="ihl-calc-row">
+              <span>Beverage Add-On:</span>
+              <strong id="out-tea-cost">.00</strong>
+            </div>
+            <div class="ihl-calc-row" style="border-top: 1px solid var(--ihl-border); padding-top: 0.75rem; margin-top: 0.75rem;">
+              <span>Subtotal:</span>
+              <strong id="out-subtotal">.00</strong>
+            </div>
+            <div class="ihl-calc-row">
+              <span>Service &amp; Coal Host (20%):</span>
+              <strong id="out-service-fee">.00</strong>
+            </div>
+            <div class="ihl-calc-row total">
+              <span>Estimated Total:</span>
+              <span id="out-grand-total" class="amount">.00</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <a href="mailto:reservations@istanbulhookahclt.com" id="btn-reserve-vip" class="ihl-btn-primary" style="width: 100%; text-align: center; display: block;">
+                Generate Pre-Filled VIP Request
+              </a>
+              <p style="font-size: 0.8rem; color: var(--ihl-text-muted); text-align: center; margin-top: 0.75rem;">
+                Or call host directly: <a href="tel:7043335175" style="color: var(--ihl-gold);">(704) 333-5175</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIP Tiers Overview -->
+        <div style="margin-top: 4rem;">
+          <div class="ihl-section-head">
+            <span class="ihl-section-tag">Celebration Packages</span>
+            <h2 class="ihl-section-title">What is Included in Our VIP Tiers?</h2>
+          </div>
+
+          <div class="ihl-grid-3">
+            <div class="ihl-card">
+              <div class="ihl-card-body">
+                <span class="ihl-tag highlight" style="margin-bottom: 0.75rem;">Bosphorus Classic</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--ihl-text-muted); font-weight: normal;">/ guest</span></div>
+                <ul style="color: var(--ihl-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Reserved leather booth seating in main lounge</li>
+                  <li>1 Premium Hookah per 3 guests</li>
+                  <li>Choice of signature blonde or dark tobacco</li>
+                  <li>Complimentary Turkish tea service</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="ihl-card" style="border-color: var(--ihl-gold);">
+              <div class="ihl-card-body">
+                <span class="ihl-tag highlight" style="margin-bottom: 0.75rem;">Sultan's VIP Lounge</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--ihl-gold); margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--ihl-text-muted); font-weight: normal;">/ guest</span></div>
+                <ul style="color: var(--ihl-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Prime elevated VIP section seating</li>
+                  <li>1 Hookah per 2 guests with fresh pineapple heads</li>
+                  <li>Frozen ice tips included for all hoses</li>
+                  <li>Full Mediterranean Mezze Platter &amp; Tea</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="ihl-card">
+              <div class="ihl-card-body">
+                <span class="ihl-tag highlight" style="margin-bottom: 0.75rem;">Grand Bazaar Celebration</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--ihl-text-muted); font-weight: normal;">/ guest</span></div>
+                <ul style="color: var(--ihl-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Dedicated private table area with personal coal host</li>
+                  <li>Unlimited shisha refills with custom fruit heads</li>
+                  <li>Sand-brewed coffee, mocktails &amp; teas</li>
+                  <li>Full Mezze Feast, Baklava &amp; Turkish Delight</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ihl-footer">
+    <div class="ihl-container">
+      <div class="ihl-footer-grid">
+        <div>
+          <div class="ihl-brand" style="margin-bottom: 1rem;">
+            <span class="ihl-brand-name">Istanbul <span>Hookah Lounge</span></span>
+            <span class="ihl-brand-sub">Uptown Charlotte &bull; Brevard Court</span>
+          </div>
+          <p class="ihl-footer-text">
+            Charlotte's authentic Turkish and Mediterranean hookah lounge. Artisanal shisha blends, custom hand-carved fruit heads, sand-brewed Turkish coffee, traditional teas, mezze, and baklava.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <span class="ihl-tag highlight">21+ Lounge</span>
+            <span class="ihl-tag highlight">Natural Coconut Coals</span>
+            <span class="ihl-tag">Patio &bull; Indoor VIP</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="ihl-footer-heading">Explore</h4>
+          <ul class="ihl-footer-links">
+            <li><a href="index.html" class="ihl-footer-link">Lounge Experience</a></li>
+            <li><a href="menu.html" class="ihl-footer-link">Shisha Flavors &amp; Mezze</a></li>
+            <li><a href="shisha-experience.html" class="ihl-footer-link">The Art of Shisha</a></li>
+            <li><a href="vip-events.html" class="ihl-footer-link">VIP Table Calculator</a></li>
+            <li><a href="about.html" class="ihl-footer-link">Our Bosphorus Story</a></li>
+            <li><a href="contact.html" class="ihl-footer-link">Location &amp; FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="ihl-footer-heading">Hours</h4>
+          <ul class="ihl-footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color:#fff;">Tue - Wed:</strong> 2:00 PM &ndash; 12:00 AM</li>
+            <li><strong style="color:#fff;">Thu - Sat:</strong> 2:00 PM &ndash; 2:00 AM</li>
+            <li><strong style="color:#fff;">Sunday:</strong> 2:00 PM &ndash; 11:00 PM</li>
+            <li><strong style="color: var(--ihl-gold);">Monday:</strong> Closed</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="ihl-footer-heading">Historic Brevard Court</h4>
+          <p class="ihl-footer-text">
+            138 Brevard Ct, Charlotte, NC 28202<br>
+            Directly across from Romare Bearden Park &amp; Truist Field.<br>
+            Phone: <a href="tel:7043335175" style="color: var(--ihl-gold); font-weight: 700;">(704) 333-5175</a>
+          </p>
+          <p style="font-size: 0.8rem; color: var(--ihl-text-muted);">
+            Valid government-issued photo ID required for entry. Must be 21+.
+          </p>
+        </div>
+      </div>
+      <div class="ihl-footer-bottom">
+        <p>&copy; 2026 Istanbul Hookah Lounge Charlotte. All rights reserved. Authentic Turkish Hospitality.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

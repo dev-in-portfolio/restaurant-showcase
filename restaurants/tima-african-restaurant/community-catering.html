@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community &amp; Celebration Catering Calculator | Tima African Restaurant Charlotte</title>
+  <meta name="description" content="Tima African Restaurant at 4438 The Plaza, Charlotte NC: Authentic Senegalese and West African cuisine, Thieboudienne, Dibi Lamb, Jollof Rice, Yassa chicken, and plantains.">
+  <link rel="stylesheet" href="site.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <header class="tim-header">
+    <div class="tim-nav-container">
+      <a href="index.html" class="tim-brand">
+        <span class="tim-brand-name">Tima <span>African Restaurant</span></span>
+        <span class="tim-brand-sub">Authentic West African &bull; Charlotte NC</span>
+      </a>
+      <ul class="tim-nav-links">
+        <li><a href="index.html" class="tim-nav-link ">Home</a></li>
+        <li><a href="menu.html" class="tim-nav-link ">Menu</a></li>
+        <li><a href="senegal-heritage.html" class="tim-nav-link ">Teranga Tradition</a></li>
+        <li><a href="community-catering.html" class="tim-nav-link active">Community Catering</a></li>
+        <li><a href="about.html" class="tim-nav-link ">Our Story</a></li>
+        <li><a href="contact.html" class="tim-nav-link ">Visit &amp; FAQs</a></li>
+      </ul>
+      <a href="community-catering.html" class="tim-nav-cta">Catering Calculator</a>
+      <button class="tim-mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </header>
+  <div class="tim-drawer-overlay"></div>
+  <aside class="tim-drawer">
+    <button class="tim-drawer-close" aria-label="Close Navigation Menu">&times;</button>
+    <div class="tim-brand" style="margin-bottom: 2rem;">
+      <span class="tim-brand-name">Tima <span>African</span></span>
+      <span class="tim-brand-sub">4438 The Plaza &bull; Charlotte</span>
+    </div>
+    <ul class="tim-drawer-links">
+      <li><a href="index.html" class="tim-drawer-link ">Home</a></li>
+      <li><a href="menu.html" class="tim-drawer-link ">Menu</a></li>
+      <li><a href="senegal-heritage.html" class="tim-drawer-link ">Teranga Tradition</a></li>
+      <li><a href="community-catering.html" class="tim-drawer-link active">Community Catering</a></li>
+      <li><a href="about.html" class="tim-drawer-link ">Our Story</a></li>
+      <li><a href="contact.html" class="tim-drawer-link ">Visit &amp; FAQs</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--tim-border);">
+      <p style="font-size: 0.85rem; color: var(--tim-text-muted); margin-bottom: 0.5rem;"><strong>Address:</strong> 4438 The Plaza, Charlotte, NC 28215</p>
+      <p style="font-size: 0.85rem; color: var(--tim-text-muted); margin-bottom: 1rem;"><strong>Phone:</strong> (980) 390-3982</p>
+      <a href="tel:9803903982" class="tim-btn-primary" style="width: 100%; text-align: center; display: block;">Call Kitchen</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="tim-section bg-secondary" style="padding: 3.5rem 0 2rem;">
+      <div class="tim-container">
+        <div class="tim-section-head" style="margin-bottom: 1.5rem;">
+          <span class="tim-section-tag">Interactive Event &amp; Feast Estimator</span>
+          <h1 class="tim-section-title">Community &amp; Celebration Catering</h1>
+          <p class="tim-section-subtitle">
+            Configure trays of Thieboudienne, Jollof rice, charcoal-grilled Dibi lamb feasts, and barrels of Bissap hibiscus juice with real-time pricing and direct ordering.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tim-section">
+      <div class="tim-container">
+        <div class="tim-calc-container">
+          <!-- Form Card -->
+          <div class="tim-calc-card">
+            <h2 style="font-family: var(--tim-font-serif); color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem;">
+              1. Headcount &amp; Catering Package
+            </h2>
+
+            <div class="tim-form-group">
+              <label for="calc-guests" class="tim-form-label">Estimated Guest Count</label>
+              <input type="number" id="calc-guests" class="tim-form-control" value="20" min="10" max="250" step="5">
+              <p style="font-size: 0.8rem; color: var(--tim-text-muted); margin-top: 0.25rem;">Recommended: 10 to 250 guests</p>
+            </div>
+
+            <div class="tim-form-group">
+              <label for="calc-package" class="tim-form-label">Catering Feast Package</label>
+              <select id="calc-package" class="tim-form-control">
+                <option value="18.00" selected>Teranga Street Box (.00 / person) - Jollof Rice, Yassa Chicken &amp; Plantains</option>
+                <option value="24.00">Dakar Royal Banquet (.00 / person) - Thieboudienne, Dibi Lamb, Jollof Rice &amp; Pastelles</option>
+                <option value="30.00">Grand West African Celebration (.00 / person) - Full Spread, Thieboudienne, Dibi, Maf&eacute;, Tilapia &amp; Bissap</option>
+              </select>
+            </div>
+
+            <div class="tim-form-group">
+              <label for="calc-extra-dibi" class="tim-form-label">Add Extra Pounds of Grilled Dibi Lamb (.00 / lb)</label>
+              <select id="calc-extra-dibi" class="tim-form-control">
+                <option value="0" selected>None (Included in base package)</option>
+                <option value="2">+2 lbs Grilled Dibi Lamb (+.00)</option>
+                <option value="4">+4 lbs Grilled Dibi Lamb (+.00)</option>
+                <option value="6">+6 lbs Grilled Dibi Lamb (+.00)</option>
+                <option value="8">+8 lbs Grilled Dibi Lamb (+.00)</option>
+              </select>
+            </div>
+
+            <div class="tim-form-group">
+              <label for="calc-extra-jollof" class="tim-form-label">Add Extra Half Trays of Jollof Rice (.00 ea)</label>
+              <select id="calc-extra-jollof" class="tim-form-control">
+                <option value="0" selected>None</option>
+                <option value="1">+1 Half Tray (Feeds 10-12) - .00</option>
+                <option value="2">+2 Half Trays (Feeds 20-24) - .00</option>
+                <option value="3">+3 Half Trays (Feeds 30-36) - .00</option>
+              </select>
+            </div>
+
+            <div class="tim-form-group">
+              <label for="calc-bissap-barrel" class="tim-form-label">Add 5-Gallon Juice Barrels (.00 ea)</label>
+              <select id="calc-bissap-barrel" class="tim-form-control">
+                <option value="0" selected>None</option>
+                <option value="1">1 Barrel (5 Gal Fresh Iced Bissap) - .00</option>
+                <option value="2">2 Barrels (5 Gal Bissap + 5 Gal Ginger Pineapple) - .00</option>
+                <option value="3">3 Barrels (15 Gal Assorted Juices) - .00</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Summary Card -->
+          <div class="tim-calc-card" style="background: #181411; border-color: var(--tim-gold);">
+            <div class="tim-card-flex" style="margin-bottom: 1rem;">
+              <span class="tim-tag highlight">Instant Estimate</span>
+              <span class="tim-tag">Zero Obligation</span>
+            </div>
+            <h2 style="font-family: var(--tim-font-serif); color: var(--tim-gold); font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem;">
+              Catering Order Summary
+            </h2>
+
+            <div class="tim-calc-row">
+              <span>Guest Headcount:</span>
+              <strong id="out-guests" style="color: #fff;">20</strong>
+            </div>
+            <div class="tim-calc-row">
+              <span>Package Base Cost:</span>
+              <strong id="out-pkg-cost">.00</strong>
+            </div>
+            <div class="tim-calc-row">
+              <span>Additional Dibi Lamb:</span>
+              <strong id="out-dibi-cost">.00</strong>
+            </div>
+            <div class="tim-calc-row">
+              <span>Additional Jollof Trays:</span>
+              <strong id="out-jollof-cost">.00</strong>
+            </div>
+            <div class="tim-calc-row">
+              <span>Juice Barrels:</span>
+              <strong id="out-bissap-cost">.00</strong>
+            </div>
+            <div class="tim-calc-row" style="border-top: 1px solid var(--tim-border); padding-top: 0.75rem; margin-top: 0.75rem;">
+              <span>Subtotal:</span>
+              <strong id="out-subtotal">.00</strong>
+            </div>
+            <div class="tim-calc-row">
+              <span>Packaging &amp; Service Fee (15%):</span>
+              <strong id="out-service-fee">.00</strong>
+            </div>
+            <div class="tim-calc-row total">
+              <span>Estimated Total:</span>
+              <span id="out-grand-total" class="amount">.00</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <a href="mailto:catering@timaafricanclt.com" id="btn-request-feast" class="tim-btn-primary" style="width: 100%; text-align: center; display: block;">
+                Generate Pre-Filled Email Order
+              </a>
+              <p style="font-size: 0.8rem; color: var(--tim-text-muted); text-align: center; margin-top: 0.75rem;">
+                Or call directly: <a href="tel:9803903982" style="color: var(--tim-gold); font-weight: 700;">(980) 390-3982</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tiers Breakdown -->
+        <div style="margin-top: 4rem;">
+          <div class="tim-section-head">
+            <span class="tim-section-tag">Package Inclusions</span>
+            <h2 class="tim-section-title">What is Included in Our Catering Tiers?</h2>
+          </div>
+
+          <div class="tim-grid-3">
+            <div class="tim-card">
+              <div class="tim-card-body">
+                <span class="tim-tag highlight" style="margin-bottom: 0.75rem;">Teranga Street Box</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--tim-text-muted); font-weight: normal;">/ guest</span></div>
+                <ul style="color: var(--tim-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Savory West African Jollof Rice</li>
+                  <li>Yassa Lemon-Onion Chicken quarters</li>
+                  <li>Golden Fried Alloco Sweet Plantains</li>
+                  <li>House hot pepper relish &amp; serving utensils</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tim-card" style="border-color: var(--tim-gold);">
+              <div class="tim-card-body">
+                <span class="tim-tag highlight" style="margin-bottom: 0.75rem;">Dakar Royal Banquet</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: var(--tim-gold); margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--tim-text-muted); font-weight: normal;">/ guest</span></div>
+                <ul style="color: var(--tim-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Full pans of Thieboudienne (Ceebu J&euml;n)</li>
+                  <li>Charcoal-Grilled Dibi Lamb with Dijon Onions</li>
+                  <li>Jollof Rice &amp; Fried Sweet Plantains</li>
+                  <li>Crispy Fish Pastelles with Spicy Tomato Dip</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tim-card">
+              <div class="tim-card-body">
+                <span class="tim-tag highlight" style="margin-bottom: 0.75rem;">Grand West African Celebration</span>
+                <div style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">.00 <span style="font-size: 0.85rem; color: var(--tim-text-muted); font-weight: normal;">/ guest</span></div>
+                <ul style="color: var(--tim-text-muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.25rem; padding-left: 1.2rem;">
+                  <li>Thieboudienne, Jollof Rice &amp; White Jasmine Rice</li>
+                  <li>Dibi Lamb, Crispy Whole Tilapia &amp; Maf&eacute; Stew</li>
+                  <li>Atti&eacute;k&eacute; &amp; Alloco Plantains</li>
+                  <li>5-Gallon Barrel of Fresh Iced Bissap Included</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tim-footer">
+    <div class="tim-container">
+      <div class="tim-footer-grid">
+        <div>
+          <div class="tim-brand" style="margin-bottom: 1rem;">
+            <span class="tim-brand-name">Tima <span>African Restaurant</span></span>
+            <span class="tim-brand-sub">East Charlotte &bull; The Plaza</span>
+          </div>
+          <p class="tim-footer-text">
+            Charlotte's authentic home for Senegalese and West African cuisine. Thieboudienne (Ceebu J&euml;n), charcoal-grilled Dibi Lamb with Dijon onions, Yassa chicken, rich peanut Maf&eacute;, and alloco plantains.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <span class="tim-tag highlight">Teranga Hospitality</span>
+            <span class="tim-tag highlight">Halal Certified Meats</span>
+            <span class="tim-tag">The Plaza Corridor</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="tim-footer-heading">Navigation</h4>
+          <ul class="tim-footer-links">
+            <li><a href="index.html" class="tim-footer-link">Home Experience</a></li>
+            <li><a href="menu.html" class="tim-footer-link">West African Menu</a></li>
+            <li><a href="senegal-heritage.html" class="tim-footer-link">Teranga Traditions</a></li>
+            <li><a href="community-catering.html" class="tim-footer-link">Catering Calculator</a></li>
+            <li><a href="about.html" class="tim-footer-link">Our Dakar Story</a></li>
+            <li><a href="contact.html" class="tim-footer-link">Location &amp; FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="tim-footer-heading">Hours</h4>
+          <ul class="tim-footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color:#fff;">Tue &ndash; Sun:</strong> 11:00 AM &ndash; 10:00 PM</li>
+            <li><strong style="color: var(--tim-crimson);">Monday:</strong> Closed</li>
+            <li><strong style="color:#fff;">Dine-In &amp; Takeout:</strong> Daily Fresh Batches</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="tim-footer-heading">Location</h4>
+          <p class="tim-footer-text">
+            4438 The Plaza, Charlotte, NC 28215<br>
+            Plaza Corridor in East Charlotte.<br>
+            Phone: <a href="tel:9803903982" style="color: var(--tim-gold); font-weight: 700;">(980) 390-3982</a>
+          </p>
+          <p style="font-size: 0.8rem; color: var(--tim-text-muted);">
+            Free on-site parking lot directly in front of the restaurant.
+          </p>
+        </div>
+      </div>
+      <div class="tim-footer-bottom">
+        <p>&copy; 2026 Tima African Restaurant Charlotte. All rights reserved. Authentic West African Gastronomy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

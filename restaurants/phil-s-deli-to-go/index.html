@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phil’s Deli To Go - Charlotte’s Landmark New York Deli Tradition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="pdeli-header">
+    <div class="pdeli-nav-container">
+      <a href="index.html" class="pdeli-brand">
+        <span class="pdeli-brand-title">Phil’s Deli To Go</span>
+        <span class="pdeli-brand-subtitle">New York Delicatessen &bull; Est. 1979</span>
+      </a>
+      <button class="pdeli-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="pdeli-nav" aria-label="Primary Navigation">
+        <ul class="pdeli-nav-list">
+          <li><a href="index.html" class="pdeli-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="pdeli-nav-link ">Deli Menu</a></li>
+          <li><a href="new-york-deli-tradition.html" class="pdeli-nav-link ">Deli Tradition</a></li>
+          <li><a href="reubens-and-pastrami.html" class="pdeli-nav-link ">Reubens &amp; Pastrami</a></li>
+          <li><a href="matzo-soup-and-sides.html" class="pdeli-nav-link ">Soup &amp; Sides</a></li>
+          <li><a href="visit.html" class="pdeli-nav-link pdeli-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main>
+      <section class="pdeli-hero">
+        <div class="pdeli-hero-grid">
+          <div class="pdeli-hero-content">
+            <span class="pdeli-hero-badge">Charlotte Deli Institution &bull; Est. 1979</span>
+            <h1 class="pdeli-hero-title">Overstuffed Classics, <span>Hand-Carved Daily</span></h1>
+            <p class="pdeli-hero-lead">Founded by second-generation New Yorker Phil Levine, Phil’s Deli brings authentic hot pastrami, award-winning grilled Reubens, and comforting golden matzo ball soup to Charlotte.</p>
+            <div class="pdeli-hero-actions">
+              <a href="menu.html" class="pdeli-btn-primary">Explore Full Menu</a>
+              <a href="reubens-and-pastrami.html" class="pdeli-btn-secondary">The Famous Reuben</a>
+            </div>
+          </div>
+          <div class="pdeli-hero-img-wrap">
+            <img src="images/hero.jpg" alt="Overstuffed pastrami sandwich on marble rye with deli pickle and sides" width="600" height="400">
+          </div>
+        </div>
+      </section>
+
+      <section class="pdeli-features">
+        <div class="pdeli-feature-grid">
+          <div class="pdeli-feature-card">
+            <div class="pdeli-feature-tag">Charlotte Favorite</div>
+            <h2 class="pdeli-feature-title">The Famous Reuben</h2>
+            <p class="pdeli-feature-desc">Hot steamed corned beef, melted Swiss, crisp sauerkraut, and tangy Russian dressing on buttery griddled rye.</p>
+          </div>
+          <div class="pdeli-feature-card">
+            <div class="pdeli-feature-tag">Steamed Hot</div>
+            <h2 class="pdeli-feature-title">NYC Pastrami &amp; Brisket</h2>
+            <p class="pdeli-feature-desc">Cured with coriander and black pepper, hand-sliced paper thin, and piled high with spicy deli brown mustard.</p>
+          </div>
+          <div class="pdeli-feature-card">
+            <div class="pdeli-feature-tag">Scratch Simmered</div>
+            <h2 class="pdeli-feature-title">Matzo Ball Soup</h2>
+            <p class="pdeli-feature-desc">Golden rich chicken broth simmered for hours with fresh dill, carrots, and light, fluffy hand-rolled matzo dumplings.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdeli-section">
+        <div class="pdeli-story-grid">
+          <div class="pdeli-story-img-wrap">
+            <img src="images/reuben.jpg" alt="Golden grilled Reuben sandwich with melted Swiss cheese and corned beef" width="600" height="360">
+          </div>
+          <div class="pdeli-story-content">
+            <span class="pdeli-section-eyebrow">A True Charlotte Staple</span>
+            <h3>Decades of Deli Heritage in the Queen City</h3>
+            <p>For over forty years, Phil’s Deli has set the gold standard for delicatessen dining in Charlotte. Whether you visit our full dining room on Providence Road or grab lunch on the go, our commitment to generous portions and authentic recipes remains unchanged.</p>
+            <p>Every sandwich is built on fresh bakery bread delivered daily, paired with kosher-style dill pickle spears and our scratch potato salad or coleslaw.</p>
+            <a href="new-york-deli-tradition.html" class="pdeli-btn-primary" style="margin-top: 0.5rem;">Read Our Story</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdeli-section" style="background: #ffffff; border-top: 1px solid var(--pdeli-border); border-bottom: 1px solid var(--pdeli-border);">
+        <div class="pdeli-section-header">
+          <span class="pdeli-section-eyebrow">Corporate &amp; Event Catering</span>
+          <h2 class="pdeli-section-title">Office Luncheon &amp; Platter Estimator</h2>
+          <p class="pdeli-section-subtitle">Calculate sandwich trays, side salads, and kosher pickle counts for your next office luncheon or family gathering.</p>
+        </div>
+
+        <div class="pdeli-calc-card">
+          <div class="pdeli-calc-controls">
+            <div class="pdeli-calc-field">
+              <label for="pdeli-guest-count">Number of Attendees: <span id="pdeli-guest-display" style="color: var(--pdeli-primary); font-weight: 800;">15 People</span></label>
+              <input type="range" id="pdeli-guest-count" class="pdeli-range-slider" min="5" max="80" step="5" value="15">
+            </div>
+            <div class="pdeli-calc-field">
+              <label for="pdeli-platter-style">Packaging Format</label>
+              <select id="pdeli-platter-style" class="pdeli-calc-select">
+                <option value="platter">Shared Deli Platter (Assorted Sandwiches)</option>
+                <option value="boxed">Individual Executive Box Lunches</option>
+              </select>
+            </div>
+          </div>
+          <div class="pdeli-calc-results">
+            <div class="pdeli-result-box">
+              <span class="num" id="pdeli-sandwich-total">19 Sandwiches</span>
+              <span class="label">Assorted Deli Sandwiches</span>
+            </div>
+            <div class="pdeli-result-box">
+              <span class="num" id="pdeli-side-total">6.0 lbs (Potato / Slaw)</span>
+              <span class="label">Deli Salads Total</span>
+            </div>
+            <div class="pdeli-result-box">
+              <span class="num" id="pdeli-pickle-total">15 Kosher Spear Halves</span>
+              <span class="label">Crisp Kosher Dills</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+  <footer class="pdeli-footer">
+    <div class="pdeli-footer-container">
+      <div class="pdeli-footer-brand">
+        <h4>Phil’s Deli To Go</h4>
+        <p>A Charlotte tradition since 1979 founded by Phil Levine. Serving hot pastrami, famous grilled Reubens, fluffy matzo ball soup, and overstuffed deli classics.</p>
+      </div>
+      <div class="pdeli-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="new-york-deli-tradition.html">Deli Tradition</a></li>
+          <li><a href="reubens-and-pastrami.html">Reubens &amp; Pastrami</a></li>
+          <li><a href="matzo-soup-and-sides.html">Matzo Soup &amp; Sides</a></li>
+          <li><a href="visit.html">Locations &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="pdeli-footer-hours">
+        <h5>Locations &amp; Contact</h5>
+        <p style="color: #9cb1c9; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Providence Road:</strong> 4223 Providence Rd #6</p>
+        <p style="color: #9cb1c9; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 366-8811</p>
+        <p style="color: #9cb1c9; font-size: 0.88rem;">Mon - Sat: 7:00 AM - 8:00 PM<br>Sunday: 8:00 AM - 3:00 PM</p>
+      </div>
+    </div>
+    <div class="pdeli-footer-bottom">
+      <p>&copy; 2026 Phil’s Deli To Go. All rights reserved. Delicatessen showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

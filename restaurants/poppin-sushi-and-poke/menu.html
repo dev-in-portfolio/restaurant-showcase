@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Poppin Sushi & Poke Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="poppin-header">
+    <div class="poppin-nav-container">
+      <a href="index.html" class="poppin-brand">
+        <span class="poppin-brand-title">Poppin Sushi &amp; Poke</span>
+        <span class="poppin-brand-subtitle">Fresh Poke &amp; Specialty Maki</span>
+      </a>
+      <button class="poppin-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="poppin-nav" aria-label="Primary Navigation">
+        <ul class="poppin-nav-list">
+          <li><a href="index.html" class="poppin-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="poppin-nav-link active">Menu</a></li>
+          <li><a href="poke-craft-and-quality.html" class="poppin-nav-link ">Poke Craft</a></li>
+          <li><a href="specialty-sushi-rolls.html" class="poppin-nav-link ">Specialty Rolls</a></li>
+          <li><a href="appetizers-and-sides.html" class="poppin-nav-link ">Starters &amp; Sides</a></li>
+          <li><a href="visit.html" class="poppin-nav-link poppin-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main class="poppin-section">
+      <div class="poppin-section-header">
+        <span class="poppin-section-eyebrow">Fresh Offerings</span>
+        <h1 class="poppin-section-title">Poppin Sushi &amp; Poke Menu</h1>
+        <p class="poppin-section-subtitle">Signature poke bowls, custom build options, specialty rolls, and authentic Japanese starters.</p>
+      </div>
+
+      <div class="poppin-filter-tabs" role="tablist" aria-label="Menu Filter Tabs">
+        <button type="button" class="poppin-filter-btn active" data-filter="all">All Selections</button>
+        <button type="button" class="poppin-filter-btn" data-filter="poke">Signature Poke Bowls</button>
+        <button type="button" class="poppin-filter-btn" data-filter="maki">Specialty Maki Rolls</button>
+        <button type="button" class="poppin-filter-btn" data-filter="classic">Classic Sushi</button>
+        <button type="button" class="poppin-filter-btn" data-filter="apps">Starters &amp; Drinks</button>
+      </div>
+
+      <div class="poppin-menu-grid">
+        <div class="poppin-menu-item" data-category="poke">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">The Poppin Classic Poke</span>
+            <span class="poppin-menu-item-price">$14.95</span>
+          </div>
+          <p class="poppin-menu-item-desc">Fresh ahi tuna &amp; Atlantic salmon on seasoned sushi rice with edamame, cucumber, sweet onions, avocado, house sesame shoyu, and crispy tempura flakes.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge poppin-badge-coral">House Signature</span>
+            <span class="poppin-badge">High Protein</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="poke">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Spicy Salmon &amp; Crab Crunch</span>
+            <span class="poppin-menu-item-price">$14.50</span>
+          </div>
+          <p class="poppin-menu-item-desc">Spicy diced salmon, snow crab salad, avocado, jalapeño slices, masago, spicy aioli, and unagi drizzle over warm brown rice.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge poppin-badge-coral">Spicy Kick</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="poke">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Zen Vegan Tofu Bowl</span>
+            <span class="poppin-menu-item-price">$12.95</span>
+          </div>
+          <p class="poppin-menu-item-desc">Organic ginger-marinated tofu over mixed greens, edamame, shredded carrots, avocado, seaweed salad, and citrus ponzu dressing.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge poppin-badge-gold">100% Plant-Based</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="maki">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Poppin Crunch Roll (8 pcs)</span>
+            <span class="poppin-menu-item-price">$15.25</span>
+          </div>
+          <p class="poppin-menu-item-desc">Shrimp tempura and avocado inside, topped with spicy tuna, crispy sweet potato strings, scallions, spicy mayo, and eel sauce.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge poppin-badge-coral">Top Seller</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="maki">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Church Street Dragon Roll</span>
+            <span class="poppin-menu-item-price">$15.95</span>
+          </div>
+          <p class="poppin-menu-item-desc">Crisp tempura soft shell crab and cucumber topped with grilled barbecue unagi, avocado ribbons, toasted sesame, and sweet glaze.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge">Chef Specialty</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="classic">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Rainbow Roll (8 pcs)</span>
+            <span class="poppin-menu-item-price">$14.75</span>
+          </div>
+          <p class="poppin-menu-item-desc">Crab salad and cucumber roll draped in fresh ahi tuna, Atlantic salmon, yellowtail, and ripe avocado slices.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge">Sashimi Lover</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="apps">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Pan-Seared Pork Gyoza (6)</span>
+            <span class="poppin-menu-item-price">$7.50</span>
+          </div>
+          <p class="poppin-menu-item-desc">Japanese dumplings stuffed with seasoned pork and scallions, crisped golden on the griddle with sesame dipping sauce.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge">Warm Starter</span>
+          </div>
+        </div>
+
+        <div class="poppin-menu-item" data-category="apps">
+          <div class="poppin-menu-item-header">
+            <span class="poppin-menu-item-name">Sesame Seaweed Salad</span>
+            <span class="poppin-menu-item-price">$5.95</span>
+          </div>
+          <p class="poppin-menu-item-desc">Tender wakame seaweed tossed with toasted sesame oil, rice vinegar, and a pinch of red chili flakes.</p>
+          <div class="poppin-menu-item-badges">
+            <span class="poppin-badge poppin-badge-gold">Light &amp; Crisp</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+  <footer class="poppin-footer">
+    <div class="poppin-footer-container">
+      <div class="poppin-footer-brand">
+        <h4>Poppin Sushi &amp; Poke</h4>
+        <p>Fresh-catch poke bowls, creative chef-crafted maki rolls, and Japanese street starters in the heart of Uptown Charlotte, North Carolina.</p>
+      </div>
+      <div class="poppin-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="poke-craft-and-quality.html">Poke Craft &amp; Quality</a></li>
+          <li><a href="specialty-sushi-rolls.html">Specialty Rolls</a></li>
+          <li><a href="appetizers-and-sides.html">Starters &amp; Sides</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="poppin-footer-hours">
+        <h5>Location &amp; Contact</h5>
+        <p style="color: #8fa5ac; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Uptown Charlotte:</strong> 210 N Church St, Suite B</p>
+        <p style="color: #8fa5ac; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 372-2828</p>
+        <p style="color: #8fa5ac; font-size: 0.88rem;">Mon - Fri: 11:00 AM - 8:30 PM<br>Saturday: 12:00 PM - 8:00 PM<br>Sunday: Closed</p>
+      </div>
+    </div>
+    <div class="poppin-footer-bottom">
+      <p>&copy; 2026 Poppin Sushi &amp; Poke. All rights reserved. Restaurant showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

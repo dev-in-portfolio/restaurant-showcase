@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Watch Parties &amp; Private Events | Cedar Street Tavern</title>
+  <meta name="description" content="Host your private party, corporate happy hour, or sports watch party at Cedar Street Tavern in Uptown Charlotte. Fireplace lounge, patio rentals, and custom platter packages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="cst-topbar">
+    <div class="cst-topbar-inner">
+      <div class="cst-topbar-items">
+        <span>120 N Cedar St, Suite 755, Charlotte, NC 28202</span>
+        <span>&bull;</span>
+        <span>Corner of W 5th &amp; N Cedar St</span>
+      </div>
+      <div class="cst-topbar-items">
+        <span>Mon-Wed: 11am-12am | Thu-Sat: 11am-2am | Sun: 10am-12am</span>
+        <span>&bull;</span>
+        <a href="tel:7043333448" class="cst-topbar-link">(704) 333-3448</a>
+      </div>
+    </div>
+  </div>
+  <header class="cst-header">
+    <div class="cst-nav-container">
+      <a href="index.html" class="cst-brand">
+        <div class="cst-brand-title">CEDAR STREET <span>TAVERN</span></div>
+        <div class="cst-brand-sub">UPTOWN CHARLOTTE &bull; EST. 2013</div>
+      </a>
+      <button class="cst-mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul class="cst-nav-links">
+          <li><a href="index.html" class="cst-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="cst-nav-link ">Menu</a></li>
+          <li><a href="about.html" class="cst-nav-link ">About Us</a></li>
+          <li><a href="specials.html" class="cst-nav-link ">Daily Specials</a></li>
+          <li><a href="events.html" class="cst-nav-link active">Events &amp; Parties</a></li>
+          <li><a href="contact.html" class="cst-nav-link ">Contact &amp; Hours</a></li>
+          <li><a href="tel:7043333448" class="cst-nav-link cst-nav-cta">Call (704) 333-3448</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <header class="cst-page-header">
+    <div class="cst-container" style="padding:0;">
+      <h1 class="cst-page-header-title">EVENTS, WATCH PARTIES &amp; PRIVATE RENTALS</h1>
+      <p class="cst-page-header-desc">Celebrate your next milestone, corporate celebration, alumni gathering, or playoff game with custom tavern catering and dedicated spaces.</p>
+    </div>
+  </header>
+
+  <main class="cst-container">
+    <div class="cst-grid-3" style="margin-bottom:50px;">
+      <div class="cst-card">
+        <div class="cst-card-body">
+          <span class="cst-card-badge">Semi-Private Space</span>
+          <h3 class="cst-card-title">The Fireplace Lounge</h3>
+          <p class="cst-card-text">Cozy brick fireplace setting ideal for birthday celebrations, networking socials, and fantasy draft parties. Accommodates up to 35 seated and standing guests.</p>
+        </div>
+      </div>
+
+      <div class="cst-card">
+        <div class="cst-card-body">
+          <span class="cst-card-badge">Open Air</span>
+          <h3 class="cst-card-title">The Cedar Street Patio</h3>
+          <p class="cst-card-text">Shaded outdoor seating with dedicated TVs, fire pit, and pleasant Fourth Ward streetscape views. Accommodates up to 50 guests for cocktail-style mixers.</p>
+        </div>
+      </div>
+
+      <div class="cst-card">
+        <div class="cst-card-body">
+          <span class="cst-card-badge">Full Venue</span>
+          <h3 class="cst-card-title">Full Tavern Buyout</h3>
+          <p class="cst-card-text">Complete exclusive access to both indoor main bar, fireplace lounge, and outdoor patio. Full audio/visual control across 20+ screens for up to 120 guests.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Event Calculator -->
+    <div class="cst-section-header">
+      <span class="cst-section-tag">Instant Estimate</span>
+      <h2 class="cst-section-title">EVENT PLATTER &amp; BAR PACKAGE CALCULATOR</h2>
+      <p class="cst-section-desc">Select your estimated guest count and preferred package tiers to generate a transparent price estimate.</p>
+    </div>
+
+    <div class="cst-interactive-box">
+      <div class="cst-calc-grid">
+        <div class="cst-input-group">
+          <label for="cstPartySize">Guest Count</label>
+          <select id="cstPartySize" class="cst-select">
+            <option value="10">10 Guests (Small Group)</option>
+            <option value="20" selected>20 Guests (Standard Party)</option>
+            <option value="35">35 Guests (Fireplace Lounge)</option>
+            <option value="50">50 Guests (Patio Mixer)</option>
+            <option value="80">80 Guests (Large Event)</option>
+            <option value="120">120 Guests (Full Tavern Buyout)</option>
+          </select>
+        </div>
+
+        <div class="cst-input-group">
+          <label for="cstPlatterType">Food Platter Tier</label>
+          <select id="cstPlatterType" class="cst-select">
+            <option value="14">Tavern Sliders, Tenders &amp; Pub Fries ($14 / person)</option>
+            <option value="18" selected>Crab Dip, Wings, Pretzel Bites &amp; Flatbreads ($18 / person)</option>
+            <option value="24">Championship Buffet (Full Menu Highlights) ($24 / person)</option>
+          </select>
+        </div>
+
+        <div class="cst-input-group">
+          <label for="cstDrinkPkg">Bar Package Tier</label>
+          <select id="cstDrinkPkg" class="cst-select">
+            <option value="10">Domestic &amp; Craft Draft Pints ($10 / person)</option>
+            <option value="16" selected>Full Tavern Bar, Wine &amp; Craft Beers ($16 / person)</option>
+            <option value="22">Top-Shelf Bourbon, Cocktails &amp; Wine ($22 / person)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cst-calc-result">
+        <div>
+          <div class="cst-calc-total-label">Estimated Event Investment</div>
+          <div id="cstCalcBreakdown" style="font-size:0.85rem; color:#b5cdc0;">20 Guests | Food: $360 | Drinks: $320 | Svc est: $102</div>
+        </div>
+        <div id="cstCalcTotal" class="cst-calc-total-val">$782</div>
+      </div>
+
+      <div style="margin-top:24px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="tel:7043333448" class="cst-btn cst-btn-dark">Call (704) 333-3448 to Book</a>
+        <a href="mailto:events@cedarstreettavern.com?subject=Private%20Event%20Inquiry" class="cst-btn cst-btn-primary">Email Event Coordinator</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="cst-footer">
+    <div class="cst-footer-grid">
+      <div class="cst-footer-col">
+        <h4>Cedar Street Tavern</h4>
+        <p>Your quintessential Uptown Charlotte neighborhood sports tavern. Serving half-pound custom burgers, famous warm Maryland crab dip, double-fried jumbo wings, and craft Carolina drafts by the fireplace.</p>
+        <p><strong>Direct Line:</strong> <a href="tel:7043333448" style="color:var(--cst-accent);">(704) 333-3448</a></p>
+      </div>
+      <div class="cst-footer-col">
+        <h4>Location &amp; Neighborhood</h4>
+        <p>120 N Cedar St, Suite 755<br>Charlotte, NC 28202</p>
+        <p>Located on the corner of West 5th Street and North Cedar Street, easily accessible from Fourth Ward and Third Ward.</p>
+      </div>
+      <div class="cst-footer-col">
+        <h4>Hours of Operation</h4>
+        <p><strong>Monday – Wednesday:</strong> 11:00 AM – 12:00 AM<br>
+        <strong>Thursday – Saturday:</strong> 11:00 AM – 2:00 AM<br>
+        <strong>Sunday:</strong> 10:00 AM – 12:00 AM<br>
+        <strong>Weekend Brunch:</strong> Sat 11am-2pm, Sun 10am-2pm</p>
+      </div>
+      <div class="cst-footer-col">
+        <h4>Explore Tavern</h4>
+        <ul class="cst-footer-links">
+          <li><a href="menu.html">Full Food &amp; Drink Menu</a></li>
+          <li><a href="specials.html">Monday Music Bingo &amp; Daily Deals</a></li>
+          <li><a href="events.html">Game Day Watch Parties &amp; Patio Rentals</a></li>
+          <li><a href="about.html">Our Story &amp; Craft Tap Philosophy</a></li>
+          <li><a href="contact.html">Directions &amp; Parking Guide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cst-footer-bottom">
+      <div>&copy; 2026 Cedar Street Tavern. All rights reserved. Uptown Charlotte, NC.</div>
+      <div>Craft Beer &bull; Handcrafted Tavern Burgers &bull; Sports Viewing Lounge</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

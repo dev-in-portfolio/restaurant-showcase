@@ -1,0 +1,120 @@
+{
+  "slug": "arbol-eatery",
+  "generatedAt": "2026-09-11T15:38:08.759Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "freshwaters-southern-new-orleans",
+    "it-s-poppin-gourmet-kettle-korn",
+    "jewell-treats",
+    "soho-bistro",
+    "ten58-sports-bar-and-lounge",
+    "sugar-and-sip-coffee-and-workshop",
+    "kicks-deli",
+    "energy-cafe",
+    "hippin-hops",
+    "barley-and-burger-smashed"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "barley-and-burger-smashed",
+    "score": 0.332432303471311,
+    "classSimilarity": 0.009900990099009901,
+    "cssClassSimilarity": 0.03614457831325301,
+    "domSimilarity": 1,
+    "sectionSimilarity": 0,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "barley-and-burger-smashed",
+      "score": 0.332432303471311,
+      "classSimilarity": 0.009900990099009901,
+      "cssClassSimilarity": 0.03614457831325301,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "hippin-hops",
+      "score": 0.3323161244695898,
+      "classSimilarity": 0.009900990099009901,
+      "cssClassSimilarity": 0.03571428571428571,
+      "domSimilarity": 1,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "freshwaters-southern-new-orleans",
+      "score": 0.09842767295597483,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012345679012345678,
+      "domSimilarity": 0.39622641509433965,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "jewell-treats",
+      "score": 0.09842767295597483,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012345679012345678,
+      "domSimilarity": 0.39622641509433965,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "sugar-and-sip-coffee-and-workshop",
+      "score": 0.09303250960380711,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012269938650306749,
+      "domSimilarity": 0.37383177570093457,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "kicks-deli",
+      "score": 0.09090090090090089,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012345679012345678,
+      "domSimilarity": 0.36486486486486486,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "soho-bistro",
+      "score": 0.09011904761904761,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012345679012345678,
+      "domSimilarity": 0.36160714285714285,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "it-s-poppin-gourmet-kettle-korn",
+      "score": 0.09004555670290955,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012269938650306749,
+      "domSimilarity": 0.3613861386138614,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "energy-cafe",
+      "score": 0.08937106918238992,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012345679012345678,
+      "domSimilarity": 0.3584905660377358,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "ten58-sports-bar-and-lounge",
+      "score": 0.08662100456621002,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.012345679012345678,
+      "domSimilarity": 0.3470319634703196,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering & Bulk Trays | Freshwaters Southern New Orleans Charlotte</title>
+  <meta name="description" content="Order Southern and New Orleans catering in Charlotte, NC. Half-pans and full-pans of fried catfish, fried chicken, ribs, collard greens, mac & cheese, and peach cobbler.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="fsh-topbar">
+    <div class="fsh-topbar-info">
+      <span>516 N Graham St, Charlotte, NC 28202</span>
+      <span>Thu-Fri: 12PM-2:30PM & 5PM-9PM | Sat: 3PM-9PM | Sun: 1PM-6PM</span>
+    </div>
+    <div>
+      <a href="tel:+17045039629" class="fsh-topbar-link">Order Call: (704) 503-9629</a>
+    </div>
+  </div>
+  <header class="fsh-navbar">
+    <div class="fsh-nav-container">
+      <a href="index.html" class="fsh-brand">
+        <span class="fsh-brand-name">Freshwaters <span>Southern New Orleans</span></span>
+        <span class="fsh-brand-tagline">Fourth Ward - Creole & Soul Food</span>
+      </a>
+      <ul class="fsh-nav-links">
+        <li class="fsh-nav-item"><a href="index.html" class="">Home</a></li>
+        <li class="fsh-nav-item"><a href="menu.html" class="">Creole Menu</a></li>
+        <li class="fsh-nav-item"><a href="catering-feasts.html" class="active">Catering & Trays</a></li>
+        <li class="fsh-nav-item"><a href="lunch-specials.html" class="">Lunch & Specials</a></li>
+        <li class="fsh-nav-item"><a href="about.html" class="">Our Heritage</a></li>
+        <li class="fsh-nav-item"><a href="contact.html" class="">Location & Hours</a></li>
+        <li class="fsh-nav-item"><a href="tel:+17045039629" class="fsh-nav-cta">Call (704) 503-9629</a></li>
+      </ul>
+      <button class="fsh-menu-toggle" id="fshMenuToggle" aria-label="Toggle Navigation">Menu</button>
+    </div>
+    <div class="fsh-mobile-menu" id="fshMobileMenu">
+      <ul class="fsh-mobile-links">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="menu.html" class="">Creole Menu</a></li>
+        <li><a href="catering-feasts.html" class="active">Catering & Trays</a></li>
+        <li><a href="lunch-specials.html" class="">Lunch & Specials</a></li>
+        <li><a href="about.html" class="">Our Heritage</a></li>
+        <li><a href="contact.html" class="">Location & Hours</a></li>
+        <li><a href="tel:+17045039629" class="fsh-nav-cta" style="display:inline-block; margin-top:0.5rem;">Order Direct</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="fsh-section-sm fsh-section-dark">
+    <div class="fsh-container" style="text-align: center;">
+      <span class="fsh-eyebrow">Feasts, Church Fellowships & Events</span>
+      <h1 class="fsh-title-xl">Catering & Family Trays</h1>
+      <p class="fsh-lead">Bring authentic Louisiana and Southern comfort to your gathering with our scratch-made half-pan and full-pan options.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Bayou Calculator -->
+  <section class="fsh-section">
+    <div class="fsh-container">
+      <div class="fsh-section-header">
+        <span class="fsh-eyebrow">Instant Quote Estimator</span>
+        <h2 class="fsh-title-lg">Freshwaters Bayou Feast Calculator</h2>
+        <p class="fsh-lead">Select your estimated guest count, choose your favorite Southern feast package, and add sides and dessert pans to view your exact food pan requirements and estimated quote.</p>
+      </div>
+
+      <div class="fsh-calc-panel">
+        <div class="fsh-calc-grid">
+          <!-- Controls -->
+          <div>
+            <div class="fsh-calc-group">
+              <label for="fshCalcGuests" class="fsh-calc-label">
+                <span>Estimated Guests</span>
+                <span id="fshCalcGuestDisplay" style="color: var(--fsh-crimson);">20 Guests</span>
+              </label>
+              <select id="fshCalcGuests" class="fsh-calc-select">
+                <option value="15">15 Guests (Intimate Gathering)</option>
+                <option value="20" selected>20 Guests (Small Group / Family)</option>
+                <option value="35">35 Guests (Office Luncheon / Birthday)</option>
+                <option value="50">50 Guests (Family Reunion / Fellowship)</option>
+                <option value="75">75 Guests (Large Gathering)</option>
+                <option value="100">100 Guests (Banquet / Wedding)</option>
+                <option value="150">150+ Guests (Festival / Community)</option>
+              </select>
+            </div>
+
+            <div class="fsh-calc-group">
+              <label for="fshCalcPackage" class="fsh-calc-label">Catering Feast Package</label>
+              <select id="fshCalcPackage" class="fsh-calc-select">
+                <option value="french-quarter" selected>French Quarter Comfort ($18.50/person) - Fried Chicken & BBQ Ribs</option>
+                <option value="crescent-city">Crescent City Seafood ($23.00/person) - "New Orleans" Catfish w/ Shrimp Gravy & Fried Chicken</option>
+                <option value="bayou-royale">Bayou Royale Grand Feast ($28.50/person) - Catfish, Crawfish Étouffée, Ribs & Fried Chicken</option>
+              </select>
+            </div>
+
+            <div class="fsh-calc-group">
+              <label class="fsh-calc-label">Included & Extra Sides (2 included; extra sides +$3.50/guest)</label>
+              <div class="fsh-checkbox-grid">
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-side-check" value="Smoked Turkey Collards" checked> Smoked Collard Greens
+                </label>
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-side-check" value="Baked 4-Cheese Mac" checked> Baked 4-Cheese Mac
+                </label>
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-side-check" value="Candied Yams"> Candied Yams
+                </label>
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-side-check" value="Red Beans & Rice"> Red Beans & Rice
+                </label>
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-side-check" value="Southern Potato Salad"> Potato Salad
+                </label>
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-side-check" value="Golden Cornbread Tray"> Golden Cornbread Tray
+                </label>
+              </div>
+            </div>
+
+            <div class="fsh-calc-group">
+              <label class="fsh-calc-label">Dessert & Drink Add-Ons ($45/pan of Cobbler, feeds 20)</label>
+              <div class="fsh-checkbox-grid">
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-dessert-check" value="Full Pan Warm Peach Cobbler"> Pan of Peach Cobbler (+$45)
+                </label>
+                <label class="fsh-checkbox-item">
+                  <input type="checkbox" class="fsh-dessert-check" value="Southern Sweet Tea Gallons"> Sweet Tea Gallons (+$15/gal)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="fsh-calc-summary-card">
+            <div>
+              <h3 style="font-family: var(--fsh-font-display); font-size: 1.4rem; color: var(--fsh-gold); margin-bottom: 1.25rem;">Catering Pan Requirements</h3>
+              
+              <div class="fsh-summary-row">
+                <span>Entree Pan Allocation:</span>
+                <strong id="fshCalcEntreePans">1 Full Pan(s)</strong>
+              </div>
+              <div class="fsh-summary-row">
+                <span>Side Dish Pan Allocation:</span>
+                <strong id="fshCalcSidePans">2 Full Pan(s)</strong>
+              </div>
+              <div class="fsh-summary-row">
+                <span>Dessert / Drink Add-ons:</span>
+                <strong id="fshCalcDessertPans">None</strong>
+              </div>
+              
+              <div style="margin-top: 1.25rem; font-size: 0.85rem; color: #dfede6; line-height: 1.5;" id="fshCalcDetails">
+                French Quarter Comfort Feast for 20 guests. Entrees: Golden Fried Chicken & BBQ Ribs. Sides: Smoked Turkey Collards, Baked 4-Cheese Mac.
+              </div>
+            </div>
+
+            <div>
+              <div class="fsh-summary-total">
+                <span style="font-size: 1.1rem; font-weight: 600;">Estimated Package Total:</span>
+                <span class="fsh-summary-total-val" id="fshCalcTotalCost">$370.00</span>
+              </div>
+
+              <div class="fsh-calc-action-bar">
+                <a href="mailto:freshwatersclt@gmail.com" id="fshMailQuoteLink" class="fsh-btn fsh-btn-gold" style="width: 100%;">Email Catering Inquiry</a>
+                <button type="button" id="fshCopyQuoteBtn" class="fsh-btn fsh-btn-outline" style="width: 100%;">Copy Quote Summary</button>
+                <a href="tel:+17045039629" class="fsh-btn fsh-btn-primary" style="width: 100%;">Call (704) 503-9629 To Confirm</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tray Menu Breakdown -->
+  <section class="fsh-section fsh-section-light">
+    <div class="fsh-container">
+      <div class="fsh-section-header">
+        <span class="fsh-eyebrow">A La Carte Trays</span>
+        <h2 class="fsh-title-lg">Individual Half & Full Pan Pricing</h2>
+      </div>
+
+      <div class="fsh-grid-2">
+        <div class="fsh-card">
+          <h3 class="fsh-title-md" style="color: var(--fsh-crimson-dark); border-bottom: 2px solid var(--fsh-gold); padding-bottom: 0.5rem;">Catering Meats & Entrees</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--fsh-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>"New Orleans" Fried Catfish & Shrimp Gravy</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Crisp fillets with rich shrimp pan sauce</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $95 | Full: $185</strong></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--fsh-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Southern Buttermilk Fried Chicken</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">24-hour marinated assorted pieces</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $70 | Full: $135</strong></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--fsh-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Slow-Smoked BBQ Pork Ribs</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Tender ribs in homemade molasses BBQ glaze</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $90 | Full: $175</strong></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <strong>Louisiana Crawfish Étouffée Pan</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Smothered crawfish tails over rice</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $90 | Full: $170</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fsh-card">
+          <h3 class="fsh-title-md" style="color: var(--fsh-crimson-dark); border-bottom: 2px solid var(--fsh-gold); padding-bottom: 0.5rem;">Catering Sides & Desserts</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--fsh-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Smoked Turkey Collard Greens</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Slow cooked with seasoned pot likker</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $45 | Full: $85</strong></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--fsh-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Baked Four-Cheese Macaroni</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Sharp cheddar, gouda, and velvet cream</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $45 | Full: $85</strong></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--fsh-border); padding-bottom: 0.5rem;">
+              <div>
+                <strong>Spiced Candied Yams</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Brown sugar, butter, and cinnamon glaze</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">Half: $40 | Full: $75</strong></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <strong>Fresh Homemade Peach Cobbler Pan</strong>
+                <p style="font-size: 0.85rem; color: var(--fsh-text-muted);">Buttery golden crust with spiced peaches</p>
+              </div>
+              <div><strong style="color: var(--fsh-crimson);">$45 per Full Pan</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fsh-footer">
+    <div class="fsh-container">
+      <div class="fsh-footer-grid">
+        <div class="fsh-footer-brand">
+          <h3>Freshwaters <span>Southern New Orleans</span></h3>
+          <p>Uptown Charlotte's Fourth Ward haven for scratch-made New Orleans Cajun/Creole culinary traditions, golden fried catfish with shrimp gravy, dark roux gumbo, and heartfelt Southern soul food.</p>
+        </div>
+        <div class="fsh-footer-col">
+          <h4>Explore</h4>
+          <ul class="fsh-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Full Creole Menu</a></li>
+            <li><a href="catering-feasts.html">Catering Services</a></li>
+            <li><a href="lunch-specials.html">Lunch & Sunday Feasts</a></li>
+            <li><a href="about.html">The Freshwater Legacy</a></li>
+            <li><a href="contact.html">Hours & Directions</a></li>
+          </ul>
+        </div>
+        <div class="fsh-footer-col">
+          <h4>Service Hours</h4>
+          <ul class="fsh-footer-links">
+            <li>Thursday - Friday: 12:00 PM - 2:30 PM & 5:00 PM - 9:00 PM</li>
+            <li>Saturday: 3:00 PM - 9:00 PM</li>
+            <li>Sunday Feast: 1:00 PM - 6:00 PM</li>
+            <li>Mon - Wed: Closed (Private Bulk Catering)</li>
+          </ul>
+        </div>
+        <div class="fsh-footer-col">
+          <h4>Contact & Orders</h4>
+          <ul class="fsh-footer-links">
+            <li>516 N Graham St</li>
+            <li>Charlotte, NC 28202</li>
+            <li><a href="tel:+17045039629">(704) 503-9629</a></li>
+            <li><a href="mailto:freshwatersclt@gmail.com">freshwatersclt@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fsh-footer-bottom">
+        <p>&copy; 2026 Freshwaters Southern New Orleans. All Rights Reserved. Fourth Ward Charlotte, NC.</p>
+        <p>516 N Graham St, Charlotte, NC 28202</p>
+      </div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

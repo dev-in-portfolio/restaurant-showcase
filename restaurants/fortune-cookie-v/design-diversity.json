@@ -1,0 +1,120 @@
+{
+  "slug": "fortune-cookie-v",
+  "generatedAt": "2026-09-11T20:38:47.184Z",
+  "recentCompared": 10,
+  "recentSlugs": [
+    "sugar-and-sip-coffee-and-workshop",
+    "kicks-deli",
+    "energy-cafe",
+    "hippin-hops",
+    "barley-and-burger-smashed",
+    "arbol-eatery",
+    "bisonte-pizza-co",
+    "istanbul-hookah-lounge",
+    "fonda-las-tarascas",
+    "tima-african-restaurant"
+  ],
+  "rejectionThreshold": 0.72,
+  "closestMatch": {
+    "priorSlug": "fonda-las-tarascas",
+    "score": 0.2524561311165965,
+    "classSimilarity": 0.020833333333333332,
+    "cssClassSimilarity": 0.04225352112676056,
+    "domSimilarity": 0.5309278350515464,
+    "sectionSimilarity": 0.2,
+    "fontSimilarity": 1
+  },
+  "passed": true,
+  "comparisons": [
+    {
+      "priorSlug": "fonda-las-tarascas",
+      "score": 0.2524561311165965,
+      "classSimilarity": 0.020833333333333332,
+      "cssClassSimilarity": 0.04225352112676056,
+      "domSimilarity": 0.5309278350515464,
+      "sectionSimilarity": 0.2,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "tima-african-restaurant",
+      "score": 0.2524561311165965,
+      "classSimilarity": 0.020833333333333332,
+      "cssClassSimilarity": 0.04225352112676056,
+      "domSimilarity": 0.5309278350515464,
+      "sectionSimilarity": 0.2,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "istanbul-hookah-lounge",
+      "score": 0.25237635174104245,
+      "classSimilarity": 0.020833333333333332,
+      "cssClassSimilarity": 0.04195804195804196,
+      "domSimilarity": 0.5309278350515464,
+      "sectionSimilarity": 0.2,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "bisonte-pizza-co",
+      "score": 0.2393059561229957,
+      "classSimilarity": 0.020618556701030927,
+      "cssClassSimilarity": 0.01910828025477707,
+      "domSimilarity": 0.5024154589371981,
+      "sectionSimilarity": 0.2,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "barley-and-burger-smashed",
+      "score": 0.19534919496322672,
+      "classSimilarity": 0.010101010101010102,
+      "cssClassSimilarity": 0.01910828025477707,
+      "domSimilarity": 0.44776119402985076,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "arbol-eatery",
+      "score": 0.19534919496322672,
+      "classSimilarity": 0.010101010101010102,
+      "cssClassSimilarity": 0.01910828025477707,
+      "domSimilarity": 0.44776119402985076,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "hippin-hops",
+      "score": 0.19528429891707844,
+      "classSimilarity": 0.010101010101010102,
+      "cssClassSimilarity": 0.018867924528301886,
+      "domSimilarity": 0.44776119402985076,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 1
+    },
+    {
+      "priorSlug": "energy-cafe",
+      "score": 0.07039245283018868,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013333333333333334,
+      "domSimilarity": 0.2783018867924528,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "kicks-deli",
+      "score": 0.07002857142857144,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013333333333333334,
+      "domSimilarity": 0.2767857142857143,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    },
+    {
+      "priorSlug": "sugar-and-sip-coffee-and-workshop",
+      "score": 0.06993560594500565,
+      "classSimilarity": 0,
+      "cssClassSimilarity": 0.013245033112582781,
+      "domSimilarity": 0.2764976958525346,
+      "sectionSimilarity": 0,
+      "fontSimilarity": 0
+    }
+  ]
+}

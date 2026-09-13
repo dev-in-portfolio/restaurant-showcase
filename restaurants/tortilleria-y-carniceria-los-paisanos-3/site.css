@@ -1,0 +1,741 @@
+/* Tortilleria Y Carnicer?a Los Paisanos 3 Stylesheet - Unique Namespace: .paisanos3- */
+:root {
+  --paisanos3-primary: #c2410c;
+  --paisanos3-primary-dark: #7c2d12;
+  --paisanos3-primary-light: #ea580c;
+  --paisanos3-maize: #ca8a04;
+  --paisanos3-gold: #eab308;
+  --paisanos3-green: #16a34a;
+  --paisanos3-bg: #fefce8;
+  --paisanos3-surface: #ffffff;
+  --paisanos3-surface-card: #fef9c3;
+  --paisanos3-text: #27272a;
+  --paisanos3-text-muted: #52525b;
+  --paisanos3-border: #fde047;
+  --paisanos3-shadow: 0 4px 18px -2px rgba(194, 65, 12, 0.12);
+  --paisanos3-shadow-lg: 0 10px 25px -3px rgba(194, 65, 12, 0.22);
+  --paisanos3-radius: 10px;
+  --paisanos3-radius-lg: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--paisanos3-bg);
+  color: var(--paisanos3-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .paisanos3-brand-title {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  color: var(--paisanos3-text);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--paisanos3-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--paisanos3-maize);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header & Navigation */
+.paisanos3-header {
+  background-color: var(--paisanos3-surface);
+  border-bottom: 3px solid var(--paisanos3-maize);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.paisanos3-topbar {
+  background: linear-gradient(90deg, var(--paisanos3-primary-dark), var(--paisanos3-primary), var(--paisanos3-maize));
+  color: #ffffff;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paisanos3-topbar a {
+  color: #fef08a;
+  font-weight: 700;
+}
+
+.paisanos3-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paisanos3-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.paisanos3-logo-badge {
+  background-color: var(--paisanos3-primary);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 6px rgba(194, 65, 12, 0.3);
+}
+
+.paisanos3-logo-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--paisanos3-primary-dark);
+}
+
+.paisanos3-logo-sub {
+  font-size: 0.72rem;
+  color: var(--paisanos3-maize);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+}
+
+.paisanos3-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  align-items: center;
+}
+
+.paisanos3-nav-links a {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--paisanos3-text);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.paisanos3-nav-links a:hover,
+.paisanos3-nav-links a.active {
+  color: var(--paisanos3-primary);
+  background-color: var(--paisanos3-surface-card);
+}
+
+.paisanos3-btn-cta {
+  background: linear-gradient(135deg, var(--paisanos3-primary), var(--paisanos3-primary-light));
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.paisanos3-btn-cta:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.paisanos3-mobile-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--paisanos3-primary);
+  color: var(--paisanos3-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.paisanos3-hero {
+  position: relative;
+  background: linear-gradient(rgba(39, 39, 42, 0.75), rgba(124, 45, 18, 0.85)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 85px 20px;
+  text-align: center;
+}
+
+.paisanos3-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.paisanos3-hero-pill {
+  display: inline-block;
+  background-color: var(--paisanos3-gold);
+  color: #27272a;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.paisanos3-hero h1 {
+  font-size: 2.75rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.paisanos3-hero p {
+  font-size: 1.15rem;
+  color: #fef9c3;
+  max-width: 680px;
+  margin: 0 auto 30px auto;
+}
+
+.paisanos3-hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.paisanos3-btn-hero-primary {
+  background-color: var(--paisanos3-primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.paisanos3-btn-hero-primary:hover {
+  background-color: var(--paisanos3-primary-light);
+  color: #ffffff;
+}
+
+.paisanos3-btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.paisanos3-btn-hero-secondary:hover {
+  background-color: #ffffff;
+  color: var(--paisanos3-primary-dark);
+}
+
+/* Page Header */
+.paisanos3-page-header {
+  background: linear-gradient(135deg, var(--paisanos3-primary-dark), var(--paisanos3-primary));
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.paisanos3-page-header h1 {
+  font-size: 2.25rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.paisanos3-page-header p {
+  font-size: 1.05rem;
+  color: #fef08a;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Main Container */
+.paisanos3-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.paisanos3-section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.paisanos3-section-title h2 {
+  font-size: 2.1rem;
+  color: var(--paisanos3-primary-dark);
+  margin-bottom: 10px;
+}
+
+.paisanos3-section-title p {
+  color: var(--paisanos3-text-muted);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Grid & Cards */
+.paisanos3-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.paisanos3-card {
+  background-color: var(--paisanos3-surface);
+  border: 1px solid var(--paisanos3-border);
+  border-radius: var(--paisanos3-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--paisanos3-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.paisanos3-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--paisanos3-shadow-lg);
+}
+
+.paisanos3-card-image {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.paisanos3-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.paisanos3-card-badge {
+  align-self: flex-start;
+  background-color: var(--paisanos3-surface-card);
+  color: var(--paisanos3-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid var(--paisanos3-border);
+}
+
+.paisanos3-card-body h3 {
+  font-size: 1.35rem;
+  color: var(--paisanos3-primary-dark);
+  margin-bottom: 10px;
+}
+
+.paisanos3-card-body p {
+  color: var(--paisanos3-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.paisanos3-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--paisanos3-border);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.paisanos3-price {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--paisanos3-primary);
+}
+
+/* Feature Spotlight */
+.paisanos3-spotlight {
+  background-color: var(--paisanos3-surface);
+  border-radius: var(--paisanos3-radius-lg);
+  border: 1px solid var(--paisanos3-border);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: var(--paisanos3-shadow);
+}
+
+.paisanos3-spotlight img {
+  border-radius: var(--paisanos3-radius);
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.paisanos3-spotlight-content h3 {
+  font-size: 1.85rem;
+  color: var(--paisanos3-primary-dark);
+  margin-bottom: 16px;
+}
+
+.paisanos3-spotlight-content p {
+  color: var(--paisanos3-text-muted);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.paisanos3-check-list {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.paisanos3-check-list li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--paisanos3-text);
+}
+
+.paisanos3-check-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--paisanos3-primary);
+  font-weight: 800;
+}
+
+/* Menu Tabs */
+.paisanos3-tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.paisanos3-tab-btn {
+  background-color: var(--paisanos3-surface);
+  border: 2px solid var(--paisanos3-primary);
+  color: var(--paisanos3-primary);
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.paisanos3-tab-btn:hover,
+.paisanos3-tab-btn.active {
+  background-color: var(--paisanos3-primary);
+  color: #ffffff;
+}
+
+.paisanos3-menu-group {
+  display: none;
+}
+
+.paisanos3-menu-group.active {
+  display: block;
+}
+
+.paisanos3-menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.paisanos3-menu-item {
+  background-color: var(--paisanos3-surface);
+  border: 1px solid var(--paisanos3-border);
+  border-radius: var(--paisanos3-radius);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.paisanos3-item-info h4 {
+  font-size: 1.15rem;
+  color: var(--paisanos3-primary-dark);
+  margin-bottom: 6px;
+}
+
+.paisanos3-item-info p {
+  color: var(--paisanos3-text-muted);
+  font-size: 0.875rem;
+}
+
+.paisanos3-item-price {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--paisanos3-primary);
+  white-space: nowrap;
+}
+
+/* Calculator */
+.paisanos3-calculator-box {
+  background-color: var(--paisanos3-surface);
+  border: 2px solid var(--paisanos3-border);
+  border-radius: var(--paisanos3-radius-lg);
+  padding: 36px;
+  box-shadow: var(--paisanos3-shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.paisanos3-calc-row {
+  margin-bottom: 24px;
+}
+
+.paisanos3-calc-row label {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--paisanos3-primary-dark);
+  margin-bottom: 8px;
+}
+
+.paisanos3-range-control {
+  width: 100%;
+  accent-color: var(--paisanos3-primary);
+}
+
+.paisanos3-select-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--paisanos3-border);
+  background-color: var(--paisanos3-bg);
+  font-size: 1rem;
+  color: var(--paisanos3-text);
+  font-weight: 600;
+}
+
+.paisanos3-calc-results {
+  background-color: var(--paisanos3-surface-card);
+  border-radius: var(--paisanos3-radius);
+  padding: 20px;
+  margin-top: 24px;
+  border: 1px solid var(--paisanos3-border);
+}
+
+.paisanos3-result-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(194, 65, 12, 0.3);
+  font-size: 0.95rem;
+}
+
+.paisanos3-result-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-weight: 900;
+  font-size: 1.35rem;
+  color: var(--paisanos3-primary);
+}
+
+/* Accordion */
+.paisanos3-accordion {
+  border: 1px solid var(--paisanos3-border);
+  border-radius: var(--paisanos3-radius);
+  background-color: var(--paisanos3-surface);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.paisanos3-accordion-header {
+  padding: 18px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--paisanos3-primary-dark);
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.paisanos3-accordion-header:hover {
+  background-color: var(--paisanos3-surface-card);
+}
+
+.paisanos3-accordion-content {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: var(--paisanos3-text-muted);
+  font-size: 0.95rem;
+}
+
+.paisanos3-accordion.open .paisanos3-accordion-content {
+  padding: 16px 24px 24px 24px;
+  max-height: 300px;
+}
+
+.paisanos3-accordion-icon {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--paisanos3-primary);
+}
+
+/* Visit Cards */
+.paisanos3-visit-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+}
+
+.paisanos3-info-card {
+  background-color: var(--paisanos3-surface);
+  border: 1px solid var(--paisanos3-border);
+  border-radius: var(--paisanos3-radius-lg);
+  padding: 32px;
+  box-shadow: var(--paisanos3-shadow);
+}
+
+.paisanos3-info-card h3 {
+  font-size: 1.4rem;
+  color: var(--paisanos3-primary-dark);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--paisanos3-border);
+}
+
+.paisanos3-info-item {
+  margin-bottom: 18px;
+}
+
+.paisanos3-info-item strong {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--paisanos3-primary);
+  margin-bottom: 4px;
+}
+
+.paisanos3-info-item p {
+  color: var(--paisanos3-text);
+  font-size: 1rem;
+}
+
+/* Footer */
+.paisanos3-footer {
+  background-color: #27272a;
+  color: #ffffff;
+  padding: 60px 20px 24px 20px;
+}
+
+.paisanos3-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.paisanos3-footer-col h4 {
+  color: var(--paisanos3-gold);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.paisanos3-footer-col p {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.paisanos3-footer-links {
+  list-style: none;
+}
+
+.paisanos3-footer-links li {
+  margin-bottom: 10px;
+}
+
+.paisanos3-footer-links a {
+  color: #e4e4e7;
+  font-size: 0.9rem;
+}
+
+.paisanos3-footer-links a:hover {
+  color: var(--paisanos3-gold);
+}
+
+.paisanos3-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+}
+
+@media (max-width: 900px) {
+  .paisanos3-spotlight {
+    grid-template-columns: 1fr;
+  }
+  .paisanos3-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .paisanos3-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .paisanos3-mobile-toggle {
+    display: block;
+  }
+  .paisanos3-nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--paisanos3-surface);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--paisanos3-primary);
+  }
+  .paisanos3-nav-links.show {
+    display: flex;
+  }
+  .paisanos3-hero h1 {
+    font-size: 2rem;
+  }
+  .paisanos3-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

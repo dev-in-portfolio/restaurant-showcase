@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Catering | Nirvana II Indian Fusion Uptown Charlotte</title>
+  <meta name="description" content="Nirvana II at 401 S Tryon St, Uptown Charlotte. Authentic dum biryanis, butter chicken, thali lunch combos, samosas, and corporate catering.">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="nirvana-announcement">
+    <span>Uptown Charlotte Indian Fusion Haven &bull; Open Mon-Fri 11:30am-3:30pm &bull; Fast-Casual Dum Biryanis & Thalis!</span>
+    <a href="visit.html">Find 401 S Tryon St &rarr;</a>
+  </div>
+  <header class="nirvana-navbar">
+    <div class="nirvana-nav-container">
+      <a href="index.html" class="nirvana-brand">
+        <span class="nirvana-brand-title">Nirvana II</span>
+        <span class="nirvana-brand-tagline">Indian Fusion &bull; Uptown Charlotte</span>
+      </a>
+      <button class="nirvana-mobile-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul class="nirvana-nav-links">
+        <li><a href="index.html" class="nirvana-nav-link">Home</a></li>
+<li><a href="menu.html" class="nirvana-nav-link">Full Menu</a></li>
+<li><a href="signature-biryanis-and-thali-combos.html" class="nirvana-nav-link">Biryanis & Thalis</a></li>
+<li><a href="tandoori-curries-and-vegetarian-classics.html" class="nirvana-nav-link">Curries & Tandoor</a></li>
+<li><a href="corporate-catering-and-lunch-boxes.html" class="nirvana-nav-link active">Corporate Catering</a></li>
+<li><a href="visit.html" class="nirvana-nav-link">Visit & Location</a></li>
+
+        <li><a href="tel:9802907002" class="nirvana-nav-link nirvana-nav-cta">Call (980) 290-7002</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    
+    <div class="nirvana-container">
+      <div class="nirvana-section-header">
+        <span class="nirvana-badge">Corporate Catering</span>
+        <h1 class="nirvana-title">Corporate Indian Catering &amp; Lunch Boxes</h1>
+        <p class="nirvana-subtitle">Full-service buffet chaffing setups or individually packaged executive thali bento boxes delivered across Uptown Charlotte.</p>
+      </div>
+
+      <div class="nirvana-grid-2" style="align-items: center; margin-bottom: 48px;">
+        <div>
+          <span class="nirvana-badge nirvana-badge-crimson">Uptown Office Specialists</span>
+          <h2 class="nirvana-title" style="font-size: 2rem;">Seamless Catering For Banking &amp; Corporate Teams</h2>
+          <p style="color: var(--nirvana-muted); font-size: 1.05rem; margin-bottom: 16px;">
+            From board meetings on S Tryon to office-wide quarterly celebrations, Nirvana II delivers authentic Indian cuisine that caters seamlessly to diverse dietary preferences (Halal, Vegetarian, Vegan, Gluten-Conscious).
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; margin-bottom: 20px;">
+            <li><strong>Individually Labeled Boxes:</strong> Eliminate buffet mess with custom name-tagged thali meal containers.</li>
+            <li><strong>Chaffing Pan Buffets:</strong> Full stainless chafing racks and sternos provided for warm team self-service.</li>
+            <li><strong>Fresh Tandoor Naan Guarantee:</strong> Breads baked immediately prior to your scheduled delivery window.</li>
+          </ul>
+        </div>
+        <div>
+          <img src="images/fresh-garlic-naan-samosa.jpg" alt="Garlic Naan and Samosas" style="width: 100%; border-radius: var(--nirvana-radius-lg); box-shadow: var(--nirvana-shadow-lg); border: 2px solid var(--nirvana-border);">
+        </div>
+      </div>
+
+      <!-- Catering Calculator -->
+      <div class="nirvana-builder-card">
+        <div class="nirvana-section-header" style="margin-bottom: 24px;">
+          <h2 class="nirvana-title" style="font-size: 1.8rem;">Catering Package Estimator</h2>
+          <p class="nirvana-subtitle" style="font-size: 1rem;">Select your headcount and desired presentation style for an instant estimate.</p>
+        </div>
+
+        <div class="nirvana-grid-3">
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 6px; color: var(--nirvana-slate);">Guest Count</label>
+            <input type="number" id="nirvana-cat-guests" min="10" max="300" value="25" style="width: 100%; padding: 12px; border: 2px solid var(--nirvana-border); border-radius: var(--nirvana-radius); font-size: 1.1rem; font-weight: 700;">
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 6px; color: var(--nirvana-slate);">Package Tier</label>
+            <select id="nirvana-cat-tier" style="width: 100%; padding: 12px; border: 2px solid var(--nirvana-border); border-radius: var(--nirvana-radius); font-size: 1rem; font-weight: 700;">
+              <option value="box">Individual Executive Thali Boxes ($15.00/person)</option>
+              <option value="buffet-silver">Silver Buffet (2 Curries + Naan + Samosas) ($18.50/person)</option>
+              <option value="buffet-gold">Gold Feast (3 Curries + Dum Biryani + Naan + Dessert) ($22.00/person)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-weight: 700; margin-bottom: 10px; color: var(--nirvana-slate);">Drink Addition</label>
+            <label style="display: flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer;">
+              <input type="checkbox" id="nirvana-cat-drink" style="width: 20px; height: 20px;">
+              <span>Include Mango Lassi Smoothies (+$3.50/person)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="nirvana-summary-panel">
+          <div class="nirvana-summary-metrics">
+            <div class="nirvana-metric-item">
+              <span class="nirvana-metric-label">Estimated Total</span>
+              <span id="nirvana-cat-total" class="nirvana-metric-val">$375.00</span>
+            </div>
+          </div>
+          <div style="flex-basis: 100%; border-top: 1px solid #3f3f46; padding-top: 16px; margin-top: 10px;">
+            <p id="nirvana-cat-summary" style="color: #d4d4d8; font-size: 0.95rem;">Estimated catering package for 25 guests. Includes warm chaffing setups or individual labeled bento containers, fresh baked naan, rice, chutneys, and disposable cutlery.</p>
+          </div>
+          <div style="flex-basis: 100%; margin-top: 16px;">
+            <a href="tel:9802907002" class="nirvana-btn nirvana-btn-primary">Call (980) 290-7002 to Book Catering</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  
+  <footer class="nirvana-footer">
+    <div class="nirvana-container">
+      <div class="nirvana-footer-grid">
+        <div>
+          <h4 class="nirvana-footer-title">Nirvana II</h4>
+          <p style="color: #d4d4d8; font-size: 0.95rem; margin-bottom: 16px;">
+            Authentic North and South Indian culinary mastery in the heart of Uptown Charlotte. Fragrant dum biryanis, slow-simmered curries, tandoori specialties, and executive lunch thalis.
+          </p>
+          <span class="nirvana-badge nirvana-badge-teal">Fast-Casual Corporate Lunch</span>
+        </div>
+        <div>
+          <h4 class="nirvana-footer-title">Showcase Navigation</h4>
+          <ul class="nirvana-footer-links">
+            <li><a href="index.html" class="nirvana-footer-link">Home & Overview</a></li>
+            <li><a href="menu.html" class="nirvana-footer-link">Full Indian Menu</a></li>
+            <li><a href="signature-biryanis-and-thali-combos.html" class="nirvana-footer-link">Dum Biryanis & Thali Boxes</a></li>
+            <li><a href="tandoori-curries-and-vegetarian-classics.html" class="nirvana-footer-link">Curries & Tandoori Classics</a></li>
+            <li><a href="corporate-catering-and-lunch-boxes.html" class="nirvana-footer-link">Corporate Catering Trays</a></li>
+            <li><a href="visit.html" class="nirvana-footer-link">Location & Pickup Details</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="nirvana-footer-title">Location & Hours</h4>
+          <div class="nirvana-footer-contact-item">
+            <strong>Address</strong>
+            401 S Tryon St<br>
+            Uptown Charlotte, NC 28202
+          </div>
+          <div class="nirvana-footer-contact-item">
+            <strong>Operating Hours</strong>
+            Monday &ndash; Friday: 11:30 AM &ndash; 3:30 PM<br>
+            Saturday &ndash; Sunday: Closed
+          </div>
+        </div>
+        <div>
+          <h4 class="nirvana-footer-title">Direct Orders & Pickup</h4>
+          <div class="nirvana-footer-contact-item">
+            <strong>Direct Phone Line</strong>
+            <a href="tel:9802907002" style="color: #fde68a; text-decoration: none; font-weight: 700;">(980) 290-7002</a>
+          </div>
+          <div class="nirvana-footer-contact-item">
+            <strong>Online Takeout & Delivery</strong>
+            <span>Available on major ordering platforms or call ahead for direct lobby express pickup.</span>
+          </div>
+        </div>
+      </div>
+      <div class="nirvana-footer-bottom">
+        <p>&copy; 2026 Nirvana II / Nirvana Indian Fusion. Proudly serving Uptown Charlotte. Showcase demo created with zero emojis.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

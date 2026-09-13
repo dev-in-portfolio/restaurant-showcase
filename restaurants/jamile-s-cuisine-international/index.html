@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamile’s Cuisine International - Authentic Somali Restaurant in Charlotte NC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="jamile-header">
+    <div class="jamile-nav-container">
+      <a href="index.html" class="jamile-brand">
+        <span class="jamile-brand-title">Jamile’s Cuisine International</span>
+        <span class="jamile-brand-subtitle">Authentic Somali &bull; 100% Halal</span>
+      </a>
+      <button class="jamile-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+
+      <nav class="jamile-nav" aria-label="Primary Navigation">
+        <ul class="jamile-nav-list">
+          <li><a href="index.html" class="jamile-nav-link active">Home</a></li>
+          <li><a href="menu.html" class="jamile-nav-link ">Menu</a></li>
+          <li><a href="somali-culinary-heritage.html" class="jamile-nav-link ">Heritage</a></li>
+          <li><a href="goat-and-spiced-rice.html" class="jamile-nav-link ">Goat &amp; Spiced Rice</a></li>
+          <li><a href="sambusas-and-shaah-tea.html" class="jamile-nav-link ">Sambusas &amp; Tea</a></li>
+          <li><a href="visit.html" class="jamile-nav-link jamile-nav-cta ">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+    <main>
+      <section class="jamile-hero">
+        <div class="jamile-hero-grid">
+          <div class="jamile-hero-content">
+            <span class="jamile-hero-badge">Central Avenue &bull; Authentic Somali Halal Cuisine</span>
+            <h1 class="jamile-hero-title">Fragrant Spices, <span>Tender Braised Meats</span></h1>
+            <p class="jamile-hero-lead">Step into East African hospitality on Central Avenue. Enjoy slow-roasted Somali goat meat (Hilib Ari), cardamom-scented Bariis Iskukaris rice, hand-folded beef sambusas, and freshly brewed spiced milk tea.</p>
+            <div class="jamile-hero-actions">
+              <a href="menu.html" class="jamile-btn-primary">View Full Menu</a>
+              <a href="goat-and-spiced-rice.html" class="jamile-btn-secondary">The Goat &amp; Rice Feast</a>
+            </div>
+          </div>
+          <div class="jamile-hero-img-wrap">
+            <img src="images/hero.jpg" alt="Fragrant Somali spiced basmati rice platter with tender braised goat meat and roasted vegetables" width="600" height="420">
+          </div>
+        </div>
+      </section>
+
+      <section class="jamile-features">
+        <div class="jamile-feature-grid">
+          <div class="jamile-feature-card">
+            <div class="jamile-feature-tag">100% Halal</div>
+            <h2 class="jamile-feature-title">Slow-Roasted Hilib Ari</h2>
+            <p class="jamile-feature-desc">Bone-in goat meat gently braised with garlic, cloves, and Xawaash spice until fork-tender and aromatic.</p>
+          </div>
+          <div class="jamile-feature-card">
+            <div class="jamile-feature-tag">Cardamom &amp; Cinnamon</div>
+            <h2 class="jamile-feature-title">Bariis Iskukaris Rice</h2>
+            <p class="jamile-feature-desc">Golden long-grain basmati steamed with raisins, sweet onions, and whole spices, traditionally served with fresh banana.</p>
+          </div>
+          <div class="jamile-feature-card">
+            <div class="jamile-feature-tag">Hand-Crafted</div>
+            <h2 class="jamile-feature-title">Crispy Sambusas</h2>
+            <p class="jamile-feature-desc">Golden pastry triangles filled with seasoned ground beef and jalapeños, paired with spicy green Basbaas sauce.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="jamile-section">
+        <div class="jamile-story-grid">
+          <div class="jamile-story-img-wrap">
+            <img src="images/goat.jpg" alt="Tender roasted Somali goat shank served over spiced basmati rice" width="600" height="380">
+          </div>
+          <div class="jamile-story-content">
+            <span class="jamile-section-eyebrow">East African Tradition</span>
+            <h3>Communal Dining on Central Avenue</h3>
+            <p>In Somali culture, sharing a meal is an expression of deep warmth and connection. At Jamile’s Cuisine International, our generous platters are crafted for family and friends to gather around.</p>
+            <p>Every dish is infused with our house-ground Xawaash &mdash; a centuries-old spice blend uniting turmeric, coriander, cumin, black peppercorn, and cardamom &mdash; delivering savory depth without excessive heat.</p>
+            <a href="somali-culinary-heritage.html" class="jamile-btn-primary" style="margin-top: 0.5rem;">Discover Somali Heritage</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="jamile-section" style="background: #ffffff; border-top: 1px solid var(--jamile-border); border-bottom: 1px solid var(--jamile-border);">
+        <div class="jamile-section-header">
+          <span class="jamile-section-eyebrow">Family Gatherings &amp; Community Feasts</span>
+          <h2 class="jamile-section-title">Communal Feast &amp; Platter Estimator</h2>
+          <p class="jamile-section-subtitle">Planning a family celebration, community gathering, or special event? Calculate your meat, rice, and sambusa portions below.</p>
+        </div>
+
+        <div class="jamile-calc-card">
+          <div class="jamile-calc-controls">
+            <div class="jamile-calc-field">
+              <label for="jamile-guest-count">Guest Headcount: <span id="jamile-guest-display" style="color: var(--jamile-primary); font-weight: 800;">15 Guests</span></label>
+              <input type="range" id="jamile-guest-count" class="jamile-range-slider" min="5" max="80" step="5" value="15">
+            </div>
+            <div class="jamile-calc-field">
+              <label for="jamile-platter-style">Feast Scale</label>
+              <select id="jamile-platter-style" class="jamile-calc-select">
+                <option value="standard">Standard Somali Platter (Goat / Beef + Rice)</option>
+                <option value="grand-feast">Grand Community Feast (Goat, Beef, Shanks &amp; Sambusas)</option>
+              </select>
+            </div>
+          </div>
+          <div class="jamile-calc-results">
+            <div class="jamile-result-box">
+              <span class="num" id="jamile-meat-total">9.0 lbs Spiced Goat &amp; Beef</span>
+              <span class="label">Halal Braised Meats</span>
+            </div>
+            <div class="jamile-result-box">
+              <span class="num" id="jamile-rice-total">7.5 lbs Bariis Iskukaris</span>
+              <span class="label">Spiced Basmati Rice</span>
+            </div>
+            <div class="jamile-result-box">
+              <span class="num" id="jamile-sambusa-total">30 Golden Sambusas</span>
+              <span class="label">Hand-Folded Pastries</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+  <footer class="jamile-footer">
+    <div class="jamile-footer-container">
+      <div class="jamile-footer-brand">
+        <h4>Jamile’s Cuisine International</h4>
+        <p>Authentic Somali and East African halal cuisine on Charlotte’s Central Avenue. Serving slow-braised goat, fragrant cardamom rice, crispy sambusas, and traditional spiced milk tea.</p>
+      </div>
+      <div class="jamile-footer-nav">
+        <h5>Explore Demo</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="somali-culinary-heritage.html">Somali Heritage</a></li>
+          <li><a href="goat-and-spiced-rice.html">Goat &amp; Spiced Rice</a></li>
+          <li><a href="sambusas-and-shaah-tea.html">Sambusas &amp; Tea</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="jamile-footer-hours">
+        <h5>Location &amp; Hours</h5>
+        <p style="color: #9a9ea6; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>East Charlotte:</strong> 4808 Central Ave, Ste G</p>
+        <p style="color: #9a9ea6; font-size: 0.88rem; margin-bottom: 0.4rem;"><strong>Direct Phone:</strong> (704) 531-1180</p>
+        <p style="color: #9a9ea6; font-size: 0.88rem;">Tue - Sun: 12:00 PM - 8:00 PM<br>Monday: Closed</p>
+      </div>
+    </div>
+    <div class="jamile-footer-bottom">
+      <p>&copy; 2026 Jamile’s Cuisine International. All rights reserved. East African culinary showcase demo for Charlotte, NC.</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

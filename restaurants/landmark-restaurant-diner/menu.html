@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Diner Menu | Landmark Restaurant Diner — Charlotte NC</title>
+  <meta name="description" content="Browse the extensive menu at Landmark Restaurant Diner in Charlotte. All-day breakfast, fluffy pancakes, Greek spanakopita, gyro platters, roasted turkey, and homemade cakes.">
+  <link rel="stylesheet" href="site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Contact Strip -->
+  <div class="diner-quick-contact">
+    <div class="quick-contact-pill">
+      <span>Location:</span>
+      <a href="visit.html">4429 Central Ave, Charlotte, NC 28205</a>
+    </div>
+    <div class="quick-contact-pill">
+      <span>Call Directly:</span>
+      <a href="tel:7045321153">(704) 532-1153</a>
+    </div>
+    <div class="quick-contact-pill">
+      <span>Hours:</span>
+      <span>Sun–Thu 6 AM – 10 PM &bull; Fri–Sat 6 AM – 11 PM</span>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="landmark-header">
+    <div class="landmark-nav-wrap">
+      <a href="index.html" class="landmark-branding">
+        <span class="landmark-title-text">Landmark Diner</span>
+        <span class="landmark-tag-text">Restaurant &amp; Bakery &bull; Est. 1990</span>
+      </a>
+      <button class="diner-menu-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        Menu
+      </button>
+      <nav>
+        <ul class="diner-nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Full Menu</a></li>
+          <li><a href="all-day-breakfast.html">All-Day Breakfast</a></li>
+          <li><a href="greek-and-comfort-classics.html">Greek &amp; Comfort Classics</a></li>
+          <li><a href="bakery-and-heritage.html">Bakery &amp; Heritage</a></li>
+          <li><a href="visit.html" class="diner-order-action">Visit &amp; Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Billboard Hero -->
+  <section class="diner-billboard" style="background-image: url('images/landmark-hero-diner.jpg'); padding: 4.5rem 1.5rem;">
+    <div class="billboard-container">
+      <span class="diner-crest">Classic Multi-Page Menu</span>
+      <h1>Our Complete Diner Menu</h1>
+      <p class="billboard-lead">From early morning breakfast platters to authentic Greek family recipes, hot carved roasts, and fresh-baked cakes.</p>
+    </div>
+  </section>
+
+  <!-- Menu Filtering & Catalog -->
+  <section class="diner-zone-wrap">
+    <div class="diner-layout-container">
+      
+      <!-- Filter Controls -->
+      <div class="diner-filter-strip">
+        <button class="diner-tab-btn active" data-category="all">All Selections</button>
+        <button class="diner-tab-btn" data-category="breakfast">All-Day Breakfast</button>
+        <button class="diner-tab-btn" data-category="greek">Greek Specialties</button>
+        <button class="diner-tab-btn" data-category="sandwiches">Clubs &amp; Sandwiches</button>
+        <button class="diner-tab-btn" data-category="comfort">Comfort Entrees</button>
+        <button class="diner-tab-btn" data-category="italian">Italian &amp; Seafood</button>
+        <button class="diner-tab-btn" data-category="bakery">Bakery &amp; Desserts</button>
+      </div>
+
+      <!-- Section: Breakfast -->
+      <div class="diner-menu-ledger" data-cat="breakfast">
+        <h2 class="ledger-heading-title">All-Day Griddle &amp; Egg Specialties <span>Served from 6:00 AM to Close</span></h2>
+        <div class="ledger-entries-grid">
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Landmark Big Breakfast Special</span>
+              <span class="entry-price-tag">$12.99</span>
+            </div>
+            <p class="entry-item-desc">Two eggs any style, two buttermilk pancakes or French toast slices, choice of applewood smoked bacon or sausage links, served with griddled hash browns and warm toast.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Greek Country Omelet</span>
+              <span class="entry-price-tag">$11.50</span>
+            </div>
+            <p class="entry-item-desc">Three farm-fresh eggs folded with imported Greek feta cheese, fresh baby spinach, diced roma tomatoes, and sweet onions. Served with hash browns and buttered toast.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Golden Belgian Waffle</span>
+              <span class="entry-price-tag">$8.99</span>
+            </div>
+            <p class="entry-item-desc">Malted Belgian waffle topped with whipped butter and powdered sugar. Add fresh strawberries, blueberries, or warm pecans (+$2.50).</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Biscuits &amp; Country Sausage Gravy</span>
+              <span class="entry-price-tag">$8.50</span>
+            </div>
+            <p class="entry-item-desc">Two freshly baked Southern buttermilk biscuits split and smothered in our thick house-made country black pepper pork sausage gravy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Greek Specialties -->
+      <div class="diner-menu-ledger" data-cat="greek">
+        <h2 class="ledger-heading-title">Authentic Greek Specialties <span>Family Recipes Handcrafted Daily</span></h2>
+        <div class="ledger-entries-grid">
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Traditional Greek Spanakopita</span>
+              <span class="entry-price-tag">$14.99</span>
+            </div>
+            <p class="entry-item-desc">Featured on Food Network. Crisp layers of golden phyllo dough filled with chopped spinach, feta cheese, herbs, and scallions. Served with a classic Greek salad.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Authentic Gyro Platter</span>
+              <span class="entry-price-tag">$15.50</span>
+            </div>
+            <p class="entry-item-desc">Carved seasoned lamb and beef gyro meat served over warm pita bread triangles with house tzatziki sauce, Greek horiatiki salad with kalamata olives, and french fries.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Chicken Souvlaki Platter</span>
+              <span class="entry-price-tag">$15.50</span>
+            </div>
+            <p class="entry-item-desc">Marinated chicken tenderloin skewers grilled with lemon, garlic, and Greek oregano, served with pita, tzatziki, Greek salad, and seasoned rice pilaf.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Famous Landmark Greek Salad</span>
+              <span class="entry-price-tag">$11.99</span>
+            </div>
+            <p class="entry-item-desc">Crisp romaine, vine-ripened tomatoes, cucumbers, kalamata olives, pepperoncini, stuffed grape leaves (dolmades), and a generous slab of imported feta with house Greek dressing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Sandwiches & Clubs -->
+      <div class="diner-menu-ledger" data-cat="sandwiches">
+        <h2 class="ledger-heading-title">Triple-Decker Clubs &amp; Griddle Burgers <span>Served with Fries &amp; Pickle Spear</span></h2>
+        <div class="ledger-entries-grid">
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Classic Turkey Club Triple-Decker</span>
+              <span class="entry-price-tag">$12.50</span>
+            </div>
+            <p class="entry-item-desc">Three slices of toasted white or wheat bread layered with fresh carved roast turkey breast, crisp bacon, lettuce, tomato, and mayonnaise.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Landmark Patty Melt</span>
+              <span class="entry-price-tag">$11.99</span>
+            </div>
+            <p class="entry-item-desc">Half-pound fresh ground chuck burger grilled with caramelized sweet onions and melted Swiss cheese on toasted marble rye bread.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Hot Open-Faced Roast Beef</span>
+              <span class="entry-price-tag">$13.99</span>
+            </div>
+            <p class="entry-item-desc">Tender roast beef piled over sliced bread, smothered in rich homemade brown gravy, served with real mashed potatoes and choice of vegetable.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Classic Reuben on Grilled Rye</span>
+              <span class="entry-price-tag">$12.99</span>
+            </div>
+            <p class="entry-item-desc">Thinly sliced cured corned beef brisket, tangy sauerkraut, melted Swiss cheese, and Thousand Island dressing pressed on marble rye.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Comfort Entrees -->
+      <div class="diner-menu-ledger" data-cat="comfort">
+        <h2 class="ledger-heading-title">Homestyle Comfort Dinners <span>Includes Soup or Salad &amp; Two Sides</span></h2>
+        <div class="ledger-entries-grid">
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Roasted Turkey &amp; Cornbread Dressing</span>
+              <span class="entry-price-tag">$16.50</span>
+            </div>
+            <p class="entry-item-desc">Slow-roasted whole turkey carved and served with savory cornbread stuffing, homemade giblet gravy, real mashed potatoes, and cranberry sauce.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Country Chicken Fried Steak</span>
+              <span class="entry-price-tag">$15.50</span>
+            </div>
+            <p class="entry-item-desc">Crispy golden-breaded cubed steak smothered in thick Southern white pepper country gravy, served with mashed potatoes and green beans.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Homestyle Baked Meatloaf</span>
+              <span class="entry-price-tag">$14.99</span>
+            </div>
+            <p class="entry-item-desc">Seasoned ground beef and pork meatloaf baked fresh and glazed with sweet tomato sauce, topped with rich brown gravy, served with mashed potatoes and corn.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Center Cut Pork Chops (2 Chops)</span>
+              <span class="entry-price-tag">$16.99</span>
+            </div>
+            <p class="entry-item-desc">Two thick center-cut pork chops, char-grilled or country breaded and fried, served with cinnamon applesauce and choice of two sides.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Italian & Seafood -->
+      <div class="diner-menu-ledger" data-cat="italian">
+        <h2 class="ledger-heading-title">Italian Classics &amp; Seafood <span>Served with Garlic Bread</span></h2>
+        <div class="ledger-entries-grid">
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Chicken Parmesan with Spaghetti</span>
+              <span class="entry-price-tag">$15.50</span>
+            </div>
+            <p class="entry-item-desc">Breaded chicken cutlet topped with marinara sauce and melted mozzarella cheese, served over a steaming platter of spaghetti with garlic bread.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Fried Jumbo Shrimp Platter</span>
+              <span class="entry-price-tag">$16.99</span>
+            </div>
+            <p class="entry-item-desc">Eight hand-breaded butterflied jumbo shrimp fried golden brown, served with house cocktail sauce, seasoned fries, and creamy coleslaw.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Broiled or Fried Flounder Fillet</span>
+              <span class="entry-price-tag">$16.50</span>
+            </div>
+            <p class="entry-item-desc">Tender Atlantic flounder fillet prepared broiled in lemon butter or breaded and fried golden, served with tartar sauce and two sides.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Bakery & Desserts -->
+      <div class="diner-menu-ledger" data-cat="bakery">
+        <h2 class="ledger-heading-title">Famous Bakery Dessert Case <span>Baked Fresh Daily In-House</span></h2>
+        <div class="ledger-entries-grid">
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Giant Chocolate Fudge Layer Cake</span>
+              <span class="entry-price-tag">$6.99</span>
+            </div>
+            <p class="entry-item-desc">Four moist layers of rich dark chocolate cake frosted with thick homemade chocolate fudge icing.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Traditional Southern Red Velvet Cake</span>
+              <span class="entry-price-tag">$6.99</span>
+            </div>
+            <p class="entry-item-desc">Classic Southern red velvet cake layered with rich cream cheese pecan frosting.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">Authentic Greek Baklava</span>
+              <span class="entry-price-tag">$5.50</span>
+            </div>
+            <p class="entry-item-desc">Flaky phyllo pastry packed with crushed walnuts, cinnamon, and honey syrup.</p>
+          </div>
+          <div class="menu-entry-item">
+            <div class="entry-title-bar">
+              <span class="entry-item-name">New York Plain or Strawberry Cheesecake</span>
+              <span class="entry-price-tag">$6.50</span>
+            </div>
+            <p class="entry-item-desc">Dense, creamy authentic New York style cheesecake on a graham cracker crust.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="diner-footer-base">
+    <div class="diner-footer-quad">
+      <div class="diner-footer-section">
+        <h4 style="font-size: 1.4rem;">Landmark Restaurant Diner</h4>
+        <p style="margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6;">Charlotte's classic Greek-American diner and in-house bakery serving all-day breakfast, Greek specialties, and homestyle comfort food since 1990.</p>
+        <p style="font-size: 0.9rem;"><strong>Phone:</strong> (704) 532-1153<br><strong>Address:</strong> 4429 Central Ave, Charlotte, NC 28205</p>
+      </div>
+
+      <div class="diner-footer-section">
+        <h4>Navigation</h4>
+        <ul class="diner-nav-links-stack">
+          <li><a href="index.html">Home Overview</a></li>
+          <li><a href="menu.html">Full Diner Menu</a></li>
+          <li><a href="all-day-breakfast.html">All-Day Breakfast</a></li>
+          <li><a href="greek-and-comfort-classics.html">Greek &amp; Comfort Classics</a></li>
+          <li><a href="bakery-and-heritage.html">Bakery &amp; Heritage</a></li>
+          <li><a href="visit.html">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+
+      <div class="diner-footer-section">
+        <h4>Service Hours</h4>
+        <p style="font-size: 0.9rem; line-height: 1.7;">
+          <strong>Sunday – Thursday</strong><br>
+          6:00 AM – 10:00 PM<br><br>
+          <strong>Friday – Saturday</strong><br>
+          6:00 AM – 11:00 PM
+        </p>
+      </div>
+
+      <div class="diner-footer-section">
+        <h4>Call or Visit</h4>
+        <p style="font-size: 0.9rem; margin-bottom: 1rem;">Join us in our cozy booths or call ahead for takeout orders and whole bakery cakes.</p>
+        <a href="tel:7045321153" class="diner-btn btn-crimson" style="padding: 0.6rem; text-align: center; display: block;">Call (704) 532-1153</a>
+      </div>
+    </div>
+
+    <div class="diner-bottom-strip">
+      <div>&copy; 2026 Landmark Restaurant Diner. All rights reserved.</div>
+      <div>4429 Central Ave, Charlotte, NC 28205 &bull; (704) 532-1153</div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

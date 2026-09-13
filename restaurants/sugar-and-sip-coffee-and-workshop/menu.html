@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinks &amp; Bites Menu | Sugar &amp; Sip Coffee and Workshop | Uptown Charlotte</title>
+  <meta name="description" content="Explore Sugar & Sip's complete menu of specialty lattes, Fruity Pebble lattes, Tropical Matcha Splashes, classic espresso, pour-overs, and warm Belgian waffles in Charlotte NC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  
+  <div class="sns-topbar">
+    <div class="sns-container sns-topbar-info" style="width: 100%; justify-content: space-between;">
+      <div>
+        <span>120 N Cedar St, Ste 725, Fourth Ward, Charlotte, NC 28202</span>
+        <span style="margin: 0 0.75rem; opacity: 0.3;">|</span>
+        <span>Mon-Fri: 7:00 AM - 4:00 PM &bull; Sat-Sun: 9:00 AM - 2:00 PM</span>
+      </div>
+      <div>
+        <span>Cafe &amp; Mobile Booking Hotline: </span>
+        <a href="tel:7049190143" class="sns-topbar-link">(704) 919-0143</a>
+      </div>
+    </div>
+  </div>
+  <header class="sns-navbar">
+    <div class="sns-nav-container">
+      <a href="index.html" class="sns-brand">
+        <div class="sns-brand-name">SUGAR <span>&amp; SIP</span></div>
+        <div class="sns-brand-tagline">Coffee &amp; Creative Workshop Space</div>
+      </a>
+      <ul class="sns-nav-links">
+        <li class="sns-nav-item"><a href="index.html">Home</a></li>
+<li class="sns-nav-item"><a href="menu.html" class="active">Drinks &amp; Bites</a></li>
+<li class="sns-nav-item"><a href="workshops-events.html">Workshops &amp; Space</a></li>
+<li class="sns-nav-item"><a href="catering-coffee-cart.html">Mobile Coffee Cart</a></li>
+<li class="sns-nav-item"><a href="about.html">Our Story</a></li>
+<li class="sns-nav-item"><a href="contact.html">Visit &amp; Hours</a></li>
+
+        <li><a href="tel:7049190143" class="sns-nav-cta">Call (704) 919-0143</a></li>
+      </ul>
+      <button class="sns-menu-toggle" id="snsMenuToggle" aria-label="Toggle Navigation Menu">Menu</button>
+    </div>
+    <div class="sns-mobile-menu" id="snsMobileMenu">
+      <ul class="sns-mobile-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="menu.html" class="active">Drinks &amp; Bites</a></li>
+<li><a href="workshops-events.html">Workshops &amp; Space</a></li>
+<li><a href="catering-coffee-cart.html">Mobile Coffee Cart</a></li>
+<li><a href="about.html">Our Story</a></li>
+<li><a href="contact.html">Visit &amp; Hours</a></li>
+
+        <li style="margin-top: 0.5rem;"><a href="tel:7049190143" class="sns-nav-cta" style="text-align: center;">Call (704) 919-0143</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="sns-hero" style="padding: 4rem 0 4.5rem 0;">
+    <div class="sns-container" style="text-align: center; max-width: 820px;">
+      <span class="sns-hero-badge">Craft Extraction &amp; Creative Flavors</span>
+      <h1 class="sns-title-xl">Handcrafted Espresso, Lattes &amp; Bites</h1>
+      <p class="sns-lead">Every drink is extracted to order with ethically sourced beans, house-prepared syrups, and alternative milks.</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="tel:7049190143" class="sns-btn sns-btn-caramel">Call In Mobile Order: (704) 919-0143</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sns-section">
+    <div class="sns-container">
+      <div class="sns-filter-bar">
+        <button class="sns-filter-btn active" data-category="all">Full Menu</button>
+        <button class="sns-filter-btn" data-category="specialty">Signature Specialty Lattes</button>
+        <button class="sns-filter-btn" data-category="espresso">Classic Espresso &amp; Brews</button>
+        <button class="sns-filter-btn" data-category="tea">Matcha &amp; Botanicals</button>
+        <button class="sns-filter-btn" data-category="bakery">Artisan Pastries &amp; Bites</button>
+      </div>
+
+      <div class="sns-grid-3" id="snsMenuContainer">
+        <!-- Specialty Lattes -->
+        <div class="sns-dish-card sns-menu-item" data-category="specialty">
+          <div class="sns-dish-img">
+            <img src="images/specialty-latte.jpg" alt="Fruity Pebble cereal milk specialty latte">
+            <span class="sns-dish-badge">Signature</span>
+          </div>
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Fruity Pebble Cereal Latte</h3>
+              <div class="sns-dish-price">$7.75</div>
+            </div>
+            <p class="sns-dish-desc">Double espresso infused with house steeped cereal milk, pure vanilla, silky steamed milk, sweet cold foam, and colorful cereal dust.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">House Classic</span>
+              <span class="sns-tag">Hot / Iced</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="specialty">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Blueberry Lemon Iced Latte</h3>
+              <div class="sns-dish-price">$7.75</div>
+            </div>
+            <p class="sns-dish-desc">Wild blueberry reduction shaken with espresso, Meyer lemon peel infused syrup, choice of milk, and crowned with blueberry cold foam.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Refreshing</span>
+              <span class="sns-tag">Iced Specialty</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="specialty">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Pina Colada Cold Brew</h3>
+              <div class="sns-dish-price">$7.75</div>
+            </div>
+            <p class="sns-dish-desc">24-hour slow steeped cold brew layered over caramelized pineapple puree, creamy coconut milk, and toasted coconut flakes.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Cold Brew</span>
+              <span class="sns-tag">Tropical</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="specialty">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Salted Coconut Chai Latte</h3>
+              <div class="sns-dish-price">$7.50</div>
+            </div>
+            <p class="sns-dish-desc">Slow-simmered black tea chai with green cardamom, fresh ginger, cracked pepper, coconut milk, and pink Himalayan sea salt foam.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Spiced Chai</span>
+              <span class="sns-tag">Coconut Foam</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="specialty">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Lavender Honey Latte</h3>
+              <div class="sns-dish-price">$7.25</div>
+            </div>
+            <p class="sns-dish-desc">Locally harvested wildflower honey and culinary French lavender buds steeped in espresso with microfoamed whole or oat milk.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Floral</span>
+              <span class="sns-tag">Local Honey</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classic Espresso -->
+        <div class="sns-dish-card sns-menu-item" data-category="espresso">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Traditional Cortado</h3>
+              <div class="sns-dish-price">$4.75</div>
+            </div>
+            <p class="sns-dish-desc">Equal parts rich double espresso extraction and warm textured milk served in a 4.5 oz Gibraltar glass with caramel notes.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Espresso Bar</span>
+              <span class="sns-tag">Balanced</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="espresso">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Single Origin Pour-Over</h3>
+              <div class="sns-dish-price">$5.25</div>
+            </div>
+            <p class="sns-dish-desc">Rotating Ethiopian, Colombian, or Honduran direct-trade microlot beans brewed precisely on V60 for bright clarity and delicate florals.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">V60 Brew</span>
+              <span class="sns-tag">Single Origin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="espresso">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Nitro Velvet Cold Brew</h3>
+              <div class="sns-dish-price">$5.50</div>
+            </div>
+            <p class="sns-dish-desc">Nitrogen-infused cold brew poured fresh on draft with a cascading creamy head, dark cocoa aromatics, and naturally smooth body.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Draft Nitro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matcha & Teas -->
+        <div class="sns-dish-card sns-menu-item" data-category="tea">
+          <div class="sns-dish-img">
+            <img src="images/matcha-splash.jpg" alt="Layered Tropical Matcha Splash drink">
+            <span class="sns-dish-badge">Matcha Bar</span>
+          </div>
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Tropical Matcha Splash</h3>
+              <div class="sns-dish-price">$7.75</div>
+            </div>
+            <p class="sns-dish-desc">Ceremonial Uji matcha whisked by hand, layered over coconut milk, passionfruit puree, sparkling citrus tonic, and fresh mint.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Ceremonial Grade</span>
+              <span class="sns-tag">Passionfruit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="tea">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Rich Vanilla Matcha Latte</h3>
+              <div class="sns-dish-price">$7.25</div>
+            </div>
+            <p class="sns-dish-desc">Smooth stone-ground green tea whisked with Madagascar vanilla bean syrup and oat milk for an earthy, creamy sweetness.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Matcha</span>
+              <span class="sns-tag">Vanilla Bean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="tea">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Loose-Leaf Jasmine Green Tea</h3>
+              <div class="sns-dish-price">$4.50</div>
+            </div>
+            <p class="sns-dish-desc">Organic whole leaf green tea scented with midnight-blooming jasmine flowers, steeped to delicate perfection.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Organic Botanical</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bakery & Bites -->
+        <div class="sns-dish-card sns-menu-item" data-category="bakery">
+          <div class="sns-dish-img">
+            <img src="images/pearl-waffles.jpg" alt="Belgian pearl sugar waffle">
+            <span class="sns-dish-badge">Bakery Fresh</span>
+          </div>
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Belgian Pearl Sugar Waffle</h3>
+              <div class="sns-dish-price">$5.50</div>
+            </div>
+            <p class="sns-dish-desc">Authentic Liège style waffle baked with crystallized pearl sugar nibs that caramelize into a crisp, crunchy shell around a buttery dough center.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Liège Style</span>
+              <span class="sns-tag">Caramelized</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="bakery">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Gourmet Warm Cinnamon Roll</h3>
+              <div class="sns-dish-price">$5.95</div>
+            </div>
+            <p class="sns-dish-desc">Soft brioche swirl packed with Korintje cinnamon brown sugar filling, generously glazed with warm cream cheese icing.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Warm Pastry</span>
+              <span class="sns-tag">Cream Cheese Icing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="bakery">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Stuffed Savory Mini Bagels (2)</h3>
+              <div class="sns-dish-price">$6.50</div>
+            </div>
+            <p class="sns-dish-desc">Artisan mini bagel spheres filled with chive cream cheese, smoked bacon crumbles, and topped with crunchy everything bagel spice.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Savory Bite</span>
+              <span class="sns-tag">Everything Spice</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sns-dish-card sns-menu-item" data-category="bakery">
+          <div class="sns-dish-body">
+            <div class="sns-dish-header">
+              <h3 class="sns-dish-name">Raspberry Swirl Cheesecake Bar</h3>
+              <div class="sns-dish-price">$5.75</div>
+            </div>
+            <p class="sns-dish-desc">Graham cracker crust layered with velvety New York style cheesecake and tart seedless raspberry coulis ribbons.</p>
+            <div class="sns-dish-tags">
+              <span class="sns-tag">Dessert Bite</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sns-info-box" style="margin-top: 3.5rem;">
+        <h4>Milks &amp; Custom Syrups</h4>
+        <p>We proudly offer Oatly Barista Edition, Califia Almond Milk, and local organic whole milk. Syrups made from scratch in-house: Lavender, Brown Sugar Cinnamon, Madagascar Vanilla, Dark Mocha, Meyer Lemon, and Pure Wildflower Honey.</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="sns-footer">
+    <div class="sns-container">
+      <div class="sns-footer-grid">
+        <div class="sns-footer-brand">
+          <h3>SUGAR <span>&amp; SIP</span></h3>
+          <p>Black-owned boutique craft coffee shop and creative community workshop space in Fourth Ward Uptown Charlotte. Specialty lattes, matcha tonics, artisan pastries, open mic nights, and mobile espresso bar catering.</p>
+        </div>
+        <div class="sns-footer-col">
+          <h4>Explore</h4>
+          <ul class="sns-footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="menu.html">Craft Coffee &amp; Pastries</a></li>
+            <li><a href="workshops-events.html">Workshops &amp; Loft Space</a></li>
+            <li><a href="catering-coffee-cart.html">Mobile Espresso Cart</a></li>
+            <li><a href="about.html">Our Community Mission</a></li>
+            <li><a href="contact.html">Fourth Ward Location</a></li>
+          </ul>
+        </div>
+        <div class="sns-footer-col">
+          <h4>Cafe Hours</h4>
+          <ul class="sns-footer-links" style="line-height: 1.8;">
+            <li><strong style="color: #fff;">Monday - Friday:</strong><br>7:00 AM - 4:00 PM</li>
+            <li><strong style="color: #fff;">Saturday - Sunday:</strong><br>9:00 AM - 2:00 PM</li>
+            <li><span style="color: var(--sns-rose); font-size: 0.85rem;">Evening Workshops &amp; Pop-Ups by Reservation</span></li>
+          </ul>
+        </div>
+        <div class="sns-footer-col">
+          <h4>Fourth Ward Location</h4>
+          <p style="margin-bottom: 0.75rem;">120 N Cedar St, Ste 725<br>Charlotte, NC 28202<br>Fourth Ward / Uptown West neighborhood.</p>
+          <p><strong style="color: var(--sns-rose);">Direct Phone:</strong><br><a href="tel:7049190143" style="color: #fff; font-weight: 700;">(704) 919-0143</a></p>
+          <p style="margin-top: 0.5rem;"><strong style="color: var(--sns-rose);">Inquiries:</strong><br><a href="mailto:hello@sugarandsipclt.org" style="color: #c4b8b2;">hello@sugarandsipclt.org</a></p>
+        </div>
+      </div>
+      <div class="sns-footer-bottom">
+        <div>&copy; 2026 Sugar &amp; Sip Coffee and Workshop. All rights reserved. Uptown Charlotte, NC.</div>
+        <div>Craft Coffee &bull; Creative Workshops &bull; Mobile Espresso Cart</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

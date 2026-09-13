@@ -1,0 +1,263 @@
+{
+  "slug": "sub-one-hoagie-house",
+  "generatedAt": "2026-09-10T18:16:56.595Z",
+  "htmlPages": [
+    "fourth-ward-heritage.html",
+    "hot-and-cold-hoagies.html",
+    "index.html",
+    "menu.html",
+    "nj-steak-and-special-sauce.html",
+    "visit.html"
+  ],
+  "cssFiles": [
+    "site.css"
+  ],
+  "jsFiles": [
+    "site.js"
+  ],
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "Minimum substantive HTML page count",
+      "passed": true,
+      "detail": "6 HTML pages found; minimum is 5"
+    },
+    {
+      "name": "index.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit/contact page exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS balance site.css",
+      "passed": true,
+      "detail": "balanced"
+    },
+    {
+      "name": "JavaScript parse site.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fourth-ward-heritage.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fourth-ward-heritage.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fourth-ward-heritage.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fourth-ward-heritage.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "fourth-ward-heritage.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "fourth-ward-heritage.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "hot-and-cold-hoagies.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "hot-and-cold-hoagies.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "hot-and-cold-hoagies.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "hot-and-cold-hoagies.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "hot-and-cold-hoagies.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "hot-and-cold-hoagies.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "index.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "menu.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "menu.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "menu.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "nj-steak-and-special-sauce.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "nj-steak-and-special-sauce.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "nj-steak-and-special-sauce.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "nj-steak-and-special-sauce.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "nj-steak-and-special-sauce.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "nj-steak-and-special-sauce.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has <title>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html has viewport meta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html duplicate IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "visit.html image alt attributes",
+      "passed": true,
+      "detail": "0 image(s) missing alt"
+    },
+    {
+      "name": "visit.html automatic-demo form prohibition",
+      "passed": true,
+      "detail": "0 form(s) found"
+    },
+    {
+      "name": "visit.html links back to home",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No exact duplicate HTML pages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Creative Brief",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Claim Ledger",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Add-On Preservation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence.md contains ## Cross-Demo Diversity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cross-demo design diversity",
+      "passed": true,
+      "detail": "PASS sub-one-hoagie-house: closest recent design 'phil-s-deli-to-go' scored 0.326."
+    }
+  ]
+}

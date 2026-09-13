@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Whiskey Vault &amp; Flights | Cowbell Burger &amp; Whiskey Bar</title>
+  <meta name="description" content="Explore over 150 bourbons, ryes, single malts, and compose custom 3-pour whiskey flights at Cowbell Burger &amp; Whiskey Bar in Uptown Charlotte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="cwb-topbar">
+    <div class="cwb-topbar-inner">
+      <div class="cwb-topbar-items">
+        <span>201 N Tryon St, Unit 1010, Charlotte, NC 28202</span>
+        <span>&bull;</span>
+        <span>Uptown Charlotte on 5th Street</span>
+      </div>
+      <div class="cwb-topbar-items">
+        <span>Sun-Thu: 11am-12am | Fri-Sat: 11am-2am</span>
+        <span>&bull;</span>
+        <a href="tel:9802248674" class="cwb-topbar-link">(980) 224-8674</a>
+      </div>
+    </div>
+  </div>
+  <header class="cwb-header">
+    <div class="cwb-nav-container">
+      <a href="index.html" class="cwb-brand">
+        <div class="cwb-brand-title">COWBELL <span>BURGER &amp; WHISKEY</span></div>
+        <div class="cwb-brand-sub">UPTOWN CHARLOTTE &bull; EST. 2012</div>
+      </a>
+      <button class="cwb-mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav>
+        <ul class="cwb-nav-links">
+          <li><a href="index.html" class="cwb-nav-link ">Home</a></li>
+          <li><a href="menu.html" class="cwb-nav-link ">Menu</a></li>
+          <li><a href="about.html" class="cwb-nav-link ">About Us</a></li>
+          <li><a href="whiskey-vault.html" class="cwb-nav-link active">Whiskey Vault</a></li>
+          <li><a href="specials.html" class="cwb-nav-link ">Specials &amp; Late Night</a></li>
+          <li><a href="contact.html" class="cwb-nav-link ">Contact &amp; Hours</a></li>
+          <li><a href="tel:9802248674" class="cwb-nav-link cwb-nav-cta">Call (980) 224-8674</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <header class="cwb-page-header">
+    <div class="cst-container" style="padding:0;">
+      <h1 class="cwb-page-header-title">THE 150+ WHISKEY VAULT</h1>
+      <p class="cwb-page-header-desc">An encyclopedic collection of Kentucky bourbons, bold American ryes, peated Islay malts, and Japanese craft whiskies.</p>
+    </div>
+  </header>
+
+  <main class="cwb-container">
+    <div class="cwb-grid-2" style="margin-bottom:50px;">
+      <div>
+        <span class="cwb-section-tag">Liquid Gold</span>
+        <h2 class="cwb-section-title">CURATED BOURBON &amp; RYE SELECTIONS</h2>
+        <p style="color:var(--cwb-text-muted); margin-bottom:14px;">Whether you are an experienced collector hunting rare barrel proofs or a casual explorer looking for a smooth wheated bourbon, our certified whiskey tenders will navigate you through our 150+ bottle vault.</p>
+        <p style="color:var(--cwb-text-muted);">We specialize in rare single-barrel expressions, custom Cowbell private barrel picks, house-smoked old fashioneds, and custom tasting flights.</p>
+      </div>
+      <div>
+        <img src="images/whiskey-flights.jpg" alt="Curated whiskey flight tasting at Cowbell" style="border-radius:var(--cwb-radius); box-shadow:var(--cwb-shadow-lg); width:100%;">
+      </div>
+    </div>
+
+    <!-- Interactive Flight Composer -->
+    <div class="cwb-interactive-box">
+      <h3 class="cwb-widget-title">COMPOSE YOUR CUSTOM 3-POUR FLIGHT ($22.00)</h3>
+      <p class="cwb-widget-desc">Select three 0.75oz pours from our rotating featured whiskey list to build your custom tasting flight.</p>
+
+      <div class="cwb-calc-grid">
+        <div class="cwb-input-group">
+          <label for="cwbPour1">Pour #1 (Bourbon Foundation)</label>
+          <select id="cwbPour1" class="cwb-flight-pour cwb-select">
+            <option value="buffalo" selected>Buffalo Trace Kentucky Straight (90 Proof)</option>
+            <option value="makers46">Maker's Mark 46 French Oaked (94 Proof)</option>
+            <option value="woodford">Woodford Reserve Distiller's Select (90.4 Proof)</option>
+            <option value="eagles">Eagle Rare 10 Year Bourbon (90 Proof)</option>
+          </select>
+        </div>
+
+        <div class="cwb-input-group">
+          <label for="cwbPour2">Pour #2 (High-Rye / Cask Strength)</label>
+          <select id="cwbPour2" class="cwb-flight-pour cwb-select">
+            <option value="bulleit_rye" selected>Bulleit 95 Small Batch Rye (90 Proof)</option>
+            <option value="whistlepig">WhistlePig 10 Year Small Batch Rye (100 Proof)</option>
+            <option value="angel">Angel's Envy Port Cask Finish Bourbon (86.6 Proof)</option>
+            <option value="blantons">Blanton's Single Barrel Bourbon (93 Proof)</option>
+          </select>
+        </div>
+
+        <div class="cwb-input-group">
+          <label for="cwbPour3">Pour #3 (Scotch / Japanese / Reserve)</label>
+          <select id="cwbPour3" class="cwb-flight-pour cwb-select">
+            <option value="mcallan" selected>The Macallan 12 Year Double Cask (86 Proof)</option>
+            <option value="lagavulin">Lagavulin 16 Year Islay Single Malt (86 Proof)</option>
+            <option value="yamazaki">Yamazaki 12 Year Japanese Whisky (86 Proof)</option>
+            <option value="woodford_double">Woodford Reserve Double Oaked (90.4 Proof)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="cwbFlightSummary" style="padding:18px; background-color:var(--cwb-dark); border-radius:var(--cwb-radius-sm); border:1px solid var(--cwb-amber); font-size:0.95rem; color:#f3efe8;">
+        <!-- JS fills summary -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="cwb-footer">
+    <div class="cwb-footer-grid">
+      <div class="cwb-footer-col">
+        <h4>Cowbell Burger &amp; Whiskey Bar</h4>
+        <p>Uptown Charlotte's premier rock 'n' roll gourmet burger lounge. Serving custom chuck-brisket-short rib burgers, duck fat truffle fries, adult boozy milkshakes, and 150+ whiskeys till 2:00 AM.</p>
+        <p><strong>Direct Line:</strong> <a href="tel:9802248674" style="color:var(--cwb-amber);">(980) 224-8674</a></p>
+      </div>
+      <div class="cwb-footer-col">
+        <h4>Location &amp; Landmark</h4>
+        <p>201 N Tryon St, Unit 1010<br>Charlotte, NC 28202</p>
+        <p>Located on 5th Street between Pisco Portón and The Capital Grille in the center of Uptown Charlotte.</p>
+      </div>
+      <div class="cwb-footer-col">
+        <h4>Hours of Operation</h4>
+        <p><strong>Sunday – Thursday:</strong> 11:00 AM – 12:00 AM<br>
+        <strong>Friday – Saturday:</strong> 11:00 AM – 2:00 AM<br>
+        <strong>Late Night Kitchen:</strong> Serving full burger menu until close</p>
+      </div>
+      <div class="cwb-footer-col">
+        <h4>Explore Cowbell</h4>
+        <ul class="cwb-footer-links">
+          <li><a href="menu.html">Gourmet Burgers &amp; Boozy Shakes</a></li>
+          <li><a href="whiskey-vault.html">150+ Bourbon &amp; Rye Cellar</a></li>
+          <li><a href="specials.html">Whiskey Wednesday &amp; Late Night</a></li>
+          <li><a href="about.html">Our Proprietary Grind Philosophy</a></li>
+          <li><a href="contact.html">Directions &amp; Parking Tips</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cwb-footer-bottom">
+      <div>&copy; 2026 Cowbell Burger &amp; Whiskey Bar. All rights reserved. Charlotte, NC.</div>
+      <div>Gourmet Burgers &bull; 150+ Whiskeys &bull; Duck Fat Truffle Fries &bull; Boozy Shakes</div>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+
+  <!-- Dark Star Consulting Footer Badge -->
+  <script src="../../scripts/shared/darkstar-footer.js"></script>
+</body>
+</html>

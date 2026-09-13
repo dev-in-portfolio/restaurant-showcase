@@ -1,0 +1,815 @@
+/* K’s Asian Xpress Stylesheet - Unique Namespace: .ksasian- */
+:root {
+  --ksasian-primary: #e11d48;
+  --ksasian-primary-dark: #be123c;
+  --ksasian-primary-light: #fb7185;
+  --ksasian-accent: #f59e0b;
+  --ksasian-accent-dark: #d97706;
+  --ksasian-green: #10b981;
+  --ksasian-dark: #0f172a;
+  --ksasian-slate: #1e293b;
+  --ksasian-bg: #f8fafc;
+  --ksasian-surface: #ffffff;
+  --ksasian-surface-alt: #f1f5f9;
+  --ksasian-text: #0f172a;
+  --ksasian-text-muted: #64748b;
+  --ksasian-border: #e2e8f0;
+  --ksasian-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --ksasian-shadow: 0 6px 20px -3px rgba(225, 29, 72, 0.12);
+  --ksasian-shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.18);
+  --ksasian-radius: 12px;
+  --ksasian-radius-lg: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--ksasian-bg);
+  color: var(--ksasian-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .ksasian-brand-title {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  color: var(--ksasian-text);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--ksasian-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--ksasian-accent-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header & Topbar */
+.ksasian-header {
+  background-color: var(--ksasian-surface);
+  border-bottom: 2px solid var(--ksasian-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--ksasian-shadow-sm);
+}
+
+.ksasian-topbar {
+  background: linear-gradient(90deg, var(--ksasian-dark), var(--ksasian-slate), var(--ksasian-primary-dark));
+  color: #ffffff;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ksasian-topbar a {
+  color: #fef08a;
+  font-weight: 700;
+}
+
+.ksasian-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ksasian-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ksasian-logo-badge {
+  background: linear-gradient(135deg, var(--ksasian-primary), var(--ksasian-accent));
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.35);
+}
+
+.ksasian-logo-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ksasian-dark);
+  display: block;
+  line-height: 1.15;
+}
+
+.ksasian-logo-sub {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--ksasian-primary);
+  font-weight: 700;
+  display: block;
+}
+
+.ksasian-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ksasian-nav-links a {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ksasian-slate);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.ksasian-nav-links a:hover,
+.ksasian-nav-links a.active {
+  color: var(--ksasian-primary);
+  background-color: #fff1f2;
+}
+
+.ksasian-btn-cta {
+  background: linear-gradient(135deg, var(--ksasian-primary), var(--ksasian-primary-dark));
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.28);
+}
+
+.ksasian-btn-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.38);
+}
+
+.ksasian-mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--ksasian-border);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ksasian-dark);
+}
+
+/* Hero Section */
+.ksasian-hero {
+  background: radial-gradient(circle at top right, #1e293b, #0f172a 75%);
+  color: #ffffff;
+  padding: 75px 20px 85px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--ksasian-primary);
+}
+
+.ksasian-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.ksasian-hero-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.ksasian-hero-pill {
+  display: inline-block;
+  background-color: rgba(225, 29, 72, 0.2);
+  border: 1px solid rgba(225, 29, 72, 0.4);
+  color: #fda4af;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.ksasian-hero h1 {
+  font-size: 2.85rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.18;
+}
+
+.ksasian-hero p {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 760px;
+  margin: 0 auto 32px auto;
+}
+
+.ksasian-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ksasian-btn-hero-primary {
+  background: linear-gradient(135deg, var(--ksasian-primary), var(--ksasian-primary-dark));
+  color: #ffffff;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.4);
+}
+
+.ksasian-btn-hero-primary:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.5);
+}
+
+.ksasian-btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-size: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.ksasian-btn-hero-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Layout Container */
+.ksasian-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.ksasian-section-title {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 45px auto;
+}
+
+.ksasian-section-title h2 {
+  font-size: 2.1rem;
+  color: var(--ksasian-dark);
+  margin-bottom: 12px;
+}
+
+.ksasian-section-title p {
+  color: var(--ksasian-text-muted);
+  font-size: 1.05rem;
+}
+
+/* Grids */
+.ksasian-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ksasian-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.ksasian-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Cards */
+.ksasian-card {
+  background-color: var(--ksasian-surface);
+  border: 1px solid var(--ksasian-border);
+  border-radius: var(--ksasian-radius);
+  overflow: hidden;
+  box-shadow: var(--ksasian-shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ksasian-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ksasian-shadow);
+  border-color: #fecdd3;
+}
+
+.ksasian-card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.ksasian-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ksasian-card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #fff1f2;
+  color: var(--ksasian-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.ksasian-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: var(--ksasian-dark);
+}
+
+.ksasian-card p {
+  color: var(--ksasian-text-muted);
+  font-size: 0.95rem;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.ksasian-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--ksasian-border);
+}
+
+.ksasian-price {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ksasian-primary);
+}
+
+/* Spotlight Section */
+.ksasian-spotlight {
+  background-color: var(--ksasian-surface);
+  border: 1px solid var(--ksasian-border);
+  border-radius: var(--ksasian-radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  box-shadow: var(--ksasian-shadow);
+  margin-top: 50px;
+}
+
+.ksasian-spotlight-content {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ksasian-spotlight-content h3 {
+  font-size: 1.9rem;
+  color: var(--ksasian-dark);
+  margin-bottom: 16px;
+}
+
+.ksasian-spotlight-content p {
+  color: var(--ksasian-text-muted);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+/* Menu Tabs */
+.ksasian-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.ksasian-tab-btn {
+  background-color: var(--ksasian-surface);
+  border: 1px solid var(--ksasian-border);
+  color: var(--ksasian-slate);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ksasian-tab-btn:hover,
+.ksasian-tab-btn.active {
+  background-color: var(--ksasian-primary);
+  color: #ffffff;
+  border-color: var(--ksasian-primary);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+}
+
+.ksasian-menu-group {
+  display: none;
+}
+
+.ksasian-menu-group.active {
+  display: block;
+}
+
+/* Menu Items */
+.ksasian-menu-item {
+  background-color: var(--ksasian-surface);
+  border: 1px solid var(--ksasian-border);
+  border-radius: var(--ksasian-radius);
+  padding: 22px;
+  box-shadow: var(--ksasian-shadow-sm);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ksasian-menu-item:hover {
+  border-color: #fecdd3;
+  box-shadow: var(--ksasian-shadow);
+}
+
+.ksasian-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+
+.ksasian-item-header h4 {
+  font-size: 1.15rem;
+  color: var(--ksasian-dark);
+}
+
+.ksasian-item-price {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ksasian-primary);
+  white-space: nowrap;
+}
+
+.ksasian-item-desc {
+  color: var(--ksasian-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.ksasian-item-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ksasian-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ksasian-tag-spicy {
+  background-color: #ffe4e6;
+  color: #e11d48;
+}
+
+.ksasian-tag-veg {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.ksasian-tag-popular {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Calculator Box */
+.ksasian-calc-box {
+  background-color: var(--ksasian-surface);
+  border: 2px solid var(--ksasian-border);
+  border-radius: var(--ksasian-radius-lg);
+  padding: 36px;
+  box-shadow: var(--ksasian-shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ksasian-calc-row {
+  margin-bottom: 24px;
+}
+
+.ksasian-calc-row label {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ksasian-dark);
+  margin-bottom: 8px;
+}
+
+.ksasian-range-control {
+  width: 100%;
+  accent-color: var(--ksasian-primary);
+}
+
+.ksasian-select-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--ksasian-border);
+  background-color: var(--ksasian-bg);
+  font-size: 1rem;
+  color: var(--ksasian-text);
+  font-weight: 600;
+}
+
+.ksasian-calc-results {
+  background-color: var(--ksasian-surface-alt);
+  border-radius: var(--ksasian-radius);
+  padding: 20px;
+  margin-top: 24px;
+  border: 1px solid var(--ksasian-border);
+}
+
+.ksasian-result-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(100, 116, 139, 0.3);
+  font-size: 0.95rem;
+}
+
+.ksasian-result-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--ksasian-primary-dark);
+}
+
+/* Accordion */
+.ksasian-accordion {
+  border: 1px solid var(--ksasian-border);
+  border-radius: var(--ksasian-radius);
+  background-color: var(--ksasian-surface);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.ksasian-accordion-header {
+  padding: 18px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--ksasian-dark);
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.ksasian-accordion-header:hover {
+  background-color: var(--ksasian-surface-alt);
+}
+
+.ksasian-accordion-content {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: var(--ksasian-text-muted);
+  font-size: 0.95rem;
+}
+
+.ksasian-accordion.open .ksasian-accordion-content {
+  padding: 16px 24px 24px 24px;
+  max-height: 300px;
+}
+
+.ksasian-accordion-icon {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--ksasian-primary);
+}
+
+/* Visit Cards */
+.ksasian-visit-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+}
+
+.ksasian-info-card {
+  background-color: var(--ksasian-surface);
+  border: 1px solid var(--ksasian-border);
+  border-radius: var(--ksasian-radius-lg);
+  padding: 32px;
+  box-shadow: var(--ksasian-shadow-sm);
+}
+
+.ksasian-info-card h3 {
+  font-size: 1.4rem;
+  color: var(--ksasian-dark);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ksasian-border);
+}
+
+.ksasian-info-item {
+  margin-bottom: 18px;
+}
+
+.ksasian-info-item strong {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ksasian-primary);
+  margin-bottom: 4px;
+}
+
+.ksasian-info-item p {
+  color: var(--ksasian-text);
+  font-size: 1rem;
+}
+
+/* CTA Banner */
+.ksasian-cta-banner {
+  background: radial-gradient(circle at center, #1e293b, #0f172a);
+  color: #ffffff;
+  border-radius: var(--ksasian-radius-lg);
+  padding: 50px 30px;
+  text-align: center;
+  border: 2px solid rgba(225, 29, 72, 0.4);
+  box-shadow: var(--ksasian-shadow-lg);
+}
+
+.ksasian-cta-banner h2 {
+  font-size: 2.1rem;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.ksasian-cta-banner p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 28px auto;
+}
+
+.ksasian-cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.ksasian-footer {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 60px 20px 24px 20px;
+  border-top: 4px solid var(--ksasian-primary);
+}
+
+.ksasian-footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.ksasian-footer-col h4 {
+  color: #fef08a;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.ksasian-footer-col p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.ksasian-footer-links {
+  list-style: none;
+}
+
+.ksasian-footer-links li {
+  margin-bottom: 10px;
+}
+
+.ksasian-footer-links a {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.ksasian-footer-links a:hover {
+  color: #fda4af;
+}
+
+.ksasian-footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .ksasian-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ksasian-spotlight {
+    grid-template-columns: 1fr;
+  }
+  .ksasian-visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .ksasian-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ksasian-grid-3, .ksasian-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .ksasian-mobile-toggle {
+    display: block;
+  }
+  .ksasian-nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--ksasian-surface);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-bottom: 3px solid var(--ksasian-primary);
+  }
+  .ksasian-nav-links.show {
+    display: flex;
+  }
+  .ksasian-hero h1 {
+    font-size: 2.1rem;
+  }
+  .ksasian-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
